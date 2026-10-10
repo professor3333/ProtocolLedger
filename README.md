@@ -150,6 +150,9 @@ uv run python scripts/convert.py
 # Apply the correction ledger, deduplicate, and build the frozen train/dev/test splits
 uv run python scripts/build_splits.py
 
+# Score a prediction file with the shared scorer (the test split is locked)
+uv run python scripts/evaluate.py --split dev --pred predictions.jsonl --out report.json
+
 # Tests (no network needed) and static checks
 uv run pytest -m "not slow"
 uv run ruff check && uv run ruff format --check && uv run mypy src/
@@ -246,12 +249,16 @@ whether scientific pretraining helps is measured, not assumed.
 | Relation F1 with gold entities | the relation classifier in isolation |
 | **End-to-end relation F1** | correct type, direction, both endpoint spans and types |
 | Quantity attachment accuracy | each value belongs to the right material or action |
+| Complete-step exact match | how often a step needs no correction at all |
 | Normalized-value exact match | numeric value, unit, range or symbolic value |
 | Precision vs. coverage | reliability of retained predictions as thresholds change |
 
-Results will include per-label scores with support, document-level bootstrap
-confidence intervals, and separate slices for unseen reagent names, Unicode
-perturbations, a challenge set and recently published protocols.
+One scorer (`src/protocolledger/eval/scorer.py`) produces every reported number, for
+every system. It reports per-label scores with support, macro-F1 over supported labels,
+and document-level bootstrap confidence intervals. Duplicate predictions are collapsed.
+The locked test split can only be scored for a declared release. Planned slices: unseen
+reagent names, Unicode perturbations, template siblings, a challenge set and recently
+published protocols.
 
 ## Roadmap
 
@@ -280,13 +287,17 @@ ProtocolLedger/
 ├── scripts/
 │   ├── acquire.py         # fetch and verify the pinned corpus
 │   ├── convert.py         # BRAT → canonical JSONL graphs + conversion report
-│   └── build_splits.py    # correction ledger, deduplication, frozen splits
+│   ├── build_splits.py    # correction ledger, deduplication, frozen splits
+│   └── evaluate.py        # score predictions with the shared scorer
+├── src/protocolledger/eval/
+│   └── scorer.py          # strict entity, end-to-end relation, attachment, step metrics
 ├── src/protocolledger/data/
 │   ├── acquire.py         # download, safe extraction, manifest verification
 │   ├── brat.py            # strict BRAT standoff parser
 │   ├── convert.py         # event resolution, validation, canonical graphs
 │   ├── corrections.py     # correction ledger rules and application
 │   ├── dedup.py           # exact / near-duplicate detection, split resolution
+│   ├── splits.py          # hash-verified loading of the frozen splits
 │   └── schema.py          # 18 entity labels, 14 relation labels, role normalization
 └── tests/                 # unit tests (no network)
 ```
