@@ -226,7 +226,8 @@ rollback. CI builds the image and smoke-tests it with a tiny fixture bundle. See
 | BERT / SciBERT span-and-relation model: code, tests, MLflow tracking | ✅ Done |
 | GPU training runs and ablations (Kaggle) | 🚧 Next |
 | Error taxonomy and slices (unseen names, template siblings) | ✅ Done |
-| Calibration, challenge set | ⬜ Planned |
+| Precision–coverage and isotonic calibration tooling | ✅ Done |
+| Challenge set | ⬜ Planned |
 | Deterministic quantity normalization | ✅ Done |
 | Saved reviews API, JSON/CSV export, backup and restore | ✅ Done |
 | Review editing in the interface | ✅ Done |
@@ -450,6 +451,14 @@ Two slices stand out:
   document get relation recall 0.719, against 0.524 without, which is why template
   siblings are reported separately.
 
+**Confidence** (CRF + logistic regression, dev; [report](reports/calibration/crf-logreg-dev.md)):
+- **Raw relation scores are badly calibrated.** Expected calibration error (ECE) is
+  0.214. Isotonic regression, cross-fitted by document on dev, brings it to 0.009.
+- **The baseline's confidence can't support the 95%-precision target.** Its most
+  confident relations reach about 85% precision (0.808 at 30% coverage), because a
+  relation score cannot see whether its endpoint entities are right. The neural model
+  will also be scored with a joint confidence, P(relation) × P(head) × P(tail).
+
 ## Roadmap
 
 - [x] **Phase 0:** project skeleton, CI, pinned corpus acquisition
@@ -479,6 +488,7 @@ ProtocolLedger/
 │   └── dataset_card.md    # sources, conversion, corrections, deduplication, splits
 ├── reports/baselines/     # committed dev reports (JSON + Markdown)
 ├── reports/errors/        # error taxonomy and slices per system (dev)
+├── reports/calibration/   # precision–coverage and calibration per system (dev)
 ├── scripts/
 │   ├── acquire.py         # fetch and verify the pinned corpus
 │   ├── convert.py         # BRAT → canonical JSONL graphs + conversion report
@@ -520,7 +530,8 @@ ProtocolLedger/
 │   └── static/            # HTML / CSS / JS review interface (no build step)
 ├── src/protocolledger/eval/
 │   ├── scorer.py          # strict entity, end-to-end relation, attachment, step metrics
-│   └── errors.py          # error taxonomy, slices, examples
+│   ├── errors.py          # error taxonomy, slices, examples
+│   └── confidence.py      # precision–coverage, ECE, cross-fitted isotonic calibration
 ├── src/protocolledger/data/
 │   ├── acquire.py         # download, safe extraction, manifest verification
 │   ├── brat.py            # strict BRAT standoff parser

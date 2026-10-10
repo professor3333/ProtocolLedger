@@ -221,18 +221,27 @@ class LogRegRelations:
 
     def predict_relations(
         self, text: str, entities: Sequence[Mapping[str, Any]]
-    ) -> list[dict[str, str]]:
+    ) -> list[dict[str, Any]]:
         ctx = _Context(text)
         pairs = candidate_pairs(ctx, entities, self.type_pairs)
         if not pairs:
             return []
         rows = [pair_features(ctx, h, t, m, self.config.max_between_words) for h, t, m in pairs]
-        predicted = self.classifier.predict(self.vectorizer.transform(rows))
-        return [
-            {"head": h["id"], "label": str(label), "tail": t["id"]}
-            for (h, t, _), label in zip(pairs, predicted, strict=True)
-            if label != NONE
-        ]
+        probabilities = self.classifier.predict_proba(self.vectorizer.transform(rows))
+        classes = [str(c) for c in self.classifier.classes_]
+        out: list[dict[str, Any]] = []
+        for (h, t, _), row in zip(pairs, probabilities, strict=True):
+            best = int(row.argmax())
+            if classes[best] != NONE:
+                out.append(
+                    {
+                        "head": h["id"],
+                        "label": classes[best],
+                        "tail": t["id"],
+                        "score": round(float(row[best]), 6),
+                    }
+                )
+        return out
 
     def config_json(self) -> dict[str, Any]:
         return {"logreg_version": LOGREG_VERSION, **asdict(self.config)}

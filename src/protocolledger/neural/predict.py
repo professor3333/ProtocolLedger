@@ -14,7 +14,7 @@ from protocolledger.neural.model import SpanRelationModel, sparse_table
 
 def _decode_entities(
     probs: torch.Tensor, spans: list[tuple[int, int, int]], labels: list[str]
-) -> dict[int, list[tuple[int, int, str]]]:
+) -> dict[int, list[tuple[int, int, str, float]]]:
     """Greedy non-overlapping decode by confidence, per example."""
     best_p, best_label = probs.max(dim=-1)
     chosen: dict[int, list[tuple[int, int, str, float]]] = {}
@@ -28,7 +28,7 @@ def _decode_entities(
         if any(s < ks + kw and ks < s + w for ks, kw, _, _ in kept):
             continue
         kept.append((s, w, labels[label], float(best_p[idx])))
-    return {b: [(s, w, lab) for s, w, lab, _ in v] for b, v in chosen.items()}
+    return chosen
 
 
 @torch.no_grad()
@@ -39,7 +39,7 @@ def predict_examples(
     type_pairs: set[tuple[str, str]],
     device: torch.device,
     gold_entities: bool = False,
-) -> list[tuple[list[tuple[int, int, str]], list[tuple[int, int, str]]]]:
+) -> list[tuple[list[tuple[int, int, str, float]], list[tuple[int, int, str, float]]]]:
     """For each example: (entities as (start word, width, label), relations as
     (head entity index, tail entity index, label))."""
     cfg = model.config
@@ -51,7 +51,7 @@ def predict_examples(
 
     if gold_entities:
         per_example = {
-            b: [(s, e - s, lab) for s, e, lab in ex.entities] for b, ex in enumerate(examples)
+            b: [(s, e - s, lab, 1.0) for s, e, lab in ex.entities] for b, ex in enumerate(examples)
         }
     else:
         spans = [
@@ -76,7 +76,7 @@ def predict_examples(
             for j, ti in enumerate(ents):
                 if i != j and (not cfg.restrict_type_pairs or (hi[2], ti[2]) in type_pairs):
                     pairs.append((b, i, j))
-    relations: dict[int, list[tuple[int, int, str]]] = {}
+    relations: dict[int, list[tuple[int, int, str, float]]] = {}
     if pairs:
         pb = torch.tensor([p[0] for p in pairs], device=device)
 
@@ -93,7 +93,8 @@ def predict_examples(
         hits = (probs >= cfg.relation_threshold).nonzero().tolist()
         for row, col in hits:
             b, i, j = pairs[row]
-            relations.setdefault(b, []).append((i, j, model.relation_labels[col]))
+            score = float(probs[row, col])
+            relations.setdefault(b, []).append((i, j, model.relation_labels[col], score))
     return [(per_example.get(b, []), relations.get(b, [])) for b in range(len(examples))]
 
 
@@ -115,7 +116,7 @@ def predict_documents(
         source = doc if gold_entities else {**doc, "entities": [], "relations": []}
         examples = build_examples(source, cfg.max_span_words, counter, cfg.max_subwords)
         entities: list[dict[str, Any]] = []
-        relations: list[dict[str, str]] = []
+        relations: list[dict[str, Any]] = []
         seen: dict[tuple[int, int, str], str] = {}
         for start in range(0, len(examples), batch_size):
             chunk = examples[start : start + batch_size]
@@ -125,15 +126,23 @@ def predict_documents(
                 strict=True,
             ):
                 ids = []
-                for s, w, label in ents:
+                for s, w, label, score in ents:
                     key = (ex.words[s].start, ex.words[s + w - 1].end, label)
                     if key not in seen:
                         seen[key] = f"P{len(seen) + 1}"
                         entities.append(
-                            {"id": seen[key], "label": label, "start": key[0], "end": key[1]}
+                            {
+                                "id": seen[key],
+                                "label": label,
+                                "start": key[0],
+                                "end": key[1],
+                                "score": round(score, 6),
+                            }
                         )
                     ids.append(seen[key])
-                for i, j, label in rels:
-                    relations.append({"head": ids[i], "label": label, "tail": ids[j]})
+                for i, j, label, score in rels:
+                    relations.append(
+                        {"head": ids[i], "label": label, "tail": ids[j], "score": round(score, 6)}
+                    )
         out.append({"doc_id": doc["doc_id"], "entities": entities, "relations": relations})
     return out
