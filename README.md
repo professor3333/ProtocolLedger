@@ -198,7 +198,7 @@ PROTOCOLLEDGER_BUNDLE=artifacts/bundles/crf-logreg-4a9d8cc549 \
 # Neural model (needs the neural extra; a GPU for real runs, CPU for smoke tests)
 uv sync --extra neural
 uv run python scripts/train_neural.py configs/neural/scibert-lr5e-5.json --seed 13
-uv run python scripts/log_baselines_mlflow.py   # baselines into the same MLflow store
+uv run python scripts/log_reports_mlflow.py    # all committed reports into MLflow
 MLFLOW_ALLOW_FILE_STORE=true uvx mlflow ui --backend-store-uri mlruns
 
 # Tests (no network needed) and static checks
@@ -387,7 +387,8 @@ ProtocolLedger/
 │   ├── run_traditional.py # fit / select / report CRF + logistic regression
 │   ├── build_bundle.py    # verified, versioned model bundle for serving
 │   ├── train_neural.py    # train / select / report one neural configuration
-│   └── log_baselines_mlflow.py  # baseline reports into MLflow
+│   ├── kaggle.py          # launch / monitor / fetch GPU jobs on Kaggle
+│   └── log_reports_mlflow.py  # committed reports into MLflow (idempotent)
 ├── src/protocolledger/baselines/
 │   ├── rules.py           # unit patterns, training dictionary, nearest-span relations
 │   ├── crf_entities.py    # linear-chain CRF tagger (BIO, lexical + character features)
