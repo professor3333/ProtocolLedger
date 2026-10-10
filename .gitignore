@@ -1,0 +1,44 @@
+# Downloaded corpus (fetched by scripts/acquire.py at the pinned commit; never committed)
+data/raw/
+data/downloads/
+# Regenerable converter output
+data/processed/
+
+# Model artifacts, checkpoints, experiment tracking
+artifacts/
+checkpoints/
+*.pt
+*.safetensors
+*.onnx
+mlruns/
+mlartifacts/
+
+# Review storage
+*.sqlite
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+
+# Environment and secrets
+.env
+.env.*
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
