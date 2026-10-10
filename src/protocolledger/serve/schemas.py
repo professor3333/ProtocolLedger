@@ -89,3 +89,93 @@ class ExtractResponse(BaseModel):
 
 class Problem(BaseModel):
     detail: str
+
+
+# ------------------------------------------------------------------- reviews
+
+Origin = Literal["model", "human"]
+
+
+class OriginalSpan(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    label: str
+    start: int
+    end: int
+
+
+class ReviewEntity(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    id: str = Field(min_length=1, max_length=40)
+    label: str
+    start: int = Field(ge=0)
+    end: int = Field(ge=1)
+    origin: Origin
+    decision: Literal["accepted", "rejected", "edited", "added"]
+    original: OriginalSpan | None = None
+
+
+class ReviewRelation(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    id: str = Field(min_length=1, max_length=40)
+    head: str
+    label: str
+    tail: str
+    origin: Origin
+    decision: Literal["accepted", "rejected", "added"]
+
+
+class ReviewContent(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    entities: list[ReviewEntity] = Field(max_length=5000)
+    relations: list[ReviewRelation] = Field(max_length=10000)
+
+
+class ReviewCreate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    text: str = Field(min_length=1, max_length=MAX_TEXT_CHARS)
+    save_text: bool = False
+    model_version: str = Field(min_length=1, max_length=100)
+    content: ReviewContent
+
+
+class ReviewRevision(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    text: str = Field(min_length=1, max_length=MAX_TEXT_CHARS)
+    content: ReviewContent
+
+
+class ReviewCreated(BaseModel):
+    id: str
+    token: str | None = Field(description="Shown once; required to read or revise. Null on retry.")
+    revision: int
+
+
+class ReviewHistoryItem(BaseModel):
+    revision: int
+    created_at: str
+    sha256: str
+
+
+class ReviewRecord(BaseModel):
+    id: str
+    created_at: str
+    updated_at: str
+    revision: int
+    text_sha256: str
+    text: str | None
+    model_version: str
+    content: ReviewContent
+    history: list[ReviewHistoryItem]
+
+
+class ExportRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    format: Literal["json", "csv"] = "json"
+    text: str | None = Field(default=None, max_length=MAX_TEXT_CHARS)

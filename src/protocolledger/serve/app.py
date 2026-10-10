@@ -16,24 +16,33 @@ import os
 from collections.abc import AsyncIterator, Awaitable, Callable
 from contextlib import asynccontextmanager
 from pathlib import Path
+from typing import Annotated, Any, TypeVar
 
-from fastapi import FastAPI, HTTPException, Request, Response
+from fastapi import FastAPI, Header, HTTPException, Request, Response
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from protocolledger.eval.scorer import QUANTITY_LABELS
 from protocolledger.serve.bundle import BundleError, LoadedBundle, load_bundle
+from protocolledger.serve.export import export_csv, export_json, validate_content
+from protocolledger.serve.reviews import ReviewError, ReviewStore
 from protocolledger.serve.schemas import (
     MAX_LINES,
     Entity,
+    ExportRequest,
     ExtractRequest,
     ExtractResponse,
     ModelInfo,
     NormalizedValue,
     Problem,
     Relation,
+    ReviewContent,
+    ReviewCreate,
+    ReviewCreated,
     ReviewItem,
+    ReviewRecord,
+    ReviewRevision,
     SheetRow,
 )
 from protocolledger.serve.sheet import build_sheet
@@ -52,10 +61,12 @@ SECURITY_HEADERS = {
 }
 
 log = logging.getLogger("protocolledger.serve")
+T = TypeVar("T")
 
 
-def create_app(bundle_dir: Path | None) -> FastAPI:
+def create_app(bundle_dir: Path | None, review_db: Path | None = None) -> FastAPI:
     state: dict[str, LoadedBundle | str | None] = {"bundle": None, "error": None}
+    stores: dict[str, ReviewStore] = {}
 
     @asynccontextmanager
     async def lifespan(_: FastAPI) -> AsyncIterator[None]:
@@ -68,6 +79,8 @@ def create_app(bundle_dir: Path | None) -> FastAPI:
                 state["error"] = f"model bundle failed to load: {exc}"
         if state["error"]:
             log.error("%s", state["error"])
+        if review_db is not None:
+            stores["reviews"] = ReviewStore(review_db)
         yield
 
     app = FastAPI(
@@ -170,6 +183,104 @@ def create_app(bundle_dir: Path | None) -> FastAPI:
             warnings=warnings,
         )
 
+    def review_store() -> ReviewStore:
+        if "reviews" not in stores:
+            raise HTTPException(status_code=503, detail="review storage is not configured")
+        return stores["reviews"]
+
+    def text_hash(text: str) -> str:
+        try:
+            return hashlib.sha256(text.encode("utf-8")).hexdigest()
+        except UnicodeEncodeError:
+            raise HTTPException(status_code=422, detail="text is not valid Unicode") from None
+
+    def check_content(content: ReviewContent, text: str) -> None:
+        problems = validate_content(content, text)
+        if problems:
+            raise HTTPException(status_code=422, detail="; ".join(problems[:20]))
+
+    def call(fn: Callable[[], T]) -> T:
+        try:
+            return fn()
+        except ReviewError as exc:
+            raise HTTPException(status_code=exc.status, detail=exc.detail) from None
+
+    review_errors: dict[int | str, dict[str, Any]] = {
+        404: {"model": Problem},
+        409: {"model": Problem},
+        422: {"model": Problem},
+        503: {"model": Problem},
+    }
+
+    @app.post("/v1/reviews", status_code=201, response_model=ReviewCreated, responses=review_errors)
+    def create_review(
+        request: ReviewCreate,
+        idempotency_key: Annotated[str | None, Header(max_length=200)] = None,
+    ) -> ReviewCreated:
+        store = review_store()
+        digest = text_hash(request.text)
+        check_content(request.content, request.text)
+        created = call(
+            lambda: store.create(
+                request.content.model_dump(),
+                digest,
+                request.text if request.save_text else None,
+                request.model_version,
+                idempotency_key,
+            )
+        )
+        return ReviewCreated(id=created.review_id, token=created.token, revision=created.revision)
+
+    @app.post("/v1/reviews/{review_id}/revisions", status_code=201, responses=review_errors)
+    def revise_review(
+        review_id: str,
+        request: ReviewRevision,
+        x_review_token: Annotated[str | None, Header()] = None,
+    ) -> dict[str, int]:
+        store = review_store()
+        record = call(lambda: store.get(review_id, x_review_token))
+        if text_hash(request.text) != record["text_sha256"]:
+            raise HTTPException(status_code=409, detail="text does not match this review")
+        check_content(request.content, request.text)
+        number = call(
+            lambda: store.add_revision(review_id, x_review_token, request.content.model_dump())
+        )
+        return {"revision": number}
+
+    @app.get("/v1/reviews/{review_id}", response_model=ReviewRecord, responses=review_errors)
+    def get_review(
+        review_id: str, x_review_token: Annotated[str | None, Header()] = None
+    ) -> ReviewRecord:
+        record = call(lambda: review_store().get(review_id, x_review_token))
+        return ReviewRecord(**record)
+
+    @app.post("/v1/reviews/{review_id}/export", responses=review_errors)
+    def export_review(
+        review_id: str,
+        request: ExportRequest,
+        x_review_token: Annotated[str | None, Header()] = None,
+    ) -> Response:
+        record = call(lambda: review_store().get(review_id, x_review_token))
+        text = record["text"] if record["text"] is not None else request.text
+        if text is None:
+            raise HTTPException(
+                status_code=409, detail="this review did not store its text; include it to export"
+            )
+        if text_hash(text) != record["text_sha256"]:
+            raise HTTPException(status_code=409, detail="text does not match this review")
+        content = ReviewContent(**record["content"])
+        stem = f"protocolledger-review-{review_id}-r{record['revision']}"
+        if request.format == "csv":
+            return Response(
+                export_csv(record, content, text),
+                media_type="text/csv; charset=utf-8",
+                headers={"Content-Disposition": f'attachment; filename="{stem}.csv"'},
+            )
+        return JSONResponse(
+            export_json(record, content, text),
+            headers={"Content-Disposition": f'attachment; filename="{stem}.json"'},
+        )
+
     @app.get("/", include_in_schema=False)
     def index() -> FileResponse:
         return FileResponse(STATIC_DIR / "index.html", media_type="text/html")
@@ -180,4 +291,7 @@ def create_app(bundle_dir: Path | None) -> FastAPI:
 
 def create_app_from_env() -> FastAPI:
     configured = os.environ.get("PROTOCOLLEDGER_BUNDLE")
-    return create_app(Path(configured) if configured else None)
+    database = os.environ.get("PROTOCOLLEDGER_DB")
+    return create_app(
+        Path(configured) if configured else None, Path(database) if database else None
+    )

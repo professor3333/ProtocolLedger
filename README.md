@@ -124,6 +124,26 @@ Actions whose object is not stated are shown as *Not explicitly stated*, marked
 | `POST /v1/extract` | entities, relations, preparation-sheet rows, normalized quantities, review items, model version; offsets in Unicode code points |
 | `GET /healthz` | process health |
 | `GET /readyz` | model loaded; reports model version, bundle hash and dev scores |
+| `POST /v1/reviews` | store an explicitly submitted review; returns an id and a one-time token; honors `Idempotency-Key` |
+| `POST /v1/reviews/{id}/revisions` | append a corrected revision (token required; text must match the stored hash) |
+| `GET /v1/reviews/{id}` | latest revision and full history (token required) |
+| `POST /v1/reviews/{id}/export` | reviewed JSON or CSV with provenance; human additions marked |
+
+**Saved reviews:**
+- **Storage.** Reviews live in SQLite (WAL mode) and are append-only: every correction is
+  a new revision, and database triggers refuse updates and deletes.
+- **Text stays private by default.** Protocol text is stored only if the submitter opts
+  in; otherwise only its SHA-256 is kept, and reopening or exporting requires the same
+  text.
+- **Access.** Each review has an unguessable id and a token shown once. Only the token's
+  hash is stored. A wrong token and a missing review get the same 404.
+- **Provenance.** Every entity and relation records whether it came from the model or a
+  person. Model items are accepted, edited (with the original recorded) or rejected;
+  human items are added.
+- **Exports.** Exports carry the review id, revision, model version and text hash. The
+  CSV neutralizes spreadsheet formulas without corrupting values such as `-80 °C`.
+- **Backups.** `scripts/backup_reviews.py` takes consistent online backups and restores
+  them after an integrity check.
 
 Input is bounded: 256 KB per request, 20,000 characters, 400 lines. Invalid Unicode, NUL
 characters and unknown fields are rejected, and error responses never echo submitted text.
@@ -176,7 +196,8 @@ checked sample of supported formats is still to be measured.
 | GPU training runs and ablations (Kaggle) | 🚧 Next |
 | Calibration, error analysis, challenge set | ⬜ Planned |
 | Deterministic quantity normalization | ✅ Done |
-| Saved reviews, editing, JSON/CSV export | ⬜ Planned |
+| Saved reviews API, JSON/CSV export, backup and restore | ✅ Done |
+| Review editing in the interface | 🚧 Next |
 | CPU optimization, Docker deployment, monitoring | ⬜ Planned |
 | User pilot, model card, final report | ⬜ Planned |
 
@@ -210,8 +231,9 @@ uv run python scripts/run_traditional.py   # CRF + logistic regression, about 5 
 
 # Build a verified model bundle, then serve the API and review interface
 uv run python scripts/build_bundle.py      # refuses unless it reproduces the committed report
-PROTOCOLLEDGER_BUNDLE=artifacts/bundles/crf-logreg-4a9d8cc549 \
+PROTOCOLLEDGER_BUNDLE=artifacts/bundles/crf-logreg-4a9d8cc549 PROTOCOLLEDGER_DB=data/reviews.db \
   uv run uvicorn --factory protocolledger.serve.app:create_app_from_env --port 8000
+uv run python scripts/backup_reviews.py backup data/reviews.db backups/reviews.db
 # open http://localhost:8000  (API docs at /docs)
 
 # Neural model (needs the neural extra; a GPU for real runs, CPU for smoke tests)
@@ -407,6 +429,7 @@ ProtocolLedger/
 │   ├── build_bundle.py    # verified, versioned model bundle for serving
 │   ├── train_neural.py    # train / select / report one neural configuration
 │   ├── kaggle.py          # launch / monitor / fetch GPU jobs on Kaggle
+│   ├── backup_reviews.py  # consistent backup / verified restore of the review database
 │   └── log_reports_mlflow.py  # committed reports into MLflow (idempotent)
 ├── src/protocolledger/baselines/
 │   ├── rules.py           # unit patterns, training dictionary, nearest-span relations
@@ -427,6 +450,8 @@ ProtocolLedger/
 ├── src/protocolledger/serve/
 │   ├── app.py             # FastAPI: /v1/extract, /healthz, /readyz, review page
 │   ├── bundle.py          # hash-verified model bundles
+│   ├── reviews.py         # append-only SQLite review store (WAL, token-gated)
+│   ├── export.py          # review validation, JSON / CSV export with provenance
 │   ├── schemas.py         # versioned request / response schemas
 │   ├── sheet.py           # graph → preparation-sheet rows and review items
 │   └── static/            # HTML / CSS / JS review interface (no build step)
