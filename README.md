@@ -225,7 +225,8 @@ rollback. CI builds the image and smoke-tests it with a tiny fixture bundle. See
 | Thin end-to-end review app on the baseline (API, evidence highlighting) | ✅ Done |
 | BERT / SciBERT span-and-relation model: code, tests, MLflow tracking | ✅ Done |
 | GPU training runs and ablations (Kaggle) | 🚧 Next |
-| Calibration, error analysis, challenge set | ⬜ Planned |
+| Error taxonomy and slices (unseen names, template siblings) | ✅ Done |
+| Calibration, challenge set | ⬜ Planned |
 | Deterministic quantity normalization | ✅ Done |
 | Saved reviews API, JSON/CSV export, backup and restore | ✅ Done |
 | Review editing in the interface | ✅ Done |
@@ -426,6 +427,29 @@ tables: <a href="reports/baselines/rules-dev.md">rules</a>,
 - **Reference point.** Duplicate copies of the same protocol in the corpus agree with
   each other at relation F1 0.711.
 
+**Error analysis** (CRF + logistic regression, dev; [full report with
+examples](reports/errors/crf-logreg-dev.md)):
+
+| Gold relations (10,065) | Share |
+|---|---:|
+| correct | 54.5% |
+| **endpoint entity wrong** (entity error cascading) | **34.4%** |
+| missed (endpoints right, no relation) | 5.6% |
+| wrong attachment (same label, wrong head or tail) | 3.0% |
+| wrong label | 2.5% |
+| wrong direction | 0.1% |
+
+About three of every four relation errors start as entity errors, so better entity
+boundaries are where a contextual encoder has the most to gain.
+
+Two slices stand out:
+- **Unseen reagent names.** Reagent names never seen in training are found with recall
+  **0.570**, against **0.873** for seen names. This is the slice where scientific
+  pretraining should help.
+- **Template siblings.** Dev documents that share a vendor template with a training
+  document get relation recall 0.719, against 0.524 without, which is why template
+  siblings are reported separately.
+
 ## Roadmap
 
 - [x] **Phase 0:** project skeleton, CI, pinned corpus acquisition
@@ -454,6 +478,7 @@ ProtocolLedger/
 │   ├── assets/            # README artwork and interface screenshot
 │   └── dataset_card.md    # sources, conversion, corrections, deduplication, splits
 ├── reports/baselines/     # committed dev reports (JSON + Markdown)
+├── reports/errors/        # error taxonomy and slices per system (dev)
 ├── scripts/
 │   ├── acquire.py         # fetch and verify the pinned corpus
 │   ├── convert.py         # BRAT → canonical JSONL graphs + conversion report
@@ -494,7 +519,8 @@ ProtocolLedger/
 │   ├── sheet.py           # graph → preparation-sheet rows and review items
 │   └── static/            # HTML / CSS / JS review interface (no build step)
 ├── src/protocolledger/eval/
-│   └── scorer.py          # strict entity, end-to-end relation, attachment, step metrics
+│   ├── scorer.py          # strict entity, end-to-end relation, attachment, step metrics
+│   └── errors.py          # error taxonomy, slices, examples
 ├── src/protocolledger/data/
 │   ├── acquire.py         # download, safe extraction, manifest verification
 │   ├── brat.py            # strict BRAT standoff parser

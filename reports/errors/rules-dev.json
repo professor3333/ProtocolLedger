@@ -1,0 +1,381 @@
+{
+ "entities": {
+  "gold_total": 14936,
+  "categories": {
+   "wrong_boundary": {
+    "count": 1371,
+    "share": 0.0918
+   },
+   "missed": {
+    "count": 2045,
+    "share": 0.1369
+   },
+   "correct": {
+    "count": 10068,
+    "share": 0.6741
+   },
+   "wrong_type": {
+    "count": 730,
+    "share": 0.0489
+   },
+   "wrong_boundary_and_type": {
+    "count": 722,
+    "share": 0.0483
+   }
+  },
+  "by_label": {
+   "Action": {
+    "missed": 278,
+    "wrong_type": 153,
+    "correct": 3203,
+    "wrong_boundary_and_type": 38,
+    "wrong_boundary": 140
+   },
+   "Amount": {
+    "correct": 902,
+    "wrong_boundary": 41,
+    "missed": 54,
+    "wrong_type": 29,
+    "wrong_boundary_and_type": 18
+   },
+   "Concentration": {
+    "wrong_type": 14,
+    "wrong_boundary_and_type": 18,
+    "missed": 29,
+    "correct": 321,
+    "wrong_boundary": 15
+   },
+   "Device": {
+    "missed": 129,
+    "correct": 244,
+    "wrong_boundary": 69,
+    "wrong_boundary_and_type": 53,
+    "wrong_type": 79
+   },
+   "Generic-Measure": {
+    "wrong_boundary_and_type": 44,
+    "missed": 34,
+    "correct": 17,
+    "wrong_boundary": 4,
+    "wrong_type": 25
+   },
+   "Location": {
+    "correct": 757,
+    "wrong_boundary": 243,
+    "wrong_boundary_and_type": 58,
+    "missed": 161,
+    "wrong_type": 133
+   },
+   "Measure-Type": {
+    "correct": 157,
+    "wrong_boundary_and_type": 51,
+    "missed": 62,
+    "wrong_boundary": 25,
+    "wrong_type": 14
+   },
+   "Mention": {
+    "wrong_type": 9,
+    "correct": 54,
+    "missed": 9,
+    "wrong_boundary_and_type": 3
+   },
+   "Method": {
+    "wrong_boundary": 54,
+    "correct": 174,
+    "missed": 128,
+    "wrong_boundary_and_type": 94,
+    "wrong_type": 56
+   },
+   "Modifier": {
+    "missed": 353,
+    "correct": 770,
+    "wrong_boundary": 105,
+    "wrong_type": 67,
+    "wrong_boundary_and_type": 183
+   },
+   "Numerical": {
+    "wrong_type": 15,
+    "missed": 108,
+    "wrong_boundary": 19,
+    "correct": 86,
+    "wrong_boundary_and_type": 23
+   },
+   "Reagent": {
+    "correct": 2049,
+    "missed": 640,
+    "wrong_boundary": 576,
+    "wrong_type": 74,
+    "wrong_boundary_and_type": 93
+   },
+   "Seal": {
+    "correct": 61,
+    "wrong_type": 6,
+    "missed": 6,
+    "wrong_boundary": 6,
+    "wrong_boundary_and_type": 5
+   },
+   "Size": {
+    "wrong_type": 15,
+    "wrong_boundary": 16,
+    "missed": 16,
+    "correct": 59,
+    "wrong_boundary_and_type": 16
+   },
+   "Speed": {
+    "correct": 152,
+    "wrong_type": 31,
+    "missed": 8,
+    "wrong_boundary_and_type": 4,
+    "wrong_boundary": 13
+   },
+   "Temperature": {
+    "correct": 419,
+    "wrong_boundary": 17,
+    "missed": 3,
+    "wrong_type": 8,
+    "wrong_boundary_and_type": 5
+   },
+   "Time": {
+    "correct": 619,
+    "wrong_boundary_and_type": 16,
+    "missed": 24,
+    "wrong_boundary": 26,
+    "wrong_type": 2
+   },
+   "pH": {
+    "correct": 24,
+    "wrong_boundary": 2,
+    "missed": 3
+   }
+  },
+  "spurious_by_label": {
+   "Action": 281,
+   "Modifier": 248,
+   "Reagent": 47,
+   "Mention": 35,
+   "Measure-Type": 31,
+   "Method": 28,
+   "Numerical": 22,
+   "Location": 22,
+   "Device": 17,
+   "Time": 11,
+   "Amount": 7,
+   "Generic-Measure": 3,
+   "Concentration": 2,
+   "Temperature": 1
+  }
+ },
+ "relations": {
+  "gold_total": 10065,
+  "categories": {
+   "endpoint_error": {
+    "count": 4803,
+    "share": 0.4772
+   },
+   "correct": {
+    "count": 3413,
+    "share": 0.3391
+   },
+   "missed": {
+    "count": 564,
+    "share": 0.056
+   },
+   "wrong_attachment": {
+    "count": 679,
+    "share": 0.0675
+   },
+   "wrong_label": {
+    "count": 606,
+    "share": 0.0602
+   }
+  },
+  "by_label": {
+   "Acts-on": {
+    "endpoint_error": 1245,
+    "correct": 1064,
+    "wrong_attachment": 170,
+    "wrong_label": 316,
+    "missed": 32
+   },
+   "Commands": {
+    "missed": 24,
+    "endpoint_error": 13
+   },
+   "Coreference-Link": {
+    "endpoint_error": 68,
+    "missed": 55,
+    "wrong_label": 1
+   },
+   "Count": {
+    "endpoint_error": 69,
+    "missed": 12,
+    "correct": 15,
+    "wrong_attachment": 3
+   },
+   "Measure": {
+    "endpoint_error": 737,
+    "correct": 690,
+    "wrong_attachment": 76,
+    "missed": 4,
+    "wrong_label": 3
+   },
+   "Measure-Type-Link": {
+    "correct": 46,
+    "endpoint_error": 72,
+    "wrong_attachment": 1
+   },
+   "Meronym": {
+    "endpoint_error": 264,
+    "missed": 101,
+    "wrong_label": 1
+   },
+   "Mod-Link": {
+    "endpoint_error": 803,
+    "wrong_attachment": 162,
+    "correct": 421,
+    "wrong_label": 1,
+    "missed": 2
+   },
+   "Of-Type": {
+    "missed": 1,
+    "endpoint_error": 25
+   },
+   "Or": {
+    "missed": 69,
+    "endpoint_error": 112
+   },
+   "Product": {
+    "endpoint_error": 69,
+    "wrong_label": 25,
+    "missed": 7
+   },
+   "Setting": {
+    "endpoint_error": 352,
+    "missed": 91,
+    "correct": 894,
+    "wrong_attachment": 141,
+    "wrong_label": 4
+   },
+   "Site": {
+    "endpoint_error": 523,
+    "wrong_attachment": 105,
+    "correct": 245,
+    "wrong_label": 126,
+    "missed": 74
+   },
+   "Using": {
+    "missed": 92,
+    "endpoint_error": 451,
+    "wrong_label": 129,
+    "wrong_attachment": 21,
+    "correct": 38
+   }
+  },
+  "spurious": {
+   "spurious_endpoint": 3692,
+   "between_gold_entities": 2034
+  }
+ },
+ "examples": {
+  "entity/wrong_boundary": [
+   "dev_data/protocol_0: gold Method 'SpinSmart Plasmid Purification', predicted Method 'Purification' | [[SpinSmart Plasmid Purification]][[Purification]] Protocol: High-copy plasmid DNA from E. coli Start with 1-5",
+   "dev_data/protocol_0: gold Reagent 'E. coli LB culture*', predicted Reagent 'culture' | tocol: High-copy plasmid DNA from E. coli Start with 1-5 ml [[E. coli LB culture*]][[culture]]*, pellet cells in a microcentrifuge for 30 sec at 11,000 x g",
+   "dev_data/protocol_0: gold Reagent 'PB1 Resuspension Buffer', predicted Reagent 'Resuspension Buffer' | nt and remove as much of the liquid as possible. Add 250 µl [[PB1 Resuspension Buffer]][[Resuspension Buffer]]. Vortex or pipet up and down to resuspend the cell pellet c",
+   "dev_data/protocol_0: gold Reagent 'PB2 Lysis Buffer', predicted Reagent 'Lysis Buffer' | et completely. No cell clumps should be visible. Add 250 µl [[PB2 Lysis Buffer]][[Lysis Buffer]]. Invert the tube 6-8 times to mix completely. Do not vortex",
+   "dev_data/protocol_0: gold Modifier 'completely clear', predicted Modifier 'completely', Modifier 'clear' | in at 11,000 x g at room temperature. If precipitate is not [[completely]][[completely clear]][[clear]] from the lysate, centrifuge again for 5 min at 11,000 x g a",
+   "dev_data/protocol_0: gold Location 'SpinSmart Plasmid Binding Column', predicted Location 'Column' | again for 5 min at 11,000 x g at room temperature. Place a [[SpinSmart Plasmid Binding Column]][[Column]] in a Collection Tube (2 ml) and load a maximum of 750 µl of",
+   "dev_data/protocol_0: gold Modifier 'maximum', predicted Modifier 'maximum of' | asmid Binding Column in a Collection Tube (2 ml) and load a [[maximum]][[maximum of]] 750 µl of the supernatant (from the \"Lysate Clarification\"",
+   "dev_data/protocol_0: gold Location 'SpinSmart Plasmid Binding Column', predicted Location 'Column' | for 1 min at 11,000 x g. Discard flow-through and place the [[SpinSmart Plasmid Binding Column]][[Column]] into the Collection Tube (2 ml). Optional: For host strains"
+  ],
+  "entity/missed": [
+   "dev_data/protocol_0: gold Modifier 'High-copy', predicted nothing | SpinSmart Plasmid Purification Protocol: [[High-copy]] plasmid DNA from E. coli Start with 1-5 ml E. coli LB cultu",
+   "dev_data/protocol_0: gold Reagent 'E. coli', predicted nothing | t Plasmid Purification Protocol: High-copy plasmid DNA from [[E. coli]] Start with 1-5 ml E. coli LB culture*, pellet cells in a mi",
+   "dev_data/protocol_0: gold Action 'Start', predicted nothing | d Purification Protocol: High-copy plasmid DNA from E. coli [[Start]] with 1-5 ml E. coli LB culture*, pellet cells in a microcen",
+   "dev_data/protocol_0: gold Device 'microcentrifuge', predicted nothing | li Start with 1-5 ml E. coli LB culture*, pellet cells in a [[microcentrifuge]] for 30 sec at 11,000 x g. Discard the supernatant and remov",
+   "dev_data/protocol_0: gold Reagent 'PB3 Neutralization Buffe', predicted nothing | e for up to 5 min or until lysate appears clear. Add 300 µl [[PB3 Neutralization Buffe]]r. Invert the tube 6-8 times to mix completely. Do not vorte",
+   "dev_data/protocol_0: gold Method 'Clarification', predicted nothing | ad a maximum of 750 µl of the supernatant (from the \"Lysate [[Clarification]]\" section above) onto the column. Centrifuge for 1 min at 11",
+   "dev_data/protocol_0: gold Reagent 'HB101', predicted nothing | For host strains containing high levels of nucleases (e.g. [[HB101]] or strains of the JM series), perform a wash step with 500",
+   "dev_data/protocol_0: gold Reagent 'JM series', predicted nothing | ning high levels of nucleases (e.g. HB101 or strains of the [[JM series]]), perform a wash step with 500 µl PB4 Wash Buffer pre-warme"
+  ],
+  "entity/wrong_type": [
+   "dev_data/protocol_0: gold Action 'pellet', predicted Reagent 'pellet' | mid DNA from E. coli Start with 1-5 ml E. coli LB culture*, [[pellet]][[pellet]] cells in a microcentrifuge for 30 sec at 11,000 x g. Discar",
+   "dev_data/protocol_0: gold Mention 'liquid', predicted Reagent 'liquid' | ,000 x g. Discard the supernatant and remove as much of the [[liquid]][[liquid]] as possible. Add 250 µl PB1 Resuspension Buffer. Vortex or",
+   "dev_data/protocol_0: gold Numerical '6-8', predicted Amount '6-8' | ld be visible. Add 250 µl PB2 Lysis Buffer. Invert the tube [[6-8]][[6-8]] times to mix completely. Do not vortex!. Incubate at room t",
+   "dev_data/protocol_0: gold Numerical '6-8', predicted Amount '6-8' | lear. Add 300 µl PB3 Neutralization Buffer. Invert the tube [[6-8]][[6-8]] times to mix completely. Do not vortex!. Centrifuge for 5 m",
+   "dev_data/protocol_0: gold Reagent 'precipitate', predicted Action 'precipitate' | Centrifuge for 5 min at 11,000 x g at room temperature. If [[precipitate]][[precipitate]] is not completely clear from the lysate, centrifuge again f",
+   "dev_data/protocol_0: gold Action 'pre-warmed', predicted Modifier 'pre-warmed' | JM series), perform a wash step with 500 µl PB4 Wash Buffer [[pre-warmed]][[pre-warmed]] to 50°C. Centrifuge for 1 min at 11,000 x g before proceedi",
+   "dev_data/protocol_0: gold Modifier 'empty', predicted Action 'empty' | hrough and place the SpinSmart Plasmid Column back into the [[empty]][[empty]] Collection Tube (2 ml). Centrifuge for 2 min at 11,000 x g",
+   "dev_data/protocol_0: gold Size '1.5 ml', predicted Amount '1.5 ml' | ube (2 ml). Place the SpinSmart Plasmid Binding Column in a [[1.5 ml]][[1.5 ml]] microcentrifuge tube (not provided) and add 50 µl PB6 Eluti"
+  ],
+  "entity/wrong_boundary_and_type": [
+   "dev_data/protocol_0: gold Method 'wash step', predicted Action 'wash' | cleases (e.g. HB101 or strains of the JM series), perform a [[wash]][[wash step]] with 500 µl PB4 Wash Buffer pre-warmed to 50°C. Centrifuge",
+   "dev_data/protocol_1: gold Modifier 'unicellular', predicted Reagent 'unicellular protists' | Super simple In vivo Hoechst staining of [[unicellular]][[unicellular protists]] Add 1/1000 Hoechst dye (1 uL into 1 mL volume of cells).Kee",
+   "dev_data/protocol_1: gold Action 'protected', predicted Location 'protected from light' | st dye (1 uL into 1 mL volume of cells).Keep cells with dye [[protected]][[protected from light]]. Incubate at room temperature for 10 minutes.Keep cells wit",
+   "dev_data/protocol_1: gold Action 'protected', predicted Location 'protected from light' | bate at room temperature for 10 minutes.Keep cells with dye [[protected]][[protected from light]]. Centrifuge cells at 1000g for 5 minutes. Resuspend with fr",
+   "dev_data/protocol_1: gold Action 'plate in', predicted Location 'plate' | sh growing medium. Use minimum volume of medium in order to [[plate]][[plate in]] to the slide immediately. Mount your slide and ready for ob",
+   "dev_data/protocol_7: gold Concentration '8.0E6 cells/ml', predicted Reagent 'cells' | al Conjugation) Grow the diatom culture to mid-log phase (≈ [[8.0E6 cells/ml]][[cells]]/ml for Phaeodactylum tricornutum grown on F/2 media or 5.0 E7",
+   "dev_data/protocol_7: gold Measure-Type 'transformation efficiency', predicted Method 'transformation' | r 5.0 E7 cell/ml when grown on BG-11). We have investigated [[transformation]][[transformation efficiency]] throughout the growth curve and found this to be the sweets",
+   "dev_data/protocol_7: gold Time 'On the day of transformation', predicted Method 'transformation' | (We grow them at 37°C at 270 rpm in a shaking incubator.). [[On the day of transformation]][[transformation]], use the overnight culture to inoculate 50 mL of fresh LB+a"
+  ],
+  "relation/missed": [
+   "dev_data/protocol_0: gold Add -Setting-> 250 µl; predicted Add -Acts-on-> Resuspension Buffer; Resuspension Buffer -Measure-> 250 µl | e supernatant and remove as much of the liquid as possible. [[Add]] [[250 µl]] PB1 Resuspension Buffer. Vortex or pipet up and down to res",
+   "dev_data/protocol_0: gold Vortex -Commands-> resuspend; predicted resuspend -Acts-on-> cell pellet | the liquid as possible. Add 250 µl PB1 Resuspension Buffer. [[Vortex]] or pipet up and down to [[resuspend]] the cell pellet completely. No cell clumps should be visibl",
+   "dev_data/protocol_0: gold Vortex -Or-> pipet; predicted nothing | the liquid as possible. Add 250 µl PB1 Resuspension Buffer. [[Vortex]] or [[pipet]] up and down to resuspend the cell pellet completely. No cel",
+   "dev_data/protocol_0: gold pipet -Commands-> resuspend; predicted resuspend -Acts-on-> cell pellet | as possible. Add 250 µl PB1 Resuspension Buffer. Vortex or [[pipet]] up and down to [[resuspend]] the cell pellet completely. No cell clumps should be visibl",
+   "dev_data/protocol_0: gold pipet -Using-> up and down; predicted nothing | as possible. Add 250 µl PB1 Resuspension Buffer. Vortex or [[pipet]] [[up and down]] to resuspend the cell pellet completely. No cell clumps sho",
+   "dev_data/protocol_0: gold Add -Setting-> 250 µl; predicted Add -Acts-on-> Lysis Buffer; Lysis Buffer -Measure-> 250 µl | e cell pellet completely. No cell clumps should be visible. [[Add]] [[250 µl]] PB2 Lysis Buffer. Invert the tube 6-8 times to mix complete",
+   "dev_data/protocol_0: gold Invert -Commands-> mix; predicted Invert -Site-> tube; mix -Mod-Link-> completely | cell clumps should be visible. Add 250 µl PB2 Lysis Buffer. [[Invert]] the tube 6-8 times to [[mix]] completely. Do not vortex!. Incubate at room temperature fo",
+   "dev_data/protocol_0: gold Add -Setting-> 300 µl; predicted nothing | temperature for up to 5 min or until lysate appears clear. [[Add]] [[300 µl]] PB3 Neutralization Buffer. Invert the tube 6-8 times to mix"
+  ],
+  "relation/wrong_attachment": [
+   "dev_data/protocol_0: gold Vortex -Acts-on-> cell pellet; predicted resuspend -Acts-on-> cell pellet; cell pellet -Mod-Link-> completely | the liquid as possible. Add 250 µl PB1 Resuspension Buffer. [[Vortex]] or pipet up and down to resuspend the [[cell pellet]] completely. No cell clumps should be visible. Add 250 µl PB",
+   "dev_data/protocol_0: gold pipet -Acts-on-> cell pellet; predicted resuspend -Acts-on-> cell pellet; cell pellet -Mod-Link-> completely | as possible. Add 250 µl PB1 Resuspension Buffer. Vortex or [[pipet]] up and down to resuspend the [[cell pellet]] completely. No cell clumps should be visible. Add 250 µl PB",
+   "dev_data/protocol_0: gold resuspend -Mod-Link-> completely; predicted resuspend -Acts-on-> cell pellet; cell pellet -Mod-Link-> completely | µl PB1 Resuspension Buffer. Vortex or pipet up and down to [[resuspend]] the cell pellet [[completely]]. No cell clumps should be visible. Add 250 µl PB2 Lysis Buf",
+   "dev_data/protocol_0: gold Place -Site-> Collection Tube; predicted Place -Site-> Column; Collection Tube -Measure-> 2 ml; load -Site-> Collection Tube | ntrifuge again for 5 min at 11,000 x g at room temperature. [[Place]] a SpinSmart Plasmid Binding Column in a [[Collection Tube]] (2 ml) and load a maximum of 750 µl of the supernatant (fro",
+   "dev_data/protocol_0: gold added -Acts-on-> EtOH; predicted make sure -Acts-on-> EtOH | ding with Buffer PB5. Add 600 µl PB5 Wash Buffer (make sure [[EtOH]] has been [[added]]). Centrifuge for 1 min at 11,000 x g. Discard flow-through",
+   "dev_data/protocol_0: gold place -Site-> Collection Tube; predicted empty -Site-> Collection Tube; Collection Tube -Measure-> 2 ml | entrifuge for 1 min at 11,000 x g. Discard flow-through and [[place]] the SpinSmart Plasmid Column back into the empty [[Collection Tube]] (2 ml). Centrifuge for 2 min at 11,000 x g and discard the",
+   "dev_data/protocol_0: gold Centrifuge -Setting-> 11,000 x g; predicted Centrifuge -Setting-> 2 min; discard -Setting-> 11,000 x g | Plasmid Column back into the empty Collection Tube (2 ml). [[Centrifuge]] for 2 min at [[11,000 x g]] and discard the Collection Tube (2 ml). Place the SpinSmart",
+   "dev_data/protocol_0: gold Place -Site-> microcentrifuge tube; predicted Place -Site-> Column; microcentrifuge tube -Measure-> 1.5 ml; add -Site-> microcentrifuge tube | 2 min at 11,000 x g and discard the Collection Tube (2 ml). [[Place]] the SpinSmart Plasmid Binding Column in a 1.5 ml [[microcentrifuge tube]] (not provided) and add 50 µl PB6 Elution Buffer. Incubate f"
+  ],
+  "relation/wrong_label": [
+   "dev_data/protocol_0: gold Invert -Acts-on-> tube; predicted Invert -Site-> tube; tube -Measure-> 6-8 | cell clumps should be visible. Add 250 µl PB2 Lysis Buffer. [[Invert]] the [[tube]] 6-8 times to mix completely. Do not vortex!. Incubate at ro",
+   "dev_data/protocol_0: gold Invert -Acts-on-> tube; predicted Invert -Site-> tube; tube -Measure-> 6-8 | lysate appears clear. Add 300 µl PB3 Neutralization Buffer. [[Invert]] the [[tube]] 6-8 times to mix completely. Do not vortex!. Centrifuge for",
+   "dev_data/protocol_0: gold discard -Acts-on-> Collection Tube; predicted discard -Setting-> 11,000 x g; discard -Site-> Collection Tube; Collection Tube -Measure-> 2 ml | lection Tube (2 ml). Centrifuge for 2 min at 11,000 x g and [[discard]] the [[Collection Tube]] (2 ml). Place the SpinSmart Plasmid Binding Column in a 1.5",
+   "dev_data/protocol_1: gold Add -Site-> cells; predicted Add -Acts-on-> cells; Add -Measure-Type-Link-> volume; cells -Measure-> 1/1000; cells -Measure-> 1 uL; cells -Measure-> 1 mL | per simple In vivo Hoechst staining of unicellular protists [[Add]] 1/1000 Hoechst dye (1 uL into 1 mL volume of [[cells]]).Keep cells with dye protected from light. Incubate at room",
+   "dev_data/protocol_1: gold Mount -Acts-on-> slide; predicted Mount -Site-> slide | me of medium in order to plate in to the slide immediately. [[Mount]] your [[slide]] and ready for observation under microscope.",
+   "dev_data/protocol_7: gold grow -Site-> shaking incubator; predicted grow -Acts-on-> them; grow -Setting-> 37°C; grow -Setting-> 270 rpm; grow -Using-> shaking incubator | rs) in LB+antibiotics, for each planned transformation. (We [[grow]] them at 37°C at 270 rpm in a [[shaking incubator]].). On the day of transformation, use the overnight culture",
+   "dev_data/protocol_7: gold inoculate -Using-> overnight culture; predicted inoculate -Acts-on-> overnight culture; inoculate -Acts-on-> antibiotic; inoculate -Acts-on-> dilution | shaking incubator.). On the day of transformation, use the [[overnight culture]] to [[inoculate]] 50 mL of fresh LB+antibiotic, 1:50 dilution, for each plann",
+   "dev_data/protocol_7: gold mix -Product-> Negative control; predicted mix -Acts-on-> Negative control; mix -Acts-on-> SOC medium; mix -Acts-on-> cells; mix -Site-> tube | coli cells with 200 μl of Phaeodactylum tricornutum cells. [[Negative control]]: In a 1.5 mL tube [[mix]] 200 μl of SOC medium with 200 μl of Phaeodactylum tricornut"
+  ]
+ },
+ "not_automated": [
+  "normalization_error",
+  "unsupported_inference"
+ ],
+ "slices": {
+  "reagent_names": {
+   "seen": {
+    "gold": 2419,
+    "recall": 0.8437
+   },
+   "unseen": {
+    "gold": 1013,
+    "recall": 0.0079
+   }
+  },
+  "template_siblings": {
+   "without": {
+    "gold_relations": 8973,
+    "relation_recall": 0.3211
+   },
+   "with_template_sibling": {
+    "gold_relations": 1092,
+    "relation_recall": 0.4872
+   }
+  }
+ },
+ "source": {
+  "predictions": "artifacts/rules/dev-end_to_end.jsonl",
+  "split": "dev"
+ }
+}
