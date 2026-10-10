@@ -1,0 +1,1299 @@
+{
+ "splits_version": "1",
+ "sources": {
+  "conversion_report_sha256": "8b311274736874a43b3e098ef0f3459f56085d62d27b041f2b046ffae4892197",
+  "corrections_sha256": "244c9e42c881be4f03ce2aacb29517340b54a32840f0fd349df80b9837b3efa9",
+  "corrections": 291
+ },
+ "rules": {
+  "exact": "SHA-256 of whitespace-collapsed text, no case folding",
+  "shingle_words": 5,
+  "same_protocol": "jaccard >= 0.85, or jaccard >= 0.5 with equal normalized titles",
+  "template_sibling": "jaccard >= 0.5, not same protocol",
+  "keeper": "most protected split (test > dev > train), then lowest protocol number"
+ },
+ "splits": {
+  "train": {
+   "path": "data/processed/wnut2020/clean-v1/train.jsonl",
+   "documents": 314,
+   "entities": 40806,
+   "relations": 27214,
+   "sha256": "2dee2f4859e10d7f338afe73da2b1e8eeea3124b6ec46ee7810ca776c52cced3",
+   "doc_ids": [
+    "train_data/protocol_3",
+    "train_data/protocol_4",
+    "train_data/protocol_5",
+    "train_data/protocol_6",
+    "train_data/protocol_9",
+    "train_data/protocol_12",
+    "train_data/protocol_13",
+    "train_data/protocol_14",
+    "train_data/protocol_15",
+    "train_data/protocol_18",
+    "train_data/protocol_19",
+    "train_data/protocol_22",
+    "train_data/protocol_23",
+    "train_data/protocol_24",
+    "train_data/protocol_25",
+    "train_data/protocol_26",
+    "train_data/protocol_29",
+    "train_data/protocol_30",
+    "train_data/protocol_33",
+    "train_data/protocol_34",
+    "train_data/protocol_37",
+    "train_data/protocol_38",
+    "train_data/protocol_39",
+    "train_data/protocol_40",
+    "train_data/protocol_41",
+    "train_data/protocol_42",
+    "train_data/protocol_43",
+    "train_data/protocol_46",
+    "train_data/protocol_52",
+    "train_data/protocol_53",
+    "train_data/protocol_54",
+    "train_data/protocol_55",
+    "train_data/protocol_57",
+    "train_data/protocol_58",
+    "train_data/protocol_59",
+    "train_data/protocol_62",
+    "train_data/protocol_63",
+    "train_data/protocol_64",
+    "train_data/protocol_67",
+    "train_data/protocol_68",
+    "train_data/protocol_73",
+    "train_data/protocol_74",
+    "train_data/protocol_75",
+    "train_data/protocol_76",
+    "train_data/protocol_77",
+    "train_data/protocol_79",
+    "train_data/protocol_84",
+    "train_data/protocol_85",
+    "train_data/protocol_87",
+    "train_data/protocol_90",
+    "train_data/protocol_91",
+    "train_data/protocol_92",
+    "train_data/protocol_93",
+    "train_data/protocol_96",
+    "train_data/protocol_97",
+    "train_data/protocol_99",
+    "train_data/protocol_100",
+    "train_data/protocol_101",
+    "train_data/protocol_104",
+    "train_data/protocol_105",
+    "train_data/protocol_108",
+    "train_data/protocol_109",
+    "train_data/protocol_110",
+    "train_data/protocol_112",
+    "train_data/protocol_114",
+    "train_data/protocol_115",
+    "train_data/protocol_117",
+    "train_data/protocol_118",
+    "train_data/protocol_119",
+    "train_data/protocol_120",
+    "train_data/protocol_126",
+    "train_data/protocol_128",
+    "train_data/protocol_131",
+    "train_data/protocol_133",
+    "train_data/protocol_134",
+    "train_data/protocol_136",
+    "train_data/protocol_137",
+    "train_data/protocol_138",
+    "train_data/protocol_139",
+    "train_data/protocol_140",
+    "train_data/protocol_141",
+    "train_data/protocol_143",
+    "train_data/protocol_144",
+    "train_data/protocol_145",
+    "train_data/protocol_146",
+    "train_data/protocol_149",
+    "train_data/protocol_150",
+    "train_data/protocol_151",
+    "train_data/protocol_152",
+    "train_data/protocol_157",
+    "train_data/protocol_158",
+    "train_data/protocol_159",
+    "train_data/protocol_163",
+    "train_data/protocol_164",
+    "train_data/protocol_169",
+    "train_data/protocol_170",
+    "train_data/protocol_171",
+    "train_data/protocol_175",
+    "train_data/protocol_177",
+    "train_data/protocol_178",
+    "train_data/protocol_180",
+    "train_data/protocol_181",
+    "train_data/protocol_183",
+    "train_data/protocol_184",
+    "train_data/protocol_187",
+    "train_data/protocol_188",
+    "train_data/protocol_189",
+    "train_data/protocol_190",
+    "train_data/protocol_191",
+    "train_data/protocol_193",
+    "train_data/protocol_194",
+    "train_data/protocol_195",
+    "train_data/protocol_198",
+    "train_data/protocol_201",
+    "train_data/protocol_203",
+    "train_data/protocol_205",
+    "train_data/protocol_210",
+    "train_data/protocol_212",
+    "train_data/protocol_215",
+    "train_data/protocol_216",
+    "train_data/protocol_217",
+    "train_data/protocol_218",
+    "train_data/protocol_221",
+    "train_data/protocol_226",
+    "train_data/protocol_227",
+    "train_data/protocol_229",
+    "train_data/protocol_230",
+    "train_data/protocol_232",
+    "train_data/protocol_234",
+    "train_data/protocol_239",
+    "train_data/protocol_240",
+    "train_data/protocol_241",
+    "train_data/protocol_242",
+    "train_data/protocol_243",
+    "train_data/protocol_244",
+    "train_data/protocol_245",
+    "train_data/protocol_249",
+    "train_data/protocol_251",
+    "train_data/protocol_252",
+    "train_data/protocol_256",
+    "train_data/protocol_257",
+    "train_data/protocol_258",
+    "train_data/protocol_262",
+    "train_data/protocol_266",
+    "train_data/protocol_268",
+    "train_data/protocol_269",
+    "train_data/protocol_273",
+    "train_data/protocol_276",
+    "train_data/protocol_279",
+    "train_data/protocol_280",
+    "train_data/protocol_283",
+    "train_data/protocol_284",
+    "train_data/protocol_289",
+    "train_data/protocol_292",
+    "train_data/protocol_293",
+    "train_data/protocol_295",
+    "train_data/protocol_298",
+    "train_data/protocol_299",
+    "train_data/protocol_300",
+    "train_data/protocol_301",
+    "train_data/protocol_304",
+    "train_data/protocol_305",
+    "train_data/protocol_308",
+    "train_data/protocol_309",
+    "train_data/protocol_310",
+    "train_data/protocol_311",
+    "train_data/protocol_315",
+    "train_data/protocol_316",
+    "train_data/protocol_317",
+    "train_data/protocol_318",
+    "train_data/protocol_319",
+    "train_data/protocol_320",
+    "train_data/protocol_321",
+    "train_data/protocol_322",
+    "train_data/protocol_323",
+    "train_data/protocol_326",
+    "train_data/protocol_327",
+    "train_data/protocol_328",
+    "train_data/protocol_332",
+    "train_data/protocol_333",
+    "train_data/protocol_334",
+    "train_data/protocol_335",
+    "train_data/protocol_337",
+    "train_data/protocol_341",
+    "train_data/protocol_343",
+    "train_data/protocol_344",
+    "train_data/protocol_346",
+    "train_data/protocol_349",
+    "train_data/protocol_352",
+    "train_data/protocol_354",
+    "train_data/protocol_355",
+    "train_data/protocol_356",
+    "train_data/protocol_357",
+    "train_data/protocol_358",
+    "train_data/protocol_359",
+    "train_data/protocol_361",
+    "train_data/protocol_362",
+    "train_data/protocol_364",
+    "train_data/protocol_365",
+    "train_data/protocol_368",
+    "train_data/protocol_369",
+    "train_data/protocol_370",
+    "train_data/protocol_371",
+    "train_data/protocol_372",
+    "train_data/protocol_374",
+    "train_data/protocol_375",
+    "train_data/protocol_378",
+    "train_data/protocol_379",
+    "train_data/protocol_383",
+    "train_data/protocol_384",
+    "train_data/protocol_385",
+    "train_data/protocol_386",
+    "train_data/protocol_387",
+    "train_data/protocol_388",
+    "train_data/protocol_390",
+    "train_data/protocol_391",
+    "train_data/protocol_393",
+    "train_data/protocol_394",
+    "train_data/protocol_398",
+    "train_data/protocol_403",
+    "train_data/protocol_406",
+    "train_data/protocol_407",
+    "train_data/protocol_409",
+    "train_data/protocol_410",
+    "train_data/protocol_416",
+    "train_data/protocol_417",
+    "train_data/protocol_418",
+    "train_data/protocol_419",
+    "train_data/protocol_421",
+    "train_data/protocol_422",
+    "train_data/protocol_423",
+    "train_data/protocol_424",
+    "train_data/protocol_426",
+    "train_data/protocol_427",
+    "train_data/protocol_429",
+    "train_data/protocol_430",
+    "train_data/protocol_433",
+    "train_data/protocol_434",
+    "train_data/protocol_436",
+    "train_data/protocol_437",
+    "train_data/protocol_443",
+    "train_data/protocol_446",
+    "train_data/protocol_447",
+    "train_data/protocol_448",
+    "train_data/protocol_450",
+    "train_data/protocol_451",
+    "train_data/protocol_453",
+    "train_data/protocol_458",
+    "train_data/protocol_460",
+    "train_data/protocol_462",
+    "train_data/protocol_463",
+    "train_data/protocol_467",
+    "train_data/protocol_474",
+    "train_data/protocol_475",
+    "train_data/protocol_476",
+    "train_data/protocol_477",
+    "train_data/protocol_478",
+    "train_data/protocol_479",
+    "train_data/protocol_481",
+    "train_data/protocol_485",
+    "train_data/protocol_486",
+    "train_data/protocol_488",
+    "train_data/protocol_490",
+    "train_data/protocol_492",
+    "train_data/protocol_495",
+    "train_data/protocol_497",
+    "train_data/protocol_499",
+    "train_data/protocol_502",
+    "train_data/protocol_505",
+    "train_data/protocol_506",
+    "train_data/protocol_507",
+    "train_data/protocol_508",
+    "train_data/protocol_509",
+    "train_data/protocol_512",
+    "train_data/protocol_514",
+    "train_data/protocol_516",
+    "train_data/protocol_517",
+    "train_data/protocol_519",
+    "train_data/protocol_520",
+    "train_data/protocol_521",
+    "train_data/protocol_522",
+    "train_data/protocol_523",
+    "train_data/protocol_526",
+    "train_data/protocol_528",
+    "train_data/protocol_529",
+    "train_data/protocol_531",
+    "train_data/protocol_533",
+    "train_data/protocol_534",
+    "train_data/protocol_536",
+    "train_data/protocol_537",
+    "train_data/protocol_539",
+    "train_data/protocol_540",
+    "train_data/protocol_541",
+    "train_data/protocol_542",
+    "train_data/protocol_545",
+    "train_data/protocol_549",
+    "train_data/protocol_550",
+    "train_data/protocol_551",
+    "train_data/protocol_553",
+    "train_data/protocol_558",
+    "train_data/protocol_560",
+    "train_data/protocol_566",
+    "train_data/protocol_567",
+    "train_data/protocol_568",
+    "train_data/protocol_570",
+    "train_data/protocol_576",
+    "train_data/protocol_581",
+    "train_data/protocol_582",
+    "train_data/protocol_597",
+    "train_data/protocol_599",
+    "train_data/protocol_600",
+    "train_data/protocol_603",
+    "train_data/protocol_605",
+    "train_data/protocol_612"
+   ]
+  },
+  "dev": {
+   "path": "data/processed/wnut2020/clean-v1/dev.jsonl",
+   "documents": 112,
+   "entities": 14936,
+   "relations": 10065,
+   "sha256": "508b4c8f4698cfa9286c97a9bd9040950627f33a84082216e3b491dfa9aeb1bc",
+   "doc_ids": [
+    "dev_data/protocol_0",
+    "dev_data/protocol_1",
+    "dev_data/protocol_7",
+    "dev_data/protocol_10",
+    "dev_data/protocol_11",
+    "dev_data/protocol_16",
+    "dev_data/protocol_27",
+    "dev_data/protocol_28",
+    "dev_data/protocol_31",
+    "dev_data/protocol_36",
+    "dev_data/protocol_56",
+    "dev_data/protocol_61",
+    "dev_data/protocol_65",
+    "dev_data/protocol_66",
+    "dev_data/protocol_81",
+    "dev_data/protocol_89",
+    "dev_data/protocol_95",
+    "dev_data/protocol_102",
+    "dev_data/protocol_107",
+    "dev_data/protocol_111",
+    "dev_data/protocol_113",
+    "dev_data/protocol_116",
+    "dev_data/protocol_121",
+    "dev_data/protocol_123",
+    "dev_data/protocol_124",
+    "dev_data/protocol_125",
+    "dev_data/protocol_127",
+    "dev_data/protocol_129",
+    "dev_data/protocol_130",
+    "dev_data/protocol_142",
+    "dev_data/protocol_147",
+    "dev_data/protocol_148",
+    "dev_data/protocol_153",
+    "dev_data/protocol_154",
+    "dev_data/protocol_160",
+    "dev_data/protocol_162",
+    "dev_data/protocol_167",
+    "dev_data/protocol_172",
+    "dev_data/protocol_174",
+    "dev_data/protocol_185",
+    "dev_data/protocol_186",
+    "dev_data/protocol_199",
+    "dev_data/protocol_202",
+    "dev_data/protocol_204",
+    "dev_data/protocol_206",
+    "dev_data/protocol_211",
+    "dev_data/protocol_213",
+    "dev_data/protocol_214",
+    "dev_data/protocol_219",
+    "dev_data/protocol_237",
+    "dev_data/protocol_246",
+    "dev_data/protocol_248",
+    "dev_data/protocol_250",
+    "dev_data/protocol_259",
+    "dev_data/protocol_260",
+    "dev_data/protocol_264",
+    "dev_data/protocol_267",
+    "dev_data/protocol_270",
+    "dev_data/protocol_271",
+    "dev_data/protocol_285",
+    "dev_data/protocol_287",
+    "dev_data/protocol_290",
+    "dev_data/protocol_296",
+    "dev_data/protocol_306",
+    "dev_data/protocol_312",
+    "dev_data/protocol_325",
+    "dev_data/protocol_336",
+    "dev_data/protocol_340",
+    "dev_data/protocol_342",
+    "dev_data/protocol_353",
+    "dev_data/protocol_360",
+    "dev_data/protocol_377",
+    "dev_data/protocol_381",
+    "dev_data/protocol_382",
+    "dev_data/protocol_389",
+    "dev_data/protocol_395",
+    "dev_data/protocol_396",
+    "dev_data/protocol_404",
+    "dev_data/protocol_411",
+    "dev_data/protocol_414",
+    "dev_data/protocol_425",
+    "dev_data/protocol_428",
+    "dev_data/protocol_431",
+    "dev_data/protocol_435",
+    "dev_data/protocol_439",
+    "dev_data/protocol_440",
+    "dev_data/protocol_441",
+    "dev_data/protocol_442",
+    "dev_data/protocol_444",
+    "dev_data/protocol_454",
+    "dev_data/protocol_469",
+    "dev_data/protocol_487",
+    "dev_data/protocol_489",
+    "dev_data/protocol_503",
+    "dev_data/protocol_504",
+    "dev_data/protocol_532",
+    "dev_data/protocol_535",
+    "dev_data/protocol_543",
+    "dev_data/protocol_552",
+    "dev_data/protocol_557",
+    "dev_data/protocol_559",
+    "dev_data/protocol_572",
+    "dev_data/protocol_575",
+    "dev_data/protocol_577",
+    "dev_data/protocol_580",
+    "dev_data/protocol_583",
+    "dev_data/protocol_586",
+    "dev_data/protocol_592",
+    "dev_data/protocol_596",
+    "dev_data/protocol_606",
+    "dev_data/protocol_617",
+    "dev_data/protocol_620"
+   ]
+  },
+  "test": {
+   "path": "data/processed/wnut2020/clean-v1/test.jsonl",
+   "documents": 111,
+   "entities": 23995,
+   "relations": 16378,
+   "sha256": "d1e3f7a8f9620c4cea4b5cf07a2180ae08fd0f7ef30dcf329ed40363b0d40fe7",
+   "doc_ids": [
+    "test_data_2020/protocol_0623",
+    "test_data_2020/protocol_0624",
+    "test_data_2020/protocol_0625",
+    "test_data_2020/protocol_0626",
+    "test_data_2020/protocol_0627",
+    "test_data_2020/protocol_0628",
+    "test_data_2020/protocol_0629",
+    "test_data_2020/protocol_0630",
+    "test_data_2020/protocol_0631",
+    "test_data_2020/protocol_0632",
+    "test_data_2020/protocol_0633",
+    "test_data_2020/protocol_0634",
+    "test_data_2020/protocol_0635",
+    "test_data_2020/protocol_0636",
+    "test_data_2020/protocol_0637",
+    "test_data_2020/protocol_0638",
+    "test_data_2020/protocol_0639",
+    "test_data_2020/protocol_0640",
+    "test_data_2020/protocol_0641",
+    "test_data_2020/protocol_0642",
+    "test_data_2020/protocol_0643",
+    "test_data_2020/protocol_0644",
+    "test_data_2020/protocol_0645",
+    "test_data_2020/protocol_0646",
+    "test_data_2020/protocol_0647",
+    "test_data_2020/protocol_0648",
+    "test_data_2020/protocol_0649",
+    "test_data_2020/protocol_0650",
+    "test_data_2020/protocol_0652",
+    "test_data_2020/protocol_0653",
+    "test_data_2020/protocol_0654",
+    "test_data_2020/protocol_0655",
+    "test_data_2020/protocol_0656",
+    "test_data_2020/protocol_0657",
+    "test_data_2020/protocol_0658",
+    "test_data_2020/protocol_0659",
+    "test_data_2020/protocol_0660",
+    "test_data_2020/protocol_0661",
+    "test_data_2020/protocol_0662",
+    "test_data_2020/protocol_0663",
+    "test_data_2020/protocol_0664",
+    "test_data_2020/protocol_0665",
+    "test_data_2020/protocol_0666",
+    "test_data_2020/protocol_0667",
+    "test_data_2020/protocol_0668",
+    "test_data_2020/protocol_0669",
+    "test_data_2020/protocol_0670",
+    "test_data_2020/protocol_0671",
+    "test_data_2020/protocol_0672",
+    "test_data_2020/protocol_0673",
+    "test_data_2020/protocol_0674",
+    "test_data_2020/protocol_0675",
+    "test_data_2020/protocol_0676",
+    "test_data_2020/protocol_0677",
+    "test_data_2020/protocol_0678",
+    "test_data_2020/protocol_0679",
+    "test_data_2020/protocol_0680",
+    "test_data_2020/protocol_0682",
+    "test_data_2020/protocol_0683",
+    "test_data_2020/protocol_0684",
+    "test_data_2020/protocol_0685",
+    "test_data_2020/protocol_0686",
+    "test_data_2020/protocol_0687",
+    "test_data_2020/protocol_0688",
+    "test_data_2020/protocol_0689",
+    "test_data_2020/protocol_0690",
+    "test_data_2020/protocol_0691",
+    "test_data_2020/protocol_0692",
+    "test_data_2020/protocol_0693",
+    "test_data_2020/protocol_0694",
+    "test_data_2020/protocol_0695",
+    "test_data_2020/protocol_0696",
+    "test_data_2020/protocol_0697",
+    "test_data_2020/protocol_0698",
+    "test_data_2020/protocol_0699",
+    "test_data_2020/protocol_0700",
+    "test_data_2020/protocol_0701",
+    "test_data_2020/protocol_0702",
+    "test_data_2020/protocol_0703",
+    "test_data_2020/protocol_0704",
+    "test_data_2020/protocol_0705",
+    "test_data_2020/protocol_0706",
+    "test_data_2020/protocol_0707",
+    "test_data_2020/protocol_0708",
+    "test_data_2020/protocol_0709",
+    "test_data_2020/protocol_0710",
+    "test_data_2020/protocol_0711",
+    "test_data_2020/protocol_0712",
+    "test_data_2020/protocol_0713",
+    "test_data_2020/protocol_0714",
+    "test_data_2020/protocol_0715",
+    "test_data_2020/protocol_0716",
+    "test_data_2020/protocol_0717",
+    "test_data_2020/protocol_0718",
+    "test_data_2020/protocol_0719",
+    "test_data_2020/protocol_0720",
+    "test_data_2020/protocol_0721",
+    "test_data_2020/protocol_0722",
+    "test_data_2020/protocol_0863",
+    "test_data_2020/protocol_0864",
+    "test_data_2020/protocol_17504",
+    "test_data_2020/protocol_19444",
+    "test_data_2020/protocol_22847",
+    "test_data_2020/protocol_23000",
+    "test_data_2020/protocol_23031",
+    "test_data_2020/protocol_30296",
+    "test_data_2020/protocol_32148",
+    "test_data_2020/protocol_32916",
+    "test_data_2020/protocol_33630",
+    "test_data_2020/protocol_34278",
+    "test_data_2020/protocol_45504"
+   ]
+  }
+ },
+ "excluded": [
+  {
+   "doc_id": "dev_data/protocol_8",
+   "split": "dev",
+   "kept": "test_data_2020/protocol_0628",
+   "kept_split": "test",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "dev_data/protocol_313",
+   "split": "dev",
+   "kept": "dev_data/protocol_66",
+   "kept_split": "dev",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "dev_data/protocol_445",
+   "split": "dev",
+   "kept": "dev_data/protocol_36",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "dev_data/protocol_470",
+   "split": "dev",
+   "kept": "dev_data/protocol_56",
+   "kept_split": "dev",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "dev_data/protocol_524",
+   "split": "dev",
+   "kept": "dev_data/protocol_442",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "dev_data/protocol_584",
+   "split": "dev",
+   "kept": "dev_data/protocol_111",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "dev_data/protocol_593",
+   "split": "dev",
+   "kept": "dev_data/protocol_559",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "dev_data/protocol_604",
+   "split": "dev",
+   "kept": "dev_data/protocol_552",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "dev_data/protocol_613",
+   "split": "dev",
+   "kept": "dev_data/protocol_580",
+   "kept_split": "dev",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "dev_data/protocol_614",
+   "split": "dev",
+   "kept": "dev_data/protocol_572",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_94",
+   "split": "train",
+   "kept": "train_data/protocol_55",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_135",
+   "split": "train",
+   "kept": "train_data/protocol_34",
+   "kept_split": "train",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_155",
+   "split": "train",
+   "kept": "train_data/protocol_58",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_197",
+   "split": "train",
+   "kept": "train_data/protocol_42",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_208",
+   "split": "train",
+   "kept": "train_data/protocol_63",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_209",
+   "split": "train",
+   "kept": "train_data/protocol_58",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_274",
+   "split": "train",
+   "kept": "train_data/protocol_68",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_286",
+   "split": "train",
+   "kept": "train_data/protocol_43",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_297",
+   "split": "train",
+   "kept": "train_data/protocol_54",
+   "kept_split": "train",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_324",
+   "split": "train",
+   "kept": "train_data/protocol_3",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_329",
+   "split": "train",
+   "kept": "dev_data/protocol_435",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_339",
+   "split": "train",
+   "kept": "train_data/protocol_38",
+   "kept_split": "train",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_347",
+   "split": "train",
+   "kept": "train_data/protocol_46",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_350",
+   "split": "train",
+   "kept": "dev_data/protocol_107",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_363",
+   "split": "train",
+   "kept": "train_data/protocol_4",
+   "kept_split": "train",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_392",
+   "split": "train",
+   "kept": "train_data/protocol_33",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_400",
+   "split": "train",
+   "kept": "train_data/protocol_41",
+   "kept_split": "train",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_401",
+   "split": "train",
+   "kept": "train_data/protocol_234",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_405",
+   "split": "train",
+   "kept": "dev_data/protocol_65",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_412",
+   "split": "train",
+   "kept": "train_data/protocol_46",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_413",
+   "split": "train",
+   "kept": "train_data/protocol_57",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_415",
+   "split": "train",
+   "kept": "train_data/protocol_62",
+   "kept_split": "train",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_438",
+   "split": "train",
+   "kept": "train_data/protocol_40",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_449",
+   "split": "train",
+   "kept": "dev_data/protocol_31",
+   "kept_split": "dev",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_452",
+   "split": "train",
+   "kept": "train_data/protocol_37",
+   "kept_split": "train",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_456",
+   "split": "train",
+   "kept": "train_data/protocol_64",
+   "kept_split": "train",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_457",
+   "split": "train",
+   "kept": "train_data/protocol_242",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_472",
+   "split": "train",
+   "kept": "dev_data/protocol_61",
+   "kept_split": "dev",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_494",
+   "split": "train",
+   "kept": "train_data/protocol_488",
+   "kept_split": "train",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_500",
+   "split": "train",
+   "kept": "train_data/protocol_29",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_544",
+   "split": "train",
+   "kept": "dev_data/protocol_586",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_546",
+   "split": "train",
+   "kept": "train_data/protocol_536",
+   "kept_split": "train",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_548",
+   "split": "train",
+   "kept": "train_data/protocol_539",
+   "kept_split": "train",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_555",
+   "split": "train",
+   "kept": "train_data/protocol_550",
+   "kept_split": "train",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_556",
+   "split": "train",
+   "kept": "train_data/protocol_551",
+   "kept_split": "train",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_561",
+   "split": "train",
+   "kept": "dev_data/protocol_596",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_564",
+   "split": "train",
+   "kept": "dev_data/protocol_592",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_569",
+   "split": "train",
+   "kept": "dev_data/protocol_620",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_573",
+   "split": "train",
+   "kept": "dev_data/protocol_617",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_574",
+   "split": "train",
+   "kept": "dev_data/protocol_606",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_579",
+   "split": "train",
+   "kept": "train_data/protocol_9",
+   "kept_split": "train",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_588",
+   "split": "train",
+   "kept": "train_data/protocol_539",
+   "kept_split": "train",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_590",
+   "split": "train",
+   "kept": "train_data/protocol_550",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_591",
+   "split": "train",
+   "kept": "train_data/protocol_551",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_595",
+   "split": "train",
+   "kept": "train_data/protocol_560",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_598",
+   "split": "train",
+   "kept": "train_data/protocol_553",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_601",
+   "split": "train",
+   "kept": "train_data/protocol_566",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_602",
+   "split": "train",
+   "kept": "dev_data/protocol_557",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_607",
+   "split": "train",
+   "kept": "train_data/protocol_581",
+   "kept_split": "train",
+   "reason": "exact_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_609",
+   "split": "train",
+   "kept": "train_data/protocol_576",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_610",
+   "split": "train",
+   "kept": "dev_data/protocol_577",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_611",
+   "split": "train",
+   "kept": "train_data/protocol_567",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_615",
+   "split": "train",
+   "kept": "train_data/protocol_582",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_618",
+   "split": "train",
+   "kept": "dev_data/protocol_111",
+   "kept_split": "dev",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_619",
+   "split": "train",
+   "kept": "train_data/protocol_568",
+   "kept_split": "train",
+   "reason": "near_duplicate"
+  },
+  {
+   "doc_id": "train_data/protocol_622",
+   "split": "train",
+   "kept": "train_data/protocol_9",
+   "kept_split": "train",
+   "reason": "exact_duplicate"
+  }
+ ],
+ "template_siblings": {
+  "dev_data/protocol_142": [
+   {
+    "doc_id": "train_data/protocol_394",
+    "split": "train",
+    "jaccard": 0.543
+   }
+  ],
+  "dev_data/protocol_148": [
+   {
+    "doc_id": "train_data/protocol_55",
+    "split": "train",
+    "jaccard": 0.5418
+   }
+  ],
+  "dev_data/protocol_174": [
+   {
+    "doc_id": "train_data/protocol_119",
+    "split": "train",
+    "jaccard": 0.6175
+   },
+   {
+    "doc_id": "train_data/protocol_126",
+    "split": "train",
+    "jaccard": 0.7627
+   },
+   {
+    "doc_id": "train_data/protocol_526",
+    "split": "train",
+    "jaccard": 0.5222
+   }
+  ],
+  "dev_data/protocol_186": [
+   {
+    "doc_id": "train_data/protocol_100",
+    "split": "train",
+    "jaccard": 0.6425
+   },
+   {
+    "doc_id": "train_data/protocol_242",
+    "split": "train",
+    "jaccard": 0.7808
+   },
+   {
+    "doc_id": "train_data/protocol_273",
+    "split": "train",
+    "jaccard": 0.5255
+   },
+   {
+    "doc_id": "train_data/protocol_332",
+    "split": "train",
+    "jaccard": 0.5884
+   },
+   {
+    "doc_id": "train_data/protocol_384",
+    "split": "train",
+    "jaccard": 0.5374
+   },
+   {
+    "doc_id": "train_data/protocol_406",
+    "split": "train",
+    "jaccard": 0.5624
+   },
+   {
+    "doc_id": "train_data/protocol_539",
+    "split": "train",
+    "jaccard": 0.5057
+   },
+   {
+    "doc_id": "train_data/protocol_54",
+    "split": "train",
+    "jaccard": 0.6755
+   }
+  ],
+  "dev_data/protocol_219": [
+   {
+    "doc_id": "train_data/protocol_100",
+    "split": "train",
+    "jaccard": 0.6611
+   },
+   {
+    "doc_id": "train_data/protocol_242",
+    "split": "train",
+    "jaccard": 0.8074
+   },
+   {
+    "doc_id": "train_data/protocol_273",
+    "split": "train",
+    "jaccard": 0.5414
+   },
+   {
+    "doc_id": "train_data/protocol_332",
+    "split": "train",
+    "jaccard": 0.6034
+   },
+   {
+    "doc_id": "train_data/protocol_384",
+    "split": "train",
+    "jaccard": 0.552
+   },
+   {
+    "doc_id": "train_data/protocol_406",
+    "split": "train",
+    "jaccard": 0.5765
+   },
+   {
+    "doc_id": "train_data/protocol_539",
+    "split": "train",
+    "jaccard": 0.5198
+   },
+   {
+    "doc_id": "train_data/protocol_54",
+    "split": "train",
+    "jaccard": 0.6958
+   }
+  ],
+  "dev_data/protocol_237": [
+   {
+    "doc_id": "train_data/protocol_14",
+    "split": "train",
+    "jaccard": 0.7347
+   }
+  ],
+  "dev_data/protocol_287": [
+   {
+    "doc_id": "train_data/protocol_232",
+    "split": "train",
+    "jaccard": 0.7133
+   },
+   {
+    "doc_id": "train_data/protocol_364",
+    "split": "train",
+    "jaccard": 0.7335
+   },
+   {
+    "doc_id": "train_data/protocol_576",
+    "split": "train",
+    "jaccard": 0.7153
+   }
+  ],
+  "dev_data/protocol_382": [
+   {
+    "doc_id": "train_data/protocol_184",
+    "split": "train",
+    "jaccard": 0.84
+   }
+  ],
+  "dev_data/protocol_396": [
+   {
+    "doc_id": "train_data/protocol_321",
+    "split": "train",
+    "jaccard": 0.5918
+   }
+  ],
+  "dev_data/protocol_428": [
+   {
+    "doc_id": "train_data/protocol_364",
+    "split": "train",
+    "jaccard": 0.5083
+   },
+   {
+    "doc_id": "train_data/protocol_576",
+    "split": "train",
+    "jaccard": 0.5246
+   }
+  ],
+  "dev_data/protocol_439": [
+   {
+    "doc_id": "train_data/protocol_100",
+    "split": "train",
+    "jaccard": 0.6004
+   },
+   {
+    "doc_id": "train_data/protocol_242",
+    "split": "train",
+    "jaccard": 0.7172
+   },
+   {
+    "doc_id": "train_data/protocol_332",
+    "split": "train",
+    "jaccard": 0.5569
+   },
+   {
+    "doc_id": "train_data/protocol_384",
+    "split": "train",
+    "jaccard": 0.5072
+   },
+   {
+    "doc_id": "train_data/protocol_406",
+    "split": "train",
+    "jaccard": 0.5328
+   },
+   {
+    "doc_id": "train_data/protocol_54",
+    "split": "train",
+    "jaccard": 0.6335
+   }
+  ],
+  "dev_data/protocol_617": [
+   {
+    "doc_id": "train_data/protocol_119",
+    "split": "train",
+    "jaccard": 0.8313
+   },
+   {
+    "doc_id": "train_data/protocol_126",
+    "split": "train",
+    "jaccard": 0.5222
+   },
+   {
+    "doc_id": "train_data/protocol_453",
+    "split": "train",
+    "jaccard": 0.5765
+   },
+   {
+    "doc_id": "train_data/protocol_526",
+    "split": "train",
+    "jaccard": 0.7586
+   }
+  ],
+  "dev_data/protocol_66": [
+   {
+    "doc_id": "train_data/protocol_256",
+    "split": "train",
+    "jaccard": 0.6487
+   },
+   {
+    "doc_id": "train_data/protocol_368",
+    "split": "train",
+    "jaccard": 0.5338
+   }
+  ],
+  "test_data_2020/protocol_0659": [
+   {
+    "doc_id": "train_data/protocol_509",
+    "split": "train",
+    "jaccard": 0.7143
+   }
+  ],
+  "test_data_2020/protocol_0675": [
+   {
+    "doc_id": "train_data/protocol_55",
+    "split": "train",
+    "jaccard": 0.5318
+   }
+  ],
+  "test_data_2020/protocol_0677": [
+   {
+    "doc_id": "dev_data/protocol_7",
+    "split": "dev",
+    "jaccard": 0.6179
+   }
+  ]
+ }
+}

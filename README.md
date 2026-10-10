@@ -12,7 +12,7 @@
   <img alt="Python 3.12" src="https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white">
   <a href="https://github.com/astral-sh/ruff"><img alt="Ruff" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json"></a>
   <img alt="mypy: strict" src="https://img.shields.io/badge/mypy-strict-2a6db2">
-  <img alt="Status: Phase 1, data audit" src="https://img.shields.io/badge/status-phase%201%20%C2%B7%20data%20audit-f5a524">
+  <img alt="Status: Phase 2, baselines" src="https://img.shields.io/badge/status-phase%202%20%C2%B7%20baselines-f5a524">
 </p>
 
 <p align="center">
@@ -70,9 +70,9 @@ flowchart LR
   classDef done fill:#d1fae5,stroke:#059669,color:#064e3b
   classDef wip fill:#fef3c7,stroke:#d97706,color:#78350f
   classDef planned fill:#f1f5f9,stroke:#94a3b8,color:#334155
-  class A done
-  class B wip
-  class R,C,D,E,F,G,H,I,J,K planned
+  class A,B done
+  class C wip
+  class R,D,E,F,G,H,I,J,K planned
 ```
 
 <sub>🟩 built · 🟨 in progress · ⬜ planned</sub>
@@ -121,8 +121,8 @@ That makes **directed relation extraction** the central technical challenge, and
 |---|---|
 | Pinned corpus acquisition with per-file hash manifest | ✅ Done |
 | BRAT → canonical graph converter and validator | ✅ Done |
-| Exact and near-duplicate audit, frozen split manifest | 🚧 In progress |
-| Rule-based and CRF / logistic-regression baselines | ⬜ Planned |
+| Correction ledger, exact and near-duplicate audit, frozen splits | ✅ Done |
+| Rule-based and CRF / logistic-regression baselines | 🚧 Next |
 | BERT / SciBERT span-and-relation model | ⬜ Planned |
 | Calibration, error analysis, challenge set | ⬜ Planned |
 | FastAPI service, review interface, exports | ⬜ Planned |
@@ -147,6 +147,9 @@ uv run python scripts/acquire.py --verify
 # Convert BRAT annotations into validated canonical graphs (JSONL) and a conversion report
 uv run python scripts/convert.py
 
+# Apply the correction ledger, deduplicate, and build the frozen train/dev/test splits
+uv run python scripts/build_splits.py
+
 # Tests (no network needed) and static checks
 uv run pytest -m "not slow"
 uv run ruff check && uv run ruff format --check && uv run mypy src/
@@ -159,15 +162,20 @@ The corpus is the **WNUT-2020 Wet Lab Protocol corpus**
 [`9a02914`](https://github.com/jeniyat/WNUT_2020_NER/tree/9a02914e00f0a16c0c6820c4285dd72403a5a5a8).
 Only the original BRAT standoff directories are used:
 
-| Split | Directory | Protocols | Entities | Relations¹ |
-|---|---|---:|---:|---:|
-| Train | `data/train_data/Standoff_Format` | 370 | 48,197 | 32,158 |
-| Dev | `data/dev_data/Standoff_Format` | 122 | 15,972 | 10,812 |
-| Test | `data/test_data_2020/Standoff_Format` | 111 | 23,995 | 16,379 |
+| Split | Directory | Released | Entities | Relations¹ | **Cleaned** | Entities | Relations² |
+|---|---|---:|---:|---:|---:|---:|---:|
+| Train | `data/train_data/Standoff_Format` | 370 | 48,197 | 32,158 | **314** | 40,806 | 27,214 |
+| Dev | `data/dev_data/Standoff_Format` | 122 | 15,972 | 10,812 | **112** | 14,936 | 10,065 |
+| Test | `data/test_data_2020/Standoff_Format` | 111 | 23,995 | 16,379 | **111** | 23,995 | 16,378 |
 
-<sub>¹ Event arguments plus relation records, before merging the 3 exact duplicate
-triples. The converter reproduces every count and per-label total of the pre-project
-audit; see <code>data/manifests/conversion_report.json</code>.</sub>
+<sub>¹ Event arguments plus relation records as released; the converter reproduces
+every count and per-label total of the pre-project audit. ² Unique
+<code>(head, label, tail)</code> triples after deduplication and corrections. Full
+details in the <a href="docs/dataset_card.md">dataset card</a>.</sub>
+
+The cleaned test split is the released `test_data_2020` with only ledger corrections
+applied. Cleaned scores are **not directly comparable** with published WNUT-2020
+results, which used the splits with duplicates.
 
 The annotations cover **18 entity types** (Action, Reagent, Amount, Location, Device,
 Time, Temperature, …) and **14 relation types** (Acts-on, Measure, Setting, Site,
@@ -187,16 +195,28 @@ the report. Nothing is dropped silently.
 
 | Finding | Count | Handling |
 |---|---:|---|
-| Exact duplicate texts (whitespace-normalized) | 603 files → 581 unique | deduplication audit (next) |
-| …of which cross train/dev | 2 groups | training copies to be removed |
-| Entity spans with leading/trailing whitespace (mostly NBSP) | 291 (202 in test) | flagged; evaluation policy via correction ledger |
+| Copies and revisions of the same protocol (exact + near-duplicate) | 66 extra documents | one kept per protocol, in the most protected split |
+| …crossing train → dev / dev → test | 14 / 1 | training (dev) copy removed; test never reduced |
+| Entity spans with leading/trailing whitespace (mostly NBSP) | 291 (202 in test) | trimmed via the correction ledger, all splits |
 | Action spans without an event record | 33 | kept, flagged |
 | Duplicate relation records | 3 | merged, origins kept |
 | Entity pairs with more than one relation label | 2 | kept (multilabel) |
 | Stored surface text ≠ offset slice | 1 | offsets authoritative |
 | Legacy `test_data/` without relation records | whole folder | not used |
 
-Cleaned split sizes will be published once deduplication is final.
+**Duplicate-copy agreement.** Sixteen byte-identical texts were annotated twice in the
+release. The two copies agree at **entity F1 0.863** and **relation F1 0.711**, which is
+a useful reference for how much any model can agree with a single gold copy.
+
+### Deduplication
+
+Copies are found with whitespace-normalized hashes, and re-segmented copies and
+revisions with 5-word-shingle Jaccard similarity. Two documents count as the same
+protocol at Jaccard ≥ 0.85, or at ≥ 0.5 with an identical title. Each protocol keeps one
+document in the most protected split (test > dev > train). Template siblings, such as
+one vendor kit adapted per tissue, are distinct documents. They are kept and recorded so
+evaluation can report them as a slice. The rules, threshold evidence and every decision
+are in the [dataset card](docs/dataset_card.md) and `data/manifests/dedup_report.json`.
 
 `data/manifests/acquisition.json` records the SHA-256 of every selected file. These
 per-file hashes are authoritative. GitHub generates archives on demand, so the archive
@@ -236,7 +256,7 @@ perturbations, a challenge set and recently published protocols.
 ## Roadmap
 
 - [x] **Phase 0:** project skeleton, CI, pinned corpus acquisition
-- [ ] **Phase 1:** annotation converter, validation, duplicate audit, frozen splits
+- [x] **Phase 1:** annotation converter, validation, duplicate audit, frozen splits
 - [ ] **Phase 2:** rule-based and CRF / logistic baselines, thin end-to-end app
 - [ ] **Phase 3:** BERT / SciBERT span-and-relation model with ablations
 - [ ] **Phase 4:** error analysis, calibration, fresh annotations and challenge set
@@ -249,16 +269,24 @@ perturbations, a challenge set and recently published protocols.
 ```text
 ProtocolLedger/
 ├── data/manifests/
-│   ├── acquisition.json   # committed: per-file SHA-256 of the pinned corpus
-│   └── conversion_report.json  # committed: counts, labels, issues, output hashes
-├── docs/assets/           # README artwork
+│   ├── acquisition.json         # per-file SHA-256 of the pinned corpus
+│   ├── conversion_report.json   # counts, labels, issues, output hashes
+│   ├── corrections.jsonl        # correction ledger (before/after for every change)
+│   ├── dedup_report.json        # duplicate evidence and duplicate-copy agreement
+│   └── splits.json              # frozen train/dev/test document lists and hashes
+├── docs/
+│   ├── assets/            # README artwork
+│   └── dataset_card.md    # sources, conversion, corrections, deduplication, splits
 ├── scripts/
 │   ├── acquire.py         # fetch and verify the pinned corpus
-│   └── convert.py         # BRAT → canonical JSONL graphs + conversion report
+│   ├── convert.py         # BRAT → canonical JSONL graphs + conversion report
+│   └── build_splits.py    # correction ledger, deduplication, frozen splits
 ├── src/protocolledger/data/
 │   ├── acquire.py         # download, safe extraction, manifest verification
 │   ├── brat.py            # strict BRAT standoff parser
 │   ├── convert.py         # event resolution, validation, canonical graphs
+│   ├── corrections.py     # correction ledger rules and application
+│   ├── dedup.py           # exact / near-duplicate detection, split resolution
 │   └── schema.py          # 18 entity labels, 14 relation labels, role normalization
 └── tests/                 # unit tests (no network)
 ```

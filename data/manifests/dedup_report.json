@@ -1,0 +1,2478 @@
+{
+ "rules": {
+  "exact": "SHA-256 of whitespace-collapsed text, no case folding",
+  "shingle_words": 5,
+  "same_protocol": "jaccard >= 0.85, or jaccard >= 0.5 with equal normalized titles",
+  "template_sibling": "jaccard >= 0.5, not same protocol",
+  "keeper": "most protected split (test > dev > train), then lowest protocol number"
+ },
+ "documents": 603,
+ "unique_whitespace_normalized_texts": 581,
+ "same_protocol_components": [
+  [
+   "dev_data/protocol_107",
+   "train_data/protocol_350"
+  ],
+  [
+   "dev_data/protocol_111",
+   "dev_data/protocol_584",
+   "train_data/protocol_618"
+  ],
+  [
+   "dev_data/protocol_31",
+   "train_data/protocol_449"
+  ],
+  [
+   "dev_data/protocol_313",
+   "dev_data/protocol_66"
+  ],
+  [
+   "dev_data/protocol_36",
+   "dev_data/protocol_445"
+  ],
+  [
+   "dev_data/protocol_435",
+   "train_data/protocol_329"
+  ],
+  [
+   "dev_data/protocol_442",
+   "dev_data/protocol_524"
+  ],
+  [
+   "dev_data/protocol_470",
+   "dev_data/protocol_56"
+  ],
+  [
+   "dev_data/protocol_552",
+   "dev_data/protocol_604"
+  ],
+  [
+   "dev_data/protocol_557",
+   "train_data/protocol_602"
+  ],
+  [
+   "dev_data/protocol_559",
+   "dev_data/protocol_593"
+  ],
+  [
+   "dev_data/protocol_572",
+   "dev_data/protocol_614"
+  ],
+  [
+   "dev_data/protocol_577",
+   "train_data/protocol_610"
+  ],
+  [
+   "dev_data/protocol_580",
+   "dev_data/protocol_613"
+  ],
+  [
+   "dev_data/protocol_586",
+   "train_data/protocol_544"
+  ],
+  [
+   "dev_data/protocol_592",
+   "train_data/protocol_564"
+  ],
+  [
+   "dev_data/protocol_596",
+   "train_data/protocol_561"
+  ],
+  [
+   "dev_data/protocol_606",
+   "train_data/protocol_574"
+  ],
+  [
+   "dev_data/protocol_61",
+   "train_data/protocol_472"
+  ],
+  [
+   "dev_data/protocol_617",
+   "train_data/protocol_573"
+  ],
+  [
+   "dev_data/protocol_620",
+   "train_data/protocol_569"
+  ],
+  [
+   "dev_data/protocol_65",
+   "train_data/protocol_405"
+  ],
+  [
+   "dev_data/protocol_8",
+   "test_data_2020/protocol_0628"
+  ],
+  [
+   "train_data/protocol_135",
+   "train_data/protocol_34"
+  ],
+  [
+   "train_data/protocol_155",
+   "train_data/protocol_209",
+   "train_data/protocol_58"
+  ],
+  [
+   "train_data/protocol_197",
+   "train_data/protocol_42"
+  ],
+  [
+   "train_data/protocol_208",
+   "train_data/protocol_63"
+  ],
+  [
+   "train_data/protocol_234",
+   "train_data/protocol_401"
+  ],
+  [
+   "train_data/protocol_242",
+   "train_data/protocol_457"
+  ],
+  [
+   "train_data/protocol_274",
+   "train_data/protocol_68"
+  ],
+  [
+   "train_data/protocol_286",
+   "train_data/protocol_43"
+  ],
+  [
+   "train_data/protocol_29",
+   "train_data/protocol_500"
+  ],
+  [
+   "train_data/protocol_297",
+   "train_data/protocol_54"
+  ],
+  [
+   "train_data/protocol_3",
+   "train_data/protocol_324"
+  ],
+  [
+   "train_data/protocol_33",
+   "train_data/protocol_392"
+  ],
+  [
+   "train_data/protocol_339",
+   "train_data/protocol_38"
+  ],
+  [
+   "train_data/protocol_347",
+   "train_data/protocol_412",
+   "train_data/protocol_46"
+  ],
+  [
+   "train_data/protocol_363",
+   "train_data/protocol_4"
+  ],
+  [
+   "train_data/protocol_37",
+   "train_data/protocol_452"
+  ],
+  [
+   "train_data/protocol_40",
+   "train_data/protocol_438"
+  ],
+  [
+   "train_data/protocol_400",
+   "train_data/protocol_41"
+  ],
+  [
+   "train_data/protocol_413",
+   "train_data/protocol_57"
+  ],
+  [
+   "train_data/protocol_415",
+   "train_data/protocol_62"
+  ],
+  [
+   "train_data/protocol_456",
+   "train_data/protocol_64"
+  ],
+  [
+   "train_data/protocol_488",
+   "train_data/protocol_494"
+  ],
+  [
+   "train_data/protocol_536",
+   "train_data/protocol_546"
+  ],
+  [
+   "train_data/protocol_539",
+   "train_data/protocol_548",
+   "train_data/protocol_588"
+  ],
+  [
+   "train_data/protocol_55",
+   "train_data/protocol_94"
+  ],
+  [
+   "train_data/protocol_550",
+   "train_data/protocol_555",
+   "train_data/protocol_590"
+  ],
+  [
+   "train_data/protocol_551",
+   "train_data/protocol_556",
+   "train_data/protocol_591"
+  ],
+  [
+   "train_data/protocol_553",
+   "train_data/protocol_598"
+  ],
+  [
+   "train_data/protocol_560",
+   "train_data/protocol_595"
+  ],
+  [
+   "train_data/protocol_566",
+   "train_data/protocol_601"
+  ],
+  [
+   "train_data/protocol_567",
+   "train_data/protocol_611"
+  ],
+  [
+   "train_data/protocol_568",
+   "train_data/protocol_619"
+  ],
+  [
+   "train_data/protocol_576",
+   "train_data/protocol_609"
+  ],
+  [
+   "train_data/protocol_579",
+   "train_data/protocol_622",
+   "train_data/protocol_9"
+  ],
+  [
+   "train_data/protocol_581",
+   "train_data/protocol_607"
+  ],
+  [
+   "train_data/protocol_582",
+   "train_data/protocol_615"
+  ]
+ ],
+ "excluded": 66,
+ "pairs": [
+  {
+   "a": "dev_data/protocol_107",
+   "b": "dev_data/protocol_28",
+   "jaccard": 0.8395,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_107",
+   "b": "train_data/protocol_350",
+   "jaccard": 0.7414,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_111",
+   "b": "dev_data/protocol_584",
+   "jaccard": 0.845,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_111",
+   "b": "train_data/protocol_618",
+   "jaccard": 0.845,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_127",
+   "b": "dev_data/protocol_31",
+   "jaccard": 0.6868,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_127",
+   "b": "train_data/protocol_449",
+   "jaccard": 0.6868,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_142",
+   "b": "train_data/protocol_394",
+   "jaccard": 0.543,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_148",
+   "b": "train_data/protocol_55",
+   "jaccard": 0.5418,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_148",
+   "b": "train_data/protocol_94",
+   "jaccard": 0.5667,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_16",
+   "b": "dev_data/protocol_312",
+   "jaccard": 0.5625,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_16",
+   "b": "dev_data/protocol_470",
+   "jaccard": 0.6452,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_16",
+   "b": "dev_data/protocol_56",
+   "jaccard": 0.6452,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_162",
+   "b": "dev_data/protocol_425",
+   "jaccard": 0.6647,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_174",
+   "b": "dev_data/protocol_617",
+   "jaccard": 0.6348,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_174",
+   "b": "train_data/protocol_119",
+   "jaccard": 0.6175,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_174",
+   "b": "train_data/protocol_126",
+   "jaccard": 0.7627,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_174",
+   "b": "train_data/protocol_526",
+   "jaccard": 0.5222,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_174",
+   "b": "train_data/protocol_573",
+   "jaccard": 0.6348,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_186",
+   "b": "dev_data/protocol_219",
+   "jaccard": 0.7371,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_186",
+   "b": "dev_data/protocol_439",
+   "jaccard": 0.6651,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_186",
+   "b": "train_data/protocol_100",
+   "jaccard": 0.6425,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_186",
+   "b": "train_data/protocol_242",
+   "jaccard": 0.7808,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_186",
+   "b": "train_data/protocol_273",
+   "jaccard": 0.5255,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_186",
+   "b": "train_data/protocol_297",
+   "jaccard": 0.6755,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_186",
+   "b": "train_data/protocol_332",
+   "jaccard": 0.5884,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_186",
+   "b": "train_data/protocol_384",
+   "jaccard": 0.5374,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_186",
+   "b": "train_data/protocol_406",
+   "jaccard": 0.5624,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_186",
+   "b": "train_data/protocol_457",
+   "jaccard": 0.7669,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_186",
+   "b": "train_data/protocol_539",
+   "jaccard": 0.5057,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_186",
+   "b": "train_data/protocol_54",
+   "jaccard": 0.6755,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_186",
+   "b": "train_data/protocol_548",
+   "jaccard": 0.5057,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_186",
+   "b": "train_data/protocol_588",
+   "jaccard": 0.5057,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_219",
+   "b": "dev_data/protocol_439",
+   "jaccard": 0.6842,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_219",
+   "b": "train_data/protocol_100",
+   "jaccard": 0.6611,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_219",
+   "b": "train_data/protocol_242",
+   "jaccard": 0.8074,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_219",
+   "b": "train_data/protocol_273",
+   "jaccard": 0.5414,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_219",
+   "b": "train_data/protocol_297",
+   "jaccard": 0.6958,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_219",
+   "b": "train_data/protocol_332",
+   "jaccard": 0.6034,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_219",
+   "b": "train_data/protocol_384",
+   "jaccard": 0.552,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_219",
+   "b": "train_data/protocol_406",
+   "jaccard": 0.5765,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_219",
+   "b": "train_data/protocol_457",
+   "jaccard": 0.7927,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_219",
+   "b": "train_data/protocol_539",
+   "jaccard": 0.5198,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_219",
+   "b": "train_data/protocol_54",
+   "jaccard": 0.6958,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_219",
+   "b": "train_data/protocol_548",
+   "jaccard": 0.5198,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_219",
+   "b": "train_data/protocol_588",
+   "jaccard": 0.5198,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_237",
+   "b": "train_data/protocol_14",
+   "jaccard": 0.7347,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_28",
+   "b": "train_data/protocol_350",
+   "jaccard": 0.6722,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_287",
+   "b": "dev_data/protocol_428",
+   "jaccard": 0.6139,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_287",
+   "b": "train_data/protocol_232",
+   "jaccard": 0.7133,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_287",
+   "b": "train_data/protocol_364",
+   "jaccard": 0.7335,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_287",
+   "b": "train_data/protocol_576",
+   "jaccard": 0.7153,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_287",
+   "b": "train_data/protocol_609",
+   "jaccard": 0.7381,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_31",
+   "b": "train_data/protocol_449",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_312",
+   "b": "dev_data/protocol_470",
+   "jaccard": 0.8276,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_312",
+   "b": "dev_data/protocol_56",
+   "jaccard": 0.8276,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_313",
+   "b": "dev_data/protocol_66",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_313",
+   "b": "train_data/protocol_256",
+   "jaccard": 0.6487,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_313",
+   "b": "train_data/protocol_368",
+   "jaccard": 0.5338,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_36",
+   "b": "dev_data/protocol_445",
+   "jaccard": 0.7458,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_382",
+   "b": "train_data/protocol_184",
+   "jaccard": 0.84,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_396",
+   "b": "train_data/protocol_321",
+   "jaccard": 0.5918,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_428",
+   "b": "train_data/protocol_364",
+   "jaccard": 0.5083,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_428",
+   "b": "train_data/protocol_576",
+   "jaccard": 0.5246,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_428",
+   "b": "train_data/protocol_609",
+   "jaccard": 0.5424,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_435",
+   "b": "train_data/protocol_329",
+   "jaccard": 0.8633,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_439",
+   "b": "train_data/protocol_100",
+   "jaccard": 0.6004,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_439",
+   "b": "train_data/protocol_242",
+   "jaccard": 0.7172,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_439",
+   "b": "train_data/protocol_297",
+   "jaccard": 0.6335,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_439",
+   "b": "train_data/protocol_332",
+   "jaccard": 0.5569,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_439",
+   "b": "train_data/protocol_384",
+   "jaccard": 0.5072,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_439",
+   "b": "train_data/protocol_406",
+   "jaccard": 0.5328,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_439",
+   "b": "train_data/protocol_457",
+   "jaccard": 0.7179,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_439",
+   "b": "train_data/protocol_54",
+   "jaccard": 0.6335,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_442",
+   "b": "dev_data/protocol_524",
+   "jaccard": 0.5104,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_470",
+   "b": "dev_data/protocol_56",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_552",
+   "b": "dev_data/protocol_604",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_557",
+   "b": "train_data/protocol_602",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_559",
+   "b": "dev_data/protocol_593",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_572",
+   "b": "dev_data/protocol_614",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_577",
+   "b": "train_data/protocol_610",
+   "jaccard": 0.9477,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_580",
+   "b": "dev_data/protocol_613",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": false,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "dev_data/protocol_584",
+   "b": "train_data/protocol_618",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_586",
+   "b": "train_data/protocol_544",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_592",
+   "b": "train_data/protocol_564",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_596",
+   "b": "train_data/protocol_561",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_606",
+   "b": "train_data/protocol_574",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_61",
+   "b": "train_data/protocol_472",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_617",
+   "b": "train_data/protocol_119",
+   "jaccard": 0.8313,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_617",
+   "b": "train_data/protocol_126",
+   "jaccard": 0.5222,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_617",
+   "b": "train_data/protocol_453",
+   "jaccard": 0.5765,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_617",
+   "b": "train_data/protocol_526",
+   "jaccard": 0.7586,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_617",
+   "b": "train_data/protocol_573",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_620",
+   "b": "train_data/protocol_569",
+   "jaccard": 0.9775,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_65",
+   "b": "train_data/protocol_405",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_66",
+   "b": "train_data/protocol_256",
+   "jaccard": 0.6487,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_66",
+   "b": "train_data/protocol_368",
+   "jaccard": 0.5338,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_7",
+   "b": "test_data_2020/protocol_0677",
+   "jaccard": 0.6179,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "dev_data/protocol_8",
+   "b": "test_data_2020/protocol_0628",
+   "jaccard": 0.9634,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": true
+  },
+  {
+   "a": "test_data_2020/protocol_0659",
+   "b": "train_data/protocol_509",
+   "jaccard": 0.7143,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "test_data_2020/protocol_0675",
+   "b": "train_data/protocol_55",
+   "jaccard": 0.5318,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "test_data_2020/protocol_0675",
+   "b": "train_data/protocol_94",
+   "jaccard": 0.5522,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": true
+  },
+  {
+   "a": "train_data/protocol_100",
+   "b": "train_data/protocol_242",
+   "jaccard": 0.7103,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_100",
+   "b": "train_data/protocol_297",
+   "jaccard": 0.6841,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_100",
+   "b": "train_data/protocol_332",
+   "jaccard": 0.5435,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_100",
+   "b": "train_data/protocol_406",
+   "jaccard": 0.5465,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_100",
+   "b": "train_data/protocol_457",
+   "jaccard": 0.711,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_100",
+   "b": "train_data/protocol_54",
+   "jaccard": 0.6841,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_112",
+   "b": "train_data/protocol_96",
+   "jaccard": 0.5382,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_114",
+   "b": "train_data/protocol_507",
+   "jaccard": 0.5482,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_119",
+   "b": "train_data/protocol_126",
+   "jaccard": 0.5096,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_119",
+   "b": "train_data/protocol_453",
+   "jaccard": 0.5169,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_119",
+   "b": "train_data/protocol_526",
+   "jaccard": 0.6811,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_119",
+   "b": "train_data/protocol_573",
+   "jaccard": 0.8313,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_126",
+   "b": "train_data/protocol_526",
+   "jaccard": 0.6684,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_126",
+   "b": "train_data/protocol_573",
+   "jaccard": 0.5222,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_128",
+   "b": "train_data/protocol_347",
+   "jaccard": 0.7789,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_128",
+   "b": "train_data/protocol_412",
+   "jaccard": 0.7735,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_128",
+   "b": "train_data/protocol_46",
+   "jaccard": 0.7789,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_128",
+   "b": "train_data/protocol_74",
+   "jaccard": 0.6628,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_135",
+   "b": "train_data/protocol_34",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_155",
+   "b": "train_data/protocol_209",
+   "jaccard": 0.997,
+   "exact": false,
+   "same_title": false,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_155",
+   "b": "train_data/protocol_58",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_163",
+   "b": "train_data/protocol_507",
+   "jaccard": 0.5553,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_175",
+   "b": "train_data/protocol_499",
+   "jaccard": 0.5794,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_197",
+   "b": "train_data/protocol_42",
+   "jaccard": 0.8804,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_201",
+   "b": "train_data/protocol_315",
+   "jaccard": 0.6327,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_208",
+   "b": "train_data/protocol_63",
+   "jaccard": 0.9306,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_209",
+   "b": "train_data/protocol_58",
+   "jaccard": 0.997,
+   "exact": false,
+   "same_title": false,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_232",
+   "b": "train_data/protocol_364",
+   "jaccard": 0.7632,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_232",
+   "b": "train_data/protocol_576",
+   "jaccard": 0.6667,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_232",
+   "b": "train_data/protocol_609",
+   "jaccard": 0.6651,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_234",
+   "b": "train_data/protocol_401",
+   "jaccard": 0.87,
+   "exact": false,
+   "same_title": false,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_242",
+   "b": "train_data/protocol_273",
+   "jaccard": 0.576,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_242",
+   "b": "train_data/protocol_297",
+   "jaccard": 0.7401,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_242",
+   "b": "train_data/protocol_332",
+   "jaccard": 0.636,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_242",
+   "b": "train_data/protocol_384",
+   "jaccard": 0.5837,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_242",
+   "b": "train_data/protocol_406",
+   "jaccard": 0.6071,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_242",
+   "b": "train_data/protocol_457",
+   "jaccard": 0.861,
+   "exact": false,
+   "same_title": false,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_242",
+   "b": "train_data/protocol_539",
+   "jaccard": 0.5506,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_242",
+   "b": "train_data/protocol_54",
+   "jaccard": 0.7401,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_242",
+   "b": "train_data/protocol_548",
+   "jaccard": 0.5506,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_242",
+   "b": "train_data/protocol_588",
+   "jaccard": 0.5506,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_256",
+   "b": "train_data/protocol_262",
+   "jaccard": 0.5528,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_256",
+   "b": "train_data/protocol_368",
+   "jaccard": 0.6247,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_262",
+   "b": "train_data/protocol_368",
+   "jaccard": 0.6653,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_269",
+   "b": "train_data/protocol_479",
+   "jaccard": 0.5958,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_273",
+   "b": "train_data/protocol_297",
+   "jaccard": 0.518,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_273",
+   "b": "train_data/protocol_384",
+   "jaccard": 0.5106,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_273",
+   "b": "train_data/protocol_457",
+   "jaccard": 0.5729,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_273",
+   "b": "train_data/protocol_539",
+   "jaccard": 0.5674,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_273",
+   "b": "train_data/protocol_54",
+   "jaccard": 0.518,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_273",
+   "b": "train_data/protocol_548",
+   "jaccard": 0.5674,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_273",
+   "b": "train_data/protocol_588",
+   "jaccard": 0.5674,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_274",
+   "b": "train_data/protocol_68",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_286",
+   "b": "train_data/protocol_43",
+   "jaccard": 0.8182,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_29",
+   "b": "train_data/protocol_500",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_297",
+   "b": "train_data/protocol_332",
+   "jaccard": 0.5682,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_297",
+   "b": "train_data/protocol_384",
+   "jaccard": 0.5507,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_297",
+   "b": "train_data/protocol_406",
+   "jaccard": 0.6279,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_297",
+   "b": "train_data/protocol_457",
+   "jaccard": 0.7361,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_297",
+   "b": "train_data/protocol_539",
+   "jaccard": 0.5802,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_297",
+   "b": "train_data/protocol_54",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_297",
+   "b": "train_data/protocol_548",
+   "jaccard": 0.5802,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_297",
+   "b": "train_data/protocol_588",
+   "jaccard": 0.5802,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_3",
+   "b": "train_data/protocol_324",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_301",
+   "b": "train_data/protocol_523",
+   "jaccard": 0.5688,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_33",
+   "b": "train_data/protocol_392",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_332",
+   "b": "train_data/protocol_457",
+   "jaccard": 0.6404,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_332",
+   "b": "train_data/protocol_54",
+   "jaccard": 0.5682,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_339",
+   "b": "train_data/protocol_38",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_347",
+   "b": "train_data/protocol_412",
+   "jaccard": 0.9838,
+   "exact": false,
+   "same_title": false,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_347",
+   "b": "train_data/protocol_46",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_347",
+   "b": "train_data/protocol_74",
+   "jaccard": 0.5983,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_363",
+   "b": "train_data/protocol_4",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_364",
+   "b": "train_data/protocol_576",
+   "jaccard": 0.7286,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_364",
+   "b": "train_data/protocol_609",
+   "jaccard": 0.7268,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_37",
+   "b": "train_data/protocol_452",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_384",
+   "b": "train_data/protocol_457",
+   "jaccard": 0.581,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_384",
+   "b": "train_data/protocol_539",
+   "jaccard": 0.5505,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_384",
+   "b": "train_data/protocol_54",
+   "jaccard": 0.5507,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_384",
+   "b": "train_data/protocol_548",
+   "jaccard": 0.5505,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_384",
+   "b": "train_data/protocol_588",
+   "jaccard": 0.5505,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_40",
+   "b": "train_data/protocol_438",
+   "jaccard": 0.6552,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_400",
+   "b": "train_data/protocol_41",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_406",
+   "b": "train_data/protocol_457",
+   "jaccard": 0.6044,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_406",
+   "b": "train_data/protocol_54",
+   "jaccard": 0.6279,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_412",
+   "b": "train_data/protocol_46",
+   "jaccard": 0.9838,
+   "exact": false,
+   "same_title": false,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_412",
+   "b": "train_data/protocol_74",
+   "jaccard": 0.5948,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_413",
+   "b": "train_data/protocol_57",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_415",
+   "b": "train_data/protocol_62",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_453",
+   "b": "train_data/protocol_526",
+   "jaccard": 0.5069,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_453",
+   "b": "train_data/protocol_573",
+   "jaccard": 0.5765,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_456",
+   "b": "train_data/protocol_64",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_457",
+   "b": "train_data/protocol_539",
+   "jaccard": 0.5479,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_457",
+   "b": "train_data/protocol_54",
+   "jaccard": 0.7361,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_457",
+   "b": "train_data/protocol_548",
+   "jaccard": 0.5479,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_457",
+   "b": "train_data/protocol_588",
+   "jaccard": 0.5479,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_46",
+   "b": "train_data/protocol_74",
+   "jaccard": 0.5983,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_460",
+   "b": "train_data/protocol_509",
+   "jaccard": 0.5135,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_488",
+   "b": "train_data/protocol_494",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_526",
+   "b": "train_data/protocol_573",
+   "jaccard": 0.7586,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_536",
+   "b": "train_data/protocol_546",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_539",
+   "b": "train_data/protocol_54",
+   "jaccard": 0.5802,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_539",
+   "b": "train_data/protocol_548",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_539",
+   "b": "train_data/protocol_588",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": false,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_54",
+   "b": "train_data/protocol_548",
+   "jaccard": 0.5802,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_54",
+   "b": "train_data/protocol_588",
+   "jaccard": 0.5802,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_548",
+   "b": "train_data/protocol_588",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": false,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_55",
+   "b": "train_data/protocol_94",
+   "jaccard": 0.9274,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_550",
+   "b": "train_data/protocol_555",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_550",
+   "b": "train_data/protocol_590",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_551",
+   "b": "train_data/protocol_556",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_551",
+   "b": "train_data/protocol_591",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": false,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_553",
+   "b": "train_data/protocol_598",
+   "jaccard": 0.9341,
+   "exact": false,
+   "same_title": false,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_555",
+   "b": "train_data/protocol_590",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_556",
+   "b": "train_data/protocol_591",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": false,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_560",
+   "b": "train_data/protocol_595",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": false,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_566",
+   "b": "train_data/protocol_601",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_567",
+   "b": "train_data/protocol_611",
+   "jaccard": 1.0,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_568",
+   "b": "train_data/protocol_619",
+   "jaccard": 0.9391,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_570",
+   "b": "train_data/protocol_73",
+   "jaccard": 0.7415,
+   "exact": false,
+   "same_title": false,
+   "class": "template_sibling",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_576",
+   "b": "train_data/protocol_609",
+   "jaccard": 0.9694,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_579",
+   "b": "train_data/protocol_622",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_579",
+   "b": "train_data/protocol_9",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_581",
+   "b": "train_data/protocol_607",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": false,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_582",
+   "b": "train_data/protocol_615",
+   "jaccard": 0.9365,
+   "exact": false,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  },
+  {
+   "a": "train_data/protocol_622",
+   "b": "train_data/protocol_9",
+   "jaccard": 1.0,
+   "exact": true,
+   "same_title": true,
+   "class": "same_protocol",
+   "cross_split": false
+  }
+ ],
+ "duplicate_copy_agreement": {
+  "definition": "Byte-identical duplicate texts annotated separately in the release. Entities match on (label, start, end); relations on (head span, label, tail span). Annotator identity is unknown, so this is duplicate-copy agreement, not inter-annotator agreement.",
+  "pairs": 16,
+  "entity_f1": 0.8633,
+  "relation_f1": 0.7106,
+  "totals": {
+   "entities_a": 1474,
+   "entities_b": 1482,
+   "entities_matched": 1276,
+   "relations_a": 999,
+   "relations_b": 1005,
+   "relations_matched": 712
+  },
+  "per_pair": [
+   {
+    "a": "dev_data/protocol_31",
+    "b": "train_data/protocol_449",
+    "entities_a": 149,
+    "entities_b": 149,
+    "entities_matched": 138,
+    "relations_a": 101,
+    "relations_b": 102,
+    "relations_matched": 81
+   },
+   {
+    "a": "dev_data/protocol_313",
+    "b": "dev_data/protocol_66",
+    "entities_a": 106,
+    "entities_b": 116,
+    "entities_matched": 84,
+    "relations_a": 71,
+    "relations_b": 80,
+    "relations_matched": 47
+   },
+   {
+    "a": "dev_data/protocol_470",
+    "b": "dev_data/protocol_56",
+    "entities_a": 13,
+    "entities_b": 13,
+    "entities_matched": 11,
+    "relations_a": 6,
+    "relations_b": 7,
+    "relations_matched": 5
+   },
+   {
+    "a": "dev_data/protocol_61",
+    "b": "train_data/protocol_472",
+    "entities_a": 85,
+    "entities_b": 74,
+    "entities_matched": 60,
+    "relations_a": 65,
+    "relations_b": 43,
+    "relations_matched": 30
+   },
+   {
+    "a": "train_data/protocol_135",
+    "b": "train_data/protocol_34",
+    "entities_a": 58,
+    "entities_b": 55,
+    "entities_matched": 42,
+    "relations_a": 40,
+    "relations_b": 40,
+    "relations_matched": 22
+   },
+   {
+    "a": "train_data/protocol_339",
+    "b": "train_data/protocol_38",
+    "entities_a": 50,
+    "entities_b": 54,
+    "entities_matched": 45,
+    "relations_a": 32,
+    "relations_b": 32,
+    "relations_matched": 23
+   },
+   {
+    "a": "train_data/protocol_363",
+    "b": "train_data/protocol_4",
+    "entities_a": 40,
+    "entities_b": 41,
+    "entities_matched": 37,
+    "relations_a": 30,
+    "relations_b": 28,
+    "relations_matched": 20
+   },
+   {
+    "a": "train_data/protocol_37",
+    "b": "train_data/protocol_452",
+    "entities_a": 165,
+    "entities_b": 184,
+    "entities_matched": 142,
+    "relations_a": 106,
+    "relations_b": 125,
+    "relations_matched": 70
+   },
+   {
+    "a": "train_data/protocol_400",
+    "b": "train_data/protocol_41",
+    "entities_a": 128,
+    "entities_b": 126,
+    "entities_matched": 114,
+    "relations_a": 77,
+    "relations_b": 78,
+    "relations_matched": 58
+   },
+   {
+    "a": "train_data/protocol_415",
+    "b": "train_data/protocol_62",
+    "entities_a": 46,
+    "entities_b": 46,
+    "entities_matched": 41,
+    "relations_a": 30,
+    "relations_b": 35,
+    "relations_matched": 26
+   },
+   {
+    "a": "train_data/protocol_488",
+    "b": "train_data/protocol_494",
+    "entities_a": 63,
+    "entities_b": 54,
+    "entities_matched": 46,
+    "relations_a": 48,
+    "relations_b": 42,
+    "relations_matched": 26
+   },
+   {
+    "a": "train_data/protocol_536",
+    "b": "train_data/protocol_546",
+    "entities_a": 102,
+    "entities_b": 104,
+    "entities_matched": 96,
+    "relations_a": 69,
+    "relations_b": 72,
+    "relations_matched": 61
+   },
+   {
+    "a": "train_data/protocol_539",
+    "b": "train_data/protocol_548",
+    "entities_a": 154,
+    "entities_b": 155,
+    "entities_matched": 148,
+    "relations_a": 102,
+    "relations_b": 103,
+    "relations_matched": 93
+   },
+   {
+    "a": "train_data/protocol_550",
+    "b": "train_data/protocol_555",
+    "entities_a": 110,
+    "entities_b": 111,
+    "entities_matched": 103,
+    "relations_a": 88,
+    "relations_b": 88,
+    "relations_matched": 63
+   },
+   {
+    "a": "train_data/protocol_551",
+    "b": "train_data/protocol_556",
+    "entities_a": 175,
+    "entities_b": 170,
+    "entities_matched": 143,
+    "relations_a": 114,
+    "relations_b": 108,
+    "relations_matched": 74
+   },
+   {
+    "a": "train_data/protocol_579",
+    "b": "train_data/protocol_622",
+    "entities_a": 30,
+    "entities_b": 30,
+    "entities_matched": 26,
+    "relations_a": 20,
+    "relations_b": 22,
+    "relations_matched": 13
+   }
+  ]
+ }
+}
