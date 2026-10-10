@@ -35,6 +35,8 @@ from protocolledger.serve.schemas import (
     ExtractResponse,
     ModelInfo,
     NormalizedValue,
+    PreviewRequest,
+    PreviewResponse,
     Problem,
     Relation,
     ReviewContent,
@@ -246,6 +248,26 @@ def create_app(bundle_dir: Path | None, review_db: Path | None = None) -> FastAP
             lambda: store.add_revision(review_id, x_review_token, request.content.model_dump())
         )
         return {"revision": number}
+
+    @app.post("/v1/preview", response_model=PreviewResponse, responses={422: {"model": Problem}})
+    def preview(request: PreviewRequest) -> PreviewResponse:
+        """Recompute the sheet for an edited graph; stateless and never stored."""
+        text_hash(request.text)
+        check_content(request.content, request.text)
+        kept = [e for e in request.content.entities if e.decision != "rejected"]
+        relations = [r.model_dump() for r in request.content.relations if r.decision != "rejected"]
+        rows, review = build_sheet([e.model_dump() for e in kept], relations)
+        normalized = {}
+        for e in kept:
+            if e.label in QUANTITY_LABELS:
+                value, _ = normalize_value(request.text[e.start : e.end], e.label)
+                if value is not None:
+                    normalized[e.id] = NormalizedValue(**value)
+        return PreviewResponse(
+            sheet=[SheetRow(**row) for row in rows],
+            review_items=[ReviewItem(**item) for item in review],
+            normalized_values=normalized,
+        )
 
     @app.get("/v1/reviews/{review_id}", response_model=ReviewRecord, responses=review_errors)
     def get_review(

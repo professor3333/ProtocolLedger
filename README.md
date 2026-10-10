@@ -72,9 +72,9 @@ flowchart LR
   classDef done fill:#d1fae5,stroke:#059669,color:#064e3b
   classDef wip fill:#fef3c7,stroke:#d97706,color:#78350f
   classDef planned fill:#f1f5f9,stroke:#94a3b8,color:#334155
-  class A,B,F,G,H done
-  class C,I,J wip
-  class R,D,E,K planned
+  class A,B,F,G,H,I,J,K done
+  class C wip
+  class R,D,E planned
 ```
 
 <sub>🟩 built · 🟨 in progress · ⬜ planned</sub>
@@ -106,7 +106,7 @@ That makes **directed relation extraction** the central technical challenge, and
 ## Review interface
 
 <p align="center">
-  <img src="docs/assets/review-ui.png" alt="The ProtocolLedger review interface: protocol text, highlighted evidence spans, a preparation sheet where 'mix', 'Centrifuge' and 'incubate' are marked 'Not explicitly stated' and routed to review, the relation list, and the review queue" width="100%">
+  <img src="docs/assets/review-ui.png" alt="The ProtocolLedger review interface mid-review: a rejected 'tube' struck through in the evidence, a reviewer-added span with a dashed outline, the inspector for '5 mL' showing the model's Measure link rejected and a reviewer's link to 'Add' marked human, the recomputed preparation sheet, the saved-review bar with a one-time token, and the relation list with reject and restore controls" width="100%">
 </p>
 
 The current interface runs the CRF + logistic-regression baseline. Paste or upload
@@ -117,13 +117,26 @@ a UTF-8 `.txt` protocol and the page shows:
 - a review queue
 
 Actions whose object is not stated are shown as *Not explicitly stated*, marked
-*Review required*, and never filled in. Text is processed in memory and not stored.
+*Review required*, and never filled in.
+
+**Reviewing.** Select a highlighted span to change its type, move its boundaries word by
+word, or reject it. Select any other text to add a missing entity. Add or reject
+relations; attaching a quantity to a different material or action replaces its old link.
+Reviewer additions are dashed and badged *human*, edits are dotted, and rejections are
+struck through but kept in the history. The sheet is recomputed by the server after
+every edit, with the same validation that saving uses.
+
+**Saving and exporting.** *Save review* stores a revision (the text only if you tick the
+box) and shows a one-time access token. Later saves append revisions. JSON and CSV
+exports carry the provenance. Extracted text is processed in memory and is not stored
+unless you save a review and opt in.
 
 | Endpoint | Purpose |
 |---|---|
 | `POST /v1/extract` | entities, relations, preparation-sheet rows, normalized quantities, review items, model version; offsets in Unicode code points |
 | `GET /healthz` | process health |
 | `GET /readyz` | model loaded; reports model version, bundle hash and dev scores |
+| `POST /v1/preview` | validate an edited graph and recompute its sheet, review items and normalized values (stateless) |
 | `POST /v1/reviews` | store an explicitly submitted review; returns an id and a one-time token; honors `Idempotency-Key` |
 | `POST /v1/reviews/{id}/revisions` | append a corrected revision (token required; text must match the stored hash) |
 | `GET /v1/reviews/{id}` | latest revision and full history (token required) |
@@ -197,7 +210,7 @@ checked sample of supported formats is still to be measured.
 | Calibration, error analysis, challenge set | ⬜ Planned |
 | Deterministic quantity normalization | ✅ Done |
 | Saved reviews API, JSON/CSV export, backup and restore | ✅ Done |
-| Review editing in the interface | 🚧 Next |
+| Review editing in the interface | ✅ Done |
 | CPU optimization, Docker deployment, monitoring | ⬜ Planned |
 | User pilot, model card, final report | ⬜ Planned |
 

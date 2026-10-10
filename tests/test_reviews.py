@@ -292,3 +292,45 @@ def test_reviews_unavailable_without_storage(tmp_path: Path) -> None:
     with TestClient(create_app(None)) as c:
         res = c.post("/v1/reviews", json={"text": TEXT, "model_version": "m", "content": content()})
         assert res.status_code == 503
+
+
+def test_preview_recomputes_the_sheet_from_an_edited_graph(client: TestClient) -> None:
+    edited = content()
+    # Supply the missing object of "mix" and move "5 mL" from the water to the action.
+    edited["relations"].append(
+        {
+            "id": "H3",
+            "head": "P5",
+            "label": "Acts-on",
+            "tail": "P3",
+            "origin": "human",
+            "decision": "added",
+        }
+    )
+    edited["relations"][1]["decision"] = "rejected"
+    edited["relations"].append(
+        {
+            "id": "H4",
+            "head": "P1",
+            "label": "Measure",
+            "tail": "P2",
+            "origin": "human",
+            "decision": "added",
+        }
+    )
+    res = client.post("/v1/preview", json={"text": TEXT, "content": edited})
+    assert res.status_code == 200
+    body = res.json()
+    add, mix = body["sheet"]
+    assert add["materials"] == ["P3"] and add["quantities"] == [{"entity": "P2", "of": "P1"}]
+    assert add["locations"] == []  # the tube was rejected
+    assert mix["materials"] == ["P3"] and mix["status"] == "proposed"
+    assert body["normalized_values"]["H1"]["value"] == -80
+    assert body["review_items"] == []
+
+
+def test_preview_rejects_invalid_graphs(client: TestClient) -> None:
+    edited = content()
+    edited["relations"][2]["decision"] = "accepted"  # points at the rejected tube
+    res = client.post("/v1/preview", json={"text": TEXT, "content": edited})
+    assert res.status_code == 422 and "rejected entity" in res.json()["detail"]

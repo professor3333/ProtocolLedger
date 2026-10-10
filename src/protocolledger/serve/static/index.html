@@ -57,6 +57,7 @@
         <div id="legend" class="legend" aria-label="Entity types"></div>
       </div>
       <div id="evidence" class="evidence empty">Extracted spans will be highlighted here.</div>
+      <div id="inspector" class="inspector" aria-live="polite" hidden></div>
     </section>
 
     <section class="panel wide" aria-labelledby="sheet-title">
@@ -81,6 +82,22 @@
           </tbody>
         </table>
       </div>
+    </section>
+
+    <section class="panel wide savebar" aria-labelledby="save-title">
+      <div class="panel-head">
+        <h2 id="save-title">Review</h2>
+        <span id="save-state" class="muted">Extract a protocol to start reviewing.</span>
+      </div>
+      <div class="save-row">
+        <label class="check"><input type="checkbox" id="store-text"> Store the protocol text on the server</label>
+        <div class="actions">
+          <button type="button" id="save" class="primary" disabled>Save review</button>
+          <button type="button" id="export-json" disabled>Export JSON</button>
+          <button type="button" id="export-csv" disabled>Export CSV</button>
+        </div>
+      </div>
+      <p id="token-note" class="token-note" hidden></p>
     </section>
 
     <section class="panel" aria-labelledby="relations-title">

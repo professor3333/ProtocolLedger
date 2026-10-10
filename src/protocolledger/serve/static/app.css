@@ -281,3 +281,71 @@ tr.placeholder td { color: var(--muted); }
   .model { max-width: 100%; }
   .footer { padding: 0 16px 20px; flex-direction: column; gap: 6px; }
 }
+
+/* ------------------------------------------------------------- review editing */
+
+.inspector {
+  margin-top: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  font-size: 14px;
+}
+.inspector h3 { margin: 0 0 6px; font-size: 14px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.inspector .quote { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.inspector p { margin: 4px 0 8px; }
+.row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+.add-relation { color: var(--muted); }
+select {
+  font: inherit;
+  font-size: 13.5px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+}
+button.mini { padding: 3px 8px; font-size: 12.5px; }
+.check { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; color: var(--muted); }
+
+.badge {
+  display: inline-block;
+  font-size: 10.5px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  vertical-align: middle;
+}
+.badge.from-human, .value .badge { border-color: var(--focus); color: var(--warn); }
+
+.span.from-human { outline: 1.5px dashed var(--focus); outline-offset: 1px; }
+.span.edited { text-decoration: underline dotted var(--muted); text-underline-offset: 4px; }
+.span.rejected {
+  background: transparent;
+  box-shadow: none;
+  color: var(--muted);
+  text-decoration: line-through;
+  opacity: 0.75;
+}
+.value.from-human { border-style: dashed; border-color: var(--focus); }
+.value.edited { border-style: dotted; }
+
+.relations li { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+.relations li .mini { margin-left: auto; }
+.relations li.rejected > span { opacity: 0.55; text-decoration: line-through; }
+.relations li.from-human { background: color-mix(in srgb, var(--focus) 8%, transparent); }
+.relations.compact { max-height: 180px; margin: 6px 0; }
+
+.savebar .save-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.token-note {
+  margin: 10px 0 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--warn-bg);
+  color: var(--warn);
+  font-size: 13px;
+  word-break: break-all;
+}
+.token-note code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }

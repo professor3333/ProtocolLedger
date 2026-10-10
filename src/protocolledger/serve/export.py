@@ -95,10 +95,10 @@ def export_csv(record: dict[str, Any], content: ReviewContent, text: str) -> str
     data = export_json(record, content, text)
     by_id = {e["id"]: e for e in data["entities"]}
 
-    def item(eid: str, of: str | None = None) -> str:
+    def item(eid: str, of: str | None = None, action: str | None = None) -> str:
         e = by_id[eid]
         label = e["text"]
-        if of and of in by_id and of != eid:
+        if of and of in by_id and of not in (eid, action):
             label += f" (of {by_id[of]['text']})"
         if e["origin"] == "human":
             label += " [human]"
@@ -127,7 +127,7 @@ def export_csv(record: dict[str, Any], content: ReviewContent, text: str) -> str
             str(i),
             item(row["action"]),
             "; ".join(item(m) for m in row["materials"]) or "Not explicitly stated",
-            "; ".join(item(q["entity"], q["of"]) for q in row["quantities"]),
+            "; ".join(item(q["entity"], q["of"], row["action"]) for q in row["quantities"]),
             "; ".join(item(x) for x in row["locations"]),
             "; ".join(item(x) for x in row["conditions"]),
             row["status"],

@@ -179,3 +179,16 @@ class ExportRequest(BaseModel):
 
     format: Literal["json", "csv"] = "json"
     text: str | None = Field(default=None, max_length=MAX_TEXT_CHARS)
+
+
+class PreviewRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    text: str = Field(min_length=1, max_length=MAX_TEXT_CHARS)
+    content: ReviewContent
+
+
+class PreviewResponse(BaseModel):
+    sheet: list[SheetRow]
+    review_items: list[ReviewItem]
+    normalized_values: dict[str, NormalizedValue]
