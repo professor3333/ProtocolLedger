@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540" role="img" aria-labelledby="title desc">
+  <title id="title">ProtocolLedger</title>
+  <desc id="desc">The sentence "Add 5 mL of water to the tube, then mix for 30 s." with entity spans highlighted, directed relations drawn as arcs, and the resulting preparation sheet. The object of "mix" is flagged as not explicitly stated and routed to review.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#141c38"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.12" r="0.6">
+      <stop offset="0" stop-color="#5b7cff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#5b7cff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#ffffff" fill-opacity="0.045"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#aab4c8"/>
+    </marker>
+    <style>
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+      .word { fill: #c9d1d9; font-size: 22px; }
+      .chip-text { fill: #f0f3f8; font-size: 22px; }
+      .type { font-size: 11px; letter-spacing: 1.6px; font-weight: 600; }
+      .rel { fill: #d7dde8; font-size: 12.5px; }
+      .arc { fill: none; stroke: #aab4c8; stroke-width: 1.6; stroke-opacity: 0.85; }
+      .th { fill: #7d8aa5; font-size: 11.5px; letter-spacing: 1.4px; font-weight: 600; }
+      .td { fill: #e6edf3; font-size: 16px; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="540" rx="24" fill="url(#bg)"/>
+  <rect width="1200" height="540" rx="24" fill="url(#dots)"/>
+  <rect width="1200" height="540" rx="24" fill="url(#glow)"/>
+
+  <!-- Brand -->
+  <g class="sans">
+    <rect x="70" y="44" width="34" height="40" rx="6" fill="none" stroke="#7c9cff" stroke-width="2.2"/>
+    <line x1="78" y1="56" x2="96" y2="56" stroke="#7c9cff" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="78" y1="64" x2="96" y2="64" stroke="#22d3ee" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="78" y1="72" x2="90" y2="72" stroke="#34d399" stroke-width="2.2" stroke-linecap="round"/>
+    <text x="120" y="74" fill="#f0f3f8" font-size="32" font-weight="700" letter-spacing="-0.5">ProtocolLedger</text>
+    <text x="70" y="106" fill="#8b98b3" font-size="16.5">Every extracted field linked to the exact source text that supports it.</text>
+    <rect x="928" y="50" width="212" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+    <text x="1034" y="70" fill="#9aa6bf" font-size="12.5" text-anchor="middle" letter-spacing="0.4">illustrative target output</text>
+  </g>
+
+  <!-- Relations (directed: head to tail) -->
+  <g>
+    <path class="arc" d="M184,258 C184,100 610,100 610,258" marker-end="url(#arrow)"/>
+    <path class="arc" d="M200,258 C200,160 413,160 413,258" marker-end="url(#arrow)"/>
+    <path class="arc" d="M405,258 C405,215 283,215 283,258" marker-end="url(#arrow)"/>
+    <path class="arc" d="M784,258 C784,200 923,200 923,258" marker-end="url(#arrow)"/>
+  </g>
+  <g class="mono rel" text-anchor="middle">
+    <text x="397" y="133">Site</text>
+    <text x="306.5" y="178">Acts-on</text>
+    <text x="344" y="218">Measure</text>
+    <text x="853" y="207">Setting</text>
+  </g>
+
+  <!-- Entity chips -->
+  <g class="mono">
+    <rect x="160" y="262" width="64" height="40" rx="8" fill="#7c9cff" fill-opacity="0.18" stroke="#7c9cff" stroke-width="1.5"/>
+    <rect x="236" y="262" width="78" height="40" rx="8" fill="#34d399" fill-opacity="0.16" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="367" y="262" width="93" height="40" rx="8" fill="#22d3ee" fill-opacity="0.16" stroke="#22d3ee" stroke-width="1.5"/>
+    <rect x="571" y="262" width="78" height="40" rx="8" fill="#a78bfa" fill-opacity="0.18" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="752" y="262" width="64" height="40" rx="8" fill="#7c9cff" fill-opacity="0.18" stroke="#7c9cff" stroke-width="1.5"/>
+    <rect x="884" y="262" width="78" height="40" rx="8" fill="#f472b6" fill-opacity="0.16" stroke="#f472b6" stroke-width="1.5"/>
+
+    <g class="chip-text" text-anchor="middle">
+      <text x="192" y="289">Add</text>
+      <text x="275" y="289">5 mL</text>
+      <text x="413.5" y="289">water</text>
+      <text x="610" y="289">tube</text>
+      <text x="784" y="289">mix</text>
+      <text x="923" y="289">30 s</text>
+    </g>
+    <g class="word">
+      <text x="337" y="289" text-anchor="middle">of</text>
+      <text x="515.5" y="289" text-anchor="middle">to the</text>
+      <text x="651" y="289">, then</text>
+      <text x="850" y="289" text-anchor="middle">for</text>
+      <text x="966" y="289">.</text>
+    </g>
+
+    <g class="type sans" text-anchor="middle">
+      <text x="192" y="325" fill="#7c9cff">ACTION</text>
+      <text x="275" y="325" fill="#34d399">AMOUNT</text>
+      <text x="413.5" y="325" fill="#22d3ee">REAGENT</text>
+      <text x="610" y="325" fill="#a78bfa">LOCATION</text>
+      <text x="784" y="325" fill="#7c9cff">ACTION</text>
+      <text x="923" y="325" fill="#f472b6">TIME</text>
+    </g>
+  </g>
+
+  <!-- Implicit argument routed to review -->
+  <g class="sans">
+    <line x1="784" y1="332" x2="784" y2="344" stroke="#f5a524" stroke-width="1.6" stroke-dasharray="3 3"/>
+    <rect x="640" y="344" width="288" height="28" rx="14" fill="#f5a524" fill-opacity="0.12" stroke="#f5a524" stroke-opacity="0.7"/>
+    <text x="784" y="363" fill="#f8c56b" font-size="13" text-anchor="middle">object not explicitly stated · review</text>
+  </g>
+
+  <!-- Preparation sheet -->
+  <line x1="70" y1="398" x2="1130" y2="398" stroke="#ffffff" stroke-opacity="0.1"/>
+  <g class="sans">
+    <g class="th">
+      <text x="80" y="426">ACTION</text>
+      <text x="200" y="426">MATERIAL</text>
+      <text x="440" y="426">QUANTITY</text>
+      <text x="580" y="426">LOCATION / EQUIPMENT</text>
+      <text x="800" y="426">CONDITIONS</text>
+      <text x="940" y="426">REVIEW STATUS</text>
+    </g>
+    <line x1="70" y1="440" x2="1130" y2="440" stroke="#ffffff" stroke-opacity="0.07"/>
+
+    <g class="td">
+      <text x="80" y="470" fill="#9fb4ff">Add</text>
+      <text x="200" y="470" fill="#67e8f9">water</text>
+      <text x="440" y="470" fill="#6ee7b7">5 mL</text>
+      <text x="580" y="470" fill="#c4b5fd">tube</text>
+      <text x="800" y="470" fill="#6b7690">—</text>
+      <circle cx="946" cy="465" r="4.5" fill="#34d399"/>
+      <text x="960" y="470">Proposed</text>
+    </g>
+    <line x1="70" y1="486" x2="1130" y2="486" stroke="#ffffff" stroke-opacity="0.07"/>
+    <g class="td">
+      <text x="80" y="514" fill="#9fb4ff">Mix</text>
+      <text x="200" y="514" fill="#f8c56b" font-style="italic">Not explicitly stated</text>
+      <text x="440" y="514" fill="#6b7690">—</text>
+      <text x="580" y="514" fill="#6b7690">—</text>
+      <text x="800" y="514" fill="#f9a8d4">30 s</text>
+      <circle cx="946" cy="509" r="4.5" fill="#f5a524"/>
+      <text x="960" y="514">Review required</text>
+    </g>
+  </g>
+</svg>
