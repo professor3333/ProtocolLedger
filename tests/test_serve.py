@@ -213,3 +213,17 @@ def test_interface_is_served_with_strict_headers(client: TestClient) -> None:
     js = client.get("/static/app.js")
     assert js.status_code == 200 and "innerHTML" not in js.text
     assert "content-security-policy" not in client.get("/docs").headers
+
+
+def test_metrics_expose_bounded_labels_and_no_text(client: TestClient) -> None:
+    secret = "Protocol x\nAdd 7 mL of zz-secret-reagent to the tube.\n"
+    client.post("/v1/extract", json={"text": secret})
+    client.get("/v1/reviews/some-random-id-123")
+    body = client.get("/metrics").text
+    assert 'protocolledger_model_info{bundle_sha256="' in body
+    assert 'route="/v1/extract"' in body
+    assert 'route="/v1/reviews/{review_id}"' in body
+    assert "some-random-id-123" not in body
+    assert "zz-secret-reagent" not in body
+    assert "protocolledger_extract_input_chars_bucket" in body
+    assert 'protocolledger_predicted_entities_total{label="Action"}' in body

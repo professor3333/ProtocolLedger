@@ -1,0 +1,15 @@
+# SITE_ADDRESS is a domain name for automatic HTTPS (e.g. protocolledger.example.org),
+# or ":80" for local HTTP-only testing.
+{$SITE_ADDRESS} {
+	encode zstd gzip
+
+	# Operational endpoints stay internal (Prometheus scrapes the app directly).
+	@internal path /metrics
+	respond @internal 404
+
+	request_body {
+		max_size 300KB
+	}
+
+	reverse_proxy app:8000
+}

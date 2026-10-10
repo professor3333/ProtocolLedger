@@ -1,0 +1,60 @@
+# One CPU host: Caddy (HTTPS) -> FastAPI app (API + review UI) ; Prometheus scrapes the app.
+# The active release (image + model bundle) comes from deploy/state/active.env, written by
+# scripts/release.py. Start manually with:
+#   docker compose -f deploy/compose.yaml --env-file deploy/state/active.env up -d
+name: protocolledger
+
+services:
+  app:
+    image: ${PROTOCOLLEDGER_IMAGE:?run scripts/release.py activate first}
+    restart: unless-stopped
+    environment:
+      PROTOCOLLEDGER_BUNDLE: /models/${PROTOCOLLEDGER_MODEL_VERSION:?missing model version}
+      PROTOCOLLEDGER_DB: /data/reviews.db
+    volumes:
+      - ${PROTOCOLLEDGER_BUNDLES_DIR:?missing bundles dir}:/models:ro
+      - reviews:/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    expose:
+      - "8000"
+    ports:
+      - "127.0.0.1:${PROTOCOLLEDGER_APP_PORT:-8001}:8000"   # host-only, for smoke tests and metrics
+
+  caddy:
+    image: caddy:2.10-alpine@sha256:4c6e91c6ed0e2fa03efd5b44747b625fec79bc9cd06ac5235a779726618e530d
+    restart: unless-stopped
+    depends_on:
+      - app
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-:80}
+    ports:
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+  prometheus:
+    image: prom/prometheus:v3.7.0@sha256:29c1e0b48ad816750245dea3d65ac3ce57dda30547e67b1e9a5176e2953cc4dc
+    restart: unless-stopped
+    depends_on:
+      - app
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.retention.time=30d
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    ports:
+      - "127.0.0.1:9090:9090"   # reach via SSH tunnel; never public
+
+volumes:
+  reviews:
+  caddy_data:
+  caddy_config:
+  prometheus_data:

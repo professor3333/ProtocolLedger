@@ -43,3 +43,6 @@ htmlcov/
 .DS_Store
 .idea/
 .vscode/
+
+# Deployment state (active release, history) is per host
+deploy/state/

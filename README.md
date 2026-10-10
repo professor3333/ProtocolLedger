@@ -26,6 +26,7 @@
   <a href="#approach">Approach</a> ·
   <a href="#evaluation">Evaluation</a> ·
   <a href="#results">Results</a> ·
+  <a href="#deployment">Deployment</a> ·
   <a href="#roadmap">Roadmap</a>
 </p>
 
@@ -181,6 +182,23 @@ Formats outside the supported set are **left as written, not guessed**. Examples
 1×10⁸. The rules normalize 88% of training quantities. Accuracy on an independently
 checked sample of supported formats is still to be measured.
 
+## Deployment
+
+One Docker Compose stack on a single CPU host:
+- **Caddy** for HTTPS, which also keeps `/metrics` internal
+- **the app**, a 134 MB non-root image with read-only model bundles and the SQLite
+  review volume
+- **Prometheus**
+
+A release pins both the image digest and the model-bundle hash.
+`scripts/release.py activate` deploys a release and smoke-tests it, and **restores the
+previous release automatically** if the deploy fails. `rollback` restores the previous
+image *and* bundle together.
+
+Both paths were rehearsed with real containers, including a review surviving the
+rollback. CI builds the image and smoke-tests it with a tiny fixture bundle. See the
+[deployment runbook](docs/deployment.md).
+
 ## Design principles
 
 - **Evidence first.** Every entity, relation and table cell carries character offsets
@@ -211,7 +229,8 @@ checked sample of supported formats is still to be measured.
 | Deterministic quantity normalization | ✅ Done |
 | Saved reviews API, JSON/CSV export, backup and restore | ✅ Done |
 | Review editing in the interface | ✅ Done |
-| CPU optimization, Docker deployment, monitoring | ⬜ Planned |
+| Docker / Compose deployment, Prometheus metrics, release + rollback (rehearsed) | ✅ Done |
+| Public hosting, CPU optimization (ONNX / INT8), load test | ⬜ Planned |
 | User pilot, model card, final report | ⬜ Planned |
 
 ## Quickstart
@@ -428,7 +447,10 @@ ProtocolLedger/
 │   ├── corrections.jsonl        # correction ledger (before/after for every change)
 │   ├── dedup_report.json        # duplicate evidence and duplicate-copy agreement
 │   └── splits.json              # frozen train/dev/test document lists and hashes
+├── deploy/                # compose.yaml, Caddyfile, prometheus.yml
+├── Dockerfile             # pinned base images, non-root, code + deps only
 ├── docs/
+│   ├── deployment.md      # runbook: releases, rollback, backups, monitoring
 │   ├── assets/            # README artwork and interface screenshot
 │   └── dataset_card.md    # sources, conversion, corrections, deduplication, splits
 ├── reports/baselines/     # committed dev reports (JSON + Markdown)
@@ -443,7 +465,10 @@ ProtocolLedger/
 │   ├── train_neural.py    # train / select / report one neural configuration
 │   ├── kaggle.py          # launch / monitor / fetch GPU jobs on Kaggle
 │   ├── backup_reviews.py  # consistent backup / verified restore of the review database
-│   └── log_reports_mlflow.py  # committed reports into MLflow (idempotent)
+│   ├── log_reports_mlflow.py  # committed reports into MLflow (idempotent)
+│   ├── release.py         # activate / rollback / status (image + bundle pinned together)
+│   ├── smoke_test.py      # post-deploy end-to-end check (stdlib only)
+│   └── make_fixture_bundle.py # tiny bundle for CI container smoke tests
 ├── src/protocolledger/baselines/
 │   ├── rules.py           # unit patterns, training dictionary, nearest-span relations
 │   ├── crf_entities.py    # linear-chain CRF tagger (BIO, lexical + character features)

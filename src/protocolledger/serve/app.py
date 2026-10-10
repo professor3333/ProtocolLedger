@@ -11,8 +11,10 @@ Submitted text is processed in memory and not stored.
 from __future__ import annotations
 
 import hashlib
+import json
 import logging
 import os
+import time
 from collections.abc import AsyncIterator, Awaitable, Callable
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -22,10 +24,12 @@ from fastapi import FastAPI, Header, HTTPException, Request, Response
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
+from prometheus_client import CONTENT_TYPE_LATEST, generate_latest
 
 from protocolledger.eval.scorer import QUANTITY_LABELS
 from protocolledger.serve.bundle import BundleError, LoadedBundle, load_bundle
 from protocolledger.serve.export import export_csv, export_json, validate_content
+from protocolledger.serve.metrics import Metrics
 from protocolledger.serve.reviews import ReviewError, ReviewStore
 from protocolledger.serve.schemas import (
     MAX_LINES,
@@ -63,12 +67,24 @@ SECURITY_HEADERS = {
 }
 
 log = logging.getLogger("protocolledger.serve")
+access_log = logging.getLogger("protocolledger.access")
+
+
+def _route_template(request: Request) -> str:
+    route = request.scope.get("route")
+    path = getattr(route, "path", None)
+    if isinstance(path, str):
+        return path
+    return "/static" if request.url.path.startswith("/static/") else "unmatched"
+
+
 T = TypeVar("T")
 
 
 def create_app(bundle_dir: Path | None, review_db: Path | None = None) -> FastAPI:
     state: dict[str, LoadedBundle | str | None] = {"bundle": None, "error": None}
     stores: dict[str, ReviewStore] = {}
+    metrics = Metrics()
 
     @asynccontextmanager
     async def lifespan(_: FastAPI) -> AsyncIterator[None]:
@@ -83,6 +99,12 @@ def create_app(bundle_dir: Path | None, review_db: Path | None = None) -> FastAP
             log.error("%s", state["error"])
         if review_db is not None:
             stores["reviews"] = ReviewStore(review_db)
+        loaded = state["bundle"]
+        if isinstance(loaded, LoadedBundle):
+            info = loaded.version_info()
+            metrics.model_info.labels(
+                info["model_version"], info["system"], info["bundle_sha256"]
+            ).set(1)
         yield
 
     app = FastAPI(
@@ -106,13 +128,46 @@ def create_app(bundle_dir: Path | None, review_db: Path | None = None) -> FastAP
     async def limits_and_headers(
         request: Request, call_next: Callable[[Request], Awaitable[Response]]
     ) -> Response:
+        started = time.perf_counter()
+        metrics.in_flight.inc()
         length = request.headers.get("content-length")
-        if length is not None and (not length.isdigit() or int(length) > MAX_BODY_BYTES):
-            response: Response = JSONResponse(
-                {"detail": f"request body exceeds {MAX_BODY_BYTES} bytes"}, status_code=413
+        try:
+            if length is not None and (not length.isdigit() or int(length) > MAX_BODY_BYTES):
+                response: Response = JSONResponse(
+                    {"detail": f"request body exceeds {MAX_BODY_BYTES} bytes"}, status_code=413
+                )
+            else:
+                response = await call_next(request)
+        except Exception:
+            route_name = _route_template(request)
+            metrics.requests.labels(request.method, route_name, "500").inc()
+            access_log.error(
+                json.dumps(
+                    {
+                        "method": request.method,
+                        "route": route_name,
+                        "status": 500,
+                        "event": "unhandled_exception",
+                    }
+                )
             )
-        else:
-            response = await call_next(request)
+            raise
+        finally:
+            metrics.in_flight.dec()
+        elapsed = time.perf_counter() - started
+        route_name = _route_template(request)
+        metrics.requests.labels(request.method, route_name, str(response.status_code)).inc()
+        metrics.latency.labels(route_name).observe(elapsed)
+        access_log.info(
+            json.dumps(
+                {
+                    "method": request.method,
+                    "route": route_name,
+                    "status": response.status_code,
+                    "ms": round(elapsed * 1000, 1),
+                }
+            )
+        )
         for name, value in SECURITY_HEADERS.items():
             # Swagger UI (/docs) loads its own CDN script; every other page is strict.
             if name == "Content-Security-Policy" and request.url.path.startswith(DOCS_PATHS):
@@ -161,6 +216,12 @@ def create_app(bundle_dir: Path | None, review_db: Path | None = None) -> FastAP
             for i, r in enumerate(raw_relations, start=1)
         ]
         rows, review = build_sheet(raw_entities, raw_relations)
+        metrics.input_chars.observe(len(text))
+        metrics.entities.observe(len(entities))
+        metrics.relations.observe(len(relations))
+        metrics.review_items.observe(len(review))
+        for e in entities:
+            metrics.entity_labels.labels(e.label).inc()
         normalized: dict[str, NormalizedValue] = {}
         for e in entities:
             if e.label in QUANTITY_LABELS:
@@ -184,6 +245,16 @@ def create_app(bundle_dir: Path | None, review_db: Path | None = None) -> FastAP
             review_items=[ReviewItem(**item) for item in review],
             warnings=warnings,
         )
+
+    def record_decisions(content: ReviewContent) -> None:
+        for e in content.entities:
+            metrics.review_decisions.labels("entity", e.origin, e.decision).inc()
+        for r in content.relations:
+            metrics.review_decisions.labels("relation", r.origin, r.decision).inc()
+
+    @app.get("/metrics", include_in_schema=False)
+    def prometheus_metrics() -> Response:
+        return Response(generate_latest(metrics.registry), media_type=CONTENT_TYPE_LATEST)
 
     def review_store() -> ReviewStore:
         if "reviews" not in stores:
@@ -231,6 +302,8 @@ def create_app(bundle_dir: Path | None, review_db: Path | None = None) -> FastAP
                 idempotency_key,
             )
         )
+        metrics.review_operations.labels("create" if created.token else "create_retry").inc()
+        record_decisions(request.content)
         return ReviewCreated(id=created.review_id, token=created.token, revision=created.revision)
 
     @app.post("/v1/reviews/{review_id}/revisions", status_code=201, responses=review_errors)
@@ -247,6 +320,8 @@ def create_app(bundle_dir: Path | None, review_db: Path | None = None) -> FastAP
         number = call(
             lambda: store.add_revision(review_id, x_review_token, request.content.model_dump())
         )
+        metrics.review_operations.labels("revise").inc()
+        record_decisions(request.content)
         return {"revision": number}
 
     @app.post("/v1/preview", response_model=PreviewResponse, responses={422: {"model": Problem}})
@@ -291,6 +366,7 @@ def create_app(bundle_dir: Path | None, review_db: Path | None = None) -> FastAP
         if text_hash(text) != record["text_sha256"]:
             raise HTTPException(status_code=409, detail="text does not match this review")
         content = ReviewContent(**record["content"])
+        metrics.review_operations.labels(f"export_{request.format}").inc()
         stem = f"protocolledger-review-{review_id}-r{record['revision']}"
         if request.format == "csv":
             return Response(
