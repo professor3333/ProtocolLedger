@@ -1,0 +1,30 @@
+{
+ "name": "crf-logreg-m1-4cpu",
+ "machine": "Apple M1 (8 GB) host, Docker limited to 4 CPUs / 4 GB",
+ "model_version": "crf-logreg-4a9d8cc549",
+ "system": "crf+logreg",
+ "concurrency": 1,
+ "requests": 1000,
+ "warmup_requests": 20,
+ "input_words": {
+  "max": 498,
+  "median": 216.0
+ },
+ "success_rate": 1.0,
+ "status_counts": {
+  "200": 1000
+ },
+ "latency_seconds": {
+  "p50": 0.0153,
+  "p95": 0.0346,
+  "p99": 0.0521,
+  "max": 0.0716
+ },
+ "throughput_rps": 57.82,
+ "peak_memory_mib": 124.9,
+ "targets": {
+  "p95_seconds": 3.0,
+  "success_rate": 0.99,
+  "peak_memory_mib": 3072
+ }
+}

@@ -462,6 +462,17 @@ Two slices stand out:
   relation score cannot see whether its endpoint entities are right. The neural model
   will also be scored with a joint confidence, P(relation) × P(head) × P(tail).
 
+### Serving performance
+
+| System | Machine | p95 latency | Success (1,000 requests) | Peak memory |
+|---|---|---:|---:|---:|
+| CRF + logistic regression | Apple M1 host, Docker limited to 4 CPUs / 4 GB | 0.035 s | 100% | 125 MiB |
+
+<sub>Concurrency 1, dev protocols of up to 500 words, after warm-up
+(<a href="reports/performance/crf-logreg-m1-4cpu.md">report</a>, <code>scripts/load_test.py</code>).
+Targets: p95 ≤ 3 s, ≥ 99% success, ≤ 3 GB. The transformer model will be measured the
+same way, with and without ONNX/INT8.</sub>
+
 ## Roadmap
 
 - [x] **Phase 0:** project skeleton, CI, pinned corpus acquisition
@@ -492,6 +503,7 @@ ProtocolLedger/
 ├── reports/baselines/     # committed dev reports (JSON + Markdown)
 ├── reports/errors/        # error taxonomy and slices per system (dev)
 ├── reports/calibration/   # precision–coverage and calibration per system (dev)
+├── reports/performance/   # load-test results with the hardware named
 ├── scripts/
 │   ├── acquire.py         # fetch and verify the pinned corpus
 │   ├── convert.py         # BRAT → canonical JSONL graphs + conversion report
@@ -506,6 +518,7 @@ ProtocolLedger/
 │   ├── log_reports_mlflow.py  # committed reports into MLflow (idempotent)
 │   ├── release.py         # activate / rollback / status (image + bundle pinned together)
 │   ├── smoke_test.py      # post-deploy end-to-end check (stdlib only)
+│   ├── load_test.py       # latency / reliability / memory load test against a container
 │   └── make_fixture_bundle.py # tiny bundle for CI container smoke tests
 ├── src/protocolledger/baselines/
 │   ├── rules.py           # unit patterns, training dictionary, nearest-span relations
