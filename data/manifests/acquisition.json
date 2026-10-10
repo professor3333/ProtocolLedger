@@ -1,0 +1,4873 @@
+{
+ "manifest_version": 1,
+ "source": {
+  "repo": "https://github.com/jeniyat/WNUT_2020_NER",
+  "commit": "9a02914e00f0a16c0c6820c4285dd72403a5a5a8",
+  "license": "MIT",
+  "archive_url": "https://codeload.github.com/jeniyat/WNUT_2020_NER/zip/9a02914e00f0a16c0c6820c4285dd72403a5a5a8",
+  "archive_sha256": "ba4b06ac0324810e956052c1e405effd63a53b879107132c3e410800d33bc10a",
+  "archive_note": "Per-file hashes are authoritative. GitHub archives are generated on demand; the by-commit archive differs in bytes from the refs/heads/master archive (sha256 ae7a31bc...1d44f, audited 2026-10-10) only by its top-level folder name, and both contain identical files."
+ },
+ "selected_dirs": [
+  "data/train_data/Standoff_Format",
+  "data/dev_data/Standoff_Format",
+  "data/test_data_2020/Standoff_Format"
+ ],
+ "extra_files": [
+  "LICENSE",
+  "Readme.md",
+  "data/Readme.md"
+ ],
+ "split_file_counts": {
+  "train_data": {
+   "txt": 370,
+   "ann": 370
+  },
+  "dev_data": {
+   "txt": 122,
+   "ann": 122
+  },
+  "test_data_2020": {
+   "txt": 111,
+   "ann": 111
+  }
+ },
+ "files": {
+  "LICENSE": {
+   "sha256": "3f74de7aac2e2c4fcb52a97804641a9c5984373fd6db6cc37f41c37ec4a0276d",
+   "bytes": 1070
+  },
+  "Readme.md": {
+   "sha256": "71fe74988d56da33900b9b9273631b6c3c9cec4522b8c5fea6d52027c3ebfa87",
+   "bytes": 5324
+  },
+  "data/Readme.md": {
+   "sha256": "fc56ca74c2e86fd6c83b5b336f8792d3826a4cf18e53c00b60742d3cd0d3734d",
+   "bytes": 7440
+  },
+  "data/dev_data/Standoff_Format/protocol_0.ann": {
+   "sha256": "3df881e6fdc627db1fed043435c17f42225d906aa3474589c945ea110fe69d6f",
+   "bytes": 6697
+  },
+  "data/dev_data/Standoff_Format/protocol_0.txt": {
+   "sha256": "ae6a5c733b6e6e1e76c445ea431617cdcdd4d04e8de089b9ab9e3d3f0c7f7f36",
+   "bytes": 1873
+  },
+  "data/dev_data/Standoff_Format/protocol_1.ann": {
+   "sha256": "9cdd3b9d1fa016b5c0a3ad9f6250370b2696e32a5f2d447357308263d0ea5ca8",
+   "bytes": 1804
+  },
+  "data/dev_data/Standoff_Format/protocol_1.txt": {
+   "sha256": "2f766bae4a6f7064a8c0d9e93213b4478ad3f6874a44d608cc65751f3cde0320",
+   "bytes": 462
+  },
+  "data/dev_data/Standoff_Format/protocol_10.ann": {
+   "sha256": "d6d2a00da49e8b7a330c2e3f4f497bcae1b6a51942f211085d3e34987f32bd53",
+   "bytes": 6720
+  },
+  "data/dev_data/Standoff_Format/protocol_10.txt": {
+   "sha256": "c08669fa7e2f7d1776a5088dcdce663c21d94e499f28b76189b4c6885192d5d7",
+   "bytes": 1777
+  },
+  "data/dev_data/Standoff_Format/protocol_102.ann": {
+   "sha256": "5fa615b2e0507b22f73d944d5f8a5e71a8def0392981be17561588207baf35bc",
+   "bytes": 13147
+  },
+  "data/dev_data/Standoff_Format/protocol_102.txt": {
+   "sha256": "5ccdd1b13d8d8129f777137d487bdcadbeebde8522bb1c6cef34c3f08c082e76",
+   "bytes": 5597
+  },
+  "data/dev_data/Standoff_Format/protocol_107.ann": {
+   "sha256": "8738d625573e623e5be0c6a13d101087b35bb1935fc67c856fd93e68a1ee3b0d",
+   "bytes": 3271
+  },
+  "data/dev_data/Standoff_Format/protocol_107.txt": {
+   "sha256": "08a12d8be020df524c8ee2664a179b416529653c42100352c15d54e438cb43a0",
+   "bytes": 814
+  },
+  "data/dev_data/Standoff_Format/protocol_11.ann": {
+   "sha256": "0ece8dd0aecf4a0173ce87569d3d14ed1fefa29e1fb26cacc7d2ebd3b67e72fe",
+   "bytes": 1844
+  },
+  "data/dev_data/Standoff_Format/protocol_11.txt": {
+   "sha256": "de2df2782af9cd2bc425920e4234dce071b8a6b213ef53e495505d2d65e771e7",
+   "bytes": 534
+  },
+  "data/dev_data/Standoff_Format/protocol_111.ann": {
+   "sha256": "03ac9b5b4dd679f5d6271f4d37bbf061f8d2cd7dfdde0fe05f674bf7a0a10564",
+   "bytes": 3721
+  },
+  "data/dev_data/Standoff_Format/protocol_111.txt": {
+   "sha256": "4a3ce3f1506c356f7c10b48d70d4e324629bdf8353993564180b2ed0a049d878",
+   "bytes": 1370
+  },
+  "data/dev_data/Standoff_Format/protocol_113.ann": {
+   "sha256": "cd949615b0c353b3e2bc2335fd328e1fc7cddb2e619f6c21e6dc00f552d0f54b",
+   "bytes": 2188
+  },
+  "data/dev_data/Standoff_Format/protocol_113.txt": {
+   "sha256": "a934f20b574c5c73c2f480d1e74e193a538a1bcae633ace965c24de4fef44563",
+   "bytes": 592
+  },
+  "data/dev_data/Standoff_Format/protocol_116.ann": {
+   "sha256": "c027f06828eaa3bd37b821a820f6a007410d0415c84f23239e6f652ad0a904e7",
+   "bytes": 18951
+  },
+  "data/dev_data/Standoff_Format/protocol_116.txt": {
+   "sha256": "a70234b6de420f9b776d4b597bd26296ff7daa1a22f8a37cf254af888cbb6ac6",
+   "bytes": 5968
+  },
+  "data/dev_data/Standoff_Format/protocol_121.ann": {
+   "sha256": "df08f2ced0ba1bcec1a46930be7a3ea5a1cfc96e43d66fc7ad3e740b3a805a68",
+   "bytes": 2986
+  },
+  "data/dev_data/Standoff_Format/protocol_121.txt": {
+   "sha256": "b1bb052597b2372821b0290f672007f41c6354c40b97e1ba781ce3492af0e17b",
+   "bytes": 951
+  },
+  "data/dev_data/Standoff_Format/protocol_123.ann": {
+   "sha256": "06de2eedaa37e9de3b5a2e14ad5437a4ebe5950e73926035a3a2012d58265c78",
+   "bytes": 6682
+  },
+  "data/dev_data/Standoff_Format/protocol_123.txt": {
+   "sha256": "4143ac8da08f98020cbb79c2de9df2608458a6437e82e36ef07349de0658b46e",
+   "bytes": 2216
+  },
+  "data/dev_data/Standoff_Format/protocol_124.ann": {
+   "sha256": "7b03c6ac14951dd38964a53bf7f907ed619699040b9bfc779ac2877631c90644",
+   "bytes": 8312
+  },
+  "data/dev_data/Standoff_Format/protocol_124.txt": {
+   "sha256": "2eb3f4a686000b60728829e8f00feac8c3d0dffe5f5646e2fd115e9fee3696c4",
+   "bytes": 2385
+  },
+  "data/dev_data/Standoff_Format/protocol_125.ann": {
+   "sha256": "6be355c250c147316077ff14fa8e58001d3b7045728c05faf711fbbbfc0f39c3",
+   "bytes": 1726
+  },
+  "data/dev_data/Standoff_Format/protocol_125.txt": {
+   "sha256": "c9f6c750ecc9a2706ce3e6ebdce83d25432fccc3b9467c8e544ccb66f361b336",
+   "bytes": 488
+  },
+  "data/dev_data/Standoff_Format/protocol_127.ann": {
+   "sha256": "48b86288e11f21a70f9a6b6eede3ea9e2d00b7b5f096b3d9af85829a9f02ff1e",
+   "bytes": 7503
+  },
+  "data/dev_data/Standoff_Format/protocol_127.txt": {
+   "sha256": "fa0765b01c8120c4b946985fbd212f41efe93155b741dd2996faaeee86782612",
+   "bytes": 2225
+  },
+  "data/dev_data/Standoff_Format/protocol_129.ann": {
+   "sha256": "db220665d3ded92ae667b40e470bf9a1637e75a7b8428de26412efec12c59a90",
+   "bytes": 9298
+  },
+  "data/dev_data/Standoff_Format/protocol_129.txt": {
+   "sha256": "4a328abeb049dd9071befe037ac280352071a239a8910cf9d092084742ea996e",
+   "bytes": 3804
+  },
+  "data/dev_data/Standoff_Format/protocol_130.ann": {
+   "sha256": "4f23f659f31455c9ea5f193a692c2aebd8d189b8fbd4b8430a85c21b90bdd473",
+   "bytes": 3602
+  },
+  "data/dev_data/Standoff_Format/protocol_130.txt": {
+   "sha256": "2739fd4ed22e5b4458c2a636b09561412fe868444b2540d4dd1d2f6ea475c4ce",
+   "bytes": 833
+  },
+  "data/dev_data/Standoff_Format/protocol_142.ann": {
+   "sha256": "5014682d479b31d2a80b4baf0a37cb32b21ad972fac7350645eb031bc1968714",
+   "bytes": 8757
+  },
+  "data/dev_data/Standoff_Format/protocol_142.txt": {
+   "sha256": "d79a230d540f6a2b9562b424ee7248fa7e416488c1fa1161bba7bb969b4949e0",
+   "bytes": 2286
+  },
+  "data/dev_data/Standoff_Format/protocol_147.ann": {
+   "sha256": "940a6f3de22a6f8be066dc9660975efa6dc600edcc6091e529fa653b44f4c89f",
+   "bytes": 15833
+  },
+  "data/dev_data/Standoff_Format/protocol_147.txt": {
+   "sha256": "77fdfcf2123f11d803e475e24c06ab21126b0bcf91ebbc22f5d02cccfd3b9d35",
+   "bytes": 4026
+  },
+  "data/dev_data/Standoff_Format/protocol_148.ann": {
+   "sha256": "bfa50b007bb0838ec69f10bbc24c43e8454217f619f2bf50b86ccf69ea289a0e",
+   "bytes": 5958
+  },
+  "data/dev_data/Standoff_Format/protocol_148.txt": {
+   "sha256": "71bb4b34e2cf58889f290b18a7ffd8dfe61b5666ac8bed8b57d26cf373ce0ef3",
+   "bytes": 2229
+  },
+  "data/dev_data/Standoff_Format/protocol_153.ann": {
+   "sha256": "79ef14cee83828e74ee348ff16795de0619859e27b395f9d39dd0555a271f191",
+   "bytes": 7594
+  },
+  "data/dev_data/Standoff_Format/protocol_153.txt": {
+   "sha256": "ecac851872b04beb6d0ec10a935269da4bb0395f3306deb0f80fe794081d8802",
+   "bytes": 1987
+  },
+  "data/dev_data/Standoff_Format/protocol_154.ann": {
+   "sha256": "12bf88bfd71c0bb1ed307bad194254b1abf82b5edbe858810270db28f6ee3234",
+   "bytes": 7693
+  },
+  "data/dev_data/Standoff_Format/protocol_154.txt": {
+   "sha256": "a5d03a38bc0c45586e779e2b4a72dded53c6eb440d6563f7fd17f973db93a059",
+   "bytes": 1553
+  },
+  "data/dev_data/Standoff_Format/protocol_16.ann": {
+   "sha256": "dad9ecb3f8c9c235fa54dd49523b09aca5face7036dceac3df14ad2c53581787",
+   "bytes": 467
+  },
+  "data/dev_data/Standoff_Format/protocol_16.txt": {
+   "sha256": "65bace3621d17e9ad03827c556496e9ed68fdb48f3a8e98026891c99f3d1ef87",
+   "bytes": 164
+  },
+  "data/dev_data/Standoff_Format/protocol_160.ann": {
+   "sha256": "b42f8a9d57249e0da2f619d62c66b1a393a9776007ba10fb4a8c46d0700cda1f",
+   "bytes": 4577
+  },
+  "data/dev_data/Standoff_Format/protocol_160.txt": {
+   "sha256": "165b3210dcfe5000731befa284349dcf81624e1844e75576a033a0053431dd76",
+   "bytes": 1461
+  },
+  "data/dev_data/Standoff_Format/protocol_162.ann": {
+   "sha256": "600cf2b8b6c303cf5c3a6fda82ca15b58fb2bbfd9c12128ed4325c1531c4e50c",
+   "bytes": 2816
+  },
+  "data/dev_data/Standoff_Format/protocol_162.txt": {
+   "sha256": "20050bbd7904a55aa4377a710d02f3353ec6779b658d6acce61d64ccbaca33fc",
+   "bytes": 767
+  },
+  "data/dev_data/Standoff_Format/protocol_167.ann": {
+   "sha256": "bbccd94783c2e31632b3ea69d28de59929c877fba4e8e2c34d10e150d55ba311",
+   "bytes": 14176
+  },
+  "data/dev_data/Standoff_Format/protocol_167.txt": {
+   "sha256": "ca3054bdc8873ee4f24a4f9005c2c798a5a12c88d2684f02ddddfbdf72ced654",
+   "bytes": 5168
+  },
+  "data/dev_data/Standoff_Format/protocol_172.ann": {
+   "sha256": "2eaa6362d661a22cbf1a2dd663aa0b8d4427233cc1c890b2e7eb089e5a88239d",
+   "bytes": 4749
+  },
+  "data/dev_data/Standoff_Format/protocol_172.txt": {
+   "sha256": "81c3773c95712fd3be14d1c8d125ee1cd7c192d8f0e26d916a5a3665991a4c1b",
+   "bytes": 1534
+  },
+  "data/dev_data/Standoff_Format/protocol_174.ann": {
+   "sha256": "0f040cecae38d17541a74a2d751ecdd05406ad6d4a4c7e7676004e2f926185a7",
+   "bytes": 3237
+  },
+  "data/dev_data/Standoff_Format/protocol_174.txt": {
+   "sha256": "bd6046443220cb68745b6d0f4c8b895a983180da8a4cc87ddfac803c20cf6223",
+   "bytes": 802
+  },
+  "data/dev_data/Standoff_Format/protocol_185.ann": {
+   "sha256": "cc6b57c99f24e4a43829f66222ca74a71c5f9cb647ad2ef8b2268f6ea3d4a982",
+   "bytes": 865
+  },
+  "data/dev_data/Standoff_Format/protocol_185.txt": {
+   "sha256": "6a8ea3bd5eab8d74e5e0865fe1d692ee78d040292963f709fc2eeeb4d10279eb",
+   "bytes": 202
+  },
+  "data/dev_data/Standoff_Format/protocol_186.ann": {
+   "sha256": "01e195479ae873b56474401dc4f70c08e9029ac3f46b19ad2595e90cd77b8c05",
+   "bytes": 8002
+  },
+  "data/dev_data/Standoff_Format/protocol_186.txt": {
+   "sha256": "52c8b1b1b7ca3953cab0c080fd0d0c0b2db0bd7eb5b58838f7aba288e19e0b01",
+   "bytes": 2015
+  },
+  "data/dev_data/Standoff_Format/protocol_199.ann": {
+   "sha256": "3ecc537ac7df308b9a8962fef7be5ec226e1270d65f0b468ee548b3a89763a70",
+   "bytes": 3671
+  },
+  "data/dev_data/Standoff_Format/protocol_199.txt": {
+   "sha256": "8debdc30c72ac4e9cad694a06e16caeea0ac4bc4cf06fbaa4bacccf8dd75e2e0",
+   "bytes": 958
+  },
+  "data/dev_data/Standoff_Format/protocol_202.ann": {
+   "sha256": "7b33f301834da004b99c3354f6b87b568a7eaf3edbba486b2421d453e97db2c4",
+   "bytes": 19683
+  },
+  "data/dev_data/Standoff_Format/protocol_202.txt": {
+   "sha256": "d0460dbb538b0e872929a78504919bd1d2bfd32fa5ad90f1de19997730435f51",
+   "bytes": 4697
+  },
+  "data/dev_data/Standoff_Format/protocol_204.ann": {
+   "sha256": "21854fb4158b6799b9f970842b3c9939dd03def971bb65dccebe1f518e92f750",
+   "bytes": 715
+  },
+  "data/dev_data/Standoff_Format/protocol_204.txt": {
+   "sha256": "caf9366f3479d374869161d86ca59daa4b5f88b977bcf9fbb6fc7f517f08dda3",
+   "bytes": 149
+  },
+  "data/dev_data/Standoff_Format/protocol_206.ann": {
+   "sha256": "5f9962fef1cd86a8cb2d875f4673eb24021ffc98b4861131a7aec21b35036e4e",
+   "bytes": 6754
+  },
+  "data/dev_data/Standoff_Format/protocol_206.txt": {
+   "sha256": "441d592aabdb6125901ae34af7692da506279eec5a3c6991aa59efced4473422",
+   "bytes": 1856
+  },
+  "data/dev_data/Standoff_Format/protocol_211.ann": {
+   "sha256": "41a8151e3b7362aaf977b9a5d32fb51d61dee31a5224468cce9ba5996b733751",
+   "bytes": 9087
+  },
+  "data/dev_data/Standoff_Format/protocol_211.txt": {
+   "sha256": "b796285dee28602c60efeda3c798637e10eb53b14626373b16dd3275b8a8ced7",
+   "bytes": 2273
+  },
+  "data/dev_data/Standoff_Format/protocol_213.ann": {
+   "sha256": "245713a07285d7da07e74592cdd67d036a188fe29bee5f8cfce61fc7cc6ebc6e",
+   "bytes": 3677
+  },
+  "data/dev_data/Standoff_Format/protocol_213.txt": {
+   "sha256": "7de3f2b5a28b2d378c4eb05ad0eb96841dc63262ccd6e97906f641d087438830",
+   "bytes": 1171
+  },
+  "data/dev_data/Standoff_Format/protocol_214.ann": {
+   "sha256": "bf0f048fcef0b9eb2ab2511fa6a58be60b0c4a5d5de7cea85433f09dc34cf0bc",
+   "bytes": 4526
+  },
+  "data/dev_data/Standoff_Format/protocol_214.txt": {
+   "sha256": "b65184c2a3b2a8d01eb9bc4f5375e40921a2b17821a600a84fd01341ef40362a",
+   "bytes": 2249
+  },
+  "data/dev_data/Standoff_Format/protocol_219.ann": {
+   "sha256": "8b2b8d50f154ae5da0f598a0d6d84fc9878137f9fa02b4b71d52c929bc44c4c9",
+   "bytes": 7677
+  },
+  "data/dev_data/Standoff_Format/protocol_219.txt": {
+   "sha256": "2b6e1e7d9b36687282edbdaa01f6a5d6236d6703cd096b6cf047ca402275ed8f",
+   "bytes": 1999
+  },
+  "data/dev_data/Standoff_Format/protocol_237.ann": {
+   "sha256": "b1b6e77acea6217b74d2279705e865389c4e83ea98ae4c5da3c5b8a5bbf6f8c6",
+   "bytes": 7018
+  },
+  "data/dev_data/Standoff_Format/protocol_237.txt": {
+   "sha256": "484521541b2952c27b6464075e614622af13ae67bf28ffc0eb0328ff3f89bb4b",
+   "bytes": 1950
+  },
+  "data/dev_data/Standoff_Format/protocol_246.ann": {
+   "sha256": "f19f47c6122f24bf0fca84727d613deaf88232d9481a63b3a5fb3dc7e7f9ae5d",
+   "bytes": 7834
+  },
+  "data/dev_data/Standoff_Format/protocol_246.txt": {
+   "sha256": "b5c824627be44d8440390e747e95455e4033bc894eb5393b2ca2275033e0cca9",
+   "bytes": 2133
+  },
+  "data/dev_data/Standoff_Format/protocol_248.ann": {
+   "sha256": "7c2565d712999185972c43b472f070554f4f8153e8971040fb1bfa338c12db1c",
+   "bytes": 9689
+  },
+  "data/dev_data/Standoff_Format/protocol_248.txt": {
+   "sha256": "a480c76986aae29ae6da273ad3e078c59b125ccc7ac86c6ac7d77863a16052e2",
+   "bytes": 2937
+  },
+  "data/dev_data/Standoff_Format/protocol_250.ann": {
+   "sha256": "045c8138094d22e4ee059a1c24eb7862bc08824162aff583f92c4d067898769d",
+   "bytes": 6107
+  },
+  "data/dev_data/Standoff_Format/protocol_250.txt": {
+   "sha256": "e6ac428040ac688bc969a816d2c934b69725ed0fecd6cf6eaf566c5c51153e12",
+   "bytes": 1868
+  },
+  "data/dev_data/Standoff_Format/protocol_259.ann": {
+   "sha256": "41fd32bc72d835c038c4f62feac8bc4279e252258caf8a60158717577ab9be86",
+   "bytes": 2132
+  },
+  "data/dev_data/Standoff_Format/protocol_259.txt": {
+   "sha256": "5281a66a3d580cd45966d494c4a544ef9b99403d3591c1c76a09475f74c92628",
+   "bytes": 536
+  },
+  "data/dev_data/Standoff_Format/protocol_260.ann": {
+   "sha256": "54197c442f87a8642de02e7d438da5a22283270099a9da2cd5bc80850de7581c",
+   "bytes": 5911
+  },
+  "data/dev_data/Standoff_Format/protocol_260.txt": {
+   "sha256": "4a64462ab10ecb878a5683ccf01ce0d91fe87b2cadf42a3247772654786dc7be",
+   "bytes": 1326
+  },
+  "data/dev_data/Standoff_Format/protocol_264.ann": {
+   "sha256": "a11a6d2bd9b2e5eeb1502a535e3742f1199b19c9eb4bb8ce8c8d381f4834387c",
+   "bytes": 3957
+  },
+  "data/dev_data/Standoff_Format/protocol_264.txt": {
+   "sha256": "ce5791b6b67b2edd52f87b103943192ec62abf432a642a034b4f6ebdb4bfeb9b",
+   "bytes": 909
+  },
+  "data/dev_data/Standoff_Format/protocol_267.ann": {
+   "sha256": "e118ebc216f154babd89beeb1f6de7e110f51204e3aecd356ccd26a7226b8951",
+   "bytes": 8653
+  },
+  "data/dev_data/Standoff_Format/protocol_267.txt": {
+   "sha256": "187f7fb9b02a58126cd8ad0050772a646bf949585466fc2c313f2c8a51f06c92",
+   "bytes": 2373
+  },
+  "data/dev_data/Standoff_Format/protocol_27.ann": {
+   "sha256": "797beef6df2db20ea866e70be379eb12d58c84788088f164a6f039bcbc6e2475",
+   "bytes": 11605
+  },
+  "data/dev_data/Standoff_Format/protocol_27.txt": {
+   "sha256": "c7ebef4b605aaedd8bb20d9997e0dc7ad528fa592388d6d80054af6c12aa1791",
+   "bytes": 2961
+  },
+  "data/dev_data/Standoff_Format/protocol_270.ann": {
+   "sha256": "309a60272758799bf3421a91f45ba5fbed1ce0247f152d6b22599b176bafd9b2",
+   "bytes": 1240
+  },
+  "data/dev_data/Standoff_Format/protocol_270.txt": {
+   "sha256": "891ff9913c27bf47ff19416f40caa9db0cd2affc000e91459b8cafc1ceb9e688",
+   "bytes": 317
+  },
+  "data/dev_data/Standoff_Format/protocol_271.ann": {
+   "sha256": "d3e32fdab2fe963db2e73f4dba966e5c1c3c65b8718c1f4ab0c437b951fb052c",
+   "bytes": 3061
+  },
+  "data/dev_data/Standoff_Format/protocol_271.txt": {
+   "sha256": "4c1a9f705cf8f69ba5ade11638763e6494715c66ac4a35dad688798c9c9c3688",
+   "bytes": 856
+  },
+  "data/dev_data/Standoff_Format/protocol_28.ann": {
+   "sha256": "d080f02e920b73799dc5e2d799731fd591b73a924ad5bd12f385685bd6f2ff68",
+   "bytes": 3187
+  },
+  "data/dev_data/Standoff_Format/protocol_28.txt": {
+   "sha256": "b954670a512a9527a1eea11792f7076b28ad6f666d82cdcd9b9560f6588e4cc8",
+   "bytes": 797
+  },
+  "data/dev_data/Standoff_Format/protocol_285.ann": {
+   "sha256": "5dc6fd1c77097c0d8f638078b59d06831e5ed9dd2866afe2529b33c699589ea4",
+   "bytes": 4697
+  },
+  "data/dev_data/Standoff_Format/protocol_285.txt": {
+   "sha256": "2ee5f109ad1250258e85e343ddee76c7ea701d179fc93ebbbfc306a1c2cbb25d",
+   "bytes": 1345
+  },
+  "data/dev_data/Standoff_Format/protocol_287.ann": {
+   "sha256": "b41f1dfd67d58188d821a7f0b592f6431b6a9c257c2ddf7eee9250da32fd718f",
+   "bytes": 8685
+  },
+  "data/dev_data/Standoff_Format/protocol_287.txt": {
+   "sha256": "fe72f69df2c297e70675e2eb1f0f3d7bf2025bff0f1639215ac87d56ddecc3fa",
+   "bytes": 2526
+  },
+  "data/dev_data/Standoff_Format/protocol_290.ann": {
+   "sha256": "ebb868301d1083a9712c30466eb539af30f42359f0f37c98a57dbe111a4b5d10",
+   "bytes": 4120
+  },
+  "data/dev_data/Standoff_Format/protocol_290.txt": {
+   "sha256": "0aaa8a1e28461a6661d7102f6f294b8ea9ba6b6019481e8e112e0b64a733ecaa",
+   "bytes": 948
+  },
+  "data/dev_data/Standoff_Format/protocol_296.ann": {
+   "sha256": "3924033f256c847e3a22dbf0332f5c27cb9a8ecc9f519efc5d80f1ea716a0426",
+   "bytes": 1500
+  },
+  "data/dev_data/Standoff_Format/protocol_296.txt": {
+   "sha256": "0cdb72923214095935852672bd40fad792447ce5f7a002a01f1608de4bef6372",
+   "bytes": 321
+  },
+  "data/dev_data/Standoff_Format/protocol_306.ann": {
+   "sha256": "ed33a82fa7d682f69c714cbadef79a5d1f9ce784f599c8018fee3cfde6d8d8aa",
+   "bytes": 1106
+  },
+  "data/dev_data/Standoff_Format/protocol_306.txt": {
+   "sha256": "bcb5b8a736ed6bbd44ac222f9088d43f77d14537d8b8ae58ac6d8ed9b9f7bb83",
+   "bytes": 403
+  },
+  "data/dev_data/Standoff_Format/protocol_31.ann": {
+   "sha256": "78a2aaf81e98dc2d33497b739f4a176c7d081fd103b252be0044756cdc46ff60",
+   "bytes": 7183
+  },
+  "data/dev_data/Standoff_Format/protocol_31.txt": {
+   "sha256": "73f29d7fc8c7fd20adc3b41d141ab8fa15c960f0bbea62ec732f79dcab77ef38",
+   "bytes": 1994
+  },
+  "data/dev_data/Standoff_Format/protocol_312.ann": {
+   "sha256": "e7903c04712de9d67e70d0671fdd7f878c52b16c1aa4c9de0868d66013379762",
+   "bytes": 564
+  },
+  "data/dev_data/Standoff_Format/protocol_312.txt": {
+   "sha256": "6a4cfc0d38ff6076c87b7cbf1c652c2e4c161032f4136d72ac6741fb465adc57",
+   "bytes": 175
+  },
+  "data/dev_data/Standoff_Format/protocol_313.ann": {
+   "sha256": "913ac2d91a81a3b9e402fa281d70eb1515bcea15f301b1f374338e8d4960678d",
+   "bytes": 4949
+  },
+  "data/dev_data/Standoff_Format/protocol_313.txt": {
+   "sha256": "731fe0093193f0b224f0203c429ea5a67a7d8cf7c279574372cd73c64273c054",
+   "bytes": 1554
+  },
+  "data/dev_data/Standoff_Format/protocol_325.ann": {
+   "sha256": "adeb22642cffe0e689d3a4c4ea91c5063432b2b8df52e18297d70679968322bc",
+   "bytes": 3891
+  },
+  "data/dev_data/Standoff_Format/protocol_325.txt": {
+   "sha256": "4eb10c388a2404b3bb68e6e25189206ca4cc93380e7130d4b7ed4675708f9277",
+   "bytes": 1005
+  },
+  "data/dev_data/Standoff_Format/protocol_336.ann": {
+   "sha256": "904c937a1c30abfcf38b882cfa9f668bfa36c97fa8fe57a67a43ddf268a912ea",
+   "bytes": 5037
+  },
+  "data/dev_data/Standoff_Format/protocol_336.txt": {
+   "sha256": "d0ffca505b1c7bf7b00903191f5792abf62f0bf9b837c5ab114de14b72678e73",
+   "bytes": 1494
+  },
+  "data/dev_data/Standoff_Format/protocol_340.ann": {
+   "sha256": "b23b85915f019dcf20376c052e0102015874bdb6671714960d5160c9a2499f97",
+   "bytes": 16972
+  },
+  "data/dev_data/Standoff_Format/protocol_340.txt": {
+   "sha256": "38047ab94c364f550bc1a3f1e9ff32b9ed1cacc56a90a2c76498bc2d1aab5080",
+   "bytes": 5564
+  },
+  "data/dev_data/Standoff_Format/protocol_342.ann": {
+   "sha256": "ee171926f95a99e7570bc283697be52faa9f9f235526e5faf0699f10f9d757c9",
+   "bytes": 10667
+  },
+  "data/dev_data/Standoff_Format/protocol_342.txt": {
+   "sha256": "d4aa817e874587b6c0f7c3a00a3e6f28013f2a350268b199f0d33edc6a5e94f4",
+   "bytes": 2757
+  },
+  "data/dev_data/Standoff_Format/protocol_353.ann": {
+   "sha256": "87eb4aa264950008596c2e6ab0dcba660930344260b7203c8ca0a8911873d2fd",
+   "bytes": 1202
+  },
+  "data/dev_data/Standoff_Format/protocol_353.txt": {
+   "sha256": "9e6fc8cdda02b2c027ccd1f6bf7d9287f4a22861f55e0316b748486723406acc",
+   "bytes": 297
+  },
+  "data/dev_data/Standoff_Format/protocol_36.ann": {
+   "sha256": "0d8c220b800416748624ef366f53a660a0af25cf3a427f9437e3ff50c1f04c9b",
+   "bytes": 10198
+  },
+  "data/dev_data/Standoff_Format/protocol_36.txt": {
+   "sha256": "8edff5f5f04dc9cbd5ec225cea1d013c70db20acafb5090f24a18ba12210adc0",
+   "bytes": 2622
+  },
+  "data/dev_data/Standoff_Format/protocol_360.ann": {
+   "sha256": "44f62b44035e956806f49bb9c4a06eaf28c6cd3c884a53e83be1c26a640dec55",
+   "bytes": 1322
+  },
+  "data/dev_data/Standoff_Format/protocol_360.txt": {
+   "sha256": "b90366e6537ad1d0bafec9774987d1507ae6d3a078144eb444983b06d6f59c8b",
+   "bytes": 462
+  },
+  "data/dev_data/Standoff_Format/protocol_377.ann": {
+   "sha256": "f140bef4276fd44da519782f9fadc5cf4eb307fac881fa3446d789327160b60c",
+   "bytes": 1917
+  },
+  "data/dev_data/Standoff_Format/protocol_377.txt": {
+   "sha256": "afa7b8030cd53aea84a672ac59aef1fd853dc99e3fcd98e3263d11f60ed35e99",
+   "bytes": 528
+  },
+  "data/dev_data/Standoff_Format/protocol_381.ann": {
+   "sha256": "9611987a56c9ffea7a0819bae3e839dfb83f47916f30799a0c66d69a746fd856",
+   "bytes": 2468
+  },
+  "data/dev_data/Standoff_Format/protocol_381.txt": {
+   "sha256": "dd6397fbe869783c008407450954a1ae0a7ed7fc0e817421bd0186ef5fcdad34",
+   "bytes": 513
+  },
+  "data/dev_data/Standoff_Format/protocol_382.ann": {
+   "sha256": "16948ffbdc1c4c5100c073cc938bc9e5a326a29aab5be25c840a63601c3d7d83",
+   "bytes": 3276
+  },
+  "data/dev_data/Standoff_Format/protocol_382.txt": {
+   "sha256": "65fe9a898f480d93d45d658b30b0ad0c4db33ce787ba8229f642663b84125cbb",
+   "bytes": 831
+  },
+  "data/dev_data/Standoff_Format/protocol_389.ann": {
+   "sha256": "7b32c3a303325b3eeb859128e3cdea9dc85b0ad81148a8e46be0c8b36113bda1",
+   "bytes": 7285
+  },
+  "data/dev_data/Standoff_Format/protocol_389.txt": {
+   "sha256": "8e91bb87e6f4ce2ebd8a65c16bd3ca52dfda5dae785717cb16081279e68fa149",
+   "bytes": 1740
+  },
+  "data/dev_data/Standoff_Format/protocol_395.ann": {
+   "sha256": "8e647e52ce5de215342287b06b929a2b5f87ca6872ee817b802441ac4e0aad5d",
+   "bytes": 2255
+  },
+  "data/dev_data/Standoff_Format/protocol_395.txt": {
+   "sha256": "8ef5cf64c9a7a032f8c2fd4744fefbda8ab19b7f2cfdd31fd0efbac39df6190f",
+   "bytes": 595
+  },
+  "data/dev_data/Standoff_Format/protocol_396.ann": {
+   "sha256": "4c18f65bfaa81979ed0344296bc8eb42f3be82a1d957ae98ea6a762849201d53",
+   "bytes": 953
+  },
+  "data/dev_data/Standoff_Format/protocol_396.txt": {
+   "sha256": "bb1fa5317fb70c45ec658cdf6eb0a49efb725761d6de4b17fe38794d5915c8cc",
+   "bytes": 274
+  },
+  "data/dev_data/Standoff_Format/protocol_404.ann": {
+   "sha256": "12c9754fcc95813bbb13a9b49600f7469955ef3afd7f2b3a5f4d0f7877b00136",
+   "bytes": 3914
+  },
+  "data/dev_data/Standoff_Format/protocol_404.txt": {
+   "sha256": "5dbe7fca6b4d6bec01ea56d3585d884754fbad5644e9945d455dbf4c876ccd73",
+   "bytes": 1155
+  },
+  "data/dev_data/Standoff_Format/protocol_411.ann": {
+   "sha256": "834f6ae3a8dbc55d6d3073eb854867499e85f6fbce8ec1bc4760d556081d2050",
+   "bytes": 2259
+  },
+  "data/dev_data/Standoff_Format/protocol_411.txt": {
+   "sha256": "2e911f16420f61c7bd0556c11281456d288aa0c83808690c1e8530bd60be26e3",
+   "bytes": 693
+  },
+  "data/dev_data/Standoff_Format/protocol_414.ann": {
+   "sha256": "d7d5692d508228ab019646fc3fcf522a259c20655401f91789f50adffd27cf65",
+   "bytes": 4935
+  },
+  "data/dev_data/Standoff_Format/protocol_414.txt": {
+   "sha256": "6de0e300a7eea9508a5cb7eb8171018ffd7e7b4b43c62f1bf7cbd8c2747b0276",
+   "bytes": 1416
+  },
+  "data/dev_data/Standoff_Format/protocol_425.ann": {
+   "sha256": "c314db970ed05f11d2eaeb004eadadbc9f3eadc9ac1ef549ea89102235946da1",
+   "bytes": 3289
+  },
+  "data/dev_data/Standoff_Format/protocol_425.txt": {
+   "sha256": "53e912e9fbdf6b07b1e0771424e9b7f6f58522e4c974b9f1056f8a57181bb640",
+   "bytes": 870
+  },
+  "data/dev_data/Standoff_Format/protocol_428.ann": {
+   "sha256": "fb82fddde1c7752a64749f95f45f0d430f1dfea9a50fe66a084fba4ffa055c4b",
+   "bytes": 9641
+  },
+  "data/dev_data/Standoff_Format/protocol_428.txt": {
+   "sha256": "0c57f1d082cae2e05ecdb6c29da7c1dc59386d704c52e00a01c7ebd52f215444",
+   "bytes": 2626
+  },
+  "data/dev_data/Standoff_Format/protocol_431.ann": {
+   "sha256": "93c8b7702433d1034f2d00391af835a4571c0be9264240f9cfacab176f6c48ef",
+   "bytes": 611
+  },
+  "data/dev_data/Standoff_Format/protocol_431.txt": {
+   "sha256": "6ac97bc514583721a94f2b34790dba33dc5b61d98894e2143c6f97a88a1e11e7",
+   "bytes": 189
+  },
+  "data/dev_data/Standoff_Format/protocol_435.ann": {
+   "sha256": "7a12192df5c34c4ad0061f9faaca5b1f5476bba5c309a7d25d03a52f47ee99ed",
+   "bytes": 5094
+  },
+  "data/dev_data/Standoff_Format/protocol_435.txt": {
+   "sha256": "92d1d9a1b8685c6cf453d6917d589db9e924ab64ba64cddd0ad45bb6d89e3af6",
+   "bytes": 1554
+  },
+  "data/dev_data/Standoff_Format/protocol_439.ann": {
+   "sha256": "dd113e714b733ec5c2a094333ca2ce79b879e7ec888116168ebbc0e94f2c4936",
+   "bytes": 9192
+  },
+  "data/dev_data/Standoff_Format/protocol_439.txt": {
+   "sha256": "c421790183c2421557d1b57330dbe50459aa60b1359b14a00c71f7a28a738759",
+   "bytes": 2255
+  },
+  "data/dev_data/Standoff_Format/protocol_440.ann": {
+   "sha256": "0f91f33f14d6095b582eac6baaece4b41e209fa5ba20050a86b777e16a757947",
+   "bytes": 8746
+  },
+  "data/dev_data/Standoff_Format/protocol_440.txt": {
+   "sha256": "1ffb55757be53affda13a57ced48ad6024350417ad089826da4be0653ece552c",
+   "bytes": 2683
+  },
+  "data/dev_data/Standoff_Format/protocol_441.ann": {
+   "sha256": "46252e35f538510261ee51bcdc8b64be9d07047034d3b9c33305f9339584f6b9",
+   "bytes": 4736
+  },
+  "data/dev_data/Standoff_Format/protocol_441.txt": {
+   "sha256": "7fdc6a8ad8ef1773a987ee98927ad1f08d1dc38fa7ee12d769ad43b699f6f2d4",
+   "bytes": 1326
+  },
+  "data/dev_data/Standoff_Format/protocol_442.ann": {
+   "sha256": "e7555a95439b44e9917aef65e48da55273b6ece2343fec5e0d74dbb8c599058e",
+   "bytes": 3376
+  },
+  "data/dev_data/Standoff_Format/protocol_442.txt": {
+   "sha256": "fea05a4272ff61c61647c1c27de30940a7e54b89674e8dcca5b096f46e3952d2",
+   "bytes": 877
+  },
+  "data/dev_data/Standoff_Format/protocol_444.ann": {
+   "sha256": "9b7fab7bae98ca4825728a2abf598cedf6244c6c5898a95a7fa8f42851b90763",
+   "bytes": 14442
+  },
+  "data/dev_data/Standoff_Format/protocol_444.txt": {
+   "sha256": "2117a422006d19b676f4d12288b166736fa6d7ee6edcb1ad9a345805120f0af0",
+   "bytes": 3609
+  },
+  "data/dev_data/Standoff_Format/protocol_445.ann": {
+   "sha256": "8ca635c092286e34c4e84acfb188b4b3aa1d10f2b583e84d819ac4768bef2c36",
+   "bytes": 10530
+  },
+  "data/dev_data/Standoff_Format/protocol_445.txt": {
+   "sha256": "9918420771cb3a55e301d2ab65a0a02501b369d669d7d7da2bb2f6c7008d9f62",
+   "bytes": 2624
+  },
+  "data/dev_data/Standoff_Format/protocol_454.ann": {
+   "sha256": "dc501f5eea808aef94554b7adcbb8df40b353622c1fb5341b0a50426597afd66",
+   "bytes": 4270
+  },
+  "data/dev_data/Standoff_Format/protocol_454.txt": {
+   "sha256": "9fd77534f440d1a0802611bf12dd7ccf8af95adc965ca97f8d1d1c039096bad6",
+   "bytes": 941
+  },
+  "data/dev_data/Standoff_Format/protocol_469.ann": {
+   "sha256": "9282bf25f95d6e5424714ddebacb902a208acb807582c3452100bcfc0e53e41f",
+   "bytes": 27805
+  },
+  "data/dev_data/Standoff_Format/protocol_469.txt": {
+   "sha256": "2790f5413d06fb4f3660d5484af0d06e235c59ef54dbcd434b610ad6bfe92f3f",
+   "bytes": 6349
+  },
+  "data/dev_data/Standoff_Format/protocol_470.ann": {
+   "sha256": "678b8790a09b8bb230d0118f04ad02097e021768aa535796cc603f87f32006bc",
+   "bytes": 572
+  },
+  "data/dev_data/Standoff_Format/protocol_470.txt": {
+   "sha256": "6bfb59aba6a0da41ef3aa073c1a3334005342211ba12dcc6349419cfbab66885",
+   "bytes": 185
+  },
+  "data/dev_data/Standoff_Format/protocol_487.ann": {
+   "sha256": "437a30a7f41faad7053c37ded072aedcb990666e09182d9ada45f460b0e082eb",
+   "bytes": 20375
+  },
+  "data/dev_data/Standoff_Format/protocol_487.txt": {
+   "sha256": "ecb0b4e537150c7f52e856ebe0c431d0625c42bb1730b249f07d7105ec463423",
+   "bytes": 5171
+  },
+  "data/dev_data/Standoff_Format/protocol_489.ann": {
+   "sha256": "d2a80e79bc6d7681de9137fd2ae9df07cb8872fd9ce34fcce7df0ee14946766f",
+   "bytes": 13031
+  },
+  "data/dev_data/Standoff_Format/protocol_489.txt": {
+   "sha256": "f65be27f28d9ccb17b3525bd1db626ce368ffbfb40af28f98a486c06d5dac8b4",
+   "bytes": 2781
+  },
+  "data/dev_data/Standoff_Format/protocol_503.ann": {
+   "sha256": "fed9d61192c8edfb58ffbfd1825e3d9190d274614ad697d068ef85afcdd8d0ba",
+   "bytes": 49089
+  },
+  "data/dev_data/Standoff_Format/protocol_503.txt": {
+   "sha256": "c6bae166a040e6704cad7b680634216c8692ae0f6727ab26c492a2fff63f2c45",
+   "bytes": 11440
+  },
+  "data/dev_data/Standoff_Format/protocol_504.ann": {
+   "sha256": "9fd50d80d394ff61f13341b4fb973d0951a4a7faecb0d4c99b0ac34c3d297d4f",
+   "bytes": 12278
+  },
+  "data/dev_data/Standoff_Format/protocol_504.txt": {
+   "sha256": "87a3fdb86201eace17da34447610f66745e373343eab04a4fbdc4d48f383aefe",
+   "bytes": 2949
+  },
+  "data/dev_data/Standoff_Format/protocol_524.ann": {
+   "sha256": "619cd527b4f07a0784ebbd74bd7540ab7a8a95bc7d8c41cd19b393cd11e54f01",
+   "bytes": 3126
+  },
+  "data/dev_data/Standoff_Format/protocol_524.txt": {
+   "sha256": "b4661c2832140cc5bfa06e63a2746fab39ce33cf590fc8374e29f0bc4d8f0607",
+   "bytes": 781
+  },
+  "data/dev_data/Standoff_Format/protocol_532.ann": {
+   "sha256": "7f5b8e844284925c2e8501f2ea587b927020f5578697ace6b4b739a976cb8b7f",
+   "bytes": 2305
+  },
+  "data/dev_data/Standoff_Format/protocol_532.txt": {
+   "sha256": "ad32b6e99ffc1871ef724cc214d98f04497a52074bae4e0a1ff6c3dbc273957c",
+   "bytes": 561
+  },
+  "data/dev_data/Standoff_Format/protocol_535.ann": {
+   "sha256": "ad39edefcdba0299625069e852697df15961481dabcd7bcdb1ed4954e6f924d2",
+   "bytes": 4933
+  },
+  "data/dev_data/Standoff_Format/protocol_535.txt": {
+   "sha256": "0611faa41657be7289e8d6d1ae243bd43cfaa56e2fe56ba4516704091a5ed370",
+   "bytes": 1145
+  },
+  "data/dev_data/Standoff_Format/protocol_543.ann": {
+   "sha256": "0d7d9e241156101668d00a2b4e72f4dc8e26ff68acfb9ac1e8dcd31cb958939d",
+   "bytes": 6470
+  },
+  "data/dev_data/Standoff_Format/protocol_543.txt": {
+   "sha256": "4a43ebba0150c039a58f027f003e4ba2bfd0f50d5e8a5fc0a8f86f9dbaa7a3e1",
+   "bytes": 1636
+  },
+  "data/dev_data/Standoff_Format/protocol_552.ann": {
+   "sha256": "cc53cc6e4477274b12353bd3de6cda36772633dfffde94f892f343d272f12fab",
+   "bytes": 1248
+  },
+  "data/dev_data/Standoff_Format/protocol_552.txt": {
+   "sha256": "376634269238de65fad95769e82c3dbfdc180e74e490953c8aa81e78c42da39b",
+   "bytes": 178
+  },
+  "data/dev_data/Standoff_Format/protocol_557.ann": {
+   "sha256": "b872bcf67a008f8705df7cb13b81288ac2cd89213bfd2821a74313a8f46c3fc2",
+   "bytes": 3135
+  },
+  "data/dev_data/Standoff_Format/protocol_557.txt": {
+   "sha256": "5314d2008d5530c336c2ad16d138fed44e5b378f81f5bf83de63ff48dd20263b",
+   "bytes": 930
+  },
+  "data/dev_data/Standoff_Format/protocol_559.ann": {
+   "sha256": "97832d526b4374f9f93abea03c07c8fb5ab27e5da1b67b177f1d3bf0591cc779",
+   "bytes": 2120
+  },
+  "data/dev_data/Standoff_Format/protocol_559.txt": {
+   "sha256": "9b06baf727719a6270865029631bcac928eed6e6de8bf50a08e313e059564e48",
+   "bytes": 595
+  },
+  "data/dev_data/Standoff_Format/protocol_56.ann": {
+   "sha256": "9cf040c8f2ab263d1044f3d9a17c4d4314bf1ff747d4439eab7b0b7f2fbd6feb",
+   "bytes": 610
+  },
+  "data/dev_data/Standoff_Format/protocol_56.txt": {
+   "sha256": "6bfb59aba6a0da41ef3aa073c1a3334005342211ba12dcc6349419cfbab66885",
+   "bytes": 185
+  },
+  "data/dev_data/Standoff_Format/protocol_572.ann": {
+   "sha256": "6c27296064536f535ffd325b0362a8e8c3627b61c1ac3a4f9a880c8c46fae505",
+   "bytes": 2891
+  },
+  "data/dev_data/Standoff_Format/protocol_572.txt": {
+   "sha256": "d0ad11348a9d99ac9e017d5f2a2fc5815a4aa5033db3945b603fc7345181c1ba",
+   "bytes": 657
+  },
+  "data/dev_data/Standoff_Format/protocol_575.ann": {
+   "sha256": "4ee06b5a07ade5f01749ad699a19f3da63a7b4dae95dbb65937f4572410d24be",
+   "bytes": 2946
+  },
+  "data/dev_data/Standoff_Format/protocol_575.txt": {
+   "sha256": "e1fea231c60d6d2a167e5396bfbc6ee7fdf6c85420325b03fad7f83cebcea89b",
+   "bytes": 949
+  },
+  "data/dev_data/Standoff_Format/protocol_577.ann": {
+   "sha256": "98a942034e0522264a0138177ed600eb9fee1b4cbb66a44317146b4581bb577a",
+   "bytes": 15498
+  },
+  "data/dev_data/Standoff_Format/protocol_577.txt": {
+   "sha256": "4b5b2ed16d83cb4126c621e934127dcd78edd1060d98d7fc196342b6a0834acf",
+   "bytes": 4066
+  },
+  "data/dev_data/Standoff_Format/protocol_580.ann": {
+   "sha256": "753527a7d85c709c9294f306755f987bcb007e7e9be0aedbb4bbd96ef5731a1e",
+   "bytes": 4997
+  },
+  "data/dev_data/Standoff_Format/protocol_580.txt": {
+   "sha256": "d0184cea2de6b09f51480fa00817cb129d16be8aabffde79ea17e955eb285d4d",
+   "bytes": 1246
+  },
+  "data/dev_data/Standoff_Format/protocol_583.ann": {
+   "sha256": "409e2c73cb13c81db34804a332dd100dd8f591d6e2aa810ce2e1537210fa1e0b",
+   "bytes": 14108
+  },
+  "data/dev_data/Standoff_Format/protocol_583.txt": {
+   "sha256": "e6cf771085e3b799b1cc53e952a18bf1f7c436e7da66c38fb1befe6ddd01a417",
+   "bytes": 3362
+  },
+  "data/dev_data/Standoff_Format/protocol_584.ann": {
+   "sha256": "387baf3841848ae8dcda8a2c0904f2bfba55931ed2c8a0aa6d18bd627636de55",
+   "bytes": 5776
+  },
+  "data/dev_data/Standoff_Format/protocol_584.txt": {
+   "sha256": "eaf49a9d434fe3ec96094862da9c4c0d4f7bd989b9c40a26f54201ef738520fd",
+   "bytes": 1495
+  },
+  "data/dev_data/Standoff_Format/protocol_586.ann": {
+   "sha256": "d14dda32b30b854925d35f9d57a6498070822b76a01926f4fc5d87db15345e65",
+   "bytes": 2460
+  },
+  "data/dev_data/Standoff_Format/protocol_586.txt": {
+   "sha256": "4004de86aef1095d16ea32a2c281e3f671101f736140ae2a6767c00253bbfbf3",
+   "bytes": 744
+  },
+  "data/dev_data/Standoff_Format/protocol_592.ann": {
+   "sha256": "142a975a34e4bae85942d7e496531d2d6d7cc514026501616c75c2d40b2ac8ae",
+   "bytes": 2755
+  },
+  "data/dev_data/Standoff_Format/protocol_592.txt": {
+   "sha256": "27906121d54d41900b643210070e4486b37eefea44d9e05e3e20602c6d033eea",
+   "bytes": 655
+  },
+  "data/dev_data/Standoff_Format/protocol_593.ann": {
+   "sha256": "2d3f9d0f67a758f5a72748298c2e7f8ac85be7081c9f66424d8650c2df1a297b",
+   "bytes": 1984
+  },
+  "data/dev_data/Standoff_Format/protocol_593.txt": {
+   "sha256": "0c7ae2bc3d32565d138d428da30b586cfdbc372b390ed5e895ad314bf8886c19",
+   "bytes": 597
+  },
+  "data/dev_data/Standoff_Format/protocol_596.ann": {
+   "sha256": "77752a31b71f7698b2e94516411b15a9fdc66cf4000e3aec2e66a0d6b370efa2",
+   "bytes": 1764
+  },
+  "data/dev_data/Standoff_Format/protocol_596.txt": {
+   "sha256": "dfd970932caa1f22652bfe9f3afc6015fbfefdc704b029b58c53c04a4dbd1530",
+   "bytes": 732
+  },
+  "data/dev_data/Standoff_Format/protocol_604.ann": {
+   "sha256": "d2f4849a044a098c743d93f7789850eb8f1c2af0af3b7f075468e855723f6f9d",
+   "bytes": 1066
+  },
+  "data/dev_data/Standoff_Format/protocol_604.txt": {
+   "sha256": "91396a21dcec3b52e64e2074676fd268d2f292dafe4683bbb7e522d48903aedd",
+   "bytes": 180
+  },
+  "data/dev_data/Standoff_Format/protocol_606.ann": {
+   "sha256": "5203deb0001a03cc1e86c45aa388257b91e414591afbbd6b97fc59b7276988e4",
+   "bytes": 3892
+  },
+  "data/dev_data/Standoff_Format/protocol_606.txt": {
+   "sha256": "a1a2c9df219afcb128135d53203e6cbdec2106c4d3f4ba7ca957e2826f38b00c",
+   "bytes": 1228
+  },
+  "data/dev_data/Standoff_Format/protocol_61.ann": {
+   "sha256": "cdf0f57e677d27139b19ba5fd8299606cde45477a3ff0dd85cd0725cd7ddf78a",
+   "bytes": 4076
+  },
+  "data/dev_data/Standoff_Format/protocol_61.txt": {
+   "sha256": "5e0a105f0c42e649d6adca8fe7b2b96ec5767169e6adf43655c906a67f734256",
+   "bytes": 972
+  },
+  "data/dev_data/Standoff_Format/protocol_613.ann": {
+   "sha256": "903daede2847fcf98947063cfbf6512335f9df67c6c6dece55a2c5122d8886bf",
+   "bytes": 5082
+  },
+  "data/dev_data/Standoff_Format/protocol_613.txt": {
+   "sha256": "a5188e3aa9f5e229e693f698d3d9f48442f0930ee7df6f7edb5a1c2cd80564c5",
+   "bytes": 1248
+  },
+  "data/dev_data/Standoff_Format/protocol_614.ann": {
+   "sha256": "a8c7bae5abe826a1fcf8d2a0cf181cefd71313a41570deda4618684da1b20758",
+   "bytes": 2755
+  },
+  "data/dev_data/Standoff_Format/protocol_614.txt": {
+   "sha256": "d24e1cfaeb49c9a712c9d35d7159094060d01b3f20a4ce92409f47c92940e3d3",
+   "bytes": 661
+  },
+  "data/dev_data/Standoff_Format/protocol_617.ann": {
+   "sha256": "480938f9f369c0f8d3f27f31135f665f4d6d63cbe4ed90ad1b030bf367d96619",
+   "bytes": 3212
+  },
+  "data/dev_data/Standoff_Format/protocol_617.txt": {
+   "sha256": "b3a36b68b01d77f95d391c05d88369a0dd41c5ad1814c2f0d295b2c5d018a408",
+   "bytes": 785
+  },
+  "data/dev_data/Standoff_Format/protocol_620.ann": {
+   "sha256": "49ec7d803d87a5d625c012559b2eaf58da0f027d8a799ab72989a09e793d21c4",
+   "bytes": 23380
+  },
+  "data/dev_data/Standoff_Format/protocol_620.txt": {
+   "sha256": "8d4ac74e73cd0eba4785fff86579a84c7ee1baf0c3959dccfd38466e05a063de",
+   "bytes": 5346
+  },
+  "data/dev_data/Standoff_Format/protocol_65.ann": {
+   "sha256": "39debd8464f94dd2f396386fe44d90bf39548b1a24c6b75f7078834f19f823b8",
+   "bytes": 4789
+  },
+  "data/dev_data/Standoff_Format/protocol_65.txt": {
+   "sha256": "ea95403966c6b618ba91632830b04a447d4abd87a6f86e95438fa1c71cdf1ac0",
+   "bytes": 1184
+  },
+  "data/dev_data/Standoff_Format/protocol_66.ann": {
+   "sha256": "681602783941992b1f7f2afe87dc6ea96f266ece7e1615c3140df3b673621231",
+   "bytes": 5604
+  },
+  "data/dev_data/Standoff_Format/protocol_66.txt": {
+   "sha256": "731fe0093193f0b224f0203c429ea5a67a7d8cf7c279574372cd73c64273c054",
+   "bytes": 1554
+  },
+  "data/dev_data/Standoff_Format/protocol_7.ann": {
+   "sha256": "249272efc82d37ec4052e8a5707e9918625a7de61764f03da245659de99060e4",
+   "bytes": 9751
+  },
+  "data/dev_data/Standoff_Format/protocol_7.txt": {
+   "sha256": "d19815fd5898bd71b4fe2d7c06b0233b8206f93d6e1857e6dd5de7cebb319068",
+   "bytes": 2763
+  },
+  "data/dev_data/Standoff_Format/protocol_8.ann": {
+   "sha256": "723e77a7ca85f5cd275ef1dfe33b1ecc37f45164f5770b71c62476c654e67aeb",
+   "bytes": 15992
+  },
+  "data/dev_data/Standoff_Format/protocol_8.txt": {
+   "sha256": "d67071a0f88c1e0b0f5e78aa2fe2cc36d195cf3f891f104f114d9c3f2b6e34fd",
+   "bytes": 3614
+  },
+  "data/dev_data/Standoff_Format/protocol_81.ann": {
+   "sha256": "ba9d008619931c45b2adc532ebbbb23b828fd36d502c148d944d403d41224bcd",
+   "bytes": 2475
+  },
+  "data/dev_data/Standoff_Format/protocol_81.txt": {
+   "sha256": "a1af97486968704d2a8ae4c9458e50655b80eb39cd4f668b4300626ac1d88dbd",
+   "bytes": 713
+  },
+  "data/dev_data/Standoff_Format/protocol_89.ann": {
+   "sha256": "dad88a5fa30e83ae2a15c527b0b55b015643b83c7035abaa5fa3598716c53c34",
+   "bytes": 4393
+  },
+  "data/dev_data/Standoff_Format/protocol_89.txt": {
+   "sha256": "f0ff237b9084b478f45ff71ebb5bfab232fa212e5b11ce2878de8234f2d6f365",
+   "bytes": 1315
+  },
+  "data/dev_data/Standoff_Format/protocol_95.ann": {
+   "sha256": "e35277332b6e88b587f7b13ff995a56f406d4f02728e4886a4d5fc952c885cfb",
+   "bytes": 7276
+  },
+  "data/dev_data/Standoff_Format/protocol_95.txt": {
+   "sha256": "af97d919a4e6990d7a82dc606378fcc566c36bc479d5808095835d48295e7202",
+   "bytes": 2000
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0623.ann": {
+   "sha256": "8da7e43c01a511206850d738910e1284b09302e4e048f7f088bca12e97a8dba0",
+   "bytes": 45626
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0623.txt": {
+   "sha256": "60a35deee125dc81581896105c9d037ef596a068ded847fc4237232f9014e106",
+   "bytes": 11019
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0624.ann": {
+   "sha256": "ba31e9a0fd5c5265e1064088823f4b06dcc28d71497cae830bbde692e2a9c4f2",
+   "bytes": 2141
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0624.txt": {
+   "sha256": "d84f39451c430c9af352086716dbe5a2362aa78f15c81b400729171152dbbaf9",
+   "bytes": 860
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0625.ann": {
+   "sha256": "9f044a6bc293ca4ac47b24267c8fc720d238680c34b272e905cfebe18d700657",
+   "bytes": 18914
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0625.txt": {
+   "sha256": "10ed004415818e6df5ed1f1d1e8944bbe5d5f1a989930130a2756c488151e42d",
+   "bytes": 4839
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0626.ann": {
+   "sha256": "34deff0c849573ddff50ba392f9a4c0064fd53045525845da779736a1ac3c78e",
+   "bytes": 35391
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0626.txt": {
+   "sha256": "bb6addf86f56358b88b36e420d8773050e8aefdf848f9d8877a57789175ea689",
+   "bytes": 9954
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0627.ann": {
+   "sha256": "ae150925a36ab5183ebe60c4becc4980d01dcf74cfa09b92ca6d9841cb38ca60",
+   "bytes": 783
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0627.txt": {
+   "sha256": "29f975f9a74d2adc61e7e2b2beb38ba1fe3c9762f1e3d614a19e62e2003d3133",
+   "bytes": 366
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0628.ann": {
+   "sha256": "1cbc45ac99bf2d24b29eaf5c07beffc808af8024fb777ad0d7989ad2768251a1",
+   "bytes": 15498
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0628.txt": {
+   "sha256": "00fcd84c347c482eb7abf28dcd8606a398c5dc97d6e9c164907951b59bdd4c30",
+   "bytes": 3280
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0629.ann": {
+   "sha256": "3b5854d4b68f63b24330da48ac11262c1037d859100c0d42dcc7a6149abaf895",
+   "bytes": 12706
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0629.txt": {
+   "sha256": "4fe3ee07a30987fc4d915258f38bb3364603f81c4b8da7aefd71c89aa432c32e",
+   "bytes": 4284
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0630.ann": {
+   "sha256": "0d4fea0f48d6b9e9a71fd55abd6b4501f4625dbfb65a0e14dff1ed44994a98ae",
+   "bytes": 1652
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0630.txt": {
+   "sha256": "62860a7035dcd67a255f52cf166b26b739209bd4da17745e3330f77743068d7c",
+   "bytes": 338
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0631.ann": {
+   "sha256": "e2d1e5ce866f10aedc33853048db96033f2a260b51d28fa918dddd573408762a",
+   "bytes": 5129
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0631.txt": {
+   "sha256": "8c89397d205806890069237f5c1fa940fb813f42f825fc55b276316787101e46",
+   "bytes": 1567
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0632.ann": {
+   "sha256": "e5673424b5f0363b464056f9402a17efaa4270f03fc6bb409b65f78e36d03942",
+   "bytes": 9706
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0632.txt": {
+   "sha256": "be75cd9752b39d6b6a745b95ffce811eafcb3ab484ed7b9dc424d61ed636884f",
+   "bytes": 2002
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0633.ann": {
+   "sha256": "981004165ea55746df08816e7a5d748fac2d6857f2a69baa83724016830c5c50",
+   "bytes": 694
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0633.txt": {
+   "sha256": "b7508628007cb4b3a1c62859be1010a55b2c3171128ebf31e2dc9d848448f39b",
+   "bytes": 188
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0634.ann": {
+   "sha256": "f2e3ac79952c44b621ae5e049ed6a15465048d7382634694d4dbc0b6d5b3722d",
+   "bytes": 1114
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0634.txt": {
+   "sha256": "02530a34aa461792bfed94cc7b69db5fd1c6b39d605aac5a2c3a494a20e702ed",
+   "bytes": 179
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0635.ann": {
+   "sha256": "f35fccb6f95d3fb5b34fea07c420e421298db7fdd2e0176eb01b5dea33f2b563",
+   "bytes": 19947
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0635.txt": {
+   "sha256": "4b122c2e3b20cefcf4d78133836eccb90563c6c6a6e289f26ce828e7a3466b43",
+   "bytes": 5901
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0636.ann": {
+   "sha256": "3c899cf1b09d8e2739fac560c89582b341514cb1b28e49252162685a4da505a8",
+   "bytes": 13543
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0636.txt": {
+   "sha256": "b5114e6826133221c3ce048ed392d18c0b7752984031bbbe14b864dbc6a4f1b8",
+   "bytes": 3434
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0637.ann": {
+   "sha256": "d989351c082ffedd908e42208b237da6cd6edac7bed6a2ffc478c5ab31d9f17a",
+   "bytes": 5505
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0637.txt": {
+   "sha256": "262ce3a1206230925c36ce204668f8dfc953a894daac44d7e7cd553d35bb0534",
+   "bytes": 1391
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0638.ann": {
+   "sha256": "e46cdbd5a267f6af2692d2604ba243200284d645252d2c5bb30f1a143b532194",
+   "bytes": 7961
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0638.txt": {
+   "sha256": "f3dd12dcb120d918868e5e859402faceb275aea8162b24718d03fdc3ac322719",
+   "bytes": 2201
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0639.ann": {
+   "sha256": "b9716cd279e28f518b5f8551a76f576aff73d4949867c444601fed79dd0f0480",
+   "bytes": 1049
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0639.txt": {
+   "sha256": "e150169e466bbbb8934e2c70563c4c40cb41383be94bb35132fa3b41bfaa6dee",
+   "bytes": 311
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0640.ann": {
+   "sha256": "be7f574425cd47eb8677ae0ddc4a0fbf003a606c8c11bb3e2a931e952bff5107",
+   "bytes": 26427
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0640.txt": {
+   "sha256": "43624063283251efea5d73f96172eec298f3adb61e45da8cc06dd6cc35117ef3",
+   "bytes": 6091
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0641.ann": {
+   "sha256": "6b14db744b272fdc57cf4402d719729f31c42df32eba9f8b80e1d3faa19368b5",
+   "bytes": 11973
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0641.txt": {
+   "sha256": "8e35bb8bc155e0d8e41ccdee507cb0172d54dd3def9cd53248bb2f21b80c0e7d",
+   "bytes": 4372
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0642.ann": {
+   "sha256": "805c8f4b49585fc4df820dc3fb9ac44892b8544cbdb787cd60a5e1a577cc07c6",
+   "bytes": 14447
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0642.txt": {
+   "sha256": "f38208d5c9344d940211ecdf12b0bee70278d5323b90b53fa38affda55e45681",
+   "bytes": 4089
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0643.ann": {
+   "sha256": "0c667818d9981cbdd855b9008feadc1319034894901b118bd8f4ba48bfff6742",
+   "bytes": 2532
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0643.txt": {
+   "sha256": "6fbe579d4aba83e1ee6e96d4a6429d37d2c2f1156e2c6dc349a1380894b940be",
+   "bytes": 831
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0644.ann": {
+   "sha256": "6a60479cb8ec6b1df637241dc105d1839c9cdc0eae6499b38dbe874abc637dbb",
+   "bytes": 3677
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0644.txt": {
+   "sha256": "d016a1eb5c72d3649070f84bb3b4bd70007eda394abfd814aad42074823c67e3",
+   "bytes": 911
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0645.ann": {
+   "sha256": "6d25182287b0340687cc20379c99abcb28729e47852b11099ecbf52b045aec41",
+   "bytes": 12356
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0645.txt": {
+   "sha256": "da5dd5548ddd2258ddefca9f2b22c829b67f08b17bc9a7c8de9b2322cd47bbe9",
+   "bytes": 3220
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0646.ann": {
+   "sha256": "356837d4e7825c17c9fb6e1308359f2c8598c18d9989d5216f9cdf624d298fe7",
+   "bytes": 769
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0646.txt": {
+   "sha256": "c3c65c8bf41d78017b1ff92f2a0690e7fbf603e2e28d99b573226581f085d771",
+   "bytes": 205
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0647.ann": {
+   "sha256": "3eeed1bb6c11c7c4d822da301f8378de590a05e8e1ac295d5c365d016ddb0582",
+   "bytes": 18783
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0647.txt": {
+   "sha256": "1d1cfe6f01dadee3a167c40cd844e26bbae2e994699698e8bef4f063bc92704c",
+   "bytes": 5087
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0648.ann": {
+   "sha256": "14f982d3512379310982df06bfb8604c707b2f76742a400842be2beaa0a08960",
+   "bytes": 3925
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0648.txt": {
+   "sha256": "3a2529582347dce956f320d680bf4cdd23295e61f29f79be7503d7dd6bea153f",
+   "bytes": 1148
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0649.ann": {
+   "sha256": "3c8f6e8ebbe4fec7d5ab13d1bec20185ef555dd26e1d0677d90b062e0d108de0",
+   "bytes": 8041
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0649.txt": {
+   "sha256": "bee96da9103e73fc4859670d85a86303c8c1180f129afad7095ff4420eeb4b4b",
+   "bytes": 1722
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0650.ann": {
+   "sha256": "6e36ee9e38fad7a0310e1db5f8425f423c61ef33ddfab42e0e39d18a8bd14914",
+   "bytes": 9833
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0650.txt": {
+   "sha256": "d300059f312cb2819622f7b6666e2c6c46a7c5c5e2558f1c5d663f9ca9124fd3",
+   "bytes": 2280
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0652.ann": {
+   "sha256": "b83f57db3d1a199362fb1503e1c5536bfcb61866d6079cae70ecb679bf601732",
+   "bytes": 599
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0652.txt": {
+   "sha256": "452379d5b0ddf8602cde44f298ad18e0b1272aa905cd86e0b8f11f7ced8df578",
+   "bytes": 132
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0653.ann": {
+   "sha256": "b7a033c356117041ca59efd2e205c427dec525466fd87a459c267b4b01c6acbf",
+   "bytes": 1152
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0653.txt": {
+   "sha256": "176d44d61c6fa064cfa53cf106212060fb63ff4f95366566d9846dfa2e61845a",
+   "bytes": 218
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0654.ann": {
+   "sha256": "343e9ebb26f9addc8bce09f16dabfd2efc14fa66e9a2c4a73a4057e5336e3139",
+   "bytes": 9891
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0654.txt": {
+   "sha256": "ca1c145d233726d159d9ace91aa14c6589c47f429cd44bb96d56d736abfae08c",
+   "bytes": 2460
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0655.ann": {
+   "sha256": "d08306ea9e51e93b34fb79ba55ada7a1e14fc206b8944a258be40d70e2cd0dc5",
+   "bytes": 3301
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0655.txt": {
+   "sha256": "29ab4c7984e6d9e011b1b1cd8705031734dea7c98bc887a11ca19682160882a1",
+   "bytes": 664
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0656.ann": {
+   "sha256": "a7655219cb28ca4a9d97e36801b5b703d63422c36f2b6b52db8af76a0e8f2a21",
+   "bytes": 4042
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0656.txt": {
+   "sha256": "695038b953b55c8fe0ec9aae2ef545dbc47a3e80821f8063677ae9affc21abe7",
+   "bytes": 1295
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0657.ann": {
+   "sha256": "94e2c23d6d01a3b48d209719a02eabaac830293a9ddafa66efc0311a70e793a3",
+   "bytes": 6020
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0657.txt": {
+   "sha256": "6c0cf0f464e45f051e427f6e19ccf3c1913fcfe9204ee2478bf5c183db18b075",
+   "bytes": 1459
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0658.ann": {
+   "sha256": "12b91367f18504a0927733be935fa693ef46c0007b25fa5a5e8fe3fd70b85db2",
+   "bytes": 3853
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0658.txt": {
+   "sha256": "27b2471725c4fe588c9304e5d60e2ae51b11d7d937519701cd6f1471c0adc6b7",
+   "bytes": 880
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0659.ann": {
+   "sha256": "2a0ba446cbb10ec888990bf1c6717617f264d185bc2b11b652b5be6d00578a94",
+   "bytes": 3043
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0659.txt": {
+   "sha256": "a479fac13347071090cdb5182fdc2752caff037b045c5bf91314f04239620733",
+   "bytes": 718
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0660.ann": {
+   "sha256": "e6b73ae075ff229ac41b395865702de26fe53e2e20933e6e06c6e1cd88e6b2df",
+   "bytes": 6964
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0660.txt": {
+   "sha256": "075b19ee5a3f51bde634638ada11b4fc39670a281e67c4198aa8146a990c2017",
+   "bytes": 1742
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0661.ann": {
+   "sha256": "687ffb4a43bde58ae85bcf4c83ed890518c772d104a57ea415175b883cfb6353",
+   "bytes": 5223
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0661.txt": {
+   "sha256": "7229c8547eb6250fab0fb56d9f7050b54d6292de220fec72eedcd0560d724903",
+   "bytes": 1297
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0662.ann": {
+   "sha256": "7fd2b066f4a972de179ee63787eb4ca22573a354b01b48109b65baa80cf116bd",
+   "bytes": 573
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0662.txt": {
+   "sha256": "02c1e9af59cda0bc4e69c7c4a767364c1875e7bd01d5881152bfc0913154648c",
+   "bytes": 153
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0663.ann": {
+   "sha256": "9d268c56c1cc9f71936fa1257d3fbec0c384c22b11e4d7bda63ce6767b26ddd3",
+   "bytes": 2904
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0663.txt": {
+   "sha256": "87df0b1ed41df5de200cc71ce9b53ac6a08781f630a9715a6d815dc6aa915ea3",
+   "bytes": 723
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0664.ann": {
+   "sha256": "41a08e0207cf2fe2d6d9a614fec094038e643ec6e13bc9fbcba8f1d065db102f",
+   "bytes": 4554
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0664.txt": {
+   "sha256": "4b5847814f7b5e1da4d33751da4743ffe74b906c25bb77c207d8490aede46c4f",
+   "bytes": 1053
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0665.ann": {
+   "sha256": "d72331e1ca7322061c4babadcb64c3cb33b8f29ecda2ef91bfc54cf1bc1a0a90",
+   "bytes": 6164
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0665.txt": {
+   "sha256": "9a8622c17a4c9dfcfcef7bbf159e25f881bc5ec3309fabe8dad639b54b62499e",
+   "bytes": 1185
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0666.ann": {
+   "sha256": "9de5f083de1ff254674abdbd19b1616c50949b93b62c5c0f87497d93a3712c07",
+   "bytes": 8705
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0666.txt": {
+   "sha256": "42ef39ebe2c18b1389767adc06f51e38363cb911518ac17bfebc9be7ae284117",
+   "bytes": 2128
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0667.ann": {
+   "sha256": "c347f9786f0abd570e63f41efa3ccd5e55f81581a1046fad629356e834f879e0",
+   "bytes": 51738
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0667.txt": {
+   "sha256": "5bee8b9a136a8b040aa865260106ef0fd137bd8a3321e8ab87f379cef033bc41",
+   "bytes": 11550
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0668.ann": {
+   "sha256": "c60d1cacf319a437e2481eca4ed875212669bfb690e7104eeb01716851af7d51",
+   "bytes": 2089
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0668.txt": {
+   "sha256": "28a5032ac690b1162599974d487879803186532e31b586c29fcd4000e3f2622d",
+   "bytes": 451
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0669.ann": {
+   "sha256": "806d4b1575e26ab61c523a53cd6906954176d2dd6ab214d4fa3da5192f87d890",
+   "bytes": 2277
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0669.txt": {
+   "sha256": "a15c79cc6fba2bd13c3ce1d6791b7a24eb2704dbbada4cd263e064109f54045c",
+   "bytes": 824
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0670.ann": {
+   "sha256": "46c2757a5d625dc2bda4a59e7dcc672d521bdf2f4802d05fc6fbfeb4735517a7",
+   "bytes": 2622
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0670.txt": {
+   "sha256": "7921111856ebc1aabc9bb9220b21b9c0bf1593e7632e867436363c884db7dcfb",
+   "bytes": 743
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0671.ann": {
+   "sha256": "1950add452d845c750024d993e8c18c94e4c4ef17929e7981b670f5f495efda6",
+   "bytes": 4025
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0671.txt": {
+   "sha256": "4e3fcbba9296d8ae698d69ae77a5a056ead6ac6a3db58d0ef0687182e8f78c23",
+   "bytes": 1006
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0672.ann": {
+   "sha256": "0f24cd013243c352b0e5ba86590b8f880ccc6904c324f3099f595da1461cefe4",
+   "bytes": 4035
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0672.txt": {
+   "sha256": "43a5b67a7892de7f24b4b7d6f050704466e8709aca3b98e9ab3018deed41061d",
+   "bytes": 911
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0673.ann": {
+   "sha256": "f0d55a25367c4d8f744e2caa7ea5c19ec14c1a6d3a7e47623e721503cc68b188",
+   "bytes": 1404
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0673.txt": {
+   "sha256": "bac360a4ef1606399e7bf132d18b83a6189fee93877f8789440e3a4c3c44cd1f",
+   "bytes": 366
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0674.ann": {
+   "sha256": "d3699da0c602ecdb033f982d2ecb442b7f7945d97f2fdfbd4e3d1db3804eb31b",
+   "bytes": 649
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0674.txt": {
+   "sha256": "cebfff88a960dd8d2fc989dc4d03c0e2ca3fbc248c8405e31e5751166108e666",
+   "bytes": 136
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0675.ann": {
+   "sha256": "4638c85990863fe3e940b736e2d96daa5dfad450fd5b049266ddb58cd59ae932",
+   "bytes": 10549
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0675.txt": {
+   "sha256": "0d5b468ea8073477e7db989c8d2d1fbf2adc13a5b5d223e3ba4a41e6cf6edc1c",
+   "bytes": 2989
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0676.ann": {
+   "sha256": "359671fd5a93b327673e488eee4f5243517ae768022316fc1dcf79d44b9ee9f8",
+   "bytes": 4067
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0676.txt": {
+   "sha256": "8ec9ca1043af4f4da1d0518765f2105a85aaaa4944ed04a244b2a26609d1481c",
+   "bytes": 760
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0677.ann": {
+   "sha256": "da02b03fc64dfa6886cc24e1b3859f1fd232692ba2c17bb5cd98603557afecc9",
+   "bytes": 11725
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0677.txt": {
+   "sha256": "8871f6a78534c35d1aa0b3fda85e4919fa48a02701d771af35e48408e3b24785",
+   "bytes": 2841
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0678.ann": {
+   "sha256": "3ded3de6dc47fe9b9c0d32fa3fc059d64a8e0f99393fc5a49b9beac713ec5cff",
+   "bytes": 5699
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0678.txt": {
+   "sha256": "b051fc78ab01360a58dc0af5dd82ea1ba99b99c12e730686eff824faacd1689f",
+   "bytes": 1156
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0679.ann": {
+   "sha256": "92d1352d268ba8c0eb824461b0a9564266258e30f2a5bddac7da2e8e11b5fde9",
+   "bytes": 7842
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0679.txt": {
+   "sha256": "d5a711aa54340189349eb0336a320709c9f72d5f6dcf6bdcf951744bfb9f764f",
+   "bytes": 3791
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0680.ann": {
+   "sha256": "436fa850f20d108cd08dff0d58caee624e192cd7ee210ea44a5854c5fc1843f4",
+   "bytes": 19388
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0680.txt": {
+   "sha256": "b7d8fa6906fb5f1adda553fdd634703bd47a7a1f14bd9d2e553738d15028d0a6",
+   "bytes": 4836
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0682.ann": {
+   "sha256": "37a64ccf5790c554145698a8ce230f02a27a82a7ab24c5006567fa3498b5c0d4",
+   "bytes": 703
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0682.txt": {
+   "sha256": "0132ac81b9f3a978a353a1a05906809105b7d810682d2876c6adfe1393cd7ae2",
+   "bytes": 160
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0683.ann": {
+   "sha256": "4d883ab7c7c705d004d05a70dfd25e2eed72d67f68e469bd1daea317b5236ac3",
+   "bytes": 15615
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0683.txt": {
+   "sha256": "04fb8de136a1cbb346e523082b99046f52057b252fbe88c8f861ec9838718447",
+   "bytes": 3065
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0684.ann": {
+   "sha256": "f86e8c76cf706cdd54e2d49962c63c6bde1064cdf5641f33de15263294ced4ed",
+   "bytes": 15955
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0684.txt": {
+   "sha256": "0fa07de8d7e92921f00c69a9cdcf6f7c91c651db76c52339c8e5ea3ee1de8d20",
+   "bytes": 3920
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0685.ann": {
+   "sha256": "1815ec52f848786774852c13eb7462d36b9f48a4d252c44fdb938b8419bf34dd",
+   "bytes": 16785
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0685.txt": {
+   "sha256": "e730a141baca1a32bec423f95c67d1aad8b3d5316e0df34c863bb34f28d511d2",
+   "bytes": 4234
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0686.ann": {
+   "sha256": "561794962ce342a6fd3b3b1d55ab1db4ab89380fbbd2b375c9e50ef98e7678a7",
+   "bytes": 4984
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0686.txt": {
+   "sha256": "f0ca26324fe8d00f212480efc1cc0eb6efd37d75a3d732a6a3dc754bbe10277a",
+   "bytes": 1099
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0687.ann": {
+   "sha256": "6f96026f1284ef80609eec79b110be00073d6bbc75f3157963879a43309cca76",
+   "bytes": 7167
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0687.txt": {
+   "sha256": "b571ba14836654ef29a1ccef59b556041524cc9350c11806393270e73da94385",
+   "bytes": 2118
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0688.ann": {
+   "sha256": "3b0f34ecc02d041c0dfcc1d311d2988ab37304302a0e327273a20ee792032425",
+   "bytes": 11903
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0688.txt": {
+   "sha256": "fea335bf1edceecf48188b67b2d7afe4bb1fe0aab2644ae2aed7aa59ec9a22fc",
+   "bytes": 2726
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0689.ann": {
+   "sha256": "89f096278f671e531abd0319e2acbe9f04f18ef4f1dd1610e17df514822158df",
+   "bytes": 13126
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0689.txt": {
+   "sha256": "e0f18b9331dade3010e4e2b40216aac79339ab5a0a10a5034ebb016704e6cb64",
+   "bytes": 3574
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0690.ann": {
+   "sha256": "a69741bf87c4d60794c90bc6f8dd4b794bce484621e126d4281bf77b538c71fa",
+   "bytes": 59173
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0690.txt": {
+   "sha256": "2866ff26ed743f84de7dd3411231fd3d98c606b47e9936f3f9f367e5abebf484",
+   "bytes": 12996
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0691.ann": {
+   "sha256": "3f3293bcd5df73ff0473fdb4923c05284c88422375393eedc9affee0ff8fd701",
+   "bytes": 49457
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0691.txt": {
+   "sha256": "88533afa4b9eee87359fe9a9fa8c1c870ebb3f6955e3558707062cf9aa704143",
+   "bytes": 11972
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0692.ann": {
+   "sha256": "21f7a09d7f5892b6d22274b6841ada3d0c43b0a44888372460e25570ae314561",
+   "bytes": 359
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0692.txt": {
+   "sha256": "3a663a39b0ee3c293e9f6f47d775831da2fe21f562a63e19fe6780fd36f6ca36",
+   "bytes": 54
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0693.ann": {
+   "sha256": "e8077f0594b2cab24cadc53e3306caf12bb35dd9f723fefd069c08882ad422c6",
+   "bytes": 39975
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0693.txt": {
+   "sha256": "11e3c72535c0f415355125546bb6becba4f780daa4e6e5cd523f8e72580054a2",
+   "bytes": 8762
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0694.ann": {
+   "sha256": "02648753ecf47e1c4c3389783538ddab16184555ddbf0628a1b0edab4f21cdaa",
+   "bytes": 1130
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0694.txt": {
+   "sha256": "71abce9842ceac614d59e9aee77b1894f2d23483d14a8b8b02451e5664fa0b2d",
+   "bytes": 266
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0695.ann": {
+   "sha256": "25f291f59f1256ea430b310e97821a037f2cff54144b1e719e12ee35426d821a",
+   "bytes": 1234
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0695.txt": {
+   "sha256": "ff64bb92058605903e2af75119b3c330342644efbd67adb36ed55bf2e7f0b181",
+   "bytes": 278
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0696.ann": {
+   "sha256": "ecf0048b47ec96fd16036dfa803b10b01b4b0ac6bdd8e645c073324adfaaeb15",
+   "bytes": 8672
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0696.txt": {
+   "sha256": "d73db9003780f6531d189801ecdd507c0b3ba67a2d8dd6117b54f13a5053731b",
+   "bytes": 1869
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0697.ann": {
+   "sha256": "32bc326c6ce7934dfa6b86523382bf1455af896c05cd3f5efd37742781da0743",
+   "bytes": 12062
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0697.txt": {
+   "sha256": "048143c5dcdc63b0e0010956d03f00e4526c8ae4084fa7a5b4fd5a67b863bb2e",
+   "bytes": 2445
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0698.ann": {
+   "sha256": "adf490d3b13c2a61d80ced521b14b7495417b4c39c92b616d9b358b99a14bbd4",
+   "bytes": 8959
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0698.txt": {
+   "sha256": "3939e2710e2ce426c5b0049e8d10ad92ad6606597b6d55dbb2677088e19cf8b0",
+   "bytes": 1901
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0699.ann": {
+   "sha256": "012120d40b76eb5e0c61ebc88d646e7978452505d517cfbcb0e4379b7e48df3b",
+   "bytes": 6951
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0699.txt": {
+   "sha256": "ba4199b64fa7c1f303e4cb2cefd9d8935436d45f944c3e56ea211addd177555c",
+   "bytes": 2086
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0700.ann": {
+   "sha256": "5ced681f59bd95fc3a9eab6ecd9e5ff6ee3ded5d996c1dde26a3ccb5868889f2",
+   "bytes": 5939
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0700.txt": {
+   "sha256": "e1516996384eafa2e861228f1aa57e7af0f58b5ada458e147259208d661c18aa",
+   "bytes": 1248
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0701.ann": {
+   "sha256": "b90bcc2bee7b4d5894a36d8cfa4a06152f6a3bd408764d41f73fbebb6ccc4a4a",
+   "bytes": 2954
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0701.txt": {
+   "sha256": "5290406dca56c0101883b729311850436eb2ded197dee30c6788bb7b6b9ffc8a",
+   "bytes": 799
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0702.ann": {
+   "sha256": "56a4681fd79ad90daa6f290b82dcbc52b3f3cc1194601c51fdc4c5be1b240b4c",
+   "bytes": 41547
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0702.txt": {
+   "sha256": "08c79bf9b8d2d24f5e95c74fccaede46dfe8011860660157e7f0bdbf7aba046c",
+   "bytes": 8515
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0703.ann": {
+   "sha256": "fa57bc2c4a189ca8afa1b261fe357b350e52fd17639a795f0ab2f5f9c6d3def7",
+   "bytes": 4798
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0703.txt": {
+   "sha256": "3202df571f343029debb8ff644fa625dc78b3138b35ee435b166763a0044e7fe",
+   "bytes": 1145
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0704.ann": {
+   "sha256": "e37e82430d863c0ca59ef2c48fcbc9c082a2d5de5cb77a244ded04f25db1ca34",
+   "bytes": 11576
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0704.txt": {
+   "sha256": "df418e44650c88aeb5234ece43bfd4a85a34b3eb47f34e52c1e74856da6791e2",
+   "bytes": 2553
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0705.ann": {
+   "sha256": "7781a3a97fd8b33be9a49059bdc568fe317f914f17ebb75188d76c7216c55bdd",
+   "bytes": 266
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0705.txt": {
+   "sha256": "4df90e54c946eca938eaa05cc561b508053c8b56634a1ab68eb5dbab92f4d046",
+   "bytes": 99
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0706.ann": {
+   "sha256": "b3bb0bb970afa5126321b892e9cffcae98ae037ea8f00ead8580ee6a1b2b2dbc",
+   "bytes": 8004
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0706.txt": {
+   "sha256": "c3ea3c5990d882486da2808a2e884bf55ff4b66e29a32e230019bc5764193adb",
+   "bytes": 1936
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0707.ann": {
+   "sha256": "a37a2afd7fb25b1a55a28b3033b858b848d395d45368e71e6a21a69bfc5040c4",
+   "bytes": 19624
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0707.txt": {
+   "sha256": "7eb0f650d42519049778cf9617fd6740257509c917cbadb85c98d4cd6e5b2636",
+   "bytes": 4290
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0708.ann": {
+   "sha256": "28939d673b6a755795a417c8499a5f5501dd6da8ba57d61c40fafd88712fdd38",
+   "bytes": 3697
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0708.txt": {
+   "sha256": "55abff4988171bd5604530694266a831ad23b0af3641eaf158e767bbf23c0a3a",
+   "bytes": 1816
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0709.ann": {
+   "sha256": "7068ea60cb4a4c6fa56776b7c66af799ba5d7f390551042edbdddec90a0a0231",
+   "bytes": 3960
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0709.txt": {
+   "sha256": "77e74e2bac7dc58cfd744fe112fb02097443425094744c286eba2a792f02f2d5",
+   "bytes": 776
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0710.ann": {
+   "sha256": "cd4576c21161d660f8b098566d3181f1d2ab4612617dfe39fcf5c8013f6ece6e",
+   "bytes": 36865
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0710.txt": {
+   "sha256": "3c0780a7b4ca37240a032989f502ffa4a041d8f92bc73745194613e0cdfc81b9",
+   "bytes": 9083
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0711.ann": {
+   "sha256": "eb459ba1366484afe691b244baca3d32da30c743503009261b741376b61fba4b",
+   "bytes": 10983
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0711.txt": {
+   "sha256": "6adb3f9991b2ca05e39243a23d14e5ccdd8604a2ca1dc8ccba9774453e8ce42c",
+   "bytes": 2443
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0712.ann": {
+   "sha256": "310a475a2f84404e101584763e5f6c33b11747417d3b129264f2150cad1715bd",
+   "bytes": 87870
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0712.txt": {
+   "sha256": "f20cfed4c5301f13feb0c7ed981b425dba6f62a430190246c8491081b2e3f894",
+   "bytes": 19350
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0713.ann": {
+   "sha256": "f18561aaacf1c85e334596cc43d1d08ba92e18fa8537f25b502c1be93c818361",
+   "bytes": 350
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0713.txt": {
+   "sha256": "ea37b7b6f8cdd499f1cebc269a4bbf1f6123e767b1c78032fdeab03050daf93a",
+   "bytes": 150
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0714.ann": {
+   "sha256": "2c16a69c0f3f190aecfe59488498e507282c34edd6e0e6ae909f4b416995e1e1",
+   "bytes": 1566
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0714.txt": {
+   "sha256": "4b6b63978b0197a390a00a9c66265bd22d9830346c8e30fec5fdb7f094bb0044",
+   "bytes": 553
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0715.ann": {
+   "sha256": "8552e1a3fd46329fb4418f9da308e5a73dd5daaed3b25071f55b3baadf5a6657",
+   "bytes": 2881
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0715.txt": {
+   "sha256": "7d6155a90b6a328c68f43c53e4c4b1ba97a9260ec1c38722d11a925698b4c912",
+   "bytes": 1774
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0716.ann": {
+   "sha256": "ffe1dd61f785bbc57a54a0f95fcb21ffa6cc76e4793ef0e8eb8091ac995fa183",
+   "bytes": 4701
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0716.txt": {
+   "sha256": "b07a5a74184d1d5e92317f7ce1ed11f8126dc635d0d3a8bdbffa3822fcb47fae",
+   "bytes": 1195
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0717.ann": {
+   "sha256": "dd13b1a83e42202ff11ef50c0634c85918f807cbd5e81a183bc96f9a65244533",
+   "bytes": 27718
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0717.txt": {
+   "sha256": "5f88e6dcf654ca5fc6ceca29425f5b457f8ea9ea5cedcb106d61dd780f7fe015",
+   "bytes": 5769
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0718.ann": {
+   "sha256": "6381f7c8342e4e1af269d54700e0e4d47bf208584dec7c5c83fcd62c3ed55f81",
+   "bytes": 17217
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0718.txt": {
+   "sha256": "3c88e0004a72791185ddf4398d37ee41b14b9c6474a0e499d080f8d6b668fe36",
+   "bytes": 4783
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0719.ann": {
+   "sha256": "c1b9e284f8514539d3d4cb597ebc29a05b2ffbe2bfa5200d7a620cab5e5265fa",
+   "bytes": 9044
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0719.txt": {
+   "sha256": "8bfbc96eaba501db5f621363909e18457f5cadf0b7496795083b37c54895737a",
+   "bytes": 2343
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0720.ann": {
+   "sha256": "5f2a0e4424e6aace6173cb915b9a68578d452035e94868c37b71dfcd779be42e",
+   "bytes": 1485
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0720.txt": {
+   "sha256": "36cc3827076ec554cbd6fb316ede4d0d2e4e1943a5586cd10ec607bb3fcb4e4b",
+   "bytes": 246
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0721.ann": {
+   "sha256": "281ada95e9ede8d719b562ad927b28f30f9f43a6ea7b95051ab8a453d0990b9a",
+   "bytes": 259
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0721.txt": {
+   "sha256": "2812fb37dce8d15b1bc6c629fecb144820cd7a01c287f6e53e07c0b8a08a691f",
+   "bytes": 87
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0722.ann": {
+   "sha256": "f6f0c32fecdfb4b76901f547df1d8c738a80f6765e6eb06131d758f35512c1cf",
+   "bytes": 13437
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0722.txt": {
+   "sha256": "f085cf67231e27abb8ca5cf79df79d57cc79e59fb1f25114dfeb2d98003b79ae",
+   "bytes": 2591
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0863.ann": {
+   "sha256": "b98956de0769f1280674dec8f55dda909d270a6b2bb8240686047b82e5fc64af",
+   "bytes": 11325
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0863.txt": {
+   "sha256": "ec9e0f63e59d59f94078c9d5a7cf6568a73c774d72a4ecededa4e68c4c544f8b",
+   "bytes": 2825
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0864.ann": {
+   "sha256": "d8f9953d6c47ca131ae3b2065efc7ac38a90fff70ed5b963128a117d4cd752ae",
+   "bytes": 8350
+  },
+  "data/test_data_2020/Standoff_Format/protocol_0864.txt": {
+   "sha256": "7e532e05bd02b55f9de7fa69f2e7a0d1f2515e4f11c2db620b613d293009c75d",
+   "bytes": 1948
+  },
+  "data/test_data_2020/Standoff_Format/protocol_17504.ann": {
+   "sha256": "5be9f5995f522be62bd154cba29cc8090e809cd9a97dd88fa1faf47aed3e3cc0",
+   "bytes": 6166
+  },
+  "data/test_data_2020/Standoff_Format/protocol_17504.txt": {
+   "sha256": "f35d8678a45a98486bac33d2848e4235b84712c6a03ca8a350e9312145ed2c5e",
+   "bytes": 1174
+  },
+  "data/test_data_2020/Standoff_Format/protocol_19444.ann": {
+   "sha256": "e9c452dcfad4df81674d13a43f7cfe2bc16bdcaf3adc9b85debe43a62e458598",
+   "bytes": 6851
+  },
+  "data/test_data_2020/Standoff_Format/protocol_19444.txt": {
+   "sha256": "f391c0f71304285f683fa249649579ebfa041b88b0fec58775ddf9c9d8c74725",
+   "bytes": 1467
+  },
+  "data/test_data_2020/Standoff_Format/protocol_22847.ann": {
+   "sha256": "ede75297b7791e33b60a8d147c93cce0f3453fd10b31c559908f58ca964de04f",
+   "bytes": 4967
+  },
+  "data/test_data_2020/Standoff_Format/protocol_22847.txt": {
+   "sha256": "71f5db95b2634b2a6dbbf2b27867c5bb012df3fb9f4cdde896683b73ca26726a",
+   "bytes": 1240
+  },
+  "data/test_data_2020/Standoff_Format/protocol_23000.ann": {
+   "sha256": "5732b3b19e55c6d67dc692d62e03a80e82425a5f7ed11c3cb415226da1e44cfb",
+   "bytes": 7836
+  },
+  "data/test_data_2020/Standoff_Format/protocol_23000.txt": {
+   "sha256": "b8727219528d416413d2c5580af1b3f2fbb4a42d41606e38500b4ae6aaabf861",
+   "bytes": 2318
+  },
+  "data/test_data_2020/Standoff_Format/protocol_23031.ann": {
+   "sha256": "29d31adcfe8e340eefb396138a4e5c7769d8e225308f775cb9783b74f1e33b32",
+   "bytes": 3374
+  },
+  "data/test_data_2020/Standoff_Format/protocol_23031.txt": {
+   "sha256": "8c42584469cfd4d6bb5c46215148a99f85e6e5aee91b6ba8db1f682d236342a0",
+   "bytes": 1845
+  },
+  "data/test_data_2020/Standoff_Format/protocol_30296.ann": {
+   "sha256": "067ef77cf56cad905ac7cf3a55d90c53ddfca6dc4f99b9ff8e1e073feb979e93",
+   "bytes": 2602
+  },
+  "data/test_data_2020/Standoff_Format/protocol_30296.txt": {
+   "sha256": "e7588a8dcc76598cff4ef86c2696b7db0884f69ad4b58f751a6c53f0088b1539",
+   "bytes": 985
+  },
+  "data/test_data_2020/Standoff_Format/protocol_32148.ann": {
+   "sha256": "5bad3e5fb5db5c36ceaebf00a0c68e5c2610de282fb8f85a78f37a2b3948e865",
+   "bytes": 50386
+  },
+  "data/test_data_2020/Standoff_Format/protocol_32148.txt": {
+   "sha256": "580d89ee0d3b20ef0f9ef35b305a1131217f7ff70afaef75469d9294423347f4",
+   "bytes": 12811
+  },
+  "data/test_data_2020/Standoff_Format/protocol_32916.ann": {
+   "sha256": "3124cc703e47d620acd717f8ac4069a517a2215367cbbb5f423f0c2f79332f45",
+   "bytes": 8528
+  },
+  "data/test_data_2020/Standoff_Format/protocol_32916.txt": {
+   "sha256": "b59fa2a2c24de0e24cb6829de6451c1710e901b21bc8f48508dfa161d6f386b1",
+   "bytes": 2673
+  },
+  "data/test_data_2020/Standoff_Format/protocol_33630.ann": {
+   "sha256": "f16836052c38795f23f5bb89fedb7076b23675199d50dc50a83997774a321472",
+   "bytes": 27602
+  },
+  "data/test_data_2020/Standoff_Format/protocol_33630.txt": {
+   "sha256": "bfa92a5cf1235a4e92fdcd5a9dd04cd65c1e3edc48971b847fad41de1dcf8524",
+   "bytes": 6482
+  },
+  "data/test_data_2020/Standoff_Format/protocol_34278.ann": {
+   "sha256": "eb25286f6a48577f241be2a5730e3ba70e99c80f937806587021fe650349a8b0",
+   "bytes": 4514
+  },
+  "data/test_data_2020/Standoff_Format/protocol_34278.txt": {
+   "sha256": "d030206cb5f9eb7fc894c2860fd6fadded3fb8e991bda6fb9f1d2cbafb36619d",
+   "bytes": 1107
+  },
+  "data/test_data_2020/Standoff_Format/protocol_45504.ann": {
+   "sha256": "c0fbe729a8058d10e630736076a6498537453dbee594abe075edc19ad0431bd0",
+   "bytes": 5019
+  },
+  "data/test_data_2020/Standoff_Format/protocol_45504.txt": {
+   "sha256": "b14733e1d771f25c9c0ce19495cd9018684fa57c94e457b0dd8f80e249b40d74",
+   "bytes": 1454
+  },
+  "data/train_data/Standoff_Format/protocol_100.ann": {
+   "sha256": "f1a5bd49b94526896fa3974c0e3b26d118db4589e115903a66918a1303de38eb",
+   "bytes": 8615
+  },
+  "data/train_data/Standoff_Format/protocol_100.txt": {
+   "sha256": "88f71e304a65af70c65fe23467f85ce1860401d7fd9a15ce27d29948b31e2713",
+   "bytes": 2174
+  },
+  "data/train_data/Standoff_Format/protocol_101.ann": {
+   "sha256": "8a5d201ce79c87569e6cdd6cd4e6281447c7611454a259c36f43193c13b5974c",
+   "bytes": 2298
+  },
+  "data/train_data/Standoff_Format/protocol_101.txt": {
+   "sha256": "3f95dd0a21ef4871d40c1ef447c5586780061cc898f0c6014851a01dcffffe74",
+   "bytes": 2644
+  },
+  "data/train_data/Standoff_Format/protocol_104.ann": {
+   "sha256": "d2b5749f7d025f504255d6312430f4630d9199047075bb997b34f8347e14070e",
+   "bytes": 3859
+  },
+  "data/train_data/Standoff_Format/protocol_104.txt": {
+   "sha256": "561beb32e1847e2ae8606a66a4c6e53108bde1b5e2c21dc32d95babdda27b040",
+   "bytes": 1184
+  },
+  "data/train_data/Standoff_Format/protocol_105.ann": {
+   "sha256": "fcb41667e9ccefe56758738221146613ffc0eb9faf0f4f3b7d18b009af45f96e",
+   "bytes": 33112
+  },
+  "data/train_data/Standoff_Format/protocol_105.txt": {
+   "sha256": "322685b057506103d4d5d09a75f4f4342a5195c99211bf8709fd472ee3f5fd03",
+   "bytes": 8372
+  },
+  "data/train_data/Standoff_Format/protocol_108.ann": {
+   "sha256": "c158a17f97c4cef30cd061993d6f616f30e056627b540ba07706f50e1f199806",
+   "bytes": 3343
+  },
+  "data/train_data/Standoff_Format/protocol_108.txt": {
+   "sha256": "83bbfa1996aac73b3b7b1a991bc74623d916642ee46e49ec4618c6a3b67e414f",
+   "bytes": 857
+  },
+  "data/train_data/Standoff_Format/protocol_109.ann": {
+   "sha256": "a2f59ed7f6d9778a39107fc70581fe3d20ba8918052854e1bf89fc7205fc3044",
+   "bytes": 5700
+  },
+  "data/train_data/Standoff_Format/protocol_109.txt": {
+   "sha256": "183d78b0fea49b013ec463ac041dcf64e0a87cd762715a45c5b4d28274825e9c",
+   "bytes": 1981
+  },
+  "data/train_data/Standoff_Format/protocol_110.ann": {
+   "sha256": "3bebe3c3345fa0f1c60e18063e7c414ec2e8026d91e3aee65342a26c8f56fef7",
+   "bytes": 3845
+  },
+  "data/train_data/Standoff_Format/protocol_110.txt": {
+   "sha256": "f3ed8696526930279fde06481a2ae1ab3dc41b5229713aab294e83b330947fe9",
+   "bytes": 1101
+  },
+  "data/train_data/Standoff_Format/protocol_112.ann": {
+   "sha256": "33cf1da0704377ed67a4a9d34841cf4ca3de1b39f3196745abf8d006a866f10d",
+   "bytes": 4102
+  },
+  "data/train_data/Standoff_Format/protocol_112.txt": {
+   "sha256": "f0d3361297dbf5d79a4dfea313626c299997a05970a19d96deced90434652069",
+   "bytes": 1175
+  },
+  "data/train_data/Standoff_Format/protocol_114.ann": {
+   "sha256": "f489f3b16e2346ca3b033df0f25860ec74275a8ec46c012a884ad71744aab843",
+   "bytes": 6679
+  },
+  "data/train_data/Standoff_Format/protocol_114.txt": {
+   "sha256": "1271aa47789ecbc5a3af455b0de7c662122b9889e84df0aebab2cdd6b2a71953",
+   "bytes": 1657
+  },
+  "data/train_data/Standoff_Format/protocol_115.ann": {
+   "sha256": "00236a1ee8efdd6e84ba4d56474285122d583c462795868ba5878876ded6c1cc",
+   "bytes": 6322
+  },
+  "data/train_data/Standoff_Format/protocol_115.txt": {
+   "sha256": "489240fa4d1ca2db2dc4860d731ec13c5ec6afd8f80683a95d7bec985c33fdf2",
+   "bytes": 1659
+  },
+  "data/train_data/Standoff_Format/protocol_117.ann": {
+   "sha256": "4d29653e8794fd01defc1d62eccca5188239aef0ef7a0094a562ad9c5ecf7446",
+   "bytes": 2807
+  },
+  "data/train_data/Standoff_Format/protocol_117.txt": {
+   "sha256": "e1ca4cc0d7c4a2abde567b5d43f8f5996dce82117a3fbb182c3ca4a8f8967539",
+   "bytes": 881
+  },
+  "data/train_data/Standoff_Format/protocol_118.ann": {
+   "sha256": "d88149cff397d535503d8d8522ffc81e9cd684341d2155db8c8b9b0df0fa4ec4",
+   "bytes": 1175
+  },
+  "data/train_data/Standoff_Format/protocol_118.txt": {
+   "sha256": "847dc5a11b2c4a51ce5b9f0bdfafe83c7babe8e9312b4d501604eeeeb4b28118",
+   "bytes": 335
+  },
+  "data/train_data/Standoff_Format/protocol_119.ann": {
+   "sha256": "2a91963d494964318355630be069a5123ae115910c10fbd4421010c1a0d37450",
+   "bytes": 3191
+  },
+  "data/train_data/Standoff_Format/protocol_119.txt": {
+   "sha256": "214450aabe4df87a0141ee53535c0a190790b408bf286a07395a3291e22a1e83",
+   "bytes": 821
+  },
+  "data/train_data/Standoff_Format/protocol_12.ann": {
+   "sha256": "860cbde2255f47062eccc678c74b4fec1690284f906be168989048d6a71fd8c1",
+   "bytes": 1923
+  },
+  "data/train_data/Standoff_Format/protocol_12.txt": {
+   "sha256": "0b11271fc79b69f5e1ef494849ee51e568a27494083a8dcdc4b5d4a383c38fe5",
+   "bytes": 499
+  },
+  "data/train_data/Standoff_Format/protocol_120.ann": {
+   "sha256": "34732ec66dbd189bf6f7e34e56563b6cc3b89bd2f463c90f8ca5ca7287b9e327",
+   "bytes": 9311
+  },
+  "data/train_data/Standoff_Format/protocol_120.txt": {
+   "sha256": "feffb7d04bf0191af37d2a9e7b250cd273cdb29c28cada418fd1ee8d79e665be",
+   "bytes": 2519
+  },
+  "data/train_data/Standoff_Format/protocol_126.ann": {
+   "sha256": "c71ed0c7c99accde860c7119573edac0433577e0e64a8d52c1ea5b1b297df927",
+   "bytes": 3345
+  },
+  "data/train_data/Standoff_Format/protocol_126.txt": {
+   "sha256": "3fc54847ead33f1ceec8d2de76010e3afc49a197b1504bbc1ad261e0efa5901f",
+   "bytes": 911
+  },
+  "data/train_data/Standoff_Format/protocol_128.ann": {
+   "sha256": "c92f1f43dc6bc037710929852ebe6caa37e9ca15066f36eb8b96ceec9d96a52f",
+   "bytes": 5740
+  },
+  "data/train_data/Standoff_Format/protocol_128.txt": {
+   "sha256": "2862cabdbf928158e1e95b2ec66424cbc48459f71fe37d4717c3c4aaf85aef9a",
+   "bytes": 1555
+  },
+  "data/train_data/Standoff_Format/protocol_13.ann": {
+   "sha256": "562f0c37698861b6299942bf509ccb11e5a518f6ffb0763b8ed34f71b9f4359d",
+   "bytes": 18612
+  },
+  "data/train_data/Standoff_Format/protocol_13.txt": {
+   "sha256": "9b6fbd824d000f382e2f33a3361ceca8bb69ee233d7abde769747f492b6416c6",
+   "bytes": 4891
+  },
+  "data/train_data/Standoff_Format/protocol_131.ann": {
+   "sha256": "563599a8719cf52441ba352c823f99f26f5f6c81cc40af2a2c07f2473591235a",
+   "bytes": 3436
+  },
+  "data/train_data/Standoff_Format/protocol_131.txt": {
+   "sha256": "810ca22ef5eb800b7b347187773aba0d3037b9ff942fb8874c51b1a43f63b5d8",
+   "bytes": 837
+  },
+  "data/train_data/Standoff_Format/protocol_133.ann": {
+   "sha256": "c1cc929e66979cdc95326f4ae8f07309f79698668dfb1503c4ed2e6539b47ae7",
+   "bytes": 11862
+  },
+  "data/train_data/Standoff_Format/protocol_133.txt": {
+   "sha256": "5b43adb54fa4dfc58e9ca0a013177b7362d5551671aad55e34a59270643a532f",
+   "bytes": 3088
+  },
+  "data/train_data/Standoff_Format/protocol_134.ann": {
+   "sha256": "104251e1f09862c659f1e0d45064e9c4a7590242a75965f8b3137f5b014a4af5",
+   "bytes": 3567
+  },
+  "data/train_data/Standoff_Format/protocol_134.txt": {
+   "sha256": "86ca24ca1caa285a7ea0240567a802fb889a57b8cdb8d4a6b3bdf7b443c8c886",
+   "bytes": 678
+  },
+  "data/train_data/Standoff_Format/protocol_135.ann": {
+   "sha256": "5ef6cbbd1cf1514b1df0b7c7aa10ed284b15b5a045b68336f431dc4e4ae07341",
+   "bytes": 2698
+  },
+  "data/train_data/Standoff_Format/protocol_135.txt": {
+   "sha256": "da982b77273e330d545cbb2f1e6aab628d7cc369a6cae825a3638e62ac8e54ec",
+   "bytes": 816
+  },
+  "data/train_data/Standoff_Format/protocol_136.ann": {
+   "sha256": "435ce5c62f818f0484e872886dc23c82910422f7692cb5425bbbd41d66dc2fd6",
+   "bytes": 8308
+  },
+  "data/train_data/Standoff_Format/protocol_136.txt": {
+   "sha256": "54bc2fe8ea0e684c45ec69ce4ded1259b6c9d5771d48257f9857c513f7af2637",
+   "bytes": 2065
+  },
+  "data/train_data/Standoff_Format/protocol_137.ann": {
+   "sha256": "a30385c0119555704c1fadb8caa9ed59797bac0364dd05c371e1cb5a89a3a403",
+   "bytes": 1906
+  },
+  "data/train_data/Standoff_Format/protocol_137.txt": {
+   "sha256": "822aff21287885e8eb9ebdbe626b3b302628af9553fc52395e37c5fe7a4b52d7",
+   "bytes": 449
+  },
+  "data/train_data/Standoff_Format/protocol_138.ann": {
+   "sha256": "2f9016a09cab07b43d9d8945f26e3b1f00bff13353816255208529018255cce5",
+   "bytes": 27967
+  },
+  "data/train_data/Standoff_Format/protocol_138.txt": {
+   "sha256": "c6ce4d6d50e878b4c17a135c5ac725f01b032fbae6b1c2fed42f6b3c9e9cc606",
+   "bytes": 8139
+  },
+  "data/train_data/Standoff_Format/protocol_139.ann": {
+   "sha256": "c408e8ca80d1d50506a5b8c032a4e9aebbd911ae52f6ed6ec76f1b1551309a9b",
+   "bytes": 8598
+  },
+  "data/train_data/Standoff_Format/protocol_139.txt": {
+   "sha256": "59aaf24b925c32814bdd1bdbd379e97b07724527c175eae2943e9d478766867d",
+   "bytes": 2515
+  },
+  "data/train_data/Standoff_Format/protocol_14.ann": {
+   "sha256": "cd26c1b6eba778e2dc3ccee7578a90d02fc789af6550f33ca0f78afd86c79c2e",
+   "bytes": 7828
+  },
+  "data/train_data/Standoff_Format/protocol_14.txt": {
+   "sha256": "a4e39ecb68e4d4bb1b397cea2c351f67828ad1daab6e3312c349633bf2db1093",
+   "bytes": 2370
+  },
+  "data/train_data/Standoff_Format/protocol_140.ann": {
+   "sha256": "002492da428b0600a005b2af6b06ba1625afd517ceb9d08ad2d61b0303947e73",
+   "bytes": 6064
+  },
+  "data/train_data/Standoff_Format/protocol_140.txt": {
+   "sha256": "f07cbfea175798befe940a57d3815c489e4033f7c50ec5d52bf5b541c5a7e342",
+   "bytes": 1857
+  },
+  "data/train_data/Standoff_Format/protocol_141.ann": {
+   "sha256": "6f2b11274e64412fae5cf89f9761f2974d4efa85dee6e9802c6ed99f6d2abd5b",
+   "bytes": 13913
+  },
+  "data/train_data/Standoff_Format/protocol_141.txt": {
+   "sha256": "c4cf2d6a5c9d4cebe8947e89bfe5c32390aa72358112db5013a3163d9e4df055",
+   "bytes": 4247
+  },
+  "data/train_data/Standoff_Format/protocol_143.ann": {
+   "sha256": "b3cc6281015106d73d103e54977723d80544e0f1996e74fcfb3e947d57b8e437",
+   "bytes": 1099
+  },
+  "data/train_data/Standoff_Format/protocol_143.txt": {
+   "sha256": "dfa5f81a030ae2d01ea3854e47bddc973b1b3400472d649c650fa9064a2b619c",
+   "bytes": 259
+  },
+  "data/train_data/Standoff_Format/protocol_144.ann": {
+   "sha256": "367fc2126501d4a430183af342de45bb032aa6b155cd1cc036a03a8c6eadbc25",
+   "bytes": 1960
+  },
+  "data/train_data/Standoff_Format/protocol_144.txt": {
+   "sha256": "7a3f3a528275e676fa5dcb666a8f6949d0d0987c4d29fb1ae81261b43f02b239",
+   "bytes": 439
+  },
+  "data/train_data/Standoff_Format/protocol_145.ann": {
+   "sha256": "89b68c6b3e8ec409cac11bdf54466e65ec3aabbff57069aa0f79afdeb1816cd2",
+   "bytes": 509
+  },
+  "data/train_data/Standoff_Format/protocol_145.txt": {
+   "sha256": "51637763cb45a680c170fccd6b90e5bf60a75d70f94d41d679c2341741e81f09",
+   "bytes": 152
+  },
+  "data/train_data/Standoff_Format/protocol_146.ann": {
+   "sha256": "5e9d6fc0a70f2a9a1e4d03411ed81912875a609eec91042501568c9635ac35ad",
+   "bytes": 8252
+  },
+  "data/train_data/Standoff_Format/protocol_146.txt": {
+   "sha256": "0b5653a268a0a72b2acf14b9d98434f24952045e7cbc9772af5763e08df5bf4b",
+   "bytes": 2281
+  },
+  "data/train_data/Standoff_Format/protocol_149.ann": {
+   "sha256": "39d0f6eb6989cf326f78dcb18a44827c853e231fd98e5bbba412bbacab4782ad",
+   "bytes": 2415
+  },
+  "data/train_data/Standoff_Format/protocol_149.txt": {
+   "sha256": "bce5bb5e9f81b66938574cd32f6b6b73b4e6ef26d699f527ba886f090801697a",
+   "bytes": 647
+  },
+  "data/train_data/Standoff_Format/protocol_15.ann": {
+   "sha256": "5c084cb146a2d95f3fbc87f498a0a812b5c3883fa988d7619db24113c70cf856",
+   "bytes": 3349
+  },
+  "data/train_data/Standoff_Format/protocol_15.txt": {
+   "sha256": "83f75ff98c39196d5c2b4dd5b2bbb5d52f694ac388422ee681207ad182f639e7",
+   "bytes": 1027
+  },
+  "data/train_data/Standoff_Format/protocol_150.ann": {
+   "sha256": "2df8724426156afdde694a0864f479507e57a2d117ee54eae05b022a78314240",
+   "bytes": 4332
+  },
+  "data/train_data/Standoff_Format/protocol_150.txt": {
+   "sha256": "958925d7ed4c10b470ea9df16d31c0e746bc8e083ff6057235ff3e1400121c4c",
+   "bytes": 1430
+  },
+  "data/train_data/Standoff_Format/protocol_151.ann": {
+   "sha256": "4fffba32b4fd2e5731401e7bbedde330c910ac6eb13207972084b35d1ef26b99",
+   "bytes": 4049
+  },
+  "data/train_data/Standoff_Format/protocol_151.txt": {
+   "sha256": "7929f29deeda703d9747f688543c76f44993336b88c2bd90c88e69c9f7ef6e7d",
+   "bytes": 1093
+  },
+  "data/train_data/Standoff_Format/protocol_152.ann": {
+   "sha256": "73152cf4e1c7a3c119101ad413aaf66d9efe3bf8065d51e35fb1960079e78f43",
+   "bytes": 2795
+  },
+  "data/train_data/Standoff_Format/protocol_152.txt": {
+   "sha256": "779e2290e611e0ec27f075c1e999fd14a9460daadaadf53df568dde80b15a8e2",
+   "bytes": 1111
+  },
+  "data/train_data/Standoff_Format/protocol_155.ann": {
+   "sha256": "cab03dad74669c6fa75f257be3a55ce3b48585fa317efea83b8690d3720244df",
+   "bytes": 6700
+  },
+  "data/train_data/Standoff_Format/protocol_155.txt": {
+   "sha256": "a2bdaea2994dbd1183e20217a2c46136559cad767717a6a00c9dd2544ac3720f",
+   "bytes": 1919
+  },
+  "data/train_data/Standoff_Format/protocol_157.ann": {
+   "sha256": "f9de4561a7d2b2beddfa55fb6034828e6b7d8d7fe022c7743800b485ae7f5eef",
+   "bytes": 21852
+  },
+  "data/train_data/Standoff_Format/protocol_157.txt": {
+   "sha256": "f6a01b0c81b29b1461c40693f3be941d7f3d11ce83998d272a50adc86db46f90",
+   "bytes": 5414
+  },
+  "data/train_data/Standoff_Format/protocol_158.ann": {
+   "sha256": "f5d74b5489cb5f944cfc9b2d6224b8e91efb05dc13b2f894d95d09f26534114c",
+   "bytes": 4883
+  },
+  "data/train_data/Standoff_Format/protocol_158.txt": {
+   "sha256": "6078f8e24d5225e01a4ebd710ff1848d9b1615db4b7f4e26a26439985378f2b5",
+   "bytes": 1939
+  },
+  "data/train_data/Standoff_Format/protocol_159.ann": {
+   "sha256": "b42c634593e9da41a251b1d41766f8f3d6974d040cfa5645992a47459df01a6d",
+   "bytes": 1006
+  },
+  "data/train_data/Standoff_Format/protocol_159.txt": {
+   "sha256": "41a16abe8e2c006078e29c50ea9e06b2494c0c4ae37b05cb63f7ba191e3f0303",
+   "bytes": 246
+  },
+  "data/train_data/Standoff_Format/protocol_163.ann": {
+   "sha256": "b5829358b111ce49cd9c9a7b77ae901adb8ebe6ad5ab466ebf03abfb8e79b90d",
+   "bytes": 7090
+  },
+  "data/train_data/Standoff_Format/protocol_163.txt": {
+   "sha256": "2b95ceb816b33d08eb9d1cbb058dbd9f74f31d283f94d176726b54adbf2e3cd9",
+   "bytes": 1728
+  },
+  "data/train_data/Standoff_Format/protocol_164.ann": {
+   "sha256": "479436b074f86ca515256f7a5538bb1ae9f9faf35ac126725f3aebbd27711fef",
+   "bytes": 5778
+  },
+  "data/train_data/Standoff_Format/protocol_164.txt": {
+   "sha256": "8ac511254fe2b3dd64fdadd09a9c150bb84f3315ee35b9e2d1f28f82a9e79641",
+   "bytes": 2030
+  },
+  "data/train_data/Standoff_Format/protocol_169.ann": {
+   "sha256": "c012060c989aa9db294a904189311b57109fce992009530ea9700ea48309cdee",
+   "bytes": 13362
+  },
+  "data/train_data/Standoff_Format/protocol_169.txt": {
+   "sha256": "063683000e666d33351000755cd6f77244cf5b00486fa10f1eb86acb6780a932",
+   "bytes": 3782
+  },
+  "data/train_data/Standoff_Format/protocol_170.ann": {
+   "sha256": "2485c9023bec63496316bf536b1b620723c9c243ba4ce80ca3183fc48b565398",
+   "bytes": 4560
+  },
+  "data/train_data/Standoff_Format/protocol_170.txt": {
+   "sha256": "3ebf790cb9fff9d69ae4a0b4315bd6ce3ba09593a07ea52b405449f71260f24a",
+   "bytes": 1253
+  },
+  "data/train_data/Standoff_Format/protocol_171.ann": {
+   "sha256": "47c5137434d9240e2fd1e3c441a89361383209854ac7dbc2f5ff270fcef41b6e",
+   "bytes": 1749
+  },
+  "data/train_data/Standoff_Format/protocol_171.txt": {
+   "sha256": "0e0ef32f50f60987b4e876267d8348cf07ae2f7f08c03505e316b0c6c1b9a301",
+   "bytes": 525
+  },
+  "data/train_data/Standoff_Format/protocol_175.ann": {
+   "sha256": "e363da7b55fb930fa94c986a24c485e364ca3c081eac6c4f2e2cc7004048d48d",
+   "bytes": 6861
+  },
+  "data/train_data/Standoff_Format/protocol_175.txt": {
+   "sha256": "a87ce7011406307c8aac7071af8d59af81d2ee1e1fc9e227d6111d1175dc20ff",
+   "bytes": 2071
+  },
+  "data/train_data/Standoff_Format/protocol_177.ann": {
+   "sha256": "2e131944e976a03d1dbf3b4577d3aa0ad9eea3d6f1c79bc7d892b74797d975cc",
+   "bytes": 2640
+  },
+  "data/train_data/Standoff_Format/protocol_177.txt": {
+   "sha256": "e253abe3c22ecababd45ff9f8259a1b514c54499b3f75bab4fe9a447797573b5",
+   "bytes": 712
+  },
+  "data/train_data/Standoff_Format/protocol_178.ann": {
+   "sha256": "bcdfcdf1e32ac0cf86766634db530cc510e97347af6a1ac0d684a8ed0b9a6182",
+   "bytes": 11033
+  },
+  "data/train_data/Standoff_Format/protocol_178.txt": {
+   "sha256": "ca303423bf2c09f848fddf9372e4f520427944c98fb29c9fc7bbe6cc700d2944",
+   "bytes": 3206
+  },
+  "data/train_data/Standoff_Format/protocol_18.ann": {
+   "sha256": "8ed03bbba91c9b6fe0230c0d74c2712ee926bc13ca552d23e425627d4412971c",
+   "bytes": 10664
+  },
+  "data/train_data/Standoff_Format/protocol_18.txt": {
+   "sha256": "870c75f2b4b671bf78a963ccca35199e99c890bbbdd5655cb4a4a50acf6dec94",
+   "bytes": 4952
+  },
+  "data/train_data/Standoff_Format/protocol_180.ann": {
+   "sha256": "9e3542876069ebf149d4ac5e0efaccc8b4f719ed97d80d94249ef385972fe4bb",
+   "bytes": 6999
+  },
+  "data/train_data/Standoff_Format/protocol_180.txt": {
+   "sha256": "92cb805197a529bfb3ffdd0be088659d3cbabaca3345ab7dd176680c605b2852",
+   "bytes": 1843
+  },
+  "data/train_data/Standoff_Format/protocol_181.ann": {
+   "sha256": "3a03ecb3de24ee3543e32010e2761e3542ab6040caa8c942c163b80d712f1df7",
+   "bytes": 7360
+  },
+  "data/train_data/Standoff_Format/protocol_181.txt": {
+   "sha256": "585fdee12a173441c21df769a87ff4f5777e16edd04fc874892fc51f3d21cd63",
+   "bytes": 2339
+  },
+  "data/train_data/Standoff_Format/protocol_183.ann": {
+   "sha256": "ffff5d5fad039d37be3548a157ec7269d9f6e5e6ff06254773b7de4fe149b74c",
+   "bytes": 1558
+  },
+  "data/train_data/Standoff_Format/protocol_183.txt": {
+   "sha256": "acca19f8581ddd5fb8b7a029e91479ec9899b90688b3d85cdd2f28e911af87c7",
+   "bytes": 635
+  },
+  "data/train_data/Standoff_Format/protocol_184.ann": {
+   "sha256": "02334b8b962884a549bdaa20075a95379491482c82898fcbdf28293a2c300d79",
+   "bytes": 3315
+  },
+  "data/train_data/Standoff_Format/protocol_184.txt": {
+   "sha256": "38ee592545aaff7748161a4197b9f48af34e24fb0567054bc32fb6907709bfaa",
+   "bytes": 874
+  },
+  "data/train_data/Standoff_Format/protocol_187.ann": {
+   "sha256": "f534294011c42e580124c086883687a4938ae119b5b58f53f549abab24c28d77",
+   "bytes": 3956
+  },
+  "data/train_data/Standoff_Format/protocol_187.txt": {
+   "sha256": "5185aefde5fca6e421c848c375901ba276cb4544ef2b151b00e69e721c8ad848",
+   "bytes": 809
+  },
+  "data/train_data/Standoff_Format/protocol_188.ann": {
+   "sha256": "c47b8eb39c8443eb53377e6a52cbcd3f2ab30716b21da5fa71599ef99bc505fe",
+   "bytes": 7037
+  },
+  "data/train_data/Standoff_Format/protocol_188.txt": {
+   "sha256": "8917372432aa0776547227124fcdac125e36035ed3c5888dd7b49c6d0a297f39",
+   "bytes": 1663
+  },
+  "data/train_data/Standoff_Format/protocol_189.ann": {
+   "sha256": "c608bad9ba207c87637c7fa1bb75d1e4d1afecff59a08bc300dd843d85f709b9",
+   "bytes": 6331
+  },
+  "data/train_data/Standoff_Format/protocol_189.txt": {
+   "sha256": "c3dbd58399edcecac488895b0467c8416ca302ffb6e000ff8ac75e9c940abe6a",
+   "bytes": 1701
+  },
+  "data/train_data/Standoff_Format/protocol_19.ann": {
+   "sha256": "96aefb2535a33358ffb46e2a41715ba8ec479997b897a6b4aa3441c12cb95ce1",
+   "bytes": 7303
+  },
+  "data/train_data/Standoff_Format/protocol_19.txt": {
+   "sha256": "6b1ab072b77b62e84de080da8c9605d019047b584287432846a2a336860c1e2a",
+   "bytes": 2068
+  },
+  "data/train_data/Standoff_Format/protocol_190.ann": {
+   "sha256": "fd9272d9d81a82cab5e8e0046bab46bba241fcf5e42ea404a7713f0efcfeaf3d",
+   "bytes": 4086
+  },
+  "data/train_data/Standoff_Format/protocol_190.txt": {
+   "sha256": "b91ad304ca579adeaba2d81029471b86e029f694384f25cfd10814f16ded65fa",
+   "bytes": 1574
+  },
+  "data/train_data/Standoff_Format/protocol_191.ann": {
+   "sha256": "8a5fc8675e995c9173ee6a351aa6e1fa8983523f4bba3d5ae060102ef906dcb3",
+   "bytes": 5856
+  },
+  "data/train_data/Standoff_Format/protocol_191.txt": {
+   "sha256": "bfd235b2cdba4ddfc94b18dfe785255d683b375c0c1888ea355f400d4a416390",
+   "bytes": 1487
+  },
+  "data/train_data/Standoff_Format/protocol_193.ann": {
+   "sha256": "05d87e782575f3207a7b27217807cbbf6ffca49139f18894eae418d044e3d61c",
+   "bytes": 4364
+  },
+  "data/train_data/Standoff_Format/protocol_193.txt": {
+   "sha256": "58c20a7bc61f85ad16521b0d39dab34f6d0c1bf4634f1ee95f4621188c385086",
+   "bytes": 1324
+  },
+  "data/train_data/Standoff_Format/protocol_194.ann": {
+   "sha256": "2404bdda50a285e6f7810df7a8c904ecd081b8e3d6c563b2a2971babbe136b68",
+   "bytes": 11304
+  },
+  "data/train_data/Standoff_Format/protocol_194.txt": {
+   "sha256": "fba3b227f65aecd9469334dc6f6bab0b4d0f840d8e15b9ff75cb4bf6bcbf5e08",
+   "bytes": 3848
+  },
+  "data/train_data/Standoff_Format/protocol_195.ann": {
+   "sha256": "198add83fadcd775ec3fad7c86badb70e82ded41af9273e552adb939e07a0daa",
+   "bytes": 5994
+  },
+  "data/train_data/Standoff_Format/protocol_195.txt": {
+   "sha256": "df8f05551484800d7aaea8ca14d771519713d93a997aa9d0caa30fa5f40e905b",
+   "bytes": 1229
+  },
+  "data/train_data/Standoff_Format/protocol_197.ann": {
+   "sha256": "7d3111c90942db2a413638939bac82c693914aa6711a14471a706e315fc02f7e",
+   "bytes": 53120
+  },
+  "data/train_data/Standoff_Format/protocol_197.txt": {
+   "sha256": "841f9b3a4446f4467dc752787a0a49d6ba5e5fdd6b90340b9d45fff00d933473",
+   "bytes": 12667
+  },
+  "data/train_data/Standoff_Format/protocol_198.ann": {
+   "sha256": "a2ee443569fb99c6fb85c01d98f96ca341143efd27a547eeaa451fde952183d3",
+   "bytes": 1424
+  },
+  "data/train_data/Standoff_Format/protocol_198.txt": {
+   "sha256": "c75b02cdd9240a8a3dc73fdc760aa62e2902c9d8beed5ae879d421ecb011d230",
+   "bytes": 404
+  },
+  "data/train_data/Standoff_Format/protocol_201.ann": {
+   "sha256": "4973089f75de48102c68a09c09d7362434acc206915fd6d16d2d64f853245ea7",
+   "bytes": 3255
+  },
+  "data/train_data/Standoff_Format/protocol_201.txt": {
+   "sha256": "e8921d4fd7d7fa3dad4ecaa14b767642744f4d5f384d6352d7b669862da549b1",
+   "bytes": 758
+  },
+  "data/train_data/Standoff_Format/protocol_203.ann": {
+   "sha256": "2679126c32059f84deff2a610b5e85b2b6f3d958b384bad92c7a108d5d21488c",
+   "bytes": 10802
+  },
+  "data/train_data/Standoff_Format/protocol_203.txt": {
+   "sha256": "622e2590d8a8c54d86f49fe29fd716e3b21812646df021cd93b5f6a3eb792bd5",
+   "bytes": 2763
+  },
+  "data/train_data/Standoff_Format/protocol_205.ann": {
+   "sha256": "80361617219ebcb7175198060a7c3c5e944bc5ee37fde5ff9080b5ed1f423d4e",
+   "bytes": 3786
+  },
+  "data/train_data/Standoff_Format/protocol_205.txt": {
+   "sha256": "5d53bac59416ec0fc2041a8a79c372f31183baee4a78e3bb56abc712cf4a83f3",
+   "bytes": 1290
+  },
+  "data/train_data/Standoff_Format/protocol_208.ann": {
+   "sha256": "81f788bb3ff592fe3bbf64f1e3e9d2fbb88e542f440d6e75739922cbcc578d63",
+   "bytes": 7048
+  },
+  "data/train_data/Standoff_Format/protocol_208.txt": {
+   "sha256": "b69f7e21f8bda98109586a04fae40f02da4b01677e70bf866c7f38cf8decefd2",
+   "bytes": 2112
+  },
+  "data/train_data/Standoff_Format/protocol_209.ann": {
+   "sha256": "0c2dd7fd8f5d1b8eb511d1ebaf13c0a31022b74e1c1a2769969330c6e4d2fd27",
+   "bytes": 6441
+  },
+  "data/train_data/Standoff_Format/protocol_209.txt": {
+   "sha256": "c0e8972cdb82e525355c19e8298043db38958a522a9448093b542b3072381bfd",
+   "bytes": 1914
+  },
+  "data/train_data/Standoff_Format/protocol_210.ann": {
+   "sha256": "b3f07064c41ddde6243153ef027bb354d47b0d0ef278de53891e393e638e9e85",
+   "bytes": 4565
+  },
+  "data/train_data/Standoff_Format/protocol_210.txt": {
+   "sha256": "ae93842f3a053700c296d33ae1c9a9b52390abeab49e67535fb887d31ecb9a4f",
+   "bytes": 1252
+  },
+  "data/train_data/Standoff_Format/protocol_212.ann": {
+   "sha256": "3d3250f30549dde13e6f0f4091c8cb893a2e2e94e45287082913523e348b0d31",
+   "bytes": 3080
+  },
+  "data/train_data/Standoff_Format/protocol_212.txt": {
+   "sha256": "28d268885587a7aebf54a8cf08aca14217a9de3f548ebd7af2c7d2f495825ebb",
+   "bytes": 1047
+  },
+  "data/train_data/Standoff_Format/protocol_215.ann": {
+   "sha256": "1c6b7e86c6b96ad0a8c74afce82bd36e6f1310a63184e494d08cbb8f21c0b002",
+   "bytes": 971
+  },
+  "data/train_data/Standoff_Format/protocol_215.txt": {
+   "sha256": "fc22c9257d6b5a3fe45eb0af8e21046556839e2b00da036fd6fd5708825d7b54",
+   "bytes": 311
+  },
+  "data/train_data/Standoff_Format/protocol_216.ann": {
+   "sha256": "e5a042a61ea1679b35d4deca7727d82e371e76098b83198cc63c27fdd18eb52b",
+   "bytes": 2045
+  },
+  "data/train_data/Standoff_Format/protocol_216.txt": {
+   "sha256": "1d7067ebf392ac5d1c53c9e7f76a79ae0c85b1737e33acb32298ad4d199b1e0b",
+   "bytes": 665
+  },
+  "data/train_data/Standoff_Format/protocol_217.ann": {
+   "sha256": "45ba70d57a3e8f22647392cafef993b93b04fcc5819ee5270abfb81eec1dad1e",
+   "bytes": 2480
+  },
+  "data/train_data/Standoff_Format/protocol_217.txt": {
+   "sha256": "c3a40a2be1096ab83176090bf70a25b30474a0de03abc773eca43c4c207f85de",
+   "bytes": 764
+  },
+  "data/train_data/Standoff_Format/protocol_218.ann": {
+   "sha256": "b5cbf6ea0a036e2f975c8dba298b65a22e829e41492028ef32503e0d0e596553",
+   "bytes": 2517
+  },
+  "data/train_data/Standoff_Format/protocol_218.txt": {
+   "sha256": "dc6474f7d7edbe2e033533d234a36bff21cba3c20a552c6f421de8b3f9c49b32",
+   "bytes": 876
+  },
+  "data/train_data/Standoff_Format/protocol_22.ann": {
+   "sha256": "6fb8b719f380a9899a08e1008b9fc3b43fd1e396cdc29edef9e42c3e25c8d4f1",
+   "bytes": 2138
+  },
+  "data/train_data/Standoff_Format/protocol_22.txt": {
+   "sha256": "418141e4481d62489c14a6b44f706764bf74ced238b532007c1ae14422f00744",
+   "bytes": 648
+  },
+  "data/train_data/Standoff_Format/protocol_221.ann": {
+   "sha256": "f11bcd5539fab9948c18de202cb76b673b7d660761c8a804e55ab927df026b0e",
+   "bytes": 3900
+  },
+  "data/train_data/Standoff_Format/protocol_221.txt": {
+   "sha256": "8fe1c7cd07f126e2ae6d19c736f6047d444d634be8b38801aae410fb76f9c7c5",
+   "bytes": 1104
+  },
+  "data/train_data/Standoff_Format/protocol_226.ann": {
+   "sha256": "56bb868b9a9cd7607f677675154cd0074f0e39cdcc92106671085a91de68a352",
+   "bytes": 3649
+  },
+  "data/train_data/Standoff_Format/protocol_226.txt": {
+   "sha256": "08b16f76292ede48acb7385caf06d2e8b7d709eccb0d5d2a7db2fcea214668ce",
+   "bytes": 1020
+  },
+  "data/train_data/Standoff_Format/protocol_227.ann": {
+   "sha256": "371ceafb562a00f18d83d2b86aed58db7e1744cbf62c195960eda78f88247839",
+   "bytes": 1993
+  },
+  "data/train_data/Standoff_Format/protocol_227.txt": {
+   "sha256": "87f2abfa5f849427e0cd5ffca67cbda0367ca2c8f77756be4ce7a9cfd3ace1c5",
+   "bytes": 868
+  },
+  "data/train_data/Standoff_Format/protocol_229.ann": {
+   "sha256": "2d5d225536567c26c946dbeb9091920ac347a677511d7f16973a1b0ea6031666",
+   "bytes": 3615
+  },
+  "data/train_data/Standoff_Format/protocol_229.txt": {
+   "sha256": "92d9fab3d6c45b3a70a64e108f1cdbca7ac2485e691f602484e9aec5a9f64f14",
+   "bytes": 649
+  },
+  "data/train_data/Standoff_Format/protocol_23.ann": {
+   "sha256": "1d335dbd20ef0a3c2505d8eb07d605e6f0c8315212a37832b383a70b30d0e4fe",
+   "bytes": 17217
+  },
+  "data/train_data/Standoff_Format/protocol_23.txt": {
+   "sha256": "a54dada3a3d71b089ebffa64089e72f0b6a10225171dcdc562002b0a230dabcb",
+   "bytes": 4189
+  },
+  "data/train_data/Standoff_Format/protocol_230.ann": {
+   "sha256": "7d488feb15723cd1d42eb89b0562be7cc60f78f6131a4462c384963ea2efe2fe",
+   "bytes": 1361
+  },
+  "data/train_data/Standoff_Format/protocol_230.txt": {
+   "sha256": "61dd68d219d96b8ddc58f1080089c209181294b1f1fdfc8c78444415d7ce413b",
+   "bytes": 375
+  },
+  "data/train_data/Standoff_Format/protocol_232.ann": {
+   "sha256": "30cc4af499bcc3643a26e1d5b41fa123f304fa12e942a7b59b544c3b1e47ffe5",
+   "bytes": 6911
+  },
+  "data/train_data/Standoff_Format/protocol_232.txt": {
+   "sha256": "9848963281022361b6b179e2996fbbae0681bb6b71ef6bf9bd9a4cddf7f1dd1a",
+   "bytes": 2195
+  },
+  "data/train_data/Standoff_Format/protocol_234.ann": {
+   "sha256": "33a7c2acb62922017226e819907adf64bdc9c75f1db2251ee301db3a85669727",
+   "bytes": 6950
+  },
+  "data/train_data/Standoff_Format/protocol_234.txt": {
+   "sha256": "2602c481a13a5e7131d90359c0ad989b94825d24da2a78e92bce3fd6b087846c",
+   "bytes": 1824
+  },
+  "data/train_data/Standoff_Format/protocol_239.ann": {
+   "sha256": "78641b5c87519f5855233b42a1394bbb689e4b36452220ceac7324cba0c20abd",
+   "bytes": 5696
+  },
+  "data/train_data/Standoff_Format/protocol_239.txt": {
+   "sha256": "a4f294be79b72ed3c9f42c650281cbbeaf3537d0537c6a3aaeb2855799834675",
+   "bytes": 1240
+  },
+  "data/train_data/Standoff_Format/protocol_24.ann": {
+   "sha256": "7e980ccefc7394384f63697b5fb6455339216ba7b9590535e77daefd102e580d",
+   "bytes": 3643
+  },
+  "data/train_data/Standoff_Format/protocol_24.txt": {
+   "sha256": "79db742b17ecf16df92f09dd020a83f250f7ba8e7590ef5181d0b20f3d836b2c",
+   "bytes": 1206
+  },
+  "data/train_data/Standoff_Format/protocol_240.ann": {
+   "sha256": "4309e95080c7a001e9d4c06d61edb7f6c789b530ce218cef4e50c22d7a6310d7",
+   "bytes": 1084
+  },
+  "data/train_data/Standoff_Format/protocol_240.txt": {
+   "sha256": "ee41bf244f6ce5a6f091e1ae3b2c8dcbcd429ee4772101d6352d16e9d0e11777",
+   "bytes": 331
+  },
+  "data/train_data/Standoff_Format/protocol_241.ann": {
+   "sha256": "d4f1c6e5f1c21c71f8dbf95126f57917f83a19e89d7d005af8ac8d3d114ed9d9",
+   "bytes": 1571
+  },
+  "data/train_data/Standoff_Format/protocol_241.txt": {
+   "sha256": "37c1ada07b489d0936885df18a9e0a4d698834d1829516c7dab94991f738de8d",
+   "bytes": 358
+  },
+  "data/train_data/Standoff_Format/protocol_242.ann": {
+   "sha256": "67bac652a5c610dfed8f68814339b585b36cc6eb4a288613baab2fc2b2d0b591",
+   "bytes": 7421
+  },
+  "data/train_data/Standoff_Format/protocol_242.txt": {
+   "sha256": "fd315793ad4dd9bbf93aa984e8fe254749df5683c5c879edf2313a7bc87cf4d3",
+   "bytes": 1836
+  },
+  "data/train_data/Standoff_Format/protocol_243.ann": {
+   "sha256": "3a9eefcf761cecf3aefb510c73d25c7aa71e5ccc455a02ffae3938135df52b36",
+   "bytes": 4141
+  },
+  "data/train_data/Standoff_Format/protocol_243.txt": {
+   "sha256": "4ed4616761bac46fba9806cef1469bb51b82e937d6b4a25a42d1537c7dfbfaf8",
+   "bytes": 1147
+  },
+  "data/train_data/Standoff_Format/protocol_244.ann": {
+   "sha256": "d26fe18ad0a17e95631e8cdfe725b9ef90fa89f73daededd44cd22b29c56f674",
+   "bytes": 3852
+  },
+  "data/train_data/Standoff_Format/protocol_244.txt": {
+   "sha256": "3c41d0ab6480f58aab45e452c14ecfedce23feee7937bd7acbfbf8619833a3b7",
+   "bytes": 859
+  },
+  "data/train_data/Standoff_Format/protocol_245.ann": {
+   "sha256": "c8a1dbe2b15928d5535a401b53ca7c2f68d75c14a56331b5569b26416351d59f",
+   "bytes": 2706
+  },
+  "data/train_data/Standoff_Format/protocol_245.txt": {
+   "sha256": "73962effa3b78c174826141c77c8950b1cd9934ffc4f22464e5a5f3f7bca8d74",
+   "bytes": 598
+  },
+  "data/train_data/Standoff_Format/protocol_249.ann": {
+   "sha256": "98e037ec09fe93a546008024e8325a9adc610ff3fbb7ae316983d79724c3aa5e",
+   "bytes": 1322
+  },
+  "data/train_data/Standoff_Format/protocol_249.txt": {
+   "sha256": "ff025c814bdfb2a1e4e3de54322c624c9e2b112cb7b3d0ccca48d1d4bdf00647",
+   "bytes": 437
+  },
+  "data/train_data/Standoff_Format/protocol_25.ann": {
+   "sha256": "532404a7809d898c5cb6ecb0440f92d7ca52a74fe83f80ff4d5d4ae34ec70996",
+   "bytes": 5059
+  },
+  "data/train_data/Standoff_Format/protocol_25.txt": {
+   "sha256": "664916270611e44ac1e4dbcb23ffefa5010ffcdf576c60162e4a95eea9021712",
+   "bytes": 1401
+  },
+  "data/train_data/Standoff_Format/protocol_251.ann": {
+   "sha256": "39070594bea28b9a09d405625f1cc629c87ae7a568c7eb0a5196f56d7e7a5b52",
+   "bytes": 22573
+  },
+  "data/train_data/Standoff_Format/protocol_251.txt": {
+   "sha256": "1c1d80ef850662fbd029290b7e7633cb4504e170f2637c92a3d324c7ed3a2c49",
+   "bytes": 4985
+  },
+  "data/train_data/Standoff_Format/protocol_252.ann": {
+   "sha256": "dd1e2ad1375b1b73a8985f60282dd62358b70c13dc6e3376e863ba752478f951",
+   "bytes": 4641
+  },
+  "data/train_data/Standoff_Format/protocol_252.txt": {
+   "sha256": "47715ce1bb967817061e077e8f5a3111437e331fd451f4a8a93050b611913c8b",
+   "bytes": 831
+  },
+  "data/train_data/Standoff_Format/protocol_256.ann": {
+   "sha256": "9690d56e09d00f004a3a06532e9e1c0c6db78a526d10e2bc4398934160280ed6",
+   "bytes": 5022
+  },
+  "data/train_data/Standoff_Format/protocol_256.txt": {
+   "sha256": "6be534ea0c33a170aae8ad1b662e1748258f4e307df024ef87edc692e575eae8",
+   "bytes": 1534
+  },
+  "data/train_data/Standoff_Format/protocol_257.ann": {
+   "sha256": "0b343fd3d5a40e67042700727eb427cf4dbb2951a822159878688b6e9c679e78",
+   "bytes": 1286
+  },
+  "data/train_data/Standoff_Format/protocol_257.txt": {
+   "sha256": "f9704afafb9f7eec09b6ac55dd274aff7913b07bb289758aaf15269b5b9e87d9",
+   "bytes": 440
+  },
+  "data/train_data/Standoff_Format/protocol_258.ann": {
+   "sha256": "3dcd290dea2332df6580bd48d1884146651d4adc32b47a403456ec308324e38b",
+   "bytes": 7241
+  },
+  "data/train_data/Standoff_Format/protocol_258.txt": {
+   "sha256": "265466c90a0774ee53eaa617abbcc4cda37f860cc86d084ce9126a00f0ea890c",
+   "bytes": 1861
+  },
+  "data/train_data/Standoff_Format/protocol_26.ann": {
+   "sha256": "1e1300b7ea84093abd9911ec156f776bdc7ef93780a32cacacf761caeba6d346",
+   "bytes": 4554
+  },
+  "data/train_data/Standoff_Format/protocol_26.txt": {
+   "sha256": "2e23ebfbb551a6b8991bf1479cabe59bcd512053570ae4073a79374ac0334829",
+   "bytes": 1468
+  },
+  "data/train_data/Standoff_Format/protocol_262.ann": {
+   "sha256": "4b1bdb3b263cdd0010b122d47e10d9a39c1ffd83141f304a601d812127210c24",
+   "bytes": 7865
+  },
+  "data/train_data/Standoff_Format/protocol_262.txt": {
+   "sha256": "1ec3ca9046a67f6b65f453a1cbfd8c6fa07dae2787924ecd99b602b9c1f537f4",
+   "bytes": 2502
+  },
+  "data/train_data/Standoff_Format/protocol_266.ann": {
+   "sha256": "5fb317adb7648d383858037b22a2cddec628313e907ad0d79c8b6d145cafaa3e",
+   "bytes": 8270
+  },
+  "data/train_data/Standoff_Format/protocol_266.txt": {
+   "sha256": "bde2f1e25b89c585853a87aafd08eb38499a3f6c24b47e2b1094115e871ee5b4",
+   "bytes": 2079
+  },
+  "data/train_data/Standoff_Format/protocol_268.ann": {
+   "sha256": "6253bcc536205266ab0bd186a333619013765389fd7a46af851a9bc879dd2670",
+   "bytes": 3873
+  },
+  "data/train_data/Standoff_Format/protocol_268.txt": {
+   "sha256": "950876030bad37cb76bea460aa913e0c9732959cf8765f632c679ecf1c4a1b85",
+   "bytes": 1012
+  },
+  "data/train_data/Standoff_Format/protocol_269.ann": {
+   "sha256": "0145c6b92b862b5d983642332a2fe7fa826e0294c6d3b5added4b449a588032c",
+   "bytes": 10050
+  },
+  "data/train_data/Standoff_Format/protocol_269.txt": {
+   "sha256": "9606ed366568f156233925369ba38dc90df08f01811407242b499036c8dba1e8",
+   "bytes": 2904
+  },
+  "data/train_data/Standoff_Format/protocol_273.ann": {
+   "sha256": "ac37aab2c7004c780ed545679bbd3c57f82e8f4e552dc58724cb8771c8ccab59",
+   "bytes": 6762
+  },
+  "data/train_data/Standoff_Format/protocol_273.txt": {
+   "sha256": "11490dc84458fff753d682a070b2efef7bd40a4285dbde7c496c2ddcebd7e870",
+   "bytes": 1715
+  },
+  "data/train_data/Standoff_Format/protocol_274.ann": {
+   "sha256": "debc5fc3401af16dedcb90453b97bf391beb6b6d211857fd578c46c7630b312d",
+   "bytes": 2468
+  },
+  "data/train_data/Standoff_Format/protocol_274.txt": {
+   "sha256": "ff8be061eef6f664d0eea1561ea2d50870626fc6f52c977e6a04bba9be9d1f63",
+   "bytes": 939
+  },
+  "data/train_data/Standoff_Format/protocol_276.ann": {
+   "sha256": "b6f4b45362bc96577b15a0b8ceb07b77765d7e48e5c07a72087448c0e7bc4778",
+   "bytes": 2941
+  },
+  "data/train_data/Standoff_Format/protocol_276.txt": {
+   "sha256": "d606b6dfe32d41debf293a6e1204f60a1a503e5aab233c02b4e393dc2ea6c68e",
+   "bytes": 934
+  },
+  "data/train_data/Standoff_Format/protocol_279.ann": {
+   "sha256": "6322111a5689a9ce1a3ceb9c05ec0ca31c8c6fa4ceac3994228f88f97705bd4f",
+   "bytes": 1248
+  },
+  "data/train_data/Standoff_Format/protocol_279.txt": {
+   "sha256": "5856ddddb660419f9403b9b4cf5421c841a64e1c0381a9890b0365ac9c3e5422",
+   "bytes": 436
+  },
+  "data/train_data/Standoff_Format/protocol_280.ann": {
+   "sha256": "51a1c3c0320091aaad5d9c2df1f816d3132afd2787e25bf6a4168fea101bfabe",
+   "bytes": 19390
+  },
+  "data/train_data/Standoff_Format/protocol_280.txt": {
+   "sha256": "46a481aecddf8c33b44475990f9b9ae73d750f13e46ee57419a209641cbf8c26",
+   "bytes": 5611
+  },
+  "data/train_data/Standoff_Format/protocol_283.ann": {
+   "sha256": "2a55c68c548ac5601c7263a48035e15f6e5e3c95c5e13893bdca89e1f1086658",
+   "bytes": 4927
+  },
+  "data/train_data/Standoff_Format/protocol_283.txt": {
+   "sha256": "80eb83b5b466ff1b1d1bedc24882c25bd5dd88c6bf34e4b30fc2bed5fb2f68ce",
+   "bytes": 1221
+  },
+  "data/train_data/Standoff_Format/protocol_284.ann": {
+   "sha256": "6b48cc3a2a152f948430f35bff14567248224dfe8d42436247402ba0485063a1",
+   "bytes": 4405
+  },
+  "data/train_data/Standoff_Format/protocol_284.txt": {
+   "sha256": "d8de30bfa1500579bf54ca0c629d5b20f91f1616024ce5684d681b27ee76d971",
+   "bytes": 1086
+  },
+  "data/train_data/Standoff_Format/protocol_286.ann": {
+   "sha256": "97d602a47a992a41f6e7b0f169c6fb6836f5b499c501a514f2bb64bb0cb030c3",
+   "bytes": 2376
+  },
+  "data/train_data/Standoff_Format/protocol_286.txt": {
+   "sha256": "524f29256c697461a7923ee013ece832c269519a6d715f65043418b42e01b9b3",
+   "bytes": 747
+  },
+  "data/train_data/Standoff_Format/protocol_289.ann": {
+   "sha256": "02e5a56e91c3d218c71f32547a6ef451edf8a1c5f4e6a3e83cac672f0ad82927",
+   "bytes": 5342
+  },
+  "data/train_data/Standoff_Format/protocol_289.txt": {
+   "sha256": "c1956a8fe4aaf30999ffa8b7619ccce72545f270db81496c1d14d75ac76a4788",
+   "bytes": 1312
+  },
+  "data/train_data/Standoff_Format/protocol_29.ann": {
+   "sha256": "a0ece2ee9617769f2f5f9333766db96b45723e175decb856d5634d9bd15c886e",
+   "bytes": 5123
+  },
+  "data/train_data/Standoff_Format/protocol_29.txt": {
+   "sha256": "c95a0e30c99177aae2d275644839a1cb4d89e61bf9a4fca48563f1d1b8045bd7",
+   "bytes": 1408
+  },
+  "data/train_data/Standoff_Format/protocol_292.ann": {
+   "sha256": "eee38f29e395db4050928d4b85a40261e2b43dd79a5a0730defbb88d0c7d19b7",
+   "bytes": 9090
+  },
+  "data/train_data/Standoff_Format/protocol_292.txt": {
+   "sha256": "af7e7bc76530e65f46db906f1aafb965dabcd185ac5ef9727b3929ab95c8a0e8",
+   "bytes": 2336
+  },
+  "data/train_data/Standoff_Format/protocol_293.ann": {
+   "sha256": "5b4c620c61da5c4de50eaa720c111e8af6309f696fa4b617d4c9f4b34585b8b5",
+   "bytes": 1993
+  },
+  "data/train_data/Standoff_Format/protocol_293.txt": {
+   "sha256": "b4011714abff4bd315b3486176aa98f8c854248f4e156f40b7802bd0a2d73171",
+   "bytes": 707
+  },
+  "data/train_data/Standoff_Format/protocol_295.ann": {
+   "sha256": "8e362ac7aabe19a877440410939dd01ea60c0b42b3602f153e5c17ccec3a6f37",
+   "bytes": 19301
+  },
+  "data/train_data/Standoff_Format/protocol_295.txt": {
+   "sha256": "6aebb83ee9f5f7b348fcfcdcb2be67fcb31434cafd4a289615dcd727dcb19407",
+   "bytes": 4484
+  },
+  "data/train_data/Standoff_Format/protocol_297.ann": {
+   "sha256": "f217a86f639d36744412555d274e097845c5983470f6dbe292dc4aaf33741beb",
+   "bytes": 8535
+  },
+  "data/train_data/Standoff_Format/protocol_297.txt": {
+   "sha256": "6779d4cb271eb2f2d1e3cc514566d13bd7165059dd193daf3b8b8a955fef4f86",
+   "bytes": 2100
+  },
+  "data/train_data/Standoff_Format/protocol_298.ann": {
+   "sha256": "08d26386502903ba26963231693fcba64bf6c7a7357ab4409b911871b6d491cc",
+   "bytes": 3738
+  },
+  "data/train_data/Standoff_Format/protocol_298.txt": {
+   "sha256": "430349c9193ba06ac34daeecfd271ffd2b33bc9b85dc7d172bed2329511feb28",
+   "bytes": 988
+  },
+  "data/train_data/Standoff_Format/protocol_299.ann": {
+   "sha256": "7c065c610e9c7c6de1de0d3a76d25246a7ad80753aa2d619b48923e879194a95",
+   "bytes": 9397
+  },
+  "data/train_data/Standoff_Format/protocol_299.txt": {
+   "sha256": "ea135dfcc410e4f5003f662af0d044270d587ed2ebd8f14bd022b6f6053c07c4",
+   "bytes": 3105
+  },
+  "data/train_data/Standoff_Format/protocol_3.ann": {
+   "sha256": "cf0215c45b7f05b2228ba58b09db366af6c7a82d06d9837828818a6339fd399e",
+   "bytes": 2189
+  },
+  "data/train_data/Standoff_Format/protocol_3.txt": {
+   "sha256": "2e90dc35d5ddc71faf5a8727033d67a128f13dd884af7229af719ee6d30f58ce",
+   "bytes": 629
+  },
+  "data/train_data/Standoff_Format/protocol_30.ann": {
+   "sha256": "2df7a54ab29b08eaf4e68d69017af46efc9130ee53b78bf3b926f3e41b48a332",
+   "bytes": 1666
+  },
+  "data/train_data/Standoff_Format/protocol_30.txt": {
+   "sha256": "1d27a00fda72d6117bdb6075b73f94fdc7b46a11e237e1d92623b7e7c64be406",
+   "bytes": 411
+  },
+  "data/train_data/Standoff_Format/protocol_300.ann": {
+   "sha256": "b72101e1471814afe792f2266820b39aebfb5fb47463145f0dad728c722fe23c",
+   "bytes": 8684
+  },
+  "data/train_data/Standoff_Format/protocol_300.txt": {
+   "sha256": "5a6d2a61788b9a49325588ff38bea6dafbd9fe5a30f34ebbebd2c3169d213f62",
+   "bytes": 1777
+  },
+  "data/train_data/Standoff_Format/protocol_301.ann": {
+   "sha256": "d64e612d57fe24584b944fcf9c6e2fed5e92256b1f462d3806134763ccf87ca9",
+   "bytes": 3873
+  },
+  "data/train_data/Standoff_Format/protocol_301.txt": {
+   "sha256": "adc04e0f1c31bf798d0415c3ddf7e28cf980126791765111762eb9bb490a4133",
+   "bytes": 1104
+  },
+  "data/train_data/Standoff_Format/protocol_304.ann": {
+   "sha256": "31b5ebeb82317ce7f20ecf977c5042c88c848860efcc31dc3015c67f50b1ccc2",
+   "bytes": 16779
+  },
+  "data/train_data/Standoff_Format/protocol_304.txt": {
+   "sha256": "79031e6221f2145d476a448ab68f253eb32e2108a509a086ed6eca9c09a81417",
+   "bytes": 5608
+  },
+  "data/train_data/Standoff_Format/protocol_305.ann": {
+   "sha256": "91f830cbccded9cb4e098d6becd249a37c7f162632fcf9df7c59ef884b6865e2",
+   "bytes": 3891
+  },
+  "data/train_data/Standoff_Format/protocol_305.txt": {
+   "sha256": "ebaeed47c1d330c2d1a738c1eb34d705e64df6785756e1d73ef89b23a99a3119",
+   "bytes": 1251
+  },
+  "data/train_data/Standoff_Format/protocol_308.ann": {
+   "sha256": "4fd1480486995f07dfc22d97262c3db9aa2554cf936e7b35b53a345ec56f97a5",
+   "bytes": 6679
+  },
+  "data/train_data/Standoff_Format/protocol_308.txt": {
+   "sha256": "796b0f8d1697948255114d8948558175ade99611db770c22dff053a0fcea3435",
+   "bytes": 2115
+  },
+  "data/train_data/Standoff_Format/protocol_309.ann": {
+   "sha256": "e1952757c5a326aa3a76dccf07a5496ee08d0e8c75e59e301ed6768d83494771",
+   "bytes": 1957
+  },
+  "data/train_data/Standoff_Format/protocol_309.txt": {
+   "sha256": "9a446dd703b6cfcb48a7241021e78194bccde69a0457ba9a3f1922796b8f19f6",
+   "bytes": 730
+  },
+  "data/train_data/Standoff_Format/protocol_310.ann": {
+   "sha256": "3c8df95273014bca56ad66e68fda7629df227380f6396285e1fd4cb2c4ee6f07",
+   "bytes": 9531
+  },
+  "data/train_data/Standoff_Format/protocol_310.txt": {
+   "sha256": "3832fe3e4a7edb656947aeb3398dac9e044a74f6d2650fa98e93f1ba3e88b8a6",
+   "bytes": 3186
+  },
+  "data/train_data/Standoff_Format/protocol_311.ann": {
+   "sha256": "655cc0c391049a94bf5c0dbeae32d1c6d90b622d694d0fcdbee0573e45ef7197",
+   "bytes": 3021
+  },
+  "data/train_data/Standoff_Format/protocol_311.txt": {
+   "sha256": "acf5f9ad72cfb9363daacd7cdf751bf1d104393f128057abcaff68aa712520bf",
+   "bytes": 713
+  },
+  "data/train_data/Standoff_Format/protocol_315.ann": {
+   "sha256": "3413dd097de5ce26d4aa9f5197de8a60664de040d6346f78a2f97e73c9c7f121",
+   "bytes": 3203
+  },
+  "data/train_data/Standoff_Format/protocol_315.txt": {
+   "sha256": "3a8b9d7e76b817ed8dcd001ebb4570ba29604082a1ee9308975a3ddd0265d64f",
+   "bytes": 805
+  },
+  "data/train_data/Standoff_Format/protocol_316.ann": {
+   "sha256": "b7e0e423cb7422b39d52905d23dc86e687321c3f338574e2bc80d9e3f05747fa",
+   "bytes": 3986
+  },
+  "data/train_data/Standoff_Format/protocol_316.txt": {
+   "sha256": "4c68b7dfc8e15a797a805fa1baf0b72af3d4a09ad96a1d90aae5195f58e76062",
+   "bytes": 786
+  },
+  "data/train_data/Standoff_Format/protocol_317.ann": {
+   "sha256": "df020fc2cf4d0154c775c52297cd9729e464a1c9caf4c84f2771b4805a743d9c",
+   "bytes": 5709
+  },
+  "data/train_data/Standoff_Format/protocol_317.txt": {
+   "sha256": "e5c32932796afeeb6b7d0b39187449c2a819eb12cf9670bf2b3b8453c8e89d70",
+   "bytes": 1649
+  },
+  "data/train_data/Standoff_Format/protocol_318.ann": {
+   "sha256": "55350f8d27aab572a4dbf23688d1eae086dd41f3d2170a8bf91bb1b49e23f844",
+   "bytes": 11047
+  },
+  "data/train_data/Standoff_Format/protocol_318.txt": {
+   "sha256": "807f97cdb6fa12e7bf4c1644adbcb6287e1518ad0fca9db791a3c53e2aff5805",
+   "bytes": 2527
+  },
+  "data/train_data/Standoff_Format/protocol_319.ann": {
+   "sha256": "4d39e6ec03252ab329fed0f19c9a2ca7236dbf62002cc2779ec1192f2d0cfbcf",
+   "bytes": 1679
+  },
+  "data/train_data/Standoff_Format/protocol_319.txt": {
+   "sha256": "3440874f4d25de3f11a8506e755d20b0155de40061f05a4acbc0b24c467d1b24",
+   "bytes": 484
+  },
+  "data/train_data/Standoff_Format/protocol_320.ann": {
+   "sha256": "5cbf05bae1031f8db5d918cb1d1b9b3260d594deca85541364b01286b1a3c985",
+   "bytes": 2867
+  },
+  "data/train_data/Standoff_Format/protocol_320.txt": {
+   "sha256": "9fa852338e2dd6b8006296ea489213358a892a9f61ce05f3b1a04e88981a780a",
+   "bytes": 908
+  },
+  "data/train_data/Standoff_Format/protocol_321.ann": {
+   "sha256": "68f66dd194651d37826d6c63cc45d91dc5f5224c0381a9acc78ecb7c1009d6c4",
+   "bytes": 1009
+  },
+  "data/train_data/Standoff_Format/protocol_321.txt": {
+   "sha256": "984173b61cab7b7af40347a880536f7b0ec44592c9e24c39778b7f73fa33bd97",
+   "bytes": 263
+  },
+  "data/train_data/Standoff_Format/protocol_322.ann": {
+   "sha256": "dff1935cf08c372272312e2f714ed5c2d87f1fd94ca8b81fe6e0ee9a0c00efe8",
+   "bytes": 4286
+  },
+  "data/train_data/Standoff_Format/protocol_322.txt": {
+   "sha256": "bb6de1d600f161fc78c81b9d2d3f4075bd919495a33ddacfff5b67f304ca96db",
+   "bytes": 1382
+  },
+  "data/train_data/Standoff_Format/protocol_323.ann": {
+   "sha256": "258c5cffaf86faa9284c9b7cd58647e34c86836bbb53be78f18d5b7129237bbd",
+   "bytes": 14640
+  },
+  "data/train_data/Standoff_Format/protocol_323.txt": {
+   "sha256": "6af25b5c563bcf4e9bc5f3e8f504bb4d846f5a0b0f5d2d2b3b5ad19c29737bd7",
+   "bytes": 3289
+  },
+  "data/train_data/Standoff_Format/protocol_324.ann": {
+   "sha256": "ded3ec41680022e54ee6d644e15a469afd3ab6c80a902ebea02ebd74ca22de41",
+   "bytes": 2227
+  },
+  "data/train_data/Standoff_Format/protocol_324.txt": {
+   "sha256": "0d0b9bddc57d824f3f38b612d27ca4a736e40586be355e11783e57c58a48312a",
+   "bytes": 633
+  },
+  "data/train_data/Standoff_Format/protocol_326.ann": {
+   "sha256": "80d8b7297ec1c5157d9ef1a027f7f1d9733e9e4ac7368fe8ea2b729f12f097c2",
+   "bytes": 5930
+  },
+  "data/train_data/Standoff_Format/protocol_326.txt": {
+   "sha256": "e743f4aaef2f50ad4ac5209e7bdcfae2696db697f0aa324ecbbe677019f19ff8",
+   "bytes": 1635
+  },
+  "data/train_data/Standoff_Format/protocol_327.ann": {
+   "sha256": "6f25e1e32d446b3f7734763dc9898750c380e33addfbb5e67e59e240de43e19d",
+   "bytes": 2884
+  },
+  "data/train_data/Standoff_Format/protocol_327.txt": {
+   "sha256": "884bcbf250caa8259bf63a7f7073802eea7e67633881585cb466d40e4160d3d2",
+   "bytes": 948
+  },
+  "data/train_data/Standoff_Format/protocol_328.ann": {
+   "sha256": "2abb2dba99651b23dfa2a52b8d0039606b74fd39cedaa2a4435c438426b92b16",
+   "bytes": 3013
+  },
+  "data/train_data/Standoff_Format/protocol_328.txt": {
+   "sha256": "418d76929abba447a5ca3b2433cbace507e49b45a09a50c7d0bdf0f773c3357f",
+   "bytes": 769
+  },
+  "data/train_data/Standoff_Format/protocol_329.ann": {
+   "sha256": "50c86171e424c026d4cdbcbe0713e149fe060cc8d58ba3cb3fd1ee829709e9d7",
+   "bytes": 4211
+  },
+  "data/train_data/Standoff_Format/protocol_329.txt": {
+   "sha256": "03d79687b657e3316d5a36b908b0103bac09430feae9fc671bb2ee92cc9645be",
+   "bytes": 1452
+  },
+  "data/train_data/Standoff_Format/protocol_33.ann": {
+   "sha256": "e96f21519aed8e00135850d86c00614655a83493c27f3747f99032b087e0017a",
+   "bytes": 8133
+  },
+  "data/train_data/Standoff_Format/protocol_33.txt": {
+   "sha256": "ed6f2c2a9ab719e1220944cb424604fff1ee6e92bd4009ae1666d0a764fc6147",
+   "bytes": 2203
+  },
+  "data/train_data/Standoff_Format/protocol_332.ann": {
+   "sha256": "8ff0907b52d57f59896d37d7af80583513c689216ca9c65391d92e490d96c703",
+   "bytes": 10299
+  },
+  "data/train_data/Standoff_Format/protocol_332.txt": {
+   "sha256": "b3ed8a389c459d19488680698def59f730c10a8bdbd8017189e34d569a1380b2",
+   "bytes": 2587
+  },
+  "data/train_data/Standoff_Format/protocol_333.ann": {
+   "sha256": "9ef62c99f741bd0462da104ed3c640570711eb8ade28f4414150033d2f1be559",
+   "bytes": 10075
+  },
+  "data/train_data/Standoff_Format/protocol_333.txt": {
+   "sha256": "0ec0097f7e89f7712a6562fb6e3b7bf5bea71f04eee71114be52353b59be7ae0",
+   "bytes": 2816
+  },
+  "data/train_data/Standoff_Format/protocol_334.ann": {
+   "sha256": "41a3e3f6304941dce91931a7069dded27dd2d07a8df5bc4415f9166fbf44a515",
+   "bytes": 7811
+  },
+  "data/train_data/Standoff_Format/protocol_334.txt": {
+   "sha256": "f8ded2f79edfbf3cad00ac92f3225581ccd071e8328114fcb6da2efb88c1c0d3",
+   "bytes": 2171
+  },
+  "data/train_data/Standoff_Format/protocol_335.ann": {
+   "sha256": "e977fb295bbc81d56149832f2f76d3d032fe5d1458ed58d82e1b36e8f6124907",
+   "bytes": 3174
+  },
+  "data/train_data/Standoff_Format/protocol_335.txt": {
+   "sha256": "269e6abd40e5025b19add129a38cfa4baf13c6c83afea8df49222184a7df31d6",
+   "bytes": 987
+  },
+  "data/train_data/Standoff_Format/protocol_337.ann": {
+   "sha256": "40316b22d7b3bf66c4eac5818a9360cd5714094a104e4863eb9be857717bf985",
+   "bytes": 9249
+  },
+  "data/train_data/Standoff_Format/protocol_337.txt": {
+   "sha256": "d0d5c419b669c11ec35603e867516ba1f2361e4e5b10f223cb45e748608859ce",
+   "bytes": 2167
+  },
+  "data/train_data/Standoff_Format/protocol_339.ann": {
+   "sha256": "c58cbfa4547924c21b394ecec336ee2f9a81c2d93f05acbfa5218ee76604c2d9",
+   "bytes": 2354
+  },
+  "data/train_data/Standoff_Format/protocol_339.txt": {
+   "sha256": "dabc68517025c489b1fd17499f7677cd7397424ff033ee3591c375e8a6b2026d",
+   "bytes": 730
+  },
+  "data/train_data/Standoff_Format/protocol_34.ann": {
+   "sha256": "0f4b5ea6410b7f53f4e9d4b4546c8af5064d46f3c3673ef20a4efb8428d6054b",
+   "bytes": 2614
+  },
+  "data/train_data/Standoff_Format/protocol_34.txt": {
+   "sha256": "da982b77273e330d545cbb2f1e6aab628d7cc369a6cae825a3638e62ac8e54ec",
+   "bytes": 816
+  },
+  "data/train_data/Standoff_Format/protocol_341.ann": {
+   "sha256": "a8edde268da6ac951c50c45016ddbf3fcf4449dcd36a288a50b53e2df2eb6afd",
+   "bytes": 11142
+  },
+  "data/train_data/Standoff_Format/protocol_341.txt": {
+   "sha256": "121d6ca6d856cda2d47093f3af8a575bf852c9b9dd4f589bda9c17da8dbeedaf",
+   "bytes": 3337
+  },
+  "data/train_data/Standoff_Format/protocol_343.ann": {
+   "sha256": "16159bc7c3e47d6fe50637758385752a6414b1c1eb096941b99395905e02317b",
+   "bytes": 1906
+  },
+  "data/train_data/Standoff_Format/protocol_343.txt": {
+   "sha256": "60f1332a83538740168dde01af2fa4a526a91d8f022d2a369d60a4a8980df985",
+   "bytes": 508
+  },
+  "data/train_data/Standoff_Format/protocol_344.ann": {
+   "sha256": "9d6ce76c24a3a8aba7b4d393eb0b4da3cc0938c2c94512a459d3b38240487994",
+   "bytes": 5432
+  },
+  "data/train_data/Standoff_Format/protocol_344.txt": {
+   "sha256": "d79e967942e183d6b1168fdc3c3ef74313ac6154b66d5b792f545e8959aa7725",
+   "bytes": 1120
+  },
+  "data/train_data/Standoff_Format/protocol_346.ann": {
+   "sha256": "f4d0a2b732a42d422047a5ac63bf979dc9673ff92828dedd4b54b6013f0e4a31",
+   "bytes": 2521
+  },
+  "data/train_data/Standoff_Format/protocol_346.txt": {
+   "sha256": "56ee9fe7355028920e1bb1cb7fa935824a8715e060accdd811ca7226633f53cf",
+   "bytes": 619
+  },
+  "data/train_data/Standoff_Format/protocol_347.ann": {
+   "sha256": "44d5d6ff39a88a35e4aecf3f0ab48e2b39f25235a60c320bcc9b7b51052dc025",
+   "bytes": 5353
+  },
+  "data/train_data/Standoff_Format/protocol_347.txt": {
+   "sha256": "686aa19822154bc15f0cecb57b64f5515264be5b0582a9dcad7d292198c3cfda",
+   "bytes": 1451
+  },
+  "data/train_data/Standoff_Format/protocol_349.ann": {
+   "sha256": "628b78eb9db09d24c8688fec621f58fd20166a102955956363ffdbe287c6c4df",
+   "bytes": 9226
+  },
+  "data/train_data/Standoff_Format/protocol_349.txt": {
+   "sha256": "77999882972cf33652b1d31fb1ff6cb87bc8ca240facb455f56eda19bbb9a0da",
+   "bytes": 2323
+  },
+  "data/train_data/Standoff_Format/protocol_350.ann": {
+   "sha256": "febb93435f314ebe5fddab0f44fde07ee33587bc82cf9843b97b71f12d733c05",
+   "bytes": 3335
+  },
+  "data/train_data/Standoff_Format/protocol_350.txt": {
+   "sha256": "c4be4d718193f62e8a8914927cf16f1e531ea8e4ac680970508b52890944b723",
+   "bytes": 832
+  },
+  "data/train_data/Standoff_Format/protocol_352.ann": {
+   "sha256": "7d7f9c61cacb1514dfab47a9115523f306ed909f8cd7a698012c01a01d7d3071",
+   "bytes": 4309
+  },
+  "data/train_data/Standoff_Format/protocol_352.txt": {
+   "sha256": "0450479c6c1088a1b6eaac9c562e2a989f683a101b0ffdc562cb494cfb52baf3",
+   "bytes": 1243
+  },
+  "data/train_data/Standoff_Format/protocol_354.ann": {
+   "sha256": "afb134453700c68065f4cebc3adeb54ec52f35fac008820729caf02b4c7c3fb4",
+   "bytes": 8723
+  },
+  "data/train_data/Standoff_Format/protocol_354.txt": {
+   "sha256": "9abb5bae7fc7d53c65175db86e2b10093b227163c976e8a8b5a45259424f4d86",
+   "bytes": 2394
+  },
+  "data/train_data/Standoff_Format/protocol_355.ann": {
+   "sha256": "61fdb6bcfd2507d8d4fbbbea203a431df194579e5933bd323786d55522b41bd2",
+   "bytes": 8987
+  },
+  "data/train_data/Standoff_Format/protocol_355.txt": {
+   "sha256": "0c0d47669b97459ecbe99a4bb9a74475f66a93f69da9f5c6300d660035dafbfa",
+   "bytes": 2532
+  },
+  "data/train_data/Standoff_Format/protocol_356.ann": {
+   "sha256": "4c0ebaebb9d25fe7b5d7cda47fa1b88899733433efe370b0a6cea26918246865",
+   "bytes": 1472
+  },
+  "data/train_data/Standoff_Format/protocol_356.txt": {
+   "sha256": "a0d0e05230c8b3f414368c2282a27d8d522ab4fc0b4afe017713ff57f3dbbdeb",
+   "bytes": 338
+  },
+  "data/train_data/Standoff_Format/protocol_357.ann": {
+   "sha256": "2d96b3bcf902756b6b99856fed6b1a8899b2055493900746e2fdf7bdc302e049",
+   "bytes": 22880
+  },
+  "data/train_data/Standoff_Format/protocol_357.txt": {
+   "sha256": "5da31d74a48173a92e7ddcf3d25e94c650e4746e9fd923dad27b027f79f3de56",
+   "bytes": 7627
+  },
+  "data/train_data/Standoff_Format/protocol_358.ann": {
+   "sha256": "0bb7b7a9cd76efdec9569ef55856b8980ec98c5d426e94884e8f698e73c81ed3",
+   "bytes": 1695
+  },
+  "data/train_data/Standoff_Format/protocol_358.txt": {
+   "sha256": "66fb22e57c6f9c9d83d9cf43dd478269febebab38326571604977ff6ef75b65e",
+   "bytes": 664
+  },
+  "data/train_data/Standoff_Format/protocol_359.ann": {
+   "sha256": "b6a4e1cc463beb97bacfc495cf13806488e8ee3d84dad5962c91d00a8303a214",
+   "bytes": 3988
+  },
+  "data/train_data/Standoff_Format/protocol_359.txt": {
+   "sha256": "50e55d8bc4fdd74a79ab6e479be74dddf9a4e725885ae0bb13d2b32dca8e8a08",
+   "bytes": 1057
+  },
+  "data/train_data/Standoff_Format/protocol_361.ann": {
+   "sha256": "0ced8a0bbf084aebd5135424103e1c7674bd45be4d9390afa36610036e8a0aa8",
+   "bytes": 1879
+  },
+  "data/train_data/Standoff_Format/protocol_361.txt": {
+   "sha256": "d4e018a6d764b005c1235df99995298544644df7ac0d2890c84c183b321512b4",
+   "bytes": 536
+  },
+  "data/train_data/Standoff_Format/protocol_362.ann": {
+   "sha256": "bfa9753a956ad1fe56e4ea808b0a06ce6be4508e652bfd2b4b3a9b27db30209f",
+   "bytes": 10065
+  },
+  "data/train_data/Standoff_Format/protocol_362.txt": {
+   "sha256": "119948bf5a28e5235fd333a6c60b53b800c030d417766e058cf458d9103b62f3",
+   "bytes": 2522
+  },
+  "data/train_data/Standoff_Format/protocol_363.ann": {
+   "sha256": "2adc34b5a567f86dcf80e49e2154f132e08486130f4e6ec0e1e700b349bdf5c8",
+   "bytes": 1997
+  },
+  "data/train_data/Standoff_Format/protocol_363.txt": {
+   "sha256": "50bd8f1843caa65c03098ac0edd76acb30ce4376a71bf42b881976f3dd44306f",
+   "bytes": 560
+  },
+  "data/train_data/Standoff_Format/protocol_364.ann": {
+   "sha256": "158d49dfeb4e939f6796f19a958e499a2de98d6d6e2177df0eb41b6372a567c9",
+   "bytes": 7482
+  },
+  "data/train_data/Standoff_Format/protocol_364.txt": {
+   "sha256": "f83a46cc9137d9c5ac4910f460f6fb835ae27885836f3f15ff1714c79b0d3e44",
+   "bytes": 2165
+  },
+  "data/train_data/Standoff_Format/protocol_365.ann": {
+   "sha256": "e2012f7dedb8aab5ebc63a0786979ff0349cb375416f7b8863fc49e504cd906b",
+   "bytes": 20060
+  },
+  "data/train_data/Standoff_Format/protocol_365.txt": {
+   "sha256": "53693f30b028b41465fb7b434ac585006130c4656870fcd073c572ca331301d7",
+   "bytes": 5281
+  },
+  "data/train_data/Standoff_Format/protocol_368.ann": {
+   "sha256": "38074498a2e9cb37d93d067a1eb48adcce6739f1fada6646067b6221a9637fa8",
+   "bytes": 7702
+  },
+  "data/train_data/Standoff_Format/protocol_368.txt": {
+   "sha256": "8d6b8be138c01adc4c2b311cdc373df4e419d5a74f0d8792e09460f68a01c660",
+   "bytes": 2177
+  },
+  "data/train_data/Standoff_Format/protocol_369.ann": {
+   "sha256": "cd5dcdf34ac0b6bf63c70626ee7c267a82a7e810baec9783c9f09e637d588dd3",
+   "bytes": 612
+  },
+  "data/train_data/Standoff_Format/protocol_369.txt": {
+   "sha256": "091d5d1b055b5ee630566fb32569090b09b490506562f7cf66d2b35f9053d6a1",
+   "bytes": 188
+  },
+  "data/train_data/Standoff_Format/protocol_37.ann": {
+   "sha256": "a1f9e5df648a79e6a339f575900c85f5799e7a00400a582117a1e1ff253b92f6",
+   "bytes": 7413
+  },
+  "data/train_data/Standoff_Format/protocol_37.txt": {
+   "sha256": "e1dce7215435d57b2848d47e4fffff32381564e23d45c9fd15326ff966f677fb",
+   "bytes": 1780
+  },
+  "data/train_data/Standoff_Format/protocol_370.ann": {
+   "sha256": "733bd9e3f83910365a04e3ce34c03acf9d097178d1ab68ec6ef66f6a4fe6df62",
+   "bytes": 8728
+  },
+  "data/train_data/Standoff_Format/protocol_370.txt": {
+   "sha256": "99173959754b46cf0ebc17a5eea98ba2cc0f76b464588597ac27fcd63ff4819e",
+   "bytes": 2295
+  },
+  "data/train_data/Standoff_Format/protocol_371.ann": {
+   "sha256": "6dd88f65717b217e7c73f9e25018efaef6baf6e6b6976bee77a4781e2d310d30",
+   "bytes": 11170
+  },
+  "data/train_data/Standoff_Format/protocol_371.txt": {
+   "sha256": "2e6960b61bc1644bee1a3d0115b164de8d8e21065c4245955e6ec45788e8126b",
+   "bytes": 2377
+  },
+  "data/train_data/Standoff_Format/protocol_372.ann": {
+   "sha256": "26ce37de2dc075d19a2a6b86854474fac87de87b8a22891811780920c6c809e3",
+   "bytes": 2830
+  },
+  "data/train_data/Standoff_Format/protocol_372.txt": {
+   "sha256": "2b538c369891477aa522531953f572ee9b1670d9e71d5e5f901023d5e8e9972a",
+   "bytes": 699
+  },
+  "data/train_data/Standoff_Format/protocol_374.ann": {
+   "sha256": "c3babb1e973761c035d626a412994458688faf838500a27428c18ba5fd0be082",
+   "bytes": 6532
+  },
+  "data/train_data/Standoff_Format/protocol_374.txt": {
+   "sha256": "96c9def3f9cff7ac45d2bd3f041eb39c1af9beccde7ac7f158e757a27796ead5",
+   "bytes": 2317
+  },
+  "data/train_data/Standoff_Format/protocol_375.ann": {
+   "sha256": "a8f09f6ad3c96686e9804a79a5849a099e26db60bd4097eaba38237b8877d1d2",
+   "bytes": 2520
+  },
+  "data/train_data/Standoff_Format/protocol_375.txt": {
+   "sha256": "154637c0a39304ca1aafe14ecd1427ecc3be028c72836e4993040729c5c1c633",
+   "bytes": 669
+  },
+  "data/train_data/Standoff_Format/protocol_378.ann": {
+   "sha256": "865ce417e02f84abb3f9bb2af1406b17ce8f38acdf3a5cd71071566f800eb676",
+   "bytes": 3157
+  },
+  "data/train_data/Standoff_Format/protocol_378.txt": {
+   "sha256": "e7f78ca08b73058dd16ecfcf39a400cb2803360cf28e23890fb7639a2b028475",
+   "bytes": 908
+  },
+  "data/train_data/Standoff_Format/protocol_379.ann": {
+   "sha256": "8c31c44d7f466aa66ea80702359d7526f0c838895bbc78c3fa34c64d80323003",
+   "bytes": 4263
+  },
+  "data/train_data/Standoff_Format/protocol_379.txt": {
+   "sha256": "c0a18c07c3f0940516486fae69e260aa462a0875c495905ddaf1b8f5aee21e20",
+   "bytes": 1373
+  },
+  "data/train_data/Standoff_Format/protocol_38.ann": {
+   "sha256": "d6ed9ab79a74da0a5afaa85cbee6c59a069d45f3b464d069d4e7a1dbbc0c1027",
+   "bytes": 2464
+  },
+  "data/train_data/Standoff_Format/protocol_38.txt": {
+   "sha256": "dabc68517025c489b1fd17499f7677cd7397424ff033ee3591c375e8a6b2026d",
+   "bytes": 730
+  },
+  "data/train_data/Standoff_Format/protocol_383.ann": {
+   "sha256": "4f042e8bf80eaa2cb96145d1449effa6c8a1580c5f15ffbb2dfd4b41037f72e2",
+   "bytes": 3138
+  },
+  "data/train_data/Standoff_Format/protocol_383.txt": {
+   "sha256": "698cb7a58e33250373e1bdd2a6f66dbadea654eee79f33142c0560a7c2f3be9b",
+   "bytes": 736
+  },
+  "data/train_data/Standoff_Format/protocol_384.ann": {
+   "sha256": "04e90cee5bb57b1ecd6d8a4593ce9237bb81fbb05f2976e5685968eb8409ea5d",
+   "bytes": 8634
+  },
+  "data/train_data/Standoff_Format/protocol_384.txt": {
+   "sha256": "dc612b42ce43cc90fbf5c65cc2c7dc1a3daf66a07dd3ec038bca4fc9fd26e4ea",
+   "bytes": 2171
+  },
+  "data/train_data/Standoff_Format/protocol_385.ann": {
+   "sha256": "1341c4aa048fc209f2d63d8548410aad4463b0a630626349a786d4d943c6cbed",
+   "bytes": 49508
+  },
+  "data/train_data/Standoff_Format/protocol_385.txt": {
+   "sha256": "1cccf05ad9ee3f39665f5b31bff43e0b321ccc1be1271a1196c4ccbc9ff5b2a0",
+   "bytes": 13695
+  },
+  "data/train_data/Standoff_Format/protocol_386.ann": {
+   "sha256": "34b73716c74d4bd994844d77d86d0d75f2afbe6e7e001f7dc1e14846c6abb002",
+   "bytes": 13676
+  },
+  "data/train_data/Standoff_Format/protocol_386.txt": {
+   "sha256": "2487182c9ac90fb15d81f613497c7c47f683441c86f7b29ac2cc998d37dd11cf",
+   "bytes": 3784
+  },
+  "data/train_data/Standoff_Format/protocol_387.ann": {
+   "sha256": "6b624f5a76b5f8f2a15f8f3908e3b8b99bd8566e01a47549bfb4b90a33f3a099",
+   "bytes": 5914
+  },
+  "data/train_data/Standoff_Format/protocol_387.txt": {
+   "sha256": "79ced5799558e69ffa7228a1127e9db479d395bff054f2e6ec18b653889d91d4",
+   "bytes": 1441
+  },
+  "data/train_data/Standoff_Format/protocol_388.ann": {
+   "sha256": "ab5406ddaca4bbff266c45b617f7f6783aff9abdfc37cec7facf18dc8f1b3ec0",
+   "bytes": 5676
+  },
+  "data/train_data/Standoff_Format/protocol_388.txt": {
+   "sha256": "08c74028cd62eac41bf0979662b0be870838598d20a40a5c9a0abb88a04144af",
+   "bytes": 1707
+  },
+  "data/train_data/Standoff_Format/protocol_39.ann": {
+   "sha256": "fc86e7bfed2c97183c301c40e097f9ea62da935de3f77be5c3c782d1516a3424",
+   "bytes": 2235
+  },
+  "data/train_data/Standoff_Format/protocol_39.txt": {
+   "sha256": "887497a283f10d180be8cafc970ff8325eda7973e0cca9cdd461fc9e6664edea",
+   "bytes": 626
+  },
+  "data/train_data/Standoff_Format/protocol_390.ann": {
+   "sha256": "3238015e81cac422801e38e60eefb99a57445e15a801abf6befc61d1d10ca619",
+   "bytes": 17318
+  },
+  "data/train_data/Standoff_Format/protocol_390.txt": {
+   "sha256": "fb8e2c71954ecf0f93b4f5cb7a2d7925a702baac8fb2cdeff1505626bd0bddbd",
+   "bytes": 3948
+  },
+  "data/train_data/Standoff_Format/protocol_391.ann": {
+   "sha256": "bb259da3be918d7a6ce255e2b1ae339d6b4a851b5d7a812413a0910d4bd14437",
+   "bytes": 5013
+  },
+  "data/train_data/Standoff_Format/protocol_391.txt": {
+   "sha256": "b85b7709367067adface44fbb4f642d5b4190ca7c770ce02315db193e6c9cd3e",
+   "bytes": 1972
+  },
+  "data/train_data/Standoff_Format/protocol_392.ann": {
+   "sha256": "50e9b7ecb93b2aeb570df84071a429dee8b4956b515beebee470f9b3bbe2f2f7",
+   "bytes": 8729
+  },
+  "data/train_data/Standoff_Format/protocol_392.txt": {
+   "sha256": "2a08e1aa79e82fecc5367c9a84fb290b45f4b0f55dc92db34f0e12b1888f0759",
+   "bytes": 2203
+  },
+  "data/train_data/Standoff_Format/protocol_393.ann": {
+   "sha256": "17b53dade82fbdff46469b361aaf7fa10ea3d2965296dcfb719c0bed0e0862af",
+   "bytes": 6748
+  },
+  "data/train_data/Standoff_Format/protocol_393.txt": {
+   "sha256": "e07514b812883703edd54bfedbf657345a89d7a82db36d2575237a8bb4987ce8",
+   "bytes": 2112
+  },
+  "data/train_data/Standoff_Format/protocol_394.ann": {
+   "sha256": "797bd4fdf8ba8577a2e173563f8b12f9efb6684ae29658b9d0131c2ee91485bb",
+   "bytes": 9454
+  },
+  "data/train_data/Standoff_Format/protocol_394.txt": {
+   "sha256": "96ef343ce154e3c35517c94add18c26cc2dc50d7d91e9af7404c373cd3130970",
+   "bytes": 2322
+  },
+  "data/train_data/Standoff_Format/protocol_398.ann": {
+   "sha256": "bd3c530b176e149b9eccb13f005ac62690c591ba1f891a91f3e72f2eee32bd27",
+   "bytes": 4679
+  },
+  "data/train_data/Standoff_Format/protocol_398.txt": {
+   "sha256": "d0de37eed91b3448505be3cff0971fd4680c6191f7264ea7b8ffa032c8cc25a5",
+   "bytes": 1437
+  },
+  "data/train_data/Standoff_Format/protocol_4.ann": {
+   "sha256": "593f217293a77654ff9c24e4ef71280fb8e5acef9ea7fa83ce4534d89790da82",
+   "bytes": 2262
+  },
+  "data/train_data/Standoff_Format/protocol_4.txt": {
+   "sha256": "50bd8f1843caa65c03098ac0edd76acb30ce4376a71bf42b881976f3dd44306f",
+   "bytes": 560
+  },
+  "data/train_data/Standoff_Format/protocol_40.ann": {
+   "sha256": "f9f833bd543def099b60aaac9784f4e867484f386bb7c3ebc382675abbaa59a1",
+   "bytes": 3171
+  },
+  "data/train_data/Standoff_Format/protocol_40.txt": {
+   "sha256": "93b1646e7d9fc764f85eb545f1772138fe5255405d526e944ea3c6e40cd804ff",
+   "bytes": 962
+  },
+  "data/train_data/Standoff_Format/protocol_400.ann": {
+   "sha256": "1478011eec7f42e4f8bdcc9ee58e5194f3f01228bd79e764a36ae4a4edd4d07b",
+   "bytes": 6054
+  },
+  "data/train_data/Standoff_Format/protocol_400.txt": {
+   "sha256": "0b1306ab0b6971e4179de9f7afe6aaf0a2bcf4b99514f513114fd8bfce278468",
+   "bytes": 1715
+  },
+  "data/train_data/Standoff_Format/protocol_401.ann": {
+   "sha256": "bbbc3bb33a048f56eb331d992bf686cbea192d7a1e705cd764efffce0c32e63a",
+   "bytes": 6701
+  },
+  "data/train_data/Standoff_Format/protocol_401.txt": {
+   "sha256": "690b078899242e58425a8c17af54d84c31bb9d0f85e907a880d51aa10bfd4b51",
+   "bytes": 1669
+  },
+  "data/train_data/Standoff_Format/protocol_403.ann": {
+   "sha256": "b3ddc41ab894a58d2ebdb9c8c57e3c203836582ff107f8c7a9db44c292f23421",
+   "bytes": 27183
+  },
+  "data/train_data/Standoff_Format/protocol_403.txt": {
+   "sha256": "0ed4316bcc19fdf48dca26d8f052dd297476f0f0779077fff12cb8c1db274311",
+   "bytes": 6216
+  },
+  "data/train_data/Standoff_Format/protocol_405.ann": {
+   "sha256": "9e21decb03ab5a30c9df1448f7b3edb0b07aea828db187c7c82c34375c21b962",
+   "bytes": 4375
+  },
+  "data/train_data/Standoff_Format/protocol_405.txt": {
+   "sha256": "d7219ced83e823207f3fcfdc524a37069cc6ab2df41bb11c0f786b213c102687",
+   "bytes": 1183
+  },
+  "data/train_data/Standoff_Format/protocol_406.ann": {
+   "sha256": "4517e77314217018f24ff80dbfb65e585f79085e9d1245d6cf3b036c359cf44c",
+   "bytes": 11956
+  },
+  "data/train_data/Standoff_Format/protocol_406.txt": {
+   "sha256": "b25efe3da844a20275b3a8f45412f99273495df3ddaceb9b6e6a2ae4e2accd0d",
+   "bytes": 2961
+  },
+  "data/train_data/Standoff_Format/protocol_407.ann": {
+   "sha256": "2bf0d9d1d3424a54e24fda7d89e35841e0d36ee8369582234d35c65204e97637",
+   "bytes": 5456
+  },
+  "data/train_data/Standoff_Format/protocol_407.txt": {
+   "sha256": "5468f1d86c8bdbd3038d21a421ef4c1a30ea0cceace129c5df7787e15c49f620",
+   "bytes": 1565
+  },
+  "data/train_data/Standoff_Format/protocol_409.ann": {
+   "sha256": "e443c22a17ed97bbf08f8eb3f2ce0be72159a9739daf2a06c333a0ad3df305b4",
+   "bytes": 6465
+  },
+  "data/train_data/Standoff_Format/protocol_409.txt": {
+   "sha256": "414c08733f1a140b4c9a30e70aa2e07a058b605df83feac195b8f5e127cf8a25",
+   "bytes": 1651
+  },
+  "data/train_data/Standoff_Format/protocol_41.ann": {
+   "sha256": "7421dbee76ee5d4b270956e3815ca45bc1eabe103bfa311d59af346d9c25821d",
+   "bytes": 6095
+  },
+  "data/train_data/Standoff_Format/protocol_41.txt": {
+   "sha256": "0b1306ab0b6971e4179de9f7afe6aaf0a2bcf4b99514f513114fd8bfce278468",
+   "bytes": 1715
+  },
+  "data/train_data/Standoff_Format/protocol_410.ann": {
+   "sha256": "82d2f1fdaf2a0c28611176e9321de58e0ba42de860768448d7af32e48babaf85",
+   "bytes": 11114
+  },
+  "data/train_data/Standoff_Format/protocol_410.txt": {
+   "sha256": "dbf7b95837a3fba65f264ec0f7a5697dc50c181a8ec4e9ae6ae58d90fda9563a",
+   "bytes": 3631
+  },
+  "data/train_data/Standoff_Format/protocol_412.ann": {
+   "sha256": "37b10c2c9f350a6be1db7a41be6c1cebc2c2700a92d83274600ed78f59ed6f13",
+   "bytes": 5438
+  },
+  "data/train_data/Standoff_Format/protocol_412.txt": {
+   "sha256": "327129f8bf12df0f9d207bb2ba9d4fc9c90b64b9701135ee6cdaa4dbd1932c92",
+   "bytes": 1462
+  },
+  "data/train_data/Standoff_Format/protocol_413.ann": {
+   "sha256": "5841194529c2c858a8c3b91cd18bf99b17266174be949229c31de5a925d1dcc9",
+   "bytes": 5019
+  },
+  "data/train_data/Standoff_Format/protocol_413.txt": {
+   "sha256": "cd91100382bf92dc5e5689163ce61dff2704de89581dcc5b39b35cd670093a8b",
+   "bytes": 1225
+  },
+  "data/train_data/Standoff_Format/protocol_415.ann": {
+   "sha256": "4c158bf9707317766ddc04a00e62c540c2e2eb36d802f15fc0b50079507952d4",
+   "bytes": 2112
+  },
+  "data/train_data/Standoff_Format/protocol_415.txt": {
+   "sha256": "46b987e069895aad232ab7c017c0098de7e5dbe1388d4b11975dac661de95af1",
+   "bytes": 522
+  },
+  "data/train_data/Standoff_Format/protocol_416.ann": {
+   "sha256": "82bf9a038caa5d6cf3dfa78ddefc9570989b2ffe64a90c8b49e06edc9d6deefc",
+   "bytes": 5991
+  },
+  "data/train_data/Standoff_Format/protocol_416.txt": {
+   "sha256": "9bd51acb2d52453ef8e62faa1e0ea08ecd97127cb618c2867223f177c2e287d0",
+   "bytes": 1413
+  },
+  "data/train_data/Standoff_Format/protocol_417.ann": {
+   "sha256": "1d075be07de943ac3856c6dc22d2edfe1a9cf7beeb97ca713bf0d06c341d8e2a",
+   "bytes": 1192
+  },
+  "data/train_data/Standoff_Format/protocol_417.txt": {
+   "sha256": "da5b012f0c4c81ddfd444c562b05dc653dd0d10199c1622d23cf24be83792a9d",
+   "bytes": 346
+  },
+  "data/train_data/Standoff_Format/protocol_418.ann": {
+   "sha256": "0e29ce976e5933789107286eaa9eee980bb8b15f6cea666d9ce7a752d474710b",
+   "bytes": 4937
+  },
+  "data/train_data/Standoff_Format/protocol_418.txt": {
+   "sha256": "0f36700e6dd69ff773e9d38142287ba36a6e04959374fb567088a3fc9eb90665",
+   "bytes": 1330
+  },
+  "data/train_data/Standoff_Format/protocol_419.ann": {
+   "sha256": "1aab7e949cdabefbe5253c462224a710dadd0fef161e27ac614197981c66ad2f",
+   "bytes": 1852
+  },
+  "data/train_data/Standoff_Format/protocol_419.txt": {
+   "sha256": "5b1a0d2130e16d450280c523ebed9ccd2c0023618709debebf52c7ac7506fd79",
+   "bytes": 417
+  },
+  "data/train_data/Standoff_Format/protocol_42.ann": {
+   "sha256": "8c9458319e156111e82425d0089a91f7367701aefe9e444f70e2922f02873527",
+   "bytes": 59625
+  },
+  "data/train_data/Standoff_Format/protocol_42.txt": {
+   "sha256": "bb77ad2d745c84d345e8ec130eab9c7d83ac576ba182883e9e4a79c788e3f668",
+   "bytes": 13396
+  },
+  "data/train_data/Standoff_Format/protocol_421.ann": {
+   "sha256": "b454eb556aaecb0d946bd2bc9af8a432831807bea73a266de66f92911f7f28c1",
+   "bytes": 3172
+  },
+  "data/train_data/Standoff_Format/protocol_421.txt": {
+   "sha256": "16120f441b6197e9ac35114a234f4e0ad93d4ee998490d6c5a18c46af5e2cfc8",
+   "bytes": 761
+  },
+  "data/train_data/Standoff_Format/protocol_422.ann": {
+   "sha256": "19e102b562afd9e4331be5348de259773a12e01c4515a4c01f78f0eabf62cc8d",
+   "bytes": 4993
+  },
+  "data/train_data/Standoff_Format/protocol_422.txt": {
+   "sha256": "8a948653fc5cfcf15fa858593b34e2cdd63af20398da09bedd871d3e1ca560d4",
+   "bytes": 1470
+  },
+  "data/train_data/Standoff_Format/protocol_423.ann": {
+   "sha256": "797cb8ab034a9ba787715baa858ad53657f023d4d7d4e4f2882c506a1dfc11dc",
+   "bytes": 6661
+  },
+  "data/train_data/Standoff_Format/protocol_423.txt": {
+   "sha256": "695d2bf8cd35cd7d8aa926d46c87f73c57c0bc83d419cc0bdbd1de1cfda1cc73",
+   "bytes": 1394
+  },
+  "data/train_data/Standoff_Format/protocol_424.ann": {
+   "sha256": "0ae0d398e0419212280a9882268cf38cbb209a116a99d55439f87b51ba0a29d5",
+   "bytes": 7492
+  },
+  "data/train_data/Standoff_Format/protocol_424.txt": {
+   "sha256": "4254b04b4684d9a1b93ccfedf7cb974bc1c463425e9e7bdc8b5fd4c71c4303c1",
+   "bytes": 2162
+  },
+  "data/train_data/Standoff_Format/protocol_426.ann": {
+   "sha256": "c7c1051f150109abe802cdfd1e2197cf4c941a02b4baf7f89a74301f225bc29b",
+   "bytes": 2972
+  },
+  "data/train_data/Standoff_Format/protocol_426.txt": {
+   "sha256": "f2bf841d84e6b7596193cd41d1080874bff38373ed0544fc0357e1d40066271c",
+   "bytes": 869
+  },
+  "data/train_data/Standoff_Format/protocol_427.ann": {
+   "sha256": "6c131ea02a480c81e6ce4325996179596522b469b057b4990aa28c68aa1d1ff8",
+   "bytes": 5983
+  },
+  "data/train_data/Standoff_Format/protocol_427.txt": {
+   "sha256": "3c4853dafa636abbbe3f6fd212f0568dcc41275a5a683a2e6be933375897b3a2",
+   "bytes": 1731
+  },
+  "data/train_data/Standoff_Format/protocol_429.ann": {
+   "sha256": "5cc0d9939f404f0c1408f648b30e7abfa1e0ae4d0ff8756e2e0230e1c085d8ca",
+   "bytes": 6003
+  },
+  "data/train_data/Standoff_Format/protocol_429.txt": {
+   "sha256": "222890140b60297d459cddd673e38f3adba96843670a746473b38a28e9c052e1",
+   "bytes": 1401
+  },
+  "data/train_data/Standoff_Format/protocol_43.ann": {
+   "sha256": "7b45489bea771b39c2540821d22b0b3c7784a03489cec82b9b4b7f9976927e29",
+   "bytes": 2419
+  },
+  "data/train_data/Standoff_Format/protocol_43.txt": {
+   "sha256": "927106c0f7af622ab3c9332d2ea5eeb0f1a6e683223c0ddf1cf72bf95c2add2e",
+   "bytes": 747
+  },
+  "data/train_data/Standoff_Format/protocol_430.ann": {
+   "sha256": "914c2b4fb7bce22fd7fe98d009a82741143a34f9ee9ccb0c294f457ac6318b5f",
+   "bytes": 12109
+  },
+  "data/train_data/Standoff_Format/protocol_430.txt": {
+   "sha256": "0a46814cd5167b77d1581bf879d7874e56e99e983ca95375c6c366ed192fd614",
+   "bytes": 3267
+  },
+  "data/train_data/Standoff_Format/protocol_433.ann": {
+   "sha256": "1530862eaefa8580359d87681b4969704dd68e714c2a1cab9dc55856baa00251",
+   "bytes": 4198
+  },
+  "data/train_data/Standoff_Format/protocol_433.txt": {
+   "sha256": "bf77b01235abb6f6f3f5a1e5d2e3fa7a6cfbb9cfb09619c621950b3b046dfc26",
+   "bytes": 1423
+  },
+  "data/train_data/Standoff_Format/protocol_434.ann": {
+   "sha256": "04e235bca6145a9f3eff7ed4cdc2c0b293e091ac7e4528f37e64815fe510092e",
+   "bytes": 2947
+  },
+  "data/train_data/Standoff_Format/protocol_434.txt": {
+   "sha256": "8df54e1f0f951e51013fa2bfe109760e9d9a0315f66218b3c2b5f8728e3d2219",
+   "bytes": 858
+  },
+  "data/train_data/Standoff_Format/protocol_436.ann": {
+   "sha256": "6621b9426e451a4bd7c61ee6f32fad4bc9372d1ae77a9754f84f827a00ebab82",
+   "bytes": 6154
+  },
+  "data/train_data/Standoff_Format/protocol_436.txt": {
+   "sha256": "69b11a5e4d299aa754b5df8852b23d7ca2030b8bd6a1e6a0a8f9fd51fdb3b0b7",
+   "bytes": 1735
+  },
+  "data/train_data/Standoff_Format/protocol_437.ann": {
+   "sha256": "9ae2ee8ca9275b97f86ddd0c6fd7c230ef501c56e6bc961651b3261ab1e1b0c7",
+   "bytes": 1291
+  },
+  "data/train_data/Standoff_Format/protocol_437.txt": {
+   "sha256": "ef9bd70a52f66ffc293c7f14181f6cd56409f941bfd70239bd6494eb3acc23c6",
+   "bytes": 291
+  },
+  "data/train_data/Standoff_Format/protocol_438.ann": {
+   "sha256": "4186097c5f8fcef910650cbb56b9227ff1e3a5575c0192e697e07231c6c24ded",
+   "bytes": 3228
+  },
+  "data/train_data/Standoff_Format/protocol_438.txt": {
+   "sha256": "98aa80a63810583711d85143915cb428bfd4ea1bdc02ca6ae75a729def95e0b3",
+   "bytes": 928
+  },
+  "data/train_data/Standoff_Format/protocol_443.ann": {
+   "sha256": "28e5d312f87b1218026022dada25a0280bba29896290fc95cf1061a62f7e0e01",
+   "bytes": 527
+  },
+  "data/train_data/Standoff_Format/protocol_443.txt": {
+   "sha256": "4e4f4213ccd539617914528b46ab2e690f028da5520b0d8c93e9a389f45408aa",
+   "bytes": 179
+  },
+  "data/train_data/Standoff_Format/protocol_446.ann": {
+   "sha256": "bca31b89f7b96d64808e8cb06728f8c8360a5f11583bb34b212e8309fdff6a9d",
+   "bytes": 6682
+  },
+  "data/train_data/Standoff_Format/protocol_446.txt": {
+   "sha256": "3727548851d6ba9c68e4a18a6b6de30d1cb59be89a21a61b69b345c959e54c65",
+   "bytes": 1790
+  },
+  "data/train_data/Standoff_Format/protocol_447.ann": {
+   "sha256": "53535b143deb052d9b5d7252ca699e6a382ced70076413aefaf82a071dd1621f",
+   "bytes": 6842
+  },
+  "data/train_data/Standoff_Format/protocol_447.txt": {
+   "sha256": "05d93363897a35883934ff2dd77730e983807598e518303a53ef0b6629e43731",
+   "bytes": 2079
+  },
+  "data/train_data/Standoff_Format/protocol_448.ann": {
+   "sha256": "c5cc811948a894d2c10036231af1cfca85fb37f27abe294007f44f7a6a88de95",
+   "bytes": 6705
+  },
+  "data/train_data/Standoff_Format/protocol_448.txt": {
+   "sha256": "30fd7c1c40efc15501b656b9849d01b1efa8045f0bada3111ccb150febc6ac74",
+   "bytes": 1704
+  },
+  "data/train_data/Standoff_Format/protocol_449.ann": {
+   "sha256": "21d3069ab956f062d4a13697a4663813e586e59c43196608524e0ab2ca0b21db",
+   "bytes": 7257
+  },
+  "data/train_data/Standoff_Format/protocol_449.txt": {
+   "sha256": "73f29d7fc8c7fd20adc3b41d141ab8fa15c960f0bbea62ec732f79dcab77ef38",
+   "bytes": 1994
+  },
+  "data/train_data/Standoff_Format/protocol_450.ann": {
+   "sha256": "495bf3d8987cb4b4aebafd6ffda1da7163d4fe8b7a21e05bfb73aa7cbc44ceca",
+   "bytes": 11570
+  },
+  "data/train_data/Standoff_Format/protocol_450.txt": {
+   "sha256": "67e96db8c5454a65c5af180d1a7743057728885ce0d4b6ae7a9acab27a2d955f",
+   "bytes": 3079
+  },
+  "data/train_data/Standoff_Format/protocol_451.ann": {
+   "sha256": "72d1acd86fece4a8bdc3224dd1e2d1a6cb9dafc3d17cb21a2723a524e0d6bb55",
+   "bytes": 11442
+  },
+  "data/train_data/Standoff_Format/protocol_451.txt": {
+   "sha256": "d10431e7b0173190a3117b218d9900c52a210cd4b2c19269154890b542a10469",
+   "bytes": 2988
+  },
+  "data/train_data/Standoff_Format/protocol_452.ann": {
+   "sha256": "5d0812759cf7b3c0372264d84d171405d67847804da36c02e171e6e088d1c32a",
+   "bytes": 8509
+  },
+  "data/train_data/Standoff_Format/protocol_452.txt": {
+   "sha256": "e1dce7215435d57b2848d47e4fffff32381564e23d45c9fd15326ff966f677fb",
+   "bytes": 1780
+  },
+  "data/train_data/Standoff_Format/protocol_453.ann": {
+   "sha256": "1c0a090c95b877f01a4a2c5e3655375abd483c56dcaecfc1f4f58f9a6db1f7f2",
+   "bytes": 3744
+  },
+  "data/train_data/Standoff_Format/protocol_453.txt": {
+   "sha256": "32965102dcb224616af2b308b54b654352df7ebe977760b17e45aa29e350abc8",
+   "bytes": 887
+  },
+  "data/train_data/Standoff_Format/protocol_456.ann": {
+   "sha256": "3377f2b18192b2dcb17737bbe3fd3e53580f26e5f63d8eef7a9c956c62e29fd1",
+   "bytes": 823
+  },
+  "data/train_data/Standoff_Format/protocol_456.txt": {
+   "sha256": "3711e020a143229d9f3146dbc771ca9b8c4b9d2bb6f2ffe7a796a1a468e117f1",
+   "bytes": 197
+  },
+  "data/train_data/Standoff_Format/protocol_457.ann": {
+   "sha256": "cfb4d84cd36cdc3fc5a2caad780df3f4caac9783267006abccd0d3917fce0c9f",
+   "bytes": 7914
+  },
+  "data/train_data/Standoff_Format/protocol_457.txt": {
+   "sha256": "2e6e9b2127d4f6c55dbce637919d5d313567fef1032d84183e437311c51e29d2",
+   "bytes": 1846
+  },
+  "data/train_data/Standoff_Format/protocol_458.ann": {
+   "sha256": "589ca4e83f0904d1e3f4e200e263719c6580b1907053a40748a962c5c80e2d21",
+   "bytes": 2688
+  },
+  "data/train_data/Standoff_Format/protocol_458.txt": {
+   "sha256": "9d209574b6fd6500109f1d0c622f2ea9bc97b23129011bdcfe53909de5593e8b",
+   "bytes": 929
+  },
+  "data/train_data/Standoff_Format/protocol_46.ann": {
+   "sha256": "e9f4dca7bdf3cab4513ae18d4fb29dfa1f544f8eb09d8f2fe1ad10496f3e61e5",
+   "bytes": 5510
+  },
+  "data/train_data/Standoff_Format/protocol_46.txt": {
+   "sha256": "6874a49b065483ffbca67731a194054a75b9e3b0acee9c15ca029e454a7925dd",
+   "bytes": 1447
+  },
+  "data/train_data/Standoff_Format/protocol_460.ann": {
+   "sha256": "a38927bf1e4d4afaa00e568c6b3d03efab2545e1372a44d97f4e2622e16e58f8",
+   "bytes": 3394
+  },
+  "data/train_data/Standoff_Format/protocol_460.txt": {
+   "sha256": "eb7038a3bacf3a00806cb8ee8282f9f2715e5f0d80caf06779de0bb57772bcec",
+   "bytes": 857
+  },
+  "data/train_data/Standoff_Format/protocol_462.ann": {
+   "sha256": "6312e2d3b3403dcdea9f0e19aecea5fabcf7939008f7291f65cd22077de0d853",
+   "bytes": 7599
+  },
+  "data/train_data/Standoff_Format/protocol_462.txt": {
+   "sha256": "b6d55d172b4a89f44b19e8ebe686c4866120e28b69cd57c8c7e49569961585e2",
+   "bytes": 1438
+  },
+  "data/train_data/Standoff_Format/protocol_463.ann": {
+   "sha256": "2560a29441845c56b3e1dde6627efb836fe586183731ba585efe95cf8bb6a2c3",
+   "bytes": 8951
+  },
+  "data/train_data/Standoff_Format/protocol_463.txt": {
+   "sha256": "cbdc3bf575400700e96241c5657094a631651beb10c659b0e59c464e3ae89034",
+   "bytes": 2581
+  },
+  "data/train_data/Standoff_Format/protocol_467.ann": {
+   "sha256": "811aff327e20b2575b437629cb5e86f3cb4794326da07faeef0b252c8cabab1e",
+   "bytes": 2637
+  },
+  "data/train_data/Standoff_Format/protocol_467.txt": {
+   "sha256": "012836c47d7b2339e74c0e559bc6cb0f0490455e28610c12ec2ff48a5e3ccdb6",
+   "bytes": 651
+  },
+  "data/train_data/Standoff_Format/protocol_472.ann": {
+   "sha256": "1df67022765fbdc34c2a63d9d9cffd39969811ff9cd84a840511a3b555014d6c",
+   "bytes": 3196
+  },
+  "data/train_data/Standoff_Format/protocol_472.txt": {
+   "sha256": "5e0a105f0c42e649d6adca8fe7b2b96ec5767169e6adf43655c906a67f734256",
+   "bytes": 972
+  },
+  "data/train_data/Standoff_Format/protocol_474.ann": {
+   "sha256": "19586a97ab0d765b6f2aada19987da99acd5b67770dcabacaad559c07b2ccaf6",
+   "bytes": 10666
+  },
+  "data/train_data/Standoff_Format/protocol_474.txt": {
+   "sha256": "42a0f226b9c89308435b14de1e65cd4cdc484046d180b202d137f2d83dfbbb4e",
+   "bytes": 2237
+  },
+  "data/train_data/Standoff_Format/protocol_475.ann": {
+   "sha256": "f1096a1603a76036bd1f681cfab5d859301e23277d231f117a08cbe20f163903",
+   "bytes": 5474
+  },
+  "data/train_data/Standoff_Format/protocol_475.txt": {
+   "sha256": "b0b0969ea723bc78f47206c5c06c59cc39659a2d04c24c5624ac708ab498aeb3",
+   "bytes": 1384
+  },
+  "data/train_data/Standoff_Format/protocol_476.ann": {
+   "sha256": "d18d3f1c5721cc3161e8b681d7815b7ab4b8a605b22504a5839ffefb77add28a",
+   "bytes": 2500
+  },
+  "data/train_data/Standoff_Format/protocol_476.txt": {
+   "sha256": "26568fc501c57274001771776322579e7beafc3acb42e008ebca104220bc937a",
+   "bytes": 635
+  },
+  "data/train_data/Standoff_Format/protocol_477.ann": {
+   "sha256": "f6040aa4f3c6aaa87cc3b6ad607e39b0727a0c8b8589e6cf91139e34ae02f6e5",
+   "bytes": 2354
+  },
+  "data/train_data/Standoff_Format/protocol_477.txt": {
+   "sha256": "004ca0decf83134521b8bb4284b2a80f165c724bb022c20aab74101a9845fed0",
+   "bytes": 622
+  },
+  "data/train_data/Standoff_Format/protocol_478.ann": {
+   "sha256": "9942f4c3ad4454e96516300830e406212aeed836aa0c995c286d1320227a2dfa",
+   "bytes": 931
+  },
+  "data/train_data/Standoff_Format/protocol_478.txt": {
+   "sha256": "8fffb031550bd6a62489bfade2ab7ea4f37b1d104fcdb27cbeb4c2c959e1d265",
+   "bytes": 321
+  },
+  "data/train_data/Standoff_Format/protocol_479.ann": {
+   "sha256": "dd726394f178f62f6c82f511c2eb2dbd197184dee0f91994235f0a665f20d153",
+   "bytes": 11666
+  },
+  "data/train_data/Standoff_Format/protocol_479.txt": {
+   "sha256": "7f85cd6dd301fcc4febf98634d8ba01c580a093500124c9fedaafd11ac9a9bb5",
+   "bytes": 2958
+  },
+  "data/train_data/Standoff_Format/protocol_481.ann": {
+   "sha256": "6c6aa735fb1a778638906ba969fec5f9d48ee4d286502f1b1027f26359503797",
+   "bytes": 3924
+  },
+  "data/train_data/Standoff_Format/protocol_481.txt": {
+   "sha256": "b13385ff1c816fe12d401d405b961e56bd8ffe1f816849ceeb9624cbd1ff43ef",
+   "bytes": 945
+  },
+  "data/train_data/Standoff_Format/protocol_485.ann": {
+   "sha256": "e140ce4d9fc76e03ceb4cf4fe77f7f8965d01a9ecf86378c1dec699670240bda",
+   "bytes": 2986
+  },
+  "data/train_data/Standoff_Format/protocol_485.txt": {
+   "sha256": "ded5d6bac78619b4d9ff7e57446b981c822a1d1ee27058a14487f0461e71bc61",
+   "bytes": 757
+  },
+  "data/train_data/Standoff_Format/protocol_486.ann": {
+   "sha256": "4fcfd4036c8f6e393c5fb7e94b94a14323eb2cda75937faf0a9a4ac60e32e53d",
+   "bytes": 15019
+  },
+  "data/train_data/Standoff_Format/protocol_486.txt": {
+   "sha256": "3c7e4f57b653e991add772448328acc8b3d8d84c9442f516637aa84dc5e8d027",
+   "bytes": 3820
+  },
+  "data/train_data/Standoff_Format/protocol_488.ann": {
+   "sha256": "de9a55f3a4ecde7052e0ab8c122a11a926d31f41c410962013796ae07ebbef65",
+   "bytes": 3198
+  },
+  "data/train_data/Standoff_Format/protocol_488.txt": {
+   "sha256": "7b17626b4c74f20b294e43fb929855879030fde5bf686281da9f6447ac9c8e85",
+   "bytes": 695
+  },
+  "data/train_data/Standoff_Format/protocol_490.ann": {
+   "sha256": "9c8b70395f8a558809860c68d57d04b2e0220f661bc06ba7e303f224e0e446a2",
+   "bytes": 6373
+  },
+  "data/train_data/Standoff_Format/protocol_490.txt": {
+   "sha256": "47b258e1c06ff6903ab2d7a03808ec4edd7f482e3f7d0b42bba647c136a0afc6",
+   "bytes": 1837
+  },
+  "data/train_data/Standoff_Format/protocol_492.ann": {
+   "sha256": "9ba326b288cd3ef943e8225c06c5353cf1df17ae4231ded8ca5a107e6a33cbfe",
+   "bytes": 1152
+  },
+  "data/train_data/Standoff_Format/protocol_492.txt": {
+   "sha256": "30e9c48d61a9fe73da930eba01a0809971b7c0bd5563813dfa27c218687eb1d1",
+   "bytes": 347
+  },
+  "data/train_data/Standoff_Format/protocol_494.ann": {
+   "sha256": "0357bb6df4bdae2d8fcce7fb58d4264a491af67db3a84299214adbcf875c559c",
+   "bytes": 2816
+  },
+  "data/train_data/Standoff_Format/protocol_494.txt": {
+   "sha256": "7b17626b4c74f20b294e43fb929855879030fde5bf686281da9f6447ac9c8e85",
+   "bytes": 695
+  },
+  "data/train_data/Standoff_Format/protocol_495.ann": {
+   "sha256": "37421c55d0e3fe8223613e3542b486ae7fe4aae10e22a42da100f744c29d3c91",
+   "bytes": 5488
+  },
+  "data/train_data/Standoff_Format/protocol_495.txt": {
+   "sha256": "e4a062f4a7be3fdd1806190f45713eb3020844419679079813c0d548e0eb0c32",
+   "bytes": 1423
+  },
+  "data/train_data/Standoff_Format/protocol_497.ann": {
+   "sha256": "c9213145be0e6f65fc6622e1c71fa2a8e1929367c1b4deb8cabd57672d23ee88",
+   "bytes": 6976
+  },
+  "data/train_data/Standoff_Format/protocol_497.txt": {
+   "sha256": "5463c8402bc769453e356140ac746f9e07dc92b5570d95afef824a438cf62c0c",
+   "bytes": 1685
+  },
+  "data/train_data/Standoff_Format/protocol_499.ann": {
+   "sha256": "eca0d05e7c639ddd20c97adbb7e60cd765fe70819e826212f4988a6260e562f1",
+   "bytes": 7344
+  },
+  "data/train_data/Standoff_Format/protocol_499.txt": {
+   "sha256": "3d572006e4ebddd0f7c26fb1fc3498a92de1f5864a4e40e31472327eacb6005b",
+   "bytes": 2044
+  },
+  "data/train_data/Standoff_Format/protocol_5.ann": {
+   "sha256": "ee485b16b8a4a7d15d5eed4024c91058622ebd3ae2483e5309711f2fae30fff9",
+   "bytes": 3817
+  },
+  "data/train_data/Standoff_Format/protocol_5.txt": {
+   "sha256": "18a3c34c513238d5d43af91a5e1a3b9f78fc301016c1dc3a3ef64d18227d97fb",
+   "bytes": 1119
+  },
+  "data/train_data/Standoff_Format/protocol_500.ann": {
+   "sha256": "b034d55ace04941c0bb5cdb63489dbaa923dd0975dd2ed85a2f52e297471ba56",
+   "bytes": 5574
+  },
+  "data/train_data/Standoff_Format/protocol_500.txt": {
+   "sha256": "4997241bc419a66aff41b0471a7a44aa1ffe8955da47d27b3c8d04eb7d2a7fe6",
+   "bytes": 1410
+  },
+  "data/train_data/Standoff_Format/protocol_502.ann": {
+   "sha256": "3a004b61844986c80cb6fe736722c4cd74c82ed2ee7ca463cefbe498f129138f",
+   "bytes": 20875
+  },
+  "data/train_data/Standoff_Format/protocol_502.txt": {
+   "sha256": "ee94cc894eeab3c199df41350ea57891282cf82fa29ef68d8974ba3faded241b",
+   "bytes": 5059
+  },
+  "data/train_data/Standoff_Format/protocol_505.ann": {
+   "sha256": "cfb33ffd638ac725957b130c9adea889756827e8cc7efc28014ef72cc0478c31",
+   "bytes": 807
+  },
+  "data/train_data/Standoff_Format/protocol_505.txt": {
+   "sha256": "983d83902e4dd85c160a87d0a0677a39696331c9a049334847a7c5fe2edc3675",
+   "bytes": 155
+  },
+  "data/train_data/Standoff_Format/protocol_506.ann": {
+   "sha256": "5f207e66063d7361ab72e2060ad8df3e50441c203d0f95041cb006079864c7f3",
+   "bytes": 4186
+  },
+  "data/train_data/Standoff_Format/protocol_506.txt": {
+   "sha256": "d2c3b59f3f2ff5f4998e5a0032420d15ba048d67e45149a081a87333473414dd",
+   "bytes": 1075
+  },
+  "data/train_data/Standoff_Format/protocol_507.ann": {
+   "sha256": "64e36f0ed72794022bae2320703a697d85d85d3d54e5876a4e906f8050761df9",
+   "bytes": 7040
+  },
+  "data/train_data/Standoff_Format/protocol_507.txt": {
+   "sha256": "b541966918c671e161d00cdf7b1efd74439ef965da3c1f089864ef0f64ceeb3c",
+   "bytes": 1739
+  },
+  "data/train_data/Standoff_Format/protocol_508.ann": {
+   "sha256": "5a00b2edddb99b43908a13a25b0a2511bd1867bca831efe29d6d9568029aee5b",
+   "bytes": 2656
+  },
+  "data/train_data/Standoff_Format/protocol_508.txt": {
+   "sha256": "5ea1e43b6ddadfa98762c6312602bfaf55b96e1fdc898b9f746f0f76a1801a70",
+   "bytes": 664
+  },
+  "data/train_data/Standoff_Format/protocol_509.ann": {
+   "sha256": "1a562fe48859fea74fac9f104659078fbfdf6de7f76ef22d26fa5daf456a6072",
+   "bytes": 3456
+  },
+  "data/train_data/Standoff_Format/protocol_509.txt": {
+   "sha256": "63043302eebeabe751f0019f92e22d7f1ee8e157a3c30d19a92d50406e57b6a7",
+   "bytes": 863
+  },
+  "data/train_data/Standoff_Format/protocol_512.ann": {
+   "sha256": "63a5bdac359a1286c604657332c77aadaa78275148955f105c5d996a710f3ca2",
+   "bytes": 1591
+  },
+  "data/train_data/Standoff_Format/protocol_512.txt": {
+   "sha256": "bca355e91ca0281ae73d7a5a769e707558da18673ddad26410ba4be1eb1f899e",
+   "bytes": 352
+  },
+  "data/train_data/Standoff_Format/protocol_514.ann": {
+   "sha256": "98f4b151feeb9fc5f3bc2f511aeb6f431fdf0dbedf7752f6b398996e5a308646",
+   "bytes": 5173
+  },
+  "data/train_data/Standoff_Format/protocol_514.txt": {
+   "sha256": "c737582f5898412981ffe6f9e7152521a5a2b34f869247c5bf4e58a138b0fd28",
+   "bytes": 1250
+  },
+  "data/train_data/Standoff_Format/protocol_516.ann": {
+   "sha256": "7c163ce6396e3c192da4851bfffa52b44f2af25a49ed9749a36c6a976d2aab8f",
+   "bytes": 2511
+  },
+  "data/train_data/Standoff_Format/protocol_516.txt": {
+   "sha256": "21fcd08ae2d57588188a2afe337bb427ca9aa6034a393407d3f6d20f0011b1c2",
+   "bytes": 731
+  },
+  "data/train_data/Standoff_Format/protocol_517.ann": {
+   "sha256": "f5ad5843bf52130cc291798760e82d5f61261524f2cc5052cab9f19e60a5e959",
+   "bytes": 5700
+  },
+  "data/train_data/Standoff_Format/protocol_517.txt": {
+   "sha256": "7c49ec6cde9912ad42e43594b1b40f15a16c5e25b43925345c32533ab27132f9",
+   "bytes": 1387
+  },
+  "data/train_data/Standoff_Format/protocol_519.ann": {
+   "sha256": "005a8005dd35a1c1aae34a08f2b9a19cb9489c223bf1cf081279682442e29358",
+   "bytes": 9320
+  },
+  "data/train_data/Standoff_Format/protocol_519.txt": {
+   "sha256": "17f41e0a2e7ae8897c2559be3fd4651db7c5c53e41dd13ae26d761a0aa31a62d",
+   "bytes": 2259
+  },
+  "data/train_data/Standoff_Format/protocol_52.ann": {
+   "sha256": "23f48fb284a3f594a837e5631ad56c517b33a64de202a119823b90e2da27bfe8",
+   "bytes": 7843
+  },
+  "data/train_data/Standoff_Format/protocol_52.txt": {
+   "sha256": "4e1f0d67a94a13cd8729d0dab2804c852686181949021bd1d039ad63def02fbe",
+   "bytes": 1912
+  },
+  "data/train_data/Standoff_Format/protocol_520.ann": {
+   "sha256": "fd76f654898f7eb91f91e54505dca3991433a9cfadd5f94c51fcf74458ee06d3",
+   "bytes": 1603
+  },
+  "data/train_data/Standoff_Format/protocol_520.txt": {
+   "sha256": "e07d7dfb483c43b2b87fd8e215bdd7e677984cb8e00595b4892571830ac11a16",
+   "bytes": 395
+  },
+  "data/train_data/Standoff_Format/protocol_521.ann": {
+   "sha256": "2d5deec391f87a841055f3cf58cd99acc8819a89839f395289fcbc5d2262cd75",
+   "bytes": 12531
+  },
+  "data/train_data/Standoff_Format/protocol_521.txt": {
+   "sha256": "2f5a1fbb2f93faa148959db22b7d017e19385cfdd95bb417fb8bd40652c8c2d3",
+   "bytes": 3034
+  },
+  "data/train_data/Standoff_Format/protocol_522.ann": {
+   "sha256": "a3adba85c80330a260666fa812cc0a463bdaf0f83d2aa630980b96f405d836ec",
+   "bytes": 8193
+  },
+  "data/train_data/Standoff_Format/protocol_522.txt": {
+   "sha256": "d6c20923fb1dfef96f862d3b577709b66d77e5e3957176dc8e314ffcc2f3bcef",
+   "bytes": 1911
+  },
+  "data/train_data/Standoff_Format/protocol_523.ann": {
+   "sha256": "9ffaacab6d1ed500a0f7f6091a90b1d5f45d5cae0b108c13dbede13188447fe0",
+   "bytes": 5358
+  },
+  "data/train_data/Standoff_Format/protocol_523.txt": {
+   "sha256": "c1854f491b4d9ec37aff2f739b820462e8cbe7739820e1b7198bbc27236644ab",
+   "bytes": 1324
+  },
+  "data/train_data/Standoff_Format/protocol_526.ann": {
+   "sha256": "bcc5455a4c5aed520f916346b37a27710da7b97c3c891be4fa9a851076cd645f",
+   "bytes": 4050
+  },
+  "data/train_data/Standoff_Format/protocol_526.txt": {
+   "sha256": "289dc8e537cad3220d4365bb937a0ff5da615147a6f82e9ffcafd25f0145c664",
+   "bytes": 892
+  },
+  "data/train_data/Standoff_Format/protocol_528.ann": {
+   "sha256": "35942d13ac40ee446034ac8039f468d2b02ff253b107ef2667d798c82fb4157a",
+   "bytes": 3047
+  },
+  "data/train_data/Standoff_Format/protocol_528.txt": {
+   "sha256": "7fc2ffadce8248d3d7b3b7ab3ca9c802533e83b7d0997fd01bb572fa5f326960",
+   "bytes": 640
+  },
+  "data/train_data/Standoff_Format/protocol_529.ann": {
+   "sha256": "9151f2a30c62d4660f26ed1120e9f4991868e27852f5e5cbc4f5bd46db4bf6ca",
+   "bytes": 6526
+  },
+  "data/train_data/Standoff_Format/protocol_529.txt": {
+   "sha256": "2376c6aa821a330f0b4056de5ef79f035abc58f57e2ef12d2faa4ed6f64e5d54",
+   "bytes": 1494
+  },
+  "data/train_data/Standoff_Format/protocol_53.ann": {
+   "sha256": "bebafee0bce28abd560bd1066548363600d3fd90a90bb7d1ba021342f82f6728",
+   "bytes": 6181
+  },
+  "data/train_data/Standoff_Format/protocol_53.txt": {
+   "sha256": "7b58eb2fd55f7dae6bd1e5a14a34cf5dfe61c4903ad003d38dcf0885f771e605",
+   "bytes": 1398
+  },
+  "data/train_data/Standoff_Format/protocol_531.ann": {
+   "sha256": "fb928e24b616aecf1a03fcfc3f158a89bb662efb0987b9be9164ffb6c949034f",
+   "bytes": 4999
+  },
+  "data/train_data/Standoff_Format/protocol_531.txt": {
+   "sha256": "07702f9b5edf9246ca7c2cff257afcff79686510518097b4d6cea34207fc1895",
+   "bytes": 1097
+  },
+  "data/train_data/Standoff_Format/protocol_533.ann": {
+   "sha256": "109f7afbf03d1619441969d77640433ca2ee3e12f3e557dca5bc6e5a670e39b7",
+   "bytes": 2199
+  },
+  "data/train_data/Standoff_Format/protocol_533.txt": {
+   "sha256": "539575972970580c17f576291161d6c619fe6a6443b271bba70c5684ec262031",
+   "bytes": 627
+  },
+  "data/train_data/Standoff_Format/protocol_534.ann": {
+   "sha256": "f80c7ff32865f4a25a3b913c3a953e0249497b1cfae96bcf84e11f2e2feb4243",
+   "bytes": 12541
+  },
+  "data/train_data/Standoff_Format/protocol_534.txt": {
+   "sha256": "cf48a09f85a145ca6260dfdc8d72717477b0858a12471ac513f5a330bd9696ab",
+   "bytes": 3305
+  },
+  "data/train_data/Standoff_Format/protocol_536.ann": {
+   "sha256": "5bddcb2c34ba5f2bdbf2726cacf4a1a84e20b38c47590ea76b32d3728d5db62e",
+   "bytes": 5191
+  },
+  "data/train_data/Standoff_Format/protocol_536.txt": {
+   "sha256": "e37d8dffc81fdce3d3807ea9cbddecc88df9204667b16e34fea11b401cb1fbb8",
+   "bytes": 1483
+  },
+  "data/train_data/Standoff_Format/protocol_537.ann": {
+   "sha256": "793058c3479ab6287ee7eed01f4abd3ae6dc6a332a16a4323e63d745839c167e",
+   "bytes": 8227
+  },
+  "data/train_data/Standoff_Format/protocol_537.txt": {
+   "sha256": "a110c61fd532e7c0c588087206f252f5d03d82a11bfe3f8e4a7ac0425dbeb534",
+   "bytes": 2083
+  },
+  "data/train_data/Standoff_Format/protocol_539.ann": {
+   "sha256": "1e75b7b5ec05cd92d8440dd0c625b73ab33d4c30a38c390f477db369993369e8",
+   "bytes": 7824
+  },
+  "data/train_data/Standoff_Format/protocol_539.txt": {
+   "sha256": "f9928efaebbd4ca3e873cd760b1d0eb4c7ff2e9bd4fb25f8ba907f9aa8dc2ab9",
+   "bytes": 1961
+  },
+  "data/train_data/Standoff_Format/protocol_54.ann": {
+   "sha256": "48b79fc1a59996b016bb9820dc19286591031f0c395ce09fe96fe2b9d080f890",
+   "bytes": 8926
+  },
+  "data/train_data/Standoff_Format/protocol_54.txt": {
+   "sha256": "9d8dc80bb16d45e24e5686f2951465e2df590a35108e5f2b8f748fc096dde697",
+   "bytes": 2095
+  },
+  "data/train_data/Standoff_Format/protocol_540.ann": {
+   "sha256": "6f73bda6626356e2ec241f97fed3c84336050ac46c9fcbf4ff1b3f011bf7ce24",
+   "bytes": 2284
+  },
+  "data/train_data/Standoff_Format/protocol_540.txt": {
+   "sha256": "ac4b5890a207fa725f572575fd9358a5749c1af90f7491e04410e772bda9f7f1",
+   "bytes": 604
+  },
+  "data/train_data/Standoff_Format/protocol_541.ann": {
+   "sha256": "3e54beb0b32c064971c40ed18e4559cc94662fd842a96f255bb246e9e5df00fd",
+   "bytes": 2905
+  },
+  "data/train_data/Standoff_Format/protocol_541.txt": {
+   "sha256": "c49c933a2f0a849c80ed18f8fc9a2eec57943182d84093266062e09a02c7921b",
+   "bytes": 857
+  },
+  "data/train_data/Standoff_Format/protocol_542.ann": {
+   "sha256": "77ab950560bddeb399354215b8a16b51d59bd56b2ebb5bd9f75ea978ae5947dc",
+   "bytes": 3638
+  },
+  "data/train_data/Standoff_Format/protocol_542.txt": {
+   "sha256": "89c25b2af34129a9e641bc770a60fd798ffd9612019a7b92fb6db7247a28a690",
+   "bytes": 1301
+  },
+  "data/train_data/Standoff_Format/protocol_544.ann": {
+   "sha256": "3ed3ab4f90f488c82b3e1e7c62d204da2e38247f4d1ce0ee0d38998f064f126b",
+   "bytes": 2523
+  },
+  "data/train_data/Standoff_Format/protocol_544.txt": {
+   "sha256": "c44d1b04e3f7d9583654f696bbd9c48bfc93e6b232866b45a19273f506e29a05",
+   "bytes": 742
+  },
+  "data/train_data/Standoff_Format/protocol_545.ann": {
+   "sha256": "c1e30315f3c0f1d57dab65b3842fa17de348d8ec52b68b00ac710421152bf543",
+   "bytes": 4962
+  },
+  "data/train_data/Standoff_Format/protocol_545.txt": {
+   "sha256": "6091e7899ff2780a22d7d98541f41d53bf96f756b2c9d637dcaf6139828383c2",
+   "bytes": 1347
+  },
+  "data/train_data/Standoff_Format/protocol_546.ann": {
+   "sha256": "200812f468ed47a34e01e2d3c9a8be1155f3b7f093b7fcea7644007cf675fce1",
+   "bytes": 5318
+  },
+  "data/train_data/Standoff_Format/protocol_546.txt": {
+   "sha256": "e37d8dffc81fdce3d3807ea9cbddecc88df9204667b16e34fea11b401cb1fbb8",
+   "bytes": 1483
+  },
+  "data/train_data/Standoff_Format/protocol_548.ann": {
+   "sha256": "05e867386d7e98cd40035beaf213827b220e65223133a03392545d2ae1d96ecf",
+   "bytes": 7787
+  },
+  "data/train_data/Standoff_Format/protocol_548.txt": {
+   "sha256": "f9928efaebbd4ca3e873cd760b1d0eb4c7ff2e9bd4fb25f8ba907f9aa8dc2ab9",
+   "bytes": 1961
+  },
+  "data/train_data/Standoff_Format/protocol_549.ann": {
+   "sha256": "075be62de5a7990bd7b96916261cca0e25feb2baefd6c802affc5f7a5718c204",
+   "bytes": 1236
+  },
+  "data/train_data/Standoff_Format/protocol_549.txt": {
+   "sha256": "35d7aaff411a3c84c04e6e9e980f5738a2c26cfcf7ac51b0ec4b366ad1c46a36",
+   "bytes": 224
+  },
+  "data/train_data/Standoff_Format/protocol_55.ann": {
+   "sha256": "ece316332c87f1d903f20a379a2d55d443a4be3307f4487a4e7ff72bb26b895b",
+   "bytes": 9596
+  },
+  "data/train_data/Standoff_Format/protocol_55.txt": {
+   "sha256": "a828acc6438dafc19865331d241ce1c2b9d36b40cfeacf6424702aba022bb633",
+   "bytes": 3044
+  },
+  "data/train_data/Standoff_Format/protocol_550.ann": {
+   "sha256": "4ac617b42b4093881d46722ab79d134a13492d5f15ae526145e8dae15515aad0",
+   "bytes": 5467
+  },
+  "data/train_data/Standoff_Format/protocol_550.txt": {
+   "sha256": "b2b6841c6c52ddd8f19458523f7291e7411244e987bd57547d5eeb237be6d2be",
+   "bytes": 1219
+  },
+  "data/train_data/Standoff_Format/protocol_551.ann": {
+   "sha256": "3c1191e12eab8354d045494da611d89ed16aee58f58a2efb54724c0e8ca51a6f",
+   "bytes": 9098
+  },
+  "data/train_data/Standoff_Format/protocol_551.txt": {
+   "sha256": "bac38675dfd15fb946a6b278cc043cf67ffcd4ea2608b68b46145eac625272a6",
+   "bytes": 2345
+  },
+  "data/train_data/Standoff_Format/protocol_553.ann": {
+   "sha256": "988df5f535f64b4f0e5e6fd2d4f77c2744c7b73e36027dcd635791802bd8859e",
+   "bytes": 5135
+  },
+  "data/train_data/Standoff_Format/protocol_553.txt": {
+   "sha256": "56bc302388d121581af60e7d9638803670d96adced6f1fff2484d4f17779376f",
+   "bytes": 1094
+  },
+  "data/train_data/Standoff_Format/protocol_555.ann": {
+   "sha256": "d20de0e09a97a3e0c7b22525ad1941fdf662dca3bb972c46abbb75ea7e32dca6",
+   "bytes": 5454
+  },
+  "data/train_data/Standoff_Format/protocol_555.txt": {
+   "sha256": "b2b6841c6c52ddd8f19458523f7291e7411244e987bd57547d5eeb237be6d2be",
+   "bytes": 1219
+  },
+  "data/train_data/Standoff_Format/protocol_556.ann": {
+   "sha256": "8c014d0ef5b21019c0efce83772545697916902c3d1704311373b80e0007aac3",
+   "bytes": 8799
+  },
+  "data/train_data/Standoff_Format/protocol_556.txt": {
+   "sha256": "bac38675dfd15fb946a6b278cc043cf67ffcd4ea2608b68b46145eac625272a6",
+   "bytes": 2345
+  },
+  "data/train_data/Standoff_Format/protocol_558.ann": {
+   "sha256": "dd9caeeb5755802b63461f21e5c113b020753cfc670294042918397e27159a2a",
+   "bytes": 430
+  },
+  "data/train_data/Standoff_Format/protocol_558.txt": {
+   "sha256": "823d3bef4c7cb0722e1254aa025a6bc48e6f74081f2bc93a4955e6ef9156bc5d",
+   "bytes": 70
+  },
+  "data/train_data/Standoff_Format/protocol_560.ann": {
+   "sha256": "f9f92b08e312ed5cd4fd4aced99fb9331f920edec75b2460b162f972134083b6",
+   "bytes": 2351
+  },
+  "data/train_data/Standoff_Format/protocol_560.txt": {
+   "sha256": "6775fd7fb001547d5bc921f15bafb0b4f4efd3a912b210a2e188c014611746ff",
+   "bytes": 807
+  },
+  "data/train_data/Standoff_Format/protocol_561.ann": {
+   "sha256": "1d8fd436a6b43c3db83f5c2ca413e9822805e3175cb8ad50cca39900a1f0b001",
+   "bytes": 1979
+  },
+  "data/train_data/Standoff_Format/protocol_561.txt": {
+   "sha256": "c9e71dcbcd7b1ea8d73acb14d4048b28db38965f4b45266233ce52fde80e7660",
+   "bytes": 730
+  },
+  "data/train_data/Standoff_Format/protocol_564.ann": {
+   "sha256": "fa3ea614a56f039267bd878848521895c4aa6b4aa3566d4081188f5471f0e86d",
+   "bytes": 2653
+  },
+  "data/train_data/Standoff_Format/protocol_564.txt": {
+   "sha256": "b18cb1d355bd329d2f38c535a221fab513083d3c22be324aa13653f8be84c964",
+   "bytes": 654
+  },
+  "data/train_data/Standoff_Format/protocol_566.ann": {
+   "sha256": "b2b501515574bd63ad2bdf30e1d69c61034b33e419114df427dd1a62819f860e",
+   "bytes": 2143
+  },
+  "data/train_data/Standoff_Format/protocol_566.txt": {
+   "sha256": "ef55272c66ba0bdc1bb94be4b0b3d7c841050286920bf06e894d82c5f3f2cdbb",
+   "bytes": 435
+  },
+  "data/train_data/Standoff_Format/protocol_567.ann": {
+   "sha256": "1b0e447a9a61bb6b3e58d4ce08e21b1fb73b0431bc1b6c678b8e876610887b74",
+   "bytes": 3341
+  },
+  "data/train_data/Standoff_Format/protocol_567.txt": {
+   "sha256": "ffc61bb1b7594772ef567c220326fada3bcdb5724fa61626efb0ae908a1dd830",
+   "bytes": 745
+  },
+  "data/train_data/Standoff_Format/protocol_568.ann": {
+   "sha256": "e9266e8fdd2b0762915324fb3aeba3f7dc768a9fdf52a511f16732c978835d28",
+   "bytes": 10759
+  },
+  "data/train_data/Standoff_Format/protocol_568.txt": {
+   "sha256": "52af331e910287cf6a922cec0d96ff74a3101d5fd84eeed9eee0c0a694bb487b",
+   "bytes": 2751
+  },
+  "data/train_data/Standoff_Format/protocol_569.ann": {
+   "sha256": "e980f3d6bf4644933d66175f391249afce301c6c2ec2de388b18e04d6ebbbff3",
+   "bytes": 23833
+  },
+  "data/train_data/Standoff_Format/protocol_569.txt": {
+   "sha256": "b3c7fe410ad71e38ad41f784c38b78eb444c475bdfb1d4528f9a1b418435a75c",
+   "bytes": 5347
+  },
+  "data/train_data/Standoff_Format/protocol_57.ann": {
+   "sha256": "d50621b1676cff32edeb7871dec234c036566618286d21f92579e03942a3b55a",
+   "bytes": 5350
+  },
+  "data/train_data/Standoff_Format/protocol_57.txt": {
+   "sha256": "0afea225aaf9894608adc0a77421a652bedab3a81c8ba59b28a8863d2f8a9860",
+   "bytes": 1226
+  },
+  "data/train_data/Standoff_Format/protocol_570.ann": {
+   "sha256": "87611f83f99385a2250d41719919581b6ae2d051b678ba8f35242fe48978b829",
+   "bytes": 7080
+  },
+  "data/train_data/Standoff_Format/protocol_570.txt": {
+   "sha256": "8e15906b5b8c16d8af84e862d7e98b209b87d96ebb6053c4b3a454f4b75fc15f",
+   "bytes": 2535
+  },
+  "data/train_data/Standoff_Format/protocol_573.ann": {
+   "sha256": "a36c8fca517ed3b24a809d9747388b28d2960a25dde1864f4beac52185b00f1e",
+   "bytes": 3268
+  },
+  "data/train_data/Standoff_Format/protocol_573.txt": {
+   "sha256": "37d5636e16e269d43baa15ac04059da085c685d51cf0d9661af00177e770ba7f",
+   "bytes": 783
+  },
+  "data/train_data/Standoff_Format/protocol_574.ann": {
+   "sha256": "e67a5930b7f3d1884d4ba14dbe079ada99d212de5fa607670489fad034635bd6",
+   "bytes": 4034
+  },
+  "data/train_data/Standoff_Format/protocol_574.txt": {
+   "sha256": "52dddb12afe6c23b1134e71f88222fb2b8819eb27a2f3945eccb4e84e798d5f6",
+   "bytes": 1228
+  },
+  "data/train_data/Standoff_Format/protocol_576.ann": {
+   "sha256": "c9bfc66c6ec869ef9fb4818745e48830726d57bb0fbedbf02d5ddf353c6a7d07",
+   "bytes": 10079
+  },
+  "data/train_data/Standoff_Format/protocol_576.txt": {
+   "sha256": "883f405f55dc5c7c4fe6c87015220ddcf555a4f81d255b4586ee5f0a6627a902",
+   "bytes": 2363
+  },
+  "data/train_data/Standoff_Format/protocol_579.ann": {
+   "sha256": "8b38c7dcc4991f814c288a8629954577bd92eeb707dafbd3c46b9f88fd3a4784",
+   "bytes": 1510
+  },
+  "data/train_data/Standoff_Format/protocol_579.txt": {
+   "sha256": "1f3dafa7ecb66dafce77d36361d0f9e9d961a06db56e564b7e9fcd996a76eb08",
+   "bytes": 528
+  },
+  "data/train_data/Standoff_Format/protocol_58.ann": {
+   "sha256": "0a18157ffbd99da03a9819d168b995be43f1afcae782757a2bca2c19f2cca82c",
+   "bytes": 7928
+  },
+  "data/train_data/Standoff_Format/protocol_58.txt": {
+   "sha256": "fd18d7ed1cd06a358654f969aec16f21555419675859bfb0f4d55ffe6cba8026",
+   "bytes": 1920
+  },
+  "data/train_data/Standoff_Format/protocol_581.ann": {
+   "sha256": "8ff0eca46641610ac456f45548a34c7dd1a1f63488226e0cacdab6791d992869",
+   "bytes": 11559
+  },
+  "data/train_data/Standoff_Format/protocol_581.txt": {
+   "sha256": "0fac46da4236dc3ad51a847a61004a920792ce3962959095981b86df2aea85f8",
+   "bytes": 2881
+  },
+  "data/train_data/Standoff_Format/protocol_582.ann": {
+   "sha256": "1519173fc66faf1a1a737b6db6338db72202a7c241759017be4dddcb3f706f57",
+   "bytes": 7176
+  },
+  "data/train_data/Standoff_Format/protocol_582.txt": {
+   "sha256": "e2f699d96b6d8f0cd3f2ef975bdf23e3da0ac03755f45d0aef6355e941e5fd23",
+   "bytes": 1727
+  },
+  "data/train_data/Standoff_Format/protocol_588.ann": {
+   "sha256": "bb30461b9ae74517708bda17c49afd9cdc81b685861d519da7cd70985675088b",
+   "bytes": 8331
+  },
+  "data/train_data/Standoff_Format/protocol_588.txt": {
+   "sha256": "0610d3415559add000cb7c458a713af9237b3a128da3e525d8b38930432e76de",
+   "bytes": 1961
+  },
+  "data/train_data/Standoff_Format/protocol_59.ann": {
+   "sha256": "86f1ed0ab96a39a6f37b4aba11e9b56115503d6715b7125753a6bcfb5c062382",
+   "bytes": 10101
+  },
+  "data/train_data/Standoff_Format/protocol_59.txt": {
+   "sha256": "38584711ce4e18b5b1ee59bfe72fa809ee68b15a2fece00986ea2827a0f95e38",
+   "bytes": 2249
+  },
+  "data/train_data/Standoff_Format/protocol_590.ann": {
+   "sha256": "5f30941763ca802bc8a8100ded6a428ca10b24aee702e39ff18d3d869ffe746f",
+   "bytes": 5667
+  },
+  "data/train_data/Standoff_Format/protocol_590.txt": {
+   "sha256": "826e33475ebe017fcaac702defa7e69a2d5ac64249b093ec4dbaa624c0dfb511",
+   "bytes": 1221
+  },
+  "data/train_data/Standoff_Format/protocol_591.ann": {
+   "sha256": "96875633b6b48eaabf58194f26b1017af2ea640eee748d254c69073de47c7ac3",
+   "bytes": 9572
+  },
+  "data/train_data/Standoff_Format/protocol_591.txt": {
+   "sha256": "3dd0e48ef3b93e89baa15a2f320dba5eed95f40ad887796407afd114858e88d2",
+   "bytes": 2346
+  },
+  "data/train_data/Standoff_Format/protocol_595.ann": {
+   "sha256": "070ed84eec7ac0db6ddaa9a6f42b14580100400b06f03a52aa32161c8d706441",
+   "bytes": 2505
+  },
+  "data/train_data/Standoff_Format/protocol_595.txt": {
+   "sha256": "5235ce5f53bea6a8293089e2db6c11276e414e7a3562fbb3f6fe0ef9295bbe30",
+   "bytes": 810
+  },
+  "data/train_data/Standoff_Format/protocol_597.ann": {
+   "sha256": "3558f192d0953d1ce457e667a5cfe8265c597dd4f5fb8532805b715bef9a0f9b",
+   "bytes": 5353
+  },
+  "data/train_data/Standoff_Format/protocol_597.txt": {
+   "sha256": "24436a7aae4ce59ea8566f33f2ec64b096e0a15c446074df8f2ac5e6deba7d59",
+   "bytes": 1392
+  },
+  "data/train_data/Standoff_Format/protocol_598.ann": {
+   "sha256": "4934b4d2fa4bb1f5c989dcdc30cfc746fc38b37fa3aa6e055fd1fb728c9c6dbb",
+   "bytes": 5126
+  },
+  "data/train_data/Standoff_Format/protocol_598.txt": {
+   "sha256": "44ba44f02af485bdb42d21dbf79eb38082c5d3bd7176dbe6ae691320f102fe13",
+   "bytes": 1090
+  },
+  "data/train_data/Standoff_Format/protocol_599.ann": {
+   "sha256": "eb72b5171be2af119277ebec3532f7e8c436d7341d6f83bc4421065991f940e7",
+   "bytes": 2337
+  },
+  "data/train_data/Standoff_Format/protocol_599.txt": {
+   "sha256": "c14719dfb37bd1422ef9fd1b04b76c8abbd5b0f820f40d0bf5448ed0f4d2bfe5",
+   "bytes": 596
+  },
+  "data/train_data/Standoff_Format/protocol_6.ann": {
+   "sha256": "2390a89addbe8b86351cde9a48caa3e051cc0a5a90a78fbe06337e03f06506a0",
+   "bytes": 6424
+  },
+  "data/train_data/Standoff_Format/protocol_6.txt": {
+   "sha256": "81254983dee0d7fe540f3a4f1794530b85cd67b718f2f0cfed138a2455f48001",
+   "bytes": 1546
+  },
+  "data/train_data/Standoff_Format/protocol_600.ann": {
+   "sha256": "ce65b2b182a3bb90580572d333f03dab314aac7dc9d81a23a51f07a8637e612e",
+   "bytes": 4349
+  },
+  "data/train_data/Standoff_Format/protocol_600.txt": {
+   "sha256": "34415e1f53136cb975f1eff435c3086860f60056225e43b758322edc39485649",
+   "bytes": 818
+  },
+  "data/train_data/Standoff_Format/protocol_601.ann": {
+   "sha256": "0b509b15f6c66f951a9cf2b681a1afe5e4be752ce2e14e801b15558ba54d83b5",
+   "bytes": 1892
+  },
+  "data/train_data/Standoff_Format/protocol_601.txt": {
+   "sha256": "f28a7e450d3d9c6b42dc881ba172058ea9bf0af1d9bb570890517635bec1bcf7",
+   "bytes": 434
+  },
+  "data/train_data/Standoff_Format/protocol_602.ann": {
+   "sha256": "c5e0f92f18858db95f4c304df0d860222d033c2752ff265db7e9476c0984164a",
+   "bytes": 2684
+  },
+  "data/train_data/Standoff_Format/protocol_602.txt": {
+   "sha256": "643696716be94e1a23b8705d4665b3ba78947e4d26fcb9f7aa1db5179ff7e8ae",
+   "bytes": 931
+  },
+  "data/train_data/Standoff_Format/protocol_603.ann": {
+   "sha256": "0864dcfb63ebcff7b2ef94f0688746b38cbfa2940336c10fe46f1a6f51c319a9",
+   "bytes": 1681
+  },
+  "data/train_data/Standoff_Format/protocol_603.txt": {
+   "sha256": "744441fa85d97c8ae51d1b677de2e4188547682abf35743f00e0b0c12fcb31b3",
+   "bytes": 635
+  },
+  "data/train_data/Standoff_Format/protocol_605.ann": {
+   "sha256": "f7baca4d02103fd717df9f1eda589679804404e74edfac56fa288b4374e553a5",
+   "bytes": 3785
+  },
+  "data/train_data/Standoff_Format/protocol_605.txt": {
+   "sha256": "4334ccb26b51abd03c0c8a614c863f492be809bf6b208ae92659bfd38ac23328",
+   "bytes": 1265
+  },
+  "data/train_data/Standoff_Format/protocol_607.ann": {
+   "sha256": "f9310fe076814c2f30be452a4583474de29048c0a666ae250f5b4b3362413723",
+   "bytes": 11063
+  },
+  "data/train_data/Standoff_Format/protocol_607.txt": {
+   "sha256": "e9377ecd5bf15ba9d9b5edb9dce10707b3da7addd4d29b18f5f34a8c364d8abb",
+   "bytes": 2881
+  },
+  "data/train_data/Standoff_Format/protocol_609.ann": {
+   "sha256": "775eec2e60ea55fe136045afcd4d327076a626f9aa262dab9927310940975f0a",
+   "bytes": 10042
+  },
+  "data/train_data/Standoff_Format/protocol_609.txt": {
+   "sha256": "a72cd7aaf46aa0358fbf583f890cf562c2937c881c5a0a33e74b855848c79898",
+   "bytes": 2367
+  },
+  "data/train_data/Standoff_Format/protocol_610.ann": {
+   "sha256": "ad3104aef4018a0379e6351a7a3988f8f0db7fd3f352f387e5298d5e97acb59d",
+   "bytes": 16944
+  },
+  "data/train_data/Standoff_Format/protocol_610.txt": {
+   "sha256": "29991de40a596d520ad175e0e4f08f404cdb861bedb542de064ab643bb2b759e",
+   "bytes": 4065
+  },
+  "data/train_data/Standoff_Format/protocol_611.ann": {
+   "sha256": "2ae9ab1fb21fb75ec205fa9c5f413b7aaa9b46fd50210db177e9889bed04609d",
+   "bytes": 3111
+  },
+  "data/train_data/Standoff_Format/protocol_611.txt": {
+   "sha256": "1b42315447e845b53a5c157f21ed85a51a8faf3714e698172bf528fc3827bd0d",
+   "bytes": 747
+  },
+  "data/train_data/Standoff_Format/protocol_612.ann": {
+   "sha256": "8f1666a749dc50ea434b8114af9ade658df93d27cb7744e8bafc83db8c3c36d5",
+   "bytes": 4917
+  },
+  "data/train_data/Standoff_Format/protocol_612.txt": {
+   "sha256": "2e27792b717aaeeaa712e8f226416af1b53adcd7f9c18db9cd9f349714ec8924",
+   "bytes": 1331
+  },
+  "data/train_data/Standoff_Format/protocol_615.ann": {
+   "sha256": "012a3527a39ccdb09ecfd50ab20056db760c1c68fb1f8fbe2022ffdec0ca5401",
+   "bytes": 7276
+  },
+  "data/train_data/Standoff_Format/protocol_615.txt": {
+   "sha256": "abb33fd7407ddb9ac80ec92db9c94d0ebd01e61108180ebf0d6fa2d161736358",
+   "bytes": 1735
+  },
+  "data/train_data/Standoff_Format/protocol_618.ann": {
+   "sha256": "7e6bec88262d05083a4b7f79f71c31c4b71f34af73a06d5c0a3c0a4a955479d3",
+   "bytes": 5844
+  },
+  "data/train_data/Standoff_Format/protocol_618.txt": {
+   "sha256": "e00740eb6a6aa27a1bf7140bc366d3dc7d5ad2b9248c83e03424dfa8b5608b67",
+   "bytes": 1495
+  },
+  "data/train_data/Standoff_Format/protocol_619.ann": {
+   "sha256": "10059048f1a02627a4569ac3858e5c9961def2e3f1c6d241cd3fef420c8419e8",
+   "bytes": 10292
+  },
+  "data/train_data/Standoff_Format/protocol_619.txt": {
+   "sha256": "1e0fc053727bbd9b49620639c69617b08fe1fcb4ebfd9e62eb628029cca6ab58",
+   "bytes": 2752
+  },
+  "data/train_data/Standoff_Format/protocol_62.ann": {
+   "sha256": "906e302a6998bccd75e50670c4cd9e2601b109847c4a6d6a3313d1983672e6f1",
+   "bytes": 2191
+  },
+  "data/train_data/Standoff_Format/protocol_62.txt": {
+   "sha256": "46b987e069895aad232ab7c017c0098de7e5dbe1388d4b11975dac661de95af1",
+   "bytes": 522
+  },
+  "data/train_data/Standoff_Format/protocol_622.ann": {
+   "sha256": "af455176c141c4a5d48d25bfe721af82d0fef1c00ced46fbe88f1222e2530a4f",
+   "bytes": 1561
+  },
+  "data/train_data/Standoff_Format/protocol_622.txt": {
+   "sha256": "1f3dafa7ecb66dafce77d36361d0f9e9d961a06db56e564b7e9fcd996a76eb08",
+   "bytes": 528
+  },
+  "data/train_data/Standoff_Format/protocol_63.ann": {
+   "sha256": "84e3578845fc5e04326cb4c2f3e98e306bff23c7de104f9740dac4396a81cc27",
+   "bytes": 7374
+  },
+  "data/train_data/Standoff_Format/protocol_63.txt": {
+   "sha256": "5334da61dc7d5f0d3803aaf07f1c1231f8437fcd543e8023963aaf32b93ee6fe",
+   "bytes": 2109
+  },
+  "data/train_data/Standoff_Format/protocol_64.ann": {
+   "sha256": "06f096e92927ec2968144c5e7ebf1448e1f98e17fa91d81b8997914a3a8bf6d6",
+   "bytes": 857
+  },
+  "data/train_data/Standoff_Format/protocol_64.txt": {
+   "sha256": "646f0f928e00da91a3219bb936064adb8ceedd4b02f6c6cd3857c9951720f09a",
+   "bytes": 195
+  },
+  "data/train_data/Standoff_Format/protocol_67.ann": {
+   "sha256": "fa97695c9f58843e132190d9e5c538c282b1f6c53f2999e39656376bf9a1b116",
+   "bytes": 29452
+  },
+  "data/train_data/Standoff_Format/protocol_67.txt": {
+   "sha256": "7aa7055d15b5825643bfbe6ab9af77818c85e51ba2ffc2d74ab5bd86a0d2aab3",
+   "bytes": 9057
+  },
+  "data/train_data/Standoff_Format/protocol_68.ann": {
+   "sha256": "3b7a54b47094e72db4fda272c4790c832b471fa2e11790bd0d751808c099938b",
+   "bytes": 3084
+  },
+  "data/train_data/Standoff_Format/protocol_68.txt": {
+   "sha256": "8ecd5610338d8eb296f9ea2a1aea4d586497eb2908730987eeaa62134989ef3c",
+   "bytes": 939
+  },
+  "data/train_data/Standoff_Format/protocol_73.ann": {
+   "sha256": "f52a94299264b87085e91df4c8b3a813072d3260d9bda7cc819d2028747840c7",
+   "bytes": 7934
+  },
+  "data/train_data/Standoff_Format/protocol_73.txt": {
+   "sha256": "ab996a6fad0a29476792e508ef37aad9e4944b49e48210965cafb123283ac7cb",
+   "bytes": 2827
+  },
+  "data/train_data/Standoff_Format/protocol_74.ann": {
+   "sha256": "728d25f539668a71a8d166078430b12fada0d8c22b35987020048819388899e4",
+   "bytes": 7305
+  },
+  "data/train_data/Standoff_Format/protocol_74.txt": {
+   "sha256": "d3edf56b0cdd1afc110bba0e86cd409fb6b82ac1e46f9e1f68e4c9be48408c19",
+   "bytes": 1948
+  },
+  "data/train_data/Standoff_Format/protocol_75.ann": {
+   "sha256": "d1059aabb14e7155ac0e73b42e768627ffa9906fc8626497163fda630e686e62",
+   "bytes": 8074
+  },
+  "data/train_data/Standoff_Format/protocol_75.txt": {
+   "sha256": "cf87b3452e2b7b41361e0ca47b35bb15d36bb47e09c1f95f7072988fd3fb1666",
+   "bytes": 2201
+  },
+  "data/train_data/Standoff_Format/protocol_76.ann": {
+   "sha256": "273ef0b87053fd2142e388d45db8f70d4fcf9e3a8bfbd02d24a1640ca2e7d3bc",
+   "bytes": 7777
+  },
+  "data/train_data/Standoff_Format/protocol_76.txt": {
+   "sha256": "b0b3bd711c343b38b0d3924d6086528077af3d183c05bcedd780f81adb748acf",
+   "bytes": 2248
+  },
+  "data/train_data/Standoff_Format/protocol_77.ann": {
+   "sha256": "6dc12b1146a3122ca3e1d1d6d857f5cb6aadf5f9998352bd159bdbd7d6071a1b",
+   "bytes": 2936
+  },
+  "data/train_data/Standoff_Format/protocol_77.txt": {
+   "sha256": "2cb2884583509b32473a3cccfdf5c7568864e7d40af38fffe227452a5a6f43c7",
+   "bytes": 809
+  },
+  "data/train_data/Standoff_Format/protocol_79.ann": {
+   "sha256": "1607ce0c3e2f4d32ac9b304d8980e6e6c4efd1956d1b7f6c8b381e814d092614",
+   "bytes": 1034
+  },
+  "data/train_data/Standoff_Format/protocol_79.txt": {
+   "sha256": "f8e2cd7fc584dfa7b6a592dfc1f1593469d06cabb76822f55d0418679c13ff5c",
+   "bytes": 235
+  },
+  "data/train_data/Standoff_Format/protocol_84.ann": {
+   "sha256": "3c78daa137fa2fe18a0d1585532a5d044e5d3a168b4e4df884cda2421e07beaf",
+   "bytes": 14614
+  },
+  "data/train_data/Standoff_Format/protocol_84.txt": {
+   "sha256": "8b639c8b7b19c9d52834c1be443a86f228f69e8a1b91eaef81b8e05e3217d8d3",
+   "bytes": 3216
+  },
+  "data/train_data/Standoff_Format/protocol_85.ann": {
+   "sha256": "f5df5b1acc7e0eda50554a715e4308987eb9516ac50f7ecffac7ae75530bff79",
+   "bytes": 1730
+  },
+  "data/train_data/Standoff_Format/protocol_85.txt": {
+   "sha256": "4f627f5c7161e7eb91bb02d7700d357d45974eb7174c5bcb9f3a342aded32e16",
+   "bytes": 420
+  },
+  "data/train_data/Standoff_Format/protocol_87.ann": {
+   "sha256": "55c3f1d220bd14c9cbcba744679321eae1940c66cb5e26c29cf2efac134f2103",
+   "bytes": 1162
+  },
+  "data/train_data/Standoff_Format/protocol_87.txt": {
+   "sha256": "39919edd34e1c728c73ac909fc02c51006c09d372f66eb17c0a4f0d681b62ccd",
+   "bytes": 392
+  },
+  "data/train_data/Standoff_Format/protocol_9.ann": {
+   "sha256": "fb8b0ced9859e8a95cd184a57a91c28465116cad7bda7371c03a81ea9d29bb95",
+   "bytes": 1467
+  },
+  "data/train_data/Standoff_Format/protocol_9.txt": {
+   "sha256": "4d7fe8cdb7a677e1ee9329e1a5ca1125b550ec4968743e475d6d23e4f63a46dd",
+   "bytes": 527
+  },
+  "data/train_data/Standoff_Format/protocol_90.ann": {
+   "sha256": "66afe510d691d96bdb7139506a22f6dd4f82827822ffc3f0ca0dcdece49c02e3",
+   "bytes": 4537
+  },
+  "data/train_data/Standoff_Format/protocol_90.txt": {
+   "sha256": "3b2ff17ad6535c3989d2f07aa5e7d4df3bcaa1d7d2c0cfa56b8c350857f26baf",
+   "bytes": 919
+  },
+  "data/train_data/Standoff_Format/protocol_91.ann": {
+   "sha256": "ec564161a9d6c4562b72356a2db423e20ff9ff14ebde5ecda8f031363ab9195c",
+   "bytes": 2756
+  },
+  "data/train_data/Standoff_Format/protocol_91.txt": {
+   "sha256": "525a7c582cadaa99b788326d7de0329e3c6cbf7d9dbbcdb1aa94d5028b20f92a",
+   "bytes": 559
+  },
+  "data/train_data/Standoff_Format/protocol_92.ann": {
+   "sha256": "6ef6d0b6ce985d2808c33878df3abdf579496b429fa4629063d9c871e311db20",
+   "bytes": 642
+  },
+  "data/train_data/Standoff_Format/protocol_92.txt": {
+   "sha256": "95854211e0f2736548609db94d05ba7c2c8015dc15250f2da39800455cf2aae2",
+   "bytes": 205
+  },
+  "data/train_data/Standoff_Format/protocol_93.ann": {
+   "sha256": "f6ac3291072211c4a220879eca936a34ca0e47350d14e5b6b0ba5c0a2bf64755",
+   "bytes": 14619
+  },
+  "data/train_data/Standoff_Format/protocol_93.txt": {
+   "sha256": "d04a6c6bbe426316486c82ca2cf3c3f1788d9bf4ccfc219e856e959a5c168a1b",
+   "bytes": 3875
+  },
+  "data/train_data/Standoff_Format/protocol_94.ann": {
+   "sha256": "d4e120611e498a49c001e260f4567548c229ebc57784c62b4f3a55b6e175eb67",
+   "bytes": 10303
+  },
+  "data/train_data/Standoff_Format/protocol_94.txt": {
+   "sha256": "55b20547e9c82782528113c118cf484fa022e5ec6e62037ebd3b2ffd9c5297ba",
+   "bytes": 3042
+  },
+  "data/train_data/Standoff_Format/protocol_96.ann": {
+   "sha256": "981f3e77031081e8f0a0309e72b575ca22d3257195499f31d9fe5dbab1c4feaa",
+   "bytes": 3898
+  },
+  "data/train_data/Standoff_Format/protocol_96.txt": {
+   "sha256": "a87119977c15873cfff2dac44047a552c91c0c64200bc5f5303bccd981063898",
+   "bytes": 1013
+  },
+  "data/train_data/Standoff_Format/protocol_97.ann": {
+   "sha256": "0faf1b5184caac214859f2613ca39a4ea083e4dfa2a5c50ebd86bd505c7568e0",
+   "bytes": 470
+  },
+  "data/train_data/Standoff_Format/protocol_97.txt": {
+   "sha256": "509b6f74310a272082d83267a83f91075663da1538200efbfb36ad5825edf1b4",
+   "bytes": 104
+  },
+  "data/train_data/Standoff_Format/protocol_99.ann": {
+   "sha256": "7e21d500c72bdb5bc449657f46932bdded1d311bec0dd1819b3a43ce65788c81",
+   "bytes": 2555
+  },
+  "data/train_data/Standoff_Format/protocol_99.txt": {
+   "sha256": "4ef8f99732ffb21e419c47fdafda83efede9bb8bd80b4c0c0b449484d41df6a9",
+   "bytes": 615
+  }
+ }
+}
