@@ -1,0 +1,552 @@
+{
+ "conversion_version": "1",
+ "conventions": {
+  "offsets": "half-open [start, end) code-point indices into the raw .txt",
+  "event_arguments": "trigger span -> argument span, label = role without suffix",
+  "relation_records": "Arg1 -> Arg2; event endpoints resolve to trigger spans",
+  "relations_raw": "event arguments + R records, before merging duplicates",
+  "relations_merged": "unique (head, label, tail) triples",
+  "multilabel_pairs": "ordered (head, tail) pairs carrying more than one label"
+ },
+ "splits": {
+  "train_data": {
+   "documents": 370,
+   "entities": 48197,
+   "relations_raw": 32158,
+   "relations_merged": 32158,
+   "multilabel_pairs": 0,
+   "entity_labels": {
+    "Action": 12377,
+    "Amount": 3496,
+    "Concentration": 1376,
+    "Device": 1756,
+    "Generic-Measure": 495,
+    "Location": 3947,
+    "Measure-Type": 871,
+    "Mention": 257,
+    "Method": 1611,
+    "Modifier": 4706,
+    "Numerical": 875,
+    "Reagent": 11260,
+    "Seal": 211,
+    "Size": 268,
+    "Speed": 630,
+    "Temperature": 1595,
+    "Time": 2399,
+    "pH": 67
+   },
+   "relation_labels_merged": {
+    "Acts-on": 8916,
+    "Commands": 123,
+    "Coreference-Link": 321,
+    "Count": 337,
+    "Measure": 5225,
+    "Measure-Type-Link": 409,
+    "Meronym": 1191,
+    "Mod-Link": 4425,
+    "Of-Type": 85,
+    "Or": 481,
+    "Product": 315,
+    "Setting": 4913,
+    "Site": 3249,
+    "Using": 2168
+   },
+   "relation_labels_raw": {
+    "Acts-on": 8916,
+    "Commands": 123,
+    "Coreference-Link": 321,
+    "Count": 337,
+    "Measure": 5225,
+    "Measure-Type-Link": 409,
+    "Meronym": 1191,
+    "Mod-Link": 4425,
+    "Of-Type": 85,
+    "Or": 481,
+    "Product": 315,
+    "Setting": 4913,
+    "Site": 3249,
+    "Using": 2168
+   },
+   "issues": {
+    "warning:action_without_event": 16,
+    "warning:span_edge_whitespace": 72
+   }
+  },
+  "dev_data": {
+   "documents": 122,
+   "entities": 15972,
+   "relations_raw": 10812,
+   "relations_merged": 10810,
+   "multilabel_pairs": 0,
+   "entity_labels": {
+    "Action": 4056,
+    "Amount": 1112,
+    "Concentration": 430,
+    "Device": 617,
+    "Generic-Measure": 138,
+    "Location": 1417,
+    "Measure-Type": 334,
+    "Mention": 84,
+    "Method": 546,
+    "Modifier": 1585,
+    "Numerical": 262,
+    "Reagent": 3654,
+    "Seal": 92,
+    "Size": 123,
+    "Speed": 241,
+    "Temperature": 491,
+    "Time": 753,
+    "pH": 37
+   },
+   "relation_labels_merged": {
+    "Acts-on": 3001,
+    "Commands": 37,
+    "Coreference-Link": 140,
+    "Count": 100,
+    "Measure": 1620,
+    "Measure-Type-Link": 133,
+    "Meronym": 393,
+    "Mod-Link": 1485,
+    "Of-Type": 28,
+    "Or": 198,
+    "Product": 110,
+    "Setting": 1626,
+    "Site": 1141,
+    "Using": 798
+   },
+   "relation_labels_raw": {
+    "Acts-on": 3001,
+    "Commands": 37,
+    "Coreference-Link": 142,
+    "Count": 100,
+    "Measure": 1620,
+    "Measure-Type-Link": 133,
+    "Meronym": 393,
+    "Mod-Link": 1485,
+    "Of-Type": 28,
+    "Or": 198,
+    "Product": 110,
+    "Setting": 1626,
+    "Site": 1141,
+    "Using": 798
+   },
+   "issues": {
+    "warning:action_without_event": 6,
+    "warning:duplicate_relation": 2,
+    "warning:span_edge_whitespace": 17
+   }
+  },
+  "test_data_2020": {
+   "documents": 111,
+   "entities": 23995,
+   "relations_raw": 16379,
+   "relations_merged": 16378,
+   "multilabel_pairs": 2,
+   "entity_labels": {
+    "Action": 5560,
+    "Amount": 1249,
+    "Concentration": 714,
+    "Device": 927,
+    "Generic-Measure": 181,
+    "Location": 1690,
+    "Measure-Type": 736,
+    "Mention": 145,
+    "Method": 1085,
+    "Modifier": 3617,
+    "Numerical": 539,
+    "Reagent": 5151,
+    "Seal": 119,
+    "Size": 244,
+    "Speed": 240,
+    "Temperature": 769,
+    "Time": 963,
+    "pH": 66
+   },
+   "relation_labels_merged": {
+    "Acts-on": 4082,
+    "Commands": 12,
+    "Coreference-Link": 286,
+    "Count": 183,
+    "Measure": 2370,
+    "Measure-Type-Link": 275,
+    "Meronym": 558,
+    "Mod-Link": 3430,
+    "Of-Type": 193,
+    "Or": 158,
+    "Product": 42,
+    "Setting": 2038,
+    "Site": 1628,
+    "Using": 1123
+   },
+   "relation_labels_raw": {
+    "Acts-on": 4083,
+    "Commands": 12,
+    "Coreference-Link": 286,
+    "Count": 183,
+    "Measure": 2370,
+    "Measure-Type-Link": 275,
+    "Meronym": 558,
+    "Mod-Link": 3430,
+    "Of-Type": 193,
+    "Or": 158,
+    "Product": 42,
+    "Setting": 2038,
+    "Site": 1628,
+    "Using": 1123
+   },
+   "issues": {
+    "warning:action_without_event": 11,
+    "warning:duplicate_relation": 1,
+    "warning:span_edge_whitespace": 202,
+    "warning:surface_mismatch": 1
+   }
+  }
+ },
+ "total": {
+  "documents": 603,
+  "entities": 88164,
+  "relations_raw": 59349,
+  "relations_merged": 59346,
+  "multilabel_pairs": 2,
+  "entity_labels": {
+   "Action": 21993,
+   "Amount": 5857,
+   "Concentration": 2520,
+   "Device": 3300,
+   "Generic-Measure": 814,
+   "Location": 7054,
+   "Measure-Type": 1941,
+   "Mention": 486,
+   "Method": 3242,
+   "Modifier": 9908,
+   "Numerical": 1676,
+   "Reagent": 20065,
+   "Seal": 422,
+   "Size": 635,
+   "Speed": 1111,
+   "Temperature": 2855,
+   "Time": 4115,
+   "pH": 170
+  },
+  "relation_labels_merged": {
+   "Acts-on": 15999,
+   "Commands": 172,
+   "Coreference-Link": 747,
+   "Count": 620,
+   "Measure": 9215,
+   "Measure-Type-Link": 817,
+   "Meronym": 2142,
+   "Mod-Link": 9340,
+   "Of-Type": 306,
+   "Or": 837,
+   "Product": 467,
+   "Setting": 8577,
+   "Site": 6018,
+   "Using": 4089
+  },
+  "relation_labels_raw": {
+   "Acts-on": 16000,
+   "Commands": 172,
+   "Coreference-Link": 749,
+   "Count": 620,
+   "Measure": 9215,
+   "Measure-Type-Link": 817,
+   "Meronym": 2142,
+   "Mod-Link": 9340,
+   "Of-Type": 306,
+   "Or": 837,
+   "Product": 467,
+   "Setting": 8577,
+   "Site": 6018,
+   "Using": 4089
+  },
+  "issues": {
+   "warning:action_without_event": 33,
+   "warning:duplicate_relation": 3,
+   "warning:span_edge_whitespace": 291,
+   "warning:surface_mismatch": 1
+  }
+ },
+ "listed_issues": [
+  {
+   "doc_id": "train_data/protocol_138",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T1",
+   "detail": "Add"
+  },
+  {
+   "doc_id": "train_data/protocol_138",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T59",
+   "detail": "Fracture"
+  },
+  {
+   "doc_id": "train_data/protocol_138",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T72",
+   "detail": "Nest"
+  },
+  {
+   "doc_id": "train_data/protocol_295",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T3",
+   "detail": "store"
+  },
+  {
+   "doc_id": "train_data/protocol_295",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T15",
+   "detail": "Leave"
+  },
+  {
+   "doc_id": "train_data/protocol_295",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T17",
+   "detail": "incubate"
+  },
+  {
+   "doc_id": "train_data/protocol_295",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T30",
+   "detail": "Incubate"
+  },
+  {
+   "doc_id": "train_data/protocol_295",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T40",
+   "detail": "sit"
+  },
+  {
+   "doc_id": "train_data/protocol_295",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T42",
+   "detail": "coll"
+  },
+  {
+   "doc_id": "train_data/protocol_295",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T139",
+   "detail": "incubate"
+  },
+  {
+   "doc_id": "train_data/protocol_295",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T145",
+   "detail": "incubate"
+  },
+  {
+   "doc_id": "train_data/protocol_318",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T17",
+   "detail": "Add"
+  },
+  {
+   "doc_id": "train_data/protocol_415",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T5",
+   "detail": "Add"
+  },
+  {
+   "doc_id": "train_data/protocol_426",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T16",
+   "detail": "Mount"
+  },
+  {
+   "doc_id": "train_data/protocol_449",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T128",
+   "detail": "keep"
+  },
+  {
+   "doc_id": "train_data/protocol_490",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T3",
+   "detail": "Drain"
+  },
+  {
+   "doc_id": "dev_data/protocol_102",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T21",
+   "detail": "click"
+  },
+  {
+   "doc_id": "dev_data/protocol_102",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T27",
+   "detail": "click"
+  },
+  {
+   "doc_id": "dev_data/protocol_102",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T59",
+   "detail": "click"
+  },
+  {
+   "doc_id": "dev_data/protocol_296",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T4",
+   "detail": "Prewet"
+  },
+  {
+   "doc_id": "dev_data/protocol_296",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T5",
+   "detail": "drawing through"
+  },
+  {
+   "doc_id": "dev_data/protocol_411",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T5",
+   "detail": "measure"
+  },
+  {
+   "doc_id": "dev_data/protocol_7",
+   "severity": "warning",
+   "code": "duplicate_relation",
+   "record": "R58, R60",
+   "detail": "T152 Coreference-Link T58"
+  },
+  {
+   "doc_id": "dev_data/protocol_7",
+   "severity": "warning",
+   "code": "duplicate_relation",
+   "record": "R59, R61",
+   "detail": "T152 Coreference-Link T59"
+  },
+  {
+   "doc_id": "test_data_2020/protocol_0626",
+   "severity": "warning",
+   "code": "duplicate_relation",
+   "record": "E19, E19",
+   "detail": "T72 Acts-on T77"
+  },
+  {
+   "doc_id": "test_data_2020/protocol_0657",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T41",
+   "detail": "Prepare"
+  },
+  {
+   "doc_id": "test_data_2020/protocol_0664",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T5",
+   "detail": "Take"
+  },
+  {
+   "doc_id": "test_data_2020/protocol_0664",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T68",
+   "detail": "Let sit"
+  },
+  {
+   "doc_id": "test_data_2020/protocol_0666",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T116",
+   "detail": "washing"
+  },
+  {
+   "doc_id": "test_data_2020/protocol_0666",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T150",
+   "detail": "Add  "
+  },
+  {
+   "doc_id": "test_data_2020/protocol_0667",
+   "severity": "warning",
+   "code": "surface_mismatch",
+   "record": "T101",
+   "detail": "stored 'dislodge ' != offset slice 'dislodge'; offsets are authoritative"
+  },
+  {
+   "doc_id": "test_data_2020/protocol_0667",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T101",
+   "detail": "dislodge"
+  },
+  {
+   "doc_id": "test_data_2020/protocol_0667",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T121",
+   "detail": "Remove"
+  },
+  {
+   "doc_id": "test_data_2020/protocol_0669",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T23",
+   "detail": "mixed"
+  },
+  {
+   "doc_id": "test_data_2020/protocol_0676",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T5",
+   "detail": "dissolving"
+  },
+  {
+   "doc_id": "test_data_2020/protocol_0677",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T85",
+   "detail": "mix"
+  },
+  {
+   "doc_id": "test_data_2020/protocol_23031",
+   "severity": "warning",
+   "code": "action_without_event",
+   "record": "T54",
+   "detail": "produce"
+  }
+ ],
+ "outputs": {
+  "train_data": {
+   "path": "data/processed/wnut2020/conversion-v1/train_data.jsonl",
+   "documents": 370,
+   "sha256": "25ebcc80eda2a041f8f96d19b9abad59406bc1a96e498fdc2ec272868c0daa2e"
+  },
+  "dev_data": {
+   "path": "data/processed/wnut2020/conversion-v1/dev_data.jsonl",
+   "documents": 122,
+   "sha256": "5a4286397821e611cfeef2f109bb93ac5abc329fa1277f63d676414bc78101da"
+  },
+  "test_data_2020": {
+   "path": "data/processed/wnut2020/conversion-v1/test_data_2020.jsonl",
+   "documents": 111,
+   "sha256": "dc7bcb8718dcbda8c2f2fee361ec3ad2e3f676fa176a581f61ebc698954bf62c"
+  }
+ },
+ "source": {
+  "commit": "9a02914e00f0a16c0c6820c4285dd72403a5a5a8",
+  "acquisition_manifest_sha256": "607da4095f3bd79b90209d363dec1668b33aa720b29a5405788858bd20d4d783"
+ }
+}

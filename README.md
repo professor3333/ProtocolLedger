@@ -120,8 +120,8 @@ That makes **directed relation extraction** the central technical challenge, and
 | Component | State |
 |---|---|
 | Pinned corpus acquisition with per-file hash manifest | ✅ Done |
-| BRAT → canonical graph converter and validator | 🚧 In progress |
-| Exact and near-duplicate audit, frozen split manifest | ⬜ Planned |
+| BRAT → canonical graph converter and validator | ✅ Done |
+| Exact and near-duplicate audit, frozen split manifest | 🚧 In progress |
 | Rule-based and CRF / logistic-regression baselines | ⬜ Planned |
 | BERT / SciBERT span-and-relation model | ⬜ Planned |
 | Calibration, error analysis, challenge set | ⬜ Planned |
@@ -144,6 +144,9 @@ uv run python scripts/acquire.py
 # Re-check an existing data/raw/ tree against the committed manifest
 uv run python scripts/acquire.py --verify
 
+# Convert BRAT annotations into validated canonical graphs (JSONL) and a conversion report
+uv run python scripts/convert.py
+
 # Tests (no network needed) and static checks
 uv run pytest -m "not slow"
 uv run ruff check && uv run ruff format --check && uv run mypy src/
@@ -162,17 +165,38 @@ Only the original BRAT standoff directories are used:
 | Dev | `data/dev_data/Standoff_Format` | 122 | 15,972 | 10,812 |
 | Test | `data/test_data_2020/Standoff_Format` | 111 | 23,995 | 16,379 |
 
-<sub>¹ Event arguments plus relation records, before deduplication. Counts come from a
-pre-project audit of the downloaded files; the converter will reproduce them.</sub>
+<sub>¹ Event arguments plus relation records, before merging the 3 exact duplicate
+triples. The converter reproduces every count and per-label total of the pre-project
+audit; see <code>data/manifests/conversion_report.json</code>.</sub>
 
 The annotations cover **18 entity types** (Action, Reagent, Amount, Location, Device,
 Time, Temperature, …) and **14 relation types** (Acts-on, Measure, Setting, Site,
 Using, …).
 
-**Known data issues** found before any modeling: the 603 files contain only 581
-unique texts, including two exact duplicates that cross the train/dev boundary, and
-the legacy `test_data/` folder has no relation annotations. Cleaned split sizes will
-be published once deduplication is final.
+### Conversion
+
+Each protocol becomes one canonical graph: the raw text verbatim, step boundaries,
+entities as half-open `[start, end)` character offsets into that text, and directed
+relations. Event arguments become `trigger → argument` relations, endpoints that name an
+event resolve to its action span, and numbered repeated roles are normalized
+(`Acts-on2` → `Acts-on`) with the raw role kept for provenance. Problems are classified
+as **errors**, which fail conversion, or **warnings**, which stay on the document and in
+the report. Nothing is dropped silently.
+
+### Known data issues
+
+| Finding | Count | Handling |
+|---|---:|---|
+| Exact duplicate texts (whitespace-normalized) | 603 files → 581 unique | deduplication audit (next) |
+| …of which cross train/dev | 2 groups | training copies to be removed |
+| Entity spans with leading/trailing whitespace (mostly NBSP) | 291 (202 in test) | flagged; evaluation policy via correction ledger |
+| Action spans without an event record | 33 | kept, flagged |
+| Duplicate relation records | 3 | merged, origins kept |
+| Entity pairs with more than one relation label | 2 | kept (multilabel) |
+| Stored surface text ≠ offset slice | 1 | offsets authoritative |
+| Legacy `test_data/` without relation records | whole folder | not used |
+
+Cleaned split sizes will be published once deduplication is final.
 
 `data/manifests/acquisition.json` records the SHA-256 of every selected file. These
 per-file hashes are authoritative. GitHub generates archives on demand, so the archive
@@ -224,11 +248,18 @@ perturbations, a challenge set and recently published protocols.
 
 ```text
 ProtocolLedger/
-├── data/manifests/        # committed: acquisition manifest (per-file SHA-256)
+├── data/manifests/
+│   ├── acquisition.json   # committed: per-file SHA-256 of the pinned corpus
+│   └── conversion_report.json  # committed: counts, labels, issues, output hashes
 ├── docs/assets/           # README artwork
-├── scripts/acquire.py     # fetch and verify the pinned corpus
-├── src/protocolledger/
-│   └── data/acquire.py    # download, safe extraction, manifest verification
+├── scripts/
+│   ├── acquire.py         # fetch and verify the pinned corpus
+│   └── convert.py         # BRAT → canonical JSONL graphs + conversion report
+├── src/protocolledger/data/
+│   ├── acquire.py         # download, safe extraction, manifest verification
+│   ├── brat.py            # strict BRAT standoff parser
+│   ├── convert.py         # event resolution, validation, canonical graphs
+│   └── schema.py          # 18 entity labels, 14 relation labels, role normalization
 └── tests/                 # unit tests (no network)
 ```
 
