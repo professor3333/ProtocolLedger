@@ -22,6 +22,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
+from protocolledger.eval.scorer import QUANTITY_LABELS
 from protocolledger.serve.bundle import BundleError, LoadedBundle, load_bundle
 from protocolledger.serve.schemas import (
     MAX_LINES,
@@ -29,12 +30,14 @@ from protocolledger.serve.schemas import (
     ExtractRequest,
     ExtractResponse,
     ModelInfo,
+    NormalizedValue,
     Problem,
     Relation,
     ReviewItem,
     SheetRow,
 )
 from protocolledger.serve.sheet import build_sheet
+from protocolledger.values import VALUES_VERSION, normalize_value
 
 STATIC_DIR = Path(__file__).parent / "static"
 MAX_BODY_BYTES = 256 * 1024
@@ -143,6 +146,12 @@ def create_app(bundle_dir: Path | None) -> FastAPI:
             for i, r in enumerate(raw_relations, start=1)
         ]
         rows, review = build_sheet(raw_entities, raw_relations)
+        normalized: dict[str, NormalizedValue] = {}
+        for e in entities:
+            if e.label in QUANTITY_LABELS:
+                value, _ = normalize_value(e.text, e.label)
+                if value is not None:
+                    normalized[e.id] = NormalizedValue(**value)
         warnings = []
         if not any(e.label == "Action" for e in entities):
             warnings.append("No actions were recognized; the preparation sheet is empty.")
@@ -155,6 +164,8 @@ def create_app(bundle_dir: Path | None) -> FastAPI:
             entities=entities,
             relations=relations,
             sheet=[SheetRow(**row) for row in rows],
+            normalized_values=normalized,
+            normalization_version=VALUES_VERSION,
             review_items=[ReviewItem(**item) for item in review],
             warnings=warnings,
         )

@@ -99,10 +99,22 @@ function focusEntities(ids) {
   if (first) first.scrollIntoView({ block: "nearest", behavior: "smooth" });
 }
 
+function describeValue(v) {
+  if (!v) return "";
+  const unit = v.unit ? ` ${v.unit}` : "";
+  const q = v.qualifier ? `${v.qualifier} ` : "";
+  if (v.kind === "number") return `${q}${v.value}${unit}`;
+  if (v.kind === "range") return `${q}${v.low}\u2013${v.high}${unit}`;
+  if (v.kind === "ratio") return `${v.numerator}:${v.denominator}`;
+  return String(v.value);
+}
+
 function valueChip(id, extra) {
   const entity = current.entities.get(id);
+  const normalized = describeValue(current.normalized[id]);
+  const where = `${entity.label} \u00b7 characters ${entity.start}\u2013${entity.end}`;
   const chip = el("button", { type: "button", class: "value", "data-label": entity.label,
-    title: `${entity.label} · characters ${entity.start}–${entity.end}` }, spanText(entity));
+    title: normalized ? `${where}\nNormalized: ${normalized}` : where }, spanText(entity));
   if (extra) chip.append(" ", el("small", {}, extra));
   chip.addEventListener("click", () => focusEntities([id]));
   return chip;
@@ -193,7 +205,12 @@ async function extract() {
       const detail = Array.isArray(body.detail) ? body.detail.map((d) => d.msg).join("; ") : body.detail;
       throw new Error(detail || `request failed (${res.status})`);
     }
-    current = { text, cps: Array.from(text), entities: new Map(body.entities.map((e) => [e.id, e])) };
+    current = {
+      text,
+      cps: Array.from(text),
+      entities: new Map(body.entities.map((e) => [e.id, e])),
+      normalized: body.normalized_values,
+    };
     renderEvidence();
     renderSheet(body.sheet);
     renderRelations(body.relations);

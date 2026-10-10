@@ -152,6 +152,11 @@ def test_extract_returns_evidence_linked_graph(client: TestClient) -> None:
     assert all(r["head"] in ids and r["tail"] in ids for r in body["relations"])
     labels = {(e["text"], e["label"]) for e in body["entities"]}
     assert {("Add", "Action"), ("7 mL", "Amount"), ("water", "Reagent")} <= labels
+    amount = next(e for e in body["entities"] if e["text"] == "7 mL")
+    assert body["normalized_values"][amount["id"]]["kind"] == "number"
+    assert body["normalized_values"][amount["id"]]["value"] == 7
+    assert body["normalized_values"][amount["id"]]["unit"] == "mL"
+    assert body["normalization_version"] == "1"
     mix_rows = [row for row in body["sheet"] if row["status"] == "review_required"]
     assert mix_rows, "an action without an object must be routed to review"
 

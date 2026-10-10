@@ -59,6 +59,17 @@ class ModelInfo(BaseModel):
     preprocessing_version: str
 
 
+class NormalizedValue(BaseModel):
+    kind: Literal["number", "range", "ratio", "symbolic"]
+    value: float | str | None = None
+    low: float | None = None
+    high: float | None = None
+    numerator: float | None = None
+    denominator: float | None = None
+    unit: str | None = None
+    qualifier: str | None = None
+
+
 class ExtractResponse(BaseModel):
     schema_version: str = SCHEMA_VERSION
     model: ModelInfo
@@ -67,6 +78,11 @@ class ExtractResponse(BaseModel):
     entities: list[Entity]
     relations: list[Relation]
     sheet: list[SheetRow]
+    normalized_values: dict[str, NormalizedValue] = Field(
+        description="Deterministic normalization of quantity entities, keyed by entity id. "
+        "Quantities in unsupported formats are absent and shown as written."
+    )
+    normalization_version: str
     review_items: list[ReviewItem]
     warnings: list[str]
 
