@@ -24,6 +24,7 @@
   <a href="#data">Data</a> ·
   <a href="#approach">Approach</a> ·
   <a href="#evaluation">Evaluation</a> ·
+  <a href="#results">Results</a> ·
   <a href="#roadmap">Roadmap</a>
 </p>
 
@@ -122,7 +123,8 @@ That makes **directed relation extraction** the central technical challenge, and
 | Pinned corpus acquisition with per-file hash manifest | ✅ Done |
 | BRAT → canonical graph converter and validator | ✅ Done |
 | Correction ledger, exact and near-duplicate audit, frozen splits | ✅ Done |
-| Rule-based and CRF / logistic-regression baselines | 🚧 Next |
+| Rule-based baseline | ✅ Done |
+| CRF / logistic-regression baseline | 🚧 Next |
 | BERT / SciBERT span-and-relation model | ⬜ Planned |
 | Calibration, error analysis, challenge set | ⬜ Planned |
 | FastAPI service, review interface, exports | ⬜ Planned |
@@ -152,6 +154,9 @@ uv run python scripts/build_splits.py
 
 # Score a prediction file with the shared scorer (the test split is locked)
 uv run python scripts/evaluate.py --split dev --pred predictions.jsonl --out report.json
+
+# Fit the rule-based baseline on train, select thresholds on dev, write reports/baselines/
+uv run python scripts/run_rules.py
 
 # Tests (no network needed) and static checks
 uv run pytest -m "not slow"
@@ -260,6 +265,27 @@ The locked test split can only be scored for a declared release. Planned slices:
 reagent names, Unicode perturbations, template siblings, a challenge set and recently
 published protocols.
 
+## Results
+
+> [!IMPORTANT]
+> These are **development-set** results, used to build and compare systems. The locked
+> test split has not been evaluated, and won't be until a declared release.
+
+| System (dev, 112 documents) | Entity F1 | Relation F1, gold entities | **Relation F1, end-to-end** | Quantity attachment | Complete steps |
+|---|---:|---:|---:|---:|---:|
+| Rules | 0.692 [0.666, 0.715] | 0.604 [0.577, 0.633] | **0.355** [0.322, 0.386] | 0.521 | 0.112 |
+| CRF + logistic regression | — | — | — | — | — |
+| SciBERT span-relation | — | — | — | — | — |
+
+<sub>Strict matching; 95% document-level bootstrap intervals in brackets. Full per-label
+tables: <a href="reports/baselines/rules-dev.md">reports/baselines/rules-dev.md</a>.</sub>
+
+With every entity given, the rules attach relations at F1 0.604. End-to-end they drop to
+0.355, because each missed or mis-bounded entity also breaks the relations that touch it.
+Quantities are easy for rules (Temperature 0.93, Time 0.91, Amount 0.86 entity F1), while
+open-vocabulary types are not (Device 0.47, Method 0.40). For reference, duplicate copies
+of the same protocol in the corpus agree with each other at relation F1 0.711.
+
 ## Roadmap
 
 - [x] **Phase 0:** project skeleton, CI, pinned corpus acquisition
@@ -284,11 +310,17 @@ ProtocolLedger/
 ├── docs/
 │   ├── assets/            # README artwork
 │   └── dataset_card.md    # sources, conversion, corrections, deduplication, splits
+├── reports/baselines/     # committed dev reports (JSON + Markdown)
 ├── scripts/
 │   ├── acquire.py         # fetch and verify the pinned corpus
 │   ├── convert.py         # BRAT → canonical JSONL graphs + conversion report
 │   ├── build_splits.py    # correction ledger, deduplication, frozen splits
-│   └── evaluate.py        # score predictions with the shared scorer
+│   ├── evaluate.py        # score predictions with the shared scorer
+│   └── run_rules.py       # fit / select / report the rule-based baseline
+├── src/protocolledger/baselines/
+│   └── rules.py           # unit patterns, training dictionary, nearest-span relations
+├── src/protocolledger/text/
+│   └── tokenize.py        # offset-preserving tokenizer
 ├── src/protocolledger/eval/
 │   └── scorer.py          # strict entity, end-to-end relation, attachment, step metrics
 ├── src/protocolledger/data/

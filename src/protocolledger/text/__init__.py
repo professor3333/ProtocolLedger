@@ -1,0 +1,1 @@
+"""Offset-preserving text processing."""
