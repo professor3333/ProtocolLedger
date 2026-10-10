@@ -1,0 +1,755 @@
+{
+ "system": "span-relation",
+ "run": "scibert-lr5e-5-s13",
+ "config": {
+  "neural_version": "1",
+  "encoder": "scibert",
+  "freeze_encoder": false,
+  "max_span_words": 10,
+  "width_embedding_dim": 25,
+  "type_embedding_dim": 25,
+  "distance_embedding_dim": 25,
+  "use_type_features": true,
+  "use_distance_features": true,
+  "dropout": 0.1,
+  "negative_spans": 100,
+  "negative_pairs": 100,
+  "hard_negatives": true,
+  "learning_rate": 5e-05,
+  "head_learning_rate": 0.001,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "batch_size": 16,
+  "grad_accumulation": 1,
+  "epochs": 10,
+  "patience": 3,
+  "relation_threshold": 0.5,
+  "restrict_type_pairs": true,
+  "max_subwords": 510,
+  "seed": 13,
+  "mixed_precision": true
+ },
+ "metadata": {
+  "encoder_name": "allenai/scibert_scivocab_cased",
+  "encoder_revision": "ddf0be025f8e432a1870e34811997ba6725bf04a",
+  "encoder_view_version": "1",
+  "splits_manifest_sha256": "e0136ae42662b7857cad7b25d4dc56a01eca4808b98e0544974624b0d1d1710c",
+  "code_commit": "b321cc67bb378710b65ee46326c62560000e5201",
+  "torch": "2.11.0+cu128",
+  "device": "Tesla T4",
+  "smoke": false
+ },
+ "best_epoch": 8,
+ "history": [
+  {
+   "epoch": 0.0,
+   "dev_entity_f1": 0.7828,
+   "dev_relation_f1": 0.5805,
+   "dev_relation_f1_gold_entities": 0.7521,
+   "dev_quantity_attachment": 0.6151,
+   "dev_complete_steps": 0.1981,
+   "train_loss": 0.3862256426858691,
+   "train_entity_loss": 0.30940175612778525,
+   "train_relation_loss": 0.07682388600382327,
+   "epoch_seconds": 70.82225918769836
+  },
+  {
+   "epoch": 1.0,
+   "dev_entity_f1": 0.7893,
+   "dev_relation_f1": 0.6149,
+   "dev_relation_f1_gold_entities": 0.804,
+   "dev_quantity_attachment": 0.7342,
+   "dev_complete_steps": 0.2248,
+   "train_loss": 0.10135935940903372,
+   "train_entity_loss": 0.08473790002640634,
+   "train_relation_loss": 0.016621459308451256,
+   "epoch_seconds": 69.67905783653259
+  },
+  {
+   "epoch": 2.0,
+   "dev_entity_f1": 0.7976,
+   "dev_relation_f1": 0.632,
+   "dev_relation_f1_gold_entities": 0.8159,
+   "dev_quantity_attachment": 0.7631,
+   "dev_complete_steps": 0.2441,
+   "train_loss": 0.07493185303874511,
+   "train_entity_loss": 0.06127958310009763,
+   "train_relation_loss": 0.013652269896408296,
+   "epoch_seconds": 69.97088551521301
+  },
+  {
+   "epoch": 3.0,
+   "dev_entity_f1": 0.7958,
+   "dev_relation_f1": 0.624,
+   "dev_relation_f1_gold_entities": 0.8162,
+   "dev_quantity_attachment": 0.7681,
+   "dev_complete_steps": 0.2373,
+   "train_loss": 0.06007833077069537,
+   "train_entity_loss": 0.047868925113791386,
+   "train_relation_loss": 0.012209405811437595,
+   "epoch_seconds": 69.67362093925476
+  },
+  {
+   "epoch": 4.0,
+   "dev_entity_f1": 0.7947,
+   "dev_relation_f1": 0.6316,
+   "dev_relation_f1_gold_entities": 0.8173,
+   "dev_quantity_attachment": 0.7427,
+   "dev_complete_steps": 0.2437,
+   "train_loss": 0.04904401858246564,
+   "train_entity_loss": 0.038009805874734195,
+   "train_relation_loss": 0.0110342127571822,
+   "epoch_seconds": 69.78005003929138
+  },
+  {
+   "epoch": 5.0,
+   "dev_entity_f1": 0.7936,
+   "dev_relation_f1": 0.633,
+   "dev_relation_f1_gold_entities": 0.8198,
+   "dev_quantity_attachment": 0.738,
+   "dev_complete_steps": 0.244,
+   "train_loss": 0.04128066927969324,
+   "train_entity_loss": 0.031107954151384468,
+   "train_relation_loss": 0.01017271507473712,
+   "epoch_seconds": 69.93074059486389
+  },
+  {
+   "epoch": 6.0,
+   "dev_entity_f1": 0.7933,
+   "dev_relation_f1": 0.6322,
+   "dev_relation_f1_gold_entities": 0.8217,
+   "dev_quantity_attachment": 0.7637,
+   "dev_complete_steps": 0.2544,
+   "train_loss": 0.03417237515899196,
+   "train_entity_loss": 0.02490535405963099,
+   "train_relation_loss": 0.009267021060727569,
+   "epoch_seconds": 69.71663117408752
+  },
+  {
+   "epoch": 7.0,
+   "dev_entity_f1": 0.7947,
+   "dev_relation_f1": 0.6327,
+   "dev_relation_f1_gold_entities": 0.8191,
+   "dev_quantity_attachment": 0.7741,
+   "dev_complete_steps": 0.2497,
+   "train_loss": 0.030501574123344196,
+   "train_entity_loss": 0.02179082444110737,
+   "train_relation_loss": 0.008710749666783464,
+   "epoch_seconds": 69.74527883529663
+  },
+  {
+   "epoch": 8.0,
+   "dev_entity_f1": 0.7977,
+   "dev_relation_f1": 0.6391,
+   "dev_relation_f1_gold_entities": 0.8226,
+   "dev_quantity_attachment": 0.7694,
+   "dev_complete_steps": 0.256,
+   "train_loss": 0.02624381173492731,
+   "train_entity_loss": 0.01822314353503155,
+   "train_relation_loss": 0.008020668165898363,
+   "epoch_seconds": 69.7261655330658
+  },
+  {
+   "epoch": 9.0,
+   "dev_entity_f1": 0.7962,
+   "dev_relation_f1": 0.6384,
+   "dev_relation_f1_gold_entities": 0.8231,
+   "dev_quantity_attachment": 0.7666,
+   "dev_complete_steps": 0.2572,
+   "train_loss": 0.023469619566277987,
+   "train_entity_loss": 0.01585847161920428,
+   "train_relation_loss": 0.0076111479372865795,
+   "epoch_seconds": 69.74335384368896
+  }
+ ],
+ "coverage": {
+  "train": {
+   "entities": 40806,
+   "entities_misaligned": 310,
+   "entities_too_wide": 33,
+   "entities_split_by_window": 0,
+   "relations": 27214,
+   "relations_unreachable": 322
+  },
+  "dev": {
+   "entities": 14936,
+   "entities_misaligned": 115,
+   "entities_too_wide": 18,
+   "entities_split_by_window": 0,
+   "relations": 10065,
+   "relations_unreachable": 146
+  }
+ },
+ "end_to_end": {
+  "documents": 112,
+  "bootstrap": {
+   "unit": "document",
+   "resamples": 1000,
+   "seed": 13
+  },
+  "entities": {
+   "micro": {
+    "precision": 0.8021,
+    "recall": 0.7934,
+    "f1": 0.7977,
+    "f1_ci95": [
+     0.7775,
+     0.8199
+    ],
+    "tp": 11850,
+    "fp": 2924,
+    "fn": 3086
+   },
+   "macro_f1": 0.7439,
+   "macro_f1_labels": 18,
+   "per_label": {
+    "Action": {
+     "precision": 0.8966,
+     "recall": 0.8966,
+     "f1": 0.8966,
+     "support": 3812,
+     "predicted": 3812
+    },
+    "Amount": {
+     "precision": 0.9078,
+     "recall": 0.8774,
+     "f1": 0.8924,
+     "support": 1044,
+     "predicted": 1009
+    },
+    "Concentration": {
+     "precision": 0.7831,
+     "recall": 0.864,
+     "f1": 0.8216,
+     "support": 397,
+     "predicted": 438
+    },
+    "Device": {
+     "precision": 0.6821,
+     "recall": 0.6916,
+     "f1": 0.6869,
+     "support": 574,
+     "predicted": 582
+    },
+    "Generic-Measure": {
+     "precision": 0.3818,
+     "recall": 0.3387,
+     "f1": 0.359,
+     "support": 124,
+     "predicted": 110
+    },
+    "Location": {
+     "precision": 0.7602,
+     "recall": 0.7478,
+     "f1": 0.7539,
+     "support": 1352,
+     "predicted": 1330
+    },
+    "Measure-Type": {
+     "precision": 0.5548,
+     "recall": 0.5081,
+     "f1": 0.5304,
+     "support": 309,
+     "predicted": 283
+    },
+    "Mention": {
+     "precision": 0.7385,
+     "recall": 0.64,
+     "f1": 0.6857,
+     "support": 75,
+     "predicted": 65
+    },
+    "Method": {
+     "precision": 0.5475,
+     "recall": 0.5356,
+     "f1": 0.5415,
+     "support": 506,
+     "predicted": 495
+    },
+    "Modifier": {
+     "precision": 0.5877,
+     "recall": 0.5737,
+     "f1": 0.5806,
+     "support": 1478,
+     "predicted": 1443
+    },
+    "Numerical": {
+     "precision": 0.6525,
+     "recall": 0.6135,
+     "f1": 0.6324,
+     "support": 251,
+     "predicted": 236
+    },
+    "Reagent": {
+     "precision": 0.8215,
+     "recall": 0.822,
+     "f1": 0.8217,
+     "support": 3432,
+     "predicted": 3434
+    },
+    "Seal": {
+     "precision": 0.7386,
+     "recall": 0.7738,
+     "f1": 0.7558,
+     "support": 84,
+     "predicted": 88
+    },
+    "Size": {
+     "precision": 0.8172,
+     "recall": 0.623,
+     "f1": 0.707,
+     "support": 122,
+     "predicted": 93
+    },
+    "Speed": {
+     "precision": 0.99,
+     "recall": 0.9567,
+     "f1": 0.9731,
+     "support": 208,
+     "predicted": 201
+    },
+    "Temperature": {
+     "precision": 0.949,
+     "recall": 0.9469,
+     "f1": 0.948,
+     "support": 452,
+     "predicted": 451
+    },
+    "Time": {
+     "precision": 0.9334,
+     "recall": 0.9185,
+     "f1": 0.9259,
+     "support": 687,
+     "predicted": 676
+    },
+    "pH": {
+     "precision": 0.8929,
+     "recall": 0.8621,
+     "f1": 0.8772,
+     "support": 29,
+     "predicted": 28
+    }
+   }
+  },
+  "relations": {
+   "micro": {
+    "precision": 0.6488,
+    "recall": 0.6297,
+    "f1": 0.6391,
+    "f1_ci95": [
+     0.6156,
+     0.6645
+    ],
+    "tp": 6338,
+    "fp": 3431,
+    "fn": 3727
+   },
+   "macro_f1": 0.4459,
+   "macro_f1_labels": 14,
+   "per_label": {
+    "Acts-on": {
+     "precision": 0.7118,
+     "recall": 0.7078,
+     "f1": 0.7098,
+     "support": 2827,
+     "predicted": 2811
+    },
+    "Commands": {
+     "precision": 0.0488,
+     "recall": 0.0541,
+     "f1": 0.0513,
+     "support": 37,
+     "predicted": 41
+    },
+    "Coreference-Link": {
+     "precision": 0.4286,
+     "recall": 0.2903,
+     "f1": 0.3462,
+     "support": 124,
+     "predicted": 84
+    },
+    "Count": {
+     "precision": 0.434,
+     "recall": 0.4646,
+     "f1": 0.4488,
+     "support": 99,
+     "predicted": 106
+    },
+    "Measure": {
+     "precision": 0.6986,
+     "recall": 0.7106,
+     "f1": 0.7045,
+     "support": 1510,
+     "predicted": 1536
+    },
+    "Measure-Type-Link": {
+     "precision": 0.4032,
+     "recall": 0.4202,
+     "f1": 0.4115,
+     "support": 119,
+     "predicted": 124
+    },
+    "Meronym": {
+     "precision": 0.4,
+     "recall": 0.3497,
+     "f1": 0.3732,
+     "support": 366,
+     "predicted": 320
+    },
+    "Mod-Link": {
+     "precision": 0.5443,
+     "recall": 0.509,
+     "f1": 0.526,
+     "support": 1389,
+     "predicted": 1299
+    },
+    "Of-Type": {
+     "precision": 0.0833,
+     "recall": 0.0385,
+     "f1": 0.0526,
+     "support": 26,
+     "predicted": 12
+    },
+    "Or": {
+     "precision": 0.5188,
+     "recall": 0.3812,
+     "f1": 0.4395,
+     "support": 181,
+     "predicted": 133
+    },
+    "Product": {
+     "precision": 0.2895,
+     "recall": 0.2178,
+     "f1": 0.2486,
+     "support": 101,
+     "predicted": 76
+    },
+    "Setting": {
+     "precision": 0.777,
+     "recall": 0.7713,
+     "f1": 0.7741,
+     "support": 1482,
+     "predicted": 1471
+    },
+    "Site": {
+     "precision": 0.6255,
+     "recall": 0.671,
+     "f1": 0.6475,
+     "support": 1073,
+     "predicted": 1151
+    },
+    "Using": {
+     "precision": 0.562,
+     "recall": 0.4651,
+     "f1": 0.509,
+     "support": 731,
+     "predicted": 605
+    }
+   }
+  },
+  "quantity_attachment": {
+   "accuracy": 0.7694,
+   "ci95": [
+    0.7365,
+    0.7984
+   ],
+   "correct": 2449,
+   "total": 3183
+  },
+  "complete_steps": {
+   "exact_match": 0.256,
+   "ci95": [
+    0.219,
+    0.302
+   ],
+   "exact": 650,
+   "total": 2539
+  }
+ },
+ "gold_entities": {
+  "documents": 112,
+  "bootstrap": {
+   "unit": "document",
+   "resamples": 1000,
+   "seed": 13
+  },
+  "entities": {
+   "micro": {
+    "precision": 1.0,
+    "recall": 0.9911,
+    "f1": 0.9955,
+    "f1_ci95": [
+     0.9922,
+     0.9979
+    ],
+    "tp": 14803,
+    "fp": 0,
+    "fn": 133
+   },
+   "macro_f1": 0.997,
+   "macro_f1_labels": 18,
+   "per_label": {
+    "Action": {
+     "precision": 1.0,
+     "recall": 0.9961,
+     "f1": 0.998,
+     "support": 3812,
+     "predicted": 3797
+    },
+    "Amount": {
+     "precision": 1.0,
+     "recall": 0.9741,
+     "f1": 0.9869,
+     "support": 1044,
+     "predicted": 1017
+    },
+    "Concentration": {
+     "precision": 1.0,
+     "recall": 0.9924,
+     "f1": 0.9962,
+     "support": 397,
+     "predicted": 394
+    },
+    "Device": {
+     "precision": 1.0,
+     "recall": 0.9965,
+     "f1": 0.9983,
+     "support": 574,
+     "predicted": 572
+    },
+    "Generic-Measure": {
+     "precision": 1.0,
+     "recall": 0.9839,
+     "f1": 0.9919,
+     "support": 124,
+     "predicted": 122
+    },
+    "Location": {
+     "precision": 1.0,
+     "recall": 0.9956,
+     "f1": 0.9978,
+     "support": 1352,
+     "predicted": 1346
+    },
+    "Measure-Type": {
+     "precision": 1.0,
+     "recall": 0.9903,
+     "f1": 0.9951,
+     "support": 309,
+     "predicted": 306
+    },
+    "Mention": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 75,
+     "predicted": 75
+    },
+    "Method": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 506,
+     "predicted": 506
+    },
+    "Modifier": {
+     "precision": 1.0,
+     "recall": 0.9966,
+     "f1": 0.9983,
+     "support": 1478,
+     "predicted": 1473
+    },
+    "Numerical": {
+     "precision": 1.0,
+     "recall": 0.996,
+     "f1": 0.998,
+     "support": 251,
+     "predicted": 250
+    },
+    "Reagent": {
+     "precision": 1.0,
+     "recall": 0.9819,
+     "f1": 0.9909,
+     "support": 3432,
+     "predicted": 3370
+    },
+    "Seal": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 84,
+     "predicted": 84
+    },
+    "Size": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 122,
+     "predicted": 122
+    },
+    "Speed": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 208,
+     "predicted": 208
+    },
+    "Temperature": {
+     "precision": 1.0,
+     "recall": 0.9978,
+     "f1": 0.9989,
+     "support": 452,
+     "predicted": 451
+    },
+    "Time": {
+     "precision": 1.0,
+     "recall": 0.9913,
+     "f1": 0.9956,
+     "support": 687,
+     "predicted": 681
+    },
+    "pH": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 29,
+     "predicted": 29
+    }
+   }
+  },
+  "relations": {
+   "micro": {
+    "precision": 0.8504,
+    "recall": 0.7965,
+    "f1": 0.8226,
+    "f1_ci95": [
+     0.8051,
+     0.839
+    ],
+    "tp": 8017,
+    "fp": 1410,
+    "fn": 2048
+   },
+   "macro_f1": 0.6556,
+   "macro_f1_labels": 14,
+   "per_label": {
+    "Acts-on": {
+     "precision": 0.8844,
+     "recall": 0.8472,
+     "f1": 0.8654,
+     "support": 2827,
+     "predicted": 2708
+    },
+    "Commands": {
+     "precision": 0.2,
+     "recall": 0.1351,
+     "f1": 0.1613,
+     "support": 37,
+     "predicted": 25
+    },
+    "Coreference-Link": {
+     "precision": 0.6757,
+     "recall": 0.4032,
+     "f1": 0.5051,
+     "support": 124,
+     "predicted": 74
+    },
+    "Count": {
+     "precision": 0.7857,
+     "recall": 0.7778,
+     "f1": 0.7817,
+     "support": 99,
+     "predicted": 98
+    },
+    "Measure": {
+     "precision": 0.9023,
+     "recall": 0.8868,
+     "f1": 0.8945,
+     "support": 1510,
+     "predicted": 1484
+    },
+    "Measure-Type-Link": {
+     "precision": 0.8051,
+     "recall": 0.7983,
+     "f1": 0.8017,
+     "support": 119,
+     "predicted": 118
+    },
+    "Meronym": {
+     "precision": 0.6325,
+     "recall": 0.4891,
+     "f1": 0.5516,
+     "support": 366,
+     "predicted": 283
+    },
+    "Mod-Link": {
+     "precision": 0.9107,
+     "recall": 0.7927,
+     "f1": 0.8476,
+     "support": 1389,
+     "predicted": 1209
+    },
+    "Of-Type": {
+     "precision": 0.5882,
+     "recall": 0.3846,
+     "f1": 0.4651,
+     "support": 26,
+     "predicted": 17
+    },
+    "Or": {
+     "precision": 0.6884,
+     "recall": 0.5249,
+     "f1": 0.5956,
+     "support": 181,
+     "predicted": 138
+    },
+    "Product": {
+     "precision": 0.3939,
+     "recall": 0.2574,
+     "f1": 0.3114,
+     "support": 101,
+     "predicted": 66
+    },
+    "Setting": {
+     "precision": 0.8515,
+     "recall": 0.8475,
+     "f1": 0.8495,
+     "support": 1482,
+     "predicted": 1475
+    },
+    "Site": {
+     "precision": 0.8034,
+     "recall": 0.8416,
+     "f1": 0.822,
+     "support": 1073,
+     "predicted": 1124
+    },
+    "Using": {
+     "precision": 0.7993,
+     "recall": 0.6648,
+     "f1": 0.7259,
+     "support": 731,
+     "predicted": 608
+    }
+   }
+  },
+  "quantity_attachment": {
+   "accuracy": 0.8684,
+   "ci95": [
+    0.8427,
+    0.8919
+   ],
+   "correct": 2764,
+   "total": 3183
+  },
+  "complete_steps": {
+   "exact_match": 0.4661,
+   "ci95": [
+    0.4318,
+    0.5041
+   ],
+   "exact": 1176,
+   "total": 2523
+  }
+ }
+}

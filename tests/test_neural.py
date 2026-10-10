@@ -9,7 +9,7 @@ transformers = pytest.importorskip("transformers")
 
 from protocolledger.eval.scorer import evaluate  # noqa: E402
 from protocolledger.neural.batching import encode_batch, sample_targets, subword_counter  # noqa: E402
-from protocolledger.neural.config import ENCODERS, NeuralConfig  # noqa: E402
+from protocolledger.neural.config import ENCODERS, NeuralConfig, preserves_case  # noqa: E402
 from protocolledger.neural.encoding import Coverage, build_examples  # noqa: E402
 from protocolledger.neural.model import range_max, sparse_table  # noqa: E402
 from protocolledger.neural.predict import predict_documents  # noqa: E402
@@ -306,3 +306,20 @@ def test_resume_refuses_a_different_config(tmp_path: Path) -> None:
             device=cpu,
             log=lambda _: None,
         )
+
+
+def test_case_check_accepts_any_split_but_rejects_lowercasing(tmp_path: Path) -> None:
+    whole = tmp_path / "whole"
+    split = tmp_path / "split"
+    for folder, vocab in (
+        (whole, ["mM", "DNA", "MgCl2"]),
+        (split, ["m", "##M", "DNA", "Mg", "##Cl2"]),
+    ):
+        folder.mkdir()
+        lines = ["[PAD]", "[UNK]", "[CLS]", "[SEP]", "[MASK]", *vocab, "mm", "dna", "mgcl2"]
+        (folder / "vocab.txt").write_text("\n".join(lines), "utf-8")
+    for folder in (whole, split):
+        cased = transformers.BertTokenizerFast.from_pretrained(str(folder), do_lower_case=False)
+        lowered = transformers.BertTokenizerFast.from_pretrained(str(folder), do_lower_case=True)
+        assert preserves_case(cased)
+        assert not preserves_case(lowered)

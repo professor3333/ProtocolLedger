@@ -24,7 +24,7 @@ import torch
 
 from protocolledger.data.splits import load_split
 from protocolledger.eval.scorer import render_markdown
-from protocolledger.neural.config import ENCODERS, NeuralConfig
+from protocolledger.neural.config import ENCODERS, NeuralConfig, preserves_case
 from protocolledger.neural.train import dev_metrics, load_best, train
 from protocolledger.text.normalize import ENCODER_VIEW_VERSION
 
@@ -47,7 +47,7 @@ def load_encoder(key: str) -> tuple[Any, Any, int]:
     )
     if not tokenizer.is_fast:
         raise RuntimeError("a fast tokenizer is required for word alignment")
-    if tokenizer.tokenize("mM DNA") != ["mM", "DNA"]:
+    if not preserves_case(tokenizer):
         raise RuntimeError(f"{spec.name} tokenizer is not case-preserving")
     encoder = AutoModel.from_pretrained(spec.name, revision=spec.revision)
     return encoder, tokenizer, int(encoder.config.hidden_size)

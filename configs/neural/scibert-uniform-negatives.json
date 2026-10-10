@@ -1,5 +1,5 @@
 {
  "encoder": "scibert",
- "learning_rate": 5e-05,
+ "learning_rate": 2e-05,
  "hard_negatives": false
 }

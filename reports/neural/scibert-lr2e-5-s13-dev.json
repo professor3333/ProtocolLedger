@@ -1,0 +1,755 @@
+{
+ "system": "span-relation",
+ "run": "scibert-lr2e-5-s13",
+ "config": {
+  "neural_version": "1",
+  "encoder": "scibert",
+  "freeze_encoder": false,
+  "max_span_words": 10,
+  "width_embedding_dim": 25,
+  "type_embedding_dim": 25,
+  "distance_embedding_dim": 25,
+  "use_type_features": true,
+  "use_distance_features": true,
+  "dropout": 0.1,
+  "negative_spans": 100,
+  "negative_pairs": 100,
+  "hard_negatives": true,
+  "learning_rate": 2e-05,
+  "head_learning_rate": 0.001,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "batch_size": 16,
+  "grad_accumulation": 1,
+  "epochs": 10,
+  "patience": 3,
+  "relation_threshold": 0.5,
+  "restrict_type_pairs": true,
+  "max_subwords": 510,
+  "seed": 13,
+  "mixed_precision": true
+ },
+ "metadata": {
+  "encoder_name": "allenai/scibert_scivocab_cased",
+  "encoder_revision": "ddf0be025f8e432a1870e34811997ba6725bf04a",
+  "encoder_view_version": "1",
+  "splits_manifest_sha256": "e0136ae42662b7857cad7b25d4dc56a01eca4808b98e0544974624b0d1d1710c",
+  "code_commit": "b321cc67bb378710b65ee46326c62560000e5201",
+  "torch": "2.11.0+cu128",
+  "device": "Tesla T4",
+  "smoke": false
+ },
+ "best_epoch": 8,
+ "history": [
+  {
+   "epoch": 0.0,
+   "dev_entity_f1": 0.7652,
+   "dev_relation_f1": 0.5675,
+   "dev_relation_f1_gold_entities": 0.7616,
+   "dev_quantity_attachment": 0.6217,
+   "dev_complete_steps": 0.1697,
+   "train_loss": 0.4372309625511412,
+   "train_entity_loss": 0.3575545173896625,
+   "train_relation_loss": 0.07967644499664285,
+   "epoch_seconds": 70.0856659412384
+  },
+  {
+   "epoch": 1.0,
+   "dev_entity_f1": 0.7906,
+   "dev_relation_f1": 0.6147,
+   "dev_relation_f1_gold_entities": 0.8024,
+   "dev_quantity_attachment": 0.7254,
+   "dev_complete_steps": 0.2186,
+   "train_loss": 0.10996328267903455,
+   "train_entity_loss": 0.09307456387421198,
+   "train_relation_loss": 0.016888718821306145,
+   "epoch_seconds": 69.7324070930481
+  },
+  {
+   "epoch": 2.0,
+   "dev_entity_f1": 0.8034,
+   "dev_relation_f1": 0.6342,
+   "dev_relation_f1_gold_entities": 0.811,
+   "dev_quantity_attachment": 0.7411,
+   "dev_complete_steps": 0.241,
+   "train_loss": 0.0854884316089802,
+   "train_entity_loss": 0.07123277664382373,
+   "train_relation_loss": 0.014255654941461322,
+   "epoch_seconds": 69.94897890090942
+  },
+  {
+   "epoch": 3.0,
+   "dev_entity_f1": 0.8012,
+   "dev_relation_f1": 0.6316,
+   "dev_relation_f1_gold_entities": 0.816,
+   "dev_quantity_attachment": 0.7609,
+   "dev_complete_steps": 0.2414,
+   "train_loss": 0.07238997998688601,
+   "train_entity_loss": 0.059502372922029645,
+   "train_relation_loss": 0.012887607117397793,
+   "epoch_seconds": 69.72201037406921
+  },
+  {
+   "epoch": 4.0,
+   "dev_entity_f1": 0.8025,
+   "dev_relation_f1": 0.6354,
+   "dev_relation_f1_gold_entities": 0.8175,
+   "dev_quantity_attachment": 0.7556,
+   "dev_complete_steps": 0.245,
+   "train_loss": 0.06259703759796324,
+   "train_entity_loss": 0.050622988582910165,
+   "train_relation_loss": 0.011974048960451202,
+   "epoch_seconds": 69.80025482177734
+  },
+  {
+   "epoch": 5.0,
+   "dev_entity_f1": 0.8006,
+   "dev_relation_f1": 0.6356,
+   "dev_relation_f1_gold_entities": 0.8193,
+   "dev_quantity_attachment": 0.7414,
+   "dev_complete_steps": 0.25,
+   "train_loss": 0.0550745970330539,
+   "train_entity_loss": 0.04375005513017552,
+   "train_relation_loss": 0.01132454200384034,
+   "epoch_seconds": 69.86377334594727
+  },
+  {
+   "epoch": 6.0,
+   "dev_entity_f1": 0.7999,
+   "dev_relation_f1": 0.636,
+   "dev_relation_f1_gold_entities": 0.8239,
+   "dev_quantity_attachment": 0.7619,
+   "dev_complete_steps": 0.2493,
+   "train_loss": 0.048694759141653776,
+   "train_entity_loss": 0.03794486485668911,
+   "train_relation_loss": 0.010749894190184047,
+   "epoch_seconds": 70.09090399742126
+  },
+  {
+   "epoch": 7.0,
+   "dev_entity_f1": 0.7999,
+   "dev_relation_f1": 0.6352,
+   "dev_relation_f1_gold_entities": 0.8209,
+   "dev_quantity_attachment": 0.7619,
+   "dev_complete_steps": 0.2439,
+   "train_loss": 0.04550952658436335,
+   "train_entity_loss": 0.03519326131337578,
+   "train_relation_loss": 0.010316265331770796,
+   "epoch_seconds": 70.63239860534668
+  },
+  {
+   "epoch": 8.0,
+   "dev_entity_f1": 0.8017,
+   "dev_relation_f1": 0.6412,
+   "dev_relation_f1_gold_entities": 0.826,
+   "dev_quantity_attachment": 0.76,
+   "dev_complete_steps": 0.2545,
+   "train_loss": 0.041404732981020896,
+   "train_entity_loss": 0.03150775781997471,
+   "train_relation_loss": 0.009896975212557389,
+   "epoch_seconds": 70.55603981018066
+  },
+  {
+   "epoch": 9.0,
+   "dev_entity_f1": 0.8012,
+   "dev_relation_f1": 0.6397,
+   "dev_relation_f1_gold_entities": 0.8257,
+   "dev_quantity_attachment": 0.7622,
+   "dev_complete_steps": 0.2525,
+   "train_loss": 0.03876839367985989,
+   "train_entity_loss": 0.029164243182497083,
+   "train_relation_loss": 0.009604150518482403,
+   "epoch_seconds": 70.37477779388428
+  }
+ ],
+ "coverage": {
+  "train": {
+   "entities": 40806,
+   "entities_misaligned": 310,
+   "entities_too_wide": 33,
+   "entities_split_by_window": 0,
+   "relations": 27214,
+   "relations_unreachable": 322
+  },
+  "dev": {
+   "entities": 14936,
+   "entities_misaligned": 115,
+   "entities_too_wide": 18,
+   "entities_split_by_window": 0,
+   "relations": 10065,
+   "relations_unreachable": 146
+  }
+ },
+ "end_to_end": {
+  "documents": 112,
+  "bootstrap": {
+   "unit": "document",
+   "resamples": 1000,
+   "seed": 13
+  },
+  "entities": {
+   "micro": {
+    "precision": 0.8019,
+    "recall": 0.8015,
+    "f1": 0.8017,
+    "f1_ci95": [
+     0.7818,
+     0.8237
+    ],
+    "tp": 11971,
+    "fp": 2958,
+    "fn": 2965
+   },
+   "macro_f1": 0.7482,
+   "macro_f1_labels": 18,
+   "per_label": {
+    "Action": {
+     "precision": 0.8981,
+     "recall": 0.9063,
+     "f1": 0.9022,
+     "support": 3812,
+     "predicted": 3847
+    },
+    "Amount": {
+     "precision": 0.899,
+     "recall": 0.8784,
+     "f1": 0.8886,
+     "support": 1044,
+     "predicted": 1020
+    },
+    "Concentration": {
+     "precision": 0.7834,
+     "recall": 0.8564,
+     "f1": 0.8183,
+     "support": 397,
+     "predicted": 434
+    },
+    "Device": {
+     "precision": 0.6862,
+     "recall": 0.6934,
+     "f1": 0.6898,
+     "support": 574,
+     "predicted": 580
+    },
+    "Generic-Measure": {
+     "precision": 0.43,
+     "recall": 0.3468,
+     "f1": 0.3839,
+     "support": 124,
+     "predicted": 100
+    },
+    "Location": {
+     "precision": 0.7566,
+     "recall": 0.7426,
+     "f1": 0.7495,
+     "support": 1352,
+     "predicted": 1327
+    },
+    "Measure-Type": {
+     "precision": 0.5816,
+     "recall": 0.5534,
+     "f1": 0.5672,
+     "support": 309,
+     "predicted": 294
+    },
+    "Mention": {
+     "precision": 0.7286,
+     "recall": 0.68,
+     "f1": 0.7034,
+     "support": 75,
+     "predicted": 70
+    },
+    "Method": {
+     "precision": 0.5404,
+     "recall": 0.5415,
+     "f1": 0.541,
+     "support": 506,
+     "predicted": 507
+    },
+    "Modifier": {
+     "precision": 0.596,
+     "recall": 0.6049,
+     "f1": 0.6004,
+     "support": 1478,
+     "predicted": 1500
+    },
+    "Numerical": {
+     "precision": 0.6245,
+     "recall": 0.6096,
+     "f1": 0.6169,
+     "support": 251,
+     "predicted": 245
+    },
+    "Reagent": {
+     "precision": 0.8226,
+     "recall": 0.8298,
+     "f1": 0.8262,
+     "support": 3432,
+     "predicted": 3462
+    },
+    "Seal": {
+     "precision": 0.7727,
+     "recall": 0.8095,
+     "f1": 0.7907,
+     "support": 84,
+     "predicted": 88
+    },
+    "Size": {
+     "precision": 0.7826,
+     "recall": 0.5902,
+     "f1": 0.6729,
+     "support": 122,
+     "predicted": 92
+    },
+    "Speed": {
+     "precision": 0.99,
+     "recall": 0.9519,
+     "f1": 0.9706,
+     "support": 208,
+     "predicted": 200
+    },
+    "Temperature": {
+     "precision": 0.9469,
+     "recall": 0.9469,
+     "f1": 0.9469,
+     "support": 452,
+     "predicted": 452
+    },
+    "Time": {
+     "precision": 0.9253,
+     "recall": 0.9199,
+     "f1": 0.9226,
+     "support": 687,
+     "predicted": 683
+    },
+    "pH": {
+     "precision": 0.8929,
+     "recall": 0.8621,
+     "f1": 0.8772,
+     "support": 29,
+     "predicted": 28
+    }
+   }
+  },
+  "relations": {
+   "micro": {
+    "precision": 0.6526,
+    "recall": 0.6302,
+    "f1": 0.6412,
+    "f1_ci95": [
+     0.6169,
+     0.667
+    ],
+    "tp": 6343,
+    "fp": 3376,
+    "fn": 3722
+   },
+   "macro_f1": 0.4519,
+   "macro_f1_labels": 14,
+   "per_label": {
+    "Acts-on": {
+     "precision": 0.72,
+     "recall": 0.7103,
+     "f1": 0.7151,
+     "support": 2827,
+     "predicted": 2789
+    },
+    "Commands": {
+     "precision": 0.027,
+     "recall": 0.027,
+     "f1": 0.027,
+     "support": 37,
+     "predicted": 37
+    },
+    "Coreference-Link": {
+     "precision": 0.4706,
+     "recall": 0.3226,
+     "f1": 0.3828,
+     "support": 124,
+     "predicted": 85
+    },
+    "Count": {
+     "precision": 0.4078,
+     "recall": 0.4242,
+     "f1": 0.4158,
+     "support": 99,
+     "predicted": 103
+    },
+    "Measure": {
+     "precision": 0.7037,
+     "recall": 0.7126,
+     "f1": 0.7081,
+     "support": 1510,
+     "predicted": 1529
+    },
+    "Measure-Type-Link": {
+     "precision": 0.4297,
+     "recall": 0.4622,
+     "f1": 0.4453,
+     "support": 119,
+     "predicted": 128
+    },
+    "Meronym": {
+     "precision": 0.4271,
+     "recall": 0.3443,
+     "f1": 0.3812,
+     "support": 366,
+     "predicted": 295
+    },
+    "Mod-Link": {
+     "precision": 0.5462,
+     "recall": 0.5234,
+     "f1": 0.5346,
+     "support": 1389,
+     "predicted": 1331
+    },
+    "Of-Type": {
+     "precision": 0.2143,
+     "recall": 0.1154,
+     "f1": 0.15,
+     "support": 26,
+     "predicted": 14
+    },
+    "Or": {
+     "precision": 0.5676,
+     "recall": 0.3481,
+     "f1": 0.4315,
+     "support": 181,
+     "predicted": 111
+    },
+    "Product": {
+     "precision": 0.2836,
+     "recall": 0.1881,
+     "f1": 0.2262,
+     "support": 101,
+     "predicted": 67
+    },
+    "Setting": {
+     "precision": 0.774,
+     "recall": 0.7672,
+     "f1": 0.7706,
+     "support": 1482,
+     "predicted": 1469
+    },
+    "Site": {
+     "precision": 0.6236,
+     "recall": 0.6608,
+     "f1": 0.6416,
+     "support": 1073,
+     "predicted": 1137
+    },
+    "Using": {
+     "precision": 0.5401,
+     "recall": 0.461,
+     "f1": 0.4974,
+     "support": 731,
+     "predicted": 624
+    }
+   }
+  },
+  "quantity_attachment": {
+   "accuracy": 0.76,
+   "ci95": [
+    0.7266,
+    0.7907
+   ],
+   "correct": 2419,
+   "total": 3183
+  },
+  "complete_steps": {
+   "exact_match": 0.2545,
+   "ci95": [
+    0.2172,
+    0.2989
+   ],
+   "exact": 646,
+   "total": 2538
+  }
+ },
+ "gold_entities": {
+  "documents": 112,
+  "bootstrap": {
+   "unit": "document",
+   "resamples": 1000,
+   "seed": 13
+  },
+  "entities": {
+   "micro": {
+    "precision": 1.0,
+    "recall": 0.9911,
+    "f1": 0.9955,
+    "f1_ci95": [
+     0.9922,
+     0.9979
+    ],
+    "tp": 14803,
+    "fp": 0,
+    "fn": 133
+   },
+   "macro_f1": 0.997,
+   "macro_f1_labels": 18,
+   "per_label": {
+    "Action": {
+     "precision": 1.0,
+     "recall": 0.9961,
+     "f1": 0.998,
+     "support": 3812,
+     "predicted": 3797
+    },
+    "Amount": {
+     "precision": 1.0,
+     "recall": 0.9741,
+     "f1": 0.9869,
+     "support": 1044,
+     "predicted": 1017
+    },
+    "Concentration": {
+     "precision": 1.0,
+     "recall": 0.9924,
+     "f1": 0.9962,
+     "support": 397,
+     "predicted": 394
+    },
+    "Device": {
+     "precision": 1.0,
+     "recall": 0.9965,
+     "f1": 0.9983,
+     "support": 574,
+     "predicted": 572
+    },
+    "Generic-Measure": {
+     "precision": 1.0,
+     "recall": 0.9839,
+     "f1": 0.9919,
+     "support": 124,
+     "predicted": 122
+    },
+    "Location": {
+     "precision": 1.0,
+     "recall": 0.9956,
+     "f1": 0.9978,
+     "support": 1352,
+     "predicted": 1346
+    },
+    "Measure-Type": {
+     "precision": 1.0,
+     "recall": 0.9903,
+     "f1": 0.9951,
+     "support": 309,
+     "predicted": 306
+    },
+    "Mention": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 75,
+     "predicted": 75
+    },
+    "Method": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 506,
+     "predicted": 506
+    },
+    "Modifier": {
+     "precision": 1.0,
+     "recall": 0.9966,
+     "f1": 0.9983,
+     "support": 1478,
+     "predicted": 1473
+    },
+    "Numerical": {
+     "precision": 1.0,
+     "recall": 0.996,
+     "f1": 0.998,
+     "support": 251,
+     "predicted": 250
+    },
+    "Reagent": {
+     "precision": 1.0,
+     "recall": 0.9819,
+     "f1": 0.9909,
+     "support": 3432,
+     "predicted": 3370
+    },
+    "Seal": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 84,
+     "predicted": 84
+    },
+    "Size": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 122,
+     "predicted": 122
+    },
+    "Speed": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 208,
+     "predicted": 208
+    },
+    "Temperature": {
+     "precision": 1.0,
+     "recall": 0.9978,
+     "f1": 0.9989,
+     "support": 452,
+     "predicted": 451
+    },
+    "Time": {
+     "precision": 1.0,
+     "recall": 0.9913,
+     "f1": 0.9956,
+     "support": 687,
+     "predicted": 681
+    },
+    "pH": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "support": 29,
+     "predicted": 29
+    }
+   }
+  },
+  "relations": {
+   "micro": {
+    "precision": 0.8557,
+    "recall": 0.7983,
+    "f1": 0.826,
+    "f1_ci95": [
+     0.8077,
+     0.8426
+    ],
+    "tp": 8035,
+    "fp": 1355,
+    "fn": 2030
+   },
+   "macro_f1": 0.6495,
+   "macro_f1_labels": 14,
+   "per_label": {
+    "Acts-on": {
+     "precision": 0.891,
+     "recall": 0.8444,
+     "f1": 0.8671,
+     "support": 2827,
+     "predicted": 2679
+    },
+    "Commands": {
+     "precision": 0.1304,
+     "recall": 0.0811,
+     "f1": 0.1,
+     "support": 37,
+     "predicted": 23
+    },
+    "Coreference-Link": {
+     "precision": 0.6575,
+     "recall": 0.3871,
+     "f1": 0.4873,
+     "support": 124,
+     "predicted": 73
+    },
+    "Count": {
+     "precision": 0.8061,
+     "recall": 0.798,
+     "f1": 0.802,
+     "support": 99,
+     "predicted": 98
+    },
+    "Measure": {
+     "precision": 0.908,
+     "recall": 0.8894,
+     "f1": 0.8986,
+     "support": 1510,
+     "predicted": 1479
+    },
+    "Measure-Type-Link": {
+     "precision": 0.8017,
+     "recall": 0.8151,
+     "f1": 0.8083,
+     "support": 119,
+     "predicted": 121
+    },
+    "Meronym": {
+     "precision": 0.6277,
+     "recall": 0.4836,
+     "f1": 0.5463,
+     "support": 366,
+     "predicted": 282
+    },
+    "Mod-Link": {
+     "precision": 0.9136,
+     "recall": 0.8373,
+     "f1": 0.8738,
+     "support": 1389,
+     "predicted": 1273
+    },
+    "Of-Type": {
+     "precision": 0.625,
+     "recall": 0.3846,
+     "f1": 0.4762,
+     "support": 26,
+     "predicted": 16
+    },
+    "Or": {
+     "precision": 0.7,
+     "recall": 0.5028,
+     "f1": 0.5852,
+     "support": 181,
+     "predicted": 130
+    },
+    "Product": {
+     "precision": 0.35,
+     "recall": 0.2079,
+     "f1": 0.2609,
+     "support": 101,
+     "predicted": 60
+    },
+    "Setting": {
+     "precision": 0.8509,
+     "recall": 0.8394,
+     "f1": 0.8451,
+     "support": 1482,
+     "predicted": 1462
+    },
+    "Site": {
+     "precision": 0.8137,
+     "recall": 0.8388,
+     "f1": 0.8261,
+     "support": 1073,
+     "predicted": 1106
+    },
+    "Using": {
+     "precision": 0.8027,
+     "recall": 0.6457,
+     "f1": 0.7157,
+     "support": 731,
+     "predicted": 588
+    }
+   }
+  },
+  "quantity_attachment": {
+   "accuracy": 0.8646,
+   "ci95": [
+    0.8372,
+    0.8884
+   ],
+   "correct": 2752,
+   "total": 3183
+  },
+  "complete_steps": {
+   "exact_match": 0.4681,
+   "ci95": [
+    0.4321,
+    0.5048
+   ],
+   "exact": 1181,
+   "total": 2523
+  }
+ }
+}

@@ -76,3 +76,16 @@ class NeuralConfig:
     @classmethod
     def load(cls, path: Path) -> NeuralConfig:
         return cls.from_json(json.loads(path.read_text("utf-8")))
+
+
+CASE_PROBE = "mM DNA MgCl2"
+
+
+def preserves_case(tokenizer: Any) -> bool:
+    """True when subword tokens reassemble to the probe with its case intact.
+
+    Vocabularies split words differently (BERT: ``m ##M``, SciBERT: ``mM``), so the check
+    compares the reassembled characters, not the token sequence.
+    """
+    pieces = [t[2:] if t.startswith("##") else t for t in tokenizer.tokenize(CASE_PROBE)]
+    return "".join(pieces) == CASE_PROBE.replace(" ", "")

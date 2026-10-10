@@ -411,11 +411,14 @@ published protocols.
 |---|---:|---:|---:|---:|---:|
 | Rules | 0.692 [0.666, 0.715] | 0.604 [0.577, 0.633] | **0.355** [0.322, 0.386] | 0.521 | 0.112 |
 | CRF + logistic regression | 0.756 [0.733, 0.779] | 0.812 [0.795, 0.829] | **0.582** [0.553, 0.611] | 0.708 | 0.231 |
-| SciBERT span-relation | — | — | — | — | — |
+| SciBERT span-relation (lr 2e-5, seed 13)¹ | 0.802 [0.782, 0.824] | 0.826 | **0.641** [0.617, 0.667] | 0.760 | 0.255 |
+| SciBERT span-relation (lr 5e-5, seed 13)¹ | 0.798 [0.778, 0.820] | 0.823 | **0.639** [0.616, 0.665] | 0.769 | 0.256 |
 
-<sub>Strict matching; 95% document-level bootstrap intervals in brackets. Full per-label
+<sub>¹ Single seed; BERT control, ablations and two more seeds are running. Strict
+matching; 95% document-level bootstrap intervals in brackets. Full per-label
 tables: <a href="reports/baselines/rules-dev.md">rules</a>,
-<a href="reports/baselines/crf-logreg-dev.md">CRF + logistic regression</a>.</sub>
+<a href="reports/baselines/crf-logreg-dev.md">CRF + logistic regression</a>,
+<a href="reports/neural/scibert-lr2e-5-s13-dev.md">SciBERT</a>.</sub>
 
 - **Supervision pays off.** The CRF + logistic-regression baseline raises end-to-end
   relation F1 from 0.355 to 0.582. Most of the gain is in attachment: given the same gold
