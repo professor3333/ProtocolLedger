@@ -208,11 +208,19 @@ def create_app(bundle_dir: Path | None, review_db: Path | None = None) -> FastAP
             raise HTTPException(status_code=422, detail=f"text exceeds {MAX_LINES} lines")
 
         extractor = loaded.extractor
-        raw_entities = extractor.predict_entities(text)
-        raw_relations = extractor.predict_relations(text, raw_entities)
-        entities = [Entity(**e, text=text[e["start"] : e["end"]]) for e in raw_entities]
+        raw_entities, raw_relations = extractor.extract(text)
+        entities = [
+            Entity(
+                **{k: e[k] for k in ("id", "label", "start", "end")},
+                text=text[e["start"] : e["end"]],
+                score=e.get("score"),
+            )
+            for e in raw_entities
+        ]
         relations = [
-            Relation(id=f"R{i}", head=r["head"], label=r["label"], tail=r["tail"])
+            Relation(
+                id=f"R{i}", head=r["head"], label=r["label"], tail=r["tail"], score=r.get("score")
+            )
             for i, r in enumerate(raw_relations, start=1)
         ]
         rows, review = build_sheet(raw_entities, raw_relations)

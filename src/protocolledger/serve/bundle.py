@@ -30,11 +30,9 @@ class BundleError(RuntimeError):
 
 
 class Extractor(Protocol):
-    def predict_entities(self, text: str) -> list[dict[str, Any]]: ...
-
-    def predict_relations(
-        self, text: str, entities: list[dict[str, Any]]
-    ) -> list[dict[str, str]]: ...
+    def extract(self, text: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+        """(entities, relations) with raw-text code-point offsets."""
+        ...
 
 
 def _sha256(data: bytes) -> str:
@@ -48,11 +46,9 @@ class TraditionalExtractor:
     tagger: CRFTagger
     relations: LogRegRelations
 
-    def predict_entities(self, text: str) -> list[dict[str, Any]]:
-        return self.tagger.predict_entities(text)
-
-    def predict_relations(self, text: str, entities: list[dict[str, Any]]) -> list[dict[str, str]]:
-        return self.relations.predict_relations(text, entities)
+    def extract(self, text: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+        entities = self.tagger.predict_entities(text)
+        return entities, self.relations.predict_relations(text, entities)
 
 
 @dataclass
@@ -72,6 +68,7 @@ class LoadedBundle:
             "system": self.manifest["system"],
             "bundle_sha256": self.manifest_sha256,
             "preprocessing_version": self.manifest["preprocessing_version"],
+            "quantization": getattr(self.extractor, "quantization", "none"),
             "evaluation": self.manifest.get("evaluation", {}),
         }
 
@@ -120,8 +117,14 @@ def load_bundle(directory: Path) -> LoadedBundle:
     manifest: dict[str, Any] = json.loads(raw)
     if manifest.get("bundle_format") != BUNDLE_FORMAT:
         raise BundleError("unsupported bundle format")
-    if manifest.get("system") != "crf+logreg":
-        raise BundleError(f"unsupported system {manifest.get('system')!r}")
+    system = manifest.get("system")
+    if system == "span-relation":
+        from protocolledger.serve.neural_bundle import load_neural_bundle
+
+        neural, digest = load_neural_bundle(directory, manifest, raw)
+        return LoadedBundle(directory, manifest, digest, neural)
+    if system != "crf+logreg":
+        raise BundleError(f"unsupported system {system!r}")
     blobs: dict[str, bytes] = {}
     for key, entry in manifest["files"].items():
         path = directory / entry["path"]

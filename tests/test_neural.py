@@ -67,6 +67,9 @@ VOCAB_WORDS = [
     "Incubate",
     "in",
     "ice",
+    "mM",
+    "DNA",
+    "MgCl2",
 ]
 
 

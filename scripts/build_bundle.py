@@ -65,8 +65,7 @@ def main() -> int:
     loaded = load_bundle(bundle_dir)
     preds = []
     for d in dev:
-        ents = loaded.extractor.predict_entities(d["text"])
-        rels = loaded.extractor.predict_relations(d["text"], ents)
+        ents, rels = loaded.extractor.extract(d["text"])
         preds.append({"doc_id": d["doc_id"], "entities": ents, "relations": rels})
     check = evaluate(dev, preds, resamples=1)
     got = (check["entities"]["micro"]["f1"], check["relations"]["micro"]["f1"])

@@ -23,6 +23,9 @@ class Entity(BaseModel):
     start: int = Field(description="Start offset in Unicode code points, inclusive.")
     end: int = Field(description="End offset in Unicode code points, exclusive.")
     text: str
+    score: float | None = Field(
+        default=None, description="Model confidence (uncalibrated) when the model provides one."
+    )
 
 
 class Relation(BaseModel):
@@ -30,6 +33,9 @@ class Relation(BaseModel):
     head: str
     label: str
     tail: str
+    score: float | None = Field(
+        default=None, description="Model confidence (uncalibrated) when the model provides one."
+    )
 
 
 class Quantity(BaseModel):
