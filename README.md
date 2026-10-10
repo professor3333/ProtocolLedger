@@ -12,12 +12,13 @@
   <img alt="Python 3.12" src="https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white">
   <a href="https://github.com/astral-sh/ruff"><img alt="Ruff" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json"></a>
   <img alt="mypy: strict" src="https://img.shields.io/badge/mypy-strict-2a6db2">
-  <img alt="Status: Phase 2, thin app" src="https://img.shields.io/badge/status-phase%202%20%C2%B7%20thin%20app-f5a524">
+  <img alt="Status: Phase 3, transformer model" src="https://img.shields.io/badge/status-phase%203%20%C2%B7%20transformer-f5a524">
 </p>
 
 <p align="center">
   <a href="#architecture">Architecture</a> ·
   <a href="#the-problem">The problem</a> ·
+  <a href="#review-interface">Interface</a> ·
   <a href="#design-principles">Principles</a> ·
   <a href="#status">Status</a> ·
   <a href="#quickstart">Quickstart</a> ·
@@ -71,9 +72,9 @@ flowchart LR
   classDef done fill:#d1fae5,stroke:#059669,color:#064e3b
   classDef wip fill:#fef3c7,stroke:#d97706,color:#78350f
   classDef planned fill:#f1f5f9,stroke:#94a3b8,color:#334155
-  class A,B done
-  class C wip
-  class R,D,E,F,G,H,I,J,K planned
+  class A,B,F,G,H done
+  class C,I,J wip
+  class R,D,E,K planned
 ```
 
 <sub>🟩 built · 🟨 in progress · ⬜ planned</sub>
@@ -102,6 +103,33 @@ That makes **directed relation extraction** the central technical challenge, and
 | Protocol authors | catch ambiguous wording before sharing |
 | Research software developers | consume reviewed JSON through an API |
 
+## Review interface
+
+<p align="center">
+  <img src="docs/assets/review-ui.png" alt="The ProtocolLedger review interface: protocol text, highlighted evidence spans, a preparation sheet where 'mix', 'Centrifuge' and 'incubate' are marked 'Not explicitly stated' and routed to review, the relation list, and the review queue" width="100%">
+</p>
+
+The current interface runs the CRF + logistic-regression baseline. Paste or upload
+a UTF-8 `.txt` protocol and the page shows:
+- the text with every predicted span highlighted
+- a preparation sheet in which each value links back to its source characters
+- the directed relations
+- a review queue
+
+Actions whose object is not stated are shown as *Not explicitly stated*, marked
+*Review required*, and never filled in. Text is processed in memory and not stored.
+
+| Endpoint | Purpose |
+|---|---|
+| `POST /v1/extract` | entities, relations, preparation-sheet rows, review items, model version; offsets in Unicode code points |
+| `GET /healthz` | process health |
+| `GET /readyz` | model loaded; reports model version, bundle hash and dev scores |
+
+Input is bounded: 256 KB per request, 20,000 characters, 400 lines. Invalid Unicode, NUL
+characters and unknown fields are rejected, and error responses never echo submitted text.
+The page sends a strict Content-Security-Policy and renders user text only as text.
+Model bundles are verified by SHA-256 before anything is deserialized.
+
 ## Design principles
 
 - **Evidence first.** Every entity, relation and table cell carries character offsets
@@ -125,10 +153,10 @@ That makes **directed relation extraction** the central technical challenge, and
 | Correction ledger, exact and near-duplicate audit, frozen splits | ✅ Done |
 | Rule-based baseline | ✅ Done |
 | CRF / logistic-regression baseline | ✅ Done |
-| Thin end-to-end review app on the baseline | 🚧 Next |
-| BERT / SciBERT span-and-relation model | ⬜ Planned |
+| Thin end-to-end review app on the baseline (API, evidence highlighting) | ✅ Done |
+| BERT / SciBERT span-and-relation model | 🚧 Next |
 | Calibration, error analysis, challenge set | ⬜ Planned |
-| FastAPI service, review interface, exports | ⬜ Planned |
+| Saved reviews, editing, JSON/CSV export | ⬜ Planned |
 | CPU optimization, Docker deployment, monitoring | ⬜ Planned |
 | User pilot, model card, final report | ⬜ Planned |
 
@@ -159,6 +187,12 @@ uv run python scripts/evaluate.py --split dev --pred predictions.jsonl --out rep
 # Fit the baselines on train, select their settings on dev, write reports/baselines/
 uv run python scripts/run_rules.py
 uv run python scripts/run_traditional.py   # CRF + logistic regression, about 5 minutes on CPU
+
+# Build a verified model bundle, then serve the API and review interface
+uv run python scripts/build_bundle.py      # refuses unless it reproduces the committed report
+PROTOCOLLEDGER_BUNDLE=artifacts/bundles/crf-logreg-4a9d8cc549 \
+  uv run uvicorn --factory protocolledger.serve.app:create_app_from_env --port 8000
+# open http://localhost:8000  (API docs at /docs)
 
 # Tests (no network needed) and static checks
 uv run pytest -m "not slow"
@@ -316,7 +350,7 @@ ProtocolLedger/
 │   ├── dedup_report.json        # duplicate evidence and duplicate-copy agreement
 │   └── splits.json              # frozen train/dev/test document lists and hashes
 ├── docs/
-│   ├── assets/            # README artwork
+│   ├── assets/            # README artwork and interface screenshot
 │   └── dataset_card.md    # sources, conversion, corrections, deduplication, splits
 ├── reports/baselines/     # committed dev reports (JSON + Markdown)
 ├── scripts/
@@ -325,13 +359,20 @@ ProtocolLedger/
 │   ├── build_splits.py    # correction ledger, deduplication, frozen splits
 │   ├── evaluate.py        # score predictions with the shared scorer
 │   ├── run_rules.py       # fit / select / report the rule-based baseline
-│   └── run_traditional.py # fit / select / report CRF + logistic regression
+│   ├── run_traditional.py # fit / select / report CRF + logistic regression
+│   └── build_bundle.py    # verified, versioned model bundle for serving
 ├── src/protocolledger/baselines/
 │   ├── rules.py           # unit patterns, training dictionary, nearest-span relations
 │   ├── crf_entities.py    # linear-chain CRF tagger (BIO, lexical + character features)
 │   └── logreg_relations.py # pair classifier: types, distance, words between, punctuation
 ├── src/protocolledger/text/
 │   └── tokenize.py        # offset-preserving tokenizer
+├── src/protocolledger/serve/
+│   ├── app.py             # FastAPI: /v1/extract, /healthz, /readyz, review page
+│   ├── bundle.py          # hash-verified model bundles
+│   ├── schemas.py         # versioned request / response schemas
+│   ├── sheet.py           # graph → preparation-sheet rows and review items
+│   └── static/            # HTML / CSS / JS review interface (no build step)
 ├── src/protocolledger/eval/
 │   └── scorer.py          # strict entity, end-to-end relation, attachment, step metrics
 ├── src/protocolledger/data/

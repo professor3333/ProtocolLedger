@@ -24,3 +24,5 @@ jobs:
         run: uv run mypy src/
       - name: Tests
         run: uv run pytest -m "not slow"
+      - name: Frontend syntax
+        run: node --check src/protocolledger/serve/static/app.js

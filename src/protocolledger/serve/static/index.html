@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ProtocolLedger</title>
+  <link rel="stylesheet" href="/static/app.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 34 40" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="31" height="37" rx="6" fill="none" stroke="currentColor" stroke-width="2.4"/>
+        <line x1="9" y1="13" x2="25" y2="13" class="l1"/>
+        <line x1="9" y1="20" x2="25" y2="20" class="l2"/>
+        <line x1="9" y1="27" x2="19" y2="27" class="l3"/>
+      </svg>
+      <div>
+        <h1>ProtocolLedger</h1>
+        <p class="tagline">Every extracted field linked to the text that supports it.</p>
+      </div>
+    </div>
+    <div class="model" id="model-info" aria-live="polite">Connecting…</div>
+  </header>
+
+  <div class="notice" role="note">
+    <strong>Baseline model.</strong> Predictions come from the CRF + logistic-regression
+    baseline (development end-to-end relation F1 0.58). Treat every row as a suggestion
+    to review. Text is processed in memory and not stored.
+  </div>
+
+  <main>
+    <section class="panel input-panel" aria-labelledby="input-title">
+      <div class="panel-head">
+        <h2 id="input-title">Protocol text</h2>
+        <div class="actions">
+          <button type="button" id="sample" class="ghost">Use example</button>
+          <label class="ghost file">
+            Upload .txt
+            <input type="file" id="file" accept=".txt,text/plain">
+          </label>
+        </div>
+      </div>
+      <textarea id="text" spellcheck="false"
+        placeholder="Paste English protocol steps, one per line…"></textarea>
+      <div class="panel-foot">
+        <span id="counter" class="muted">0 characters</span>
+        <button type="button" id="extract" class="primary">Extract</button>
+      </div>
+      <p id="status" class="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="evidence-title">
+      <div class="panel-head">
+        <h2 id="evidence-title">Evidence</h2>
+        <div id="legend" class="legend" aria-label="Entity types"></div>
+      </div>
+      <div id="evidence" class="evidence empty">Extracted spans will be highlighted here.</div>
+    </section>
+
+    <section class="panel wide" aria-labelledby="sheet-title">
+      <div class="panel-head">
+        <h2 id="sheet-title">Preparation sheet</h2>
+        <span class="muted">Click any value to see its source.</span>
+      </div>
+      <div class="table-wrap">
+        <table id="sheet">
+          <thead>
+            <tr>
+              <th scope="col">Action</th>
+              <th scope="col">Material</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Location / equipment</th>
+              <th scope="col">Conditions</th>
+              <th scope="col">Review status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="placeholder"><td colspan="6">No extraction yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="relations-title">
+      <div class="panel-head">
+        <h2 id="relations-title">Relations</h2>
+        <span class="muted" id="relation-count"></span>
+      </div>
+      <ul id="relations" class="relations"></ul>
+    </section>
+
+    <section class="panel" aria-labelledby="review-title">
+      <div class="panel-head">
+        <h2 id="review-title">Needs review</h2>
+        <span class="muted" id="review-count"></span>
+      </div>
+      <ul id="review" class="review"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>ProtocolLedger · offsets are Unicode code points into the original text</span>
+    <a href="/docs">API docs</a>
+  </footer>
+</body>
+</html>

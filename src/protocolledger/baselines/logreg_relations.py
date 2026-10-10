@@ -13,6 +13,7 @@ predictions it is given.
 
 from __future__ import annotations
 
+import pickle
 from collections import Counter
 from collections.abc import Mapping, Sequence
 from dataclasses import asdict, dataclass, field
@@ -235,3 +236,19 @@ class LogRegRelations:
 
     def config_json(self) -> dict[str, Any]:
         return {"logreg_version": LOGREG_VERSION, **asdict(self.config)}
+
+    def to_bytes(self) -> bytes:
+        """Pickle for a model bundle. Load only bytes whose hash the bundle verified."""
+        payload = (asdict(self.config), sorted(self.type_pairs), self.vectorizer, self.classifier)
+        return pickle.dumps(payload, protocol=pickle.HIGHEST_PROTOCOL)
+
+    @classmethod
+    def from_bytes(cls, data: bytes) -> LogRegRelations:
+        config, type_pairs, vectorizer, classifier = pickle.loads(data)
+        return cls(
+            LogRegConfig(**config),
+            {tuple(p) for p in type_pairs},
+            vectorizer,
+            classifier,
+            CandidateStats(),
+        )
