@@ -154,7 +154,8 @@ Model bundles are verified by SHA-256 before anything is deserialized.
 | Rule-based baseline | ✅ Done |
 | CRF / logistic-regression baseline | ✅ Done |
 | Thin end-to-end review app on the baseline (API, evidence highlighting) | ✅ Done |
-| BERT / SciBERT span-and-relation model | 🚧 Next |
+| BERT / SciBERT span-and-relation model: code, tests, MLflow tracking | ✅ Done |
+| GPU training runs and ablations (Kaggle) | 🚧 Next |
 | Calibration, error analysis, challenge set | ⬜ Planned |
 | Saved reviews, editing, JSON/CSV export | ⬜ Planned |
 | CPU optimization, Docker deployment, monitoring | ⬜ Planned |
@@ -193,6 +194,12 @@ uv run python scripts/build_bundle.py      # refuses unless it reproduces the co
 PROTOCOLLEDGER_BUNDLE=artifacts/bundles/crf-logreg-4a9d8cc549 \
   uv run uvicorn --factory protocolledger.serve.app:create_app_from_env --port 8000
 # open http://localhost:8000  (API docs at /docs)
+
+# Neural model (needs the neural extra; a GPU for real runs, CPU for smoke tests)
+uv sync --extra neural
+uv run python scripts/train_neural.py configs/neural/scibert-lr5e-5.json --seed 13
+uv run python scripts/log_baselines_mlflow.py   # baselines into the same MLflow store
+MLFLOW_ALLOW_FILE_STORE=true uvx mlflow ui --backend-store-uri mlruns
 
 # Tests (no network needed) and static checks
 uv run pytest -m "not slow"
@@ -277,10 +284,28 @@ Three systems, evaluated on the same splits with the same scorer:
 | Traditional | linear-chain CRF with lexical and character features | logistic classifiers on types, distance, intervening words | a strong supervised baseline |
 | Neural | span classification over a shared transformer encoder | span-pair classification, multilabel | contextual boundaries and attachments |
 
-The neural model follows a SpERT-style design: encode a sentence once, classify
-candidate spans, then classify relations between retained spans. SciBERT
-(`scibert_scivocab_cased`) is compared against `bert-base-cased` as a control, so
-whether scientific pretraining helps is measured, not assumed.
+The neural model (`src/protocolledger/neural/`) follows a SpERT-style design:
+1. Encode each protocol step once.
+2. Score every candidate span of up to 10 words. That covers 99.92% of training
+   entities; the rest are counted as unreachable.
+3. Classify directed, multilabel relations between the retained spans.
+
+A span is the max-pool of its words plus a width embedding. A pair adds the max-pooled
+words between the two spans, the two entity types and a signed distance bucket, which
+can be switched off for ablation. Range max-pooling uses a sparse table, so no per-pair
+masks are materialized. Training samples hard negatives: spans touching gold spans, and
+pairs that share an endpoint with a gold relation. Checkpoints are selected on dev
+**end-to-end** relation F1 with predicted entities, and interrupted runs resume exactly
+from `last.pt`.
+
+SciBERT (`scibert_scivocab_cased`) is compared against `bert-base-cased` as a control,
+both pinned to exact Hugging Face commits, so whether scientific pretraining helps is
+measured, not assumed. Two tokenizer pitfalls are handled explicitly:
+- SciBERT's cased checkpoint ships without a tokenizer config and would silently
+  lowercase (`mM` → `mm`), so case preservation is forced and checked at load time.
+- Characters missing from the vocabularies, such as the micro sign in `µL` (1,971
+  occurrences, `[UNK]` in SciBERT), are substituted only in the encoder's view.
+  Offsets always come from the original text.
 
 ## Evaluation
 
@@ -360,13 +385,24 @@ ProtocolLedger/
 │   ├── evaluate.py        # score predictions with the shared scorer
 │   ├── run_rules.py       # fit / select / report the rule-based baseline
 │   ├── run_traditional.py # fit / select / report CRF + logistic regression
-│   └── build_bundle.py    # verified, versioned model bundle for serving
+│   ├── build_bundle.py    # verified, versioned model bundle for serving
+│   ├── train_neural.py    # train / select / report one neural configuration
+│   └── log_baselines_mlflow.py  # baseline reports into MLflow
 ├── src/protocolledger/baselines/
 │   ├── rules.py           # unit patterns, training dictionary, nearest-span relations
 │   ├── crf_entities.py    # linear-chain CRF tagger (BIO, lexical + character features)
 │   └── logreg_relations.py # pair classifier: types, distance, words between, punctuation
 ├── src/protocolledger/text/
-│   └── tokenize.py        # offset-preserving tokenizer
+│   ├── tokenize.py        # offset-preserving tokenizer
+│   └── normalize.py       # encoder-view character substitutions (offsets untouched)
+├── configs/neural/        # one JSON per experiment (encoder, learning rate, ablations)
+├── src/protocolledger/neural/
+│   ├── encoding.py        # steps → word examples, coverage accounting
+│   ├── model.py           # span + relation heads, sparse-table pooling
+│   ├── batching.py        # subword alignment, hard-negative sampling
+│   ├── predict.py         # decoding back to raw-text offsets
+│   ├── train.py           # AMP training, early stopping, resumable checkpoints
+│   └── tracking.py        # MLflow file-store tracking
 ├── src/protocolledger/serve/
 │   ├── app.py             # FastAPI: /v1/extract, /healthz, /readyz, review page
 │   ├── bundle.py          # hash-verified model bundles

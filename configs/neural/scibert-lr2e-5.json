@@ -1,0 +1,4 @@
+{
+ "encoder": "scibert",
+ "learning_rate": 2e-05
+}

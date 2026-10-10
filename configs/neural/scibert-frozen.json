@@ -1,0 +1,6 @@
+{
+ "encoder": "scibert",
+ "learning_rate": 0.0,
+ "freeze_encoder": true,
+ "head_learning_rate": 0.001
+}

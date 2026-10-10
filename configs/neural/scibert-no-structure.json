@@ -1,0 +1,6 @@
+{
+ "encoder": "scibert",
+ "learning_rate": 5e-05,
+ "use_type_features": false,
+ "use_distance_features": false
+}

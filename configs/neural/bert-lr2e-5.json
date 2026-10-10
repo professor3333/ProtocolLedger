@@ -1,0 +1,4 @@
+{
+ "encoder": "bert",
+ "learning_rate": 2e-05
+}

@@ -11,6 +11,7 @@ checkpoints/
 *.safetensors
 *.onnx
 mlruns/
+runs/
 mlartifacts/
 
 # Review storage
