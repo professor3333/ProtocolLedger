@@ -12,7 +12,7 @@
   <img alt="Python 3.12" src="https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white">
   <a href="https://github.com/astral-sh/ruff"><img alt="Ruff" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json"></a>
   <img alt="mypy: strict" src="https://img.shields.io/badge/mypy-strict-2a6db2">
-  <img alt="Status: Phase 2, baselines" src="https://img.shields.io/badge/status-phase%202%20%C2%B7%20baselines-f5a524">
+  <img alt="Status: Phase 2, thin app" src="https://img.shields.io/badge/status-phase%202%20%C2%B7%20thin%20app-f5a524">
 </p>
 
 <p align="center">
@@ -124,7 +124,8 @@ That makes **directed relation extraction** the central technical challenge, and
 | BRAT → canonical graph converter and validator | ✅ Done |
 | Correction ledger, exact and near-duplicate audit, frozen splits | ✅ Done |
 | Rule-based baseline | ✅ Done |
-| CRF / logistic-regression baseline | 🚧 Next |
+| CRF / logistic-regression baseline | ✅ Done |
+| Thin end-to-end review app on the baseline | 🚧 Next |
 | BERT / SciBERT span-and-relation model | ⬜ Planned |
 | Calibration, error analysis, challenge set | ⬜ Planned |
 | FastAPI service, review interface, exports | ⬜ Planned |
@@ -155,8 +156,9 @@ uv run python scripts/build_splits.py
 # Score a prediction file with the shared scorer (the test split is locked)
 uv run python scripts/evaluate.py --split dev --pred predictions.jsonl --out report.json
 
-# Fit the rule-based baseline on train, select thresholds on dev, write reports/baselines/
+# Fit the baselines on train, select their settings on dev, write reports/baselines/
 uv run python scripts/run_rules.py
+uv run python scripts/run_traditional.py   # CRF + logistic regression, about 5 minutes on CPU
 
 # Tests (no network needed) and static checks
 uv run pytest -m "not slow"
@@ -274,17 +276,23 @@ published protocols.
 | System (dev, 112 documents) | Entity F1 | Relation F1, gold entities | **Relation F1, end-to-end** | Quantity attachment | Complete steps |
 |---|---:|---:|---:|---:|---:|
 | Rules | 0.692 [0.666, 0.715] | 0.604 [0.577, 0.633] | **0.355** [0.322, 0.386] | 0.521 | 0.112 |
-| CRF + logistic regression | — | — | — | — | — |
+| CRF + logistic regression | 0.756 [0.733, 0.779] | 0.812 [0.795, 0.829] | **0.582** [0.553, 0.611] | 0.708 | 0.231 |
 | SciBERT span-relation | — | — | — | — | — |
 
 <sub>Strict matching; 95% document-level bootstrap intervals in brackets. Full per-label
-tables: <a href="reports/baselines/rules-dev.md">reports/baselines/rules-dev.md</a>.</sub>
+tables: <a href="reports/baselines/rules-dev.md">rules</a>,
+<a href="reports/baselines/crf-logreg-dev.md">CRF + logistic regression</a>.</sub>
 
-With every entity given, the rules attach relations at F1 0.604. End-to-end they drop to
-0.355, because each missed or mis-bounded entity also breaks the relations that touch it.
-Quantities are easy for rules (Temperature 0.93, Time 0.91, Amount 0.86 entity F1), while
-open-vocabulary types are not (Device 0.47, Method 0.40). For reference, duplicate copies
-of the same protocol in the corpus agree with each other at relation F1 0.711.
+- **Supervision pays off.** The CRF + logistic-regression baseline raises end-to-end
+  relation F1 from 0.355 to 0.582. Most of the gain is in attachment: given the same gold
+  entities, relation F1 rises from 0.604 to 0.812.
+- **Entity errors compound.** Even with relation F1 0.812 on gold entities, end-to-end F1
+  is 0.582. Every missed or mis-bounded entity also breaks the relations that touch it.
+- **Quantities are easy; open vocabulary is not.** Temperature, Speed and Time exceed 0.91
+  entity F1, while Method (0.46), Modifier (0.53) and Device (0.58) lag. Rare relations
+  such as Commands (37 dev instances) and Of-Type (26) score 0.
+- **Reference point.** Duplicate copies of the same protocol in the corpus agree with
+  each other at relation F1 0.711.
 
 ## Roadmap
 
@@ -316,9 +324,12 @@ ProtocolLedger/
 │   ├── convert.py         # BRAT → canonical JSONL graphs + conversion report
 │   ├── build_splits.py    # correction ledger, deduplication, frozen splits
 │   ├── evaluate.py        # score predictions with the shared scorer
-│   └── run_rules.py       # fit / select / report the rule-based baseline
+│   ├── run_rules.py       # fit / select / report the rule-based baseline
+│   └── run_traditional.py # fit / select / report CRF + logistic regression
 ├── src/protocolledger/baselines/
-│   └── rules.py           # unit patterns, training dictionary, nearest-span relations
+│   ├── rules.py           # unit patterns, training dictionary, nearest-span relations
+│   ├── crf_entities.py    # linear-chain CRF tagger (BIO, lexical + character features)
+│   └── logreg_relations.py # pair classifier: types, distance, words between, punctuation
 ├── src/protocolledger/text/
 │   └── tokenize.py        # offset-preserving tokenizer
 ├── src/protocolledger/eval/

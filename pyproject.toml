@@ -6,7 +6,10 @@ readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
 requires-python = ">=3.12,<3.13"
-dependencies = []
+dependencies = [
+    "python-crfsuite>=0.9.10",
+    "scikit-learn>=1.5",
+]
 
 [dependency-groups]
 dev = [
@@ -34,6 +37,10 @@ select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
 python_version = "3.12"
 strict = true
 files = ["src"]
+
+[[tool.mypy.overrides]]
+module = ["pycrfsuite", "pycrfsuite.*", "sklearn", "sklearn.*"]
+ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
