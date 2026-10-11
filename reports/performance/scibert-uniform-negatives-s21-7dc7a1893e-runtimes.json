@@ -1,0 +1,49 @@
+{
+ "base_model_version": "scibert-uniform-negatives-s21-7dc7a1893e",
+ "machine": "Apple M1 (8 GB), 4 inference threads",
+ "threads": 4,
+ "results": [
+  {
+   "model_version": "scibert-uniform-negatives-s21-7dc7a1893e",
+   "runtime": "torch-fp32",
+   "entity_f1": 0.8003,
+   "relation_f1": 0.6389,
+   "latency_p50": 0.4811,
+   "latency_p95": 2.0744,
+   "requests": 200,
+   "peak_rss_mib": 938.4,
+   "bundle_mib": 420.3,
+   "relation_f1_drop_points": 0.0,
+   "passes_accuracy_gate": true,
+   "passes_latency_gate": true
+  },
+  {
+   "model_version": "scibert-uniform-negatives-s21-7dc7a1893e-onnx-fp32",
+   "runtime": "onnx-fp32",
+   "entity_f1": 0.8003,
+   "relation_f1": 0.6389,
+   "latency_p50": 2.2932,
+   "latency_p95": 6.937,
+   "requests": 200,
+   "peak_rss_mib": 1058.4,
+   "bundle_mib": 838.9,
+   "relation_f1_drop_points": 0.0,
+   "passes_accuracy_gate": true,
+   "passes_latency_gate": false
+  },
+  {
+   "model_version": "scibert-uniform-negatives-s21-7dc7a1893e-onnx-int8",
+   "runtime": "onnx-int8",
+   "entity_f1": 0.7988,
+   "relation_f1": 0.6361,
+   "latency_p50": 0.9252,
+   "latency_p95": 2.8992,
+   "requests": 200,
+   "peak_rss_mib": 917.8,
+   "bundle_mib": 526.2,
+   "relation_f1_drop_points": 0.28,
+   "passes_accuracy_gate": true,
+   "passes_latency_gate": true
+  }
+ ]
+}

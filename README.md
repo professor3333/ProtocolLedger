@@ -226,7 +226,9 @@ rollback. CI builds the image and smoke-tests it with a tiny fixture bundle. See
 | BERT / SciBERT span-and-relation model: code, tests, MLflow tracking | ✅ Done |
 | GPU training runs and ablations (Kaggle) | ✅ Done |
 | Error taxonomy and slices (unseen names, template siblings) | ✅ Done |
-| Precision–coverage and isotonic calibration tooling | ✅ Done |
+| Precision–coverage and isotonic calibration (baseline and SciBERT) | ✅ Done |
+| Verified SciBERT bundle; PyTorch vs ONNX vs INT8 benchmark | ✅ Done |
+| Serve SciBERT in the Docker image | 🚧 Next |
 | Challenge set | ⬜ Planned |
 | Deterministic quantity normalization | ✅ Done |
 | Saved reviews API, JSON/CSV export, backup and restore | ✅ Done |
@@ -453,7 +455,28 @@ will be reported as it stands rather than adjusted.
 - **Reference point.** Duplicate copies of the same protocol in the corpus agree with
   each other at relation F1 0.711.
 
-**Error analysis** (CRF + logistic regression, dev; [full report with
+**Where SciBERT's gains come from** (served model vs CRF + logistic regression, dev;
+[error report](reports/errors/scibert-uniform-s21-dev.md)):
+
+| | CRF + LR | SciBERT |
+|---|---:|---:|
+| Gold relations correct | 54.5% | **62.7%** |
+| Failed through an endpoint entity error | 34.4% | 27.7% |
+| Genuine attachment errors | 3.0% | 2.9% |
+| Reagent recall, names **unseen** in training | 0.570 | **0.658** |
+| Relation recall, documents **without** a template sibling | 0.524 | **0.613** |
+
+The gains are largest where generalization matters: unseen names, and documents that
+share no template with training.
+
+**Confidence** (served model, joint score P(relation) × P(head) × P(tail);
+[report](reports/calibration/scibert-uniform-s21-joint-dev.md)):
+- **Precision:** 0.920 at 30% coverage. 95% precision is reachable only at 18.7%
+  coverage, so the target of 95% precision at ≥ 30% coverage is **not met**.
+- **Calibration:** isotonic calibration brings the expected calibration error from 0.183
+  to 0.009.
+
+**Baseline error analysis** (CRF + logistic regression, dev; [full report with
 examples](reports/errors/crf-logreg-dev.md)):
 
 | Gold relations (10,065) | Share |
@@ -489,11 +512,16 @@ Two slices stand out:
 | System | Machine | p95 latency | Success (1,000 requests) | Peak memory |
 |---|---|---:|---:|---:|
 | CRF + logistic regression | Apple M1 host, Docker limited to 4 CPUs / 4 GB | 0.035 s | 100% | 125 MiB |
+| SciBERT, PyTorch FP32 (served) | Apple M1 (8 GB), 4 inference threads, in-process | 2.07 s | — | 938 MiB |
+| SciBERT, ONNX Runtime FP32 | same | 6.94 s | — | 1,058 MiB |
+| SciBERT, ONNX Runtime INT8 (−0.28 F1) | same | 2.90 s | — | 918 MiB |
 
 <sub>Concurrency 1, dev protocols of up to 500 words, after warm-up
 (<a href="reports/performance/crf-logreg-m1-4cpu.md">report</a>, <code>scripts/load_test.py</code>).
-Targets: p95 ≤ 3 s, ≥ 99% success, ≤ 3 GB. The transformer model will be measured the
-same way, with and without ONNX/INT8.</sub>
+Targets: p95 ≤ 3 s, ≥ 99% success, ≤ 3 GB. SciBERT runtimes:
+<a href="reports/performance/scibert-uniform-negatives-s21-7dc7a1893e-runtimes.md">report</a>.
+On this ARM machine ONNX Runtime is slower than PyTorch, so PyTorch FP32 is served.
+Re-measure on the deployment host before changing runtimes.</sub>
 
 ## Roadmap
 
@@ -519,6 +547,7 @@ ProtocolLedger/
 ├── deploy/                # compose.yaml, Caddyfile, prometheus.yml
 ├── Dockerfile             # pinned base images, non-root, code + deps only
 ├── docs/
+│   ├── model_card.md      # intended use, limits, provenance, metrics, failure modes
 │   ├── deployment.md      # runbook: releases, rollback, backups, monitoring
 │   ├── assets/            # README artwork and interface screenshot
 │   └── dataset_card.md    # sources, conversion, corrections, deduplication, splits

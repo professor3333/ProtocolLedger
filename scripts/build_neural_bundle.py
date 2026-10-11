@@ -64,7 +64,7 @@ def main(argv: list[str] | None = None) -> int:
     provenance = {
         "training": {
             "run": report["run"],
-            "report": args.report.relative_to(ROOT).as_posix(),
+            "report": args.report.resolve().relative_to(ROOT).as_posix(),
             "report_sha256": hashlib.sha256(report_bytes).hexdigest(),
             "checkpoint_sha256": checkpoint_sha,
             "best_epoch": report["best_epoch"],
