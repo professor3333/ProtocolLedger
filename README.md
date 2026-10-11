@@ -438,6 +438,9 @@ tables: <a href="reports/baselines/rules-dev.md">rules</a>,
 | Uniform → hard negatives: are hard attachments learned better? | No: uniform 0.640 ± 0.004 vs hard 0.636 ± 0.006 (3 seeds each) |
 | Remove type and distance features | Small end-to-end cost (−0.7), but −3.8 points given gold entities |
 
+**Targets are frozen** in [docs/targets.md](docs/targets.md), unchanged from the plan and
+committed before the locked test split was touched.
+
 **Selected configuration:** SciBERT, lr 2e-5, uniform negatives, the highest 3-seed dev
 mean. The served model is its **median** seed (21), not the best, to avoid an optimistic
 pick.
@@ -555,6 +558,7 @@ ProtocolLedger/
 ├── Dockerfile             # pinned base images, non-root, code + deps only
 ├── docs/
 │   ├── model_card.md      # intended use, limits, provenance, metrics, failure modes
+│   ├── targets.md         # acceptance targets, frozen before the locked test evaluation
 │   ├── deployment.md      # runbook: releases, rollback, backups, monitoring
 │   ├── assets/            # README artwork and interface screenshot
 │   └── dataset_card.md    # sources, conversion, corrections, deduplication, splits

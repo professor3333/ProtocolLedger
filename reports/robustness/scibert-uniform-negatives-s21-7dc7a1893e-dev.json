@@ -1,0 +1,17 @@
+{
+ "model_version": "scibert-uniform-negatives-s21-7dc7a1893e",
+ "split": "dev",
+ "rate": 0.5,
+ "seed": 13,
+ "clean": {
+  "entity_f1": 0.8003,
+  "relation_f1": 0.6389
+ },
+ "perturbed": {
+  "entity_f1": 0.8002,
+  "relation_f1": 0.639
+ },
+ "relation_f1_drop_points": -0.01,
+ "target_max_drop_points": 5.0,
+ "locked_test_release": null
+}

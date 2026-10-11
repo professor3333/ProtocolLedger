@@ -57,6 +57,8 @@ select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
 # Unit and symbol variants (×, −, –, µ, °) are the subject matter of this module.
 "src/protocolledger/values.py" = ["RUF001", "RUF002", "RUF003"]
 "tests/test_values.py" = ["RUF001", "RUF002", "RUF003"]
+"src/protocolledger/eval/robustness.py" = ["RUF001", "RUF002", "RUF003"]
+"tests/test_robustness.py" = ["RUF001", "RUF002", "RUF003"]
 
 [tool.mypy]
 python_version = "3.12"
