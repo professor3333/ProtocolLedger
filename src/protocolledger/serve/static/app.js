@@ -136,6 +136,10 @@ async function extract() {
     setStatus("Paste or upload some protocol text first.", true);
     return;
   }
+  if ($("scratch").checked) {
+    startScratch(text);
+    return;
+  }
   $("extract").disabled = true;
   setStatus("Extracting…");
   try {
@@ -167,6 +171,21 @@ async function extract() {
   } finally {
     $("extract").disabled = false;
   }
+}
+
+function startScratch(text) {
+  // Gold annotation: no model call, so suggestions cannot bias the labels. Text must be
+  // stored for the annotation to be exportable as a dataset.
+  doc = {
+    text, cps: Array.from(text), modelVersion: "manual-annotation",
+    entities: new Map(), relations: new Map(), review: null, dirty: false, next: 1,
+    selected: null, pending: null, idempotencyKey: null,
+  };
+  preview = { sheet: [], review_items: [], normalized_values: {} };
+  $("store-text").checked = true;
+  $("token-note").hidden = true;
+  renderAll();
+  setStatus("Annotating from scratch: select text in the Evidence panel to add each entity.");
 }
 
 // ------------------------------------------------------------------ editing
@@ -660,6 +679,9 @@ function init() {
     if ((event.metaKey || event.ctrlKey) && event.key === "Enter") extract();
   });
   $("extract").addEventListener("click", extract);
+  $("scratch").addEventListener("change", () => {
+    $("extract").textContent = $("scratch").checked ? "Start annotating" : "Extract";
+  });
   $("sample").addEventListener("click", () => {
     $("text").value = SAMPLE;
     updateCounter();

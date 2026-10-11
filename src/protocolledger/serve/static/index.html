@@ -50,6 +50,9 @@
         placeholder="Paste English protocol steps, one per line…"></textarea>
       <div class="panel-foot">
         <span id="counter" class="muted">0 characters</span>
+        <label class="check" title="For gold annotation: start empty so model suggestions cannot bias the labels">
+          <input type="checkbox" id="scratch"> Annotate from scratch
+        </label>
         <button type="button" id="extract" class="primary">Extract</button>
       </div>
       <p id="status" class="status" aria-live="polite"></p>
