@@ -19,6 +19,9 @@ neural = [
     "torch>=2.6",
     "transformers>=4.46",
     "mlflow-skinny>=2.17",
+    "onnx>=1.17",
+    "onnxruntime>=1.20",
+    "onnxscript>=0.2",
 ]
 
 [dependency-groups]
@@ -55,7 +58,7 @@ strict = true
 files = ["src"]
 
 [[tool.mypy.overrides]]
-module = ["pycrfsuite", "pycrfsuite.*", "sklearn", "sklearn.*", "mlflow", "mlflow.*"]
+module = ["pycrfsuite", "pycrfsuite.*", "sklearn", "sklearn.*", "mlflow", "mlflow.*", "onnxruntime", "onnxruntime.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

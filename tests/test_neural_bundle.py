@@ -41,7 +41,7 @@ def test_bundle_reproduces_direct_predictions(trained: Any) -> None:
     model, tok, pairs, bundle = trained
     loaded = load_bundle(bundle)
     assert loaded.model_version == "tiny-neural"
-    assert loaded.version_info()["quantization"] == "none"
+    assert loaded.version_info()["runtime"] == "torch-fp32"
     text = DOCS[5]["text"]
     direct = predict_documents(
         model, tok, [{"doc_id": "input", "text": text}], pairs, torch.device("cpu")
@@ -79,3 +79,35 @@ def test_type_pairs_round_trip(trained: Any) -> None:
     *_, bundle = trained
     manifest = json.loads((bundle / "bundle.json").read_text())
     assert {tuple(p) for p in manifest["type_pairs"]} == training_type_pairs(DOCS)
+
+
+def _strip(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [{k: v for k, v in item.items() if k != "score"} for item in items]
+
+
+def test_onnx_variants_match_torch_and_are_immutable_bundles(trained: Any, tmp_path: Path) -> None:
+    from protocolledger.serve.neural_bundle import derive_onnx_bundle
+
+    *_, bundle = trained
+    text = DOCS[5]["text"]
+    torch_entities, torch_relations = load_bundle(bundle).extractor.extract(text)
+
+    fp32 = derive_onnx_bundle(bundle, tmp_path / "fp32", "onnx-fp32")
+    loaded = load_bundle(fp32)
+    assert loaded.model_version == "tiny-neural-onnx-fp32"
+    assert loaded.version_info()["runtime"] == "onnx-fp32"
+    entities, relations = loaded.extractor.extract(text)
+    assert _strip(entities) == _strip(torch_entities)
+    assert _strip(relations) == _strip(torch_relations)
+    for a, b in zip(entities, torch_entities, strict=True):
+        assert abs(a["score"] - b["score"]) < 1e-4
+
+    int8 = derive_onnx_bundle(bundle, tmp_path / "int8", "onnx-int8")
+    loaded8 = load_bundle(int8)
+    assert loaded8.version_info()["runtime"] == "onnx-int8"
+    assert json.loads((int8 / "bundle.json").read_text())["derived_from"]["model_version"] == (
+        "tiny-neural"
+    )
+    loaded8.extractor.extract(text)  # runs
+    with pytest.raises(BundleError, match="torch-fp32"):
+        derive_onnx_bundle(fp32, tmp_path / "again", "onnx-int8")

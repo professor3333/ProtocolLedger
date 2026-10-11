@@ -8,14 +8,16 @@ Layout::
     tokenizer/...          tokenizer files saved with case preservation forced
 
 Every file listed in ``bundle.json`` is hash-checked before anything is read. Inference
-runs in FP32 PyTorch on CPU; optimized runtimes (ONNX Runtime FP32 / INT8) are added only
-after they are benchmarked against the accuracy gate.
+runs on CPU. ``derive_onnx_bundle`` creates a separate, immutable bundle whose encoder runs
+in ONNX Runtime (``onnx-fp32``) or with ONNX Runtime dynamic INT8 weights (``onnx-int8``);
+the span and relation heads stay in PyTorch.
 """
 
 from __future__ import annotations
 
 import hashlib
 import json
+import os
 import platform
 from collections.abc import Mapping
 from dataclasses import dataclass
@@ -37,13 +39,56 @@ def _sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+ENCODER_RUNTIMES = ("torch-fp32", "onnx-fp32", "onnx-int8")
+
+
+class _EncoderOutput:
+    def __init__(self, hidden: torch.Tensor) -> None:
+        self.last_hidden_state = hidden
+
+
+class OnnxEncoder(torch.nn.Module):
+    """Drop-in replacement for the transformer encoder, backed by ONNX Runtime."""
+
+    def __init__(self, path: Path) -> None:
+        super().__init__()
+        import onnxruntime
+
+        options = onnxruntime.SessionOptions()
+        threads = int(os.environ.get("PROTOCOLLEDGER_THREADS", "0"))
+        if threads:
+            options.intra_op_num_threads = threads
+        self.session = onnxruntime.InferenceSession(
+            str(path), options, providers=["CPUExecutionProvider"]
+        )
+
+    def forward(self, input_ids: torch.Tensor, attention_mask: torch.Tensor) -> _EncoderOutput:
+        (hidden,) = self.session.run(
+            None,
+            {"input_ids": input_ids.cpu().numpy(), "attention_mask": attention_mask.cpu().numpy()},
+        )
+        return _EncoderOutput(torch.from_numpy(hidden))
+
+
+class _HiddenStates(torch.nn.Module):
+    def __init__(self, encoder: torch.nn.Module) -> None:
+        super().__init__()
+        self.encoder = encoder
+
+    def forward(self, input_ids: torch.Tensor, attention_mask: torch.Tensor) -> torch.Tensor:
+        hidden: torch.Tensor = self.encoder(
+            input_ids=input_ids, attention_mask=attention_mask
+        ).last_hidden_state
+        return hidden
+
+
 @dataclass
 class NeuralExtractor:
     model: SpanRelationModel
     tokenizer: Any
     type_pairs: set[tuple[str, str]]
     device: torch.device
-    quantization: str
+    runtime: str
 
     def extract(self, text: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
         (pred,) = predict_documents(
@@ -130,11 +175,78 @@ def load_neural_bundle(
     )
     model.load_state_dict(load_file(str(directory / "model.safetensors")))
     model.eval()
+    runtime = str(manifest.get("encoder_runtime", "torch-fp32"))
+    if runtime not in ENCODER_RUNTIMES:
+        raise BundleError(f"unknown encoder runtime {runtime!r}")
+    if runtime != "torch-fp32":
+        model.encoder = OnnxEncoder(directory / "encoder.onnx")  # frees the torch encoder
     extractor = NeuralExtractor(
         model,
         tokenizer,
         {(a, b) for a, b in manifest["type_pairs"]},
         torch.device("cpu"),
-        "none",
+        runtime,
     )
     return extractor, _sha256(raw_manifest)
+
+
+def derive_onnx_bundle(source: Path, destination: Path, runtime: str) -> Path:
+    """Copy a torch-fp32 bundle and add an ONNX encoder (``onnx-fp32`` or ``onnx-int8``)."""
+    if runtime not in ("onnx-fp32", "onnx-int8"):
+        raise BundleError(f"unsupported derived runtime {runtime!r}")
+    raw = (source / "bundle.json").read_bytes()
+    manifest = json.loads(raw)
+    if manifest.get("encoder_runtime", "torch-fp32") != "torch-fp32":
+        raise BundleError("derive from the torch-fp32 bundle")
+    extractor, source_sha = load_neural_bundle(source, manifest, raw)
+    if destination.exists() and any(destination.iterdir()):
+        raise BundleError(f"{destination} is not empty; bundles are immutable")
+    destination.mkdir(parents=True, exist_ok=True)
+    for name in manifest["files"]:
+        target = destination / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes((source / name).read_bytes())
+
+    example = extractor.tokenizer(
+        [["Add", "5", "mL", "of", "water"]], is_split_into_words=True, return_tensors="pt"
+    )
+    fp32_path = destination / ("encoder.onnx" if runtime == "onnx-fp32" else "encoder.fp32.onnx")
+    batch, seq = torch.export.Dim("batch"), torch.export.Dim("seq")
+    torch.onnx.export(
+        _HiddenStates(extractor.model.encoder).eval(),
+        (example["input_ids"], example["attention_mask"]),
+        str(fp32_path),
+        input_names=["input_ids", "attention_mask"],
+        output_names=["hidden"],
+        dynamic_shapes={"input_ids": {0: batch, 1: seq}, "attention_mask": {0: batch, 1: seq}},
+        dynamo=True,
+        external_data=False,
+    )
+    if runtime == "onnx-int8":
+        from onnxruntime.quantization import QuantType, quantize_dynamic
+
+        quantize_dynamic(
+            str(fp32_path), str(destination / "encoder.onnx"), weight_type=QuantType.QInt8
+        )
+        fp32_path.unlink()
+    files = sorted(p for p in destination.rglob("*") if p.is_file() and p.name != "bundle.json")
+    manifest.update(
+        {
+            "model_version": f"{manifest['model_version']}-{runtime}",
+            "encoder_runtime": runtime,
+            "derived_from": {
+                "model_version": manifest["model_version"],
+                "bundle_sha256": source_sha,
+            },
+            "files": {
+                p.relative_to(destination).as_posix(): {
+                    "path": p.relative_to(destination).as_posix(),
+                    "sha256": _sha256(p.read_bytes()),
+                }
+                for p in files
+            },
+        }
+    )
+    manifest.pop("evaluation", None)  # must be re-measured for the derived runtime
+    (destination / "bundle.json").write_text(json.dumps(manifest, indent=1) + "\n", "utf-8")
+    return destination

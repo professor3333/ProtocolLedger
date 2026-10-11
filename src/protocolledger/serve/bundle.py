@@ -68,7 +68,7 @@ class LoadedBundle:
             "system": self.manifest["system"],
             "bundle_sha256": self.manifest_sha256,
             "preprocessing_version": self.manifest["preprocessing_version"],
-            "quantization": getattr(self.extractor, "quantization", "none"),
+            "runtime": getattr(self.extractor, "runtime", "native"),
             "evaluation": self.manifest.get("evaluation", {}),
         }
 
