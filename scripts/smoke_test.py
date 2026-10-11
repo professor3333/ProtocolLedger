@@ -86,7 +86,14 @@ def main(argv: list[str] | None = None) -> int:
             }
             for e in body["entities"]
         ],
-        "relations": [{**r, "origin": "model", "decision": "accepted"} for r in body["relations"]],
+        "relations": [
+            {
+                **{k: r[k] for k in ("id", "head", "label", "tail")},
+                "origin": "model",
+                "decision": "accepted",
+            }
+            for r in body["relations"]
+        ],
     }
     status, _ = call(base, "POST", "/v1/preview", {"text": TEXT, "content": content})
     check(status == 200, "preview")
