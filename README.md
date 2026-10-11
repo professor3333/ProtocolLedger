@@ -411,7 +411,8 @@ published protocols.
 |---|---:|---:|---:|---:|---:|
 | Rules | 0.692 [0.666, 0.715] | 0.604 [0.577, 0.633] | **0.355** [0.322, 0.386] | 0.521 | 0.112 |
 | CRF + logistic regression | 0.756 [0.733, 0.779] | 0.812 [0.795, 0.829] | **0.582** [0.553, 0.611] | 0.708 | 0.231 |
-| **SciBERT span-relation** (3 seeds) | **0.802** | 0.822 | **0.636 ± 0.006** | 0.768 | — |
+| **SciBERT span-relation, selected** (uniform negatives, 3 seeds) | **0.800** | 0.826 | **0.640 ± 0.004** | 0.758 | — |
+| SciBERT span-relation, hard negatives (3 seeds) | 0.802 | 0.822 | 0.636 ± 0.006 | 0.768 | — |
 | BERT-base-cased control (1 seed) | 0.795 | 0.821 | 0.634 [0.611, 0.657] | 0.764 | — |
 
 <sub>Strict matching; 95% document-level bootstrap intervals in brackets for single runs,
@@ -426,15 +427,19 @@ tables: <a href="reports/baselines/rules-dev.md">rules</a>,
 | Question from the plan | Answer |
 |---|---|
 | Rules → CRF: does supervision help? | Yes: relation F1 0.355 → 0.582 |
-| CRF → SciBERT: does a contextual encoder help? | Yes: 0.582 → 0.636 ± 0.006 (3 seeds), entity F1 0.756 → 0.802 |
+| CRF → SciBERT: does a contextual encoder help? | Yes: 0.582 → 0.640 ± 0.004 (3 seeds), entity F1 0.756 → 0.800 |
 | BERT → SciBERT: does scientific pretraining help? | Barely: 0.634 vs 0.641 at the same settings, well within noise |
 | Frozen → fine-tuned encoder: worth the compute? | Decisively: 0.487 frozen vs 0.641 fine-tuned |
-| Uniform → hard negatives: are hard attachments learned better? | No measurable gain: uniform 0.644, hard 0.641 (one seed each) |
+| Uniform → hard negatives: are hard attachments learned better? | No: uniform 0.640 ± 0.004 vs hard 0.636 ± 0.006 (3 seeds each) |
 | Remove type and distance features | Small end-to-end cost (−0.7), but −3.8 points given gold entities |
 
-Against the proposed targets, SciBERT clears **entity F1 ≥ 0.75** and is **≥ 5 points above
-the traditional baseline** (+5.4 on the 3-seed mean). It does **not** reach end-to-end
-relation F1 ≥ 0.65 on dev (0.636 ± 0.006). The targets are not frozen yet, and this result
+**Selected configuration:** SciBERT, lr 2e-5, uniform negatives, the highest 3-seed dev
+mean. The served model is its **median** seed (21), not the best, to avoid an optimistic
+pick.
+
+Against the proposed targets, the selected configuration clears **entity F1 ≥ 0.75** and
+is **≥ 5 points above the traditional baseline** (+5.8 on the 3-seed mean). It does
+**not** reach end-to-end relation F1 ≥ 0.65 on dev (0.640 ± 0.004). The targets are not frozen yet, and this result
 will be reported as it stands rather than adjusted.
 
 - **Supervision pays off.** The CRF + logistic-regression baseline raises end-to-end
