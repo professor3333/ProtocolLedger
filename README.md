@@ -229,7 +229,8 @@ rollback. CI builds the image and smoke-tests it with a tiny fixture bundle. See
 | Precision–coverage and isotonic calibration (baseline and SciBERT) | ✅ Done |
 | Verified SciBERT bundle; PyTorch vs ONNX vs INT8 benchmark | ✅ Done |
 | Serve SciBERT in the Docker image (released through Compose with smoke test) | ✅ Done |
-| Challenge set | ⬜ Planned |
+| Frozen targets; single locked-test evaluation | ✅ Done |
+| Challenge set and later-domain protocols.io test set | ⬜ Planned |
 | Deterministic quantity normalization | ✅ Done |
 | Saved reviews API, JSON/CSV export, backup and restore | ✅ Done |
 | Review editing in the interface | ✅ Done |
@@ -408,9 +409,43 @@ published protocols.
 
 ## Results
 
-> [!IMPORTANT]
-> These are **development-set** results, used to build and compare systems. The locked
-> test split has not been evaluated, and won't be until a declared release.
+### Locked test (evaluated once, 2026-10-11)
+
+The targets were frozen in [docs/targets.md](docs/targets.md) and merged first. The
+declared releases were then evaluated **once** on the cleaned `test_data_2020` (111
+protocols) by `scripts/locked_test.py`, at commit `fe0297c`
+([full report](reports/test/locked-test.md)).
+
+| System | Entity F1 | Relation F1, gold entities | **Relation F1, end-to-end** | Quantity attachment |
+|---|---:|---:|---:|---:|
+| Rules | 0.647 [0.624, 0.668] | 0.575 | 0.292 [0.270, 0.317] | 0.441 |
+| CRF + logistic regression | 0.703 [0.677, 0.727] | 0.768 | 0.504 [0.473, 0.536] | 0.629 |
+| **SciBERT span-relation** | **0.766** [0.748, 0.784] | **0.787** | **0.580** [0.552, 0.606] | **0.699** |
+
+| Frozen target | Test result | Met |
+|---|---|---|
+| Strict entity micro-F1 ≥ 0.75 | 0.766 | yes |
+| End-to-end relation micro-F1 ≥ 0.65 | 0.580 | **no** |
+| ≥ 5 points above the traditional baseline | +7.6 points | yes |
+| ≥ 95% relation precision at ≥ 30% coverage | 95% precision at 13.4% coverage | **no** |
+| ≤ 5-point F1 loss under whitespace / Unicode perturbations | −0.01 points | yes |
+| Optimized artifact ≤ 1-point F1 loss (dev) | ONNX INT8 −0.28 | yes |
+| p95 ≤ 3 s, ≥ 99% success, ≤ 3 GB (container, 4 CPUs) | 2.40 s, 100%, 1.06 GB | yes |
+| Normalization ≥ 98% exact match, independently checked set | no independent set | not evaluated |
+| ≥ 25% faster sheet completion (user pilot) | no pilot run | not evaluated |
+
+Test is harder than dev for every system: CRF + logistic regression falls from 0.582 to
+0.504, and SciBERT from 0.639 to 0.580. SciBERT's margin over the traditional baseline
+grows on test, from +5.7 to +7.6 points. Its largest advantage is on reagent names never
+seen in training: recall 0.762 against 0.631. The dev-fitted isotonic calibrator transfers
+to test, reducing expected calibration error from 0.172 to 0.021. The two relation-quality
+targets are missed; the misses are reported here and the targets were not changed.
+
+### Development set
+
+> [!NOTE]
+> The results below are **development-set** results, used to build, select and compare
+> systems before the single test evaluation above.
 
 | System (dev, 112 documents) | Entity F1 | Relation F1, gold entities | **Relation F1, end-to-end** | Quantity attachment | Complete steps |
 |---|---:|---:|---:|---:|---:|

@@ -33,3 +33,16 @@ further changes.
 The performance, memory, reliability and optimization targets are properties of the
 service, not of a data split. They were measured on dev inputs and are not re-measured
 on test text.
+
+## Outcome on the locked test split
+
+Evaluated once on 2026-10-11 at commit `fe0297c`
+([report](../reports/test/locked-test.md)):
+
+| Target | Test result | Met |
+|---|---|---|
+| Strict entity micro-F1 ≥ 0.75 | 0.766 | yes |
+| End-to-end relation micro-F1 ≥ 0.65 | 0.580 | **no** |
+| ≥ 5 points above the traditional baseline | +7.6 points | yes |
+| ≥ 95% relation precision at ≥ 30% coverage | 13.4% coverage at 95% precision | **no** |
+| ≤ 5-point F1 loss under perturbations | −0.01 points | yes |

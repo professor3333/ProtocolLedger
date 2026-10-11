@@ -7,7 +7,7 @@
 | Encoder | `allenai/scibert_scivocab_cased` at revision `ddf0be025f8e432a1870e34811997ba6725bf04a` (Apache-2.0), fine-tuned |
 | Training data | WNUT-2020 Wet Lab Protocols, cleaned **train** split (314 protocols); see the [dataset card](dataset_card.md) |
 | Selection | dev end-to-end relation micro-F1; configuration chosen on a 3-seed mean, then the **median** seed served |
-| Status | Development results only. The locked test split has **not** been evaluated. |
+| Status | Evaluated once on the locked test split (2026-10-11) after targets were frozen |
 
 ## Intended use
 
@@ -101,6 +101,27 @@ Cleaned sizes: train 314, dev 112, test 111 protocols.
 
 **Reference point.** Duplicate copies of the same protocol in the corpus agree with each
 other at entity F1 0.863 and relation F1 0.711.
+
+## Locked test results (evaluated once)
+
+| Metric (cleaned `test_data_2020`, 111 protocols) | SciBERT (served) | CRF + logistic regression |
+|---|---:|---:|
+| Strict entity micro-F1 | 0.766 [0.748, 0.784] | 0.703 |
+| **End-to-end relation micro-F1** | **0.580** [0.552, 0.606] | 0.504 |
+| Relation F1 given gold entities | 0.787 | 0.768 |
+| Quantity attachment accuracy | 0.699 | 0.629 |
+| Reagent recall, names unseen in train | 0.762 | 0.631 |
+| Precision at 30% coverage (joint score) | 0.905 | — |
+| Coverage at 95% precision | 13.4% | — |
+| ECE raw / with the dev-fitted calibrator | 0.172 / 0.021 | — |
+
+Frozen targets on test:
+- **Met:** entity F1 ≥ 0.75, at least 5 points above the traditional baseline (+7.6),
+  and robustness (−0.01).
+- **Not met:** end-to-end relation F1 ≥ 0.65, and 95% precision at ≥ 30% coverage.
+
+Test is harder than dev for every system. Full report:
+[reports/test/locked-test.md](../reports/test/locked-test.md).
 
 ## Inference performance
 

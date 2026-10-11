@@ -1,0 +1,314 @@
+{
+ "evaluated_at": "2026-10-11T05:25:51+00:00",
+ "code_commit": "fe0297caed9d3eb9567f8a608121e65cfa768561",
+ "targets_file_sha256": "7a0e77ca3823f1d52ee28b14a393345f1b14bcaa8bb69e960453843b1c0bbb52",
+ "split": "cleaned test_data_2020 (111 protocols)",
+ "systems": {
+  "rules": {
+   "release": "rules (fit on train)",
+   "entity_f1": 0.6469,
+   "entity_f1_ci95": [
+    0.6243,
+    0.6678
+   ],
+   "relation_f1": 0.292,
+   "relation_f1_ci95": [
+    0.2701,
+    0.3167
+   ],
+   "relation_precision": 0.3398,
+   "relation_recall": 0.256,
+   "entity_macro_f1": 0.605,
+   "relation_macro_f1": 0.1522,
+   "quantity_attachment": 0.4412,
+   "complete_steps": 0.0683,
+   "relation_f1_gold_entities": 0.5754
+  },
+  "crf-logreg": {
+   "release": "crf-logreg-4a9d8cc549",
+   "entity_f1": 0.7025,
+   "entity_f1_ci95": [
+    0.677,
+    0.7265
+   ],
+   "relation_f1": 0.5041,
+   "relation_f1_ci95": [
+    0.4727,
+    0.5361
+   ],
+   "relation_precision": 0.5986,
+   "relation_recall": 0.4353,
+   "entity_macro_f1": 0.6446,
+   "relation_macro_f1": 0.2999,
+   "quantity_attachment": 0.6286,
+   "complete_steps": 0.142,
+   "relation_f1_gold_entities": 0.7677
+  },
+  "scibert": {
+   "release": "scibert-uniform-negatives-s21-7dc7a1893e",
+   "entity_f1": 0.7658,
+   "entity_f1_ci95": [
+    0.7475,
+    0.7837
+   ],
+   "relation_f1": 0.5798,
+   "relation_f1_ci95": [
+    0.5516,
+    0.6064
+   ],
+   "relation_precision": 0.6497,
+   "relation_recall": 0.5235,
+   "entity_macro_f1": 0.7083,
+   "relation_macro_f1": 0.3917,
+   "quantity_attachment": 0.6994,
+   "complete_steps": 0.1775,
+   "relation_f1_gold_entities": 0.7873
+  }
+ },
+ "scibert_per_label": {
+  "Acts-on": {
+   "precision": 0.7239,
+   "recall": 0.6409,
+   "f1": 0.6798,
+   "support": 4082,
+   "predicted": 3614
+  },
+  "Commands": {
+   "precision": 0.1429,
+   "recall": 0.1667,
+   "f1": 0.1538,
+   "support": 12,
+   "predicted": 14
+  },
+  "Coreference-Link": {
+   "precision": 0.4595,
+   "recall": 0.1783,
+   "f1": 0.2569,
+   "support": 286,
+   "predicted": 111
+  },
+  "Count": {
+   "precision": 0.2532,
+   "recall": 0.2131,
+   "f1": 0.2315,
+   "support": 183,
+   "predicted": 154
+  },
+  "Measure": {
+   "precision": 0.7052,
+   "recall": 0.6671,
+   "f1": 0.6856,
+   "support": 2370,
+   "predicted": 2242
+  },
+  "Measure-Type-Link": {
+   "precision": 0.5543,
+   "recall": 0.3709,
+   "f1": 0.4444,
+   "support": 275,
+   "predicted": 184
+  },
+  "Meronym": {
+   "precision": 0.3919,
+   "recall": 0.2957,
+   "f1": 0.3371,
+   "support": 558,
+   "predicted": 421
+  },
+  "Mod-Link": {
+   "precision": 0.6871,
+   "recall": 0.386,
+   "f1": 0.4943,
+   "support": 3430,
+   "predicted": 1927
+  },
+  "Of-Type": {
+   "precision": 0.3704,
+   "recall": 0.0518,
+   "f1": 0.0909,
+   "support": 193,
+   "predicted": 27
+  },
+  "Or": {
+   "precision": 0.3208,
+   "recall": 0.2152,
+   "f1": 0.2576,
+   "support": 158,
+   "predicted": 106
+  },
+  "Product": {
+   "precision": 0.1358,
+   "recall": 0.2619,
+   "f1": 0.1789,
+   "support": 42,
+   "predicted": 81
+  },
+  "Setting": {
+   "precision": 0.6926,
+   "recall": 0.6423,
+   "f1": 0.6665,
+   "support": 2038,
+   "predicted": 1890
+  },
+  "Site": {
+   "precision": 0.5983,
+   "recall": 0.5289,
+   "f1": 0.5615,
+   "support": 1628,
+   "predicted": 1439
+  },
+  "Using": {
+   "precision": 0.4752,
+   "recall": 0.4176,
+   "f1": 0.4445,
+   "support": 1123,
+   "predicted": 987
+  }
+ },
+ "scibert_perturbed_relation_f1": 0.5799,
+ "error_slices": {
+  "crf-logreg": {
+   "relation_categories": {
+    "endpoint_error": {
+     "count": 7458,
+     "share": 0.4554
+    },
+    "correct": {
+     "count": 7130,
+     "share": 0.4353
+    },
+    "wrong_label": {
+     "count": 290,
+     "share": 0.0177
+    },
+    "missed": {
+     "count": 936,
+     "share": 0.0571
+    },
+    "wrong_attachment": {
+     "count": 552,
+     "share": 0.0337
+    },
+    "wrong_direction": {
+     "count": 12,
+     "share": 0.0007
+    }
+   },
+   "reagent_names": {
+    "seen": {
+     "gold": 3375,
+     "recall": 0.8335
+    },
+    "unseen": {
+     "gold": 1776,
+     "recall": 0.6306
+    }
+   },
+   "template_siblings": {
+    "without": {
+     "gold_relations": 16022,
+     "relation_recall": 0.4357
+    },
+    "with_template_sibling": {
+     "gold_relations": 356,
+     "relation_recall": 0.4185
+    }
+   }
+  },
+  "scibert": {
+   "relation_categories": {
+    "endpoint_error": {
+     "count": 6124,
+     "share": 0.3739
+    },
+    "correct": {
+     "count": 8574,
+     "share": 0.5235
+    },
+    "missed": {
+     "count": 947,
+     "share": 0.0578
+    },
+    "wrong_attachment": {
+     "count": 507,
+     "share": 0.031
+    },
+    "wrong_direction": {
+     "count": 23,
+     "share": 0.0014
+    },
+    "wrong_label": {
+     "count": 203,
+     "share": 0.0124
+    }
+   },
+   "reagent_names": {
+    "seen": {
+     "gold": 3375,
+     "recall": 0.8619
+    },
+    "unseen": {
+     "gold": 1776,
+     "recall": 0.7618
+    }
+   },
+   "template_siblings": {
+    "without": {
+     "gold_relations": 16022,
+     "relation_recall": 0.5247
+    },
+    "with_template_sibling": {
+     "gold_relations": 356,
+     "relation_recall": 0.4719
+    }
+   }
+  }
+ },
+ "confidence": {
+  "score": "P(relation) x P(head) x P(tail)",
+  "precision_at_30pct_coverage": {
+   "coverage": 0.3,
+   "score_threshold": 0.965748,
+   "kept": 3959,
+   "precision": 0.9053,
+   "precision_ci95": [
+    0.8909,
+    0.9178
+   ]
+  },
+  "coverage_at_95pct_precision": {
+   "target_precision": 0.95,
+   "coverage": 0.1339,
+   "kept": 1767
+  },
+  "ece_raw": 0.172,
+  "ece_dev_calibrated": 0.0207
+ },
+ "targets": [
+  {
+   "target": "Strict entity micro-F1 ≥ 0.75",
+   "result": "0.766",
+   "met": true
+  },
+  {
+   "target": "End-to-end relation micro-F1 ≥ 0.65",
+   "result": "0.580",
+   "met": false
+  },
+  {
+   "target": "≥ 5 points above the traditional baseline",
+   "result": "+7.6 points",
+   "met": true
+  },
+  {
+   "target": "≥ 95% relation precision at ≥ 30% coverage",
+   "result": "13.4% coverage at 95% precision",
+   "met": false
+  },
+  {
+   "target": "≤ 5-point F1 loss under perturbations",
+   "result": "-0.01 points",
+   "met": true
+  }
+ ]
+}
