@@ -889,6 +889,11 @@ neural = [
     { name = "torch", version = "2.14.1+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "sys_platform == 'linux'" },
     { name = "transformers" },
 ]
+serve-neural = [
+    { name = "torch", version = "2.14.1", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'linux'" },
+    { name = "torch", version = "2.14.1+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "sys_platform == 'linux'" },
+    { name = "transformers" },
+]
 
 [package.dev-dependencies]
 dev = [
@@ -909,11 +914,14 @@ requires-dist = [
     { name = "python-crfsuite", specifier = ">=0.9.10" },
     { name = "scikit-learn", specifier = ">=1.5" },
     { name = "torch", marker = "sys_platform == 'linux' and extra == 'neural'", specifier = ">=2.6", index = "https://download.pytorch.org/whl/cpu" },
+    { name = "torch", marker = "sys_platform == 'linux' and extra == 'serve-neural'", specifier = ">=2.6", index = "https://download.pytorch.org/whl/cpu" },
     { name = "torch", marker = "sys_platform != 'linux' and extra == 'neural'", specifier = ">=2.6" },
+    { name = "torch", marker = "sys_platform != 'linux' and extra == 'serve-neural'", specifier = ">=2.6" },
     { name = "transformers", marker = "extra == 'neural'", specifier = ">=4.46" },
+    { name = "transformers", marker = "extra == 'serve-neural'", specifier = ">=4.46" },
     { name = "uvicorn", specifier = ">=0.30" },
 ]
-provides-extras = ["neural"]
+provides-extras = ["neural", "serve-neural"]
 
 [package.metadata.requires-dev]
 dev = [

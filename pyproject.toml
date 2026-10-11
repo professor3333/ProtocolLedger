@@ -24,6 +24,12 @@ neural = [
     "onnxscript>=0.2",
 ]
 
+# Minimal set for serving a span-relation bundle (PyTorch FP32 on CPU).
+serve-neural = [
+    "torch>=2.6",
+    "transformers>=4.46",
+]
+
 [dependency-groups]
 dev = [
     "httpx>=0.27",

@@ -159,6 +159,11 @@ def load_neural_bundle(
         if _sha256(path.read_bytes()) != entry["sha256"]:
             raise BundleError(f"hash mismatch for {entry['path']}; refusing to load")
 
+    threads = int(os.environ.get("PROTOCOLLEDGER_THREADS", "0"))
+    if threads:
+        # Match the container's CPU quota; PyTorch otherwise sizes its pool to every host
+        # core and oversubscribes a CPU-limited container.
+        torch.set_num_threads(threads)
     config = NeuralConfig.from_json(dict(manifest["neural_config"]))
     encoder = AutoModel.from_config(  # type: ignore[no-untyped-call]
         AutoConfig.from_pretrained(directory / "encoder")

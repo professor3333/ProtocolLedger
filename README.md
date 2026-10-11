@@ -228,7 +228,7 @@ rollback. CI builds the image and smoke-tests it with a tiny fixture bundle. See
 | Error taxonomy and slices (unseen names, template siblings) | ✅ Done |
 | Precision–coverage and isotonic calibration (baseline and SciBERT) | ✅ Done |
 | Verified SciBERT bundle; PyTorch vs ONNX vs INT8 benchmark | ✅ Done |
-| Serve SciBERT in the Docker image | 🚧 Next |
+| Serve SciBERT in the Docker image (released through Compose with smoke test) | ✅ Done |
 | Challenge set | ⬜ Planned |
 | Deterministic quantity normalization | ✅ Done |
 | Saved reviews API, JSON/CSV export, backup and restore | ✅ Done |
@@ -270,6 +270,9 @@ uv run python scripts/build_bundle.py      # refuses unless it reproduces the co
 PROTOCOLLEDGER_BUNDLE=artifacts/bundles/crf-logreg-4a9d8cc549 PROTOCOLLEDGER_DB=data/reviews.db \
   uv run uvicorn --factory protocolledger.serve.app:create_app_from_env --port 8000
 uv run python scripts/backup_reviews.py backup data/reviews.db backups/reviews.db
+
+# SciBERT image (adds CPU PyTorch + transformers); match threads to the host's vCPUs
+docker build --build-arg EXTRAS=serve-neural -t protocolledger:neural .
 # open http://localhost:8000  (API docs at /docs)
 
 # Neural model (needs the neural extra; a GPU for real runs, CPU for smoke tests)
@@ -512,7 +515,9 @@ Two slices stand out:
 | System | Machine | p95 latency | Success (1,000 requests) | Peak memory |
 |---|---|---:|---:|---:|
 | CRF + logistic regression | Apple M1 host, Docker limited to 4 CPUs / 4 GB | 0.035 s | 100% | 125 MiB |
-| SciBERT, PyTorch FP32 (served) | Apple M1 (8 GB), 4 inference threads, in-process | 2.07 s | — | 938 MiB |
+| **SciBERT, PyTorch FP32 (served)**, container | Apple M1 host, Docker limited to 4 CPUs / 4 GB, `PROTOCOLLEDGER_THREADS=4` | **2.40 s** | 100% | 1,058 MiB |
+| SciBERT, same container, default threads | same, threads not matched to the CPU quota | 3.90 s | 100% | 1,064 MiB |
+| SciBERT, PyTorch FP32, in-process | Apple M1 (8 GB), 4 inference threads | 2.07 s | — | 938 MiB |
 | SciBERT, ONNX Runtime FP32 | same | 6.94 s | — | 1,058 MiB |
 | SciBERT, ONNX Runtime INT8 (−0.28 F1) | same | 2.90 s | — | 918 MiB |
 
@@ -521,6 +526,8 @@ Two slices stand out:
 Targets: p95 ≤ 3 s, ≥ 99% success, ≤ 3 GB. SciBERT runtimes:
 <a href="reports/performance/scibert-uniform-negatives-s21-7dc7a1893e-runtimes.md">report</a>.
 On this ARM machine ONNX Runtime is slower than PyTorch, so PyTorch FP32 is served.
+Matching inference threads to the container's CPU quota matters: with PyTorch's default
+(one thread per host core) the CPU-limited container missed the p95 target (3.90 s).
 Re-measure on the deployment host before changing runtimes.</sub>
 
 ## Roadmap

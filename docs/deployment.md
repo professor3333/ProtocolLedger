@@ -38,6 +38,23 @@ If the new release fails `compose up --wait` (unhealthy container) or the smoke 
 `activate` **automatically restores the previous release** and exits non-zero. Every
 event (`activated`, `failed`, `rolled_back`) is appended to `deploy/state/releases.jsonl`.
 
+## Serving SciBERT
+
+The default image serves the CRF + logistic-regression bundle. To serve a span-relation
+bundle, build with the `serve-neural` extra, which adds CPU PyTorch and transformers
+(about 389 MB in total):
+
+```bash
+docker build --build-arg EXTRAS=serve-neural -t protocolledger:neural .
+uv run python scripts/release.py activate --image protocolledger:neural \
+    --bundle artifacts/bundles/scibert-uniform-negatives-s21-7dc7a1893e --reason "SciBERT"
+```
+
+Set `PROTOCOLLEDGER_THREADS` (default 4 in `compose.yaml`) to the host's vCPU count.
+PyTorch otherwise sizes its thread pool to every host core. In a CPU-limited container
+that oversubscribes the CPU: p95 latency measured 3.90 s with the default against 2.40 s
+with matched threads.
+
 ## Rollback
 
 ```bash

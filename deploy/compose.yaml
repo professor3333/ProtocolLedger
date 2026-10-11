@@ -11,6 +11,7 @@ services:
     environment:
       PROTOCOLLEDGER_BUNDLE: /models/${PROTOCOLLEDGER_MODEL_VERSION:?missing model version}
       PROTOCOLLEDGER_DB: /data/reviews.db
+      PROTOCOLLEDGER_THREADS: ${PROTOCOLLEDGER_THREADS:-4}   # match the host's vCPUs
     volumes:
       - ${PROTOCOLLEDGER_BUNDLES_DIR:?missing bundles dir}:/models:ro
       - reviews:/data

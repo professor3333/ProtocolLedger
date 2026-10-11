@@ -1,0 +1,30 @@
+{
+ "name": "scibert-uniform-s21-m1-4cpu",
+ "machine": "Apple M1 (8 GB) host, Docker limited to 4 CPUs / 4 GB",
+ "model_version": "scibert-uniform-negatives-s21-7dc7a1893e",
+ "system": "span-relation",
+ "concurrency": 1,
+ "requests": 1000,
+ "warmup_requests": 20,
+ "input_words": {
+  "max": 498,
+  "median": 216.0
+ },
+ "success_rate": 1.0,
+ "status_counts": {
+  "200": 1000
+ },
+ "latency_seconds": {
+  "p50": 0.9284,
+  "p95": 3.8963,
+  "p99": 6.6952,
+  "max": 58.2705
+ },
+ "throughput_rps": 0.75,
+ "peak_memory_mib": 1063.9,
+ "targets": {
+  "p95_seconds": 3.0,
+  "success_rate": 0.99,
+  "peak_memory_mib": 3072
+ }
+}

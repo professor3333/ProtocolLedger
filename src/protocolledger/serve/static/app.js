@@ -110,6 +110,17 @@ async function loadModelInfo() {
     box.textContent = `${body.system} · ${body.model_version}`;
     box.title = `bundle ${body.bundle_sha256}`;
     box.className = "model ready";
+    const names = {
+      "span-relation": "SciBERT span-relation model.",
+      "crf+logreg": "Baseline model (CRF + logistic regression).",
+    };
+    $("notice-model").textContent = names[body.system] || "Model output.";
+    const ev = body.evaluation || {};
+    if (typeof ev.relation_f1_end_to_end === "number") {
+      $("notice-scores").textContent =
+        `Development-set end-to-end relation F1 ${ev.relation_f1_end_to_end.toFixed(2)}`
+        + (typeof ev.entity_f1 === "number" ? `, entity F1 ${ev.entity_f1.toFixed(2)}.` : ".");
+    }
   } catch (err) {
     box.textContent = `Model unavailable: ${err.message}`;
     box.className = "model down";

@@ -3,13 +3,16 @@
 # training corpus nor any model weights are baked in.
 
 FROM python:3.12-slim-bookworm@sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258 AS build
+# EXTRAS="" builds the baseline image; EXTRAS=serve-neural adds CPU PyTorch + transformers
+# so the image can serve span-relation bundles.
+ARG EXTRAS=""
 COPY --from=ghcr.io/astral-sh/uv:0.12.5@sha256:e85be844203885286c60ffad8a858d48afb6c5a5c237ca0e67f12e74b8f174b1 /uv /bin/uv
 WORKDIR /app
 ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy UV_PYTHON_DOWNLOADS=never
 COPY pyproject.toml uv.lock README.md ./
-RUN uv sync --locked --no-dev --no-install-project
+RUN uv sync --locked --no-dev --no-install-project ${EXTRAS:+--extra $EXTRAS}
 COPY src ./src
-RUN uv sync --locked --no-dev --no-editable
+RUN uv sync --locked --no-dev --no-editable ${EXTRAS:+--extra $EXTRAS}
 
 FROM python:3.12-slim-bookworm@sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258
 RUN useradd --system --uid 10001 --home-dir /app --shell /usr/sbin/nologin app \
