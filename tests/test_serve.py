@@ -129,6 +129,7 @@ def test_health_and_readiness(client: TestClient) -> None:
     ready = client.get("/readyz")
     assert ready.status_code == 200
     assert ready.json()["model_version"] == "tiny-test"
+    assert ready.json()["public_demo"] is False
 
 
 def test_not_ready_without_a_bundle(tmp_path: Path) -> None:

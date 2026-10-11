@@ -349,3 +349,8 @@ button.mini { padding: 3px 8px; font-size: 12.5px; }
   word-break: break-all;
 }
 .token-note code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+.notice.demo {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--ink);
+}

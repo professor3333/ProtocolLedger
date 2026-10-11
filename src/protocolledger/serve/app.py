@@ -57,6 +57,8 @@ from protocolledger.values import VALUES_VERSION, normalize_value
 STATIC_DIR = Path(__file__).parent / "static"
 MAX_BODY_BYTES = 256 * 1024
 DOCS_PATHS = ("/docs", "/redoc")
+# A public demo shows a banner: storage is temporary and confidential text must not be used.
+PUBLIC_DEMO = os.environ.get("PROTOCOLLEDGER_PUBLIC_DEMO", "") == "1"
 SECURITY_HEADERS = {
     "Content-Security-Policy": (
         "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; "
@@ -188,7 +190,7 @@ def create_app(bundle_dir: Path | None, review_db: Path | None = None) -> FastAP
     @app.get("/readyz", responses={503: {"model": Problem}})
     def readyz() -> dict[str, object]:
         loaded = bundle()
-        return {"status": "ready", **loaded.version_info()}
+        return {"status": "ready", "public_demo": PUBLIC_DEMO, **loaded.version_info()}
 
     @app.post(
         "/v1/extract",

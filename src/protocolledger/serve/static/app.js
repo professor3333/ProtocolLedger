@@ -110,6 +110,7 @@ async function loadModelInfo() {
     box.textContent = `${body.system} · ${body.model_version}`;
     box.title = `bundle ${body.bundle_sha256}`;
     box.className = "model ready";
+    $("demo-notice").hidden = !body.public_demo;
     const names = {
       "span-relation": "SciBERT span-relation model.",
       "crf+logreg": "Baseline model (CRF + logistic regression).",
