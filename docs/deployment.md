@@ -70,6 +70,42 @@ bundle) → rollback restored A's exact image id and model version, and a review
 before B was still readable; a deliberately unhealthy release was refused and A was
 restored automatically.
 
+## Model lifecycle: from reviewer corrections to a release
+
+Reviewer edits never become training labels automatically.
+
+```bash
+# 1. Export saved reviews (only those saved with their text) as a batch awaiting curation.
+uv run python scripts/export_review_batch.py --db data/reviews.db
+# 2. Curate: in data/corrections/batch-*/curation.json, set "include": true and give a
+#    "reason" for each review you accept. Everything starts excluded.
+# 3. Build a candidate: refuses uncurated batches, refuses any document that duplicates
+#    a dev or test protocol, retrains with the selected configuration, evaluates on dev
+#    and refuses a regression of more than 0.5 points of end-to-end relation F1.
+uv run python scripts/train_candidate.py --batch data/corrections/batch-<timestamp>
+# 4. Release it with smoke test and rollback.
+uv run python scripts/release.py activate --image <image> \
+    --bundle artifacts/bundles/crf-logreg-candidate-<hash> --reason "correction batch <hash>"
+```
+
+Curated batches contain protocol text and live under `data/corrections/`, which is never
+committed. Candidate reports in `reports/candidates/` record which reviews were included,
+their provenance and the dev scores, but no text.
+
+**Rehearsed** (2026-10-11): four reviews were submitted through the API with reviewer
+corrections. Three were short demonstration protocols written for the rehearsal; the
+fourth deliberately copied a dev protocol.
+- The uncurated batch was refused.
+- With all four included, the copied review was refused as a duplicate of
+  `dev_data/protocol_0`.
+- With it excluded, candidate `crf-logreg-candidate-f2d7f24be9` reached dev relation F1
+  0.5835 against 0.5822 live and passed the gate.
+- The candidate was released through Compose (r2), smoke-tested, and rolled back to r1.
+
+The neural model follows the same flow with `train_neural.py` on a GPU. The curated
+batch must reach the GPU host privately (for example as a private Kaggle dataset); it is
+never pushed to the public repository.
+
 ## Smoke test
 
 `scripts/smoke_test.py` (standard library only) checks, in order: `/healthz`; `/readyz`

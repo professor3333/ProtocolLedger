@@ -27,6 +27,7 @@
   <a href="#evaluation">Evaluation</a> ·
   <a href="#results">Results</a> ·
   <a href="#deployment">Deployment</a> ·
+  <a href="#limitations">Limitations</a> ·
   <a href="#roadmap">Roadmap</a>
 </p>
 
@@ -230,6 +231,7 @@ rollback. CI builds the image and smoke-tests it with a tiny fixture bundle. See
 | Verified SciBERT bundle; PyTorch vs ONNX vs INT8 benchmark | ✅ Done |
 | Serve SciBERT in the Docker image (released through Compose with smoke test) | ✅ Done |
 | Frozen targets; single locked-test evaluation | ✅ Done |
+| Correction-batch lifecycle: export, curate, leakage check, retrain, gate, release, rollback (rehearsed) | ✅ Done |
 | Challenge set and later-domain protocols.io test set | ⬜ Planned |
 | Deterministic quantity normalization | ✅ Done |
 | Saved reviews API, JSON/CSV export, backup and restore | ✅ Done |
@@ -568,6 +570,45 @@ Matching inference threads to the container's CPU quota matters: with PyTorch's 
 (one thread per host core) the CPU-limited container missed the p95 target (3.90 s).
 Re-measure on the deployment host before changing runtimes.</sub>
 
+## Limitations
+
+**Data.**
+- All protocols come from one source (protocols.io), annotated in or before 2020, and
+  cover a limited range of wet-lab subdomains. There is no claim about other sources or
+  newer protocols until the planned later-domain test set exists.
+- Exact and near-duplicate copies were removed, but protocols built from shared vendor
+  templates remain. Documents with a template sibling in training score higher, which is
+  why they are reported as a separate slice.
+- The annotations are themselves inconsistent: duplicate copies of the same protocol
+  agree at relation F1 0.711. That bounds what any model can score against a single gold
+  copy.
+
+**Model.**
+- **Misses two frozen targets on the locked test.** End-to-end relation F1 is 0.580
+  against a target of 0.65, and 95% precision is reachable only at 13.4% coverage
+  against a target of 30%.
+- **Most relation errors start as entity errors.** Open-vocabulary types (Method,
+  Modifier, Device) and rare relations (Commands, Of-Type, Product) are weakest.
+- **Not modelled:** implicit references ("it"), cross-step coreference, negation,
+  alternatives and conditional instructions. The interface routes unstated objects to
+  review rather than guessing, but it does not detect every implicit argument.
+- **Input scope:** English, plain text only (no PDF or OCR). Words glued together by
+  table flattening (`100 µlof`) cannot be segmented.
+
+**Evaluation.**
+- Value normalization has not been checked against an independently labelled set.
+- There is no challenge set or later-domain test set yet.
+- **No user pilot has been run**, so there is no evidence yet that the tool saves time.
+- Latency and memory were measured on an Apple M1 with Docker limited to 4 CPUs, not on
+  a production x86 host.
+
+**Product.**
+- **Not publicly hosted yet.** The local Docker path is complete.
+- Reviews are protected by unguessable ids and one-time tokens, not by user accounts.
+- One process with SQLite is the intended scale. Concurrent multi-user load is untested.
+- **Not for executing protocols, or for judging whether a protocol is complete, correct
+  or safe.** Every row is a suggestion for a person to review.
+
 ## Roadmap
 
 - [x] **Phase 0:** project skeleton, CI, pinned corpus acquisition
@@ -611,6 +652,8 @@ ProtocolLedger/
 │   ├── build_bundle.py    # verified, versioned model bundle for serving
 │   ├── train_neural.py    # train / select / report one neural configuration
 │   ├── kaggle.py          # launch / monitor / fetch GPU jobs on Kaggle
+│   ├── export_review_batch.py # saved reviews → correction batch awaiting curation
+│   ├── train_candidate.py # curated batch → leakage check → retrain → dev gate → candidate
 │   ├── backup_reviews.py  # consistent backup / verified restore of the review database
 │   ├── log_reports_mlflow.py  # committed reports into MLflow (idempotent)
 │   ├── release.py         # activate / rollback / status (image + bundle pinned together)

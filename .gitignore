@@ -46,3 +46,6 @@ htmlcov/
 
 # Deployment state (active release, history) is per host
 deploy/state/
+
+# Curated review batches contain protocol text (user content): never committed
+data/corrections/

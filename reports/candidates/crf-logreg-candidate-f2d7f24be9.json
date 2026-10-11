@@ -1,0 +1,40 @@
+{
+ "created_at": "2026-10-11T05:36:03+00:00",
+ "code_commit": "3a158d91e2c7bf4813ab6ebe85585f157a594237",
+ "batch_sha256": "f2d7f24be96cc4084c584b9d937fe0c63ec780f7396fe7ac9b3e10a34bfa93b3",
+ "included_documents": 3,
+ "included": [
+  {
+   "doc_id": "review/6pRoETlVsinr5EyJ9QimKQ/r1",
+   "review_id": "6pRoETlVsinr5EyJ9QimKQ",
+   "revision": 1,
+   "model_version": "crf-logreg-4a9d8cc549",
+   "text_sha256": "9288e72b2f4336f637d8fa33dc4b63c332858a1c44def41c9ec3d4fc4df8d70b",
+   "reviewer_changes": 0
+  },
+  {
+   "doc_id": "review/QMNj1Iln35FigyAZsHmfGw/r1",
+   "review_id": "QMNj1Iln35FigyAZsHmfGw",
+   "revision": 1,
+   "model_version": "crf-logreg-4a9d8cc549",
+   "text_sha256": "fd061f377c17915ce9916cedfbcda689a96f3a63db52be468cf12c646967a066",
+   "reviewer_changes": 1
+  },
+  {
+   "doc_id": "review/eFXY35sm3G1DrepGt7fTew/r1",
+   "review_id": "eFXY35sm3G1DrepGt7fTew",
+   "revision": 1,
+   "model_version": "crf-logreg-4a9d8cc549",
+   "text_sha256": "8b905b44796d90e283d6e18fced8f9988e95b0167248edaae15b82a9732a35a6",
+   "reviewer_changes": 0
+  }
+ ],
+ "dev_entity_f1": 0.7572,
+ "dev_relation_f1": 0.5835,
+ "live_dev_relation_f1": 0.5822,
+ "relation_f1_drop_points": -0.13,
+ "max_drop_points": 0.5,
+ "passes_gate": true,
+ "bundle": "artifacts/bundles/crf-logreg-candidate-f2d7f24be9",
+ "bundle_sha256": "5e4713edd1bb80561cf0cbcbf227ec1ff6af696f4158cffa0686907143a4340d"
+}
