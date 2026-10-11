@@ -147,6 +147,35 @@ Unlabeled drift indicators trigger investigation only; estimating production acc
 requires newly reviewed labels. Access logs are JSON lines (method, route template,
 status, latency) and never contain submitted text.
 
+## Public demo (Oracle Cloud Always Free)
+
+The public demo runs the SciBERT model on an Oracle Cloud Always Free ARM VM (4 OCPU,
+24 GB). Hugging Face now requires a paid plan for Docker Spaces, so the model is hosted
+on the Hub (`professor3333/protocolledger-scibert`, pinned by revision) while the app
+runs on the VM.
+
+```bash
+uv run python scripts/deploy_oracle.py --host <public-ip>
+```
+
+The script:
+1. Refuses an unpushed commit.
+2. Runs `deploy/oracle/bootstrap.sh` (idempotent). This installs Docker and uv, and opens
+   ports 80/443 in the VM's own iptables, which Oracle's Ubuntu images block even when
+   the cloud security list allows them.
+3. Builds the SciBERT image at `HEAD` on the VM.
+4. Downloads the bundle at the pinned revision.
+5. Activates it with `release.py --public-demo`, which smoke-tests the release and rolls
+   back on failure.
+6. Checks `https://<ip>.sslip.io/readyz`. Caddy obtains a certificate automatically for
+   the free `sslip.io` hostname.
+
+The public-demo banner warns that saved reviews are temporary and that confidential
+protocols must not be pasted.
+
+Oracle may reclaim Always Free VMs that stay almost idle for a week. If that happens,
+create a new VM and re-run the script.
+
 ## Hosting
 
 Any small CPU VM with Docker works (the plan suggests e.g. a Hetzner CX-class instance;

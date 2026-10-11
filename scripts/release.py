@@ -80,6 +80,7 @@ def write_env(release: dict[str, Any], args: argparse.Namespace) -> None:
         "SITE_ADDRESS": args.site_address,
         "HTTP_PORT": str(args.http_port),
         "HTTPS_PORT": str(args.https_port),
+        "PROTOCOLLEDGER_PUBLIC_DEMO": "1" if args.public_demo else "0",
     }
     ACTIVE.write_text("".join(f"{k}={v}\n" for k, v in lines.items()))
 
@@ -212,6 +213,11 @@ def main(argv: list[str] | None = None) -> int:
         p.add_argument("--site-address", default=":80")
         p.add_argument("--http-port", type=int, default=80)
         p.add_argument("--https-port", type=int, default=443)
+        p.add_argument(
+            "--public-demo",
+            action="store_true",
+            help="show the public-demo banner (temporary reviews, no confidential text)",
+        )
         if name == "activate":
             p.add_argument("--image", required=True)
             p.add_argument("--bundle", required=True)

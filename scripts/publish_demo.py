@@ -1,11 +1,13 @@
-"""Publish the served model and the public demo to Hugging Face (free CPU Space).
+"""Publish the served model to the Hugging Face Hub (and optionally a Docker Space).
 
     uv run --extra neural python scripts/publish_demo.py \\
         --bundle artifacts/bundles/scibert-uniform-negatives-s21-7dc7a1893e
 
 1. Uploads the bundle (hash-verified locally first) and a model card to the model repo.
-2. Writes the Space's Dockerfile and README from deploy/huggingface/, pinning the GitHub
-   commit (must be pushed) and the model repo revision, and uploads them to the Space.
+2. With --space, writes a Docker Space's Dockerfile and README from deploy/huggingface/,
+   pinning the GitHub commit and the model revision. Hugging Face now requires a PRO
+   subscription for Docker Spaces, so the free public demo runs on Oracle Cloud instead
+   (scripts/deploy_oracle.py).
 Uses the Hugging Face login on this machine; no token is read or printed by this script.
 """
 
@@ -60,7 +62,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--bundle", type=Path, required=True)
     parser.add_argument("--owner", default="professor3333")
     parser.add_argument("--model-repo", default="protocolledger-scibert")
-    parser.add_argument("--space", default="protocolledger")
+    parser.add_argument("--space", default=None, help="also deploy this Space (needs PRO)")
     args = parser.parse_args(argv)
 
     if git("status", "--porcelain", "--untracked-files=no"):
@@ -73,7 +75,6 @@ def main(argv: list[str] | None = None) -> int:
     version = loaded.model_version
     api = HfApi()
     model_repo = f"{args.owner}/{args.model_repo}"
-    space_repo = f"{args.owner}/{args.space}"
 
     api.create_repo(model_repo, repo_type="model", exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
@@ -87,6 +88,9 @@ def main(argv: list[str] | None = None) -> int:
         )
     revision = info.oid
     print(f"model: https://huggingface.co/{model_repo} @ {revision}")
+    if not args.space:
+        return 0
+    space_repo = f"{args.owner}/{args.space}"
 
     api.create_repo(space_repo, repo_type="space", space_sdk="docker", exist_ok=True)
     values = {
