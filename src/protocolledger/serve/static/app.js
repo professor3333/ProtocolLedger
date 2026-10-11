@@ -584,11 +584,12 @@ function renderSaveBar() {
     return;
   }
   const counts = { added: 0, edited: 0, rejected: 0 };
-  for (const e of doc.entities.values()) {
-    const key = e.origin === "human" ? "added" : e.decision;
+  for (const item of [...doc.entities.values(), ...doc.relations.values()]) {
+    const key = item.origin === "human" ? "added" : item.decision;
     if (key in counts) counts[key] += 1;
   }
-  const summary = `${counts.added} added · ${counts.edited} edited · ${counts.rejected} rejected`;
+  const summary = `${counts.added} added \u00b7 ${counts.edited} edited \u00b7 ${counts.rejected} rejected`
+    + " (entities and relations)";
   $("save-state").textContent = saved
     ? `Review ${doc.review.id} · revision ${doc.review.revision}`
       + `${doc.dirty ? " · unsaved changes" : " · saved"} · ${summary}`

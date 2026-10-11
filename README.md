@@ -16,6 +16,7 @@
 </p>
 
 <p align="center">
+  <a href="#demo">Demo</a> ·
   <a href="#architecture">Architecture</a> ·
   <a href="#the-problem">The problem</a> ·
   <a href="#review-interface">Interface</a> ·
@@ -47,6 +48,17 @@ baselines on a deduplicated split of the WNUT-2020 Wet Lab Protocol corpus.
 > ProtocolLedger is in early development. The banner shows the **intended** output for
 > a worked example, not a prediction from a trained model. See [Status](#status) for
 > what exists today.
+
+## Demo
+
+<p align="center">
+  <img src="docs/assets/demo.gif" alt="Screen recording: a protocol is pasted and SciBERT extracts a preparation sheet; clicking 500 µL highlights its source; the model's error of treating 'ice' as the object of Incubate is rejected and replaced with a Site relation; 'vortex' has no stated object and is marked Review required until the reviewer adds 'cells', shown as human; the review is saved and exported as CSV" width="100%">
+</p>
+
+<sub>40-second recording of the real SciBERT model (no edits to its output before the
+reviewer acts), showing a correct extraction, a genuine attachment error, an unresolved
+case, the corrections, then save and export.
+<a href="docs/assets/demo.mp4">MP4 version</a>.</sub>
 
 ## Architecture
 
