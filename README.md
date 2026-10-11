@@ -12,7 +12,7 @@
   <img alt="Python 3.12" src="https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white">
   <a href="https://github.com/astral-sh/ruff"><img alt="Ruff" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json"></a>
   <img alt="mypy: strict" src="https://img.shields.io/badge/mypy-strict-2a6db2">
-  <img alt="Status: Phase 3, transformer model" src="https://img.shields.io/badge/status-phase%203%20%C2%B7%20transformer-f5a524">
+  <img alt="Status: Phase 4, evaluation" src="https://img.shields.io/badge/status-phase%204%20%C2%B7%20evaluation-f5a524">
 </p>
 
 <p align="center">
@@ -224,7 +224,7 @@ rollback. CI builds the image and smoke-tests it with a tiny fixture bundle. See
 | CRF / logistic-regression baseline | ✅ Done |
 | Thin end-to-end review app on the baseline (API, evidence highlighting) | ✅ Done |
 | BERT / SciBERT span-and-relation model: code, tests, MLflow tracking | ✅ Done |
-| GPU training runs and ablations (Kaggle) | 🚧 Next |
+| GPU training runs and ablations (Kaggle) | ✅ Done |
 | Error taxonomy and slices (unseen names, template siblings) | ✅ Done |
 | Precision–coverage and isotonic calibration tooling | ✅ Done |
 | Challenge set | ⬜ Planned |
@@ -411,14 +411,31 @@ published protocols.
 |---|---:|---:|---:|---:|---:|
 | Rules | 0.692 [0.666, 0.715] | 0.604 [0.577, 0.633] | **0.355** [0.322, 0.386] | 0.521 | 0.112 |
 | CRF + logistic regression | 0.756 [0.733, 0.779] | 0.812 [0.795, 0.829] | **0.582** [0.553, 0.611] | 0.708 | 0.231 |
-| SciBERT span-relation (lr 2e-5, seed 13)¹ | 0.802 [0.782, 0.824] | 0.826 | **0.641** [0.617, 0.667] | 0.760 | 0.255 |
-| SciBERT span-relation (lr 5e-5, seed 13)¹ | 0.798 [0.778, 0.820] | 0.823 | **0.639** [0.616, 0.665] | 0.769 | 0.256 |
+| **SciBERT span-relation** (3 seeds) | **0.802** | 0.822 | **0.636 ± 0.006** | 0.768 | — |
+| BERT-base-cased control (1 seed) | 0.795 | 0.821 | 0.634 [0.611, 0.657] | 0.764 | — |
 
-<sub>¹ Single seed; BERT control, ablations and two more seeds are running. Strict
-matching; 95% document-level bootstrap intervals in brackets. Full per-label
+<sub>Strict matching; 95% document-level bootstrap intervals in brackets for single runs,
+mean ± sd over seeds otherwise. All experiments, including ablations:
+<a href="reports/experiments-dev.md">reports/experiments-dev.md</a>. Full per-label
 tables: <a href="reports/baselines/rules-dev.md">rules</a>,
 <a href="reports/baselines/crf-logreg-dev.md">CRF + logistic regression</a>,
 <a href="reports/neural/scibert-lr2e-5-s13-dev.md">SciBERT</a>.</sub>
+
+**What the experiments answer** (dev):
+
+| Question from the plan | Answer |
+|---|---|
+| Rules → CRF: does supervision help? | Yes: relation F1 0.355 → 0.582 |
+| CRF → SciBERT: does a contextual encoder help? | Yes: 0.582 → 0.636 ± 0.006 (3 seeds), entity F1 0.756 → 0.802 |
+| BERT → SciBERT: does scientific pretraining help? | Barely: 0.634 vs 0.641 at the same settings, well within noise |
+| Frozen → fine-tuned encoder: worth the compute? | Decisively: 0.487 frozen vs 0.641 fine-tuned |
+| Uniform → hard negatives: are hard attachments learned better? | No measurable gain: uniform 0.644, hard 0.641 (one seed each) |
+| Remove type and distance features | Small end-to-end cost (−0.7), but −3.8 points given gold entities |
+
+Against the proposed targets, SciBERT clears **entity F1 ≥ 0.75** and is **≥ 5 points above
+the traditional baseline** (+5.4 on the 3-seed mean). It does **not** reach end-to-end
+relation F1 ≥ 0.65 on dev (0.636 ± 0.006). The targets are not frozen yet, and this result
+will be reported as it stands rather than adjusted.
 
 - **Supervision pays off.** The CRF + logistic-regression baseline raises end-to-end
   relation F1 from 0.355 to 0.582. Most of the gain is in attachment: given the same gold
@@ -478,7 +495,7 @@ same way, with and without ONNX/INT8.</sub>
 - [x] **Phase 0:** project skeleton, CI, pinned corpus acquisition
 - [x] **Phase 1:** annotation converter, validation, duplicate audit, frozen splits
 - [ ] **Phase 2:** rule-based and CRF / logistic baselines, thin end-to-end app
-- [ ] **Phase 3:** BERT / SciBERT span-and-relation model with ablations
+- [x] **Phase 3:** BERT / SciBERT span-and-relation model with ablations
 - [ ] **Phase 4:** error analysis, calibration, fresh annotations and challenge set
 - [ ] **Phase 5:** API, evidence highlighting, editing, saved reviews, exports
 - [ ] **Phase 6:** CPU optimization, Docker deployment, monitoring and rollback
