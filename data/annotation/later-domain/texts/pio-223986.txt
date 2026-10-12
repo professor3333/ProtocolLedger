@@ -1,0 +1,9 @@
+Microscopy-based bead assay
+Equilibrate 10 µL of GFP-Trap agarose beads with water and twice with EBB.
+Incubate freshly purified ATG9A vesicles (from 5x 15-cm plates) or MOCK controls (from wild-type HAP1 cells) with beads at 4 °C for 05:00:00 with gentle rotation.
+Store Overnight at 4 °C .
+Wash beads twice with 200 µL SEC150 and resuspend in 5 µL –10 µL SEC150.
+Equilibrate 10 µL GFP-Trap beads with water and twice with SEC150.
+Incubate 500 µL of PLs with beads at 4 °C .
+After binding, wash beads with SEC150 before downstream applications.
+Pipette 20 µL prey protein ( 0.1 micromolar (µM) mCherry-PI3KC3-C1 or ATG2A-mCherry) into each well.

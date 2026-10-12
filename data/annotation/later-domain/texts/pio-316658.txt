@@ -1,0 +1,9 @@
+Placental Matrisome Proteomic Analysis by LC-MS/MS
+Protein Solubilization A summary of the steps used for solubilization and in-solution digestion of ECM-enriched proteins is provided below. For more detailed instructions, refer to the following protocol:
+Weigh 45–120 mg of placenta tissue for each sample.
+Transfer tissue into bead homogenization tubes containing: Four 2.8 mm ceramic beads (OMNI International #19628) Four 2.4 mm metal beads (OMNI International #19-610)
+Homogenize tissue using an OMNI Bead Ruptor at 8 m/s using: Three 10-second homogenization cycles 60-second pauses between cycles
+Assess enrichment efficiency and intracellular protein depletion by western blot analysis.
+Probe samples using the following primary antibodies: Anti-actin (kindly gifted by Dr. Richard O. Hynes; use at 1:5000 dilution) Anti-integrin beta-1 (kindly gifted by Dr. Richard O. Hynes; use at 1:1000 dilution) Anti-collagen III (Abcam #ab7778; use at 2 µg/mL) Anti-GAPDH (Sigma #MAB374; use at 2 µg/mL) Anti-histone H4 (Sigma #05-858; use at 1:30000 dilution) Anti-transglutaminase 2/TGM2 (Abcam #ab421; use at 2.5 µg /mL)
+Detect primary antibodies using HRP-conjugated secondary antibodies: Goat anti-rabbit HRP (Invitrogen #31460; use at 8 µg /mL) Goat anti-mouse HRP (Invitrogen #31430; use at 1.6 µg/mL)
+Solubilize ECM-enriched protein pellets in 8 M urea prepared in 100 mM ammonium bicarbonate.

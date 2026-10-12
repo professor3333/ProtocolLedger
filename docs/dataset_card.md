@@ -187,6 +187,8 @@ hard phenomena (11 protocols, 33 steps). The collection rules are in the
   Protocol text is protocols.io user content under CC BY (Terms of Service, section
   1(B)). Each source records its URL, DOI, authors, version and publication date. The
   API's own `license` field was empty for every collected protocol.
+  The texts are committed in `data/annotation/` with that attribution; the repository's
+  MIT license does not apply to them.
 - **Independence.** No collected protocol matches a WNUT-2020 document, or another
   collected protocol, under the corpus dedup rule. The two sets share no protocol.
 - **Splits.** Dev or test is assigned per whole protocol from a hash of its id, before

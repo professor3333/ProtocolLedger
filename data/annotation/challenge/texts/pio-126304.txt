@@ -1,0 +1,4 @@
+Immunofluorescence staining
+Incubate 00:20:00 at Room temperature . For cells expressing light sensitive fluorescent proteins, cover the 24 well plate with aluminum foil to block out ambient light.
+Perform the following washes with 1× PBS:
+Remove the coverslips from the plate and gently put it upside-down on the antibody drop.

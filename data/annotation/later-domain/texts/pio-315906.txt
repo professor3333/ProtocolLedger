@@ -1,0 +1,9 @@
+Chelex DNA Extraction
+Turn on heat block and set to 55ºC
+Prepare one 1.5mL microcentrifuge tube per sample and label with SampleID by writing on the tube lid directly with a fine point Sharpie
+Vortex the stock 10% Chelex solution for 60 seconds
+Add 100µL 10% Chelex solution to each tube. Vortex Chelex solution every few samples to keep it suspended, as it falls out of solution very quickly
+Vortex 24 sample tubes with swab in DNA/RNA Shield on max speed for 5 minutes
+Transfer 10µL of DNA/RNA Shield from the sample tube into a pre-filled, labeled 1.5mL microcentrifuge tube containing 100µL 10% Chelex solution
+Repeat Steps 5–6 four more times until all 112 samples are processed
+Note: To save time, the next batch of samples can be vortexing while the current batch is being transferred into tubes with Chelex

@@ -1,0 +1,7 @@
+Inducing a-synuclein aggregation with PFFs in 2D and 3D culture
+Thaw a-synuclein PFFs immediately before use
+Add PFFs to complete media in a microcentrifuge tube to a final concentration of 4μg/mL. Also prepare a microcentrifuge tube with media and no PFFs
+Remove 90% of the media, removing as much as possible without drying out the cells
+Sonicate PFFs (and no PFF control) in a water bath sonicator with the program: 30 seconds on; 30 seconds off; repeat for 10 cycles
+Replace with complete media with freshly sonnicated PFFs
+Continue with half media changes every 3-4 days for at least 2 weeks

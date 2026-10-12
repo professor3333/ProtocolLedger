@@ -1,0 +1,9 @@
+Collection and treatment with conditioned media
+Continue to follow the differentiation protocol for media changes
+Starting Day 14, collect the media from the half media change. Centrifuge at 2000 x g, 25 °C, 5 minutes pellet debris. Store conditioned media at -20 °C . This is neuron conditioned media
+Continue to collect media with every half media change, every 3-4 days
+Plate astrocytes at 30,000 cells/cm² on 0.1% coated plates in Astrocyte Medium (AM; ScienCell)
+The following day, change the media to FBS-free maturation media: 50% DMEM/F12, 50% Neurobasal, 1x B27 without Vitamin A, 1x N2, 1X NEAA, 1X GlutaMAX, 10ng/mL CNTF, 1% pennicillin-streptomycin)
+After 3 days, collect the media. Centrifuge at 2000 x g, 25 °C, 5 minutes pellet debris. Store conditioned media at -20 °C . This is astrocyte conditioned media.
+Continue to collect media with every full media change, every 3-4 days. Astrocytes can also be assayed at this point to determine the effects of neuronal media.
+Generate neuron conditioned media as described in steps 1-4

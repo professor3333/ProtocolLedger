@@ -1,0 +1,9 @@
+RNA extraction from Sterivex, GFF (2.7 μm and 0.2 μm) membrane filters and cDNA library generation
+Thaw Sterivex filters on ice and expel RNAlater (if used) using a 3 mL syringe. If stored at −80 °C, ensure no residual liquid remains inside the Sterivex; if present, remove it using a 3 mL syringe.
+Seal the lower end (nipple) of each Sterivex filter with parafilm or Sterivex caps. Additionally, seal the lower rim with parafilm to prevent leakage.
+Add beads to approximately 1/10 of the Sterivex filter volume (using beads from the 5 mL kit tubes provided by manufacturer, or UV-sterilized beads).
+Aliquot 1.8 mL of PM1 buffer into 2 mL Eppendorf tubes and heat at 65 °C for 5 min.
+Using a clean 3 mL syringe fitted with a 22G needle, transfer the heated PM1 buffer into each Sterivex.
+Add 100 µL of molecular-grade 2-mercaptoethanol using a 1 mL syringe fitted with a 22G needle.
+Seal the upper end of the Sterivex with parafilm.
+Vortex at maximum speed for ~2 min.

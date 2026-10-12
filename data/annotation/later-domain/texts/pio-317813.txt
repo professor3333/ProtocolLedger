@@ -1,0 +1,9 @@
+Pathogen-Agnostic WGS: An ONT Workflow (Lyssavirus Rabies Part 1 - RNA Extraction)
+Weigh 50 mg brain tissue (straw method) in a 2 ml microcentrifuge tube. The tissue sample should be placed on dry ice after retrieved from the storage and the weighing step must be carried out swiftly.
+Add 600 µl 1X DNA/RNA ShieldTM to the brain tissue at room temperature.
+Disrupt the tissue with TissueLyser II (QIAGEN) Homogenisation for 2 min at 25 Hz.
+Add 1 stainless steel bead to the tube.
+Aliquot 200 µl disrupted tissue for the extraction step.
+Pipette 20 µl Proteinase K into a 1.5 ml Lo-Bind tube.
+Add 200 µl disrupted tissue sample to the Proteinase K.
+Add 100 µl Buffer VXL. Close the cap and mix by pulse-vortexing. Thoroughly homogenise the sample and the buffer to ensure sufficient lysis.

@@ -399,12 +399,15 @@ neither shares a protocol with WNUT-2020 or with the other set.
   text test using train-only vocabularies.
 - **Splits.** Dev or test is assigned per whole protocol from a hash of its id, before
   any annotation. The **test portions are locked** like `test_data_2020`.
-- **Reproducibility.** Every API response is cached once under `data/raw/protocolsio/`
-  (not committed), so re-running on the same machine rebuilds byte-identical sets. Every decision is in
+- **Reproducibility.** The collected sets are committed in `data/annotation/<set>/`
+  (`sources.jsonl` and `texts/`), because protocols.io search results change over time.
+  The raw API responses are cached under `data/raw/protocolsio/` (not committed), so
+  re-running on the same machine rebuilds byte-identical sets. Every decision is in
   `data/manifests/protocolsio_collection.json`.
 
 Each source keeps its URL, DOI, authors, version and publication date. Protocol text is
-protocols.io user content under CC BY, with this attribution kept.
+protocols.io user content under CC BY, redistributed here with that attribution; the
+repository's MIT license covers the code, not this text.
 
 **Annotating.** The gold labels are being written by one annotator from scratch, without
 model suggestions. Agreement figures on this data will be **repeat-annotation

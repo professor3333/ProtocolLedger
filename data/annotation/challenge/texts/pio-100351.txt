@@ -1,0 +1,4 @@
+BioID: Identifying Protein-Protein Interactions in Living Cells
+Remove supernatant and resuspend them in PBS (final vol. 500µl)
+To store the left-over beads, spin them, remove supernatant, wash 2x with 20% ethanol and add 20% ethanol (storage solution) up to the right volume
+Check pH, it should be <3, if not acidify with 10% TFA

@@ -1,0 +1,9 @@
+Isolating Symbionts from Vertically Transmitted Corals (Montipora capitata)
+Once corals spawn add eggs to a 50ml or 15ml falcon tube
+Centrifuge material at 1000rpm for 5 minutes x 7
+Move all materials needed under the laminar flow hood
+After 7th spin remove all the liquid leaving behind the pellet
+Add FSW (.2um) and resuspend the pellet carefully
+After 24 hours add 1ml of fresh f/2 media to each well
+Pipette material per well (this volume varies based on how many wells you have media in) eg. If I have 1ml worth of resuspended material and 12 wells filled with 1ml of f/2 media. I would aliquot 83.333uL of material into each well
+Throughout the process I looked under the microscope every day to assess motility and behaviour of the cells. If at any point in time you find a well contaminated pipette the entire volume out and evenly distribute across 1.5 Eppendorf tubes, and centrifuge till you see no 'gunk', and add the pellet or bottom portion of the media into a fresh well.

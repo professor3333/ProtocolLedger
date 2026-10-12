@@ -1,0 +1,9 @@
+Expression and Purification of Glycine-Exposed GST-Tagged ATG8 Proteins in E. coli
+Inoculate E. coli Rosetta™ (DE3) pLysS cells harboring the plasmid into 2× TY medium and grow at 37 °C with shaking.
+Monitor cell density via OD₆₀₀. When OD₆₀₀ reaches ~0.4, shift the culture to 18 °C .
+Allow the culture to grow until OD₆₀₀ reaches ~0.8.
+Incubate at 18 °C for 16:00:00 with continuous shaking.
+Harvest cells by centrifugation ( 4000 x g, °C, , 00:20:00 , 4 °C ).
+Flash-freeze cell pellets in liquid nitrogen and store at -80 °C .
+Resuspend cell pellets in ice-cold lysis buffer.
+Lyse cells by sonication On ice (2× 30 sec, 60%).

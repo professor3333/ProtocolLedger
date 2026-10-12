@@ -1,0 +1,9 @@
+Cholesterol-lowering drug treatment of iPSC-derived astrocytes
+Day 0: When fully differentiated, seed astrocytes at 100,000 - 200,000 cell/well (10,000 - 20,000 cells/cm²) of a 6-wellplate, pre-coated in 1% gelatin, with 2mL of Astrocyte Media (ScienCell).
+Day 3: After 3 days, change the media to Astrocyte Media without FBS. Supplement with cholesterol-lowering drugs at the specified concentration: 2-hydroxypropyl-β-cyclodextrin: 100 µM (Sigma C0926)methyl-β-cyclodextrin: 100 µM (Cayman 21633)atorvastatin: 50 nM (Sigma SML3030)efavirenz: 10 µM (MedChemExpress HY10572)LXR-623: 10 µM (MedChemExpress HY-10629)T0901317: 10 µM (MedChemExpress HY-10626) Use DMSO as a vehicle control
+Day 7: After 3-4 days of treatment (no media changes necessary), seed cells for final assays in 0.1% gelatin-coated 96 well plates at 10,000 cells/well (30,000 cells/cm²) in Astrocyte Media. Continue to include the drug treatment at the same concentration.
+Day 8: Change the media to FBS-free maturation media: 50% DMEM/F12, 50% Neurobasal, 1x B27 wihtout Vitamin A, 1x N2, 1X NEAA, 1X GlutaMAX, 10ng/mL CNTF, 1% pennicillin-streptomycin). Continue to include the drug treatment at the sam econcentration.
+Day 11+: Cells are ready for assays. If keeping in culture for longer, continue to add the drug treatment with each media change, every 3-4 days
+Prepare 2-hydroxypropyl-β-cyclodextrin (Sigma C0926) as a 100mM stock in DMSO
+Prepare methyl-β-cyclodextrin (Cayman 21633) as a 100mM stock in DMSO
+Prepare atorvastatin (Sigma SML3030) as a 50μM stock in DMSO

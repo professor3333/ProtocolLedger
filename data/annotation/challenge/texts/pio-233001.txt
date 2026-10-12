@@ -1,0 +1,4 @@
+Synaptic vesicle preparation from mouse brain
+Centrifuge homogenate at 871 × g, 10 min, 4°C. Collect the supernatant (S1).
+Resuspend the LP2 pellet in SHT buffer diluted to 40 mM sucrose (prepared by diluting standard SHT buffer: 0.3 M sucrose, 1 mM Mg-EGTA, 10 mM HEPES-Tris, pH 7.4).
+Prepare a 5–25% glycerol gradient using the glycerol gradient buffer using a gradient maker to form a continuous gradient.

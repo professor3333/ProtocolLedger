@@ -1,0 +1,9 @@
+Nanopore Sequencing of poliovirus isolates
+Pairs of samples (with the same EPID) can have consecutive barcodes but try not to group samples from the same geographic area together. This helps detect any potential cross-contamination because identical sequences are then unlikely to be detected in samples with consecutive barcodes that are adjacent to one another on the 96-well plate.
+Prepare a master mix using the reaction volumes detailed in the table below for the number of samples you have plus negative controls. The reaction mix and SSIII enzyme are provided in SuperScript III One-Step RT-PCR System with Platinum Taq Invitrogen - Thermo Fisher Catalog #12457-026
+Pool 2μL of each VP1 product into a clean 1.5mL tube and concentrate with AMPure beads Agencourt AMPure XP Beckman Coulter Catalog #A63880
+After the sequencing run is finished you can wash your flow cell to remove the remaining library and either prepare for another sequencing run or for storage at 4°C. The wash uses the reagents supplied in the ONT wash kit: ONT Flow Cell Wash Kit Oxford Nanopore Technologies Catalog #EXP-WSH004
+Thaw the Sequencing buffer (SB), Library beads (LIB), Flow Cell Tether (FCT) and one tube of Flow Cell Flush (FCF) at room temperature then place on ice. Mix the SQB, FCF, and FCT by vortexing, spin down, and return to ice. Spin down the LIB then place back on ice.
+Vortex the mastermix for 3 seconds and spin down for 5 seconds to gather contents at the bottom of the tube. Aliquot 18μL to each 0.2mL PCR tube. Add 2μL of barcoded primer to each well, ensuring you add a different barcode for each reaction. Add 5μL sample RNA to each reaction, and 5μL of nuclease free water for negative controls, and pipette 5 times to mix
+Spin down for 5 seconds to make sure all reagents are in the bottom of the tube.
+Amplify using the following cycling conditions:

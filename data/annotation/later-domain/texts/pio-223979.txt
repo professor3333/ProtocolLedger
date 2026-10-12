@@ -1,0 +1,9 @@
+Expression and Purification of GST-Tagged ATG8 Proteins in E. coli
+Inoculate E. coli Rosetta™ (DE3) pLysS cells harboring the plasmid into 2× TY medium and incubate at 37 °C with shaking.
+Monitor the culture's OD₆₀₀. Once it reaches approximately 0.4, reduce the temperature to 18 °C .
+Continue incubation until the OD₆₀₀ reaches ~0.8.
+Induce protein expression by adding IPTG to a final concentration of 100 micromolar (µM) .
+Incubate the culture at 18 °C for 16:00:00 with shaking.
+Harvest cells by centrifugation at 4000 x g, °C, for 00:20:00 at 4 °C .
+Wash the pellet once with ice-cold 1× PBS (optional), then flash-freeze in liquid nitrogen and store at -80 °C until purification.
+Resuspend cell pellets in ice-cold lysis buffer.

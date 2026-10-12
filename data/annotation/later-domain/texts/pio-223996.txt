@@ -1,0 +1,9 @@
+Isolation of Autophagosomes and Proteinase K Protection Assay
+Use the following cell lines: HAP1 ATG9A-GFP (RRID:CVCL_E2TR) HAP1 ATG9A-GFP ATG2 DKO (RRID:CVCL_F0LE)
+Seed cells in 15 cm dishes (two dishes per condition).
+Treat cells with: Earle’s Balanced Salt Solution (EBSS). 100 nanomolar (nM) Bafilomycin A1 (BafA).
+Incubate for 02:00:00 prior to harvesting.
+Harvest cells by trypsinization and pellet via centrifugation.
+Wash once with PBS.
+Resuspend pellets in 800 µL Vesicle Isolation Buffer (VIB):
+Transfer to LoBind tubes (Eppendorf, Cat# 0030108116).

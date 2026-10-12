@@ -1,0 +1,4 @@
+Preparation of Encoding Probes SOP005.v1.7 (PCR, In-vitro Transcription, Reverse Transcription Alkaline Hydrolysis & Probe Concentration
+Repeat cycle steps 2 through 5 from step 3 until the rate at which the sample amplification decreases and starts to reach a plateau (generally 15-20 cycles).
+In a fresh 1.7 mL Eppendorf tube, mix the following: 160 µL, of the in vitro template created in Part 1. 176 µL, of nuclease free water 250 µL, of the NTP buffer mix provided with the Quick HiScribe T7 polymerase kit 25 µL, of RNasin Plus 25 µL, T7 polymerase (from the same HiScribe kit)
+If vacuum concentrator isn’t available, concentrate probe using ethanol precipitation (refer to SOP009).

@@ -1,0 +1,9 @@
+Joint extraction of DNA and RNA from plankton filters using the commercial DNAbsolute kit
+In a 50 mL Falcon tube, preheat one 3600 µL aliquot of Lysis buffer 1 for 5 min at 56°C.
+Recover the still-frozen filter using forceps and cut it with a scalpel over the 50 mL tube containing the preheated LB1.
+Add 360 µL DTT (0.1 M) = 1/10 Vol (10 mM final) to inhibit RNases.
+Pour in the entire contents of one bashing bead tube.
+Vortex for 15 sec.
+Briefly centrifuge, ramp up and down, 1000g.
+Add 360 µL of Proteinase K and mix gently.
+Incubate at 56°C / 300 rpm.

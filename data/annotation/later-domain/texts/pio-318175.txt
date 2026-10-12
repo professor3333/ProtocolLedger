@@ -1,0 +1,9 @@
+Pathogen-Agnostic WGS: An ONT Workflow (Lyssavirus Rabies Part 2- Library Prep)
+In a clean 1.5 ml Eppendorf tube, prepare the following master mix. Mix by gentle pipetting, taking care not to generate bubbles or foam.
+Aliquot the master mix (step 1) into a new separate 0.2 ml thin-walled PCR tube.
+Spin down the barcode before use. Add the Rapid Barcode Primers (01-24) to each tube containing the master mix. Each tube should have a different barcode:
+Add 5 µl RT viral sample from Part 1 to the reaction tube:
+Mix gently by flicking the tube and spin down.
+Amplify using the following cycling protocol:
+Quantify the amplified samples (from Section 4) concentration using the Qubit dsDNA HS Assay kit.
+Add 1 µl of Thermolabile Exo I to each of the sample tubes and mix by pipetting.

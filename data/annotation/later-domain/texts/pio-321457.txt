@@ -1,0 +1,9 @@
+Fluorescent a-synuclein uptake and degradation assay
+Day 0: When fully differentiated, seed astrocytes at 10,000 cell/well (30,000 cells/cm²) of a 96-well glass-bottom thickness plate, pre-coated in 1% gelatin, with 100μL of Astrocyte Medium (ScienCell)
+Day 1: Change the media to FBS-free maturation media: 50% DMEM/F12, 50% Neurobasal, 1x B27 wihtout Vitamin A, 1x N2, 1X NEAA, 1X GlutaMAX, 10ng/mL CNTF, 1% pennicillin-streptomycin)
+Day 2-3: Continue culturing the astrocytes in FBS-free maturation media. There is no need to change the media unless it begins to turn yellow.
+If media turns yellow, cells may be too confluent for imaging. Re-seed the assay with a lower cell density on Day 0.
+Day 4: Add fluorescently-tagged a-Synuclein to fresh FBS-free maturation media at a final concentration of 2μg/mL. The assay was developed with a-Synuclein-HiLyte from AnaSpec AS-55457)
+Day 4: If imaging during the first 24 hours, stain nuclei with 10μg/mL Hoechst 33342 for 00:10:00
+Day 5: Wash once with FBS to remove excess a-Synuclein. Replace media with fresh FBS-free maturation media.
+Day 5: If Hoechst 33342 was not added on Day 4, incubate with Hoechst 33342 for 00:10:00

@@ -1,0 +1,4 @@
+Live BODIPY-cholesterol imaging
+Day 0: When fully differentiated, seed astrocytes at 10,000 cell/well (30,000 cells/cm²) of a 96-well glass-bottom thickness plate, pre-coated in 1% gelatin, with 100μL of Astrocyte Medium (ScienCell)
+Day 1: Change the media to FBS-free maturation media: 50% DMEM/F12, 50% Neurobasal, 1x B27 wihtout Vitamin A, 1x N2, 1X NEAA, 1X GlutaMAX, 10ng/mL CNTF, 1% pennicillin-streptomycin)
+Day 4-5: Replace the media with FBS-free maturation media and 2μM BODIPY-cholesterol (1:500). Incubate at 37 °C for 02:00:00

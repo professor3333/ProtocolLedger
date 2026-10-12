@@ -1,0 +1,9 @@
+Western and dot blot
+Lyse cells in RIPA Buffer supplemented with protease adn phosphatase inhibitors. For a 6-well plate, use 50-100uL of RIPA. If the solution is too viscous, add more RIPA as necessary
+Centrifuge samples at 15000 x g, 4 °C, 10 minutes to pellet cell debris and insoluble proteins
+Determine protein concentration by Pierce BCA protein Assay
+Prepare samples with 20μg of protein, 1x LDS sample buffer (Invitrogen NP0007), 1x reducing agent (BioRad 1610792), and RIPA buffer to a total volume of 20uL (or maximum for gel size)
+Load samples into a 4-12% Bis-Tris. Include one lane with a protein ladder
+Run the blot at 60mV for 00:20:00 and then 120mV for 01:00:00 or just before the loading dye runs off the bottom
+Transfer the gels to a PVDF membrane using teh BioRad TransBlot Turbo Transfer System with the standard protocol (00:30:00 ; Up to 1.0A; 25V)
+Fix the blot in 4% paraformaldehyde for 00:40:00 This step is optional but improves the blot quality for a-synuclein and phsophorylated a-synuclein

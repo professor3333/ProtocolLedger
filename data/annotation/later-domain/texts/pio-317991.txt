@@ -1,0 +1,9 @@
+Genomic DNA extraction from Wahlenbergia (Bluebell) leaves
+Aliquot a required volume of lysis buffer for your samples. We use 800 µL of lysis buffer per sample, consisting of ~100-200 mg of ground leaf tissue.
+Allow samples to cool to room temperature.
+Add 1x volume of chloroform:IAA (24:1) and mix thoroughly for 10-15 seconds.
+Centrifuge samples for 10 minutes at 20,000 rcf.
+Centrifuge with 20,000 rcf for 30 min at 4 °C.
+Add 750 µL of 70-80% ethanol and mix by inversion.
+Resuspend DNA pellet in nuclease-free water or Tris (10 mM Tris-Cl, pH 8).
+Prepare lysis buffer.

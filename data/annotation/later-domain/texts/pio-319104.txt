@@ -1,0 +1,9 @@
+Trapping S-glutathionylated proteins by a biotinylated glutathione-ethyl-ester probe-mediated enrichment method from living cells: A modified biotin-switch technique.
+To the supernatant, add 200 µL of ice-cold 1X RIPA lysis buffer containing 50mM IAA + 1X protease inhibitor cocktail; incubate on ice for 30 min.
+The experiment can either be paused at this point or continued the same day by proceeding with the subsequent lysis steps. To pause, snap freeze the sample (which is incubated in the lysis buffer step 7) and store in -80 °C freezer.
+If samples have been snap frozen, then on the day of the experiment, lysates must be thawed on ice and then proceed with the lysis steps. Sonicate the samples at 20% amplitude for 10 seconds, two rounds, and then centrifuge at maximum speed for 10 minutes at 4 °C.
+Estimate protein concentration in the sample using any standard protein estimation assay, such as the BCA method.
+Keep 20-40 µL of lysate aside for the input lane on immunoblotting.
+Biotin-Streptavidin pre-blocking step must be performed freshly on the same day of the experiment. Prepare biotin-blocked streptavidin beads by adding 500 µL of 3 mg/mL D-biotin to 50 µL of streptavidin magnetic beads (10:1 ratio) and incubate with rocking for 1 hour at RT. Wash 5 times with PBS using a magnetic rack.
+Add biotin-blocked streptavidin beads from above to the sample (~50 µL) and incubate for 30 min with rocking in a cold room or 4 °C. This step is essential as it prevents any non-specific binding from cell lysate, such as cells’ endogenous biotin or free biotin, from binding to streptavidin beads and ensures only BioGEE-labeled proteins get bound to streptavidin beads. Pellet the magnetic beads.
+Now, carefully take the supernatant and transfer it to 50 µl of freshly equilibrated streptavidin-magnetic beads (to equilibrate, pre-wash the streptavidin beads 3 times with PBS) and incubate for 2 hours with rocking at 4 °C.

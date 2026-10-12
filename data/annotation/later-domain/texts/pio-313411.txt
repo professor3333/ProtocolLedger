@@ -1,0 +1,9 @@
+Monarch Spin Plasmid Miniprep (NEB)
+Add 400 µL of Buffer B3, gently invert the tube until neutralized, and incubate at room temperature for 00:02:00 . The color should be uniformly yellow when neutralized.
+Add 200 µL of Buffer B2, gently invert the tube 10 times (do not vortex), and incubate at room temperature for 00:01:00 . Color should change to dark pink, and solution will become transparent and viscous.
+Resuspend the pellet in 200 µL of Buffer B1. Gently pipette to mix. Transfer to a pre-labeled 1.5 mL eppendorf tube.
+Isolating and Resuspending Culture
+Obtain a clear round-bottom 96w plate. Download the attached excel sheet. Record the specific plate map that will be used for each run on the excel sheet. OD600_analysis.xlsx The plate map below is an example for 2 samples.
+Save and file the excel sheet in the appropriate location.
+Wipe benches and pipettes with DNA-Away and then RNAse-Away. Afterwards, wipe with 70% ethanol. Light the bunsen burner & work closely to it while performing the Validation of Overnight Culture steps.
+In the clear round-bottom 96w plate, add 100 µL of the appropriate media in duplicate in the designated wells from the plate map above. These are the BLANKS.

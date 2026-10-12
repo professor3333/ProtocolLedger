@@ -1,0 +1,9 @@
+RNA Isolation Using QIAzol-RNeasy Mini Kit and cDNA Synthesis
+Suspension Cells (≤1 × 10⁷ cells) Count the cells. Pellet cells at 300 × g for 5 min. Carefully aspirate all supernatant
+Trypsinize and pellet Count cells. Aspirate medium, wash once with PBS. Add 0.1–0.25% trypsin until cells detach. Add medium (with serum) to neutralize trypsin. Transfer to RNase-free tube and spin 300 × g for 5 min. Aspirate supernatant completely.
+For pelleted cells: Loosen pellet by flicking. Add 700 μL QIAzol Lysis Reagent. Vortex or pipette to mix thoroughly. For direct lysis in dish: Add 700 μL QIAzol directly to dish. Scrape using a cell scraper. Transfer lysate to RNase-free tube and vortex to remove clumps.
+Add 140 μL chloroform.
+Cap and shake vigorously 15 sec.
+Incubate 2–3 min at RT.
+Centrifuge 15 min at 12,000 × g, 4°C.
+Phases after spin: Upper aqueous phase (~350 μL): RNA

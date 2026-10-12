@@ -1,0 +1,9 @@
+Vacuum Filtration and DNA Extraction from Environmental Water Samples
+Assemble vacuum filtration apparatus in a clean workspace. Ensure all components are sterile before use.
+Place a Whatman 0.45 µm filter paper onto the filtration membrane support using sterile forceps.
+Pour the 1.5 L water sample into the filtration funnel. Apply vacuum and filter the entire volume. Replace filter paper if it becomes clogged.
+Using sterile forceps, remove the filter paper. Fold inward (cell-side in) and place into a sterile 2 mL microcentrifuge tube.
+Add an appropriate volume of 1X PBS to the tube containing the folded filter paper.
+Vortex for 30–60 seconds to resuspend microbial cells from the filter paper into the PBS solution.
+Proceed with DNA extraction according to the QIAamp® DNA Mini Kit manufacturer's instructions, using the resuspended PBS as the starting material.
+Elute the purified DNA in Buffer AE into a clean 1.5 mL microcentrifuge tube.

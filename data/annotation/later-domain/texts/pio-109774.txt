@@ -1,0 +1,9 @@
+Rapid Isolation of Lysosomes (LysoIP) from mouse brain tissue
+Materials and Reagents Anti-HA magnetic beads: Thermo Fisher Scientific Optima LC/MS water Phosphate-buffered saline (PBS): pH ~7.4 Complete EDTA-free Protease Inhibitor Cocktail: Roche Magnetic separation equipment: DynaMag Spin Magnet 1x extraction buffer (Material section) Centrifuge Homogenizer: 2 ml homogenizer 
+Prepare microcentrifuge tubes as follows on a metal rack on ice (for each sample, from left to right): ➀ 2 mL tube for posthomogenization ➁ 1.5 mL tube for whole brain fraction ➂ 1.5 mL tube for beads ➃ 1.5 ml tube for 3rd wash ➄ 1.5 mL tube for final lysoIP samples
+Wash the glass vessel homogenizer with MilliQ Water, 10 times each. wash the tissue grinder homogenizer thoroughly with DI Water and MilliQ Water, especially the gap between the white parts, don’t touch the part that goes into the glass vessel. Then dry upside-down using paper towels. Carefully place the glass vessels against something to prevent falling down. Minimize any contact between the grinder and anything else. Pre-chill all equipment and buffers used for homogenization and immunoprecipitation to 4°C. Set centrifuge temperature to 4°C for all centrifugation steps.
+Euthanize the mouse and transfer the whole brain into 2 ml homogenizer (on ice)
+Process each mouse brain separately to ensure rapid isolation of lysosomes.
+Critical: All steps of the procedure must be performed on ice 
+Transfer the homogenized tissue to a 2 ml tube.
+Transfer the supernatant containing cellular organelles to a 1.5 ml tube containing 100 µL of anti-HA magnetic beads

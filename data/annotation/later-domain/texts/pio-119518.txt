@@ -1,0 +1,9 @@
+Terminal PCR for Amplifying the 5' and 3' Termini of the Monkeypox Virus Genome
+The viral genomic DNA extraction is performed using High Pure Viral Nucleic Acid Kit Roche Catalog #11858874001 .
+Add 200 µL of binding buffer, 4 µL PolyA carrier RNA and 50 µL Proteinase K. Mix well by pipetting and inverting the tube thoroughly, and spin down. 72 °C 00:10:00
+Add 100 µL of binding buffer and mix well by pipetting or inverting the tube thoroughly, and spin down.
+Transfer the whole sample to a High Pure Filter Tube. 8000 x g, Room temperature, 1 minute Discard the flow-through liquid and Collection Tube, and insert the Filter Tube into a new Collection Tube.
+Add 500 µL of inhibitor removal buffer. 8000 x g, Room temperature, 1 minute Discard the flow-through liquid and Collection Tube, and insert the Filter Tube into a new Collection Tube.
+Add 450 µL of wash buffer. 8000 x g, Room temperature, 1 minute Discard the flow-through liquid and Collection Tube, and insert the Filter Tube into a new Collection Tube.
+Add 450 µL of wash buffer. 13000 x g, Room temperature, 1 minute and discard the flow-through liquid. Discard the Collection Tube and insert the Filter Tube into a 1.5 ml tube - DNA LoBind Tube 1.5ml Eppendorf Catalog #022431021 .
+Add 50 µL elution Buffer. 13000 x g, Room temperature, 1 minute

@@ -1,0 +1,9 @@
+Modified protocol for AMPure XP clean-up
+Resuspend the AMPure XP Beads by vortexing.
+Add the resuspended AMPure XP Beads to the sample and mix by pipetting. The AMPure XP beads-to-sample ratio (v:v) is adjusted based on the specific aim. For purification and/or concentration of a genomic DNA sample: 0.4X (0.4 volume of beads added per 1 volume of sample): for concentration and size selection with removal of fragments < 1.5- 2 kb From 1X to 1.8X (1 to 1.8 volumes of beads added per 1 volume of sample): for contaminant removal and volume concentration, without size selection
+Incubate on a Hula mixer or rotator mixer for 00:30:00 at RT.
+Prepare 2 ml of fresh 80% ethanol in Nuclease-free water per sample.
+Spin down the sample and pellet on a magnet for 00:05:00 . Keep the tube on the magnetic rack until the eluate is clear and colourless, and pipette off the supernatant.
+Keep the tube on the magnetic rack and wash the beads with at least 700 μl (ethanol must cover the beads) of freshly prepared 80% ethanol without disturbing the pellet. Remove the ethanol using a pipette and discard.
+Repeat the previous step.
+Spin down and place the tube back on the magnetic rack. Pipette off any residual ethanol. Allow to dry for ~30-60 seconds 00:01:00 but do not dry the pellet to the point of cracking.

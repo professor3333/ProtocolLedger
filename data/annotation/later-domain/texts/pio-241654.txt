@@ -1,0 +1,9 @@
+Zr-ELP purification protocol [Gravity columns]
+FastTemp the big centrifuge to 4 C.
+Resuspend the pellet cells in 40 ml of Lysis buffer (10 mM Tris, 6M Urea, pH 8). You can find it in the cold room.
+Also add 1 mM EDTA and 1 mM AEBSF (or PBSF). These reagents are in the kitchen fridge in NSB. To calculate the volume to add, you can use this dilution calculator: https://www.sigmaaldrich.com/US/en/support/calculators-and-apps/solution-dilution-calculator?sitId=AfmBOooBbD4OXoY5sVzIFcaROHcIJWTMxEggx2luwbCA_xHIjyQNBUrotor.
+Lyse in a sonicator. (1) Freezing-Thawing-Ultra sonification (with pulse �26 time mode: On 10s, Off 20s, Amplitude 50%, Time 10min) 2 cycles
+Separate cells and proteins using a centrifuge (at 15,000 g for 30 min, 4 C) – Use the black, small rotor.
+Keep the supernatant.
+Pipette 2 ml of Ni-NTA resin into a Falcon tube and centrifuge it at 4000 rpm for 1 min.
+Carefully remove ethanol excess. Resuspend the beads in 4 ml of lysis buffer, then centrifuge at 4000 rpm for 1 min.

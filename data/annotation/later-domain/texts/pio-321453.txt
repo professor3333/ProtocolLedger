@@ -1,0 +1,9 @@
+DQ-BSA proteolytic activity assay
+Day 0: When fully differentiated, seed astrocytes at 10,000 cell/well (30,000 cells/cm²) of a 96-well glass-bottom thickness plate, pre-coated in 1% gelatin, with 100μL of Astrocyte Medium (ScienCell)
+Day 1: Change the media to FBS-free maturation media: 50% DMEM/F12, 50% Neurobasal, 1x B27 wihtout Vitamin A, 1x N2, 1X NEAA, 1X GlutaMAX, 10ng/mL CNTF, 1% pennicillin-streptomycin)
+Day 1: Add 100nM BafilomycinA1 in assay control wells to inhibit lysosomal function.
+Prepare DQ-BSA Red (Thermo D12051) following manufacturer's recommendation by dissolving 1 1mg vial in 1mL of PBS to make a 1mg/mL solution
+Replace media with FBS-free maturation media and 1μg/mL DQ-BSA. Keep 100nM bafilomycin A1 in the control wells. Incubate at 37 °C for 00:30:00
+Replace with fresh FBS-free maturation media. Keep 100nM bafilomycin A1 in the control wells
+Alternatively, image live cells once after 12-24 hours on any microscope with a cell incubator
+Day 0: When fully differentiated, seed astrocytes at 50,000 cell/well (15,000 cells/cm²) of a 12-well plate, pre-coated in 1% gelatin, with 1mL of Astrocyte Medium (ScienCell)

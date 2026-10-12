@@ -1,0 +1,9 @@
+Transforming Schizochytrium sp. through Electroporation
+Harvest cells by centrifuging 5900 x g, 4 °C, 10 minutes Decant supernatant.
+Grow Schizochytrium sp. at 200 rpm, 28 °C, 1 day in Seed Media, to bring the growth to the logarithmic phase
+Water Wash: Resuspend in ice-cold sterile water and centrifuge 5900 x g, 4 °C, 10 minutes Decant supernatant.
+Sorbitol Wash: Resuspend in 1 Molarity (M) (D-)-Sorbitol VWR International (Avantor) Catalog #28210.298 (CAS: 50-70-4) and centrifuge 5900 x g, 4 °C, 10 minutes Decant supernatant
+Sorbitol Suspension: Resuspend the pellet in 1 Molarity (M) (D-)-Sorbitol VWR International (Avantor) Catalog #28210.298 (CAS: 50-70-4) solution.
+Add the cells and 5 µg linearized DNA to a 1 mm gap electroporation cuvette.
+Recovery: After electroporation, 1 mL seed medium is added to the mixture, which is incubated at 100 rpm, 28 °C, 4 hours
+Plating: Spread on GPY plates with 40 μg/mL Zeocin InvivoGen Catalog #ant-zn and grown at 28 °C

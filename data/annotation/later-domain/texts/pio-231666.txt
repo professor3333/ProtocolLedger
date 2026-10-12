@@ -1,0 +1,9 @@
+Immunofluorescencent Staining of A-synuclein, TFEB, GCase and LAMP1 in treated cultured cells
+Differentiate the wild-type and 3K-SNCA overexpressing SH-SY5Y into neurons using retinoic acid-based protocol.
+Detach the 70% confluent non-differentiated cells using trypsin and Versene® (Gibco® REF 61965-026) and resuspend in Neurobasal media (Gibco® REF 21103-049) supplemented with 30M retinoic acid (ThermoFisher® # 044540.04), 1X vitamin B-27 (Gibco® REF 17504-044), 1X Glutamax® (Gibco® REF 35050-061), and 5ng/ml brain-derived neurotrophic factor (BDNF) (Cell Signaling® REF 3897S).
+Replace the differentiation medium every 48 hours, with a neuronal morphology appearing after 4 days of culture.
+Use the differentiated neurons for downstream analysis after 10 days in culture.
+Seed the cells in Geltrex® (Gibco® REF A1413202) Matrix solution diluted in DMEM/F-12 medium (Gibco® REF 31331-028) (1:100) coated plates at 1.5 × 10⁵ cells/ml.
+Culture the SH-SY5Y cells and 3K-SNCA overexpressing cells in 1:1 DMEM/F12 media (Gibco® REF 31331-028) with Glutamax® (Gibco®, REF 35050-061) supplemented with 10% fetal bovine serum (FBS) (Gibco® REF 10270-106) and 1X Penicillin/Streptomycin (Gibco® REF 15140-122). Passeage the cells appropriately to maintain a confluency between 50-70%.
+Subsequently, detach the cells using Trypsin 10x (Gibco® REF 15090-046) into Versene 1X (Gibco® REF 15040-066) (1:1), count, and seed in a new 96-well plate. In order to acquire images with the Opera Phenix® Plus High-Content Screening System, seed the cells in a specific type of 96 well plate, the Phenoplate®-96 TC (PerkinElmer®, #39269097).
+Seed the 3*104 cells into each well, avoiding placing them into borders, rows and columns to prevent plate-edge effects.
