@@ -30,7 +30,7 @@ function el(tag, attrs = {}, ...children) {
   const node = document.createElement(tag);
   for (const [key, value] of Object.entries(attrs)) {
     if (key === "class") node.className = value;
-    else if (key.startsWith("data-")) node.setAttribute(key, value);
+    else if (key.startsWith("data-") || key.startsWith("aria-")) node.setAttribute(key, value);
     else node[key] = value;
   }
   for (const child of children) {
@@ -64,6 +64,21 @@ function updateCounter() {
 
 function spanText(entity) {
   return doc.cps.slice(entity.start, entity.end).join("");
+}
+
+function lineOf(offset) {
+  // 0 is the title line, as in the corpus; offsets are code points
+  let line = 0;
+  for (let i = 0; i < offset; i += 1) if (doc.cps[i] === "\n") line += 1;
+  return line;
+}
+
+function distance(a, b) {
+  // characters between two spans; another line counts as far away
+  const [first, second] = a.start <= b.start ? [a, b] : [b, a];
+  const gap = Math.max(0, second.start - first.end);
+  const crossesLine = doc.cps.slice(first.end, second.start).includes("\n");
+  return gap + (crossesLine ? 1e6 : 0);
 }
 
 function isWord(ch) {
@@ -486,19 +501,35 @@ function renderInspector() {
   if (links.length) box.append(el("ul", { class: "relations compact" }, ...links.map(relationItem)));
 
   if (rejected) return;
+  // Nearest entities first, same line before other lines. Nothing is preselected: a
+  // default target gets linked by accident when the reviewer only changes the label.
   const others = [...doc.entities.values()].filter((e) => e.id !== entity.id && kept(e))
-    .sort((a, b) => a.start - b.start);
+    .map((e) => ({ e, d: distance(entity, e) }))
+    .sort((a, b) => a.d - b.d || a.e.start - b.e.start)
+    .map(({ e }) => e);
   if (!others.length) return;
-  let other = others[0].id;
+  let other = null;
   let label = entity.label === "Action" ? "Acts-on" : "Measure";
   let role = entity.label === "Action" ? "head" : "tail";
   // Replacing other links is the "move this value" action: on by default only for a
   // quantity that is the tail. A material can legitimately be acted on by many actions.
   const isQuantity = QUANTITY_LABELS.includes(entity.label);
   let replace = isQuantity && role === "tail";
-  const otherSelect = el("select");
-  for (const o of others) otherSelect.append(el("option", { value: o.id }, `${spanText(o)} (${o.label})`));
-  otherSelect.addEventListener("change", () => { other = otherSelect.value; });
+  const add = button("Add relation", () => {
+    if (!other) return;
+    const [head, tail] = role === "tail" ? [other, entity.id] : [entity.id, other];
+    addRelation(head, label, tail, replace);
+  }, "primary");
+  add.disabled = true;
+  const otherSelect = el("select", { "aria-label": "Other entity" },
+    el("option", { value: "" }, "choose an entity (nearest first)"));
+  for (const o of others) {
+    otherSelect.append(el("option", { value: o.id }, `${spanText(o)} (${o.label}) · line ${lineOf(o.start)}`));
+  }
+  otherSelect.addEventListener("change", () => {
+    other = otherSelect.value || null;
+    add.disabled = !other;
+  });
   const replaceBox = el("input", { type: "checkbox", checked: replace });
   replaceBox.addEventListener("change", () => { replace = replaceBox.checked; });
   box.append(el("div", { class: "row add-relation" },
@@ -507,10 +538,7 @@ function renderInspector() {
     " of ", otherSelect, " via ",
     select(RELATION_LABELS, label, (v) => { label = v; }),
     el("label", { class: "check" }, replaceBox, " replace other links of this type"),
-    button("Add relation", () => {
-      const [head, tail] = role === "tail" ? [other, entity.id] : [entity.id, other];
-      addRelation(head, label, tail, replace);
-    }, "primary")));
+    add));
 }
 
 function cell(ids, emptyText = "—", emptyClass = "none") {
