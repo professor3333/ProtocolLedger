@@ -52,6 +52,7 @@ from protocolledger.data.protocolsio import (
     published_date,
     quantity_share,
     select_challenge,
+    title,
     usable,
 )
 from protocolledger.data.splits import load_split
@@ -142,14 +143,14 @@ def interleave(lists: list[list[int]]) -> list[int]:
 def source_record(
     record: dict[str, Any], steps: list[CleanStep], split_key: str, **extra: Any
 ) -> dict[str, Any]:
-    text, index = build_text(record["title"], steps)
+    text, index = build_text(title(record), steps)
     if extra.get("categories"):
         for entry, tags in zip(index, extra.pop("categories"), strict=True):
             entry["categories"] = tags
     return {
         "source_id": split_key,
         "url": record["url"],
-        "title": record["title"],
+        "title": title(record),
         "authors": authors(record),
         "version": record.get("version_id"),
         "version_uri": record.get("version_uri"),
@@ -246,14 +247,14 @@ def main(argv: list[str] | None = None) -> int:
         if len(good) < MIN_USABLE_STEPS:
             decision["status"] = "excluded:few-usable-steps"
             continue
-        if not looks_english([record["title"], *(s.text for s in good)]):
+        if not looks_english([title(record), *(s.text for s in good)]):
             decision["status"] = "excluded:not-english"
             continue
         if quantity_share(good) < MIN_QUANTITY_SHARE:
             decision["status"] = "excluded:few-quantities"
             continue
         key = f"pio-{pid}"
-        full = build_text(record["title"], good)[0]
+        full = build_text(title(record), good)[0]
         other = seen_protocols.match(full)
         if other is not None:
             decision["status"] = f"excluded:same-protocol-as:{other}"

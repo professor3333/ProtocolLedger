@@ -30,6 +30,7 @@ import re
 from collections import Counter
 from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass, field
+from html import unescape
 from html.parser import HTMLParser
 from typing import Any
 
@@ -262,10 +263,16 @@ def published_date(record: Mapping[str, Any]) -> str:
     return dt.datetime.fromtimestamp(int(record["published_on"]), dt.UTC).date().isoformat()
 
 
+def title(record: Mapping[str, Any]) -> str:
+    """The plain-text title: the API returns titles with HTML character references."""
+    return _ASCII_SPACE.sub(" ", unescape(str(record["title"]))).strip()
+
+
 def authors(record: Mapping[str, Any]) -> list[str]:
     names = []
     for a in record.get("authors") or []:
         name = (a.get("name") or f"{a.get('first_name', '')} {a.get('last_name', '')}").strip()
+        name = unescape(name)
         if name:
             names.append(name)
     return names

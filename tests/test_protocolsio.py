@@ -5,6 +5,7 @@ from protocolledger.data.protocolsio import (
     CleanStep,
     Lexicons,
     ProtocolIndex,
+    authors,
     build_text,
     challenge_tags,
     clean_steps,
@@ -12,6 +13,7 @@ from protocolledger.data.protocolsio import (
     looks_english,
     quantity_share,
     select_challenge,
+    title,
     usable,
 )
 
@@ -133,3 +135,12 @@ def test_protocol_index_uses_the_dedup_rule() -> None:
     assert index.match(base) == "wnut2020/train/protocol_1"
     assert index.match(base.replace("word199", "other")) == "wnut2020/train/protocol_1"
     assert index.match("Title B\n" + " ".join(f"term{i}" for i in range(200))) is None
+
+
+def test_titles_and_authors_are_plain_text() -> None:
+    record = {
+        "title": "Terminal PCR for the 5&#39; and 3&#39;  ends &amp; more",
+        "authors": [{"name": "Ana &#39;Li&#39;"}, {"first_name": "Bo", "last_name": "Ek"}],
+    }
+    assert title(record) == "Terminal PCR for the 5' and 3' ends & more"
+    assert authors(record) == ["Ana 'Li'", "Bo Ek"]
