@@ -172,3 +172,31 @@ uv run python scripts/build_splits.py  # → corrections.jsonl, dedup_report.jso
 
 Each step checks its input against the previous step's committed hashes, and each
 committed manifest is byte-reproducible.
+
+## New annotation sets (protocols.io, 2025–2026)
+
+Two small sets test the model on text it was not built around: a **later-domain** set of
+recent protocols (38 protocols, 301 steps) and a **challenge** set of steps chosen for
+hard phenomena (11 protocols, 33 steps). The collection rules are in the
+[README](../README.md#new-annotation-sets-protocolsio) and
+`src/protocolledger/data/protocolsio.py`. Every decision is recorded in
+`data/manifests/protocolsio_collection.json`.
+
+- **Source and licence.** Public protocols.io protocols published 2025-09 to 2026-08,
+  fetched through the official API with a developer token: 178 requests for the collection, one per second.
+  Protocol text is protocols.io user content under CC BY (Terms of Service, section
+  1(B)). Each source records its URL, DOI, authors, version and publication date. The
+  API's own `license` field was empty for every collected protocol.
+- **Independence.** No collected protocol matches a WNUT-2020 document, or another
+  collected protocol, under the corpus dedup rule. The two sets share no protocol.
+- **Splits.** Dev or test is assigned per whole protocol from a hash of its id, before
+  annotation. The test portions are locked.
+- **Text.** Each step is one line taken from the visible text of the protocols.io page.
+  Notes, tables and figures are removed; other markup is not. The text keeps the authors'
+  typing, including errors such as duplicated values (`~800~800 uL`), plain-text tables
+  pasted into a step, and Unicode spaces.
+- **Annotation.** One annotator labels each text from scratch with the corpus schema,
+  without model suggestions. Any consistency figure is repeat-annotation consistency.
+- **Challenge categories** are fixed text tests, not human judgements. A step tagged
+  "implicit references" contains a pronoun or a phrase such as "the supernatant", which
+  does not guarantee that the reference is implicit.

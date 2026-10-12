@@ -244,7 +244,7 @@ rollback. CI builds the image and smoke-tests it with a tiny fixture bundle. See
 | Serve SciBERT in the Docker image (released through Compose with smoke test) | ✅ Done |
 | Frozen targets; single locked-test evaluation | ✅ Done |
 | Correction-batch lifecycle: export, curate, leakage check, retrain, gate, release, rollback (rehearsed) | ✅ Done |
-| Challenge set and later-domain protocols.io test set | ⬜ Planned |
+| Challenge set and later-domain protocols.io test set | 🟡 Collected and split; annotation in progress |
 | Deterministic quantity normalization | ✅ Done |
 | Saved reviews API, JSON/CSV export, backup and restore | ✅ Done |
 | Review editing in the interface | ✅ Done |
@@ -368,6 +368,62 @@ are in the [dataset card](docs/dataset_card.md) and `data/manifests/dedup_report
 per-file hashes are authoritative. GitHub generates archives on demand, so the archive
 hash is recorded, but only a file-level mismatch fails acquisition. Downloaded data is
 never committed.
+
+### New annotation sets (protocols.io)
+
+Two new test sets measure how the model does on text it was not built around. Both are
+collected from **recent public protocols.io protocols** through the official API, and
+neither shares a protocol with WNUT-2020 or with the other set.
+
+| Set | Purpose | Protocols | Steps | Published |
+|---|---|---:|---:|---|
+| `later-domain` | protocols written about five years after the corpus | 38 (dev 22, test 16) | 301 (dev 173, test 128) | 2025-09 to 2026-08 |
+| `challenge` | steps chosen for six hard phenomena | 11 (dev 6, test 5) | 33 (dev 18, test 15) | 2025-10 to 2026-07 |
+
+**Collection** (`scripts/collect_protocolsio.py`, rules in
+`src/protocolledger/data/protocolsio.py`):
+- **Candidates.** The newest public protocols for ten wet-lab search terms, interleaved
+  across terms.
+- **Eligibility.** Published on or after 2025-01-01, English, at least 5 usable steps,
+  and at least 30% of steps state a quantity. A protocol that is the same as a WNUT-2020
+  document (the dedup rule above) or as an earlier candidate is excluded.
+- **Step text.** Taken from the API's HTML rendering, so embedded amounts, durations and
+  temperatures appear as the reader sees them. Each step is one line. Notes, tables and
+  figures are dropped and counted. Steps are usable when they keep 3–120 words, contain
+  at least one train-split action word, and are not in an introduction, safety or
+  results section.
+- **Later-domain set.** The first 8 usable steps of each protocol.
+- **Challenge set.** Up to 3 steps per protocol, chosen round-robin until each category
+  has at least 10 steps. The categories are multiple actions, repeated materials,
+  ranges, unusual symbols, implicit references and conditional wording, each a fixed
+  text test using train-only vocabularies.
+- **Splits.** Dev or test is assigned per whole protocol from a hash of its id, before
+  any annotation. The **test portions are locked** like `test_data_2020`.
+- **Reproducibility.** Every API response is cached once under `data/raw/protocolsio/`
+  (not committed), so re-running on the same machine rebuilds byte-identical sets. Every decision is in
+  `data/manifests/protocolsio_collection.json`.
+
+Each source keeps its URL, DOI, authors, version and publication date. Protocol text is
+protocols.io user content under CC BY, with this attribution kept.
+
+**Annotating.** The gold labels are being written by one annotator from scratch, without
+model suggestions. Agreement figures on this data will be **repeat-annotation
+consistency**, not inter-annotator agreement.
+
+```bash
+# 1. Collect (needs a protocols.io client access token in ~/.config/protocolledger/protocolsio_token)
+uv run python -I scripts/collect_protocolsio.py
+
+# 2. Serve the interface, tick "Annotate from scratch", paste a file from
+#    data/annotation/<set>/texts/, label it, and save the review
+PROTOCOLLEDGER_BUNDLE=artifacts/bundles/crf-logreg-4a9d8cc549 PROTOCOLLEDGER_DB=data/annotation.db \
+  uv run uvicorn --factory protocolledger.serve.app:create_app_from_env --port 8000
+
+# 3. Export the saved annotations as gold, then score a model on the dev portion
+uv run python scripts/export_annotations.py --db data/annotation.db --set later-domain
+uv run --extra neural python scripts/evaluate_annotation_set.py --set later-domain \
+  --split dev --bundle artifacts/bundles/scibert-uniform-negatives-s21-7dc7a1893e
+```
 
 ## Approach
 
@@ -587,7 +643,7 @@ Re-measure on the deployment host before changing runtimes.</sub>
 **Data.**
 - All protocols come from one source (protocols.io), annotated in or before 2020, and
   cover a limited range of wet-lab subdomains. There is no claim about other sources or
-  newer protocols until the planned later-domain test set exists.
+  newer protocols until the later-domain test set is annotated and scored.
 - Exact and near-duplicate copies were removed, but protocols built from shared vendor
   templates remain. Documents with a template sibling in training score higher, which is
   why they are reported as a separate slice.
@@ -609,7 +665,8 @@ Re-measure on the deployment host before changing runtimes.</sub>
 
 **Evaluation.**
 - Value normalization has not been checked against an independently labelled set.
-- There is no challenge set or later-domain test set yet.
+- The challenge and later-domain sets are collected but not yet annotated, so there are
+  no results on them yet.
 - **No user pilot has been run**, so there is no evidence yet that the tool saves time.
 - Latency and memory were measured on an Apple M1 with Docker limited to 4 CPUs, not on
   a production x86 host.

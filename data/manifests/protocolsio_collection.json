@@ -1,0 +1,1084 @@
+{
+ "collection_version": "1",
+ "api": "https://www.protocols.io/api",
+ "search_keys": [
+  "DNA",
+  "RNA",
+  "PCR",
+  "protein",
+  "buffer",
+  "cell culture",
+  "staining",
+  "purification",
+  "extraction",
+  "transformation"
+ ],
+ "parameters": {
+  "published_after": "2025-01-01",
+  "later_domain_steps": 300,
+  "min_protocols": 30,
+  "max_protocols": 50,
+  "steps_per_protocol": 8,
+  "challenge_per_category": 10,
+  "challenge_per_protocol": 3,
+  "challenge_protocols": 40,
+  "search_pages": 2,
+  "max_fetch": 250,
+  "delay": 1.0,
+  "refresh_search": false,
+  "cache": "data/raw/protocolsio"
+ },
+ "candidates_considered": 157,
+ "requests_made_this_run": 0,
+ "decisions": [
+  {
+   "id": 320665,
+   "uri": "primer-design-in-silico-validation-and-pcr-amplifi-j5dzcq277",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 321974,
+   "uri": "multiplexed-iterative-fish-experimental-protocol-s-j6nwcrdff",
+   "status": "later-domain"
+  },
+  {
+   "id": 321488,
+   "uri": "ai-based-primer-designing-j57qcq9mx",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 224299,
+   "uri": "mass-spectrometry-data-comparison-and-venn-diagram-g7ajbzicp",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 93870,
+   "uri": "histone-extraction-hlb-protocol-c7wnzpde",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 104255,
+   "uri": "hydrogel-microparticles-as-force-sensors-synthesis-dh2738hn",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 227002,
+   "uri": "dab-staining-in-pfa-fixed-grafted-mouse-brain-slic-g9w2bz7gf",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 233991,
+   "uri": "modified-protocol-for-ampure-xp-clean-up-hgrfb3v3p",
+   "status": "later-domain"
+  },
+  {
+   "id": 317105,
+   "uri": "vacuum-filtration-and-dna-extraction-from-environm-jzwrcp7d7",
+   "status": "later-domain"
+  },
+  {
+   "id": 82525,
+   "uri": "high-efficiency-yeast-library-transformation-cut5wwq6",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 317813,
+   "uri": "pathogen-agnostic-wgs-an-ont-workflow-lyssavirus-r-j2kvcqcw7",
+   "status": "later-domain"
+  },
+  {
+   "id": 322024,
+   "uri": "measuring-photosynthetic-endpoints-in-photosynthet-j6qgcrdtx",
+   "status": "excluded:few-usable-steps"
+  },
+  {
+   "id": 321006,
+   "uri": "gradient-pcr-optimization-protocol-development-for-j5qncq5vf",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 223996,
+   "uri": "isolation-of-autophagosomes-and-proteinase-k-prote-g6y4bzfyx",
+   "status": "later-domain"
+  },
+  {
+   "id": 22265,
+   "uri": "1m-potassium-phosphate-buffer-ph-6-0-zyzf7x6",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 226171,
+   "uri": "nanopore-sequencing-of-poliovirus-isolates-g843bzyyp",
+   "status": "later-domain"
+  },
+  {
+   "id": 231005,
+   "uri": "4-hne-immunofluorescence-staining-hdt5b26q7",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 243070,
+   "uri": "rapid-isolation-of-lysosomes-lysoip-from-ipsc-deri-hrk6b54zf",
+   "status": "later-domain"
+  },
+  {
+   "id": 316863,
+   "uri": "joint-extraction-of-dna-and-rna-from-plankton-filt-jzn7cp5hp",
+   "status": "later-domain"
+  },
+  {
+   "id": 80304,
+   "uri": "tss-competent-cells-and-transformation-csnqwddw",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 318175,
+   "uri": "pathogen-agnostic-wgs-an-ont-workflow-lyssavirus-r-j2x7cqfrp",
+   "status": "later-domain"
+  },
+  {
+   "id": 321855,
+   "uri": "the-dual-enhanced-graph-learning-framework-depass-j6i7crchp",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 321411,
+   "uri": "methods-for-34-cholesterol-dysregulation-in-apoe4-j55bcq82p",
+   "status": "excluded:few-usable-steps"
+  },
+  {
+   "id": 223979,
+   "uri": "expression-and-purification-of-gst-tagged-atg8-pro-g6yjbzfup",
+   "status": "later-domain"
+  },
+  {
+   "id": 22266,
+   "uri": "1m-potassium-citrate-buffer-ph-6-0-zy2f7ye",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 106463,
+   "uri": "aav-production-and-purification-dj774rrn",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 232241,
+   "uri": "fast-atacseq-protocol-stanford-bone-marrow-tmc-he2rb3gd7",
+   "status": "excluded:few-usable-steps"
+  },
+  {
+   "id": 320615,
+   "uri": "wildinsync-edna-laboratory-extraction-j5cfcq2tp",
+   "status": "excluded:few-usable-steps"
+  },
+  {
+   "id": 313411,
+   "uri": "monarch-spin-plasmid-miniprep-neb-jwbbcpaip",
+   "status": "later-domain"
+  },
+  {
+   "id": 17448,
+   "uri": "transient-crispr-cas9-coupled-with-electroporation-vage2bw",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 320358,
+   "uri": "fluorescence-activated-nuclei-sorting-fans-on-huma-j44ecqytf",
+   "status": "excluded:few-usable-steps"
+  },
+  {
+   "id": 316229,
+   "uri": "citation-impact-analysis-of-an-ai-annotated-biomed-jy3dcpyi7",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 321457,
+   "uri": "fluorescent-a-synuclein-uptake-and-degradation-ass-j56rcq9d7",
+   "status": "later-domain"
+  },
+  {
+   "id": 223980,
+   "uri": "expression-and-purification-of-glycine-exposed-gst-g6ykbzfux",
+   "status": "later-domain"
+  },
+  {
+   "id": 22263,
+   "uri": "samuel-lab-media-and-buffers-zyxf7xn",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 107087,
+   "uri": "formation-of-ventral-midbrain-assembloid-organoids-dktp4wmn",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 231666,
+   "uri": "immunofluorescencent-staining-of-a-synuclein-tfeb-hegsb3bwf",
+   "status": "later-domain"
+  },
+  {
+   "id": 241654,
+   "uri": "zr-elp-purification-protocol-gravity-columns-hp8wb5rxf",
+   "status": "later-domain"
+  },
+  {
+   "id": 316658,
+   "uri": "placental-matrisome-proteomic-analysis-by-lc-ms-ms-jzgscp3wf",
+   "status": "later-domain"
+  },
+  {
+   "id": 20179,
+   "uri": "wheat-protoplast-preparation-and-transformation-xxtfpnn",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 320524,
+   "uri": "cave-environmental-sampling-protocol-for-bulk-dna-j49kcqz4x",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 316267,
+   "uri": "llm-assisted-expert-annotation-for-systematic-lite-jy4jcpyup",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 321453,
+   "uri": "dq-bsa-proteolytic-activity-assay-j56mcq9c7",
+   "status": "later-domain"
+  },
+  {
+   "id": 223986,
+   "uri": "microscopy-based-bead-assay-g6ysbzfwf",
+   "status": "later-domain"
+  },
+  {
+   "id": 92516,
+   "uri": "crop-dna-extraction-with-lab-made-magnetic-nanopar-c6kczcsw",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 102344,
+   "uri": "simulation-of-cardiac-arrhythmias-in-human-induced-df7g3rjw",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 229387,
+   "uri": "stepwise-protocol-for-efficient-pbmc-extraction-an-hb9jb2r4p",
+   "status": "later-domain"
+  },
+  {
+   "id": 238888,
+   "uri": "practical-guidelines-for-producing-non-replicating-hmigb44bx",
+   "status": "excluded:few-usable-steps"
+  },
+  {
+   "id": 315906,
+   "uri": "chelex-dna-extraction-jyracpv2f",
+   "status": "later-domain"
+  },
+  {
+   "id": 53012,
+   "uri": "transforming-the-marine-bacterium-ruegeria-pomeroy-bxzupp6w",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 323282,
+   "uri": "swift-cdnatag-seq-protocol-bench-top-j7xscrpnf",
+   "status": "later-domain"
+  },
+  {
+   "id": 321829,
+   "uri": "single-cell-rna-seq-analysis-j6idcrca7",
+   "status": "excluded:few-usable-steps"
+  },
+  {
+   "id": 321426,
+   "uri": "inducing-a-synuclein-aggregation-with-pffs-in-2d-a-j55scq86f",
+   "status": "later-domain"
+  },
+  {
+   "id": 319104,
+   "uri": "trapping-s-glutathionylated-proteins-by-a-biotinyl-j3u8cqnzx",
+   "status": "later-domain"
+  },
+  {
+   "id": 90941,
+   "uri": "edna-extraction-from-buffer-etoh-100-using-dneasy-c425yyg6",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 64674,
+   "uri": "generation-of-e-coli-mg1655-whole-cell-lysate-for-cbeasjae",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 251742,
+   "uri": "preparation-of-cryo-and-paraffin-sections-of-spher-hz36b78rf",
+   "status": "later-domain"
+  },
+  {
+   "id": 119518,
+   "uri": "terminal-pcr-for-amplifying-the-5-39-and-3-39-term-dyx67xre",
+   "status": "later-domain"
+  },
+  {
+   "id": 316440,
+   "uri": "rna-extraction-from-sterivex-gff-2-7-m-and-0-2-m-m-jy9ycpz7x",
+   "status": "later-domain"
+  },
+  {
+   "id": 80214,
+   "uri": "how-the-metaverse-will-be-used-to-preserve-the-cul-csjwwcpe",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 319898,
+   "uri": "whole-genome-nanopore-sequencing-of-bacterial-gdna-j4m2cqu8f",
+   "status": "excluded:few-usable-steps"
+  },
+  {
+   "id": 321774,
+   "uri": "target-amr-gene-quantification-in-wastewater-metag-j6gncrbvf",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 321473,
+   "uri": "western-and-dot-blot-j569cq9h7",
+   "status": "later-domain"
+  },
+  {
+   "id": 318639,
+   "uri": "x-pie-curation-j3epcqjdp",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 91596,
+   "uri": "sm-buffer-for-making-phage-dilutions-c5pky5kw",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 105358,
+   "uri": "fixation-and-immunostaining-di5n4g5e",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 221149,
+   "uri": "isolating-symbionts-from-vertically-transmitted-co-g375byrq7",
+   "status": "later-domain"
+  },
+  {
+   "id": 109774,
+   "uri": "rapid-isolation-of-lysosomes-lysoip-from-mouse-bra-dpfn5jme",
+   "status": "later-domain"
+  },
+  {
+   "id": 316416,
+   "uri": "sample-processing-nucleic-acid-extraction-and-scre-jy88cpzzx",
+   "status": "later-domain"
+  },
+  {
+   "id": 79822,
+   "uri": "schistosoma-mansoni-cercariae-transformation-with-cr7nv9me",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 243287,
+   "uri": "simplified-agrobacterium-mediated-transformation-o-hrtxb56pp",
+   "status": "later-domain"
+  },
+  {
+   "id": 125754,
+   "uri": "pepapipe-complete-bioinformatics-analysis-pipeline-d6229gge",
+   "status": "excluded:few-usable-steps"
+  },
+  {
+   "id": 321458,
+   "uri": "cholesterol-lowering-drug-treatment-of-ipsc-derive-j56scq9ef",
+   "status": "later-domain"
+  },
+  {
+   "id": 318475,
+   "uri": "x-pie-modeling-j29jcqh4p",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 62125,
+   "uri": "nuclei-extraction-for-10x-genomics-single-cell-mul-b8wmrxc6",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 105355,
+   "uri": "poly-ornithine-laminin-substrate-for-neural-cell-c-di5j4g4n",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 230421,
+   "uri": "comprehensive-experimental-workflow-for-filovirus-hc9vb2z67",
+   "status": "later-domain"
+  },
+  {
+   "id": 233377,
+   "uri": "rna-isolation-using-qiazol-rneasy-mini-kit-and-cdn-hf59b3q97",
+   "status": "later-domain"
+  },
+  {
+   "id": 317991,
+   "uri": "genomic-dna-extraction-from-wahlenbergia-bluebell-j2sfcqebp",
+   "status": "later-domain"
+  },
+  {
+   "id": 79925,
+   "uri": "schistosoma-mansoni-cercariae-transformation-witho-csavwae6",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 113376,
+   "uri": "transforming-schizochytrium-sp-through-electropora-dsx86frw",
+   "status": "later-domain"
+  },
+  {
+   "id": 320900,
+   "uri": "glyoxal-based-transcardiac-perfusion-cryopreservat-j5mccq42x",
+   "status": "later-domain"
+  },
+  {
+   "id": 321484,
+   "uri": "collection-and-treatment-with-conditioned-media-j57kcq9kx",
+   "status": "later-domain"
+  },
+  {
+   "id": 241749,
+   "uri": "preparation-of-lung-tissue-blocks-for-mplex-hqbvb5sn7",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 91039,
+   "uri": "immuno-fluorescence-staining-of-human-ffpe-formali-c457yy9n",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 104436,
+   "uri": "quick-and-simple-removal-of-endotoxins-from-purif-dh8u39ww",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 126304,
+   "uri": "immunofluorescence-staining-d7j89krw",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 233001,
+   "uri": "synaptic-vesicle-preparation-from-mouse-brain-hfshb3nb7",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 316038,
+   "uri": "phenol-free-rna-extraction-of-rubus-armeniacus-ber-jyvecpw3f",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 77630,
+   "uri": "preparation-and-transformation-of-electrocompetent-cp26vqhe",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 314016,
+   "uri": "arise-fungi-dna-extraction-jwv8cpe9x",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 321801,
+   "uri": "preparation-of-encoding-probes-sop005-v1-7-pcr-in-j6hhcrb37",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 321451,
+   "uri": "live-bodipy-cholesterol-imaging-j56jcq9cp",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 313875,
+   "uri": "overnight-bacterial-cultures-jwrtcpd6p",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 89090,
+   "uri": "tissue-protein-extraction-tissue-homogenization-us-c29ayh2e",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 103299,
+   "uri": "simple-and-fast-technique-for-separating-human-mon-dg5b3y2n",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 229673,
+   "uri": "protocol-lysotracker-red-dnd-99-live-cell-staining-hcihb2ub7",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 100351,
+   "uri": "bioid-identifying-protein-protein-interactions-in-dd8729zn",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 316293,
+   "uri": "a-python-based-digital-assessment-protocol-for-qua-jy5dcpy27",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 77543,
+   "uri": "protoplast-formation-and-purification-for-coccidio-cpyfvptn",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 241598,
+   "uri": "oceanomics-centre-12s-16s-and-coi-metabarcoding-of-hp66b5rhf",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 126221,
+   "uri": "study-protocol-delayed-shifts-in-salivary-microbio-d7hm9j46",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 321409,
+   "uri": "multielectrode-array-for-mibrain-cultures-j549cq8z7",
+   "status": "excluded:few-usable-steps"
+  },
+  {
+   "id": 316612,
+   "uri": "agbase-functional-annotation-workflow-jzfccp3ix",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 81498,
+   "uri": "bead-beating-in-custom-buffer-followed-by-xp-bead-ctt2wnqe",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 102397,
+   "uri": "lysosomal-activity-dq-red-bsa-assay-df853ry6",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 228894,
+   "uri": "cosmx-spatial-transcriptomics-protocol-hbr6b2m9f",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 237186,
+   "uri": "hmw-dna-extraction-from-red-algae-for-long-read-se-hjvab4n2f",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 242534,
+   "uri": "streamlined-dna-metabarcoding-of-soil-and-wood-rot-hq4eb5ytf",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 77305,
+   "uri": "identification-of-a-plasmid-transformation-cpqzvmx6",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 316554,
+   "uri": "direct-detection-of-poliovirus-and-nanopore-sequen-jzdicp24f",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 319681,
+   "uri": "decontamination-and-axenic-culture-establishment-o-j4e9cqth7",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 321395,
+   "uri": "differentiation-of-ipscs-into-ngn2-inducible-neuro-j54tcq8wp",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 318613,
+   "uri": "site-specific-antibody-labeling-with-flexable-kits-j3dvcqi67",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 88520,
+   "uri": "dna-isolation-gel-clean-up-c2pgydjw",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 102395,
+   "uri": "lysosomal-membrane-permeability-lmp-assay-df833ryn",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 230699,
+   "uri": "immunostaining-hdijb24cp",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 233178,
+   "uri": "expression-and-purification-of-the-rice-clock-prot-hfx2b3pqf",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 313295,
+   "uri": "green-microalgae-dna-extraction-and-preliminary-qu-jv7pcn9mp",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 76693,
+   "uri": "preparation-and-transformation-of-chemically-compe-cn5vvg66",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 237687,
+   "uri": "oceanomics-centre-edna-amplicon-library-preparatio-hkcxb4sxp",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 320975,
+   "uri": "detection-of-the-zaire-strain-of-the-ebola-virus-w-j5ppcq5mp",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 316608,
+   "uri": "bead-based-assay-for-lipid-transfer-to-atg9a-vesic-jze8cp3hx",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 319068,
+   "uri": "simplified-protocol-for-preparing-pcr-competent-ba-j3t4cqnqx",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 88484,
+   "uri": "plasmid-extraction-plasmid-isolation-c2ncydaw",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 101653,
+   "uri": "live-cell-microscopy-sample-preparation-yeast-cult-dfhv3j66",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 58491,
+   "uri": "immunofluorescence-staining-of-brain-slices-b5c3q2yn",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 235602,
+   "uri": "m6a-rna-immunoprecipitation-merip-hibsb4anf",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 315946,
+   "uri": "three-view-markerless-3d-hand-motion-protocol-jysicpwcf",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 76363,
+   "uri": "preparation-and-transformation-of-chemically-hyper-cntjvekn",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 238690,
+   "uri": "oceanomics-centre-edna-amplicon-library-preparatio-hmcab42sf",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 321316,
+   "uri": "effect-of-a-digital-tool-mikuy-supporting-communit-j52ccq8ax",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 321025,
+   "uri": "suv-production-j5q9cq5z7",
+   "status": "excluded:few-usable-steps"
+  },
+  {
+   "id": 305437,
+   "uri": "extraction-of-low-molecular-weight-compounds-from-jnh5cmb87",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 91869,
+   "uri": "a-universal-protocol-for-high-quality-dna-and-rna-c5x5y7q6",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 101159,
+   "uri": "isolation-and-characterization-of-tissue-and-cell-de2f3gbn",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 100082,
+   "uri": "an-end-to-end-workflow-for-gd2-immunofluorescence-ddys27we",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 235595,
+   "uri": "chromatin-immunoprecipitation-chip-in-22rv1-cells-hibjb4akp",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 315977,
+   "uri": "fungal-lichen-museum-specimen-extraction-amplifica-jythcpwj7",
+   "status": "excluded:few-usable-steps"
+  },
+  {
+   "id": 76690,
+   "uri": "s-o-c-medium-cn5svg6e",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 320777,
+   "uri": "2-sop-for-ctenophora-and-cnidaria-medusozoa-j5hhcq337",
+   "status": "excluded:few-usable-steps"
+  },
+  {
+   "id": 112640,
+   "uri": "wholistic-exm-whole-body-expansion-microscopy-with-dr8859zw",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 320264,
+   "uri": "immunofluorescence-j4zgcqx3x",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 318607,
+   "uri": "purification-of-antibody-oligo-conjugates-using-th-j3dpcqi5p",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 61479,
+   "uri": "0-3m-sodium-cacodylate-buffer-ph-7-4-stock-solutio-b8afrsbn",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 99955,
+   "uri": "quick-protocol-for-protein-extraction-from-adheren-ddut26wn",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 124654,
+   "uri": "agarose-gel-electrophoresis-for-dna-analysis-d5yn87ve",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 235615,
+   "uri": "atac-seq-library-preparation-in-cultured-cells-hib7b4arp",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 316148,
+   "uri": "qiagen-qiaquick-gel-extraction-kit-28704-and-28706-jyyucpxwx",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 76692,
+   "uri": "preparation-and-transformation-of-chemically-super-cn5uvg6w",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 243883,
+   "uri": "isl-system-forensic-intelligence-reporting-hsejb6bcp",
+   "status": "excluded:few-quantities"
+  },
+  {
+   "id": 130960,
+   "uri": "protocol-for-cas9-mediated-gen-knockout-in-trypano-eb5qbaq5x",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 320361,
+   "uri": "differentiation-of-human-ipscs-into-microglia-j44hcqyt7",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 318147,
+   "uri": "tissue-coring-for-microarray-and-immunohistochemis-j2xbcqfip",
+   "status": "challenge-pool"
+  },
+  {
+   "id": 61106,
+   "uri": "karnovsky-s-modified-fixative-b7wsrpee",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 98576,
+   "uri": "cell-culture-of-thp-1-monocytes-and-differentiatio-dchq2t5w",
+   "status": "excluded:published-before"
+  },
+  {
+   "id": 124699,
+   "uri": "transmission-electron-microscopy-tem-protocol-for-d5z3878n",
+   "status": "challenge-pool"
+  }
+ ],
+ "status_counts": {
+  "excluded:few-quantities": 20,
+  "later-domain": 38,
+  "excluded:published-before": 46,
+  "excluded:few-usable-steps": 13,
+  "challenge-pool": 40
+ },
+ "skipped_steps_in_eligible_protocols": {
+  "section": 30,
+  "too-short": 28,
+  "too-long": 35,
+  "no-action-word": 72,
+  "empty": 11
+ },
+ "dropped_components_in_eligible_protocols": {
+  "figure": 349
+ },
+ "components_seen": {
+  "component-concentration": 141,
+  "component-duration": 434,
+  "component-temperature": 385,
+  "component-amount": 613,
+  "component-link": 137,
+  "component-note": 343,
+  "component-image-figure": 78,
+  "component-image": 160,
+  "component-table-container": 126,
+  "component-table": 126,
+  "component-table-legend": 126,
+  "component-centrifuge": 177,
+  "component-thickness": 8,
+  "component-ph": 10,
+  "component-reagent": 160,
+  "component-file": 26,
+  "component-code": 80,
+  "component-safety": 8,
+  "component-well-plate": 4,
+  "component-formula": 8,
+  "component-equipment": 9,
+  "component-equipment-link": 6,
+  "component-protocol": 7,
+  "component-protocol-info": 7,
+  "component-protocol-title": 7,
+  "component-protocol-creator": 7,
+  "component-goto": 10,
+  "component-command": 33,
+  "component-command-title": 33,
+  "component-command-code": 33,
+  "component-command-meta": 33,
+  "component-command-description": 33,
+  "component-command-os": 33,
+  "component-dataset": 1,
+  "component-dataset-title": 1,
+  "component-video": 1,
+  "component-sample": 5,
+  "component-result": 6,
+  "component-citation": 1,
+  "component-citation-info": 1,
+  "component-citation-doi": 1
+ },
+ "later_domain": {
+  "protocols": 38,
+  "steps": 301,
+  "by_split": {
+   "dev": {
+    "protocols": 22,
+    "steps": 173
+   },
+   "test": {
+    "protocols": 16,
+    "steps": 128
+   }
+  },
+  "published": [
+   "2025-09-02",
+   "2026-08-26"
+  ]
+ },
+ "challenge": {
+  "protocols": 11,
+  "steps": 33,
+  "by_split": {
+   "dev": {
+    "protocols": 6,
+    "steps": 18
+   },
+   "test": {
+    "protocols": 5,
+    "steps": 15
+   }
+  },
+  "published": [
+   "2025-10-03",
+   "2026-07-31"
+  ],
+  "category_steps": {
+   "multiple_actions": 23,
+   "repeated_materials": 13,
+   "ranges": 10,
+   "unusual_symbols": 15,
+   "implicit_references": 12,
+   "conditional_wording": 11
+  },
+  "pool_steps": 1233
+ },
+ "raw_sha256": {
+  "protocols/100082.json": "c0cb8c310afca934565b94338ba46265edb539b6f9aaec7cb4c14b8b16a83373",
+  "protocols/100351.json": "3347cb07fbbb7af12ce8dc5fa57766e897decea164a2c41f42f6d50e14f0967d",
+  "protocols/101159.json": "099e4901f96c6bcf7f9775586fc45cc745329740654e9901c08569952349de91",
+  "protocols/101653.json": "354abca270385f4f851c4a95199db86f18906cb1dfe4fd3a1d9683843c1f9f3c",
+  "protocols/102344.json": "654a5056e62c11c2fea05012ad162c2910aafbdeb0c1bd474afa60d62214bdf4",
+  "protocols/102395.json": "1aa583fba97666ce31cccfe127b25796e1488e2a08aa56402e83b6e606d2267a",
+  "protocols/102397.json": "7e9fa5e7833cb144694adf7c746259601ffe7246d9d7b7d8a9a5ed30c7c403bb",
+  "protocols/103299.json": "7af419d1333edd3bf605c7871a0ffd9c2af833878b6f193eaf1700938146e59c",
+  "protocols/104255.json": "85750e15309787a4ab84d949ef9659089fdf40980b5f641b79cfbbc13e0ea1ef",
+  "protocols/104436.json": "60b0506de89dd2cf81201ef7c5c1fa205bc502523c0c3fb7a6fa033cd9aaf1be",
+  "protocols/105355.json": "8aff8c359b382be5ec005504c8ee2e8e5bf6bd869c1ec2d6b8ff6985a4dfbc49",
+  "protocols/105358.json": "d4e1983cf2903266226d6fd2b7c7a3e9f210d63d3ef949a772a23dd30ecdcc60",
+  "protocols/106463.json": "342392fd05311e2ba1ea1b4acaf014c400a38cae092c30debbf63dc5123e5c6f",
+  "protocols/107087.json": "e44a837d247397f8bd6006f49db7342cb85fb74dc4dfcb52e24f29652758b722",
+  "protocols/109774.json": "16173b88942393655417a2ec1d5117db39df65d2b1dffbb46c09f4f7cfbbddca",
+  "protocols/112640.json": "a4cd5f6ff2abe27219e909d5a105cac98427a0861b1a486d38dfad96c674f164",
+  "protocols/113376.json": "80f6c0b3296fcba51724b22dafeace5bdef13393443b7643989e6f9b778b13d6",
+  "protocols/119518.json": "e61774ad767affa29380ac908d398373f7fac2dbd600ebcfa77f147b2f63b035",
+  "protocols/124654.json": "94b178a8547caf9a23686f3c871459e87f0123bc701deb5eebe25881cf55fe51",
+  "protocols/124699.json": "dfb77a7ae6e4761527d07ecfa48975952e61bf784e2cf708ae92eb7b814acd3e",
+  "protocols/125754.json": "ab8af9eafe0c49c6d97be3af3cf3c9641fbe1bcbe5d777d14aadbe5d41f1f063",
+  "protocols/126221.json": "01526eb68bc35a8ca7a5874a8427b10a7f103aaa79aada5adf9c3502c37b6dcf",
+  "protocols/126304.json": "1641b3d53d3df4b14e24e974f933c30b715f60c56d865a40e6834894f4550961",
+  "protocols/130960.json": "14779ed5bbaa749850e79fb4702bacb912216b05343efa9d25db19ef9406b050",
+  "protocols/17448.json": "f480e35629e16f0fab65d236c6f9d0312020534be0c15adc5a178635293fa47b",
+  "protocols/20179.json": "16eab508e8d1adb508b3f66aeeffd825301db21dbd2069f18582f8e41015668d",
+  "protocols/221149.json": "f6c7d23f6ca733f7d9ac04ed41e9875b37e383b58ed5d415c51a0e7573571cc1",
+  "protocols/22263.json": "23f1b6fc22b2cc80c2cd63e6c4ac4e2736d232df3ad9f9ed9e4a315cad7308f5",
+  "protocols/22265.json": "6ab90702e5b804aefd239f8ff0e329d3214cd7c177ec3a6bfb4fd440931e62eb",
+  "protocols/22266.json": "f5c8a0c895828957439c608946406d57b26c042d21783dba46d7b95d85b69001",
+  "protocols/223979.json": "edd28e61fcc9fdd85bd1d237171bf3d241d556fdc5546a4e1668afa5f99112ae",
+  "protocols/223980.json": "ba24c31f5a4a03aa2108ca1e8adfb5705427a8cd1dddb7981d93b84102dc5cea",
+  "protocols/223986.json": "daba6c6254a0837aef8c3fe062f04fd4dcc729a362d6a92a5f146f339fe7ad30",
+  "protocols/223996.json": "5b2ff7173e38e7b6e66e015e2b9400b3d3fca1796cbe426e18b6e6946bbaf59c",
+  "protocols/224299.json": "f59c74a8b0dab311177f457e38d90f06c169896a285c3b3fb2a70a38719ec0a0",
+  "protocols/226171.json": "0efc77f0e21c0f8665888c772c9e1af81430dcd88e21a11f3591f4b312de62e5",
+  "protocols/227002.json": "01e2ba2e52e370d044a988d174f01f83874dc976ccf188617e73495a1a2573c2",
+  "protocols/228894.json": "b37ee3e450748628b0421b7813031c6fb916d346473df42c2f13f06534c183c6",
+  "protocols/229387.json": "bc990f5f49dede74c0f9c46b0c3f7ca28f7d39d980b5a54332e8e4155a1b261f",
+  "protocols/229673.json": "a51c38e6ce1b1a8fbfd3a8da338e41de3d933c66ceda10e7c3dcb28fcd9c708e",
+  "protocols/230421.json": "9c8a590c8110f1bb2689665dd2c0f99045f41cace35a91aadfbb5a30602ea7ba",
+  "protocols/230699.json": "ba1348ecad48b7f87e2c8c9f13a915c8cbc40be5ee5ab66633bd4c1e2f4f9889",
+  "protocols/231005.json": "4154a1a880fcbe65af6ac95e7f1ef6fbc5f7ff403bc717a6884f29adbaf12f3a",
+  "protocols/231666.json": "b92d548206632577077fb385a8a3c1acf02685311beddd969c25e8cbf3fdeb59",
+  "protocols/232241.json": "e9d542dafad5749a843957b1f193a453605fc621749c59a34da095a87b973b0d",
+  "protocols/233001.json": "513872edbc6a117b911bb94736f3084fb4efbd0b781707807dfc4435f4e9db1c",
+  "protocols/233178.json": "c1a04e485151944fde1bb535be8fb3a1cf810b9ddccd83c03219c270a0aef859",
+  "protocols/233377.json": "6657e1ec49233e5461e335c34aca20ea2df9e46bd1e199b2180f0477e4a955e9",
+  "protocols/233991.json": "8563998ebc175a11a7acb4c6d14f08a428731a0de4e3444b4db34a0f319918ee",
+  "protocols/235595.json": "43378c4104ac442ce453412e03f6535fa104947b77b61a5e3e57fd045cbc605b",
+  "protocols/235602.json": "39f57659757d30dbb09a642ce95ced953f8c93fd1c5eeb2ca5dfebd0e8362b87",
+  "protocols/235615.json": "7f68bf484d70085e37b7f56164eeb084f10d71cf1363a831d92bed857ba4bb1b",
+  "protocols/237186.json": "7477e78a802697d19ea3f3e11eea6cac80676d6349f01e1d23d8ca53e96f32c4",
+  "protocols/237687.json": "d1cd88dd0891d9ac78a7eb9c9e5c5f298c8a2048382ea46bf14c5928215cf9c4",
+  "protocols/238690.json": "3903459289088f467aef6d6ddd198ecd35bdf06c8c71aeea656efeb1cb7aa5ce",
+  "protocols/238888.json": "d74e895b7e12f069c0f0667d2e82c5721331c9691ad068a372c76c3d09ae130b",
+  "protocols/241598.json": "bf6bc7a63a0a6b48474243d623422bc978e3c0f2c9063d035523459b654fea80",
+  "protocols/241654.json": "7d271a997436181ffb346f902fb7ea6496849346d6d131e76980988cd1413e42",
+  "protocols/241749.json": "2928c298294dbe18bee6999a042fdbd9dcb8df59ae4fbaaedd92d1e92d850f4f",
+  "protocols/242534.json": "ec9ccfc992d905060f608d136d30118d0256110334ad4e248e50c97b856ec9f9",
+  "protocols/243070.json": "1e8b129aec2b32f55968775c6b752139440643b489d561426992441f19614563",
+  "protocols/243287.json": "61f338981f1bcb86227832afbc3acdaa3f31ac04d56940212e1aebc3aae347be",
+  "protocols/243883.json": "4586164b26b43c4948a86cd18bb333fdbfdc4249261c09ae3d4f187a69fa1890",
+  "protocols/251742.json": "b640269c6b4cd61cdd1f89d6c680be24b285130444f1cb3153f26043021043c9",
+  "protocols/305437.json": "ab594e5f2355162b15ba27b01338c6b0ac84bbc01d1c049c2e74a23188372cff",
+  "protocols/313295.json": "93f80691af53ceede9100f1382e95ad66cf002aece302b0b5090108233a85af9",
+  "protocols/313411.json": "894ec067be21693aad79a7482c9b5195ecaf961d8ff441a3664a8234a7a9e6f6",
+  "protocols/313875.json": "dba1266309ae73d388f245088f5d45c99293e338d2a5b9784b52f74d932c8674",
+  "protocols/314016.json": "c14a7872da5c766f0a633f677ff89b93389438968b107c637ca92c0d54fb05e8",
+  "protocols/315906.json": "7fab3329550d9b56fb713809e331d66a4b7be84e88b6023d21ff4c09fca65e42",
+  "protocols/315946.json": "7d9f11ddcf8c7054c5784eab63c66e4dfc661cdac8af23fdbcbbde8b166d5d6c",
+  "protocols/315977.json": "3aae1d5e76f8833db16d60bdae0c0db3c2c5f647e5f616067b00f4177c703854",
+  "protocols/316038.json": "e560eaba40956c0eacb0eac2dba1d1cd6bbe771f1575942f1f2f4ca03b06e324",
+  "protocols/316148.json": "f6c4aa273cfe5894d3b4fde062430f28be613f0faf0ad3f536266e8419752909",
+  "protocols/316229.json": "b4dfd64302439b318434a3133715eb6f1f4c45598b50b7f8ba33908b45a61cd3",
+  "protocols/316267.json": "95b696361d7ba184fafd8dd521648ea3773ce009befe6d0dd20299d69ecb6108",
+  "protocols/316293.json": "003b94f8771dafcb48aa958e97a2e73e1e613aae52dc2e8c600e45f6116b0cc1",
+  "protocols/316416.json": "6068065f0e3f02927b5ec5efca56aeb1ae5bffc1f809f527c12d530f9dbd27ed",
+  "protocols/316440.json": "311b7576d313241643fe2ecd21fcaf0258d7dbf5bef53c01c325a4c82f70f06c",
+  "protocols/316554.json": "3efb7d4081df1bc1669705971ab52b0b724a3a58c756eef999b8abd3f58b1233",
+  "protocols/316608.json": "f0bf249f6d5b49cf19918cea44a1e78694c4e361d420b5492461acc7f87f04fd",
+  "protocols/316612.json": "b8ac6f0adf4537a268ffd2c7c20d0aeadb49d0ba1b4f83a72e29799b40565460",
+  "protocols/316658.json": "c34b4eed5eaa0a8bb773e5e2bb55224d20c57c36cf5e7bf6b375a5cb46a83335",
+  "protocols/316863.json": "76210548fdda57fb151d14d896808ebf3f0b21605bc10bd9392db99fbdf09905",
+  "protocols/317105.json": "64cad97348c7c6683617a72b69d324b69c0e91d9a4eee66996b2d954b3167a70",
+  "protocols/317813.json": "4702172b99a5e2768e6bed76a58c79b5f16fa2dc94a81f2127799ba97fd46729",
+  "protocols/317991.json": "9437a38166dacc562afc490cd55b1b85cd88a0159e602d04d63c1a23cea8226e",
+  "protocols/318147.json": "bd6263fb9e69e53afdac3d8f99888f8edd494a804832f88af7d08107a4746176",
+  "protocols/318175.json": "cd870efb6e6ef7ed4db22e8065c9c5a27aacf7f0c4fec86da6b857c57b460b2c",
+  "protocols/318475.json": "669baec3ea0b75047498198848744eb7e0303e436cf711fec94facb5ae6cbf9d",
+  "protocols/318607.json": "8ad8360bd755078d57ef01176ebf7e41390aefd6bd7756e8afbdadcdcf46028e",
+  "protocols/318613.json": "3e8d465e1903e3d40c61cd7a686424402c812008a0fc26ad62280ea55122651d",
+  "protocols/318639.json": "c077bd9daa293d40e4ca3677ff85af2b32ffae4e737f4cf6754dea1792690a4e",
+  "protocols/319068.json": "e0ddd3e44ea1457f0b84da252b81b2d9daa76226cc1e256f40c4325801fedbeb",
+  "protocols/319104.json": "dcdb2008c8d797bd459e19effc0164d269122b58584a785c1fbd338728f3af9e",
+  "protocols/319681.json": "6f0654b74283173891a51843176594a571a2bbcc60b70ad65f155e268ad60a55",
+  "protocols/319898.json": "8beb3e27f4f9b7a614cf104ed5f3fe01ca5cef9dc79b599a38535607b8a5ac74",
+  "protocols/320264.json": "6050d64180d11596eaace7cb6c6136b8f126ca42db4e03344dcabcce6a560adf",
+  "protocols/320358.json": "4c4e006e06c9e99f9be60daccedbd36dcac7e01d33c8b5a97902958321e1f019",
+  "protocols/320361.json": "7aa2451e79a7c7103578d84d7926ca51a8b8ede4b015e352c9fa8f005486952d",
+  "protocols/320524.json": "7f283598312fb59a6a0734f4845faa51be1f96e3c833e6868e3742e70f5e63c1",
+  "protocols/320615.json": "9e217594113129808e7f30ea40f37ad6fccbb6165b328ccabee3a9ee2bbdfd00",
+  "protocols/320665.json": "ffe244191cc7bfa2a09772127a56037d4ab3499717929a34f507de20e027c64b",
+  "protocols/320777.json": "071c2c30cf2c018684bd35fc6a1c8688220cbc648f8a5f48c4dc0f3fd9f6fdaa",
+  "protocols/320900.json": "f8429474b7b00013401b5b7ae8d04d36f7ad7f1a96cf4c4ffcb3ea44048f7473",
+  "protocols/320975.json": "74ad4785a2fc887a02ca9f54a8f82598efa59223ef802a849cb1c88e7f996dae",
+  "protocols/321006.json": "aba67cc535acef6a644c3f5007ca46f543d4aea18ab0d7c390172b3b41badc5b",
+  "protocols/321025.json": "3d6cc7fcef76da61d2eb914a09ba2a579cb3fdbd40c7034d1f0c002f12123dce",
+  "protocols/321316.json": "de9e7f3a8a6ce0aff963a723c4690926424cff2cdb97afcbb0fc72ba45762c09",
+  "protocols/321395.json": "211890adc943bac3f53f02a7c680520af9098149a37f0c9b34cfb71d73052621",
+  "protocols/321409.json": "70707ba9aef023af34d52e8d42717f0c668ca1b1646355eb28849490653fd1c9",
+  "protocols/321411.json": "48e143c41f44cd181e5bb02f585884ce6d77bd13b0084ab87aa1bc8d7b4c7726",
+  "protocols/321426.json": "1fee5cd224463e528e3862890b2e2df8def49adecaa0d38015e0e66be003a6d9",
+  "protocols/321451.json": "ce710d505900a8f734d81560f5dcff1416d29ea03a6c5b30bc328a7e82ac4304",
+  "protocols/321453.json": "3e15142e0714bb5e60742a6bfab7b79c13c1d166d1e3f8606f1e66d829ad862e",
+  "protocols/321457.json": "4dc9edde3ec68c14b9e4b06b3f5fa9b66a39c928632edb5c8dd115078a5b6921",
+  "protocols/321458.json": "d6255ee44624236d82bb5fa159cfad0b7d30c0a3eefa17e69407321a85bb5b75",
+  "protocols/321473.json": "c2883d8bc20810a1eb261997badda335848cd83302ff3366e4ab11fe74ce37e3",
+  "protocols/321484.json": "6a773ad6f13fc77da14c585e8ff2abf9a0e211669f3af223d5a552633713fc74",
+  "protocols/321488.json": "409aa32d4bd7bd8c2daa1b9a87810ac086c6fa920e8c4ed0fbf42edb7c4eb100",
+  "protocols/321774.json": "419e341bdaa14f28f37a817f09f47a7f82bb2cd9ae18c88e923a8515c871276e",
+  "protocols/321801.json": "10d7fa739d5abe3bd3ba7152ff8b2830b58c639ccbb44515f41a99300378acef",
+  "protocols/321829.json": "1a72eeddc192eaf9dfcd1827ec73c5d1f4779fd0286a28104cea65191c545fba",
+  "protocols/321855.json": "5e60a9b50497dd0a540b17605248dd5cf2d9a1820f1471a49bff754f4c826b45",
+  "protocols/321974.json": "91fd88e09cc7314879c28988f8463efcf972a3a0b6ee6d49a32a3aa1c5e1640d",
+  "protocols/322024.json": "90554beb72a78da29caaf4a7823bf87256928627fd8a9cde43ea5c989896ff9d",
+  "protocols/323282.json": "3b0b7f76fd3630b497e190e4137f90cca94035269006482b7607c4a4008a2700",
+  "protocols/53012.json": "b95497b32d012404581b464f6153a07cd0e430b5ad6e5cf4af924a6e6e288e1d",
+  "protocols/58491.json": "66810ebe4f421d2fe920645275a0498964e94bfddb46eb838c4eca82b286254a",
+  "protocols/61106.json": "54ae0ed9962a50afe6f8649613d8f8c2d0adb5510fbe8e132cb8ac49033ab5ac",
+  "protocols/61479.json": "6ca957d4a8bdf0895a37155ddf16b4990a5cf003831f6b76c3342fd15b7bb3bf",
+  "protocols/62125.json": "9f498ef80ac1ed720f5ecd2fb0c0dd1f2dcf1fb0bdb5eb60aa951acf17466e02",
+  "protocols/64674.json": "a7867acdd3eb73deee08481ab8d2e65b54720a9c4c5b5a3f77ec506131299cc6",
+  "protocols/76363.json": "bf8df15bad16e7bd99e9e84c725168d62ea62b6fa579380d89344a7f5ef66675",
+  "protocols/76690.json": "10219e8d1f004953215e635546f0f0af83d07160f18c4acdf4b8350b3c2eda43",
+  "protocols/76692.json": "e4a2cebfd25a677904d23f2e2189ea198e639463d481475012f74081654e4c34",
+  "protocols/76693.json": "21c5cd19be62064b76e897d51a8c2c5f35ccba6e9d0d08fea05f5fb8d29fe3a5",
+  "protocols/77305.json": "12acfff3f3e4b901daedf7e5f6e3e589cdd6dc984e27ac9204844c82f07a24c9",
+  "protocols/77543.json": "3875ae61fa92cef3ab502d29b2abf0d54cb9227ccdbede8168d6fdb5b5527ea3",
+  "protocols/77630.json": "7ae75b05482168140f0537c278083f75f73f3eab2d249260ba93180781bf0df0",
+  "protocols/79822.json": "b46c2158d8b9596a4f350385a35d69eecb1c986007a94db8cdd5204f96675fa1",
+  "protocols/79925.json": "5db459b4ea6d0f8a0a629f0132903764c092dc703bbc235389d1388625cb5905",
+  "protocols/80214.json": "0d7fcb9d73479864294f7fcdf0ffaa6c18a8d0bd9a5e3611cd2cae29e2965120",
+  "protocols/80304.json": "abc918a3e091b9dfcece3e60a6fae01b85415eb62733a55c9141bb4086e9c8c6",
+  "protocols/81498.json": "8a2051d2530b3e9c6f7cd1fd5247aeb0d07d6efc223105b001ca62d1782413ae",
+  "protocols/82525.json": "6b90881954a865d47cc8934bdfff4b03d7448798f2d56240de10609f7cc04753",
+  "protocols/88484.json": "a66098ebfbcecb4106574db595770c33ccab6ec79a4e7c694617bbf9ab7b07ce",
+  "protocols/88520.json": "0eee0dcf832529631d8d068e61f31cd08dd8190ee34257031731a370e6f86f01",
+  "protocols/89090.json": "c8a74d2e5b3a92ed61b4e2879add927709332a2040655602c45a4cfed8f7d6ca",
+  "protocols/90941.json": "c05133bf5d5a2f23205ed80425bce77efc082671458ce014425693c18104e343",
+  "protocols/91039.json": "a0ed8813023e3abd4cb835901938336143b51fd30d167ed5c8eb14702c1d626f",
+  "protocols/91596.json": "ab02660ee9e389ebb02ee69efd7f55acf51bb5303863c69fe5687c92266e6721",
+  "protocols/91869.json": "30805b5284091fde3f42d3ef37d4dc91a190137bdb1417fd5e695c2cbdd3e2db",
+  "protocols/92516.json": "fccba462daaf305aaa10bd60ce6a9c6d6f31acb905150fe6a1292505a77803d9",
+  "protocols/93870.json": "065de3d58913909e544269005aee5c38a004e4ca4e4f4bb4b4d56790a87ea7cb",
+  "protocols/98576.json": "a77e16e624399e9e1ed60521964c4a32ed2cb69bc13ed4a26ca838c6c11d192f",
+  "protocols/99955.json": "d4ea3d289ea9aac7d4dc1fbcd77b5df0ec932738586923aad9a274265d28a7c9"
+ }
+}
