@@ -1,0 +1,342 @@
+{
+ "entities": {
+  "gold_total": 1866,
+  "categories": {
+   "wrong_boundary": {
+    "count": 140,
+    "share": 0.075
+   },
+   "correct": {
+    "count": 1353,
+    "share": 0.7251
+   },
+   "wrong_type": {
+    "count": 110,
+    "share": 0.0589
+   },
+   "missed": {
+    "count": 140,
+    "share": 0.075
+   },
+   "wrong_boundary_and_type": {
+    "count": 123,
+    "share": 0.0659
+   }
+  },
+  "by_label": {
+   "Action": {
+    "correct": 390,
+    "missed": 31,
+    "wrong_type": 3,
+    "wrong_boundary_and_type": 15,
+    "wrong_boundary": 6
+   },
+   "Amount": {
+    "correct": 87,
+    "wrong_type": 7,
+    "wrong_boundary_and_type": 11,
+    "wrong_boundary": 1,
+    "missed": 2
+   },
+   "Concentration": {
+    "correct": 54,
+    "wrong_boundary_and_type": 3,
+    "wrong_boundary": 2,
+    "wrong_type": 4
+   },
+   "Device": {
+    "correct": 34,
+    "wrong_type": 10,
+    "wrong_boundary": 4,
+    "wrong_boundary_and_type": 2
+   },
+   "Generic-Measure": {
+    "wrong_boundary_and_type": 3,
+    "wrong_type": 7,
+    "wrong_boundary": 1,
+    "correct": 7
+   },
+   "Location": {
+    "correct": 101,
+    "wrong_type": 16,
+    "wrong_boundary": 12,
+    "wrong_boundary_and_type": 5,
+    "missed": 5
+   },
+   "Measure-Type": {
+    "wrong_boundary": 3,
+    "missed": 10,
+    "correct": 6,
+    "wrong_boundary_and_type": 3,
+    "wrong_type": 1
+   },
+   "Mention": {
+    "missed": 3,
+    "correct": 5
+   },
+   "Method": {
+    "wrong_boundary": 26,
+    "correct": 44,
+    "wrong_boundary_and_type": 13,
+    "wrong_type": 23,
+    "missed": 20
+   },
+   "Modifier": {
+    "correct": 117,
+    "missed": 37,
+    "wrong_boundary_and_type": 48,
+    "wrong_boundary": 16,
+    "wrong_type": 14
+   },
+   "Numerical": {
+    "correct": 6,
+    "wrong_boundary": 5,
+    "wrong_type": 4,
+    "missed": 2,
+    "wrong_boundary_and_type": 3
+   },
+   "Reagent": {
+    "correct": 369,
+    "wrong_type": 17,
+    "wrong_boundary": 59,
+    "wrong_boundary_and_type": 15,
+    "missed": 24
+   },
+   "Seal": {
+    "correct": 6
+   },
+   "Size": {
+    "correct": 4,
+    "wrong_boundary": 1
+   },
+   "Speed": {
+    "wrong_type": 1,
+    "correct": 22,
+    "wrong_boundary": 1
+   },
+   "Temperature": {
+    "correct": 49
+   },
+   "Time": {
+    "correct": 52,
+    "wrong_boundary_and_type": 2,
+    "missed": 6,
+    "wrong_type": 3,
+    "wrong_boundary": 3
+   }
+  },
+  "spurious_by_label": {
+   "Reagent": 37,
+   "Modifier": 22,
+   "Action": 18,
+   "Measure-Type": 10,
+   "Method": 8,
+   "Numerical": 5,
+   "Device": 4,
+   "Time": 4,
+   "Location": 3,
+   "Temperature": 2
+  }
+ },
+ "relations": {
+  "gold_total": 1254,
+  "categories": {
+   "correct": {
+    "count": 630,
+    "share": 0.5024
+   },
+   "endpoint_error": {
+    "count": 432,
+    "share": 0.3445
+   },
+   "missed": {
+    "count": 118,
+    "share": 0.0941
+   },
+   "wrong_attachment": {
+    "count": 53,
+    "share": 0.0423
+   },
+   "wrong_label": {
+    "count": 21,
+    "share": 0.0167
+   }
+  },
+  "by_label": {
+   "Acts-on": {
+    "correct": 196,
+    "endpoint_error": 82,
+    "wrong_attachment": 20,
+    "missed": 9,
+    "wrong_label": 6
+   },
+   "Commands": {
+    "missed": 14,
+    "endpoint_error": 6
+   },
+   "Coreference-Link": {
+    "endpoint_error": 15,
+    "missed": 15,
+    "correct": 1
+   },
+   "Count": {
+    "correct": 5,
+    "endpoint_error": 12,
+    "missed": 1
+   },
+   "Measure": {
+    "correct": 117,
+    "endpoint_error": 54,
+    "wrong_attachment": 6,
+    "missed": 2
+   },
+   "Measure-Type-Link": {
+    "endpoint_error": 12,
+    "missed": 2,
+    "correct": 4
+   },
+   "Meronym": {
+    "missed": 24,
+    "endpoint_error": 34,
+    "correct": 9
+   },
+   "Mod-Link": {
+    "correct": 90,
+    "endpoint_error": 113,
+    "wrong_attachment": 2,
+    "missed": 14
+   },
+   "Of-Type": {
+    "endpoint_error": 6
+   },
+   "Or": {
+    "endpoint_error": 4,
+    "correct": 6,
+    "missed": 1
+   },
+   "Product": {
+    "correct": 2,
+    "endpoint_error": 7,
+    "wrong_label": 4,
+    "wrong_attachment": 3
+   },
+   "Setting": {
+    "correct": 78,
+    "endpoint_error": 21,
+    "wrong_attachment": 9,
+    "missed": 15
+   },
+   "Site": {
+    "correct": 80,
+    "endpoint_error": 26,
+    "wrong_label": 6,
+    "wrong_attachment": 9,
+    "missed": 9
+   },
+   "Using": {
+    "missed": 12,
+    "correct": 42,
+    "endpoint_error": 40,
+    "wrong_attachment": 4,
+    "wrong_label": 5
+   }
+  },
+  "spurious": {
+   "spurious_endpoint": 269,
+   "between_gold_entities": 68
+  }
+ },
+ "examples": {
+  "entity/wrong_boundary": [
+   "later-domain/pio-317105: gold Method 'Vacuum Filtration', predicted Method 'Vacuum Filtration and DNA Extraction' | [[Vacuum Filtration]][[Vacuum Filtration and DNA Extraction]] from Environmental Water Samples Assemble vacuum filtration",
+   "later-domain/pio-317105: gold Method 'DNA Extraction', predicted Method 'Vacuum Filtration and DNA Extraction' | [[Vacuum Filtration and DNA Extraction]][[DNA Extraction]] from Environmental Water Samples Assemble vacuum filtration",
+   "later-domain/pio-317105: gold Modifier 'folded', predicted Modifier 'containing the folded' | ifuge tube. Add an appropriate volume of 1X PBS to the tube [[containing the folded]][[folded]] filter paper. Vortex for 30–60 seconds to resuspend microbi",
+   "later-domain/pio-317105: gold Reagent 'QIAamp® DNA Mini Kit', predicted Reagent 'QIAamp® DNA Mini Kit manufacturer's instructions' | PBS solution. Proceed with DNA extraction according to the [[QIAamp® DNA Mini Kit]][[QIAamp® DNA Mini Kit manufacturer's instructions]], using the resuspended PBS as the starting material. Elute",
+   "later-domain/pio-317813: gold Reagent 'Lyssavirus Rabies', predicted Reagent 'Lyssavirus Rabies Part 1 - RNA' | Pathogen-Agnostic WGS: An ONT Workflow ([[Lyssavirus Rabies]][[Lyssavirus Rabies Part 1 - RNA]] Extraction) Weigh 50 mg brain tissue (straw method) in a 2",
+   "later-domain/pio-317813: gold Method 'RNA Extraction', predicted Reagent 'Lyssavirus Rabies Part 1 - RNA', Method 'Extraction' | Pathogen-Agnostic WGS: An ONT Workflow ([[Lyssavirus Rabies Part 1 - RNA]][[RNA Extraction]][[Extraction]]) Weigh 50 mg brain tissue (straw method) in a 2 ml microcen",
+   "later-domain/pio-317813: gold Method 'straw method', predicted Method '(straw method' | us Rabies Part 1 - RNA Extraction) Weigh 50 mg brain tissue [[(straw method]][[straw method]]) in a 2 ml microcentrifuge tube. The tissue sample should b",
+   "later-domain/pio-317813: gold Method 'extraction step', predicted Method 'extraction' | l bead to the tube. Aliquot 200 µl disrupted tissue for the [[extraction]][[extraction step]]. Pipette 20 µl Proteinase K into a 1.5 ml Lo-Bind tube. Add"
+  ],
+  "entity/wrong_type": [
+   "later-domain/pio-317105: gold Device 'components', predicted Reagent 'components' | acuum filtration apparatus in a clean workspace. Ensure all [[components]][[components]] are sterile before use. Place a Whatman 0.45 µm filter pape",
+   "later-domain/pio-317105: gold Reagent 'volume', predicted Measure-Type 'volume' | o the filtration funnel. Apply vacuum and filter the entire [[volume]][[volume]]. Replace filter paper if it becomes clogged. Using sterile",
+   "later-domain/pio-317105: gold Amount 'appropriate volume', predicted Generic-Measure 'appropriate volume' | and place into a sterile 2 mL microcentrifuge tube. Add an [[appropriate volume]][[appropriate volume]] of 1X PBS to the tube containing the folded filter paper. V",
+   "later-domain/pio-317105: gold Device 'filter paper', predicted Location 'filter paper' | tex for 30–60 seconds to resuspend microbial cells from the [[filter paper]][[filter paper]] into the PBS solution. Proceed with DNA extraction accordin",
+   "later-domain/pio-317813: gold Method 'Pathogen-Agnostic WGS', predicted Reagent 'Pathogen-Agnostic WGS' | [[Pathogen-Agnostic WGS]][[Pathogen-Agnostic WGS]]: An ONT Workflow (Lyssavirus Rabies Part 1 - RNA Extraction",
+   "later-domain/pio-317813: gold Location 'dry ice', predicted Reagent 'dry ice' | microcentrifuge tube. The tissue sample should be placed on [[dry ice]][[dry ice]] after retrieved from the storage and the weighing step must",
+   "later-domain/pio-317813: gold Method 'Homogenisation', predicted Reagent 'Homogenisation' | emperature. Disrupt the tissue with TissueLyser II (QIAGEN) [[Homogenisation]][[Homogenisation]] for 2 min at 25 Hz. Add 1 stainless steel bead to the tube.",
+   "later-domain/pio-317813: gold Speed '25 Hz', predicted Generic-Measure '25 Hz' | ue with TissueLyser II (QIAGEN) Homogenisation for 2 min at [[25 Hz]][[25 Hz]]. Add 1 stainless steel bead to the tube. Aliquot 200 µl dis"
+  ],
+  "entity/missed": [
+   "later-domain/pio-317105: gold Modifier 'Whatman', predicted nothing | pace. Ensure all components are sterile before use. Place a [[Whatman]] 0.45 µm filter paper onto the filtration membrane support u",
+   "later-domain/pio-317105: gold Modifier 'entire', predicted nothing | ple into the filtration funnel. Apply vacuum and filter the [[entire]] volume. Replace filter paper if it becomes clogged. Using s",
+   "later-domain/pio-317105: gold Mention 'it', predicted nothing | acuum and filter the entire volume. Replace filter paper if [[it]] becomes clogged. Using sterile forceps, remove the filter p",
+   "later-domain/pio-317105: gold Modifier 'clogged', predicted nothing | ilter the entire volume. Replace filter paper if it becomes [[clogged]]. Using sterile forceps, remove the filter paper. Fold inwar",
+   "later-domain/pio-317105: gold Action 'Fold', predicted nothing | es clogged. Using sterile forceps, remove the filter paper. [[Fold]] inward (cell-side in) and place into a sterile 2 mL microce",
+   "later-domain/pio-317105: gold Modifier 'inward', predicted nothing | ogged. Using sterile forceps, remove the filter paper. Fold [[inward]] (cell-side in) and place into a sterile 2 mL microcentrifug",
+   "later-domain/pio-317813: gold Method 'ONT Workflow', predicted nothing | Pathogen-Agnostic WGS: An [[ONT Workflow]] (Lyssavirus Rabies Part 1 - RNA Extraction) Weigh 50 mg bra",
+   "later-domain/pio-317813: gold Method 'weighing step', predicted nothing | placed on dry ice after retrieved from the storage and the [[weighing step]] must be carried out swiftly. Add 600 µl 1X DNA/RNA ShieldTM"
+  ],
+  "entity/wrong_boundary_and_type": [
+   "later-domain/pio-317105: gold Modifier 'cell-side in', predicted Method 'cell-side' | sing sterile forceps, remove the filter paper. Fold inward ([[cell-side]][[cell-side in]]) and place into a sterile 2 mL microcentrifuge tube. Add an",
+   "later-domain/pio-317105: gold Method 'manufacturer's instructions', predicted Reagent 'QIAamp® DNA Mini Kit manufacturer's instructions' | PBS solution. Proceed with DNA extraction according to the [[QIAamp® DNA Mini Kit manufacturer's instructions]][[manufacturer's instructions]], using the resuspended PBS as the starting material. Elute",
+   "later-domain/pio-317105: gold Modifier 'as the starting material', predicted Reagent 'material' | Kit manufacturer's instructions, using the resuspended PBS [[as the starting material]][[material]]. Elute the purified DNA in Buffer AE into a clean 1.5 mL mi",
+   "later-domain/pio-223996: gold Reagent 'Autophagosomes', predicted Method 'Isolation of Autophagosomes and Proteinase K Protection Assay' | [[Isolation of Autophagosomes and Proteinase K Protection Assay]][[Autophagosomes]] and Proteinase K Protection Assay Use the following cell lines: HAP1 ATG9A-GFP (RRID:CVCL_E2T",
+   "later-domain/pio-223996: gold Reagent 'Proteinase K', predicted Method 'Isolation of Autophagosomes and Proteinase K Protection Assay' | [[Isolation of Autophagosomes and Proteinase K Protection Assay]][[Proteinase K]] Protection Assay Use the following cell lines: HAP1 ATG9A-GFP (RRID:CVCL_E2T",
+   "later-domain/pio-223996: gold Modifier 'per condition', predicted Method 'condition' | DKO (RRID:CVCL_F0LE) Seed cells in 15 cm dishes (two dishes [[per condition]][[condition]]). Treat cells with: Earle’s Balanced Salt Solution (EBSS).",
+   "later-domain/pio-223996: gold Concentration '100 nanomolar (nM)', predicted Numerical '100', Reagent 'nanomolar', Measure-Type 'nM' | ). Treat cells with: Earle’s Balanced Salt Solution (EBSS). [[100]][[100 nanomolar (nM)]][[nanomolar]] ([[nM]]) Bafilomycin A1 (BafA). Incubate for 02:00:00 prior to harve",
+   "later-domain/pio-223996: gold Time '02:00:00', predicted Generic-Measure '02:00' | SS). 100 nanomolar (nM) Bafilomycin A1 (BafA). Incubate for [[02:00]][[02:00:00]] prior to harvesting. Harvest cells by trypsinization and pe"
+  ],
+  "relation/missed": [
+   "later-domain/pio-317105: gold Place -Using-> forceps; predicted Place -Acts-on-> filter paper; Place -Site-> filtration membrane support; forceps -Mod-Link-> sterile | an workspace. Ensure all components are sterile before use. [[Place]] a Whatman 0.45 µm filter paper onto the filtration membrane support using sterile [[forceps]]. Pour the 1.5 L water sample into the filtration funnel. Ap",
+   "later-domain/pio-317105: gold remove -Using-> forceps; predicted forceps -Mod-Link-> sterile; remove -Acts-on-> filter paper | . Replace filter paper if it becomes clogged. Using sterile [[forceps]], [[remove]] the filter paper. Fold inward (cell-side in) and place into",
+   "later-domain/pio-317105: gold filter paper -Meronym-> tube; predicted Add -Site-> tube; tube -Mod-Link-> containing the folded; filter paper -Mod-Link-> containing the folded; filter paper -Setting-> appropriate volume | centrifuge tube. Add an appropriate volume of 1X PBS to the [[tube]] containing the folded [[filter paper]]. Vortex for 30–60 seconds to resuspend microbial cells from",
+   "later-domain/pio-317813: gold mix -Commands-> pulse-vortexing; predicted pulse-vortexing -Mod-Link-> Thoroughly | the Proteinase K. Add 100 µl Buffer VXL. Close the cap and [[mix]] by [[pulse-vortexing]]. Thoroughly homogenise the sample and the buffer to ensure",
+   "later-domain/pio-223996: gold Use -Using-> HAP1 ATG9A-GFP ATG2 DKO; predicted Use -Acts-on-> cell lines; Use -Acts-on-> HAP1 ATG9A-GFP | olation of Autophagosomes and Proteinase K Protection Assay [[Use]] the following cell lines: HAP1 ATG9A-GFP (RRID:CVCL_E2TR) [[HAP1 ATG9A-GFP ATG2 DKO]] (RRID:CVCL_F0LE) Seed cells in 15 cm dishes (two dishes per",
+   "later-domain/pio-223996: gold dishes -Coreference-Link-> dishes; predicted Seed -Site-> dishes; Seed -Site-> dishes; dishes -Measure-> 15 cm; dishes -Measure-> two | AP1 ATG9A-GFP ATG2 DKO (RRID:CVCL_F0LE) Seed cells in 15 cm [[dishes]] (two [[dishes]] per condition). Treat cells with: Earle’s Balanced Salt Sol",
+   "later-domain/pio-223996: gold Treat -Using-> Earle’s Balanced Salt Solution; predicted Treat -Acts-on-> cells | 0LE) Seed cells in 15 cm dishes (two dishes per condition). [[Treat]] cells with: [[Earle’s Balanced Salt Solution]] (EBSS). 100 nanomolar (nM) Bafilomycin A1 (BafA). Incubate",
+   "later-domain/pio-223996: gold Treat -Using-> Bafilomycin A1; predicted Treat -Acts-on-> cells | 0LE) Seed cells in 15 cm dishes (two dishes per condition). [[Treat]] cells with: Earle’s Balanced Salt Solution (EBSS). 100 nanomolar (nM) [[Bafilomycin A1]] (BafA). Incubate for 02:00:00 prior to harvesting. Harvest"
+  ],
+  "relation/wrong_attachment": [
+   "later-domain/pio-317105: gold Proceed -Using-> PBS; predicted Proceed -Using-> DNA extraction; Proceed -Using-> QIAamp® DNA Mini Kit manufacturer's instructions; PBS -Mod-Link-> resuspended | icrobial cells from the filter paper into the PBS solution. [[Proceed]] with DNA extraction according to the QIAamp® DNA Mini Kit manufacturer's instructions, using the resuspended [[PBS]] as the starting material. Elute the purified DNA in Buffer",
+   "later-domain/pio-317813: gold homogenise -Acts-on-> buffer; predicted homogenise -Acts-on-> sample; homogenise -Mod-Link-> Thoroughly | r VXL. Close the cap and mix by pulse-vortexing. Thoroughly [[homogenise]] the sample and the [[buffer]] to ensure sufficient lysis.",
+   "later-domain/pio-226171: gold prepare -Setting-> 4°C; predicted storage -Setting-> 4°C | h your flow cell to remove the remaining library and either [[prepare]] for another sequencing run or for storage at [[4°C]]. The wash uses the reagents supplied in the ONT wash kit: O",
+   "later-domain/pio-226171: gold Thaw -Acts-on-> Library beads; predicted Thaw -Acts-on-> Sequencing buffer; Thaw -Setting-> room temperature | l Wash Kit Oxford Nanopore Technologies Catalog #EXP-WSH004 [[Thaw]] the Sequencing buffer (SB), [[Library beads]] (LIB), Flow Cell Tether (FCT) and one tube of Flow Cell Flu",
+   "later-domain/pio-226171: gold Thaw -Acts-on-> Flow Cell Tether; predicted Thaw -Acts-on-> Sequencing buffer; Thaw -Setting-> room temperature | l Wash Kit Oxford Nanopore Technologies Catalog #EXP-WSH004 [[Thaw]] the Sequencing buffer (SB), Library beads (LIB), [[Flow Cell Tether]] (FCT) and one tube of Flow Cell Flush (FCF) at room tempera",
+   "later-domain/pio-226171: gold Thaw -Acts-on-> Flow Cell Flush; predicted Thaw -Acts-on-> Sequencing buffer; Thaw -Setting-> room temperature | l Wash Kit Oxford Nanopore Technologies Catalog #EXP-WSH004 [[Thaw]] the Sequencing buffer (SB), Library beads (LIB), Flow Cell Tether (FCT) and one tube of [[Flow Cell Flush]] (FCF) at room temperature then place on ice. Mix the SQB, F",
+   "later-domain/pio-226171: gold Add -Acts-on-> nuclease free water; predicted Add -Acts-on-> sample RNA; Add -Site-> reaction; nuclease free water -Measure-> 5μL | ll, ensuring you add a different barcode for each reaction. [[Add]] 5μL sample RNA to each reaction, and 5μL of [[nuclease free water]] for negative controls, and pipette 5 times to mix Spin down",
+   "later-domain/pio-226171: gold Add -Site-> negative controls; predicted Add -Acts-on-> sample RNA; Add -Site-> reaction | ll, ensuring you add a different barcode for each reaction. [[Add]] 5μL sample RNA to each reaction, and 5μL of nuclease free water for [[negative controls]], and pipette 5 times to mix Spin down for 5 seconds to make"
+  ],
+  "relation/wrong_label": [
+   "later-domain/pio-317105: gold Elute -Using-> Buffer AE; predicted Elute -Acts-on-> DNA; Elute -Site-> Buffer AE; Elute -Site-> microcentrifuge tube | ctions, using the resuspended PBS as the starting material. [[Elute]] the purified DNA in [[Buffer AE]] into a clean 1.5 mL microcentrifuge tube.",
+   "later-domain/pio-223996: gold Use -Using-> cell lines; predicted Use -Acts-on-> cell lines; Use -Acts-on-> HAP1 ATG9A-GFP | olation of Autophagosomes and Proteinase K Protection Assay [[Use]] the following [[cell lines]]: HAP1 ATG9A-GFP (RRID:CVCL_E2TR) HAP1 ATG9A-GFP ATG2 DKO (R",
+   "later-domain/pio-223996: gold Use -Using-> HAP1 ATG9A-GFP; predicted Use -Acts-on-> cell lines; Use -Acts-on-> HAP1 ATG9A-GFP | olation of Autophagosomes and Proteinase K Protection Assay [[Use]] the following cell lines: [[HAP1 ATG9A-GFP]] (RRID:CVCL_E2TR) HAP1 ATG9A-GFP ATG2 DKO (RRID:CVCL_F0LE) S",
+   "later-domain/pio-226171: gold detected -Site-> samples; predicted detected -Acts-on-> sequences; detected -Acts-on-> samples | ination because identical sequences are then unlikely to be [[detected]] in [[samples]] with consecutive barcodes that are adjacent to one another",
+   "later-domain/pio-243070: gold Wash -Using-> PBS; predicted Wash -Acts-on-> PBS; PBS -Mod-Link-> ice-cold | for each sample. Place the plate on ice. Aspirate media. [[Wash]] 2× with ice-cold [[PBS]] (gentle). Add ~950 µL ice-cold PBS+PI (proteomics) or KPB",
+   "later-domain/pio-243070: gold Incubate -Site-> rotator; predicted Incubate -Acts-on-> rotator; Incubate -Setting-> 4 °C; Incubate -Setting-> 10 min; Incubate -Setting-> 3 to 5 min; rotator -Mod-Link-> gentle | 100 µL washed anti-HA beads. Avoid disturbing the pellet. [[Incubate]] on a gentle [[rotator]] at 4 °C for 10 min (proteomics workflow). (Metabolomics w",
+   "later-domain/pio-223979: gold flash-freeze -Site-> liquid nitrogen; predicted flash-freeze -Acts-on-> liquid nitrogen | Wash the pellet once with ice-cold 1× PBS (optional), then [[flash-freeze]] in [[liquid nitrogen]] and store at -80 °C until purification. Resuspend cell pell",
+   "later-domain/pio-223980: gold Flash-freeze -Site-> liquid nitrogen; predicted Flash-freeze -Acts-on-> cell pellets; Flash-freeze -Using-> liquid nitrogen | ells by centrifugation ( 4000 x g, °C, , 00:20:00 , 4 °C ). [[Flash-freeze]] cell pellets in [[liquid nitrogen]] and store at -80 °C . Resuspend cell pellets in ice-cold ly"
+  ]
+ },
+ "not_automated": [
+  "normalization_error",
+  "unsupported_inference"
+ ],
+ "slices": {
+  "reagent_names": {
+   "seen": {
+    "gold": 223,
+    "recall": 0.8744
+   },
+   "unseen": {
+    "gold": 261,
+    "recall": 0.6667
+   }
+  }
+ },
+ "source": {
+  "set": "later-domain",
+  "split": "dev",
+  "reference": "machine labels (machine-generated, not human-reviewed)"
+ }
+}

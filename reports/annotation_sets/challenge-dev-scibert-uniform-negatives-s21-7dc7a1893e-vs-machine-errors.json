@@ -1,0 +1,278 @@
+{
+ "entities": {
+  "gold_total": 218,
+  "categories": {
+   "correct": {
+    "count": 165,
+    "share": 0.7569
+   },
+   "wrong_type": {
+    "count": 21,
+    "share": 0.0963
+   },
+   "missed": {
+    "count": 15,
+    "share": 0.0688
+   },
+   "wrong_boundary_and_type": {
+    "count": 7,
+    "share": 0.0321
+   },
+   "wrong_boundary": {
+    "count": 10,
+    "share": 0.0459
+   }
+  },
+  "by_label": {
+   "Action": {
+    "correct": 45,
+    "missed": 5,
+    "wrong_boundary": 1
+   },
+   "Amount": {
+    "correct": 10,
+    "wrong_boundary": 1
+   },
+   "Concentration": {
+    "correct": 4
+   },
+   "Device": {
+    "correct": 7,
+    "missed": 1,
+    "wrong_type": 3
+   },
+   "Generic-Measure": {
+    "wrong_boundary_and_type": 1
+   },
+   "Location": {
+    "correct": 15,
+    "missed": 2,
+    "wrong_type": 1,
+    "wrong_boundary": 1
+   },
+   "Measure-Type": {
+    "correct": 1
+   },
+   "Mention": {
+    "correct": 5,
+    "wrong_boundary": 1
+   },
+   "Method": {
+    "correct": 10,
+    "wrong_type": 5,
+    "wrong_boundary": 3,
+    "wrong_boundary_and_type": 2,
+    "missed": 3
+   },
+   "Modifier": {
+    "wrong_boundary_and_type": 3,
+    "correct": 11,
+    "wrong_type": 2,
+    "missed": 2
+   },
+   "Numerical": {
+    "correct": 2,
+    "wrong_type": 1,
+    "wrong_boundary": 1
+   },
+   "Reagent": {
+    "correct": 37,
+    "wrong_type": 8,
+    "wrong_boundary": 2,
+    "missed": 2,
+    "wrong_boundary_and_type": 1
+   },
+   "Seal": {
+    "correct": 1
+   },
+   "Size": {
+    "correct": 2,
+    "wrong_type": 1
+   },
+   "Temperature": {
+    "correct": 7
+   },
+   "Time": {
+    "correct": 8
+   }
+  },
+  "spurious_by_label": {
+   "Action": 20,
+   "Reagent": 18,
+   "Modifier": 10,
+   "Method": 9,
+   "Location": 7,
+   "Measure-Type": 7,
+   "Numerical": 5,
+   "Generic-Measure": 2,
+   "Mention": 1
+  }
+ },
+ "relations": {
+  "gold_total": 145,
+  "categories": {
+   "correct": {
+    "count": 81,
+    "share": 0.5586
+   },
+   "endpoint_error": {
+    "count": 49,
+    "share": 0.3379
+   },
+   "wrong_attachment": {
+    "count": 10,
+    "share": 0.069
+   },
+   "missed": {
+    "count": 4,
+    "share": 0.0276
+   },
+   "wrong_label": {
+    "count": 1,
+    "share": 0.0069
+   }
+  },
+  "by_label": {
+   "Acts-on": {
+    "correct": 29,
+    "endpoint_error": 12
+   },
+   "Commands": {
+    "endpoint_error": 1
+   },
+   "Coreference-Link": {
+    "endpoint_error": 6,
+    "correct": 2
+   },
+   "Count": {
+    "endpoint_error": 2
+   },
+   "Measure": {
+    "correct": 11,
+    "endpoint_error": 3,
+    "wrong_attachment": 5,
+    "missed": 1
+   },
+   "Measure-Type-Link": {
+    "wrong_attachment": 1
+   },
+   "Meronym": {
+    "endpoint_error": 6,
+    "missed": 2,
+    "correct": 2
+   },
+   "Mod-Link": {
+    "endpoint_error": 7,
+    "correct": 10,
+    "wrong_attachment": 1
+   },
+   "Or": {
+    "endpoint_error": 1,
+    "correct": 2
+   },
+   "Product": {
+    "wrong_label": 1
+   },
+   "Setting": {
+    "endpoint_error": 2,
+    "correct": 11,
+    "wrong_attachment": 2
+   },
+   "Site": {
+    "correct": 9,
+    "endpoint_error": 3,
+    "missed": 1
+   },
+   "Using": {
+    "endpoint_error": 6,
+    "correct": 5,
+    "wrong_attachment": 1
+   }
+  },
+  "spurious": {
+   "spurious_endpoint": 53,
+   "between_gold_entities": 12
+  }
+ },
+ "examples": {
+  "entity/wrong_type": [
+   "challenge/pio-241749: gold Method 'MPLEx', predicted Reagent 'MPLEx' | Preparation of Lung Tissue Blocks for [[MPLEx]][[MPLEx]] Place the sample in the cryostat (allow to thermally equili",
+   "challenge/pio-241749: gold Reagent 'punches', predicted Device 'punches' | punch 2 tissue cores from each tissue section and place the [[punches]][[punches]] in pre-weighed 2 mL Sorenson MµlTI™ SafeSeal™ Microcentrifu",
+   "challenge/pio-126304: gold Location 'coverslips', predicted Seal 'coverslips' | light. Perform the following washes with 1× PBS: Remove the [[coverslips]][[coverslips]] from the plate and gently put it upside-down on the antibod",
+   "challenge/pio-126304: gold Modifier 'upside-down', predicted Method 'upside-down' | PBS: Remove the coverslips from the plate and gently put it [[upside-down]][[upside-down]] on the antibody drop.",
+   "challenge/pio-321801: gold Numerical '15-20 cycles', predicted Generic-Measure '15-20 cycles' | fication decreases and starts to reach a plateau (generally [[15-20 cycles]][[15-20 cycles]]). In a fresh 1.7 mL Eppendorf tube, mix the following: 160",
+   "challenge/pio-321801: gold Reagent 'HiScribe kit', predicted Device 'HiScribe kit' | t 25 µL, of RNasin Plus 25 µL, T7 polymerase (from the same [[HiScribe kit]][[HiScribe kit]]) If vacuum concentrator isn’t available, concentrate probe",
+   "challenge/pio-321801: gold Reagent 'probe', predicted Device 'probe' | be kit) If vacuum concentrator isn’t available, concentrate [[probe]][[probe]] using ethanol precipitation (refer to SOP009).",
+   "challenge/pio-229673: gold Method 'imaging', predicted Action 'imaging' | 33342 to 1 µg/mL. Add phenol-red-free medium (optional) for [[imaging]][[imaging]]. Find Cytoplasm around each nucleus using 568 channel; appl"
+  ],
+  "entity/missed": [
+   "challenge/pio-241749: gold Action 'allow', predicted nothing | g Tissue Blocks for MPLEx Place the sample in the cryostat ([[allow]] to thermally equilibrate ~20 min) Cut 2x sections (50 μm) a",
+   "challenge/pio-241749: gold Action 'Use', predicted nothing | centrifuge Tubes VWR International (Avantor) Catalog #53550 [[Use]] a Rapid-Core Sampling Punch - 4 mm Ted Pella Inc. Catalog #",
+   "challenge/pio-241749: gold Device 'Rapid-Core Sampling Punch', predicted nothing | fuge Tubes VWR International (Avantor) Catalog #53550 Use a [[Rapid-Core Sampling Punch]] - 4 mm Ted Pella Inc. Catalog #15115-10 to punch 2 tissue c",
+   "challenge/pio-241749: gold Location 'regions', predicted nothing | Catalog #53550 *Note: When punching the tissue cores, avoid [[regions]] with OCT, as this can be difficult to remove from the sampl",
+   "challenge/pio-321801: gold Method 'cycle steps 2 through 5', predicted nothing | nscription Alkaline Hydrolysis & Probe Concentration Repeat [[cycle steps 2 through 5]] from step 3 until the rate at which the sample amplificatio",
+   "challenge/pio-229673: gold Reagent 'LysoTracker® Red DND-99', predicted nothing | Protocol — [[LysoTracker® Red DND-99]] Live-Cell Staining \u000026 HCS Analysis During the final 10 min",
+   "challenge/pio-229673: gold Method 'Live-Cell Staining', predicted nothing | Protocol — LysoTracker® Red DND-99 [[Live-Cell Staining]] \u000026 HCS Analysis During the final 10 min, add Hoechst 33342",
+   "challenge/pio-229673: gold Modifier 'each', predicted nothing | d-free medium (optional) for imaging. Find Cytoplasm around [[each]] nucleus using 568 channel; apply intensity filter 200–100,0"
+  ],
+  "entity/wrong_boundary_and_type": [
+   "challenge/pio-241749: gold Modifier 'thermally', predicted Action 'thermally equilibrate' | Blocks for MPLEx Place the sample in the cryostat (allow to [[thermally]][[thermally equilibrate]] ~20 min) Cut 2x sections (50 μm) and place sections in pre-",
+   "challenge/pio-126304: gold Modifier 'light sensitive', predicted Reagent 'light sensitive fluorescent proteins' | ncubate 00:20:00 at Room temperature . For cells expressing [[light sensitive]][[light sensitive fluorescent proteins]], cover the 24 well plate with aluminum foil to block out am",
+   "challenge/pio-321801: gold Method 'Probe Concentration', predicted Reagent 'Probe', Measure-Type 'Concentration' | Transcription, Reverse Transcription Alkaline Hydrolysis & [[Probe]][[Probe Concentration]][[Concentration]] Repeat cycle steps 2 through 5 from step 3 until the rate a",
+   "challenge/pio-229673: gold Generic-Measure '200–100,000 a.u.', predicted Time '200–100,000 a.u' | ound each nucleus using 568 channel; apply intensity filter [[200–100,000 a.u]][[200–100,000 a.u.]]",
+   "challenge/pio-241598: gold Reagent 'COI', predicted Method 'COI Metabarcoding' | OceanOmics Centre: 12S, 16S and [[COI]][[COI Metabarcoding]] of Marine Vertebrates In the attached Input_Template, enter",
+   "challenge/pio-241598: gold Modifier 'triplicate', predicted Reagent 'triplicate reactions' | r the image below. The 4th well is reserved for pooling the [[triplicate]][[triplicate reactions]].",
+   "challenge/pio-228894: gold Method 'Target-Level QC', predicted Modifier 'Target-Level' | se. Flick probes and use a mini centrifuge before applying. [[Target-Level]][[Target-Level QC]] Flags genes with expression levels potentially below backgr"
+  ],
+  "entity/wrong_boundary": [
+   "challenge/pio-241749: gold Action 'equilibrate', predicted Action 'thermally equilibrate' | Blocks for MPLEx Place the sample in the cryostat (allow to [[thermally equilibrate]][[equilibrate]] ~20 min) Cut 2x sections (50 μm) and place sections in pre-",
+   "challenge/pio-126304: gold Reagent 'fluorescent proteins', predicted Reagent 'light sensitive fluorescent proteins' | ncubate 00:20:00 at Room temperature . For cells expressing [[light sensitive fluorescent proteins]][[fluorescent proteins]], cover the 24 well plate with aluminum foil to block out am",
+   "challenge/pio-321801: gold Method 'Reverse Transcription', predicted Method 'Reverse Transcription Alkaline Hydrolysis' | f Encoding Probes SOP005.v1.7 (PCR, In-vitro Transcription, [[Reverse Transcription]][[Reverse Transcription Alkaline Hydrolysis]] & Probe Concentration Repeat cycle steps 2 through 5 from s",
+   "challenge/pio-321801: gold Method 'Alkaline Hydrolysis', predicted Method 'Reverse Transcription Alkaline Hydrolysis' | f Encoding Probes SOP005.v1.7 (PCR, In-vitro Transcription, [[Reverse Transcription Alkaline Hydrolysis]][[Alkaline Hydrolysis]] & Probe Concentration Repeat cycle steps 2 through 5 from s",
+   "challenge/pio-241598: gold Method 'Metabarcoding', predicted Method 'COI Metabarcoding' | OceanOmics Centre: 12S, 16S and [[COI Metabarcoding]][[Metabarcoding]] of Marine Vertebrates In the attached Input_Template, enter",
+   "challenge/pio-241598: gold Mention 'each one', predicted Modifier 'each', Mention 'one' | , enter all required samples in the Metadata tab and assign [[each]][[each one]][[one]] to its corresponding project. Do not edit any other tab, th",
+   "challenge/pio-241598: gold Location '4th well', predicted Location 'well' | 3 of each quadrant of the plate as per the image below. The [[4th well]][[well]] is reserved for pooling the triplicate reactions.",
+   "challenge/pio-241598: gold Reagent 'reactions', predicted Reagent 'triplicate reactions' | r the image below. The 4th well is reserved for pooling the [[triplicate reactions]][[reactions]]."
+  ],
+  "relation/wrong_attachment": [
+   "challenge/pio-126304: gold washes -Using-> PBS; predicted Perform -Using-> PBS; PBS -Measure-> 1× | inum foil to block out ambient light. Perform the following [[washes]] with 1× [[PBS]]: Remove the coverslips from the plate and gently put it ups",
+   "challenge/pio-321801: gold nuclease free water -Measure-> 176 µL; predicted mix -Acts-on-> nuclease free water; nuclease free water -Measure-> 250 µL | lowing: 160 µL, of the in vitro template created in Part 1. [[176 µL]], of [[nuclease free water]] 250 µL, of the NTP buffer mix provided with the Quick HiScr",
+   "challenge/pio-321801: gold NTP buffer mix -Measure-> 250 µL; predicted mix -Acts-on-> NTP buffer mix; nuclease free water -Measure-> 250 µL | template created in Part 1. 176 µL, of nuclease free water [[250 µL]], of the [[NTP buffer mix]] provided with the Quick HiScribe T7 polymerase kit 25 µL, o",
+   "challenge/pio-321801: gold RNasin Plus -Measure-> 25 µL; predicted mix -Acts-on-> RNasin Plus; Quick HiScribe T7 polymerase kit -Measure-> 25 µL; RNasin Plus -Measure-> 25 µL | ffer mix provided with the Quick HiScribe T7 polymerase kit [[25 µL]], of [[RNasin Plus]] 25 µL, T7 polymerase (from the same HiScribe kit) If vacuum",
+   "challenge/pio-321801: gold T7 polymerase -Measure-> 25 µL; predicted mix -Acts-on-> T7 polymerase; RNasin Plus -Measure-> 25 µL | the Quick HiScribe T7 polymerase kit 25 µL, of RNasin Plus [[25 µL]], [[T7 polymerase]] (from the same HiScribe kit) If vacuum concentrator isn’t a",
+   "challenge/pio-229673: gold Add -Mod-Link-> optional; predicted Add -Acts-on-> medium; medium -Mod-Link-> optional | ysis During the final 10 min, add Hoechst 33342 to 1 µg/mL. [[Add]] phenol-red-free medium ([[optional]]) for imaging. Find Cytoplasm around each nucleus using 568",
+   "challenge/pio-241598: gold survey -Measure-Type-Link-> volume; predicted survey -Acts-on-> plates; survey -Using-> Echo Software; ensuring -Measure-Type-Link-> volume | capacity is filled appropriately. Using the Echo Software, [[survey]] the plates, ensuring that the [[volume]] in each well is between 12 µL and 65 µL. If the value is to",
+   "challenge/pio-241598: gold well -Measure-> 65 µL; predicted ensuring -Site-> well; well -Measure-> 12 µL; well -Mod-Link-> each | ftware, survey the plates, ensuring that the volume in each [[well]] is between 12 µL and [[65 µL]]. If the value is too low, prepare a new plate, if the value"
+  ],
+  "relation/missed": [
+   "challenge/pio-321801: gold NTP buffer mix -Meronym-> Quick HiScribe T7 polymerase kit; predicted mix -Acts-on-> NTP buffer mix; Quick HiScribe T7 polymerase kit -Measure-> 25 µL | ed in Part 1. 176 µL, of nuclease free water 250 µL, of the [[NTP buffer mix]] provided with the [[Quick HiScribe T7 polymerase kit]] 25 µL, of RNasin Plus 25 µL, T7 polymerase (from the same H",
+   "challenge/pio-229673: gold Hoechst 33342 -Measure-> 1 µg/mL; predicted add -Acts-on-> Hoechst 33342; add -Setting-> 1 µg/mL | Cell Staining \u000026 HCS Analysis During the final 10 min, add [[Hoechst 33342]] to [[1 µg/mL]]. Add phenol-red-free medium (optional) for imaging. Find Cy",
+   "challenge/pio-228894: gold store -Site-> SSC wash; predicted store -Acts-on-> slides; store -Setting-> 01:00:00; store -Setting-> Room temperature; SSC wash -Measure-> 2X | for RNA Assays. Hybridization (Overnight) If timing is off, [[store]] slides in 2X [[SSC wash]] for 01:00:00 at Room temperature or up to 06:00:00 at 4 °C",
+   "challenge/pio-228894: gold probe -Meronym-> dilution; predicted Prepare -Acts-on-> dilution; dilution -Measure-> 1:10; probe -Measure-> 15μL | fer R is at Room temperature before opening. Prepare a 1:10 [[dilution]] of the [[probe]] (~15μL/slide) and mix by pipetting 3-5 times (Do not vortex"
+  ],
+  "relation/wrong_label": [
+   "challenge/pio-228894: gold Prepare -Product-> dilution; predicted Prepare -Acts-on-> dilution; dilution -Measure-> 1:10 | °C . Ensure Buffer R is at Room temperature before opening. [[Prepare]] a 1:10 [[dilution]] of the probe (~15μL/slide) and mix by pipetting 3-5 times ("
+  ]
+ },
+ "not_automated": [
+  "normalization_error",
+  "unsupported_inference"
+ ],
+ "slices": {
+  "reagent_names": {
+   "seen": {
+    "gold": 22,
+    "recall": 0.8182
+   },
+   "unseen": {
+    "gold": 28,
+    "recall": 0.6786
+   }
+  }
+ },
+ "source": {
+  "set": "challenge",
+  "split": "dev",
+  "reference": "machine labels (machine-generated, not human-reviewed)"
+ }
+}

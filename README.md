@@ -421,15 +421,34 @@ have been scored:
 
 | Dev portion, vs. machine labels | Entity F1 | Relation F1, end-to-end | Quantity attachment |
 |---|---:|---:|---:|
-| Later-domain (22 docs), CRF + logistic regression | 0.738 [0.705, 0.776] | 0.560 [0.509, 0.612] | 0.662 (320) |
-| Later-domain (22 docs), SciBERT selected (seed 21) | 0.810 [0.783, 0.841] | 0.657 [0.608, 0.705] | 0.778 (320) |
-| Challenge (6 docs, 18 steps), CRF + logistic regression | 0.552 [0.495, 0.622] | 0.376 [0.274, 0.487] | 0.410 (39) |
-| Challenge (6 docs, 18 steps), SciBERT selected (seed 21) | 0.644 [0.566, 0.742] | 0.529 [0.450, 0.628] | 0.564 (39) |
+| Later-domain (22 docs), CRF + logistic regression | 0.739 [0.706, 0.777] | 0.567 [0.515, 0.620] | 0.663 (320) |
+| Later-domain (22 docs), SciBERT selected (seed 21) | 0.812 [0.786, 0.843] | 0.664 [0.613, 0.714] | 0.778 (320) |
+| Challenge (6 docs, 18 steps), CRF + logistic regression | 0.567 [0.506, 0.640] | 0.390 [0.279, 0.502] | 0.436 (39) |
+| Challenge (6 docs, 18 steps), SciBERT selected (seed 21) | 0.663 [0.575, 0.756] | 0.557 [0.462, 0.651] | 0.641 (39) |
 
-On the challenge dev steps, SciBERT is weakest on repeated materials (entity F1 0.597, 68
-gold entities), ranges (relation F1 0.474, 82 gold relations) and implicit references
-(relation F1 0.486, 71). These slices are a few steps each, so the comparison is weak.
-Reports: `reports/annotation_sets/*-vs-machine.json`.
+What the disagreements show, for SciBERT (dev only):
+
+- **Unseen names.** Reagent recall is 0.789 for names absent from train vs. 0.915 for
+  seen ones (later-domain), the same gap as on WNUT dev. Newer vocabulary gets the wrong
+  type: "probe" read as a Device, "12S"/"16S" as a Generic-Measure, "NTC" as a
+  Measure-Type.
+- **Quantities.** Of 179 gold `Measure` links in later-domain, 133 are correct, 36 fail
+  on an endpoint's span or type, 7 are missed and only 3 go to the wrong material. In
+  amount-first lists
+  ("250 µL, of the NTP buffer mix ... 25 µL, of RNasin Plus") the model attaches each
+  amount to the previous material.
+- **Challenge categories.** The weakest are repeated materials (entity F1 0.600, 67 gold)
+  and ranges (relation F1 0.503, 81 gold). Each covers only a few steps, so these
+  differences are weak.
+- **Boundaries.** Many boundary disagreements are adjectives inside or outside a name
+  ("barcoded primer" vs. "primer"). Train itself is split on this: a separate Modifier
+  1,418 times, inside the name 526 times.
+
+Before scoring, the machine labels were aligned with train conventions: `Or` runs from
+the earlier to the later mention; "approximately"/"up to"/"within" stay outside quantity
+spans; "not" is left unlabelled; and nouns such as "Preparation" in titles are Methods
+without relations.
+Reports and error taxonomies: `reports/annotation_sets/*-vs-machine*.{json,md}`.
 
 ```bash
 # 1. Collect (needs a protocols.io client access token in ~/.config/protocolledger/protocolsio_token)

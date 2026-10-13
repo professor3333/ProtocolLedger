@@ -7,25 +7,25 @@
  },
  "entities": {
   "micro": {
-   "precision": 0.575,
-   "recall": 0.7318,
-   "f1": 0.644,
+   "precision": 0.5893,
+   "recall": 0.7569,
+   "f1": 0.6627,
    "f1_ci95": [
-    0.5659,
-    0.7417
+    0.5745,
+    0.7556
    ],
-   "tp": 161,
-   "fp": 119,
-   "fn": 59
+   "tp": 165,
+   "fp": 115,
+   "fn": 53
   },
-  "macro_f1": 0.603,
+  "macro_f1": 0.6246,
   "macro_f1_labels": 16,
   "per_label": {
    "Action": {
     "precision": 0.6618,
-    "recall": 0.8491,
-    "f1": 0.7438,
-    "support": 53,
+    "recall": 0.8824,
+    "f1": 0.7563,
+    "support": 51,
     "predicted": 68
    },
    "Amount": {
@@ -78,17 +78,17 @@
     "predicted": 7
    },
    "Method": {
-    "precision": 0.3636,
-    "recall": 0.381,
-    "f1": 0.3721,
-    "support": 21,
+    "precision": 0.4545,
+    "recall": 0.4348,
+    "f1": 0.4444,
+    "support": 23,
     "predicted": 22
    },
    "Modifier": {
     "precision": 0.4783,
-    "recall": 0.55,
-    "f1": 0.5116,
-    "support": 20,
+    "recall": 0.6111,
+    "f1": 0.5366,
+    "support": 18,
     "predicted": 23
    },
    "Numerical": {
@@ -134,9 +134,9 @@
     "predicted": 7
    },
    "Time": {
-    "precision": 0.6667,
-    "recall": 0.75,
-    "f1": 0.7059,
+    "precision": 0.8889,
+    "recall": 1.0,
+    "f1": 0.9412,
     "support": 8,
     "predicted": 9
    },
@@ -151,25 +151,25 @@
  },
  "relations": {
   "micro": {
-   "precision": 0.5342,
-   "recall": 0.5235,
-   "f1": 0.5288,
+   "precision": 0.5548,
+   "recall": 0.5586,
+   "f1": 0.5567,
    "f1_ci95": [
-    0.4503,
-    0.6283
+    0.462,
+    0.6507
    ],
-   "tp": 78,
-   "fp": 68,
-   "fn": 71
+   "tp": 81,
+   "fp": 65,
+   "fn": 64
   },
-  "macro_f1": 0.3111,
+  "macro_f1": 0.3624,
   "macro_f1_labels": 13,
   "per_label": {
    "Acts-on": {
     "precision": 0.617,
-    "recall": 0.6905,
-    "f1": 0.6517,
-    "support": 42,
+    "recall": 0.7073,
+    "f1": 0.6591,
+    "support": 41,
     "predicted": 47
    },
    "Commands": {
@@ -216,9 +216,9 @@
    },
    "Mod-Link": {
     "precision": 0.5,
-    "recall": 0.5,
-    "f1": 0.5,
-    "support": 20,
+    "recall": 0.5556,
+    "f1": 0.5263,
+    "support": 18,
     "predicted": 20
    },
    "Of-Type": {
@@ -229,9 +229,9 @@
     "predicted": 0
    },
    "Or": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1": 0.0,
+    "precision": 0.5,
+    "recall": 0.6667,
+    "f1": 0.5714,
     "support": 3,
     "predicted": 4
    },
@@ -239,13 +239,13 @@
     "precision": 0.0,
     "recall": 0.0,
     "f1": 0.0,
-    "support": 2,
+    "support": 1,
     "predicted": 1
    },
    "Setting": {
-    "precision": 0.5882,
-    "recall": 0.6667,
-    "f1": 0.625,
+    "precision": 0.6471,
+    "recall": 0.7333,
+    "f1": 0.6875,
     "support": 15,
     "predicted": 17
    },
@@ -266,12 +266,12 @@
   }
  },
  "quantity_attachment": {
-  "accuracy": 0.5641,
+  "accuracy": 0.641,
   "ci95": [
-   0.4615,
-   0.7222
+   0.4706,
+   0.7619
   ],
-  "correct": 22,
+  "correct": 25,
   "total": 39
  },
  "complete_steps": {
@@ -293,120 +293,120 @@
    "documents": 5,
    "steps": 7,
    "entities": {
-    "f1": 0.7478,
+    "f1": 0.7686,
     "f1_ci95": [
      0.6452,
-     0.8205
+     0.8208
     ],
-    "support": 108
+    "support": 107
    },
    "relations": {
-    "f1": 0.5641,
+    "f1": 0.6065,
     "f1_ci95": [
-     0.4727,
+     0.5135,
      0.6869
     ],
-    "support": 80
+    "support": 79
    }
   },
   "implicit_references": {
    "documents": 4,
    "steps": 5,
    "entities": {
-    "f1": 0.657,
+    "f1": 0.6829,
     "f1_ci95": [
-     0.3462,
+     0.3529,
      0.887
     ],
-    "support": 88
+    "support": 86
    },
    "relations": {
-    "f1": 0.4865,
+    "f1": 0.5342,
     "f1_ci95": [
-     0.2637,
+     0.2727,
      0.6392
     ],
-    "support": 71
+    "support": 69
    }
   },
   "multiple_actions": {
    "documents": 6,
    "steps": 14,
    "entities": {
-    "f1": 0.6747,
+    "f1": 0.6877,
     "f1_ci95": [
-     0.5692,
-     0.7666
+     0.5726,
+     0.7766
     ],
-    "support": 185
+    "support": 183
    },
    "relations": {
-    "f1": 0.5236,
+    "f1": 0.5495,
     "f1_ci95": [
-     0.4286,
-     0.638
+     0.4342,
+     0.6528
     ],
-    "support": 138
+    "support": 136
    }
   },
   "ranges": {
    "documents": 5,
    "steps": 8,
    "entities": {
-    "f1": 0.6388,
+    "f1": 0.6489,
     "f1_ci95": [
-     0.5732,
+     0.589,
      0.7037
     ],
-    "support": 114
+    "support": 113
    },
    "relations": {
-    "f1": 0.4744,
+    "f1": 0.5032,
     "f1_ci95": [
-     0.3922,
-     0.5692
+     0.4211,
+     0.5694
     ],
-    "support": 82
+    "support": 81
    }
   },
   "repeated_materials": {
    "documents": 3,
    "steps": 5,
    "entities": {
-    "f1": 0.5965,
+    "f1": 0.6,
     "f1_ci95": [
-     0.3171,
+     0.321,
      0.9091
     ],
-    "support": 68
+    "support": 67
    },
    "relations": {
-    "f1": 0.5,
+    "f1": 0.5047,
     "f1_ci95": [
-     0.1463,
+     0.15,
      0.7692
     ],
-    "support": 52
+    "support": 51
    }
   },
   "unusual_symbols": {
    "documents": 6,
    "steps": 8,
    "entities": {
-    "f1": 0.8088,
+    "f1": 0.8266,
     "f1_ci95": [
-     0.7603,
+     0.7933,
      0.9014
     ],
-    "support": 129
+    "support": 128
    },
    "relations": {
-    "f1": 0.6224,
+    "f1": 0.6564,
     "f1_ci95": [
-     0.5382,
+     0.6009,
      0.7436
     ],
-    "support": 101
+    "support": 100
    }
   }
  }

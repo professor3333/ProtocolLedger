@@ -8,24 +8,24 @@
  "entities": {
   "micro": {
    "precision": 0.7538,
-   "recall": 0.7228,
-   "f1": 0.7379,
+   "recall": 0.7251,
+   "f1": 0.7391,
    "f1_ci95": [
-    0.7048,
-    0.7763
+    0.7061,
+    0.7773
    ],
    "tp": 1353,
    "fp": 442,
-   "fn": 519
+   "fn": 513
   },
-  "macro_f1": 0.6842,
+  "macro_f1": 0.6846,
   "macro_f1_labels": 17,
   "per_label": {
    "Action": {
     "precision": 0.8628,
-    "recall": 0.8744,
-    "f1": 0.8686,
-    "support": 446,
+    "recall": 0.8764,
+    "f1": 0.8696,
+    "support": 445,
     "predicted": 452
    },
    "Amount": {
@@ -79,16 +79,16 @@
    },
    "Method": {
     "precision": 0.5057,
-    "recall": 0.352,
-    "f1": 0.4151,
-    "support": 125,
+    "recall": 0.3492,
+    "f1": 0.4131,
+    "support": 126,
     "predicted": 87
    },
    "Modifier": {
     "precision": 0.6923,
-    "recall": 0.4916,
-    "f1": 0.5749,
-    "support": 238,
+    "recall": 0.5043,
+    "f1": 0.5835,
+    "support": 232,
     "predicted": 169
    },
    "Numerical": {
@@ -151,25 +151,25 @@
  },
  "relations": {
   "micro": {
-   "precision": 0.6453,
-   "recall": 0.4945,
-   "f1": 0.5599,
+   "precision": 0.6515,
+   "recall": 0.5024,
+   "f1": 0.5673,
    "f1_ci95": [
-    0.5089,
-    0.6118
+    0.5154,
+    0.6201
    ],
-   "tp": 624,
-   "fp": 343,
-   "fn": 638
+   "tp": 630,
+   "fp": 337,
+   "fn": 624
   },
-  "macro_f1": 0.3337,
+  "macro_f1": 0.3797,
   "macro_f1_labels": 14,
   "per_label": {
    "Acts-on": {
     "precision": 0.6644,
-    "recall": 0.6242,
-    "f1": 0.6437,
-    "support": 314,
+    "recall": 0.6262,
+    "f1": 0.6447,
+    "support": 313,
     "predicted": 295
    },
    "Commands": {
@@ -216,9 +216,9 @@
    },
    "Mod-Link": {
     "precision": 0.6475,
-    "recall": 0.4,
-    "f1": 0.4945,
-    "support": 225,
+    "recall": 0.411,
+    "f1": 0.5028,
+    "support": 219,
     "predicted": 139
    },
    "Of-Type": {
@@ -229,9 +229,9 @@
     "predicted": 0
    },
    "Or": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1": 0.0,
+    "precision": 0.75,
+    "recall": 0.5455,
+    "f1": 0.6316,
     "support": 11,
     "predicted": 8
    },
@@ -258,9 +258,9 @@
    },
    "Using": {
     "precision": 0.4719,
-    "recall": 0.4038,
-    "f1": 0.4352,
-    "support": 104,
+    "recall": 0.4078,
+    "f1": 0.4375,
+    "support": 103,
     "predicted": 89
    }
   }
@@ -275,12 +275,12 @@
   "total": 320
  },
  "complete_steps": {
-  "exact_match": 0.1156,
+  "exact_match": 0.1214,
   "ci95": [
-   0.0651,
-   0.1813
+   0.069,
+   0.1871
   ],
-  "exact": 20,
+  "exact": 21,
   "total": 173
  },
  "set": "later-domain",

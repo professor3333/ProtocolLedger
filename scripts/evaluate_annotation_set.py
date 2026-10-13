@@ -10,7 +10,8 @@ be run once per declared release. Writes reports/annotation_sets/<set>-<split>-<
 Those labels are machine-generated and not human-reviewed, so the report says
 "vs. machine labels" and its numbers are agreement with them, not accuracy. For sets whose
 steps carry challenge categories, the report adds entity and relation micro-F1 for the
-steps of each category.
+steps of each category. The error taxonomy (protocolledger.eval.errors) is written next to
+the report as <name>-errors.{json,md}; "unseen" reagent names are those absent from train.
 """
 
 from __future__ import annotations
@@ -22,6 +23,9 @@ from pathlib import Path
 from typing import Any
 
 from protocolledger.data.annotation_sets import load_sources
+from protocolledger.data.splits import load_split
+from protocolledger.eval.errors import analyze
+from protocolledger.eval.errors import render_markdown as render_errors
 from protocolledger.eval.scorer import evaluate, render_markdown
 from protocolledger.serve.bundle import load_bundle
 
@@ -126,6 +130,24 @@ def main(argv: list[str] | None = None) -> int:
     (out / f"{name}.json").write_text(json.dumps(report, indent=1) + "\n", "utf-8")
     vs = "" if args.reference == "gold" else ", vs. machine labels"
     title = f"{loaded.model_version} on {args.set_name} ({args.split}{vs})"
+    seen = {
+        d["text"][e["start"] : e["end"]].casefold()
+        for d in load_split(ROOT, "train")
+        for e in d["entities"]
+        if e["label"] == "Reagent"
+    }
+    names = {
+        d["text"][e["start"] : e["end"]].casefold()
+        for d in gold
+        for e in d["entities"]
+        if e["label"] == "Reagent"
+    }
+    errors = analyze(gold, preds, unseen_names=names - seen)
+    errors["source"] = {"set": args.set_name, "split": args.split, "reference": reference_name}
+    (out / f"{name}-errors.json").write_text(
+        json.dumps(errors, indent=1, ensure_ascii=False) + "\n", "utf-8"
+    )
+    (out / f"{name}-errors.md").write_text(render_errors(errors, title), "utf-8")
     print(render_markdown(report, title))
     if slices:
         print("| Category | Steps | Entity F1 (support) | Relation F1 (support) |")

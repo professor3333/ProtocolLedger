@@ -7,25 +7,25 @@
  },
  "entities": {
   "micro": {
-   "precision": 0.8078,
-   "recall": 0.8125,
-   "f1": 0.8101,
+   "precision": 0.8083,
+   "recall": 0.8156,
+   "f1": 0.8119,
    "f1_ci95": [
-    0.7835,
-    0.8411
+    0.7859,
+    0.8429
    ],
-   "tp": 1521,
-   "fp": 362,
-   "fn": 351
+   "tp": 1522,
+   "fp": 361,
+   "fn": 344
   },
-  "macro_f1": 0.7399,
+  "macro_f1": 0.7408,
   "macro_f1_labels": 17,
   "per_label": {
    "Action": {
     "precision": 0.9181,
-    "recall": 0.9305,
-    "f1": 0.9243,
-    "support": 446,
+    "recall": 0.9326,
+    "f1": 0.9253,
+    "support": 445,
     "predicted": 452
    },
    "Amount": {
@@ -78,17 +78,17 @@
     "predicted": 8
    },
    "Method": {
-    "precision": 0.5804,
-    "recall": 0.52,
-    "f1": 0.5485,
-    "support": 125,
+    "precision": 0.5893,
+    "recall": 0.5238,
+    "f1": 0.5546,
+    "support": 126,
     "predicted": 112
    },
    "Modifier": {
     "precision": 0.6981,
-    "recall": 0.6218,
-    "f1": 0.6578,
-    "support": 238,
+    "recall": 0.6379,
+    "f1": 0.6667,
+    "support": 232,
     "predicted": 212
    },
    "Numerical": {
@@ -151,25 +151,25 @@
  },
  "relations": {
   "micro": {
-   "precision": 0.7002,
-   "recall": 0.6181,
-   "f1": 0.6566,
+   "precision": 0.7056,
+   "recall": 0.6268,
+   "f1": 0.6639,
    "f1_ci95": [
-    0.6082,
-    0.7048
+    0.6131,
+    0.7135
    ],
-   "tp": 780,
-   "fp": 334,
-   "fn": 482
+   "tp": 786,
+   "fp": 328,
+   "fn": 468
   },
-  "macro_f1": 0.5099,
+  "macro_f1": 0.5516,
   "macro_f1_labels": 14,
   "per_label": {
    "Acts-on": {
     "precision": 0.7475,
-    "recall": 0.707,
-    "f1": 0.7267,
-    "support": 314,
+    "recall": 0.7093,
+    "f1": 0.7279,
+    "support": 313,
     "predicted": 297
    },
    "Commands": {
@@ -216,9 +216,9 @@
    },
    "Mod-Link": {
     "precision": 0.6649,
-    "recall": 0.5644,
-    "f1": 0.6106,
-    "support": 225,
+    "recall": 0.5799,
+    "f1": 0.6195,
+    "support": 219,
     "predicted": 191
    },
    "Of-Type": {
@@ -229,9 +229,9 @@
     "predicted": 2
    },
    "Or": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1": 0.0,
+    "precision": 0.6,
+    "recall": 0.5455,
+    "f1": 0.5714,
     "support": 11,
     "predicted": 10
    },
@@ -258,9 +258,9 @@
    },
    "Using": {
     "precision": 0.5824,
-    "recall": 0.5096,
-    "f1": 0.5436,
-    "support": 104,
+    "recall": 0.5146,
+    "f1": 0.5464,
+    "support": 103,
     "predicted": 91
    }
   }
@@ -275,12 +275,12 @@
   "total": 320
  },
  "complete_steps": {
-  "exact_match": 0.1329,
+  "exact_match": 0.1387,
   "ci95": [
-   0.08,
-   0.1977
+   0.0838,
+   0.2023
   ],
-  "exact": 23,
+  "exact": 24,
   "total": 173
  },
  "set": "later-domain",
