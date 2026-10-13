@@ -1,7 +1,6 @@
 L0
 a Modifier Efficient
 b Method PBMC Extraction
-b Mod-Link a
 c Method Immunostaining
 d Reagent Camel Samples
 L1
@@ -31,7 +30,6 @@ t Action dry
 L4
 u Modifier sterile
 v Method technique
-v Mod-Link u
 w Action insert
 w Using v
 x Device needle

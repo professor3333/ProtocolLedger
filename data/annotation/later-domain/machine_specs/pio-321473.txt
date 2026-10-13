@@ -71,10 +71,10 @@ L5
 al Action Load
 am Reagent samples
 al Acts-on am
-an Concentration 4-12%
+an Modifier 4-12%
 ao Location Bis-Tris
 al Site ao
-ao Measure an
+ao Mod-Link an
 ap Action Include
 aq Amount one
 ar Location lane
@@ -126,7 +126,6 @@ bo Time 00:40:00
 bk Setting bo
 bp Method step
 bq Modifier optional
-bp Mod-Link bq
 br Reagent a-synuclein
 bs Modifier phsophorylated
 bt Reagent a-synuclein

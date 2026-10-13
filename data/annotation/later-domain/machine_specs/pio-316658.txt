@@ -2,7 +2,6 @@ L0
 a Reagent Placental Matrisome
 b Method Proteomic Analysis
 c Method LC-MS/MS
-b Using c
 L1
 d Method Protein Solubilization
 e Method solubilization

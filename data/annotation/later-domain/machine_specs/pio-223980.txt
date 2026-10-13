@@ -56,7 +56,7 @@ ad Setting af
 ag Modifier continuous
 ah Method shaking
 ad Using ah
-ah Mod-Link ag
+ad Mod-Link ag
 L5
 ai Action Harvest
 aj Reagent cells

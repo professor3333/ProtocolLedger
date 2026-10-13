@@ -42,7 +42,6 @@ r Site u
 L4
 v Modifier 7th
 w Method spin
-w Mod-Link v
 x Action remove
 y Modifier all
 z Reagent liquid
@@ -144,7 +143,7 @@ bz Mod-Link ca
 cb Action add
 cc Reagent pellet
 cb Acts-on cc
-cd Location bottom portion
+cd Reagent bottom portion
 ce Reagent media
 cd Meronym ce
 cb Acts-on cd

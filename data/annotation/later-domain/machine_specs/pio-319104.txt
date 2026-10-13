@@ -10,7 +10,6 @@ a Using e
 f Reagent living cells
 g Modifier modified
 h Method biotin-switch technique
-h Mod-Link g
 L1
 i Reagent supernatant
 j Action add
@@ -96,7 +95,6 @@ bd Reagent sample
 be Method standard protein estimation assay
 bb Using be
 bf Method BCA method
-bf Coreference-Link be
 L5
 bg Action Keep
 bh Amount 20-40 µL
@@ -170,7 +168,6 @@ co Setting cs
 ct Method step
 cu Action prevents
 cv Method non-specific binding
-cu Acts-on cv
 cw Reagent cell lysate
 cx Reagent cells’ endogenous biotin
 cy Reagent free biotin

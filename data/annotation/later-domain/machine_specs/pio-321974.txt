@@ -1,7 +1,6 @@
 L0
 a Modifier Multiplexed
 b Method Iterative FISH
-b Mod-Link a
 L1
 c Action setup
 d Method iterative RNA FISH experiment
@@ -29,7 +28,6 @@ o Mod-Link q
 o Mod-Link r
 s Method incubation
 t Modifier protected from light
-s Mod-Link t
 u Reagent formamide
 v Action work
 w Modifier Always
@@ -141,7 +139,7 @@ t5 Setting v5
 w5 Modifier gentle
 x5 Method rocking
 t5 Using x5
-x5 Mod-Link w5
+t5 Mod-Link w5
 y5 Action Rinse
 z5 Reagent permeabilization buffer rinse
 aa5 Reagent PBS-tw

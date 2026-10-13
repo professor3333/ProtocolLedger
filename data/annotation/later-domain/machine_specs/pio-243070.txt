@@ -1,10 +1,8 @@
 L0
 a Modifier Rapid
 b Method Isolation
-b Mod-Link a
 c Reagent Lysosomes
 d Method LysoIP
-d Coreference-Link b
 e Reagent iPSC-Derived Neurons
 f Method Proteomics
 g Method Lipidomics/Metabolomics
@@ -294,7 +292,6 @@ fy Mod-Link fx
 fy Or fu
 fz Modifier first
 ga Method wash
-ga Mod-Link fz
 gb Action remove
 gc Reagent liquid
 gb Acts-on gc
@@ -307,7 +304,6 @@ gh Modifier consistently
 gf Mod-Link gh
 gi Modifier second
 gj Method wash
-gj Mod-Link gi
 gk Action resuspend
 gl Reagent beads
 gk Acts-on gl
@@ -319,10 +315,8 @@ go Mod-Link gn
 gp Modifier third
 gr Method clean-tube wash
 gq Method wash
-gq Mod-Link gp
 gs Modifier final
 gt Method wash
-gt Mod-Link gs
 gu Action remove
 gv Modifier all residual
 gw Reagent buffer

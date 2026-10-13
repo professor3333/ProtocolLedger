@@ -63,7 +63,6 @@ al Coreference-Link ak
 L4
 am Method sequencing run
 an Action finished
-an Acts-on am
 ao Action wash
 ap Device flow cell
 ao Acts-on ap

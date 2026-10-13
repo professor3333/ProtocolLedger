@@ -38,7 +38,7 @@ h Setting s
 t Modifier gentle
 u Method rotation
 h Using u
-u Mod-Link t
+h Mod-Link t
 L3
 v Action Store
 w Time Overnight

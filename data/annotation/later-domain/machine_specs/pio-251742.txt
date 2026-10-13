@@ -24,7 +24,6 @@ n Temperature 37°C
 i Setting n
 o Measure-Type Seeding densities
 p Concentration 100,000 cells per well
-p Of-Type o
 q Amount 200 µL
 r Reagent culture medium
 r Measure q

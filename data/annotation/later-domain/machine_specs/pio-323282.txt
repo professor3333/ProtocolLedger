@@ -1,7 +1,6 @@
 L0
 a Method Swift cDNAtag Seq Protocol
 b Modifier bench-top
-a Mod-Link b
 L1
 c Action Quantify
 d Modifier extracted

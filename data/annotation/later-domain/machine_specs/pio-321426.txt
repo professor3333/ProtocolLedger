@@ -78,7 +78,6 @@ ap Action Continue
 aq Modifier half
 ar Method media changes
 ap Using ar
-ar Mod-Link aq
 as Modifier every
 at Time 3-4 days
 ap Setting at

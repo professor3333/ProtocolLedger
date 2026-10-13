@@ -1,7 +1,6 @@
 L0
 a Reagent Chelex
 b Method DNA Extraction
-b Using a
 L1
 c Action Turn on
 d Device heat block
