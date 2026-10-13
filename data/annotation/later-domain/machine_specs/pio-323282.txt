@@ -1,0 +1,205 @@
+L0
+a Method Swift cDNAtag Seq Protocol
+b Modifier bench-top
+a Mod-Link b
+L1
+c Action Quantify
+d Modifier extracted
+e Reagent RNA
+c Acts-on e
+e Mod-Link d
+f Reagent Qubit RNA High Sensitivity Kit
+c Using f
+g Method manufacturer's protocol
+c Using g
+h Action Retain
+i Measure-Type quant values
+h Measure-Type-Link i
+j Method cDNA pooling step
+L2
+k Action Add
+l Amount 2 µL
+m Concentration 30 µM
+n Reagent BC_N9RT primers
+k Acts-on n
+n Measure l
+n Measure m
+o Amount 4 µL
+p Reagent RNA sample
+k Site p
+p Measure o
+q Amount 6 µL
+r Modifier per well
+q Mod-Link r
+s Action Mix
+t Speed 1600 rpm
+s Setting t
+u Device plate shaker
+s Site u
+v Time 1 min
+s Setting v
+w Action spin down
+x Action Place
+y Location sample plate
+x Acts-on y
+z Location ice
+x Site z
+L3
+aa Action Prepare
+ab Reagent RT Buffer Mix
+aa Product ab
+ac Location ice
+aa Site ac
+ad Modifier per reaction
+ab Mod-Link ad
+ae Concentration 10 mM
+af Reagent dNTP Mix
+af Measure ae
+af Meronym ab
+ag Amount 1
+af Measure ag
+ah Concentration 5X
+ai Reagent SSIV Buffer
+ai Measure ah
+ai Meronym ab
+aj Amount 4
+ai Measure aj
+ak Concentration 100 mM
+al Reagent DTT
+al Measure ak
+al Meronym ab
+am Amount 2
+al Measure am
+an Amount 7
+ab Measure an
+L4
+ao Action Add
+ap Amount 7 µL
+aq Reagent RT Buffer Mix
+ao Acts-on aq
+aq Measure ap
+ar Modifier each
+as Reagent sample
+ao Site as
+as Mod-Link ar
+at Amount 13 µL
+au Action Mix
+av Speed 1600 rpm
+au Setting av
+aw Time 1 min
+au Setting aw
+ax Action spin down
+L5
+ay Method RNA Fragmentation
+az Action Fragment
+ba Reagent RNA
+az Acts-on ba
+bb Device thermocycler
+az Site bb
+bc Temperature 94°C
+az Setting bc
+bd Modifier Empirically
+be Action determine
+be Mod-Link bd
+bf Measure-Type fragmentation time
+be Measure-Type-Link bf
+bg Time 6–10 minutes
+bh Method Hot start
+bi Action place
+bj Reagent samples
+bi Acts-on bj
+bk Device thermocycler
+bi Site bk
+bl Temperature 94°C
+bk Setting bl
+bm Action close
+bn Seal lid
+bm Acts-on bn
+bo Action start
+bp Device timer
+bo Acts-on bp
+bq Action Remove
+br Location plate
+bq Acts-on br
+bs Modifier immediately
+bq Mod-Link bs
+bt Location Plate
+bu Modifier HOT
+bt Mod-Link bu
+bv Modifier Immediately
+bw Action place
+bw Mod-Link bv
+bx Location ice
+bw Site bx
+by Time 2 min
+bw Setting by
+bz Modifier until cool to touch
+bw Mod-Link bz
+ca Action spin down
+cb Action Ensure
+cc Device thermocycler
+cd Action cools
+cb Commands cd
+cd Acts-on cc
+ce Temperature 4°C
+cd Setting ce
+cf Action proceeding
+L6
+cg Action Prepare
+ch Reagent RT Enzyme Mix
+cg Product ch
+ci Location ice
+cg Site ci
+cj Modifier per reaction
+ch Mod-Link cj
+ck Reagent Nuclease-free H₂O
+ck Meronym ch
+cl Amount 3
+ck Measure cl
+cm Reagent SuperScript IV Reverse Transcriptase
+cm Meronym ch
+cn Amount 1
+cm Measure cn
+co Reagent Qiagen RNase Inhibitor
+co Meronym ch
+cp Amount 1
+co Measure cp
+cq Amount 5
+ch Measure cq
+L7
+cr Action Add
+cs Amount 5 µL
+ct Reagent RT Enzyme Mix
+cr Acts-on ct
+ct Measure cs
+cu Modifier each
+cv Reagent sample
+cr Site cv
+cv Mod-Link cu
+cw Amount 18 µL
+cx Action Mix
+cy Speed 1600 rpm
+cx Setting cy
+cz Time 1 min
+cx Setting cz
+da Action spin down
+L8
+db Action Run
+dc Method reverse transcription
+db Using dc
+dd Device thermocycler
+db Site dd
+de Temperature 25°C
+df Time 10 min
+dg Temperature 55°C
+dh Time 30 min
+di Temperature 80°C
+dj Time 10 min
+dk Temperature 4°C
+db Setting de
+db Setting df
+db Setting dg
+db Setting dh
+db Setting di
+db Setting dj
+db Setting dk

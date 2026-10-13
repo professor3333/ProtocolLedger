@@ -1,0 +1,119 @@
+L0
+a Reagent Chelex
+b Method DNA Extraction
+b Using a
+L1
+c Action Turn on
+d Device heat block
+c Acts-on d
+e Action set
+f Temperature 55ºC
+e Setting f
+L2
+g Action Prepare
+h Amount 1.5mL
+i Location microcentrifuge tube
+g Acts-on i
+i Measure h
+j Modifier per sample
+i Mod-Link j
+k Action label
+l Action writing
+k Commands l
+m Location tube lid
+l Site m
+n Modifier directly
+l Mod-Link n
+o Device fine point Sharpie
+l Using o
+L3
+p Action Vortex
+q Modifier stock
+r Concentration 10%
+s Reagent Chelex solution
+p Acts-on s
+s Measure r
+s Mod-Link q
+t Time 60 seconds
+p Setting t
+L4
+u Action Add
+v Amount 100µL
+w Concentration 10%
+x Reagent Chelex solution
+u Acts-on x
+x Measure v
+x Measure w
+y Modifier each
+z Location tube
+u Site z
+z Mod-Link y
+aa Action Vortex
+ab Reagent Chelex solution
+aa Acts-on ab
+ac Modifier every few samples
+aa Mod-Link ac
+ad Action keep
+ae Mention it
+ad Acts-on ae
+ae Coreference-Link ab
+af Modifier suspended
+ae Mod-Link af
+ag Mention it
+ag Coreference-Link ab
+L5
+ah Action Vortex
+ai Amount 24
+aj Location sample tubes
+ah Acts-on aj
+aj Measure ai
+ak Device swab
+ak Meronym aj
+al Reagent DNA/RNA Shield
+al Meronym aj
+am Speed max speed
+ah Setting am
+an Time 5 minutes
+ah Setting an
+L6
+ao Action Transfer
+ap Amount 10µL
+aq Reagent DNA/RNA Shield
+ao Acts-on aq
+aq Measure ap
+ar Location sample tube
+ao Site ar
+as Modifier pre-filled, labeled
+at Amount 1.5mL
+au Location microcentrifuge tube
+ao Site au
+au Measure at
+au Mod-Link as
+av Amount 100µL
+aw Concentration 10%
+ax Reagent Chelex solution
+ax Measure av
+ax Measure aw
+ax Meronym au
+L7
+ay Action Repeat
+az Method Steps 5–6
+ay Using az
+ba Numerical four more times
+ay Count ba
+bb Amount 112
+bc Reagent samples
+bc Measure bb
+bd Action processed
+bd Acts-on bc
+L8
+be Reagent next batch of samples
+bf Action vortexing
+bf Acts-on be
+bg Reagent current batch
+bh Action transferred
+bh Acts-on bg
+bi Location tubes
+bh Site bi
+bj Reagent Chelex
+bj Meronym bi

@@ -1,0 +1,102 @@
+L0
+a Method Expression
+b Method Purification
+c Modifier Glycine-Exposed
+d Reagent GST-Tagged ATG8 Proteins
+d Mod-Link c
+e Reagent E. coli
+L1
+f Action Inoculate
+g Reagent E. coli Rosetta™ (DE3) pLysS cells
+f Acts-on g
+h Reagent plasmid
+h Meronym g
+i Concentration 2×
+j Reagent TY medium
+f Site j
+j Measure i
+k Action grow
+l Temperature 37 °C
+k Setting l
+m Method shaking
+k Using m
+L2
+n Action Monitor
+o Measure-Type cell density
+n Measure-Type-Link o
+p Measure-Type OD₆₀₀
+n Measure-Type-Link p
+q Measure-Type OD₆₀₀
+r Action reaches
+s Modifier ~
+t Generic-Measure 0.4
+t Of-Type q
+t Mod-Link s
+u Action shift
+v Reagent culture
+u Acts-on v
+w Temperature 18 °C
+u Setting w
+L3
+x Reagent culture
+y Action grow
+y Acts-on x
+z Measure-Type OD₆₀₀
+aa Action reaches
+ab Modifier ~
+ac Generic-Measure 0.8
+ac Of-Type z
+ac Mod-Link ab
+L4
+ad Action Incubate
+ae Temperature 18 °C
+ad Setting ae
+af Time 16:00:00
+ad Setting af
+ag Modifier continuous
+ah Method shaking
+ad Using ah
+ah Mod-Link ag
+L5
+ai Action Harvest
+aj Reagent cells
+ai Acts-on aj
+ak Method centrifugation
+ai Using ak
+al Speed 4000 x g
+ai Setting al
+am Time 00:20:00
+ai Setting am
+an Temperature 4 °C
+ai Setting an
+L6
+ao Action Flash-freeze
+ap Reagent cell pellets
+ao Acts-on ap
+aq Reagent liquid nitrogen
+ao Site aq
+ar Action store
+as Temperature -80 °C
+ar Setting as
+L7
+at Action Resuspend
+au Reagent cell pellets
+at Acts-on au
+av Modifier ice-cold
+aw Reagent lysis buffer
+at Site aw
+aw Mod-Link av
+L8
+ax Action Lyse
+ay Reagent cells
+ax Acts-on ay
+az Method sonication
+ax Using az
+ba Location ice
+ax Site ba
+bb Numerical 2×
+ax Count bb
+bc Time 30 sec
+ax Setting bc
+bd Generic-Measure 60%
+ax Setting bd

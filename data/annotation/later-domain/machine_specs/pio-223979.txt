@@ -1,0 +1,109 @@
+L0
+a Method Expression
+b Method Purification
+c Reagent GST-Tagged ATG8 Proteins
+d Reagent E. coli
+L1
+e Action Inoculate
+f Reagent E. coli Rosetta™ (DE3) pLysS cells
+e Acts-on f
+g Reagent plasmid
+g Meronym f
+h Concentration 2×
+i Reagent TY medium
+e Site i
+i Measure h
+j Action incubate
+k Temperature 37 °C
+j Setting k
+l Method shaking
+j Using l
+L2
+m Action Monitor
+n Reagent culture
+m Acts-on n
+o Measure-Type OD₆₀₀
+m Measure-Type-Link o
+p Mention it
+p Coreference-Link n
+q Action reaches
+r Modifier approximately
+s Generic-Measure 0.4
+s Of-Type o
+s Mod-Link r
+t Action reduce
+u Measure-Type temperature
+t Measure-Type-Link u
+v Temperature 18 °C
+t Setting v
+L3
+w Action Continue
+x Method incubation
+w Using x
+y Measure-Type OD₆₀₀
+z Action reaches
+aa Modifier ~
+ab Generic-Measure 0.8
+ab Of-Type y
+ab Mod-Link aa
+L4
+ac Action Induce
+ad Method protein expression
+ac Using ad
+ae Action adding
+ac Commands ae
+af Reagent IPTG
+ae Acts-on af
+ag Concentration 100 micromolar (µM)
+af Measure ag
+L5
+ah Action Incubate
+ai Reagent culture
+ah Acts-on ai
+aj Temperature 18 °C
+ah Setting aj
+ak Time 16:00:00
+ah Setting ak
+al Method shaking
+ah Using al
+L6
+am Action Harvest
+an Reagent cells
+am Acts-on an
+ao Method centrifugation
+am Using ao
+ap Speed 4000 x g
+am Setting ap
+aq Time 00:20:00
+am Setting aq
+ar Temperature 4 °C
+am Setting ar
+L7
+as Action Wash
+at Reagent pellet
+as Acts-on at
+au Numerical once
+as Count au
+av Modifier ice-cold
+aw Concentration 1×
+ax Reagent PBS
+as Using ax
+ax Measure aw
+ax Mod-Link av
+ay Modifier optional
+as Mod-Link ay
+az Action flash-freeze
+ba Reagent liquid nitrogen
+az Site ba
+bb Action store
+bc Temperature -80 °C
+bb Setting bc
+bd Method purification
+L8
+be Action Resuspend
+bf Reagent cell pellets
+be Acts-on bf
+bg Modifier ice-cold
+bh Reagent lysis buffer
+be Site bh
+bh Mod-Link bg

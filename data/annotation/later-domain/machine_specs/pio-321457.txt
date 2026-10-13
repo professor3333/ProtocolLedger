@@ -1,0 +1,156 @@
+L0
+a Modifier Fluorescent
+b Reagent a-synuclein
+b Mod-Link a
+c Method uptake and degradation assay
+L1
+d Modifier When fully differentiated
+e Action seed
+f Reagent astrocytes
+e Acts-on f
+f Mod-Link d
+g Concentration 10,000 cell/well
+f Measure g
+h Concentration 30,000 cells/cm²
+f Measure h
+i Location 96-well glass-bottom thickness plate
+e Site i
+j Modifier pre-coated
+i Mod-Link j
+k Concentration 1%
+l Reagent gelatin
+l Measure k
+l Meronym i
+m Amount 100μL
+n Reagent Astrocyte Medium
+e Using n
+n Measure m
+L2
+o Action Change
+p Reagent media
+o Acts-on p
+q Reagent FBS-free maturation media
+o Using q
+r Concentration 50%
+s Reagent DMEM/F12
+s Measure r
+s Meronym q
+t Concentration 50%
+u Reagent Neurobasal
+u Measure t
+u Meronym q
+v Concentration 1x
+w Reagent B27
+w Measure v
+w Meronym q
+x Modifier wihtout Vitamin A
+w Mod-Link x
+y Concentration 1x
+z Reagent N2
+z Measure y
+z Meronym q
+aa Concentration 1X
+ab Reagent NEAA
+ab Measure aa
+ab Meronym q
+ac Concentration 1X
+ad Reagent GlutaMAX
+ad Measure ac
+ad Meronym q
+ae Concentration 10ng/mL
+af Reagent CNTF
+af Measure ae
+af Meronym q
+ag Concentration 1%
+ah Reagent pennicillin-streptomycin
+ah Measure ag
+ah Meronym q
+L3
+ai Action Continue
+aj Action culturing
+ai Commands aj
+ak Reagent astrocytes
+aj Acts-on ak
+al Reagent FBS-free maturation media
+aj Site al
+am Modifier no need to
+an Action change
+an Mod-Link am
+ao Reagent media
+an Acts-on ao
+ap Mention it
+ap Coreference-Link ao
+aq Modifier yellow
+ap Mod-Link aq
+L4
+ar Reagent media
+as Modifier yellow
+ar Mod-Link as
+at Reagent cells
+au Modifier too confluent
+at Mod-Link au
+av Method imaging
+aw Action Re-seed
+ax Method assay
+aw Using ax
+ay Modifier lower
+az Measure-Type cell density
+aw Measure-Type-Link az
+L5
+ba Action Add
+bb Modifier fluorescently-tagged
+bc Reagent a-Synuclein
+ba Acts-on bc
+bc Mod-Link bb
+bd Modifier fresh
+be Reagent FBS-free maturation media
+ba Site be
+be Mod-Link bd
+bf Concentration 2μg/mL
+bc Measure bf
+bg Method assay
+bh Action developed
+bh Using bg
+bi Reagent a-Synuclein-HiLyte
+bh Using bi
+L6
+bj Method imaging
+bk Time first 24 hours
+bl Action stain
+bm Reagent nuclei
+bl Acts-on bm
+bn Concentration 10μg/mL
+bo Reagent Hoechst 33342
+bl Using bo
+bo Measure bn
+bp Time 00:10:00
+bl Setting bp
+L7
+bq Action Wash
+br Numerical once
+bq Count br
+bs Reagent FBS
+bq Using bs
+bt Action remove
+bu Modifier excess
+bv Reagent a-Synuclein
+bt Acts-on bv
+bv Mod-Link bu
+bw Action Replace
+bx Reagent media
+bw Acts-on bx
+by Modifier fresh
+bz Reagent FBS-free maturation media
+bw Using bz
+bz Mod-Link by
+L8
+ca Reagent Hoechst 33342
+cb Modifier not
+cc Action added
+cc Acts-on ca
+cc Mod-Link cb
+cd Action incubate
+ce Reagent Hoechst 33342
+cd Using ce
+cf Time 00:10:00
+cd Setting cf

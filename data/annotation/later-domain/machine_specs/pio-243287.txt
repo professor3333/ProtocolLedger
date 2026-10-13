@@ -1,0 +1,421 @@
+L0
+0a Modifier Simplified
+0b Modifier Agrobacterium-mediated
+0c Action transformation
+0d Reagent Botrytis cinerea
+0e Reagent mycelia
+0c Mod-Link 0a
+0c Mod-Link 0b
+0c Acts-on 0d
+0c Using 0e
+L1
+1a Reagent Induction medium
+1b Reagent IM
+1b Coreference-Link 1a
+1c Action Prepare
+1d Reagent IM
+1c Product 1d
+1e Action supplementing
+1f Reagent MM base
+1e Acts-on 1f
+1g Concentration 40 mmol/L
+1h Reagent MES
+1i Concentration 5 mmol/L
+1j Reagent D-glucose
+1k Concentration 0.5%
+1l Reagent glycerol
+1m Concentration 50 µg/mL
+1n Reagent thiamine
+1o Action add
+1p Modifier immediately before use
+1q Concentration 200 µmol/L
+1r Reagent acetosyringone
+1s Action add
+1t Modifier immediately before use
+1e Using 1h
+1e Using 1j
+1e Using 1l
+1e Using 1n
+1e Using 1r
+1h Measure 1g
+1j Measure 1i
+1l Measure 1k
+1n Measure 1m
+1r Measure 1q
+1o Acts-on 1n
+1o Mod-Link 1p
+1s Acts-on 1r
+1s Mod-Link 1t
+L2
+2a Reagent Solid induction medium
+2b Action Prepare
+2c Reagent solid IM
+2d Reagent IM
+2b Product 2c
+2c Coreference-Link 2a
+2b Using 2d
+2e Concentration 2.5% w/v
+2f Reagent agar
+2b Using 2f
+2f Measure 2e
+2g Action Prepare
+2h Reagent solid IM
+2i Modifier fresh
+2g Product 2h
+2g Mod-Link 2i
+L3
+3a Reagent Minimal medium base
+3b Reagent MM base
+3b Coreference-Link 3a
+3c Action Prepare
+3d Reagent MM base
+3c Product 3d
+3e Concentration 11.8 mmol/L
+3f Reagent K₂HPO₄
+3g Concentration 10.7 mmol/L
+3h Reagent KH₂PO₄
+3i Concentration 2 mmol/L
+3j Reagent MgSO₄
+3k Concentration 3.8 mmol/L
+3l Reagent (NH₄)₂SO₄
+3m Concentration 2.6 mmol/L
+3n Reagent NaCl
+3o Concentration 9 µmol/L
+3p Reagent FeSO₄
+3q Concentration 2.3 mmol/L
+3r Reagent CaCl₂
+3s Concentration 1% w/v
+3t Reagent sucrose
+3f Measure 3e
+3h Measure 3g
+3j Measure 3i
+3l Measure 3k
+3n Measure 3m
+3p Measure 3o
+3r Measure 3q
+3t Measure 3s
+3f Meronym 3d
+3h Meronym 3d
+3j Meronym 3d
+3l Meronym 3d
+3n Meronym 3d
+3p Meronym 3d
+3r Meronym 3d
+3t Meronym 3d
+3u Action Autoclave
+3v Reagent MM base medium
+3w Method standard liquid cycle
+3u Acts-on 3v
+3u Using 3w
+3x Action cool
+3y Action adding
+3z Modifier heat-sensitive
+3aa Reagent supplements
+3ab Reagent antibiotics
+3y Acts-on 3aa
+3y Acts-on 3ab
+3ab Or 3aa
+3aa Mod-Link 3z
+L4
+4a Action Transfer
+4b Modifier actively growing
+4c Reagent B. cinerea colony
+4d Location PDA
+4e Concentration 25 µg/mL
+4f Reagent streptomycin
+4g Modifier sterile
+4h Size 1 cm
+4i Device cork borer
+4a Acts-on 4c
+4c Mod-Link 4b
+4a Site 4d
+4f Meronym 4d
+4f Measure 4e
+4a Using 4i
+4i Mod-Link 4g
+4i Measure 4h
+4j Action incubate
+4k Location plate
+4l Temperature room temperature
+4m Temperature approximately 23 °C
+4n Time 3-5 days
+4j Acts-on 4k
+4j Setting 4l
+4j Setting 4m
+4j Setting 4n
+4o Modifier Gently
+4p Action scrape
+4q Reagent mycelia
+4r Location agar surface
+4s Modifier sterile
+4t Device scalpel
+4p Mod-Link 4o
+4p Acts-on 4q
+4p Site 4r
+4p Using 4t
+4t Mod-Link 4s
+4u Action Transfer
+4v Modifier collected
+4w Reagent mycelia
+4x Modifier sterile
+4y Amount 2 mL
+4z Location microcentrifuge tube
+4u Acts-on 4w
+4w Mod-Link 4v
+4u Site 4z
+4z Mod-Link 4x
+4z Measure 4y
+4aa Action Wash
+4ab Reagent mycelia
+4ac Numerical twice
+4ad Modifier sterile
+4ae Reagent deionized water
+4aa Acts-on 4ab
+4aa Count 4ac
+4aa Using 4ae
+4ae Mod-Link 4ad
+4af Action Centrifuge
+4ag Speed 5000 rpm
+4ah Time 5 min
+4ai Temperature room temperature
+4af Setting 4ag
+4af Setting 4ah
+4af Setting 4ai
+4aj Action Resuspend
+4ak Amount approximately 50 mg
+4al Modifier pelleted
+4am Reagent mycelia
+4an Amount 200 µL
+4ao Modifier sterile
+4ap Reagent deionized water
+4aj Acts-on 4am
+4am Measure 4ak
+4am Mod-Link 4al
+4aj Using 4ap
+4ap Measure 4an
+4ap Mod-Link 4ao
+4aq Action Use
+4ar Reagent mycelial suspension
+4as Modifier fresh
+4aq Acts-on 4ar
+4ar Mod-Link 4as
+L5
+5a Action Streak
+5b Reagent A. tumefaciens C58C1/pCH32
+5c Reagent pFLexpress
+5d Reagent pFLexpress derivative
+5a Acts-on 5b
+5c Meronym 5b
+5d Meronym 5b
+5d Or 5c
+5e Location LB agar
+5f Concentration 50 µg/mL
+5g Reagent kanamycin
+5h Concentration 5 µg/mL
+5i Reagent tetracycline
+5a Site 5e
+5g Meronym 5e
+5i Meronym 5e
+5g Measure 5f
+5i Measure 5h
+5j Action Incubate
+5k Temperature 28 °C
+5l Time 48 h
+5j Setting 5k
+5j Setting 5l
+5m Action Pick
+5n Modifier single
+5o Reagent A. tumefaciens colony
+5m Acts-on 5o
+5o Mod-Link 5n
+5p Action Inoculate
+5q Amount 5 mL
+5r Reagent MM broth
+5p Site 5r
+5r Measure 5q
+5s Action incubate
+5t Temperature 28 °C
+5u Speed 250 rpm
+5v Time 48 h
+5s Setting 5t
+5s Setting 5u
+5s Setting 5v
+5w Action transfer
+5x Amount 200 µL
+5z Modifier 48 h
+5y Reagent MM culture
+5aa Amount 5 mL
+5ab Reagent IM broth
+5w Acts-on 5y
+5y Measure 5x
+5y Mod-Link 5z
+5w Site 5ab
+5ab Measure 5aa
+5ac Action incubate
+5ad Temperature 28 °C
+5ae Method shaking
+5af Reagent culture
+5ag Measure-Type OD600
+5ah Numerical ≥ 0.25
+5ac Setting 5ad
+5ac Using 5ae
+5ah Of-Type 5ag
+5af Measure 5ah
+L6
+6a Modifier sterile
+6b Amount 1.5 mL
+6c Location microcentrifuge tube
+6d Action combine
+6d Site 6c
+6c Mod-Link 6a
+6c Measure 6b
+6e Amount 150 µL
+6f Modifier induced
+6g Reagent A. tumefaciens culture
+6h Reagent IM broth
+6i Measure-Type OD600
+6j Numerical ≥ 0.25
+6k Amount 150 µL
+6l Reagent B. cinerea mycelial suspension
+6d Acts-on 6g
+6d Acts-on 6l
+6g Measure 6e
+6g Mod-Link 6f
+6g Meronym 6h
+6j Of-Type 6i
+6g Measure 6j
+6l Measure 6k
+6m Action Incubate
+6n Reagent mixture
+6o Temperature room temperature
+6p Temperature approximately 23 °C
+6q Time 30 min
+6m Acts-on 6n
+6m Setting 6o
+6m Setting 6p
+6m Setting 6q
+6r Action Spread
+6s Amount 250 µL
+6t Reagent co-cultivation mixture
+6u Modifier freshly prepared
+6v Location solid IM
+6w Concentration 50 µg/mL
+6x Reagent thiamine
+6y Concentration 200 µM
+6z Reagent acetosyringone
+6r Acts-on 6t
+6t Measure 6s
+6r Site 6v
+6v Mod-Link 6u
+6x Meronym 6v
+6z Meronym 6v
+6x Measure 6w
+6z Measure 6y
+6aa Action Incubate
+6ab Location plates
+6ac Temperature room temperature
+6ad Temperature approximately 23 °C
+6ae Time 3 days
+6aa Acts-on 6ab
+6aa Setting 6ac
+6aa Setting 6ad
+6aa Setting 6ae
+L7
+7a Modifier hygromycin-resistant
+7b Reagent colonies
+7b Mod-Link 7a
+7c Action transfer
+7d Size 1 cm
+7e Reagent agar plugs
+7f Modifier resistant
+7g Reagent fungal growth
+7h Modifier fresh
+7i Location PDA
+7j Concentration 250 µg/mL
+7k Reagent hygromycin B
+7c Acts-on 7e
+7e Measure 7d
+7e Meronym 7g
+7g Mod-Link 7f
+7c Site 7i
+7i Mod-Link 7h
+7k Meronym 7i
+7k Measure 7j
+7l Action Incubate
+7m Temperature room temperature
+7n Temperature approximately 23 °C
+7l Setting 7m
+7l Setting 7n
+7o Action Repeat
+7p Action transfer
+7q Modifier fresh
+7r Location PDA
+7s Concentration 250 µg/mL
+7t Reagent hygromycin B
+7u Numerical three rounds
+7o Commands 7p
+7o Count 7u
+7p Site 7r
+7r Mod-Link 7q
+7t Meronym 7r
+7t Measure 7s
+7v Action maintain
+7w Modifier purified
+7x Reagent transformants
+7y Location PDA
+7z Modifier appropriate selection
+7v Acts-on 7x
+7x Mod-Link 7w
+7v Site 7y
+7y Mod-Link 7z
+L8
+8a Time 3 days
+8b Method co-cultivation
+8c Action identify
+8d Location solid IM plate
+8e Modifier visible
+8f Reagent fungal growth
+8c Setting 8a
+8c Site 8d
+8c Acts-on 8f
+8f Mod-Link 8e
+8g Modifier sterile
+8h Device cork borer
+8i Action excise
+8j Size approximately 1 cm²
+8k Reagent agar section
+8l Reagent fungal growth
+8i Using 8h
+8h Mod-Link 8g
+8i Acts-on 8k
+8k Measure 8j
+8l Meronym 8k
+8m Action transfer
+8n Reagent agar section
+8o Location PDA
+8p Concentration 200 µg/mL
+8q Reagent cefotaxime
+8r Concentration 250 µg/mL
+8s Reagent carbenicillin
+8t Concentration 250 µg/mL
+8u Reagent hygromycin B
+8m Acts-on 8n
+8m Site 8o
+8q Meronym 8o
+8s Meronym 8o
+8u Meronym 8o
+8q Measure 8p
+8s Measure 8r
+8u Measure 8t
+8v Action Incubate
+8w Temperature room temperature
+8x Temperature approximately 23 °C
+8y Time 5–10 days
+8v Setting 8w
+8v Setting 8x
+8v Setting 8y
+8z Action monitor
+8aa Modifier hygromycin-resistant
+8ab Reagent fungal colonies
+8z Acts-on 8ab
+8ab Mod-Link 8aa

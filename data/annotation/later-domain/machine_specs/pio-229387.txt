@@ -1,0 +1,104 @@
+L0
+a Modifier Efficient
+b Method PBMC Extraction
+b Mod-Link a
+c Method Immunostaining
+d Reagent Camel Samples
+L1
+e Location vessels
+f Location cervical region
+e Meronym f
+g Reagent camels
+h Location sites
+i Method jugular venipuncture
+j Location neck
+k Location thoracic inlet
+l Location ramus of the mandible
+L2
+m Action Restrain
+n Reagent camel
+m Acts-on n
+o Modifier safely
+m Mod-Link o
+p Action minimize
+L3
+q Action Clean
+r Location venipuncture site
+q Acts-on r
+s Device alcohol swab
+q Using s
+t Action dry
+L4
+u Modifier sterile
+v Method technique
+v Mod-Link u
+w Action insert
+w Using v
+x Device needle
+w Acts-on x
+y Modifier selected
+z Location vein
+w Site z
+z Mod-Link y
+aa Location jugular vein
+aa Coreference-Link z
+L5
+ab Action Draw
+ac Reagent blood
+ab Acts-on ac
+ad Location EDTA tube
+ab Site ad
+ae Modifier first
+ab Mod-Link ae
+af Seal purple cap
+af Meronym ad
+ag Method hematology
+ah Action Fill
+ai Measure-Type volume
+ah Measure-Type-Link ai
+aj Modifier without
+ak Action overfilling
+ak Mod-Link aj
+L6
+al Action collect
+am Reagent blood
+al Acts-on am
+an Location gel separator tube
+al Site an
+ao Seal yellow cap
+ao Meronym an
+ap Method plasma chemistry
+L7
+aq Action Remove
+ar Device needle
+aq Acts-on ar
+as Modifier carefully
+aq Mod-Link as
+at Action apply
+au Method pressure
+at Using au
+av Location puncture site
+at Site av
+aw Modifier until bleeding stops
+at Mod-Link aw
+L8
+ax Modifier Gently
+ay Action invert
+ay Mod-Link ax
+az Location EDTA tube
+ay Acts-on az
+ba Numerical 8-10 times
+ay Count ba
+bb Action mix
+bc Reagent anticoagulant
+bb Acts-on bc
+bd Reagent blood
+bb Acts-on bd
+be Modifier Do not
+bf Action shake
+bf Mod-Link be
+bg Location tubes
+bf Acts-on bg
+bh Modifier vigorously
+bf Mod-Link bh
+bi Action avoid

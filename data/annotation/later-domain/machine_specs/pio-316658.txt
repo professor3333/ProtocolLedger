@@ -1,0 +1,125 @@
+L0
+a Reagent Placental Matrisome
+b Method Proteomic Analysis
+c Method LC-MS/MS
+b Using c
+L1
+d Method Protein Solubilization
+e Method solubilization
+f Method in-solution digestion
+g Reagent ECM-enriched proteins
+h Action refer
+i Method protocol
+h Using i
+L2
+j Action Weigh
+k Amount 45–120 mg
+l Reagent placenta tissue
+j Acts-on l
+l Measure k
+m Modifier each
+n Reagent sample
+n Mod-Link m
+L3
+o Action Transfer
+p Reagent tissue
+o Acts-on p
+q Location bead homogenization tubes
+o Site q
+r Amount Four
+s Size 2.8 mm
+t Reagent ceramic beads
+t Measure r
+t Measure s
+t Meronym q
+u Amount Four
+v Size 2.4 mm
+w Reagent metal beads
+w Measure u
+w Measure v
+w Meronym q
+L4
+x Action Homogenize
+y Reagent tissue
+x Acts-on y
+z Device OMNI Bead Ruptor
+x Using z
+aa Speed 8 m/s
+x Setting aa
+ab Numerical Three
+x Count ab
+ac Time 10-second
+x Setting ac
+ad Method homogenization cycles
+x Using ad
+ae Time 60-second
+af Method pauses
+x Setting ae
+L5
+ag Action Assess
+ah Measure-Type enrichment efficiency
+ag Measure-Type-Link ah
+ai Measure-Type intracellular protein depletion
+ag Measure-Type-Link ai
+aj Method western blot analysis
+ag Using aj
+L6
+ak Action Probe
+al Reagent samples
+ak Acts-on al
+am Reagent primary antibodies
+ak Using am
+an Reagent Anti-actin
+ao Concentration 1:5000
+an Measure ao
+ak Using an
+ap Reagent Anti-integrin beta-1
+aq Concentration 1:1000
+ap Measure aq
+ak Using ap
+ar Reagent Anti-collagen III
+as Concentration 2 µg/mL
+ar Measure as
+ak Using ar
+at Reagent Anti-GAPDH
+au Concentration 2 µg/mL
+at Measure au
+ak Using at
+av Reagent Anti-histone H4
+aw Concentration 1:30000
+av Measure aw
+ak Using av
+ax Reagent Anti-transglutaminase 2/TGM2
+ay Concentration 2.5 µg /mL
+ax Measure ay
+ak Using ax
+L7
+az Action Detect
+ba Reagent primary antibodies
+az Acts-on ba
+bb Modifier HRP-conjugated
+bc Reagent secondary antibodies
+az Using bc
+bc Mod-Link bb
+bd Reagent Goat anti-rabbit HRP
+be Concentration 8 µg /mL
+bd Measure be
+az Using bd
+bf Reagent Goat anti-mouse HRP
+bg Concentration 1.6 µg/mL
+bf Measure bg
+az Using bf
+L8
+bh Action Solubilize
+bi Reagent ECM-enriched protein pellets
+bh Acts-on bi
+bj Concentration 8 M
+bk Reagent urea
+bh Site bk
+bk Measure bj
+bl Action prepared
+bl Acts-on bk
+bm Concentration 100 mM
+bn Reagent ammonium bicarbonate
+bl Site bn
+bn Measure bm

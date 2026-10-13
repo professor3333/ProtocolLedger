@@ -1,0 +1,155 @@
+L0
+a Action Isolating
+b Reagent Symbionts
+a Acts-on b
+c Modifier Vertically Transmitted
+d Reagent Corals
+d Mod-Link c
+e Reagent Montipora capitata
+e Coreference-Link d
+L1
+f Reagent corals
+g Action spawn
+g Acts-on f
+h Action add
+i Reagent eggs
+h Acts-on i
+j Amount 50ml
+k Amount 15ml
+l Location falcon tube
+h Site l
+l Measure j
+l Measure k
+k Or j
+L2
+m Action Centrifuge
+n Reagent material
+m Acts-on n
+o Speed 1000rpm
+m Setting o
+p Time 5 minutes
+m Setting p
+q Numerical x 7
+m Count q
+L3
+r Action Move
+s Modifier all
+t Reagent materials
+r Acts-on t
+t Mod-Link s
+u Location laminar flow hood
+r Site u
+L4
+v Modifier 7th
+w Method spin
+w Mod-Link v
+x Action remove
+y Modifier all
+z Reagent liquid
+x Acts-on z
+z Mod-Link y
+aa Action leaving behind
+ab Reagent pellet
+aa Acts-on ab
+L5
+ac Action Add
+ad Reagent FSW
+ac Acts-on ad
+ae Size .2um
+ad Measure ae
+af Action resuspend
+ag Reagent pellet
+af Acts-on ag
+ah Modifier carefully
+af Mod-Link ah
+L6
+ai Time 24 hours
+aj Action add
+aj Setting ai
+ak Amount 1ml
+al Modifier fresh
+am Reagent f/2 media
+aj Acts-on am
+am Measure ak
+am Mod-Link al
+an Modifier each
+ao Location well
+aj Site ao
+ao Mod-Link an
+L7
+ap Action Pipette
+aq Reagent material
+ap Acts-on aq
+ar Modifier per well
+aq Mod-Link ar
+as Measure-Type volume
+at Location wells
+au Reagent media
+au Meronym at
+av Amount 1ml
+aw Modifier resuspended
+ax Reagent material
+ax Measure av
+ax Mod-Link aw
+ay Amount 12
+az Location wells
+az Measure ay
+ba Action filled
+ba Acts-on az
+bb Amount 1ml
+bc Reagent f/2 media
+ba Using bc
+bc Measure bb
+bd Action aliquot
+be Amount 83.333uL
+bf Reagent material
+bd Acts-on bf
+bf Measure be
+bg Modifier each
+bh Location well
+bd Site bh
+bh Mod-Link bg
+L8
+bi Action looked
+bj Device microscope
+bi Site bj
+bk Modifier every day
+bi Mod-Link bk
+bl Action assess
+bm Measure-Type motility
+bn Measure-Type behaviour
+bl Measure-Type-Link bm
+bl Measure-Type-Link bn
+bo Reagent cells
+bp Action find
+bq Location well
+bp Acts-on bq
+br Modifier contaminated
+bq Mod-Link br
+bs Action pipette
+bt Modifier entire
+bu Reagent volume
+bs Acts-on bu
+bu Mod-Link bt
+bv Modifier evenly
+bw Action distribute
+bw Mod-Link bv
+bx Amount 1.5
+by Location Eppendorf tubes
+bw Site by
+by Measure bx
+bz Action centrifuge
+ca Modifier till you see no 'gunk'
+bz Mod-Link ca
+cb Action add
+cc Reagent pellet
+cb Acts-on cc
+cd Location bottom portion
+ce Reagent media
+cd Meronym ce
+cb Acts-on cd
+cd Or cc
+cf Modifier fresh
+cg Location well
+cb Site cg
+cg Mod-Link cf

@@ -1,0 +1,132 @@
+L0
+a Method Monarch Spin Plasmid Miniprep
+L1
+b Action Add
+c Amount 400 µL
+d Reagent Buffer B3
+b Acts-on d
+d Measure c
+e Modifier gently
+f Action invert
+f Mod-Link e
+g Location tube
+f Acts-on g
+h Modifier until neutralized
+f Mod-Link h
+i Action incubate
+j Temperature room temperature
+i Setting j
+k Time 00:02:00
+i Setting k
+l Measure-Type color
+L2
+m Action Add
+n Amount 200 µL
+o Reagent Buffer B2
+m Acts-on o
+o Measure n
+p Modifier gently
+q Action invert
+q Mod-Link p
+r Location tube
+q Acts-on r
+s Numerical 10 times
+q Count s
+t Modifier do not
+u Action vortex
+u Mod-Link t
+v Action incubate
+w Temperature room temperature
+v Setting w
+x Time 00:01:00
+v Setting x
+y Measure-Type Color
+z Action change
+z Measure-Type-Link y
+ab Reagent solution
+ac Modifier transparent
+ad Modifier viscous
+ab Mod-Link ac
+ab Mod-Link ad
+L3
+ae Action Resuspend
+af Reagent pellet
+ae Acts-on af
+ag Amount 200 µL
+ah Reagent Buffer B1
+ae Site ah
+ah Measure ag
+ai Modifier Gently
+aj Action pipette
+aj Mod-Link ai
+ak Action mix
+ak Commands aj
+al Action Transfer
+am Modifier pre-labeled
+an Amount 1.5 mL
+ao Location eppendorf tube
+al Site ao
+ao Measure an
+ao Mod-Link am
+L4
+ap Action Isolating
+aq Action Resuspending
+ar Reagent Culture
+ap Acts-on ar
+aq Acts-on ar
+L5
+as Action Obtain
+at Modifier clear round-bottom
+au Location 96w plate
+as Acts-on au
+au Mod-Link at
+av Action Download
+aw Action Record
+L6
+ax Action Save
+ay Action file
+L7
+az Action Wipe
+ba Location benches
+bb Device pipettes
+az Acts-on ba
+az Acts-on bb
+bc Reagent DNA-Away
+bd Reagent RNAse-Away
+az Using bc
+az Using bd
+be Action wipe
+bf Concentration 70%
+bg Reagent ethanol
+be Using bg
+bg Measure bf
+bh Action Light
+bi Device bunsen burner
+bh Acts-on bi
+bj Action work
+bk Modifier closely
+bj Mod-Link bk
+bl Mention it
+bj Site bl
+bl Coreference-Link bi
+bm Action performing
+bn Method Validation of Overnight Culture steps
+bm Using bn
+L8
+bo Modifier clear round-bottom
+bp Location 96w plate
+bq Action add
+br Amount 100 µL
+bs Modifier appropriate
+bt Reagent media
+bq Acts-on bt
+bt Measure br
+bt Mod-Link bs
+bu Modifier in duplicate
+bq Mod-Link bu
+bv Modifier designated
+bw Location wells
+bq Site bw
+bw Mod-Link bv
+bw Meronym bp
+bp Mod-Link bo

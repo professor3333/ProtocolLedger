@@ -1,0 +1,137 @@
+L0
+a Reagent Zr-ELP
+b Method purification protocol
+c Location Gravity columns
+L1
+d Action FastTemp
+e Modifier big
+f Device centrifuge
+d Acts-on f
+f Mod-Link e
+g Temperature 4 C
+d Setting g
+L2
+h Action Resuspend
+i Reagent pellet cells
+h Acts-on i
+j Amount 40 ml
+k Reagent Lysis buffer
+h Site k
+k Measure j
+l Concentration 10 mM
+m Reagent Tris
+m Measure l
+m Meronym k
+n Concentration 6M
+o Reagent Urea
+o Measure n
+o Meronym k
+p pH pH 8
+k Measure p
+q Action find
+r Mention it
+q Acts-on r
+r Coreference-Link k
+s Location cold room
+q Site s
+L3
+t Action add
+u Concentration 1 mM
+v Reagent EDTA
+t Acts-on v
+v Measure u
+w Concentration 1 mM
+x Reagent AEBSF
+t Acts-on x
+x Measure w
+y Reagent PBSF
+y Or x
+z Reagent reagents
+aa Location kitchen fridge
+z Meronym aa
+ab Action calculate
+ac Measure-Type volume
+ab Measure-Type-Link ac
+ad Action add
+ae Action use
+af Device dilution calculator
+ae Using af
+L4
+ag Action Lyse
+ah Device sonicator
+ag Using ah
+ai Method Freezing-Thawing-Ultra sonification
+ag Using ai
+aj Method pulse
+ag Using aj
+ak Time 10s
+al Time 20s
+ag Setting ak
+ag Setting al
+am Measure-Type Amplitude
+an Generic-Measure 50%
+an Of-Type am
+ag Setting an
+ao Time 10min
+ag Setting ao
+ap Numerical 2 cycles
+ag Count ap
+L5
+aq Action Separate
+ar Reagent cells
+as Reagent proteins
+aq Acts-on ar
+aq Acts-on as
+at Device centrifuge
+aq Using at
+au Speed 15,000 g
+av Time 30 min
+aw Temperature 4 C
+aq Setting au
+aq Setting av
+aq Setting aw
+ax Action Use
+ay Modifier black, small
+az Device rotor
+ax Using az
+az Mod-Link ay
+L6
+ba Action Keep
+bb Reagent supernatant
+ba Acts-on bb
+L7
+bc Action Pipette
+bd Amount 2 ml
+be Reagent Ni-NTA resin
+bc Acts-on be
+be Measure bd
+bf Location Falcon tube
+bc Site bf
+bg Action centrifuge
+bh Mention it
+bg Acts-on bh
+bh Coreference-Link be
+bi Speed 4000 rpm
+bg Setting bi
+bj Time 1 min
+bg Setting bj
+L8
+bk Modifier Carefully
+bl Action remove
+bl Mod-Link bk
+bm Reagent ethanol
+bl Acts-on bm
+bn Modifier excess
+bm Mod-Link bn
+bo Action Resuspend
+bp Reagent beads
+bo Acts-on bp
+bq Amount 4 ml
+br Reagent lysis buffer
+bo Site br
+br Measure bq
+bs Action centrifuge
+bt Speed 4000 rpm
+bs Setting bt
+bu Time 1 min
+bs Setting bu

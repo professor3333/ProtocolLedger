@@ -1,0 +1,212 @@
+L0
+0a Method nucleic acid extraction
+0b Method q/d-PCR
+0c Reagent Influenza A virus
+L1
+1a Reagent poultry drinking water
+1b Reagent wetland surface water
+1c Reagent pond sediment
+1d Reagent bird droppings
+1e Reagent poultry litter
+1f Reagent molted feathers
+1g Reagent bird’s cage swab samples
+1h Reagent air
+1i Modifier systematically
+1j Action collected
+1k Action processed
+1l Method downstream analysis
+1j Mod-Link 1i
+1j Acts-on 1a
+1j Acts-on 1b
+1j Acts-on 1c
+1j Acts-on 1d
+1j Acts-on 1e
+1j Acts-on 1f
+1j Acts-on 1g
+1j Acts-on 1h
+1k Acts-on 1a
+1k Acts-on 1b
+1k Acts-on 1c
+1k Acts-on 1d
+1k Acts-on 1e
+1k Acts-on 1f
+1k Acts-on 1g
+1k Acts-on 1h
+1k Using 1l
+1m Reagent poultry drinking water
+1n Reagent wetland pond water
+1o Reagent pond sediment
+1p Reagent electrostatic dust clothes
+1q Reagent EDC
+1q Coreference-Link 1p
+1r Action processed
+1s Method virus concentration method
+1r Acts-on 1m
+1r Acts-on 1n
+1r Acts-on 1o
+1r Acts-on 1p
+1r Using 1s
+1t Reagent bird droppings
+1u Reagent litter
+1v Reagent molted feathers
+1w Reagent air samples
+1x Action collected
+1y Reagent virus transport media
+1z Reagent VTM
+1z Coreference-Link 1y
+1x Acts-on 1t
+1x Acts-on 1u
+1x Acts-on 1v
+1x Acts-on 1w
+1x Site 1y
+1aa Modifier directly
+1ab Action processed
+1ac Method viral RNA extraction
+1ab Mod-Link 1aa
+1ab Acts-on 1t
+1ab Acts-on 1u
+1ab Acts-on 1v
+1ab Acts-on 1w
+1ab Using 1ac
+L2
+2a Action concentrate
+2b Reagent virus particles
+2c Reagent environmental samples
+2d Reagent polyethylene glycol
+2e Reagent PEG
+2f Reagent sodium chloride
+2g Reagent NaCl
+2a Acts-on 2b
+2a Site 2c
+2a Using 2d
+2a Using 2f
+2e Coreference-Link 2d
+2g Coreference-Link 2f
+2h Method nucleic acid extraction
+2i Method real-time PCR
+2j Method digital PCR
+2k Method genome sequencing
+L3
+3a Action Take
+3b Amount 200 mL
+3c Reagent poultry drinking water
+3d Reagent wetland surface water
+3e Modifier sterile
+3f Amount 200 mL
+3g Location polypropylene centrifuge tubes
+3a Acts-on 3c
+3a Acts-on 3d
+3d Or 3c
+3c Measure 3b
+3d Measure 3b
+3a Site 3g
+3g Mod-Link 3e
+3g Measure 3f
+3h Action Add
+3i Amount 5 gm
+3j Reagent sediment@2
+3k Amount 100 mL
+3l Modifier autoclaved
+3m Reagent Milli-Q water
+3n Modifier sterile
+3o Location centrifuge tubes
+3h Acts-on 3j
+3j Measure 3i
+3h Site 3m
+3m Measure 3k
+3m Mod-Link 3l
+3h Site 3o
+3o Mod-Link 3n
+3p Action Take
+3q Amount 50 mL
+3r Reagent PBS
+3s Modifier sterile
+3t Location centrifuge tubes
+3p Acts-on 3r
+3r Measure 3q
+3p Site 3t
+3t Mod-Link 3s
+3u Reagent swab@2
+3v Action transferred
+3v Acts-on 3u
+3v Site 3t
+3w Action Squeeze out
+3x Reagent EDC
+3y Modifier sterile
+3z Device spatula
+3w Acts-on 3x
+3w Using 3z
+3z Mod-Link 3y
+3aa Action recover
+3ab Modifier maximum volume
+3ac Reagent PBS
+3aa Acts-on 3ac
+3ac Mod-Link 3ab
+3ad Action Vortex
+3ae Modifier all
+3af Reagent samples
+3ag Modifier thoroughly
+3ad Acts-on 3af
+3af Mod-Link 3ae
+3ad Mod-Link 3ag
+L4
+4a Action Store
+4b Modifier re-suspended
+4c Reagent sample
+4d Temperature -80°C
+4a Acts-on 4c
+4c Mod-Link 4b
+4a Setting 4d
+L5
+5a Action Incubate
+5b Reagent mixture
+5c Temperature 4°C
+5d Time 2 hours
+5e Modifier static
+5f Modifier shaking
+5g Device refrigerator
+5a Acts-on 5b
+5a Setting 5c
+5a Setting 5d
+5a Mod-Link 5e
+5a Mod-Link 5f
+5f Or 5e
+5a Site 5g
+L6
+6a Action centrifuge
+6b Location tubes
+6c Speed 12,000 rpm
+6d Time 90 minutes
+6e Temperature 4°C
+6a Acts-on 6b
+6a Setting 6c
+6a Setting 6d
+6a Setting 6e
+L7
+7a Modifier Carefully
+7b Action decant
+7c Reagent supernatant
+7a2 Modifier without
+7d Action disturbing
+7e Reagent pellet
+7f Location bottom
+7g Location tube
+7b Mod-Link 7a
+7b Acts-on 7c
+7d Mod-Link 7a2
+7d Acts-on 7e
+7e Meronym 7f
+7f Meronym 7g
+L8
+8a Modifier Gently
+8b Action remove
+8c Modifier remaining
+8d Reagent liquid
+8e Modifier not
+8f Action dislodge
+8g Reagent pellet
+8b Mod-Link 8a
+8b Acts-on 8d
+8d Mod-Link 8c
+8f Mod-Link 8e
+8f Acts-on 8g

@@ -1,0 +1,186 @@
+L0
+a Method Immunofluorescencent Staining
+b Reagent A-synuclein
+c Reagent TFEB
+d Reagent GCase
+e Reagent LAMP1
+f Modifier treated cultured
+g Reagent cells
+g Mod-Link f
+L1
+h Action Differentiate
+i Modifier wild-type
+j Modifier 3K-SNCA overexpressing
+k Reagent SH-SY5Y
+h Acts-on k
+k Mod-Link i
+k Mod-Link j
+l Reagent neurons
+h Product l
+m Method retinoic acid-based protocol
+h Using m
+L2
+n Action Detach
+o Modifier 70% confluent
+p Modifier non-differentiated
+q Reagent cells
+n Acts-on q
+q Mod-Link o
+q Mod-Link p
+r Reagent trypsin
+s Reagent Versene®
+n Using r
+n Using s
+t Action resuspend
+u Reagent Neurobasal media
+t Site u
+v Action supplemented
+v Acts-on u
+w Concentration 30M
+x Reagent retinoic acid
+x Measure w
+x Meronym u
+y Concentration 1X
+z Reagent vitamin B-27
+z Measure y
+z Meronym u
+aa Concentration 1X
+ab Reagent Glutamax®
+ab Measure aa
+ab Meronym u
+ac Concentration 5ng/ml
+ad Reagent brain-derived neurotrophic factor
+ae Reagent BDNF
+ad Measure ac
+ae Coreference-Link ad
+ad Meronym u
+L3
+af Action Replace
+ag Reagent differentiation medium
+af Acts-on ag
+ah Modifier every
+ai Time 48 hours
+af Setting ai
+ai Mod-Link ah
+aj Time 4 days
+ak Method culture
+L4
+al Action Use
+am Modifier differentiated
+an Reagent neurons
+al Acts-on an
+an Mod-Link am
+ao Method downstream analysis
+ap Time 10 days
+al Setting ap
+aq Method culture
+L5
+ar Action Seed
+as Reagent cells
+ar Acts-on as
+at Reagent Geltrex®
+au Reagent Matrix solution
+au Coreference-Link at
+av Action diluted
+av Acts-on au
+aw Reagent DMEM/F-12 medium
+av Using aw
+ax Generic-Measure 1:100
+au Measure ax
+ay Modifier coated
+az Location plates
+ar Site az
+az Mod-Link ay
+ba Concentration 1.5 × 10⁵ cells/ml
+as Measure ba
+L6
+bb Action Culture
+bc Reagent SH-SY5Y cells
+bd Modifier 3K-SNCA overexpressing
+be Reagent cells
+be Mod-Link bd
+bb Acts-on bc
+bb Acts-on be
+bf Generic-Measure 1:1
+bg Reagent DMEM/F12 media
+bb Site bg
+bg Measure bf
+bh Reagent Glutamax®
+bh Meronym bg
+bi Action supplemented
+bi Acts-on bg
+bj Concentration 10%
+bk Reagent fetal bovine serum
+bl Reagent FBS
+bk Measure bj
+bl Coreference-Link bk
+bk Meronym bg
+bm Concentration 1X
+bn Reagent Penicillin/Streptomycin
+bn Measure bm
+bn Meronym bg
+bo Action Passeage
+bp Reagent cells
+bo Acts-on bp
+bq Modifier appropriately
+bo Mod-Link bq
+br Action maintain
+bs Measure-Type confluency
+br Measure-Type-Link bs
+bt Generic-Measure 50-70%
+bt Of-Type bs
+L7
+bu Action detach
+bv Reagent cells
+bu Acts-on bv
+bw Reagent Trypsin
+bx Concentration 10x
+bw Measure bx
+bu Using bw
+by Reagent Versene
+bz Concentration 1X
+by Measure bz
+bu Site by
+ca Generic-Measure 1:1
+by Measure ca
+cb Action count
+cc Action seed
+cd Modifier new
+ce Location 96-well plate
+cc Site ce
+ce Mod-Link cd
+cf Action acquire
+cg Device Opera Phenix® Plus High-Content Screening System
+cf Using cg
+ch Action seed
+ci Reagent cells
+ch Acts-on ci
+cj Modifier specific type of
+ck Location 96 well plate
+ch Site ck
+ck Mod-Link cj
+cl Location Phenoplate®-96 TC
+cl Coreference-Link ck
+L8
+cm Action Seed
+cn Amount 3*104
+co Reagent cells
+cm Acts-on co
+co Measure cn
+cp Modifier each
+cq Location well
+cm Site cq
+cq Mod-Link cp
+cr Action avoiding
+cs Action placing
+cr Commands cs
+ct Mention them
+cs Acts-on ct
+ct Coreference-Link co
+cu Location borders
+cv Location rows
+cw Location columns
+cs Site cu
+cs Site cv
+cs Site cw
+cx Action prevent

@@ -1,0 +1,216 @@
+L0
+a Method Nanopore Sequencing
+b Reagent poliovirus isolates
+L1
+c Reagent samples
+d Modifier consecutive
+e Reagent barcodes
+e Mod-Link d
+f Action group
+g Modifier try not to
+f Mod-Link g
+h Reagent samples
+f Acts-on h
+i Modifier from the same geographic area
+h Mod-Link i
+j Modifier together
+f Mod-Link j
+k Action detect
+m Reagent identical sequences
+n Action detected
+n Acts-on m
+o Reagent samples
+n Site o
+p Modifier consecutive
+q Reagent barcodes
+q Mod-Link p
+r Location 96-well plate
+L2
+s Action Prepare
+t Reagent master mix
+s Product t
+u Measure-Type reaction volumes
+s Measure-Type-Link u
+w Reagent samples
+x Reagent negative controls
+y Reagent reaction mix
+z Reagent SSIII enzyme
+aa Action provided
+ab Reagent SuperScript III One-Step RT-PCR System with Platinum Taq
+aa Acts-on y
+aa Acts-on z
+y Meronym ab
+z Meronym ab
+L3
+ac Action Pool
+ad Amount 2μL
+ae Modifier each
+af Reagent VP1 product
+ac Acts-on af
+af Measure ad
+af Mod-Link ae
+ag Modifier clean
+ah Amount 1.5mL
+ai Location tube
+ac Site ai
+ai Measure ah
+ai Mod-Link ag
+aj Action concentrate
+ak Reagent AMPure beads
+aj Using ak
+al Reagent Agencourt AMPure XP
+al Coreference-Link ak
+L4
+am Method sequencing run
+an Action finished
+an Acts-on am
+ao Action wash
+ap Device flow cell
+ao Acts-on ap
+aq Action remove
+ar Modifier remaining
+as Reagent library
+aq Acts-on as
+as Mod-Link ar
+at Action prepare
+au Method sequencing run
+at Using au
+av Method storage
+aw Temperature 4°C
+at Setting aw
+av Or au
+ax Method wash
+ay Reagent reagents
+az Action supplied
+az Acts-on ay
+ba Reagent ONT wash kit
+ay Meronym ba
+bb Reagent ONT Flow Cell Wash Kit
+bb Coreference-Link ba
+L5
+bc Action Thaw
+bd Reagent Sequencing buffer
+be Reagent SB
+be Coreference-Link bd
+bf Reagent Library beads
+bg Reagent LIB
+bg Coreference-Link bf
+bh Reagent Flow Cell Tether
+bi Reagent FCT
+bi Coreference-Link bh
+bj Amount one tube
+bk Reagent Flow Cell Flush
+bl Reagent FCF
+bl Coreference-Link bk
+bk Measure bj
+bc Acts-on bd
+bc Acts-on bf
+bc Acts-on bh
+bc Acts-on bk
+bm Temperature room temperature
+bc Setting bm
+bn Action place
+bo Location ice
+bn Site bo
+bp Action Mix
+bq Reagent SQB
+br Reagent FCF
+bs Reagent FCT
+bp Acts-on bq
+bp Acts-on br
+bp Acts-on bs
+bt Action vortexing
+bp Commands bt
+bu Action spin down
+bv Action return
+bw Location ice
+bv Site bw
+bx Action Spin down
+by Reagent LIB
+bx Acts-on by
+bz Action place
+ca Modifier back
+bz Mod-Link ca
+cb Location ice
+bz Site cb
+L6
+cc Action Vortex
+cd Reagent mastermix
+cc Acts-on cd
+ce Time 3 seconds
+cc Setting ce
+cf Action spin down
+cg Time 5 seconds
+cf Setting cg
+ch Action gather
+ci Reagent contents
+ch Acts-on ci
+cj Location bottom
+ck Location tube
+ch Site cj
+cj Meronym ck
+cl Action Aliquot
+cm Amount 18μL
+cn Modifier each
+co Amount 0.2mL
+cp Location PCR tube
+cl Site cp
+cp Measure co
+cp Mod-Link cn
+cq Action Add
+cr Amount 2μL
+cs Modifier barcoded
+ct Reagent primer
+cq Acts-on ct
+ct Measure cr
+ct Mod-Link cs
+cu Modifier each
+cv Location well
+cq Site cv
+cv Mod-Link cu
+cw Action ensuring
+cx Action add
+cw Commands cx
+cy Modifier different
+cz Reagent barcode
+cx Acts-on cz
+cz Mod-Link cy
+da Modifier each
+db Reagent reaction
+cx Site db
+db Mod-Link da
+dc Action Add
+dd Amount 5μL
+de Reagent sample RNA
+dc Acts-on de
+de Measure dd
+df Modifier each
+dg Reagent reaction
+dc Site dg
+dg Mod-Link df
+dh Amount 5μL
+di Reagent nuclease free water
+dc Acts-on di
+di Measure dh
+dj Reagent negative controls
+dc Site dj
+dk Action pipette
+dl Numerical 5 times
+dk Count dl
+dm Action mix
+dm Commands dk
+L7
+dn Action Spin down
+do Time 5 seconds
+dn Setting do
+dp Action make sure
+dq Reagent reagents
+dp Acts-on dq
+dr Location bottom
+ds Location tube
+dp Site dr
+dr Meronym ds
+L8
+dt Action Amplify
+du Method cycling conditions
+dt Using du

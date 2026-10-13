@@ -1,0 +1,185 @@
+L0
+0a Reagent Filovirus
+0c Modifier iPSC-derived
+0d Modifier Primary-derived
+0b Reagent Human Gut Organoids
+0b Mod-Link 0c
+0b Mod-Link 0d
+L1
+1a Action Dissociate
+1b Reagent HIOs
+1c Method viral infection protocol
+1a Acts-on 1b
+1a Using 1c
+1d Action Wash
+1e Modifier dissociated
+1f Reagent organoids
+1g Reagent PBS
+1d Acts-on 1f
+1f Mod-Link 1e
+1d Using 1g
+1h Action centrifuge
+1i Speed 200 × g
+1j Time 3 minutes
+1h Setting 1i
+1h Setting 1j
+1k Action Resuspend
+1l Modifier resulting
+1m Reagent pellet
+1n Modifier fresh
+1o Reagent 3D Matrigel
+1p Temperature 37°C
+1q Modifier low density
+1k Acts-on 1m
+1m Mod-Link 1l
+1k Using 1o
+1o Mod-Link 1n
+1k Setting 1p
+1k Mod-Link 1q
+1r Action Plate
+1s Reagent organoid-Matrigel droplets
+1t Modifier pre-warmed
+1u Location tissue culture plates
+1w Reagent medium
+1r Acts-on 1s
+1r Site 1u
+1u Mod-Link 1t
+1w Meronym 1u
+1x Action Allow
+1y Reagent organoids
+1z Action recover
+1aa Time 48–72 hours
+1ab Reagent forskolin
+1x Acts-on 1y
+1x Commands 1z
+1z Setting 1aa
+L2
+2a Action Reconstitute
+2b Reagent NIR Live/Dead dye
+2c Amount 100 µL
+2d Reagent DMSO
+2a Acts-on 2b
+2a Using 2d
+2d Measure 2c
+2e Action Prepare
+2f Concentration 1:800
+2g Reagent dilution aliquots
+2h Amount 10 µL
+2e Product 2g
+2g Measure 2f
+2g Measure 2h
+2i Action Protect
+2j Reagent aliquots
+2k Action wrapping
+2l Seal foil
+2m Action store
+2n Temperature –20°C
+2i Acts-on 2j
+2k Using 2l
+2m Setting 2n
+2o Action Prepare
+2p Reagent FACS buffer
+2q Action combining
+2r Concentration 0.5%
+2s Reagent BSA
+2t Concentration 1X
+2u Reagent PBS
+2v Concentration 2 mM
+2w Reagent EDTA
+2o Product 2p
+2q Acts-on 2s
+2q Acts-on 2u
+2q Acts-on 2w
+2s Measure 2r
+2u Measure 2t
+2w Measure 2v
+2x Action Mix
+2y Modifier thoroughly
+2z Action keep
+2aa Temperature 4°C
+2x Mod-Link 2y
+2z Setting 2aa
+L3
+3a Action Apply
+L4
+4a Action Adjust
+4b Reagent NIR stain
+4c Measure-Type concentration
+4d Measure-Type incubation times
+4a Measure-Type-Link 4c
+4a Measure-Type-Link 4d
+4e Action Handle
+4f Modifier all
+4g Modifier filovirus-infected
+4h Reagent samples
+4e Acts-on 4h
+4h Mod-Link 4f
+4h Mod-Link 4g
+4i Action Include
+4j Reagent compensation
+4k Reagent fluorescence-minus-one (FMO) controls
+4i Acts-on 4j
+4i Acts-on 4k
+L5
+5a Reagent CDX2-GFP
+5b Reagent Villin
+5c Reagent MUC2
+5d Reagent EBOV NP
+5e Reagent MARV NP
+5f Reagent MARV NC
+5g Reagent human iPSC-derived gut organoids
+5h Method Whole-mount immunofluorescence staining
+5i Time ~2 days
+L6
+6a Reagent Cell Recovery Solution
+6b Reagent Phosphate-buffered saline
+6c Reagent PBS
+6c Coreference-Link 6b
+6d Reagent Paraformaldehyde
+6e Reagent PFA
+6e Coreference-Link 6d
+6f Concentration 4%
+6d Measure 6f
+6g Reagent Triton X-100
+6h Reagent Normal donkey serum
+6i Reagent Hoechst 33342 nuclear dye
+6j Location Cavity slides
+6k Reagent ProLong Diamond Antifade Mountant
+6l Size 13 mm
+6m Location coverslips
+6m Measure 6l
+6n Location Eppendorf tubes
+6o Amount 1.5 mL
+6n Measure 6o
+L7
+7a Method Flow Cytometry Analysis
+7b Action Acquire
+7c Reagent samples
+7d Device Stratedigm flow cytometer
+7e Method standard fluorescence channels
+7b Acts-on 7c
+7b Site 7d
+7b Using 7e
+7f Generic-Measure 594 nm
+7g Generic-Measure 647 nm
+7h Reagent secondary antibody
+7h Measure 7f
+7h Measure 7g
+7i Reagent NIR
+7j Reagent GFP
+7k Action Avoid
+7l Reagent green fluorophores
+7m Method secondary staining
+7k Acts-on 7l
+L8
+8a Device P1000 pipette
+8b Modifier cut
+8c Device tips
+8c Mod-Link 8b
+8d Device Rocking platform
+8e Device Centrifuge
+8f Speed <200 × g
+8g Device Confocal microscope
+8h Device Zeiss LSM 700
+8i Device Nikon widefield fluorescence microscope
+8i Or 8g

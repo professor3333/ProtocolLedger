@@ -1,0 +1,115 @@
+L0
+a Method Pathogen-Agnostic WGS
+b Method ONT Workflow
+c Reagent Lyssavirus Rabies
+d Method RNA Extraction
+L1
+e Action Weigh
+f Amount 50 mg
+g Reagent brain tissue
+e Acts-on g
+g Measure f
+h Method straw method
+e Using h
+i Amount 2 ml
+j Location microcentrifuge tube
+e Site j
+j Measure i
+k Reagent tissue sample
+l Action placed
+l Acts-on k
+m Location dry ice
+l Site m
+n Action retrieved
+o Location storage
+n Site o
+p Method weighing step
+q Action carried out
+q Using p
+r Modifier swiftly
+q Mod-Link r
+L2
+s Action Add
+t Amount 600 µl
+u Concentration 1X
+v Reagent DNA/RNA ShieldTM
+s Acts-on v
+v Measure t
+v Measure u
+w Reagent brain tissue
+s Site w
+x Temperature room temperature
+s Setting x
+L3
+y Action Disrupt
+z Reagent tissue
+y Acts-on z
+aa Device TissueLyser II
+y Using aa
+ab Method Homogenisation
+y Using ab
+ac Time 2 min
+y Setting ac
+ad Speed 25 Hz
+y Setting ad
+L4
+ae Action Add
+af Amount 1
+ag Reagent stainless steel bead
+ae Acts-on ag
+ag Measure af
+ah Location tube
+ae Site ah
+L5
+ai Action Aliquot
+aj Amount 200 µl
+ak Modifier disrupted
+al Reagent tissue
+ai Acts-on al
+al Measure aj
+al Mod-Link ak
+am Method extraction step
+ai Using am
+L6
+an Action Pipette
+ao Amount 20 µl
+ap Reagent Proteinase K
+an Acts-on ap
+ap Measure ao
+aq Amount 1.5 ml
+ar Location Lo-Bind tube
+an Site ar
+ar Measure aq
+L7
+as Action Add
+at Amount 200 µl
+au Modifier disrupted
+av Reagent tissue sample
+as Acts-on av
+av Measure at
+av Mod-Link au
+aw Reagent Proteinase K
+as Site aw
+L8
+ax Action Add
+ay Amount 100 µl
+az Reagent Buffer VXL
+ax Acts-on az
+az Measure ay
+ba Action Close
+bb Seal cap
+ba Acts-on bb
+bc Action mix
+bd Action pulse-vortexing
+bc Commands bd
+be Modifier Thoroughly
+bf Action homogenise
+bf Mod-Link be
+bg Reagent sample
+bh Reagent buffer
+bf Acts-on bg
+bf Acts-on bh
+bi Action ensure
+bj Modifier sufficient
+bk Method lysis
+bk Mod-Link bj

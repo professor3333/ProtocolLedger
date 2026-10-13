@@ -1,0 +1,330 @@
+L0
+a Modifier Rapid
+b Method Isolation
+b Mod-Link a
+c Reagent Lysosomes
+d Method LysoIP
+d Coreference-Link b
+e Reagent iPSC-Derived Neurons
+f Method Proteomics
+g Method Lipidomics/Metabolomics
+L1
+h Action Pre-chill
+i Reagent buffers
+j Location tubes
+k Device magnet
+l Device centrifuge
+h Acts-on i
+h Acts-on j
+h Acts-on k
+h Acts-on l
+m Temperature 4 °C
+h Setting m
+n Action Keep
+p Location ice
+n Site p
+q Action minimize
+r Measure-Type time
+q Measure-Type-Link r
+s Method harvest
+t Reagent beads
+u Action Label
+v Location tubes
+u Acts-on v
+w Modifier each
+x Reagent sample
+x Mod-Link w
+L2
+y Method Proteomics
+z Amount 1
+aa Size 10-cm
+ab Location dish
+ab Measure aa
+ab Measure z
+ac Modifier ~
+ad Amount 8–10×10^6
+ae Modifier differentiated
+af Reagent cells
+af Measure ad
+ad Mod-Link ac
+af Mod-Link ae
+ag Modifier per condition
+af Mod-Link ag
+af Meronym ab
+ah Method Lipidomics/metabolomics
+ai Action pool
+aj Modifier multiple
+ak Size 10-cm
+al Location dishes
+ai Acts-on al
+al Measure ak
+al Mod-Link aj
+am Modifier per condition
+al Mod-Link am
+an Action start
+ao Modifier ~
+ap Amount 3
+aq Location dishes
+aq Measure ap
+ap Mod-Link ao
+an Acts-on aq
+av Action optimize
+aw Modifier empirically
+av Mod-Link aw
+L3
+ax Action Pool
+ay Reagent beads
+ax Acts-on ay
+az Action use
+ba Amount 100 µL
+bb Reagent beads
+az Acts-on bb
+bb Measure ba
+bc Modifier per sample
+ba Mod-Link bc
+bd Action Wash
+be Reagent beads
+bd Acts-on be
+bf Numerical 3X
+bd Count bf
+bg Method proteomics
+bh Action wash
+bi Numerical 3×
+bh Count bi
+bj Reagent PBS+PI
+bh Using bj
+bk Method metabolomics/lipidomics
+bl Action wash
+bm Numerical 3×
+bl Count bm
+bn Modifier cold
+bo Reagent KPBS
+bp Modifier MS-grade
+bl Using bo
+bo Mod-Link bn
+bo Mod-Link bp
+bq Action Resuspend
+br Reagent beads
+bq Acts-on br
+bt Measure-Type volume
+bq Measure-Type-Link bt
+bu Action aliquot
+bv Amount 100 µL
+bw Reagent beads
+bu Acts-on bw
+bw Measure bv
+bx Modifier labeled
+by Amount 1.5 mL
+bz Location tube
+bu Site bz
+bz Measure by
+bz Mod-Link bx
+ca Modifier each
+cb Reagent sample
+cb Mod-Link ca
+L4
+cc Action Place
+cd Location plate
+cc Acts-on cd
+ce Location ice
+cc Site ce
+cf Action Aspirate
+cg Reagent media
+cf Acts-on cg
+ch Action Wash
+ci Numerical 2×
+ch Count ci
+cj Modifier ice-cold
+ck Reagent PBS
+ch Using ck
+ck Mod-Link cj
+cl Modifier gentle
+ch Mod-Link cl
+cm Action Add
+cn Modifier ~
+co Amount 950 µL
+cp Modifier ice-cold
+cq Reagent PBS+PI
+cm Acts-on cq
+cq Measure co
+co Mod-Link cn
+cq Mod-Link cp
+cr Reagent KPBS
+cr Or cq
+cs Location dish
+cm Site cs
+ct Action Scrape
+cu Device cell lifter
+ct Using cu
+cv Action transfer
+cw Reagent suspension
+cv Acts-on cw
+cx Modifier pre-chilled
+cy Amount 2 mL
+cz Location tube
+cv Site cz
+cz Measure cy
+cz Mod-Link cx
+da Action Spin
+db Speed 1,000×g
+dc Time 2 min
+dd Temperature 4 °C
+da Setting db
+da Setting dc
+da Setting dd
+de Action Aspirate
+df Reagent supernatant
+de Acts-on df
+dg Action resuspend
+dh Reagent pellet
+dg Acts-on dh
+di Amount 950 µL
+dj Modifier ice-cold
+dk Reagent PBS+PI
+dg Site dk
+dk Measure di
+dk Mod-Link dj
+dl Reagent KPBS
+dl Or dk
+dm Action Take
+dn Amount 25 µL
+do Reagent whole cell/homogenate input
+dm Product do
+L5
+dp Action Homogenize
+dq Modifier remaining
+dr Reagent suspension
+dp Acts-on dr
+dr Mod-Link dq
+ds Action passing
+dp Commands ds
+dt Device insulin syringe
+ds Using dt
+du Numerical 2X
+ds Count du
+dv Action keep
+dw Location ice
+dv Site dw
+dx Action avoid
+dy Reagent bubbles
+dx Acts-on dy
+dz Action Clarify
+ea Reagent nuclei/unbroken cells
+dz Acts-on ea
+eb Action spin
+ec Speed 1,000×g
+ed Time 2 min
+ee Temperature 4 °C
+eb Setting ec
+eb Setting ed
+eb Setting ee
+ef Modifier Carefully
+eg Action transfer
+eg Mod-Link ef
+eh Reagent supernatant
+eg Acts-on eh
+ei Reagent organelle-containing fraction
+ei Coreference-Link eh
+ej Location tube
+eg Site ej
+ek Amount 100 µL
+el Modifier washed
+em Reagent anti-HA beads
+em Measure ek
+em Mod-Link el
+em Meronym ej
+en Action Avoid
+eo Action disturbing
+en Commands eo
+ep Reagent pellet
+eo Acts-on ep
+L6
+eq Action Incubate
+er Modifier gentle
+es Device rotator
+eq Site es
+es Mod-Link er
+et Temperature 4 °C
+eu Time 10 min
+eq Setting et
+eq Setting eu
+ev Method proteomics workflow
+ew Method Metabolomics workflows
+ex Action use
+ey Modifier shorter
+ez Time 3 to 5 min
+fa Method capture
+ex Using fa
+ex Setting ez
+ez Mod-Link ey
+fe Action Place
+ff Device magnet
+fe Site ff
+fh Reagent beads
+fi Action collect
+fi Acts-on fh
+fj Action keep
+fk Measure-Type timing
+fj Measure-Type-Link fk
+fl Modifier ~
+fm Time 25 s
+fm Mod-Link fl
+fi Setting fm
+fn Action Remove
+fo Reagent supernatant
+fn Acts-on fo
+L7
+fp Action Wash
+fq Reagent beads
+fp Acts-on fq
+fr Numerical 3×
+fp Count fr
+fs Amount 1 mL
+ft Modifier cold
+fu Reagent PBS+PI
+fp Using fu
+fu Measure fs
+fu Mod-Link ft
+fv Numerical 3×
+fw Amount 1 mL
+fx Modifier cold
+fy Reagent KPBS
+fy Measure fw
+fy Mod-Link fx
+fy Or fu
+fz Modifier first
+ga Method wash
+ga Mod-Link fz
+gb Action remove
+gc Reagent liquid
+gb Acts-on gc
+ge Seal cap
+gb Site ge
+gf Action pipet
+gg Method up/down
+gf Using gg
+gh Modifier consistently
+gf Mod-Link gh
+gi Modifier second
+gj Method wash
+gj Mod-Link gi
+gk Action resuspend
+gl Reagent beads
+gk Acts-on gl
+gm Action transfer
+gn Modifier fresh
+go Location tube
+gm Site go
+go Mod-Link gn
+gp Modifier third
+gr Method clean-tube wash
+gq Method wash
+gq Mod-Link gp
+gs Modifier final
+gt Method wash
+gt Mod-Link gs
+gu Action remove
+gv Modifier all residual
+gw Reagent buffer
+gu Acts-on gw
+gw Mod-Link gv

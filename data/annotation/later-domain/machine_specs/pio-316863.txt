@@ -1,0 +1,98 @@
+L0
+a Modifier Joint
+b Method extraction
+b Mod-Link a
+c Reagent DNA
+d Reagent RNA
+e Reagent plankton filters
+f Modifier commercial
+g Reagent DNAbsolute kit
+g Mod-Link f
+L1
+h Amount 50 mL
+i Location Falcon tube
+i Measure h
+j Action preheat
+j Site i
+k Amount 3600 µL
+l Reagent Lysis buffer 1
+j Acts-on l
+l Measure k
+m Time 5 min
+n Temperature 56°C
+j Setting m
+j Setting n
+L2
+o Action Recover
+p Modifier still-frozen
+q Reagent filter
+o Acts-on q
+q Mod-Link p
+r Device forceps
+o Using r
+s Action cut
+t Mention it
+s Acts-on t
+t Coreference-Link q
+u Device scalpel
+s Using u
+v Amount 50 mL
+w Location tube
+s Site w
+w Measure v
+x Modifier preheated
+y Reagent LB1
+y Mod-Link x
+y Meronym w
+L3
+z Action Add
+aa Amount 360 µL
+ab Reagent DTT
+z Acts-on ab
+ab Measure aa
+ac Concentration 0.1 M
+ab Measure ac
+ad Generic-Measure 1/10 Vol
+ab Measure ad
+ae Concentration 10 mM
+ab Measure ae
+af Action inhibit
+ag Reagent RNases
+af Acts-on ag
+L4
+ah Action Pour
+ai Modifier entire
+aj Reagent contents
+ah Acts-on aj
+aj Mod-Link ai
+ak Amount one
+al Location bashing bead tube
+al Measure ak
+aj Meronym al
+L5
+am Action Vortex
+an Time 15 sec
+am Setting an
+L6
+ao Modifier Briefly
+ap Action centrifuge
+ap Mod-Link ao
+aq Method ramp up and down
+ap Using aq
+ar Speed 1000g
+ap Setting ar
+L7
+as Action Add
+at Amount 360 µL
+au Reagent Proteinase K
+as Acts-on au
+au Measure at
+av Action mix
+aw Modifier gently
+av Mod-Link aw
+L8
+ax Action Incubate
+ay Temperature 56°C
+az Speed 300 rpm
+ax Setting ay
+ax Setting az

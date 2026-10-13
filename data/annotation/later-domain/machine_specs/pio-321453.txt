@@ -1,0 +1,170 @@
+L0
+a Reagent DQ-BSA
+c Method proteolytic activity assay
+L1
+d Modifier When fully differentiated
+e Action seed
+f Reagent astrocytes
+e Acts-on f
+f Mod-Link d
+g Concentration 10,000 cell/well
+f Measure g
+h Concentration 30,000 cells/cm²
+f Measure h
+i Location 96-well glass-bottom thickness plate
+e Site i
+j Modifier pre-coated
+i Mod-Link j
+k Concentration 1%
+l Reagent gelatin
+l Measure k
+l Meronym i
+m Amount 100μL
+n Reagent Astrocyte Medium
+e Using n
+n Measure m
+L2
+o Action Change
+p Reagent media
+o Acts-on p
+q Reagent FBS-free maturation media
+o Using q
+r Concentration 50%
+s Reagent DMEM/F12
+s Measure r
+s Meronym q
+t Concentration 50%
+u Reagent Neurobasal
+u Measure t
+u Meronym q
+v Concentration 1x
+w Reagent B27
+w Measure v
+w Meronym q
+x Modifier wihtout Vitamin A
+w Mod-Link x
+y Concentration 1x
+z Reagent N2
+z Measure y
+z Meronym q
+aa Concentration 1X
+ab Reagent NEAA
+ab Measure aa
+ab Meronym q
+ac Concentration 1X
+ad Reagent GlutaMAX
+ad Measure ac
+ad Meronym q
+ae Concentration 10ng/mL
+af Reagent CNTF
+af Measure ae
+af Meronym q
+ag Concentration 1%
+ah Reagent pennicillin-streptomycin
+ah Measure ag
+ah Meronym q
+L3
+ba Action Add
+bb Concentration 100nM
+bc Reagent BafilomycinA1
+ba Acts-on bc
+bc Measure bb
+bd Location assay control wells
+ba Site bd
+be Action inhibit
+L4
+bf Action Prepare
+bg Reagent DQ-BSA Red
+bf Acts-on bg
+bh Method manufacturer's recommendation
+bf Using bh
+bi Action dissolving
+bf Commands bi
+bj Amount 1mg
+bk Location vial
+bk Measure bj
+bi Acts-on bk
+bl Amount 1mL
+bm Reagent PBS
+bi Site bm
+bm Measure bl
+bn Action make
+bo Concentration 1mg/mL
+bp Reagent solution
+bn Product bp
+bp Measure bo
+L5
+bq Action Replace
+br Reagent media
+bq Acts-on br
+bs Reagent FBS-free maturation media
+bq Using bs
+bt Concentration 1μg/mL
+bu Reagent DQ-BSA
+bq Using bu
+bu Measure bt
+bv Action Keep
+bw Concentration 100nM
+bx Reagent bafilomycin A1
+bv Acts-on bx
+bx Measure bw
+by Location control wells
+bv Site by
+bz Action Incubate
+ca Temperature 37 °C
+bz Setting ca
+cb Time 00:30:00
+bz Setting cb
+L6
+cc Action Replace
+cd Modifier fresh
+ce Reagent FBS-free maturation media
+cc Using ce
+ce Mod-Link cd
+cf Action Keep
+cg Concentration 100nM
+ch Reagent bafilomycin A1
+cf Acts-on ch
+ch Measure cg
+ci Location control wells
+cf Site ci
+L7
+cj Modifier Alternatively
+ck Action image
+ck Mod-Link cj
+cl Modifier live
+cm Reagent cells
+ck Acts-on cm
+cm Mod-Link cl
+cn Numerical once
+ck Count cn
+co Time 12-24 hours
+ck Setting co
+cp Modifier any
+cq Device microscope
+ck Using cq
+cq Mod-Link cp
+cr Device cell incubator
+cr Meronym cq
+L8
+cs Modifier When fully differentiated
+ct Action seed
+cu Reagent astrocytes
+ct Acts-on cu
+cu Mod-Link cs
+cv Concentration 50,000 cell/well
+cu Measure cv
+cw Concentration 15,000 cells/cm²
+cu Measure cw
+cx Location 12-well plate
+ct Site cx
+cy Modifier pre-coated
+cx Mod-Link cy
+cz Concentration 1%
+da Reagent gelatin
+da Measure cz
+da Meronym cx
+db Amount 1mL
+dc Reagent Astrocyte Medium
+ct Using dc
+dc Measure db

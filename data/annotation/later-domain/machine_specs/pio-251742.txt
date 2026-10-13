@@ -1,0 +1,339 @@
+L0
+a Method Preparation
+b Reagent cryo- and paraffin sections
+c Reagent spheroids
+d Method histological and immunofluorescence analysis
+L1
+e Reagent SV-HUC-1
+f Reagent T24 spheroids
+g Action grown
+g Acts-on e
+g Acts-on f
+h Location 96-well ultra-low attachment U-shaped bottom microplates
+g Site h
+i Action incubated
+j Modifier humidified
+k Device incubator
+i Site k
+k Mod-Link j
+l Concentration 5%
+m Reagent CO₂
+m Measure l
+m Meronym k
+n Temperature 37°C
+i Setting n
+o Measure-Type Seeding densities
+p Concentration 100,000 cells per well
+p Of-Type o
+q Amount 200 µL
+r Reagent culture medium
+r Measure q
+s Action used
+t Action generate
+u Reagent spheroids
+t Product u
+v Reagent Spheroids
+w Action grown
+w Acts-on v
+x Time 7 days
+w Setting x
+y Method preparation
+z Method histological and immunofluorescence analysis
+L2
+aa Method Fixation
+ab Action Fix
+ac Reagent spheroids
+ab Acts-on ac
+ad Modifier cold
+ae Concentration 4% (w/v)
+af Reagent formaldehyde
+ab Site af
+af Measure ae
+af Mod-Link ad
+ag Reagent PBS
+af Meronym ag
+ah pH pH 7.2-7.4
+ag Measure ah
+ai Time 15 minutes
+ab Setting ai
+aj Temperature room temperature
+ab Setting aj
+ak Action ensuring
+al Reagent spheroids
+am Modifier completely submerged
+al Mod-Link am
+an Reagent fixative
+an Coreference-Link af
+ao Action Wash
+ap Reagent spheroids
+ao Acts-on ap
+aq Numerical three times
+ao Count aq
+ar Reagent PBS
+ao Site ar
+as Time 5 minutes
+ao Setting as
+at Modifier gently
+au Action aspirating
+au Mod-Link at
+av Reagent solution
+au Acts-on av
+aw Modifier gentle
+ax Action adding
+ax Mod-Link aw
+ay Modifier fresh
+az Reagent PBS
+ax Acts-on az
+az Mod-Link ay
+ba Device pipette
+ax Using ba
+ao Commands au
+ao Commands ax
+L3
+bb Method Cryoprotection
+bc Action removing
+bd Reagent PBS
+bc Acts-on bd
+be Action submerge
+bf Reagent spheroids
+be Acts-on bf
+bg Concentration 30%
+bh Reagent sucrose
+be Site bh
+bh Measure bg
+bi Reagent PBS
+bh Meronym bi
+bj Modifier at least
+bk Time 2 hours
+be Setting bk
+bk Mod-Link bj
+bl Temperature roomtemperature
+be Setting bl
+bm Time overnight
+be Setting bm
+bm Or bk
+bn Temperature 4°C
+be Setting bn
+L4
+bo Method Sectioning and storage
+bp Action Cut
+bq Reagent samples
+bp Acts-on bq
+br Action embedded
+bs Reagent freezing medium
+br Site bs
+bt Size 5 - 10 µm
+bu Reagent sections
+bp Product bu
+bu Measure bt
+bv Device cryostat
+bp Using bv
+bw Temperature ~-20 °C
+bv Setting bw
+bx Action Mount
+by Reagent sections
+bx Acts-on by
+bz Location microscopic slides
+bx Site bz
+ca Action leave
+cb Action dry
+cc Temperature room temperature
+cb Setting cc
+cd Time 1 hour
+cb Setting cd
+ce Location slides
+cf Reagent sections
+cf Meronym ce
+cg Action stored
+cg Acts-on ce
+ch Temperature -20°C
+ci Temperature -80°C
+cg Setting ch
+ci Or ch
+cj Time several months
+ck Time up to a year
+cg Setting cj
+cg Setting ck
+L5
+cl Method Fixation
+cm Action Incubate
+cn Reagent spheroids
+cm Acts-on cn
+co Modifier cold
+cp Concentration 4% (w/v)
+cq Reagent formaldehyde
+cm Site cq
+cq Measure cp
+cq Mod-Link co
+cr Reagent PBS
+cq Meronym cr
+cs pH pH 7.2 – 7.4
+cr Measure cs
+ct Time 30 minutes
+cm Setting ct
+cu Temperature room temperature
+cm Setting cu
+cv Action ensuring
+cw Reagent spheroids
+cx Modifier completely submerged
+cw Mod-Link cx
+cy Reagent fixative
+cy Coreference-Link cq
+cz Action Wash
+da Reagent PBS
+cz Using da
+db Numerical four times
+cz Count db
+dc Time 5 minutes
+cz Setting dc
+dd Temperature room temperature
+cz Setting dd
+L6
+de Method Dehydration and clearing
+df Action Perform
+dg Temperature room temperature
+df Setting dg
+dh Device orbital shaker
+df Using dh
+di Speed 100 rpm
+dh Setting di
+dj Speed 0.056 × g
+dj Coreference-Link di
+dk Measure-Type orbital diameter
+dl Size 10 mm
+dh Measure dl
+dm Action Submerge
+dn Concentration 50%
+do Reagent ethanol
+dm Site do
+do Measure dn
+dp Time 5 minutes
+dm Setting dp
+dq Action Submerge
+dr Concentration 70%
+ds Reagent ethanol
+dq Site ds
+ds Measure dr
+dt Time 5 minutes
+dq Setting dt
+du Action Submerge
+dv Concentration 90%
+dw Reagent ethanol
+du Site dw
+dw Measure dv
+dx Time 5 minutes
+du Setting dx
+dy Action Submerge
+dz Concentration 100%
+ea Reagent ethanol
+dy Site ea
+ea Measure dz
+eb Time 5 minutes
+dy Setting eb
+ec Action Transfer
+ed Reagent spheroids
+ec Acts-on ed
+ee Location glass vials
+ec Site ee
+ef Action Mix
+eg Generic-Measure 2/3
+eh Concentration 100%
+ei Reagent ethanol
+ef Acts-on ei
+ei Measure eg
+ei Measure eh
+ej Generic-Measure 1/3
+ek Reagent xylene
+ef Acts-on ek
+ek Measure ej
+el Action submerge
+em Reagent spheroids
+el Acts-on em
+en Time 5 minutes
+el Setting en
+eo Action Mix
+ep Generic-Measure 1/2
+eq Concentration 100%
+er Reagent ethanol
+eo Acts-on er
+er Measure ep
+er Measure eq
+es Generic-Measure 1/2
+et Reagent xylene
+eo Acts-on et
+et Measure es
+eu Action submerge
+ev Reagent spheroids
+eu Acts-on ev
+ew Time 5 minutes
+eu Setting ew
+ex Action Submerge
+ey Concentration 100%
+ez Reagent xylene
+ex Site ez
+ez Measure ey
+fa Time 5 minutes
+ex Setting fa
+L7
+fb Method Pretreatment
+fc Reagent cryosections
+fd Action Transfer
+fe Location slides
+fd Acts-on fe
+ff Reagent cryosections
+ff Meronym fe
+fg Reagent spheroids
+fh Device freezer
+fd Site fh
+fi Location racks
+fj Location containers
+fd Site fi
+fd Site fj
+fj Or fi
+fk Action Warm
+fl Reagent cryosections
+fk Acts-on fl
+fm Temperature room temperature
+fk Setting fm
+fn Action rinse
+fo Reagent PBS
+fn Using fo
+fp Time 5 minutes
+fn Setting fp
+L8
+fq Method Histological staining process
+fr Reagent cryosections
+fs Reagent paraffin sections
+ft Action Perform
+fu Temperature room temperature
+ft Setting fu
+fv Action Incubate
+fw Reagent cryosections
+fx Reagent paraffin sections
+fv Acts-on fw
+fv Acts-on fx
+fy Time 15 seconds
+fv Setting fy
+fz Reagent Mayer's haematoxylin solution
+fv Site fz
+ga Action Wash
+gb Reagent sections
+ga Acts-on gb
+gc Reagent distilled water
+ga Using gc
+gd Action submerge
+ge Action Rinse
+gf Reagent sections
+ge Acts-on gf
+gg Reagent running water
+ge Using gg
+gh Time 1 minute
+ge Setting gh
+gi Action Incubate
+gj Reagent sections
+gi Acts-on gj
+gk Reagent eosin
+gi Site gk
+gl Time 2 minutes
+gi Setting gl
+gm Action submerge

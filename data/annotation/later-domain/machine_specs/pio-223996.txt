@@ -1,0 +1,75 @@
+L0
+a Method Isolation
+b Reagent Autophagosomes
+c Reagent Proteinase K
+d Method Protection Assay
+L1
+e Action Use
+f Reagent cell lines
+e Using f
+g Reagent HAP1 ATG9A-GFP
+h Reagent HAP1 ATG9A-GFP ATG2 DKO
+e Using g
+e Using h
+L2
+i Action Seed
+j Reagent cells
+i Acts-on j
+k Size 15 cm
+l Location dishes
+i Site l
+l Measure k
+m Amount two
+n Location dishes
+n Measure m
+o Modifier per condition
+n Mod-Link o
+n Coreference-Link l
+L3
+p Action Treat
+q Reagent cells
+p Acts-on q
+r Reagent Earle’s Balanced Salt Solution
+s Reagent EBSS
+s Coreference-Link r
+p Using r
+t Concentration 100 nanomolar (nM)
+u Reagent Bafilomycin A1
+v Reagent BafA
+v Coreference-Link u
+u Measure t
+p Using u
+L4
+w Action Incubate
+x Time 02:00:00
+w Setting x
+y Action harvesting
+L5
+z Action Harvest
+aa Reagent cells
+z Acts-on aa
+ab Method trypsinization
+z Using ab
+ac Action pellet
+ad Method centrifugation
+ac Using ad
+L6
+ae Action Wash
+af Numerical once
+ae Count af
+ag Reagent PBS
+ae Using ag
+L7
+ah Action Resuspend
+ai Reagent pellets
+ah Acts-on ai
+aj Amount 800 µL
+ak Reagent Vesicle Isolation Buffer
+al Reagent VIB
+al Coreference-Link ak
+ak Measure aj
+ah Site ak
+L8
+am Action Transfer
+an Location LoBind tubes
+am Site an

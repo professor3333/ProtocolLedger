@@ -1,0 +1,132 @@
+L0
+0a Reagent Glyoxal
+0b Method Transcardiac Perfusion
+0c Method Cryopreservation
+0d Method Immunohistochemistry
+0e Reagent Mouse Brain Tissue
+L1
+1a Device fume hood
+1b Action add
+1c Amount 50 mL
+1d Reagent type I water
+1e Location glass volumetric flask
+1f Amount 100 mL
+1b Site 1a
+1b Acts-on 1d
+1d Measure 1c
+1b Site 1e
+1e Measure 1f
+L2
+2a Modifier Slowly
+2b Action add
+2c Amount 22.5 mL
+2d Concentration 40%
+2e Reagent glyoxal solution
+2f Location volumetric flask
+2g Reagent type I water
+2h Amount 25 mL
+2i Device pipette
+2b Mod-Link 2a
+2b Acts-on 2e
+2e Measure 2c
+2e Measure 2d
+2b Site 2f
+2g Meronym 2f
+2b Using 2i
+2i Measure 2h
+L3
+3a Action Homogenize
+3b Reagent solution
+3c Modifier gently
+3d Action swirl
+3e Location volumetric flask
+3a Acts-on 3b
+3d Mod-Link 3c
+3d Acts-on 3e
+L4
+4a Modifier Slowly
+4b Action add
+4c Amount 8 mL
+4d Reagent glacial acetic acid
+4e Concentration 99%
+4f Reagent mixture
+4g Amount 10 mL
+4h Device pipette
+4b Mod-Link 4a
+4b Acts-on 4d
+4d Measure 4c
+4d Measure 4e
+4b Site 4f
+4b Using 4h
+4h Measure 4g
+L5
+5a Action Add
+5b Reagent solution
+5c Reagent NaOH pellets
+5d Action adjust
+5e Measure-Type pH
+5f Numerical 4-5
+5a Site 5b
+5a Acts-on 5c
+5d Measure-Type-Link 5e
+5f Of-Type 5e
+5g Reagent NaOH
+5h Modifier gently
+5i Action swirl
+5j Reagent solution
+5i Mod-Link 5h
+5i Acts-on 5j
+L6
+6a Action Bring
+6b Measure-Type final volume
+6c Amount 100 mL
+6d Reagent type I water
+6a Measure-Type-Link 6b
+6a Setting 6c
+6a Using 6d
+6e Action homogenise
+6f Modifier gently
+6g Action swirling
+6h Location flask
+6g Mod-Link 6f
+6g Acts-on 6h
+L7
+7a Action Prep
+7b Action collect
+7c Modifier all
+7d Reagent materials
+7a Acts-on 7d
+7b Acts-on 7d
+7d Mod-Link 7c
+7e Location transport tray
+7f Location waste bags
+7g Modifier labelled
+7h Location Falcon tubes
+7i Amount 15 mL
+7h Mod-Link 7g
+7h Measure 7i
+7j Modifier labelled
+7k Location Falcon tubes
+7l Amount 50 mL
+7k Mod-Link 7j
+7k Measure 7l
+7m Reagent PBS
+7n Concentration 1x
+7m Measure 7n
+7o Reagent glyoxal solution
+7p Device syringes
+7q Device needles
+7r Reagent ice
+7s Device dissection kit
+7t Reagent isoflurane
+7u Device anaesthesia chamber
+L8
+8a Action Transport
+8b Reagent animals
+8c Location procedure room
+8d Modifier appropriate
+8e Location transport container
+8a Acts-on 8b
+8a Site 8c
+8a Using 8e
+8e Mod-Link 8d

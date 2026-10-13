@@ -1,0 +1,117 @@
+L0
+0a Action Transforming
+0b Reagent Schizochytrium sp.
+0c Method Electroporation
+0a Acts-on 0b
+0a Using 0c
+L1
+1a Action Harvest
+1b Reagent cells
+1c Action centrifuging
+1d Speed 5900 x g
+1e Temperature 4 °C
+1f Time 10 minutes
+1g Action Decant
+1h Reagent supernatant
+1a Acts-on 1b
+1c Acts-on 1b
+1c Setting 1d
+1c Setting 1e
+1c Setting 1f
+1g Acts-on 1h
+L2
+2a Action Grow
+2b Reagent Schizochytrium sp.
+2c Speed 200 rpm
+2d Temperature 28 °C
+2e Time 1 day
+2f Reagent Seed Media
+2a Acts-on 2b
+2a Setting 2c
+2a Setting 2d
+2a Setting 2e
+2a Site 2f
+L3
+3a Action Resuspend
+3b Modifier ice-cold
+3c Modifier sterile
+3d Reagent water
+3a Using 3d
+3d Mod-Link 3b
+3d Mod-Link 3c
+3e Action centrifuge
+3f Speed 5900 x g
+3g Temperature 4 °C
+3h Time 10 minutes
+3e Setting 3f
+3e Setting 3g
+3e Setting 3h
+3i Action Decant
+3j Reagent supernatant
+3i Acts-on 3j
+L4
+4a Action Resuspend
+4b Concentration 1 Molarity (M)
+4c Reagent (D-)-Sorbitol
+4a Using 4c
+4c Measure 4b
+4d Action centrifuge
+4e Speed 5900 x g
+4f Temperature 4 °C
+4g Time 10 minutes
+4d Setting 4e
+4d Setting 4f
+4d Setting 4g
+4h Action Decant
+4i Reagent supernatant
+4h Acts-on 4i
+L5
+5a Action Resuspend
+5b Reagent pellet
+5c Concentration 1 Molarity (M)
+5d Reagent (D-)-Sorbitol
+5a Acts-on 5b
+5a Using 5d
+5d Measure 5c
+L6
+6a Action Add
+6b Reagent cells
+6c Amount 5 µg
+6d Modifier linearized
+6e Reagent DNA
+6f Modifier 1 mm gap
+6g Location electroporation cuvette
+6a Acts-on 6b
+6a Acts-on 6e
+6e Measure 6c
+6e Mod-Link 6d
+6a Site 6g
+6g Mod-Link 6f
+L7
+7a Method electroporation
+7b Amount 1 mL
+7c Reagent seed medium
+7d Action added
+7e Reagent mixture
+7f Action incubated
+7g Speed 100 rpm
+7h Temperature 28 °C
+7i Time 4 hours
+7d Acts-on 7c
+7c Measure 7b
+7d Site 7e
+7f Acts-on 7e
+7f Setting 7g
+7f Setting 7h
+7f Setting 7i
+L8
+8a Action Spread
+8b Location GPY plates
+8c Concentration 40 μg/mL
+8d Reagent Zeocin
+8e Action grown
+8f Temperature 28 °C
+8a Site 8b
+8d Meronym 8b
+8d Measure 8c
+8e Setting 8f

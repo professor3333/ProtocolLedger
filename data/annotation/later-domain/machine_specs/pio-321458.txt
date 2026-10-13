@@ -1,0 +1,178 @@
+L0
+0a Reagent Cholesterol-lowering drug
+0b Action treatment
+0c Reagent iPSC-derived astrocytes
+0b Using 0a
+0b Acts-on 0c
+L1
+1a Modifier fully differentiated
+1b Action seed
+1c Reagent astrocytes
+1d Concentration 100,000 - 200,000 cell/well
+1e Concentration 10,000 - 20,000 cells/cm²
+1f Location 6-wellplate
+1g Modifier pre-coated
+1h Concentration 1%
+1i Reagent gelatin
+1j Amount 2mL
+1k Reagent Astrocyte Media
+1b Acts-on 1c
+1c Mod-Link 1a
+1c Measure 1d
+1c Measure 1e
+1b Site 1f
+1f Mod-Link 1g
+1f Meronym 1i
+1i Measure 1h
+1b Site 1k
+1k Measure 1j
+L2
+2a Time 3 days
+2b Action change
+2c Reagent media
+2d Reagent Astrocyte Media
+2e Modifier without FBS
+2b Setting 2a
+2b Acts-on 2c
+2b Product 2d
+2d Mod-Link 2e
+2f Action Supplement
+2g Reagent cholesterol-lowering drugs
+2f Using 2g
+2h Reagent 2-hydroxypropyl-β-cyclodextrin
+2i Concentration 100 µM
+2j Reagent methyl-β-cyclodextrin
+2k Concentration 100 µM
+2l Reagent atorvastatin
+2m Concentration 50 nM
+2n Reagent efavirenz
+2o Concentration 10 µM
+2p Reagent LXR-623
+2q Concentration 10 µM
+2r Reagent T0901317
+2s Concentration 10 µM
+2h Measure 2i
+2j Measure 2k
+2l Measure 2m
+2n Measure 2o
+2p Measure 2q
+2r Measure 2s
+2h Meronym 2g
+2j Meronym 2g
+2l Meronym 2g
+2n Meronym 2g
+2p Meronym 2g
+2r Meronym 2g
+2t Action Use
+2u Reagent DMSO
+2v Reagent vehicle control
+2t Acts-on 2u
+2t Product 2v
+L3
+3a Time 3-4 days
+3b Action seed
+3c Reagent cells
+3d Concentration 0.1%
+3e Reagent gelatin
+3f Modifier coated
+3g Location 96 well plates
+3h Concentration 10,000 cells/well
+3i Concentration 30,000 cells/cm²
+3j Reagent Astrocyte Media
+3b Acts-on 3c
+3b Site 3g
+3g Mod-Link 3f
+3g Meronym 3e
+3e Measure 3d
+3c Measure 3h
+3c Measure 3i
+3b Site 3j
+3k Action include
+3l Reagent drug treatment
+3m Modifier same concentration
+3k Acts-on 3l
+3l Mod-Link 3m
+L4
+4a Action Change
+4b Reagent media
+4c Reagent FBS-free maturation media
+4a Acts-on 4b
+4a Product 4c
+4d Concentration 50%
+4e Reagent DMEM/F12
+4f Concentration 50%
+4g Reagent Neurobasal
+4h Concentration 1x
+4i Reagent B27
+4j Modifier wihtout Vitamin A
+4k Concentration 1x
+4l Reagent N2
+4m Concentration 1X
+4n Reagent NEAA
+4o Concentration 1X
+4p Reagent GlutaMAX
+4q Concentration 10ng/mL
+4r Reagent CNTF
+4s Concentration 1%
+4t Reagent pennicillin-streptomycin
+4e Measure 4d
+4g Measure 4f
+4i Measure 4h
+4i Mod-Link 4j
+4l Measure 4k
+4n Measure 4m
+4p Measure 4o
+4r Measure 4q
+4t Measure 4s
+4e Meronym 4c
+4g Meronym 4c
+4i Meronym 4c
+4l Meronym 4c
+4n Meronym 4c
+4p Meronym 4c
+4r Meronym 4c
+4t Meronym 4c
+4u Action include
+4v Reagent drug treatment
+4w Modifier sam
+4u Acts-on 4v
+4v Mod-Link 4w
+L5
+5a Action add
+5b Reagent drug treatment
+5c Reagent media
+5d Action change
+5e Modifier every 3-4 days
+5a Acts-on 5b
+5d Acts-on 5c
+5a Mod-Link 5e
+L6
+6a Action Prepare
+6b Reagent 2-hydroxypropyl-β-cyclodextrin
+6c Concentration 100mM
+6d Reagent stock
+6e Reagent DMSO
+6a Acts-on 6b
+6a Product 6d
+6d Measure 6c
+6a Using 6e
+L7
+7a Action Prepare
+7b Reagent methyl-β-cyclodextrin
+7c Concentration 100mM
+7d Reagent stock
+7e Reagent DMSO
+7a Acts-on 7b
+7a Product 7d
+7d Measure 7c
+7a Using 7e
+L8
+8a Action Prepare
+8b Reagent atorvastatin
+8c Concentration 50μM
+8d Reagent stock
+8e Reagent DMSO
+8a Acts-on 8b
+8a Product 8d
+8d Measure 8c
+8a Using 8e

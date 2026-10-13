@@ -1,0 +1,246 @@
+L0
+a Modifier Multiplexed
+b Method Iterative FISH
+b Mod-Link a
+L1
+c Action setup
+d Method iterative RNA FISH experiment
+e Reagent tissue
+f Reagent cell-based samples
+c Using d
+c Acts-on e
+c Acts-on f
+f Or e
+g Reagent tissue
+h Reagent cell
+h Or g
+i Method preparation
+j Method encoding probe hybridization
+k Method labeling
+l Method sample gel embedding
+m Method clearing
+n Reagent sample
+o Reagent reagents
+p Action prepared
+q Modifier sterile
+r Modifier RNase-free
+p Acts-on o
+o Mod-Link q
+o Mod-Link r
+s Method incubation
+t Modifier protected from light
+s Mod-Link t
+u Reagent formamide
+v Action work
+w Modifier Always
+x Location fume hood
+y Reagent formamide
+v Mod-Link w
+v Site x
+v Using y
+z Action avoid
+z1 Action avoid
+L2
+a2 Action Refer
+b2 Method SOP003
+a2 Using b2
+c2 Method Coverslip Functionalization
+d2 Modifier PDL-coated
+e2 Location coverslips
+e2 Mod-Link d2
+f2 Reagent tissue
+g2 Action post-fixed
+g2 Acts-on f2
+h2 Location surface
+g2 Site h2
+i2 Concentration 4 %
+j2 Reagent PFA
+g2 Using j2
+j2 Measure i2
+L3
+a3 Action permeabilize
+b3 Reagent tissue
+a3 Acts-on b3
+c3 Action immerse
+d3 Modifier slip mounted
+e3 Reagent tissue
+c3 Acts-on e3
+e3 Mod-Link d3
+f3 Concentration 70 % (v/v)
+g3 Reagent ethanol
+g3 Measure f3
+h3 Reagent nuclease free water
+c3 Site g3
+c3 Site h3
+i3 Time Overnight
+j3 Temperature 4 °C
+c3 Setting i3
+c3 Setting j3
+l3 Modifier Pyrex
+m3 Size 60 mm
+n3 Location petri dish
+c3 Site n3
+n3 Mod-Link l3
+n3 Measure m3
+L4
+a4 Action Rinse
+b4 Reagent sample
+a4 Acts-on b4
+c4 Numerical 3-4x
+a4 Count c4
+d4 Time 00:05:00
+a4 Setting d4
+e4 Concentration 1x
+f4 Reagent PBS solution
+a4 Using f4
+f4 Measure e4
+g4 Action Aspirate
+h4 Reagent PBS rinse
+g4 Acts-on h4
+i4 Reagent sample
+g4 Site i4
+L5
+a5 Action permeabilize
+b5 Reagent cells
+a5 Acts-on b5
+c5 Action immerse
+d5 Modifier slip mounted
+e5 Reagent sample
+c5 Acts-on e5
+e5 Mod-Link d5
+f5 Concentration 70 % (v/v)
+g5 Reagent ethanol
+g5 Measure f5
+c5 Site g5
+h5 Time Overnight
+c5 Setting h5
+i5 Temperature 4 °C
+c5 Setting i5
+j5 Size 60 mm
+k5 Modifier Pyrex
+l5 Location petri dish
+c5 Site l5
+l5 Measure j5
+l5 Mod-Link k5
+n5 Action pipette
+o5 Amount 100 µL
+p5 Reagent permeabilization buffer
+q5 Reagent PBS-t
+n5 Acts-on p5
+p5 Measure o5
+q5 Coreference-Link p5
+r5 Modifier each
+s5 Location well
+n5 Site s5
+s5 Mod-Link r5
+t5 Action incubate
+u5 Temperature Room temperature
+v5 Time 00:10:00
+t5 Setting u5
+t5 Setting v5
+w5 Modifier gentle
+x5 Method rocking
+t5 Using x5
+x5 Mod-Link w5
+y5 Action Rinse
+z5 Reagent permeabilization buffer rinse
+aa5 Reagent PBS-tw
+y5 Using z5
+aa5 Coreference-Link z5
+ab5 Action rinse
+ac5 Modifier again
+ab5 Mod-Link ac5
+ad5 Concentration 1x
+ae5 Reagent PBS
+ab5 Using ae5
+ae5 Measure ad5
+af5 Action Aspirate
+ag5 Modifier most of
+ah5 Reagent PBS rinse
+af5 Acts-on ah5
+ah5 Mod-Link ag5
+ai5 Action move on
+aj5 Method step 15
+ai5 Using aj5
+L6
+a6 Reagent sample
+b6 Action immersed
+b6 Acts-on a6
+c6 Concentration 1x
+d6 Reagent PBS
+b6 Site d6
+d6 Measure c6
+f6 Modifier hydrophobic
+g6 Device pen
+h6 Action draw
+h6 Using g6
+g6 Mod-Link f6
+i6 Location barrier
+h6 Acts-on i6
+j6 Reagent sample
+h6 Site j6
+k6 Action ~dry
+l6 Location barrier
+k6 Acts-on l6
+m6 Temperature 37 °C
+k6 Setting m6
+n6 Time ~00:05:00 min
+k6 Setting n6
+o6 Action Ensure
+p6 Reagent sample
+o6 Acts-on p6
+q6 Action desiccate
+o6 Commands q6
+r6 Modifier not fully
+q6 Mod-Link r6
+L7
+a7 Action Assemble
+b7 Modifier humidified
+c7 Location chamber
+a7 Acts-on c7
+c7 Mod-Link b7
+e7 Action preheat
+f7 Temperature 50-55 °C
+e7 Setting f7
+L8
+a8 Action Dispense
+b8 Amount 125 µL
+c8 Temperature 47°C
+d8 Modifier prewarmed
+e8 Reagent Encoding Hybridization Buffer
+a8 Acts-on e8
+e8 Measure b8
+e8 Mod-Link d8
+d8 Setting c8
+f8 Concentration 5-200 micromolar (µM)
+g8 Reagent encoding probes
+g8 Measure f8
+h8 Concentration 1-5 micromolar (µM)
+i8 Reagent linker
+i8 Measure h8
+g8 Meronym e8
+i8 Meronym e8
+j8 Action Add
+k8 Modifier RNase-pretreated
+l8 Seal overlay coverslip
+j8 Acts-on l8
+l8 Mod-Link k8
+o8 Action Parafilm
+p8 Location petri dish
+o8 Acts-on p8
+q8 Action place
+r8 Modifier humidified
+s8 Location chamber
+q8 Site s8
+s8 Mod-Link r8
+t8 Action Adjust
+v8 Reagent probe
+u8 Measure-Type concentration
+t8 Measure-Type-Link u8
+t8 Acts-on v8
+y8 Action consider
+z8 Measure-Type total probe number
+y8 Measure-Type-Link z8
+aa8 Concentration 1nM
+ab8 Reagent encoding probe
+ab8 Measure aa8

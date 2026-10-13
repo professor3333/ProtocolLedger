@@ -1,0 +1,141 @@
+L0
+0a Action Collection
+0b Action treatment
+0c Reagent conditioned media
+0b Using 0c
+L1
+1a Action follow
+1b Method differentiation protocol
+1c Reagent media
+1d Action changes
+1a Using 1b
+1d Acts-on 1c
+L2
+2a Action collect
+2b Reagent media
+2c Modifier half
+2d Reagent media@2
+2e Action change
+2a Acts-on 2b
+2e Acts-on 2d
+2e Mod-Link 2c
+2f Action Centrifuge
+2g Speed 2000 x g
+2h Temperature 25 °C
+2i Time 5 minutes
+2j Reagent debris
+2f Setting 2g
+2f Setting 2h
+2f Setting 2i
+2k Action Store
+2l Reagent conditioned media
+2m Temperature -20 °C
+2k Acts-on 2l
+2k Setting 2m
+2n Reagent neuron conditioned media
+2n Coreference-Link 2l
+L3
+3a Action collect
+3b Reagent media
+3c Modifier half
+3d Reagent media@2
+3e Action change
+3f Modifier every 3-4 days
+3a Acts-on 3b
+3e Acts-on 3d
+3e Mod-Link 3c
+3a Mod-Link 3f
+L4
+4a Action Plate
+4b Reagent astrocytes
+4c Concentration 30,000 cells/cm²
+4e Modifier 0.1% coated
+4f Location plates
+4g Reagent Astrocyte Medium
+4h Reagent AM
+4a Acts-on 4b
+4b Measure 4c
+4a Site 4f
+4f Mod-Link 4e
+4a Site 4g
+4h Coreference-Link 4g
+L5
+5a Action change
+5b Reagent media
+5c Reagent FBS-free maturation media
+5a Acts-on 5b
+5a Product 5c
+5d Concentration 50%
+5e Reagent DMEM/F12
+5f Concentration 50%
+5g Reagent Neurobasal
+5h Concentration 1x
+5i Reagent B27
+5j Modifier without Vitamin A
+5k Concentration 1x
+5l Reagent N2
+5m Concentration 1X
+5n Reagent NEAA
+5o Concentration 1X
+5p Reagent GlutaMAX
+5q Concentration 10ng/mL
+5r Reagent CNTF
+5s Concentration 1%
+5t Reagent pennicillin-streptomycin
+5e Measure 5d
+5g Measure 5f
+5i Measure 5h
+5i Mod-Link 5j
+5l Measure 5k
+5n Measure 5m
+5p Measure 5o
+5r Measure 5q
+5t Measure 5s
+5e Meronym 5c
+5g Meronym 5c
+5i Meronym 5c
+5l Meronym 5c
+5n Meronym 5c
+5p Meronym 5c
+5r Meronym 5c
+5t Meronym 5c
+L6
+6a Time 3 days
+6b Action collect
+6c Reagent media
+6b Setting 6a
+6b Acts-on 6c
+6d Action Centrifuge
+6e Speed 2000 x g
+6f Temperature 25 °C
+6g Time 5 minutes
+6h Reagent debris
+6d Setting 6e
+6d Setting 6f
+6d Setting 6g
+6i Action Store
+6j Reagent conditioned media
+6k Temperature -20 °C
+6i Acts-on 6j
+6i Setting 6k
+6l Reagent astrocyte conditioned media
+6l Coreference-Link 6j
+L7
+7a Action collect
+7b Reagent media
+7c Modifier full
+7d Reagent media@2
+7e Action change
+7f Modifier every 3-4 days
+7a Acts-on 7b
+7e Acts-on 7d
+7e Mod-Link 7c
+7a Mod-Link 7f
+7g Reagent Astrocytes
+7h Action assayed
+7h Acts-on 7g
+7i Reagent neuronal media
+L8
+8a Action Generate
+8b Reagent neuron conditioned media
+8a Product 8b

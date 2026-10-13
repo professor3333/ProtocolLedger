@@ -1,0 +1,89 @@
+L0
+a Action Inducing
+b Reagent a-synuclein
+c Method aggregation
+a Acts-on b
+d Reagent PFFs
+a Using d
+e Method 2D and 3D culture
+L1
+f Action Thaw
+g Reagent a-synuclein PFFs
+f Acts-on g
+h Modifier immediately before use
+f Mod-Link h
+L2
+i Action Add
+j Reagent PFFs
+i Acts-on j
+k Modifier complete
+l Reagent media
+i Site l
+l Mod-Link k
+m Location microcentrifuge tube
+i Site m
+n Concentration 4μg/mL
+j Measure n
+o Action prepare
+p Location microcentrifuge tube
+o Acts-on p
+q Reagent media
+q Meronym p
+r Modifier no
+s Reagent PFFs
+s Mod-Link r
+L3
+t Action Remove
+u Amount 90%
+v Reagent media
+t Acts-on v
+v Measure u
+w Action removing
+x Modifier as much as possible
+w Mod-Link x
+y Modifier without
+z Action drying out
+z Mod-Link y
+aa Reagent cells
+z Acts-on aa
+L4
+ab Action Sonicate
+ac Reagent PFFs
+ab Acts-on ac
+ad Reagent no PFF control
+ab Acts-on ad
+ae Device water bath sonicator
+ab Site ae
+af Method program
+ab Using af
+ag Time 30 seconds
+ah Time 30 seconds
+ab Setting ag
+ab Setting ah
+ai Action repeat
+aj Numerical 10 cycles
+ai Count aj
+L5
+ak Action Replace
+al Modifier complete
+am Reagent media
+ak Using am
+am Mod-Link al
+an Modifier freshly sonnicated
+ao Reagent PFFs
+ao Meronym am
+ao Mod-Link an
+L6
+ap Action Continue
+aq Modifier half
+ar Method media changes
+ap Using ar
+ar Mod-Link aq
+as Modifier every
+at Time 3-4 days
+ap Setting at
+at Mod-Link as
+au Modifier at least
+av Time 2 weeks
+ap Setting av
+av Mod-Link au

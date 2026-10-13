@@ -1,0 +1,220 @@
+L0
+a Action Trapping
+b Reagent S-glutathionylated proteins
+a Acts-on b
+c Modifier biotinylated
+d Reagent glutathione-ethyl-ester probe
+d Mod-Link c
+e Method enrichment method
+a Using e
+f Reagent living cells
+g Modifier modified
+h Method biotin-switch technique
+h Mod-Link g
+L1
+i Reagent supernatant
+j Action add
+j Site i
+k Amount 200 µL
+l Modifier ice-cold
+m Concentration 1X
+n Reagent RIPA lysis buffer
+j Acts-on n
+n Measure k
+n Measure m
+n Mod-Link l
+o Concentration 50mM
+p Reagent IAA
+p Meronym n
+p Measure o
+q Concentration 1X
+r Reagent protease inhibitor cocktail
+r Meronym n
+r Measure q
+s Action incubate
+t Location ice
+s Site t
+u Time 30 min
+s Setting u
+L2
+v Method experiment
+w Action paused
+x Action continued
+y Modifier same day
+x Mod-Link y
+z Action proceeding
+aa Method subsequent lysis steps
+z Using aa
+ab Action pause
+ac Action snap freeze
+ad Reagent sample
+ac Acts-on ad
+ae Action incubated
+af Reagent lysis buffer
+ae Site af
+ag Action store
+ah Temperature -80 °C
+ai Device freezer
+ag Site ai
+ai Setting ah
+L3
+aj Reagent samples
+ak Action snap frozen
+ak Acts-on aj
+al Method experiment
+am Reagent lysates
+an Action thawed
+an Acts-on am
+ao Location ice
+an Site ao
+ap Action proceed
+aq Method lysis steps
+ap Using aq
+ar Action Sonicate
+as Reagent samples
+ar Acts-on as
+at Generic-Measure 20%
+au Measure-Type amplitude
+at Of-Type au
+ar Setting at
+av Time 10 seconds
+ar Setting av
+aw Numerical two rounds
+ar Count aw
+ax Action centrifuge
+ay Speed maximum speed
+ax Setting ay
+az Time 10 minutes
+ax Setting az
+ba Temperature 4 °C
+ax Setting ba
+L4
+bb Action Estimate
+bc Measure-Type protein concentration
+bb Measure-Type-Link bc
+bd Reagent sample
+be Method standard protein estimation assay
+bb Using be
+bf Method BCA method
+bf Coreference-Link be
+L5
+bg Action Keep
+bh Amount 20-40 µL
+bi Reagent lysate
+bg Acts-on bi
+bi Measure bh
+bj Modifier aside
+bg Mod-Link bj
+bk Location input lane
+bl Method immunoblotting
+L6
+bm Method Biotin-Streptavidin pre-blocking step
+bn Action performed
+bn Using bm
+bo Modifier freshly
+bn Mod-Link bo
+bp Method experiment
+bq Action Prepare
+br Modifier biotin-blocked
+bs Reagent streptavidin beads
+bq Product bs
+bs Mod-Link br
+bt Action adding
+bq Commands bt
+bu Amount 500 µL
+bv Concentration 3 mg/mL
+bw Reagent D-biotin
+bt Acts-on bw
+bw Measure bu
+bw Measure bv
+bx Amount 50 µL
+by Reagent streptavidin magnetic beads
+bt Site by
+by Measure bx
+bz Generic-Measure 10:1 ratio
+ca Action incubate
+cb Method rocking
+ca Using cb
+cc Time 1 hour
+ca Setting cc
+cd Temperature RT
+ca Setting cd
+ce Action Wash
+cf Numerical 5 times
+ce Count cf
+cg Reagent PBS
+ce Using cg
+ch Device magnetic rack
+ce Using ch
+L7
+ci Action Add
+cj Modifier biotin-blocked
+ck Reagent streptavidin beads
+ci Acts-on ck
+ck Mod-Link cj
+cl Reagent sample
+ci Site cl
+cm Modifier ~
+cn Amount 50 µL
+cl Measure cn
+cn Mod-Link cm
+co Action incubate
+cp Time 30 min
+co Setting cp
+cq Method rocking
+co Using cq
+cr Location cold room
+co Site cr
+cs Temperature 4 °C
+co Setting cs
+ct Method step
+cu Action prevents
+cv Method non-specific binding
+cu Acts-on cv
+cw Reagent cell lysate
+cx Reagent cells’ endogenous biotin
+cy Reagent free biotin
+cy Or cx
+cz Action binding
+da Reagent streptavidin beads
+cz Site da
+db Action ensures
+dc Reagent BioGEE-labeled proteins
+dd Action bound
+dd Acts-on dc
+de Reagent streptavidin beads
+dd Site de
+df Action Pellet
+dg Reagent magnetic beads
+df Acts-on dg
+L8
+dh Modifier carefully
+di Action take
+di Mod-Link dh
+dj Reagent supernatant
+di Acts-on dj
+dk Action transfer
+dl Mention it
+dk Acts-on dl
+dl Coreference-Link dj
+dm Amount 50 µl
+dn Modifier freshly equilibrated
+do Reagent streptavidin-magnetic beads
+dk Site do
+do Measure dm
+do Mod-Link dn
+dp Action equilibrate
+dq Action pre-wash
+dr Reagent streptavidin beads
+dq Acts-on dr
+ds Numerical 3 times
+dq Count ds
+dt Reagent PBS
+dq Using dt
+du Action incubate
+dv Time 2 hours
+du Setting dv
+dw Method rocking
+du Using dw
+dx Temperature 4 °C
+du Setting dx

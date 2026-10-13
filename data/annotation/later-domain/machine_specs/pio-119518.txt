@@ -1,0 +1,160 @@
+L0
+a Method Terminal PCR
+b Action Amplifying
+c Reagent 5' and 3' Termini
+b Acts-on c
+d Reagent Monkeypox Virus Genome
+c Meronym d
+L1
+e Method viral genomic DNA extraction
+f Action performed
+f Using e
+g Reagent High Pure Viral Nucleic Acid Kit
+f Using g
+L2
+h Action Add
+i Amount 200 µL
+j Reagent binding buffer
+h Acts-on j
+j Measure i
+k Amount 4 µL
+l Reagent PolyA carrier RNA
+h Acts-on l
+l Measure k
+m Amount 50 µL
+n Reagent Proteinase K
+h Acts-on n
+n Measure m
+o Action Mix
+p Modifier well
+o Mod-Link p
+q Action pipetting
+r Action inverting
+o Commands q
+o Commands r
+s Location tube
+r Acts-on s
+t Modifier thoroughly
+r Mod-Link t
+u Action spin down
+v Temperature 72 °C
+w Time 00:10:00
+L3
+x Action Add
+y Amount 100 µL
+z Reagent binding buffer
+x Acts-on z
+z Measure y
+aa Action mix
+ab Modifier well
+aa Mod-Link ab
+ac Action pipetting
+ad Action inverting
+aa Commands ac
+aa Commands ad
+ad Or ac
+ae Location tube
+ad Acts-on ae
+af Modifier thoroughly
+ad Mod-Link af
+ag Action spin down
+L4
+ah Action Transfer
+ai Modifier whole
+aj Reagent sample
+ah Acts-on aj
+aj Mod-Link ai
+ak Location High Pure Filter Tube
+ah Site ak
+al Speed 8000 x g
+am Temperature Room temperature
+an Time 1 minute
+ao Action Discard
+ap Reagent flow-through liquid
+aq Location Collection Tube
+ao Acts-on ap
+ao Acts-on aq
+ar Action insert
+as Location Filter Tube
+ar Acts-on as
+at Modifier new
+au Location Collection Tube
+ar Site au
+au Mod-Link at
+L5
+ba Action Add
+bb Amount 500 µL
+bc Reagent inhibitor removal buffer
+ba Acts-on bc
+bc Measure bb
+bd Speed 8000 x g
+be Temperature Room temperature
+bf Time 1 minute
+bg Action Discard
+bh Reagent flow-through liquid
+bi Location Collection Tube
+bg Acts-on bh
+bg Acts-on bi
+bj Action insert
+bk Location Filter Tube
+bj Acts-on bk
+bl Modifier new
+bm Location Collection Tube
+bj Site bm
+bm Mod-Link bl
+L6
+ca Action Add
+cb Amount 450 µL
+cc Reagent wash buffer
+ca Acts-on cc
+cc Measure cb
+cd Speed 8000 x g
+ce Temperature Room temperature
+cf Time 1 minute
+cg Action Discard
+ch Reagent flow-through liquid
+ci Location Collection Tube
+cg Acts-on ch
+cg Acts-on ci
+cj Action insert
+ck Location Filter Tube
+cj Acts-on ck
+cl Modifier new
+cm Location Collection Tube
+cj Site cm
+cm Mod-Link cl
+L7
+da Action Add
+db Amount 450 µL
+dc Reagent wash buffer
+da Acts-on dc
+dc Measure db
+dd Speed 13000 x g
+de Temperature Room temperature
+df Time 1 minute
+dg Action discard
+dh Reagent flow-through liquid
+dg Acts-on dh
+di Action Discard
+dj Location Collection Tube
+di Acts-on dj
+dk Action insert
+dl Location Filter Tube
+dk Acts-on dl
+dm Amount 1.5 ml
+dn Location tube
+dk Site dn
+dn Measure dm
+do Location DNA LoBind Tube
+dp Amount 1.5ml
+do Measure dp
+do Coreference-Link dn
+L8
+ea Action Add
+eb Amount 50 µL
+ec Reagent elution Buffer
+ea Acts-on ec
+ec Measure eb
+ed Speed 13000 x g
+ee Temperature Room temperature
+ef Time 1 minute

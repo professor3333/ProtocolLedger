@@ -1,0 +1,104 @@
+L0
+a Method Pathogen-Agnostic WGS
+b Method ONT Workflow
+c Reagent Lyssavirus Rabies
+d Method Library Prep
+L1
+e Modifier clean
+f Amount 1.5 ml
+g Location Eppendorf tube
+h Action prepare
+i Reagent master mix
+h Product i
+h Site g
+g Measure f
+g Mod-Link e
+j Action Mix
+k Modifier gentle
+l Action pipetting
+j Commands l
+l Mod-Link k
+m Modifier taking care not to
+n Action generate
+n Mod-Link m
+o Reagent bubbles
+p Reagent foam
+n Acts-on o
+n Acts-on p
+p Or o
+L2
+q Action Aliquot
+r Reagent master mix
+q Acts-on r
+s Modifier new separate
+t Amount 0.2 ml
+u Modifier thin-walled
+v Location PCR tube
+q Site v
+v Measure t
+v Mod-Link s
+v Mod-Link u
+L3
+w Action Spin down
+x Reagent barcode
+w Acts-on x
+y Action Add
+z Reagent Rapid Barcode Primers
+y Acts-on z
+aa Modifier each
+ab Location tube
+y Site ab
+ab Mod-Link aa
+ac Reagent master mix
+ac Meronym ab
+ad Modifier Each
+ae Location tube
+ae Mod-Link ad
+af Modifier different
+ag Reagent barcode
+ag Mod-Link af
+ag Meronym ae
+L4
+ah Action Add
+ai Amount 5 µl
+aj Reagent RT viral sample
+ah Acts-on aj
+aj Measure ai
+ak Location reaction tube
+ah Site ak
+L5
+al Action Mix
+am Modifier gently
+al Mod-Link am
+an Action flicking
+al Commands an
+ao Location tube
+an Acts-on ao
+ap Action spin down
+L6
+aq Action Amplify
+ar Method cycling protocol
+aq Using ar
+L7
+as Action Quantify
+at Modifier amplified
+au Reagent samples
+as Acts-on au
+au Mod-Link at
+av Measure-Type concentration
+as Measure-Type-Link av
+aw Reagent Qubit dsDNA HS Assay kit
+as Using aw
+L8
+ax Action Add
+ay Amount 1 µl
+az Reagent Thermolabile Exo I
+ax Acts-on az
+az Measure ay
+ba Modifier each of
+bb Location sample tubes
+ax Site bb
+bb Mod-Link ba
+bc Action mix
+bd Action pipetting
+bc Commands bd

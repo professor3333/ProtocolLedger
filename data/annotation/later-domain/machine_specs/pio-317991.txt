@@ -1,0 +1,93 @@
+L0
+0a Method Genomic DNA extraction
+0b Reagent Wahlenbergia
+0c Reagent Bluebell
+0d Reagent leaves
+0c Coreference-Link 0b
+0d Meronym 0b
+L1
+1a Action Aliquot
+1b Modifier required volume
+1c Reagent lysis buffer
+1d Reagent samples
+1a Acts-on 1c
+1c Mod-Link 1b
+1e Action use
+1f Amount 800 µL
+1g Reagent lysis buffer
+1h Modifier per sample
+1i Amount ~100-200 mg
+1j Modifier ground
+1k Reagent leaf tissue
+1e Acts-on 1g
+1g Measure 1f
+1g Mod-Link 1h
+1k Measure 1i
+1k Mod-Link 1j
+L2
+2a Action Allow
+2b Reagent samples
+2c Action cool
+2d Temperature room temperature
+2a Acts-on 2b
+2a Commands 2c
+2c Setting 2d
+L3
+3a Action Add
+3b Amount 1x volume
+3c Reagent chloroform:IAA
+3d Concentration 24:1
+3e Action mix
+3f Modifier thoroughly
+3g Time 10-15 seconds
+3a Acts-on 3c
+3c Measure 3b
+3c Measure 3d
+3e Mod-Link 3f
+3e Setting 3g
+L4
+4a Action Centrifuge
+4b Reagent samples
+4c Time 10 minutes
+4d Speed 20,000 rcf
+4a Acts-on 4b
+4a Setting 4c
+4a Setting 4d
+L5
+5a Action Centrifuge
+5b Speed 20,000 rcf
+5c Time 30 min
+5d Temperature 4 °C
+5a Setting 5b
+5a Setting 5c
+5a Setting 5d
+L6
+6a Action Add
+6b Amount 750 µL
+6c Concentration 70-80%
+6d Reagent ethanol
+6e Action mix
+6f Method inversion
+6a Acts-on 6d
+6d Measure 6b
+6d Measure 6c
+6e Using 6f
+L7
+7a Action Resuspend
+7b Reagent DNA pellet
+7c Reagent nuclease-free water
+7d Reagent Tris
+7e Concentration 10 mM
+7f Reagent Tris-Cl
+7g pH pH 8
+7a Acts-on 7b
+7a Using 7c
+7a Using 7d
+7d Or 7c
+7f Measure 7e
+7f Meronym 7d
+7d Measure 7g
+L8
+8a Action Prepare
+8b Reagent lysis buffer
+8a Product 8b

@@ -1,0 +1,127 @@
+L0
+a Method Vacuum Filtration
+b Method DNA Extraction
+c Reagent Environmental Water Samples
+L1
+d Action Assemble
+e Device vacuum filtration apparatus
+d Acts-on e
+f Modifier clean
+g Location workspace
+d Site g
+g Mod-Link f
+h Action Ensure
+i Device components
+j Modifier sterile
+h Acts-on i
+i Mod-Link j
+L2
+k Action Place
+l Size 0.45 µm
+m Device filter paper
+n Modifier Whatman
+m Measure l
+m Mod-Link n
+k Acts-on m
+o Location filtration membrane support
+k Site o
+p Modifier sterile
+q Device forceps
+k Using q
+q Mod-Link p
+L3
+r Action Pour
+s Amount 1.5 L
+t Reagent water sample
+r Acts-on t
+t Measure s
+u Location filtration funnel
+r Site u
+v Action Apply
+w Device vacuum
+v Acts-on w
+x Action filter
+y Modifier entire
+z Reagent volume
+x Acts-on z
+z Mod-Link y
+aa Action Replace
+ab Device filter paper
+aa Acts-on ab
+ac Mention it
+ac Coreference-Link ab
+ad Modifier clogged
+ac Mod-Link ad
+L4
+ae Modifier sterile
+af Device forceps
+ag Action remove
+ag Using af
+af Mod-Link ae
+ah Device filter paper
+ag Acts-on ah
+ai Action Fold
+aj Modifier inward
+ai Mod-Link aj
+ak Modifier cell-side in
+ai Mod-Link ak
+al Action place
+am Modifier sterile
+an Amount 2 mL
+ao Location microcentrifuge tube
+al Site ao
+ao Measure an
+ao Mod-Link am
+L5
+ap Action Add
+ar Amount appropriate volume
+as Concentration 1X
+at Reagent PBS
+ap Acts-on at
+at Measure as
+at Measure ar
+au Location tube
+ap Site au
+av Modifier folded
+aw Device filter paper
+aw Mod-Link av
+aw Meronym au
+L6
+ax Action Vortex
+ay Time 30–60 seconds
+ax Setting ay
+az Action resuspend
+ba Reagent microbial cells
+az Acts-on ba
+bb Device filter paper
+az Site bb
+bc Reagent PBS solution
+az Site bc
+L7
+bd Action Proceed
+be Method DNA extraction
+bd Using be
+bf Reagent QIAamp® DNA Mini Kit
+bg Method manufacturer's instructions
+bd Using bf
+bd Using bg
+bh Modifier resuspended
+bi Reagent PBS
+bd Using bi
+bi Mod-Link bh
+bj Modifier as the starting material
+bi Mod-Link bj
+L8
+bk Action Elute
+bl Modifier purified
+bm Reagent DNA
+bk Acts-on bm
+bm Mod-Link bl
+bn Reagent Buffer AE
+bk Using bn
+bo Modifier clean
+bp Amount 1.5 mL
+bq Location microcentrifuge tube
+bk Site bq
+bq Measure bp
+bq Mod-Link bo

@@ -1,0 +1,166 @@
+L0
+a Reagent AMPure XP
+b Method clean-up
+L1
+c Action Resuspend
+d Reagent AMPure XP Beads
+c Acts-on d
+e Action vortexing
+c Commands e
+L2
+f Action Add
+g Modifier resuspended
+h Reagent AMPure XP Beads
+f Acts-on h
+h Mod-Link g
+i Reagent sample
+f Site i
+j Action mix
+j2 Action pipetting
+j Commands j2
+k Measure-Type beads-to-sample ratio
+l Action adjusted
+l Measure-Type-Link k
+m Method purification
+n Method concentration
+o Reagent genomic DNA sample
+n Or m
+p Concentration 0.4X
+q Generic-Measure 0.4 volume
+s Reagent beads
+t Action added
+t Acts-on s
+s Measure q
+u Generic-Measure 1 volume
+v Reagent sample
+v Measure u
+t Site v
+w Method concentration
+x Method size selection
+y Method removal
+z Reagent fragments
+aa Size 1.5- 2 kb
+z Measure aa
+ac Concentration 1X
+ad Concentration 1.8X
+ae Generic-Measure 1 to 1.8 volumes
+af Reagent beads
+ag Action added
+ag Acts-on af
+af Measure ae
+ah Generic-Measure 1 volume
+ai Reagent sample
+ai Measure ah
+ag Site ai
+aj Method contaminant removal
+ak Method volume concentration
+al Method size selection
+L3
+am Action Incubate
+an Device Hula mixer
+ao Device rotator mixer
+am Site an
+am Site ao
+ao Or an
+ap Time 00:30:00
+aq Temperature RT
+am Setting ap
+am Setting aq
+L4
+ar Action Prepare
+as Amount 2 ml
+at Modifier fresh
+au Concentration 80%
+av Reagent ethanol
+ar Product av
+av Measure as
+av Measure au
+av Mod-Link at
+aw Reagent Nuclease-free water
+ar Using aw
+ax Modifier per sample
+as Mod-Link ax
+L5
+ay Action Spin down
+az Reagent sample
+ay Acts-on az
+ba Action pellet
+bb Device magnet
+ba Site bb
+bc Time 00:05:00
+ba Setting bc
+bd Action Keep
+be Location tube
+bd Acts-on be
+bf Device magnetic rack
+bd Site bf
+bg Reagent eluate
+bh Modifier clear
+bi Modifier colourless
+bg Mod-Link bh
+bg Mod-Link bi
+bj Action pipette off
+bk Reagent supernatant
+bj Acts-on bk
+L6
+bl Action Keep
+bm Location tube
+bl Acts-on bm
+bn Device magnetic rack
+bl Site bn
+bo Action wash
+bp Reagent beads
+bo Acts-on bp
+bq Modifier at least
+br Amount 700 μl
+bs Reagent ethanol
+bt Action cover
+bu Reagent beads
+bt Acts-on bu
+bv Modifier freshly prepared
+bw Concentration 80%
+bx Reagent ethanol
+bo Using bx
+bx Measure br
+br Mod-Link bq
+bx Measure bw
+bx Mod-Link bv
+ca Modifier without
+by Action disturbing
+bz Reagent pellet
+by Acts-on bz
+by Mod-Link ca
+cb Action Remove
+cc Reagent ethanol
+cb Acts-on cc
+cd Device pipette
+cb Using cd
+ce Action discard
+L7
+cf Action Repeat
+cg Method previous step
+cf Using cg
+L8
+ch Action Spin down
+ci Action place
+cj Location tube
+ci Acts-on cj
+ck Device magnetic rack
+ci Site ck
+cl Action Pipette off
+cm Modifier residual
+cn Reagent ethanol
+cl Acts-on cn
+cn Mod-Link cm
+cp Action dry
+cq Modifier ~
+cr Time 30-60 seconds
+cs Time 00:01:00
+cp Setting cr
+cp Setting cs
+cr Mod-Link cq
+cu Modifier do not
+ct Action dry
+ct Mod-Link cu
+cv Reagent pellet
+ct Acts-on cv

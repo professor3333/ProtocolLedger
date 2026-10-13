@@ -1,0 +1,108 @@
+L0
+a Method Microscopy-based bead assay
+L1
+b Action Equilibrate
+c Amount 10 µL
+d Reagent GFP-Trap agarose beads
+b Acts-on d
+d Measure c
+e Reagent water
+b Using e
+f Numerical twice
+b Count f
+g Reagent EBB
+b Using g
+L2
+h Action Incubate
+i Modifier freshly purified
+j Reagent ATG9A vesicles
+h Acts-on j
+j Mod-Link i
+k Amount 5x
+l Size 15-cm
+m Location plates
+m Measure k
+m Measure l
+n Reagent MOCK controls
+n Or j
+h Acts-on n
+o Modifier wild-type
+p Reagent HAP1 cells
+p Mod-Link o
+q Reagent beads
+h Using q
+r Temperature 4 °C
+h Setting r
+s Time 05:00:00
+h Setting s
+t Modifier gentle
+u Method rotation
+h Using u
+u Mod-Link t
+L3
+v Action Store
+w Time Overnight
+v Setting w
+x Temperature 4 °C
+v Setting x
+L4
+y Action Wash
+z Reagent beads
+y Acts-on z
+aa Numerical twice
+y Count aa
+ab Amount 200 µL
+ac Reagent SEC150
+y Using ac
+ac Measure ab
+ad Action resuspend
+ae Amount 5 µL –10 µL
+af Reagent SEC150
+ad Site af
+af Measure ae
+L5
+ag Action Equilibrate
+ah Amount 10 µL
+ai Reagent GFP-Trap beads
+ag Acts-on ai
+ai Measure ah
+aj Reagent water
+ag Using aj
+ak Numerical twice
+ag Count ak
+al Reagent SEC150
+ag Using al
+L6
+am Action Incubate
+an Amount 500 µL
+ao Reagent PLs
+am Acts-on ao
+ao Measure an
+ap Reagent beads
+am Using ap
+aq Temperature 4 °C
+am Setting aq
+L7
+ar Action binding
+as Action wash
+at Reagent beads
+as Acts-on at
+au Reagent SEC150
+as Using au
+av Method downstream applications
+L8
+aw Action Pipette
+ax Amount 20 µL
+ay Reagent prey protein
+aw Acts-on ay
+ay Measure ax
+az Concentration 0.1 micromolar (µM)
+ba Reagent mCherry-PI3KC3-C1
+ba Measure az
+ba Coreference-Link ay
+bb Reagent ATG2A-mCherry
+bb Or ba
+bc Modifier each
+bd Location well
+aw Site bd
+bd Mod-Link bc

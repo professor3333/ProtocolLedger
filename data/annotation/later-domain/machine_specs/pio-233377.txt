@@ -1,0 +1,148 @@
+L0
+0a Method RNA Isolation
+0b Reagent QIAzol-RNeasy Mini Kit
+0c Method cDNA Synthesis
+L1
+1a Reagent Suspension Cells
+1b Numerical ≤1 × 10⁷ cells
+1a Measure 1b
+1c Action Count
+1d Reagent cells
+1c Acts-on 1d
+1e Action Pellet
+1f Reagent cells
+1g Speed 300 × g
+1h Time 5 min
+1e Acts-on 1f
+1e Setting 1g
+1e Setting 1h
+1i Modifier Carefully
+1j Action aspirate
+1k Modifier all
+1l Reagent supernatant
+1j Mod-Link 1i
+1j Acts-on 1l
+1l Mod-Link 1k
+L2
+2a Action Trypsinize
+2b Action pellet
+2c Action Count
+2d Reagent cells
+2c Acts-on 2d
+2e Action Aspirate
+2f Reagent medium
+2e Acts-on 2f
+2g Action wash
+2h Numerical once
+2i Reagent PBS
+2g Count 2h
+2g Using 2i
+2j Action Add
+2k Concentration 0.1–0.25%
+2l Reagent trypsin
+2j Acts-on 2l
+2l Measure 2k
+2m Reagent cells
+2n Action detach
+2n Acts-on 2m
+2o Action Add
+2p Reagent medium
+2q Reagent serum
+2o Acts-on 2p
+2q Meronym 2p
+2r Action neutralize
+2s Reagent trypsin
+2r Acts-on 2s
+2t Action Transfer
+2u Modifier RNase-free
+2v Location tube
+2t Site 2v
+2v Mod-Link 2u
+2w Action spin
+2x Speed 300 × g
+2y Time 5 min
+2w Setting 2x
+2w Setting 2y
+2z Action Aspirate
+2aa Reagent supernatant
+2ab Modifier completely
+2z Acts-on 2aa
+2z Mod-Link 2ab
+L3
+3a Modifier pelleted
+3b Reagent cells
+3b Mod-Link 3a
+3c Action Loosen
+3d Reagent pellet
+3e Method flicking
+3c Acts-on 3d
+3c Using 3e
+3f Action Add
+3g Amount 700 μL
+3h Reagent QIAzol Lysis Reagent
+3f Acts-on 3h
+3h Measure 3g
+3i Action Vortex
+3j Action pipette
+3j Or 3i
+3k Action mix
+3l Modifier thoroughly
+3k Mod-Link 3l
+3m Method direct lysis
+3n Location dish
+3o Action Add
+3p Amount 700 μL
+3q Reagent QIAzol
+3r Modifier directly
+3s Location dish
+3o Acts-on 3q
+3q Measure 3p
+3o Mod-Link 3r
+3o Site 3s
+3t Action Scrape
+3u Device cell scraper
+3t Using 3u
+3v Action Transfer
+3w Reagent lysate
+3x Modifier RNase-free
+3y Location tube
+3v Acts-on 3w
+3v Site 3y
+3y Mod-Link 3x
+3z Action vortex
+3aa Action remove
+3ab Reagent clumps
+3aa Acts-on 3ab
+L4
+4a Action Add
+4b Amount 140 μL
+4c Reagent chloroform
+4a Acts-on 4c
+4c Measure 4b
+L5
+5a Action Cap
+5b Action shake
+5c Modifier vigorously
+5d Time 15 sec
+5b Mod-Link 5c
+5b Setting 5d
+L6
+6a Action Incubate
+6b Time 2–3 min
+6c Temperature RT
+6a Setting 6b
+6a Setting 6c
+L7
+7a Action Centrifuge
+7b Time 15 min
+7c Speed 12,000 × g
+7d Temperature 4°C
+7a Setting 7b
+7a Setting 7c
+7a Setting 7d
+L8
+8a Reagent Upper aqueous phase
+8b Amount ~350 μL
+8c Reagent RNA
+8a Measure 8b
+8c Meronym 8a

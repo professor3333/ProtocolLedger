@@ -1,0 +1,145 @@
+L0
+0a Modifier Rapid
+0b Action Isolation
+0c Reagent Lysosomes
+0d Method LysoIP
+0e Reagent mouse brain tissue
+0b Mod-Link 0a
+0b Acts-on 0c
+0b Site 0e
+L1
+1a Reagent Anti-HA magnetic beads
+1b Reagent Optima LC/MS water
+1c Reagent Phosphate-buffered saline
+1d Reagent PBS
+1e pH pH ~7.4
+1d Coreference-Link 1c
+1c Measure 1e
+1f Reagent Complete EDTA-free Protease Inhibitor Cocktail
+1g Device Magnetic separation equipment
+1h Device DynaMag Spin Magnet
+1i Concentration 1x
+1j Reagent extraction buffer
+1j Measure 1i
+1k Device Centrifuge
+1l Device Homogenizer
+1m Amount 2 ml
+1n Device homogenizer
+L2
+2a Action Prepare
+2b Location microcentrifuge tubes
+2c Location metal rack
+2d Reagent ice
+2a Acts-on 2b
+2a Site 2c
+2a Site 2d
+2e Amount 2 mL
+2f Location tube
+2f Measure 2e
+2g Amount 1.5 mL
+2h Location tube
+2i Reagent whole brain fraction
+2h Measure 2g
+2j Amount 1.5 mL
+2k Location tube
+2l Reagent beads
+2k Measure 2j
+2m Amount 1.5 ml
+2n Location tube
+2n Measure 2m
+2o Amount 1.5 mL
+2p Location tube
+2q Modifier final
+2r Reagent lysoIP samples
+2p Measure 2o
+2r Mod-Link 2q
+L3
+3a Action Wash
+3b Device glass vessel homogenizer
+3c Reagent MilliQ Water
+3d Numerical 10 times
+3a Acts-on 3b
+3a Using 3c
+3a Count 3d
+3e Action wash
+3f Device tissue grinder homogenizer
+3g Modifier thoroughly
+3h Reagent DI Water
+3i Reagent MilliQ Water
+3e Acts-on 3f
+3e Mod-Link 3g
+3e Using 3h
+3e Using 3i
+3j Action dry
+3k Modifier upside-down
+3l Reagent paper towels
+3j Mod-Link 3k
+3j Using 3l
+3m Modifier Carefully
+3n Action place
+3o Location glass vessels
+3n Mod-Link 3m
+3n Acts-on 3o
+3p Action Pre-chill
+3q Modifier all
+3r Device equipment
+3s Reagent buffers
+3t Temperature 4°C
+3p Acts-on 3r
+3p Acts-on 3s
+3r Mod-Link 3q
+3p Setting 3t
+3u Action Set
+3v Device centrifuge
+3w Temperature 4°C
+3u Acts-on 3v
+3u Setting 3w
+L4
+4a Action Euthanize
+4b Reagent mouse
+4a Acts-on 4b
+4c Action transfer
+4d Reagent whole brain
+4e Amount 2 ml
+4f Device homogenizer
+4g Reagent ice
+4c Acts-on 4d
+4c Site 4f
+4f Measure 4e
+4c Site 4g
+L5
+5a Action Process
+5b Modifier each
+5c Reagent mouse brain
+5d Modifier separately
+5a Acts-on 5c
+5c Mod-Link 5b
+5a Mod-Link 5d
+L6
+6a Action performed
+6b Reagent ice
+6a Site 6b
+L7
+7a Action Transfer
+7b Modifier homogenized
+7c Reagent tissue
+7d Amount 2 ml
+7e Location tube
+7a Acts-on 7c
+7c Mod-Link 7b
+7a Site 7e
+7e Measure 7d
+L8
+8a Action Transfer
+8b Reagent supernatant
+8c Reagent cellular organelles
+8d Amount 1.5 ml
+8e Location tube
+8f Amount 100 µL
+8g Reagent anti-HA magnetic beads
+8a Acts-on 8b
+8c Meronym 8b
+8a Site 8e
+8e Measure 8d
+8g Meronym 8e
+8g Measure 8f

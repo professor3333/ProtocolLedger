@@ -1,0 +1,133 @@
+L0
+a Method Western and dot blot
+L1
+b Action Lyse
+c Reagent cells
+b Acts-on c
+d Reagent RIPA Buffer
+b Site d
+e Action supplemented
+e Acts-on d
+f Reagent protease adn phosphatase inhibitors
+f Meronym d
+g Location 6-well plate
+h Action use
+i Amount 50-100uL
+j Reagent RIPA
+h Acts-on j
+j Measure i
+k Reagent solution
+l Modifier too viscous
+k Mod-Link l
+m Action add
+n Modifier more
+o Reagent RIPA
+m Acts-on o
+o Mod-Link n
+p Modifier as necessary
+m Mod-Link p
+L2
+q Action Centrifuge
+r Reagent samples
+q Acts-on r
+s Speed 15000 x g
+q Setting s
+t Temperature 4 °C
+q Setting t
+u Time 10 minutes
+q Setting u
+v Action pellet
+w Reagent cell debris
+x Reagent insoluble proteins
+v Acts-on w
+v Acts-on x
+L3
+y Action Determine
+z Measure-Type protein concentration
+y Measure-Type-Link z
+aa Reagent Pierce BCA protein Assay
+y Using aa
+L4
+ab Action Prepare
+ac Reagent samples
+ab Product ac
+ad Amount 20μg
+ae Reagent protein
+ae Measure ad
+ae Meronym ac
+af Concentration 1x
+ag Reagent LDS sample buffer
+ag Measure af
+ag Meronym ac
+ah Concentration 1x
+ai Reagent reducing agent
+ai Measure ah
+ai Meronym ac
+aj Reagent RIPA buffer
+aj Meronym ac
+ak Amount 20uL
+ac Measure ak
+L5
+al Action Load
+am Reagent samples
+al Acts-on am
+an Concentration 4-12%
+ao Location Bis-Tris
+al Site ao
+ao Measure an
+ap Action Include
+aq Amount one
+ar Location lane
+ap Acts-on ar
+ar Measure aq
+as Reagent protein ladder
+as Meronym ar
+L6
+at Action Run
+au Location blot
+at Acts-on au
+av Generic-Measure 60mV
+at Setting av
+aw Time 00:20:00
+at Setting aw
+ax Generic-Measure 120mV
+at Setting ax
+ay Time 01:00:00
+at Setting ay
+az Reagent loading dye
+ba Location bottom
+L7
+bb Action Transfer
+bc Location gels
+bb Acts-on bc
+bd Location PVDF membrane
+bb Site bd
+be Device BioRad TransBlot Turbo Transfer System
+bb Using be
+bf Method standard protocol
+bb Using bf
+bg Time 00:30:00
+bb Setting bg
+bh Modifier Up to
+bi Generic-Measure 1.0A
+bb Setting bi
+bi Mod-Link bh
+bj Generic-Measure 25V
+bb Setting bj
+L8
+bk Action Fix
+bl Location blot
+bk Acts-on bl
+bm Concentration 4%
+bn Reagent paraformaldehyde
+bk Site bn
+bn Measure bm
+bo Time 00:40:00
+bk Setting bo
+bp Method step
+bq Modifier optional
+bp Mod-Link bq
+br Reagent a-synuclein
+bs Modifier phsophorylated
+bt Reagent a-synuclein
+bt Mod-Link bs

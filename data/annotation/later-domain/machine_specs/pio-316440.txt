@@ -1,0 +1,155 @@
+L0
+a Method RNA extraction
+b Device Sterivex
+c Device GFF
+d Size 2.7 μm
+e Size 0.2 μm
+f Device membrane filters
+f Measure d
+f Measure e
+g Method cDNA library generation
+L1
+h Action Thaw
+i Device Sterivex filters
+h Acts-on i
+j Location ice
+h Site j
+k Action expel
+l Reagent RNAlater
+k Acts-on l
+m Modifier if used
+l Mod-Link m
+n Amount 3 mL
+o Device syringe
+k Using o
+o Measure n
+p Action stored
+q Temperature −80 °C
+p Setting q
+r Action ensure
+s Modifier no residual
+t Reagent liquid
+t Mod-Link s
+u Device Sterivex
+t Meronym u
+v Action remove
+w Mention it
+v Acts-on w
+w Coreference-Link t
+x Amount 3 mL
+y Device syringe
+v Using y
+y Measure x
+L2
+z Action Seal
+aa Location lower end
+z Acts-on aa
+ab Location nipple
+ab Coreference-Link aa
+ac Modifier each
+ad Device Sterivex filter
+aa Meronym ad
+ad Mod-Link ac
+ae Seal parafilm
+af Seal Sterivex caps
+z Using ae
+z Using af
+af Or ae
+ag Modifier Additionally
+ah Action seal
+ah Mod-Link ag
+ai Location lower rim
+ah Acts-on ai
+aj Seal parafilm
+ah Using aj
+ak Action prevent
+L3
+al Action Add
+am Reagent beads
+al Acts-on am
+an Modifier approximately
+ao Generic-Measure 1/10
+am Measure ao
+ao Mod-Link an
+ap Device Sterivex filter
+aq Measure-Type volume
+ao Of-Type aq
+ar Reagent beads
+as Amount 5 mL
+at Location kit tubes
+ar Meronym at
+at Measure as
+au Action provided
+av Modifier UV-sterilized
+aw Reagent beads
+aw Mod-Link av
+aw Or ar
+L4
+ax Action Aliquot
+ay Amount 1.8 mL
+az Reagent PM1 buffer
+ax Acts-on az
+az Measure ay
+ba Amount 2 mL
+bb Location Eppendorf tubes
+ax Site bb
+bb Measure ba
+bc Action heat
+bd Temperature 65 °C
+bc Setting bd
+be Time 5 min
+bc Setting be
+L5
+bf Modifier clean
+bg Amount 3 mL
+bh Device syringe
+bh Measure bg
+bh Mod-Link bf
+bi Action fitted
+bj Size 22G
+bk Device needle
+bk Meronym bh
+bk Measure bj
+bl Action transfer
+bl Using bh
+bm Modifier heated
+bn Reagent PM1 buffer
+bl Acts-on bn
+bn Mod-Link bm
+bo Modifier each
+bp Device Sterivex
+bl Site bp
+bp Mod-Link bo
+L6
+bq Action Add
+br Amount 100 µL
+bs Modifier molecular-grade
+bt Reagent 2-mercaptoethanol
+bq Acts-on bt
+bt Measure br
+bt Mod-Link bs
+bu Amount 1 mL
+bv Device syringe
+bq Using bv
+bv Measure bu
+bw Action fitted
+bx Size 22G
+by Device needle
+by Meronym bv
+by Measure bx
+L7
+bz Action Seal
+ca Location upper end
+bz Acts-on ca
+cb Device Sterivex
+ca Meronym cb
+cc Seal parafilm
+bz Using cc
+L8
+cd Action Vortex
+ce Speed maximum speed
+cd Setting ce
+cf Modifier ~
+cg Time 2 min
+cd Setting cg
+cg Mod-Link cf
