@@ -456,13 +456,30 @@ function renderInspector() {
   box.hidden = false;
   if (doc.pending) {
     const { start, end } = doc.pending;
-    let label = "Reagent";
+    // From scratch, the type must be chosen: a default type is kept whenever it is not changed.
+    const scratch = doc.modelVersion === "manual-annotation";
+    let label = scratch ? null : "Reagent";
+    const addButton = button("Add as reviewer entity", () => {
+      if (label) addEntity(start, end, label);
+    }, "primary");
+    addButton.disabled = !label;
+    let typeSelect;
+    if (scratch) {
+      typeSelect = el("select", { "aria-label": "Entity type" }, el("option", { value: "" }, "choose a type"));
+      for (const option of ENTITY_LABELS) typeSelect.append(el("option", { value: option }, option));
+      typeSelect.addEventListener("change", () => {
+        label = typeSelect.value || null;
+        addButton.disabled = !label;
+      });
+    } else {
+      typeSelect = select(ENTITY_LABELS, label, (v) => { label = v; });
+    }
     box.append(
-      el("h3", {}, "Add a missing entity"),
+      el("h3", {}, scratch ? "Add an entity" : "Add a missing entity"),
       el("p", { class: "quote" }, doc.cps.slice(start, end).join("")),
       el("div", { class: "row" },
-        select(ENTITY_LABELS, label, (v) => { label = v; }),
-        button("Add as reviewer entity", () => addEntity(start, end, label), "primary"),
+        typeSelect,
+        addButton,
         button("Cancel", () => { doc.pending = null; renderInspector(); })),
     );
     return;
@@ -509,18 +526,31 @@ function renderInspector() {
     .map(({ e }) => e);
   if (!others.length) return;
   let other = null;
-  let label = entity.label === "Action" ? "Acts-on" : "Measure";
-  let role = entity.label === "Action" ? "head" : "tail";
+  // Gold annotation has no defaults: a preselected label or direction becomes a wrong
+  // relation whenever the annotator only picks the other entity.
+  const scratch = doc.modelVersion === "manual-annotation";
+  let label = scratch ? null : entity.label === "Action" ? "Acts-on" : "Measure";
+  let role = scratch ? null : entity.label === "Action" ? "head" : "tail";
   // Replacing other links is the "move this value" action: on by default only for a
   // quantity that is the tail. A material can legitimately be acted on by many actions.
   const isQuantity = QUANTITY_LABELS.includes(entity.label);
-  let replace = isQuantity && role === "tail";
+  let replace = !scratch && isQuantity && role === "tail";
+  const preview = el("span", { class: "relation-preview" });
   const add = button("Add relation", () => {
-    if (!other) return;
+    if (!other || !label || !role) return;
     const [head, tail] = role === "tail" ? [other, entity.id] : [entity.id, other];
     addRelation(head, label, tail, replace);
   }, "primary");
-  add.disabled = true;
+  const refresh = () => {
+    add.disabled = !(other && label && role);
+    if (add.disabled) {
+      preview.textContent = "";
+      return;
+    }
+    const [head, tail] = role === "tail" ? [other, entity.id] : [entity.id, other];
+    preview.textContent = `${spanText(doc.entities.get(head))} —${label}→ `
+      + `${spanText(doc.entities.get(tail))}`;
+  };
   const otherSelect = el("select", { "aria-label": "Other entity" },
     el("option", { value: "" }, "choose an entity (nearest first)"));
   for (const o of others) {
@@ -528,17 +558,25 @@ function renderInspector() {
   }
   otherSelect.addEventListener("change", () => {
     other = otherSelect.value || null;
-    add.disabled = !other;
+    refresh();
   });
+  const choose = (options, value, placeholder, onChange) => {
+    if (value !== null) return select(options, value, onChange);
+    const s = el("select", {}, el("option", { value: "" }, placeholder));
+    for (const option of options) s.append(el("option", { value: option }, option));
+    s.addEventListener("change", () => onChange(s.value || null));
+    return s;
+  };
   const replaceBox = el("input", { type: "checkbox", checked: replace });
   replaceBox.addEventListener("change", () => { replace = replaceBox.checked; });
   box.append(el("div", { class: "row add-relation" },
     "This is the ",
-    select(["tail", "head"], role, (v) => { role = v; }),
+    choose(["tail", "head"], role, "head or tail", (v) => { role = v; refresh(); }),
     " of ", otherSelect, " via ",
-    select(RELATION_LABELS, label, (v) => { label = v; }),
+    choose(RELATION_LABELS, label, "choose a relation", (v) => { label = v; refresh(); }),
     el("label", { class: "check" }, replaceBox, " replace other links of this type"),
-    add));
+    add, preview));
+  refresh();
 }
 
 function cell(ids, emptyText = "—", emptyClass = "none") {

@@ -354,3 +354,4 @@ button.mini { padding: 3px 8px; font-size: 12.5px; }
   background: color-mix(in srgb, var(--accent) 12%, transparent);
   color: var(--ink);
 }
+.relation-preview { font-weight: 600; color: var(--ink); }
