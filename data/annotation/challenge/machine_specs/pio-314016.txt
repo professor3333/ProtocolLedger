@@ -1,0 +1,165 @@
+L0
+0a Reagent Fungi
+0b Method DNA Extraction
+L1
+1a Method DNA extraction
+1b Location plates
+1c Action automated
+1d Device purification instrument
+1e Device KingFisher Flex
+1f Device PurePrep 96
+1g Device liquid handling platform
+1c Using 1d
+1c Using 1g
+1g Or 1d
+1f Or 1e
+1h Action Centrifuge
+1i Modifier incubated
+1j Reagent samples
+1k Time 5 minutes
+1l Speed max centrifuge speed
+1m Temperature room temperature
+1h Acts-on 1j
+1j Mod-Link 1i
+1h Setting 1k
+1h Setting 1l
+1h Setting 1m
+1n Action pellet
+1o Modifier solid
+1p Reagent particles
+1q Location bottom
+1r Location plate
+1s Location tube
+1n Acts-on 1p
+1p Mod-Link 1o
+1n Site 1q
+1q Meronym 1r
+1s Or 1r
+1t Action Transfer
+1u Amount 75 µl
+1v Reagent supernatant
+1w Location deep well plate
+1x Location tube
+1t Acts-on 1v
+1v Measure 1u
+1t Site 1w
+1t Site 1x
+1x Or 1w
+1y Action Add
+1z Amount 20 µl
+1aa Reagent SeraSil-Mag 400 beads
+1ab Modifier each
+1ac Reagent sample
+1y Acts-on 1aa
+1aa Measure 1z
+1y Site 1ac
+1ac Mod-Link 1ab
+1ad Reagent beads
+1ae Modifier properly
+1af Action shaken
+1ag Reagent suspension
+1af Acts-on 1ad
+1af Mod-Link 1ae
+1af Product 1ag
+1ai Action Add
+1aj Amount 150 μl
+1ak Amount 2x the lysate volume
+1al Reagent Tissue Binding Buffer
+1am Modifier each
+1an Reagent sample
+1ai Acts-on 1al
+1al Measure 1aj
+1ak Coreference-Link 1aj
+1ai Site 1an
+1an Mod-Link 1am
+1ao Action Incubate
+1ap Time 5 minutes
+1aq Temperature room temperature
+1ar Device shaker
+1ao Setting 1ap
+1ao Setting 1aq
+1ao Site 1ar
+L2
+2a Reagent Tissue Binding Buffer
+2b Amount 100 ml
+2a Measure 2b
+2c Action Dissolve
+2d Amount 26.3 g
+2e Reagent guanidine hydrochloride
+2f Amount 20 ml
+2g Reagent milliQ
+2c Acts-on 2e
+2e Measure 2d
+2c Site 2g
+2g Measure 2f
+2h Action Stir
+2i Action Adjust
+2j Measure-Type volume
+2k Amount 50 ml
+2l Reagent milliQ
+2i Measure-Type-Link 2j
+2i Setting 2k
+2i Using 2l
+2m Action Add
+2n Amount 50 ml
+2o Concentration 100%
+2p Reagent ethanol
+2m Acts-on 2p
+2p Measure 2n
+2p Measure 2o
+L3
+3a Concentration 2%
+3b Reagent CTAB
+3c pH pH8
+3d Amount 100 ml
+3b Measure 3a
+3b Measure 3c
+3b Measure 3d
+3e Action Combine
+3f Amount 10 ml
+3g Concentration 1 M
+3h Reagent Tris
+3i pH pH 8.0
+3j Amount 4 ml
+3k Concentration 0.5 M
+3l Reagent EDTA
+3m pH pH 8.0
+3n Amount 28.4 ml
+3o Concentration 5M
+3p Reagent NaCl
+3q Amount 2 g
+3r Reagent CTAB
+3e Acts-on 3h
+3e Acts-on 3l
+3e Acts-on 3p
+3e Acts-on 3r
+3h Measure 3f
+3h Measure 3g
+3h Measure 3i
+3l Measure 3j
+3l Measure 3k
+3l Measure 3m
+3p Measure 3n
+3p Measure 3o
+3r Measure 3q
+3s Action Add
+3t Reagent MilliQ water
+3u Measure-Type volume
+3v Amount 60 ml
+3s Acts-on 3t
+3s Measure-Type-Link 3u
+3s Setting 3v
+3w Action heat
+3x Device water bath
+3w Site 3x
+3y Reagent CTAB
+3aa Action Bring
+3ab Measure-Type total volume
+3ac Amount 100 ml
+3ad Reagent milliQ
+3aa Measure-Type-Link 3ab
+3aa Setting 3ac
+3aa Using 3ad
+3af Modifier Ready-to-use
+3ae Reagent CTAB buffer
+3ae Mod-Link 3af

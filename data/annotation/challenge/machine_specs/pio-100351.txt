@@ -1,0 +1,62 @@
+L0
+0a Method BioID
+0b Action Identifying
+0c Reagent Protein-Protein Interactions
+0d Modifier Living
+0e Reagent Cells
+0b Acts-on 0c
+0e Mod-Link 0d
+0b Site 0e
+L1
+1a Action Remove
+1b Reagent supernatant
+1c Action resuspend
+1d Mention them
+1e Reagent PBS
+1f Measure-Type final vol.
+1g Amount 500µl
+1a Acts-on 1b
+1c Acts-on 1d
+1c Using 1e
+1c Measure-Type-Link 1f
+1c Setting 1g
+L2
+2a Action store
+2b Modifier left-over
+2c Reagent beads
+2a Acts-on 2c
+2c Mod-Link 2b
+2d Action spin
+2e Mention them
+2d Acts-on 2e
+2e Coreference-Link 2c
+2f Action remove
+2g Reagent supernatant
+2f Acts-on 2g
+2h Action wash
+2i Numerical 2x
+2j Concentration 20%
+2k Reagent ethanol
+2h Count 2i
+2h Using 2k
+2k Measure 2j
+2l Action add
+2m Concentration 20%
+2n Reagent ethanol
+2o Reagent storage solution
+2p Modifier up to the right volume
+2l Acts-on 2n
+2n Measure 2m
+2o Coreference-Link 2n
+2l Mod-Link 2p
+L3
+3a Action Check
+3b Measure-Type pH
+3d Numerical <3
+3e Action acidify
+3f Concentration 10%
+3g Reagent TFA
+3a Measure-Type-Link 3b
+3d Of-Type 3b
+3e Using 3g
+3g Measure 3f

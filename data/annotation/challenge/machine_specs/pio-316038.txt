@@ -1,0 +1,70 @@
+L0
+0a Modifier Phenol-free
+0b Method RNA extraction
+0c Reagent Rubus armeniacus berries
+L1
+1a Modifier each
+1b Reagent berry
+1b Mod-Link 1a
+1c Action prepare
+1d Numerical 2 x
+1e Amount 2mL
+1f Location reaction tube
+1c Acts-on 1f
+1f Measure 1d
+1f Measure 1e
+1g Concentration 2%
+1h Reagent β-mercaptoethanol
+1i Amount ~900 µL
+1j Reagent Extraction Buffer
+1h Measure 1g
+1j Measure 1i
+1h Meronym 1j
+1j Meronym 1f
+1k Reagent buffer
+1l Action mixed
+1l Acts-on 1k
+1k Coreference-Link 1j
+1m Reagent PVPP
+1n Action preheat
+1o Temperature 65 °C
+1n Setting 1o
+L2
+2a Action Add
+2b Modifier homogenized
+2c Reagent material
+2d Reagent powder
+2a Acts-on 2c
+2c Mod-Link 2b
+2d Coreference-Link 2c
+2e Numerical two
+2f Location tubes
+2g Modifier preheated
+2h Reagent extraction buffer
+2a Site 2f
+2f Measure 2e
+2h Mod-Link 2g
+2h Meronym 2f
+2i Action resuspend
+2j Modifier carefully
+2i Mod-Link 2j
+2k Modifier completely
+2l Action resuspend
+2m Reagent powder
+2l Mod-Link 2k
+2l Acts-on 2m
+2n Action Avoid
+2o Action transfer
+2p Reagent ice
+2n Commands 2o
+2o Acts-on 2p
+L3
+3a Action Transfer
+3b Reagent supernatant
+3c Modifier fresh
+3d Amount 2 mL
+3e Location reaction tubes
+3a Acts-on 3b
+3a Site 3e
+3e Mod-Link 3c
+3e Measure 3d

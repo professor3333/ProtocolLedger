@@ -1,0 +1,37 @@
+L0
+0a Reagent LysoTracker® Red DND-99
+0b Method Live-Cell Staining
+0c Method HCS Analysis
+L1
+1a Modifier final
+1b Time 10 min
+1c Action add
+1d Reagent Hoechst 33342
+1e Concentration 1 µg/mL
+1b Mod-Link 1a
+1c Setting 1b
+1c Acts-on 1d
+1d Measure 1e
+L2
+2a Action Add
+2b Modifier phenol-red-free
+2c Reagent medium
+2d Modifier optional
+2e Method imaging
+2a Acts-on 2c
+2c Mod-Link 2b
+2a Mod-Link 2d
+L3
+3a Action Find
+3b Reagent Cytoplasm
+3c Modifier each
+3d Reagent nucleus
+3e Method 568 channel
+3a Acts-on 3b
+3d Mod-Link 3c
+3a Using 3e
+3f Action apply
+3g Method intensity filter
+3h Generic-Measure 200–100,000 a.u.
+3f Using 3g
+3f Setting 3h

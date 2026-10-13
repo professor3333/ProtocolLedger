@@ -1,0 +1,107 @@
+L0
+0a Method CosMx Spatial Transcriptomics
+L1
+1a Action Cut
+1b Reagent samples
+1c Size 5 µM
+1a Acts-on 1b
+1b Measure 1c
+1d Action center
+1e Reagent sections
+1f Location green scan area
+1d Acts-on 1e
+1d Site 1f
+1g Action Bake
+1h Location slides
+1i Time Overnight
+1j Temperature 37 °C
+1g Acts-on 1h
+1g Setting 1i
+1g Setting 1j
+1k Action store
+1l Mention them
+1m Temperature 4 °C
+1k Acts-on 1l
+1l Coreference-Link 1h
+1k Setting 1m
+1n Action use
+1o Mention them
+1n Acts-on 1o
+1o Coreference-Link 1h
+1p Action Use
+1q Time within 2 weeks
+1p Setting 1q
+L2
+2a Method Hybridization
+2b Time Overnight
+2c Action store
+2d Location slides
+2e Concentration 2X
+2f Reagent SSC wash
+2g Time 01:00:00
+2h Temperature Room temperature
+2i Time up to 06:00:00
+2j Temperature 4 °C
+2c Acts-on 2d
+2c Site 2f
+2f Measure 2e
+2c Setting 2g
+2c Setting 2h
+2c Setting 2i
+2c Setting 2j
+2i Or 2g
+2j Or 2h
+2k Action Ensure
+2l Reagent Buffer R
+2m Temperature Room temperature
+2k Acts-on 2l
+2k Setting 2m
+2n Action Prepare
+2o Concentration 1:10
+2p Reagent dilution
+2q Reagent probe
+2r Amount ~15μL/slide
+2n Product 2p
+2p Measure 2o
+2q Meronym 2p
+2q Measure 2r
+2s Action mix
+2t Method pipetting
+2u Numerical 3-5 times
+2s Using 2t
+2s Count 2u
+2v Modifier Do not
+2w Action vortex
+2w Mod-Link 2v
+2x Action Preheat
+2y Device thermal cycler
+2z Device lid
+2aa Temperature 95 °C
+2x Acts-on 2y
+2x Acts-on 2z
+2z Meronym 2y
+2x Setting 2aa
+2ab Action Remove
+2ac Device incubation frame cover
+2ab Acts-on 2ac
+2ad Action clean
+2ae Mention it
+2af Reagent ethanol
+2ad Acts-on 2ae
+2ae Coreference-Link 2ac
+2ad Using 2af
+2ag Action Lay
+2ah Mention it
+2ai Device Kimwipe
+2ag Acts-on 2ah
+2ah Coreference-Link 2ac
+2ag Site 2ai
+2aj Action Flick
+2ak Reagent probes
+2aj Acts-on 2ak
+2al Action use@2
+2am Device mini centrifuge
+2al Acts-on 2am
+L3
+3a Method Target-Level QC
+3b Reagent negative control probes

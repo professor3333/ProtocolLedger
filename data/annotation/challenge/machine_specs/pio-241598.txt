@@ -1,0 +1,87 @@
+L0
+0a Reagent 12S
+0b Reagent 16S
+0c Reagent COI
+0d Method Metabarcoding
+0e Reagent Marine Vertebrates
+L1
+1a Action enter
+1b Modifier all required
+1c Reagent samples
+1a Acts-on 1c
+1c Mod-Link 1b
+1d Action assign
+1e Mention each one
+1d Acts-on 1e
+1e Coreference-Link 1c
+1g Modifier Do not
+1f Action edit
+1f Mod-Link 1g
+1j Method qPCR
+L2
+2a Device Echo Software
+2b Action survey
+2c Location plates
+2b Using 2a
+2b Acts-on 2c
+2d Measure-Type volume
+2b Measure-Type-Link 2d
+2e Modifier each
+2f Location well
+2f Mod-Link 2e
+2g Amount 12 µL
+2h Amount 65 µL
+2f Measure 2g
+2f Measure 2h
+2i Action prepare
+2j Modifier new
+2k Location plate
+2i Acts-on 2k
+2k Mod-Link 2j
+2l Reagent air bubbles
+2m Reagent droplets
+2n Location plate
+2m Or 2l
+2l Meronym 2n
+2m Meronym 2n
+2o Action Spin-down
+2p Action survey
+2q Action Wipe
+2r Location bottom
+2s Location plates
+2t Device Kimwipe
+2q Acts-on 2r
+2r Meronym 2s
+2q Using 2t
+2u Action loading
+2v Device Echo
+2u Site 2v
+L3
+3a Action Run
+3b Method run_meta_to_plates script
+3a Using 3b
+3c Reagent eDNA samples
+3g Reagent NTC
+3h Reagent negative control
+3h Coreference-Link 3g
+3i Reagent ITC
+3j Reagent positive control
+3j Coreference-Link 3i
+3k Reagent Samples
+3l Action placed
+3m Modifier triplicate reactions
+3o Location positions 1-3
+3p Modifier each
+3q Location quadrant
+3l Acts-on 3k
+3l Mod-Link 3m
+3l Site 3o
+3o Meronym 3q
+3q Mod-Link 3p
+3r Location 4th well
+3s Action pooling
+3t Modifier triplicate
+3u Reagent reactions
+3s Acts-on 3u
+3u Mod-Link 3t
+3s Site 3r

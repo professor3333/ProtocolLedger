@@ -1,0 +1,40 @@
+L0
+0a Method Immunofluorescence staining
+L1
+1a Action Incubate
+1b Time 00:20:00
+1c Temperature Room temperature
+1a Setting 1b
+1a Setting 1c
+1d Reagent cells
+1e Modifier light sensitive
+1f Reagent fluorescent proteins
+1f Mod-Link 1e
+1f Meronym 1d
+1g Action cover
+1h Location 24 well plate
+1i Seal aluminum foil
+1g Acts-on 1h
+1g Using 1i
+L2
+2a Action washes
+2b Concentration 1×
+2c Reagent PBS
+2a Using 2c
+2c Measure 2b
+L3
+3a Action Remove
+3b Location coverslips
+3c Location plate
+3a Acts-on 3b
+3a Site 3c
+3d Modifier gently
+3e Action put
+3f Mention it
+3g Modifier upside-down
+3h Reagent antibody drop
+3e Mod-Link 3d
+3e Acts-on 3f
+3f Coreference-Link 3b
+3e Mod-Link 3g
+3e Site 3h

@@ -199,6 +199,16 @@ hard phenomena (11 protocols, 33 steps). The collection rules are in the
   pasted into a step, and Unicode spaces.
 - **Annotation.** One annotator labels each text from scratch with the corpus schema,
   without model suggestions. Any consistency figure is repeat-annotation consistency.
+- **Machine labels.** Until that human gold exists, both sets carry machine-generated
+  labels that no person has reviewed: later-domain has 3,418 entities and 2,373 relations,
+  and challenge has 462 entities and 333 relations. They are stored in
+  `machine_labels.jsonl` and built from the label specs in `machine_specs/`. They are
+  kept apart from `gold.jsonl` and never become gold. Every score computed against them is
+  reported as "vs. machine labels" and not as accuracy. They include the locked test portions
+  (16 of 38 later-domain protocols, 5 of 11 challenge protocols), so those scores are
+  locked-test results as well. Labels follow the train convention for each type
+  pair: `build_machine_labels.py` lists any relation whose (head, tail) types occur fewer
+  than 5 times in train.
 - **Challenge categories** are fixed text tests, not human judgements. A step tagged
   "implicit references" contains a pronoun or a phrase such as "the supernatant", which
   does not guarantee that the reference is implicit.

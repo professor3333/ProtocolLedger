@@ -1,0 +1,82 @@
+L0
+0b Reagent BODIPY-cholesterol
+0c Method imaging
+L1
+1a Modifier fully differentiated
+1b Action seed
+1c Reagent astrocytes
+1d Concentration 10,000 cell/well
+1e Concentration 30,000 cells/cm²
+1f Location 96-well glass-bottom thickness plate
+1g Modifier pre-coated
+1h Concentration 1%
+1i Reagent gelatin
+1j Amount 100μL
+1k Reagent Astrocyte Medium
+1b Acts-on 1c
+1c Mod-Link 1a
+1c Measure 1d
+1c Measure 1e
+1b Site 1f
+1f Mod-Link 1g
+1f Meronym 1i
+1i Measure 1h
+1b Site 1k
+1k Measure 1j
+L2
+2a Action Change
+2b Reagent media
+2c Reagent FBS-free maturation media
+2a Acts-on 2b
+2a Product 2c
+2d Concentration 50%
+2e Reagent DMEM/F12
+2f Concentration 50%
+2g Reagent Neurobasal
+2h Concentration 1x
+2i Reagent B27
+2j Modifier wihtout Vitamin A
+2k Concentration 1x
+2l Reagent N2
+2m Concentration 1X
+2n Reagent NEAA
+2o Concentration 1X
+2p Reagent GlutaMAX
+2q Concentration 10ng/mL
+2r Reagent CNTF
+2s Concentration 1%
+2t Reagent pennicillin-streptomycin
+2e Measure 2d
+2g Measure 2f
+2i Measure 2h
+2i Mod-Link 2j
+2l Measure 2k
+2n Measure 2m
+2p Measure 2o
+2r Measure 2q
+2t Measure 2s
+2e Meronym 2c
+2g Meronym 2c
+2i Meronym 2c
+2l Meronym 2c
+2n Meronym 2c
+2p Meronym 2c
+2r Meronym 2c
+2t Meronym 2c
+L3
+3b Action Replace
+3c Reagent media
+3d Reagent FBS-free maturation media
+3e Concentration 2μM
+3f Reagent BODIPY-cholesterol
+3g Concentration 1:500
+3b Acts-on 3c
+3b Using 3d
+3b Using 3f
+3f Measure 3e
+3f Measure 3g
+3h Action Incubate
+3i Temperature 37 °C
+3j Time 02:00:00
+3h Setting 3i
+3h Setting 3j

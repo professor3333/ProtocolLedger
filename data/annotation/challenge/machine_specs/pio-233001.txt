@@ -1,0 +1,67 @@
+L0
+0a Reagent Synaptic vesicle
+0b Action preparation
+0c Reagent mouse brain
+0b Product 0a
+0b Site 0c
+L1
+1a Action Centrifuge
+1b Reagent homogenate
+1c Speed 871 × g
+1d Time 10 min
+1e Temperature 4°C
+1a Acts-on 1b
+1a Setting 1c
+1a Setting 1d
+1a Setting 1e
+1f Action Collect
+1g Reagent supernatant
+1h Reagent S1
+1f Acts-on 1g
+1h Coreference-Link 1g
+L2
+2a Action Resuspend
+2b Reagent LP2 pellet
+2c Reagent SHT buffer
+2d Action diluted
+2e Concentration 40 mM
+2f Reagent sucrose
+2a Acts-on 2b
+2a Using 2c
+2d Acts-on 2c
+2f Measure 2e
+2f Meronym 2c
+2h Action diluting
+2i Modifier standard
+2j Reagent SHT buffer
+2h Acts-on 2j
+2j Mod-Link 2i
+2k Concentration 0.3 M
+2l Reagent sucrose
+2m Concentration 1 mM
+2n Reagent Mg-EGTA
+2o Concentration 10 mM
+2p Reagent HEPES-Tris
+2q pH pH 7.4
+2l Measure 2k
+2n Measure 2m
+2p Measure 2o
+2l Meronym 2j
+2n Meronym 2j
+2p Meronym 2j
+2j Measure 2q
+L3
+3a Action Prepare
+3b Concentration 5–25%
+3c Reagent glycerol gradient
+3a Product 3c
+3c Measure 3b
+3d Reagent glycerol gradient buffer
+3e Device gradient maker
+3a Using 3d
+3a Using 3e
+3f Action form
+3g Modifier continuous
+3h Reagent gradient
+3f Product 3h
+3h Mod-Link 3g

@@ -1,0 +1,68 @@
+L0
+0a Action Preparation
+0b Reagent Lung Tissue Blocks
+0c Method MPLEx
+0a Acts-on 0b
+L1
+1a Action Place
+1b Reagent sample
+1c Device cryostat
+1a Acts-on 1b
+1a Site 1c
+1d Action allow
+1e Modifier thermally
+1f Action equilibrate
+1g Time ~20 min
+1d Commands 1f
+1f Mod-Link 1e
+1f Setting 1g
+L2
+2a Action Cut
+2b Numerical 2x
+2c Reagent sections
+2d Size 50 μm
+2a Acts-on 2c
+2c Measure 2b
+2c Measure 2d
+2e Action place
+2f Reagent sections
+2g Modifier pre-weighed
+2h Amount 2 mL
+2i Location Sorenson MµlTI™ SafeSeal™ Microcentrifuge Tubes
+2e Acts-on 2f
+2e Site 2i
+2i Mod-Link 2g
+2i Measure 2h
+L3
+3a Action Use
+3b Device Rapid-Core Sampling Punch
+3c Size 4 mm
+3a Acts-on 3b
+3b Measure 3c
+3d Action punch
+3e Numerical 2
+3f Reagent tissue cores
+3g Modifier each
+3h Reagent tissue section
+3d Using 3b
+3d Acts-on 3f
+3f Measure 3e
+3d Site 3h
+3h Mod-Link 3g
+3i Action place
+3j Reagent punches
+3k Modifier pre-weighed
+3l Amount 2 mL
+3m Location Sorenson MµlTI™ SafeSeal™ Microcentrifuge Tubes
+3i Acts-on 3j
+3i Site 3m
+3m Mod-Link 3k
+3m Measure 3l
+3n Action punching
+3o Reagent tissue cores
+3n Acts-on 3o
+3p Action avoid
+3q Location regions
+3r Reagent OCT
+3p Acts-on 3q
+3r Meronym 3q
