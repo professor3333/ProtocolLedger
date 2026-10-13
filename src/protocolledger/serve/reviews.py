@@ -202,6 +202,31 @@ class ReviewStore:
             ],
         }
 
+    def find(self, text_sha256: str, model_version: str | None = None) -> list[dict[str, Any]]:
+        """Reviews of one text, oldest first. Local administration only: it bypasses tokens."""
+        query = "SELECT id, created_at, model_version, text IS NOT NULL AS stored FROM reviews "
+        query += "WHERE text_sha256 = ?"
+        args: tuple[str, ...] = (text_sha256,)
+        if model_version is not None:
+            query += " AND model_version = ?"
+            args += (model_version,)
+        with self._connect() as db:
+            rows = db.execute(query + " ORDER BY created_at, rowid", args).fetchall()
+        return [dict(r) | {"stored": bool(r["stored"])} for r in rows]
+
+    def reissue_token(self, review_id: str) -> str:
+        """Replace a review's access token and return the new one. Local administration
+        only (it needs the database file): the old token stops working, and the review's
+        revisions are not touched."""
+        token = secrets.token_urlsafe(32)
+        with self._lock, self._connect() as db:
+            cursor = db.execute(
+                "UPDATE reviews SET token_sha256 = ? WHERE id = ?", (_sha256(token), review_id)
+            )
+            if cursor.rowcount != 1:
+                raise ReviewError(404, "review not found")
+        return token
+
     def backup(self, destination: Path) -> None:
         """Consistent online copy (safe while the service is running)."""
         with self._connect() as source, sqlite3.connect(destination) as target:

@@ -56,6 +56,20 @@
         <button type="button" id="extract" class="primary">Extract</button>
       </div>
       <p id="status" class="status" aria-live="polite"></p>
+      <details class="open-review">
+        <summary>Open a saved review</summary>
+        <div class="row">
+          <select id="saved-reviews" aria-label="Reviews saved in this browser"></select>
+          <button type="button" id="open-saved">Open</button>
+        </div>
+        <div class="row">
+          <input id="review-id" type="text" placeholder="Review ID" autocomplete="off" spellcheck="false">
+          <input id="review-token" type="password" placeholder="Access token" autocomplete="off">
+          <button type="button" id="open-manual">Open</button>
+        </div>
+        <p class="muted">Reviews saved from this browser are listed. For another, paste its ID and
+          access token. Saving after opening adds a revision to the same review.</p>
+      </details>
     </section>
 
     <section class="panel" aria-labelledby="evidence-title">

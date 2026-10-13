@@ -151,6 +151,7 @@ async function extract() {
     setStatus("Paste or upload some protocol text first.", true);
     return;
   }
+  if (doc && doc.dirty && !window.confirm("Discard the unsaved changes to the current review?")) return;
   if ($("scratch").checked) {
     startScratch(text);
     return;
@@ -544,7 +545,9 @@ function renderInspector() {
   const refresh = () => {
     add.disabled = !(other && label && role);
     if (add.disabled) {
-      preview.textContent = "";
+      const missing = [!role && "head or tail", !other && "the other entity", !label && "a relation"]
+        .filter(Boolean);
+      preview.textContent = `Still to choose: ${missing.join(", ")}`;
       return;
     }
     const [head, tail] = role === "tail" ? [other, entity.id] : [entity.id, other];
@@ -684,8 +687,10 @@ async function save() {
       }, { "Idempotency-Key": doc.idempotencyKey });
       if (!payload.token) throw new Error("This review was already saved; its token was shown earlier.");
       doc.review = { id: payload.id, token: payload.token, revision: payload.revision, storedText: storeText };
+      if (storeText) rememberReview(doc);
       const note = $("token-note");
-      note.replaceChildren("Review saved. Keep this access token; it is shown only once: ",
+      note.replaceChildren("Review saved. Review ID ", el("code", {}, payload.id),
+        "; access token (shown only once", storeText ? ", also kept in this browser" : "", "): ",
         el("code", {}, payload.token));
       note.hidden = false;
     } else {
@@ -720,6 +725,88 @@ async function exportReview(format) {
     setStatus(`Exported ${name}.`);
   } catch (err) {
     setStatus(`Export failed: ${err.message}`, true);
+  }
+}
+
+// ----------------------------------------------------------- reopen review
+
+// Reviews saved from this browser, so a long annotation can continue in a later session.
+// The server keeps only a hash of each token; if this list is lost, use
+// scripts/reopen_review.py to issue a new token.
+const SAVED_KEY = "protocolledger.savedReviews";
+
+function rememberedReviews() {
+  try {
+    const list = JSON.parse(localStorage.getItem(SAVED_KEY) || "[]");
+    return Array.isArray(list) ? list : [];
+  } catch {
+    return [];
+  }
+}
+
+function rememberReview(d) {
+  const title = (d.text.split("\n").find((line) => line.trim()) || "untitled").trim().slice(0, 60);
+  const entry = {
+    id: d.review.id, token: d.review.token, title, savedAt: new Date().toISOString(),
+    mode: d.modelVersion === "manual-annotation" ? "from scratch" : "model review",
+  };
+  try {
+    const list = rememberedReviews().filter((r) => r.id !== entry.id);
+    list.unshift(entry);
+    localStorage.setItem(SAVED_KEY, JSON.stringify(list.slice(0, 200)));
+  } catch {
+    // Storage unavailable (private window): the token note still shows the token once.
+  }
+  renderSavedReviews();
+}
+
+function renderSavedReviews() {
+  const list = rememberedReviews();
+  const box = $("saved-reviews");
+  box.replaceChildren(el("option", { value: "" },
+    list.length ? "choose a review saved in this browser" : "no review saved in this browser yet"));
+  for (const r of list) {
+    box.append(el("option", { value: r.id },
+      `${r.title} · ${r.mode} · ${String(r.savedAt).slice(0, 16).replace("T", " ")}`));
+  }
+  $("open-saved").disabled = !list.length;
+}
+
+async function openReview(id, token) {
+  if (!id || !token) {
+    setStatus("Enter both the review ID and its access token.", true);
+    return;
+  }
+  if (doc && doc.dirty && !window.confirm("Discard the unsaved changes to the current review?")) return;
+  try {
+    const res = await fetch(`/v1/reviews/${encodeURIComponent(id)}`, { headers: { "X-Review-Token": token } });
+    const payload = await res.json().catch(() => ({}));
+    if (res.status === 404) throw new Error("no review with that ID and access token");
+    if (!res.ok) throw new Error(payload.detail || `HTTP ${res.status}`);
+    if (payload.text === null) throw new Error("this review was saved without its text, so it cannot be reopened");
+    const { entities, relations } = payload.content;
+    const numbers = [...entities, ...relations].map((x) => Number((String(x.id).match(/(\d+)$/) || [0, 0])[1]));
+    doc = {
+      text: payload.text, cps: Array.from(payload.text), modelVersion: payload.model_version,
+      entities: new Map(entities.map((e) => [e.id, { ...e, original: e.original ?? null }])),
+      relations: new Map(relations.map((r) => [r.id, { ...r }])),
+      review: { id: payload.id, token, revision: payload.revision, storedText: true },
+      dirty: false, next: Math.max(0, ...numbers) + 1, selected: null, pending: null, idempotencyKey: null,
+    };
+    preview = { sheet: [], review_items: [], normalized_values: {} };
+    $("text").value = payload.text;
+    updateCounter();
+    $("scratch").checked = payload.model_version === "manual-annotation";
+    $("extract").textContent = $("scratch").checked ? "Start annotating" : "Extract";
+    $("store-text").checked = true;
+    $("token-note").hidden = true;
+    rememberReview(doc);
+    renderAll();
+    await refresh();
+    setStatus(`Opened review ${payload.id} at revision ${payload.revision}: `
+      + `${entities.length} entities, ${relations.length} relations. Saving adds a new revision.`);
+  } catch (err) {
+    setStatus(`Open failed: ${err.message}`, true);
   }
 }
 
@@ -760,6 +847,15 @@ function init() {
   });
   $("evidence").addEventListener("mouseup", captureSelection);
   $("save").addEventListener("click", save);
+  $("open-saved").addEventListener("click", () => {
+    const entry = rememberedReviews().find((r) => r.id === $("saved-reviews").value);
+    if (entry) openReview(entry.id, entry.token);
+    else setStatus("Choose a saved review first.", true);
+  });
+  $("open-manual").addEventListener("click", () => {
+    openReview($("review-id").value.trim(), $("review-token").value.trim());
+  });
+  renderSavedReviews();
   $("export-json").addEventListener("click", () => exportReview("json"));
   $("export-csv").addEventListener("click", () => exportReview("csv"));
   window.addEventListener("beforeunload", (event) => {

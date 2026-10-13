@@ -467,6 +467,11 @@ uv run python scripts/annotation_warmup.py score --db data/warmup.db
 PROTOCOLLEDGER_BUNDLE=artifacts/bundles/crf-logreg-4a9d8cc549 PROTOCOLLEDGER_DB=data/annotation.db \
   uv run uvicorn --factory protocolledger.serve.app:create_app_from_env --port 8000
 
+#    To continue an annotation later, use "Open a saved review" in the interface. If the
+#    browser no longer lists it, issue a new token from the database and paste it there:
+uv run python scripts/reopen_review.py --db data/annotation.db \
+  --text-file data/annotation/later-domain/texts/<id>.txt
+
 # 4. Export the saved annotations as gold, then score a model on the dev portion
 uv run python scripts/export_annotations.py --db data/annotation.db --set later-domain
 uv run --extra neural python scripts/evaluate_annotation_set.py --set later-domain \

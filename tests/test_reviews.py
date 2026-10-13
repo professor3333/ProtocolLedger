@@ -121,6 +121,25 @@ def test_wrong_token_and_missing_review_are_indistinguishable(tmp_path: Path) ->
         assert (info.value.status, info.value.detail) == (404, "review not found")
 
 
+def test_reissued_token_replaces_the_old_one_and_keeps_revisions(tmp_path: Path) -> None:
+    store = ReviewStore(tmp_path / "r.db")
+    older = store.create({"v": 0}, "h", "text", "manual-annotation", None)
+    created = store.create({"v": 1}, "h", "text", "manual-annotation", None)
+    store.create({"v": 9}, "h", "text", "some-model", None)
+    store.create({"v": 9}, "other", "text", "manual-annotation", None)
+    store.add_revision(created.review_id, created.token, {"v": 2})
+    found = store.find("h", "manual-annotation")
+    assert [r["id"] for r in found] == [older.review_id, created.review_id]
+    assert all(r["stored"] for r in found) and len(store.find("h")) == 3
+    token = store.reissue_token(created.review_id)
+    record = store.get(created.review_id, token)
+    assert record["revision"] == 2 and record["content"] == {"v": 2}
+    with pytest.raises(ReviewError):
+        store.get(created.review_id, created.token)
+    with pytest.raises(ReviewError):
+        store.reissue_token("missing")
+
+
 def test_idempotent_creation(tmp_path: Path) -> None:
     store = ReviewStore(tmp_path / "r.db")
     first = store.create({"a": 1}, "h", None, "m", "key-1")

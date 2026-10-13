@@ -35,7 +35,12 @@ one. Counts come from `train` after deduplication (314 protocols).
 3. Go line by line. For each line, add its entities first, then their relations.
 4. Tick **Store the protocol text on the server** and save the review. Saving the same text
    again replaces the earlier annotation in the export (the most recent review wins).
-5. Back up the database after each session:
+5. To continue later, open **Open a saved review** under the protocol text: reviews saved
+   from this browser are listed, and saving after opening adds a new revision. If the
+   browser has forgotten a review (cleared storage, another machine), issue a new token
+   from the database and paste the printed ID and token:
+   `uv run python scripts/reopen_review.py --db data/annotation.db --text-file <the .txt>`
+6. Back up the database after each session:
    `uv run python scripts/backup_reviews.py backup data/annotation.db backups/annotation-<date>.db`
 
 ## Entities
