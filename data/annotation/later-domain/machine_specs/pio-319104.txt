@@ -171,7 +171,7 @@ cv Method non-specific binding
 cw Reagent cell lysate
 cx Reagent cells’ endogenous biotin
 cy Reagent free biotin
-cy Or cx
+cx Or cy
 cz Action binding
 da Reagent streptavidin beads
 cz Site da

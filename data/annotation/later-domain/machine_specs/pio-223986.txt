@@ -24,7 +24,7 @@ m Location plates
 m Measure k
 m Measure l
 n Reagent MOCK controls
-n Or j
+j Or n
 h Acts-on n
 o Modifier wild-type
 p Reagent HAP1 cells
@@ -101,7 +101,7 @@ ba Reagent mCherry-PI3KC3-C1
 ba Measure az
 ba Coreference-Link ay
 bb Reagent ATG2A-mCherry
-bb Or ba
+ba Or bb
 bc Modifier each
 bd Location well
 aw Site bd

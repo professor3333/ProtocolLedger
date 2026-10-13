@@ -1,9 +1,7 @@
 L0
 0a Reagent Cholesterol-lowering drug
-0b Action treatment
+0b Method treatment
 0c Reagent iPSC-derived astrocytes
-0b Using 0a
-0b Acts-on 0c
 L1
 1a Modifier fully differentiated
 1b Action seed

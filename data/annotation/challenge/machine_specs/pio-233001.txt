@@ -1,9 +1,7 @@
 L0
 0a Reagent Synaptic vesicle
-0b Action preparation
+0b Method preparation
 0c Reagent mouse brain
-0b Product 0a
-0b Site 0c
 L1
 1a Action Centrifuge
 1b Reagent homogenate

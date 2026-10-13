@@ -96,7 +96,7 @@ L3
 3g Location polypropylene centrifuge tubes
 3a Acts-on 3c
 3a Acts-on 3d
-3d Or 3c
+3c Or 3d
 3c Measure 3b
 3d Measure 3b
 3a Site 3g
@@ -170,7 +170,7 @@ L5
 5a Setting 5d
 5a Mod-Link 5e
 5a Mod-Link 5f
-5f Or 5e
+5e Or 5f
 5a Site 5g
 L6
 6a Action centrifuge
@@ -186,14 +186,12 @@ L7
 7a Modifier Carefully
 7b Action decant
 7c Reagent supernatant
-7a2 Modifier without
 7d Action disturbing
 7e Reagent pellet
 7f Location bottom
 7g Location tube
 7b Mod-Link 7a
 7b Acts-on 7c
-7d Mod-Link 7a2
 7d Acts-on 7e
 7e Meronym 7f
 7f Meronym 7g
@@ -202,11 +200,9 @@ L8
 8b Action remove
 8c Modifier remaining
 8d Reagent liquid
-8e Modifier not
 8f Action dislodge
 8g Reagent pellet
 8b Mod-Link 8a
 8b Acts-on 8d
 8d Mod-Link 8c
-8f Mod-Link 8e
 8f Acts-on 8g

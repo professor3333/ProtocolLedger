@@ -20,7 +20,7 @@ l Location falcon tube
 h Site l
 l Measure j
 l Measure k
-k Or j
+j Or k
 L2
 m Action Centrifuge
 n Reagent material
@@ -147,7 +147,7 @@ cd Reagent bottom portion
 ce Reagent media
 cd Meronym ce
 cb Acts-on cd
-cd Or cc
+cc Or cd
 cf Modifier fresh
 cg Location well
 cb Site cg

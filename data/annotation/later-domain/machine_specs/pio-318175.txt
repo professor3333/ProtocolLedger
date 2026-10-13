@@ -25,7 +25,7 @@ o Reagent bubbles
 p Reagent foam
 n Acts-on o
 n Acts-on p
-p Or o
+o Or p
 L2
 q Action Aliquot
 r Reagent master mix

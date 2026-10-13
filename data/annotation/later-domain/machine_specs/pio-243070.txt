@@ -148,7 +148,7 @@ cq Measure co
 co Mod-Link cn
 cq Mod-Link cp
 cr Reagent KPBS
-cr Or cq
+cq Or cr
 cs Location dish
 cm Site cs
 ct Action Scrape
@@ -183,7 +183,7 @@ dg Site dk
 dk Measure di
 dk Mod-Link dj
 dl Reagent KPBS
-dl Or dk
+dk Or dl
 dm Action Take
 dn Amount 25 µL
 do Reagent whole cell/homogenate input
@@ -289,7 +289,7 @@ fx Modifier cold
 fy Reagent KPBS
 fy Measure fw
 fy Mod-Link fx
-fy Or fu
+fu Or fy
 fz Modifier first
 ga Method wash
 gb Action remove

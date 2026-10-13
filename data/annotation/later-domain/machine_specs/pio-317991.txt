@@ -83,7 +83,7 @@ L7
 7a Acts-on 7b
 7a Using 7c
 7a Using 7d
-7d Or 7c
+7c Or 7d
 7f Measure 7e
 7f Meronym 7d
 7d Measure 7g

@@ -54,7 +54,7 @@ ae Seal parafilm
 af Seal Sterivex caps
 z Using ae
 z Using af
-af Or ae
+ae Or af
 ag Modifier Additionally
 ah Action seal
 ah Mod-Link ag
@@ -83,7 +83,7 @@ au Action provided
 av Modifier UV-sterilized
 aw Reagent beads
 aw Mod-Link av
-aw Or ar
+ar Or aw
 L4
 ax Action Aliquot
 ay Amount 1.8 mL

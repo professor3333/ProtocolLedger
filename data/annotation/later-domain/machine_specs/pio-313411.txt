@@ -32,9 +32,7 @@ r Location tube
 q Acts-on r
 s Numerical 10 times
 q Count s
-t Modifier do not
 u Action vortex
-u Mod-Link t
 v Action incubate
 w Temperature room temperature
 v Setting w

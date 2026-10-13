@@ -145,10 +145,8 @@ bw Using bz
 bz Mod-Link by
 L8
 ca Reagent Hoechst 33342
-cb Modifier not
 cc Action added
 cc Acts-on ca
-cc Mod-Link cb
 cd Action incubate
 ce Reagent Hoechst 33342
 cd Using ce

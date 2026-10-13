@@ -24,7 +24,7 @@ l Measure-Type-Link k
 m Method purification
 n Method concentration
 o Reagent genomic DNA sample
-n Or m
+m Or n
 p Concentration 0.4X
 q Generic-Measure 0.4 volume
 s Reagent beads
@@ -61,7 +61,7 @@ an Device Hula mixer
 ao Device rotator mixer
 am Site an
 am Site ao
-ao Or an
+an Or ao
 ap Time 00:30:00
 aq Temperature RT
 am Setting ap
@@ -125,11 +125,9 @@ bx Measure br
 br Mod-Link bq
 bx Measure bw
 bx Mod-Link bv
-ca Modifier without
 by Action disturbing
 bz Reagent pellet
 by Acts-on bz
-by Mod-Link ca
 cb Action Remove
 cc Reagent ethanol
 cb Acts-on cc
@@ -159,8 +157,6 @@ cs Time 00:01:00
 cp Setting cr
 cp Setting cs
 cr Mod-Link cq
-cu Modifier do not
 ct Action dry
-ct Mod-Link cu
 cv Reagent pellet
 ct Acts-on cv

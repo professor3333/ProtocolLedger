@@ -9,10 +9,10 @@ f Reagent cell-based samples
 c Using d
 c Acts-on e
 c Acts-on f
-f Or e
+e Or f
 g Reagent tissue
 h Reagent cell
-h Or g
+g Or h
 i Method preparation
 j Method encoding probe hybridization
 k Method labeling

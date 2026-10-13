@@ -41,9 +41,7 @@ v Measure u
 w Action removing
 x Modifier as much as possible
 w Mod-Link x
-y Modifier without
 z Action drying out
-z Mod-Link y
 aa Reagent cells
 z Acts-on aa
 L4

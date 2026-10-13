@@ -110,7 +110,7 @@ bl Temperature roomtemperature
 be Setting bl
 bm Time overnight
 be Setting bm
-bm Or bk
+bk Or bm
 bn Temperature 4°C
 be Setting bn
 L4
@@ -148,9 +148,9 @@ cg Acts-on ce
 ch Temperature -20°C
 ci Temperature -80°C
 cg Setting ch
-ci Or ch
+ch Or ci
 cj Time several months
-ck Time up to a year
+ck Time a year
 cg Setting cj
 cg Setting ck
 L5
@@ -288,7 +288,7 @@ fi Location racks
 fj Location containers
 fd Site fi
 fd Site fj
-fj Or fi
+fi Or fj
 fk Action Warm
 fl Reagent cryosections
 fk Acts-on fl

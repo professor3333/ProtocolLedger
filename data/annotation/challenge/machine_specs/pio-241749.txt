@@ -1,8 +1,7 @@
 L0
-0a Action Preparation
+0a Method Preparation
 0b Reagent Lung Tissue Blocks
 0c Method MPLEx
-0a Acts-on 0b
 L1
 1a Action Place
 1b Reagent sample

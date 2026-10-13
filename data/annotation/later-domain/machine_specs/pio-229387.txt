@@ -54,9 +54,7 @@ ag Method hematology
 ah Action Fill
 ai Measure-Type volume
 ah Measure-Type-Link ai
-aj Modifier without
 ak Action overfilling
-ak Mod-Link aj
 L6
 al Action collect
 am Reagent blood
@@ -92,9 +90,7 @@ bc Reagent anticoagulant
 bb Acts-on bc
 bd Reagent blood
 bb Acts-on bd
-be Modifier Do not
 bf Action shake
-bf Mod-Link be
 bg Location tubes
 bf Acts-on bg
 bh Modifier vigorously

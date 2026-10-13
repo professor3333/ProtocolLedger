@@ -11,8 +11,8 @@ L1
 1g Device liquid handling platform
 1c Using 1d
 1c Using 1g
-1g Or 1d
-1f Or 1e
+1d Or 1g
+1e Or 1f
 1h Action Centrifuge
 1i Modifier incubated
 1j Reagent samples
@@ -34,7 +34,7 @@ L1
 1p Mod-Link 1o
 1n Site 1q
 1q Meronym 1r
-1s Or 1r
+1r Or 1s
 1t Action Transfer
 1u Amount 75 µl
 1v Reagent supernatant
@@ -44,7 +44,7 @@ L1
 1v Measure 1u
 1t Site 1w
 1t Site 1x
-1x Or 1w
+1w Or 1x
 1y Action Add
 1z Amount 20 µl
 1aa Reagent SeraSil-Mag 400 beads

@@ -1,12 +1,9 @@
 L0
 0a Modifier Rapid
-0b Action Isolation
+0b Method Isolation
 0c Reagent Lysosomes
 0d Method LysoIP
 0e Reagent mouse brain tissue
-0b Mod-Link 0a
-0b Acts-on 0c
-0b Site 0e
 L1
 1a Reagent Anti-HA magnetic beads
 1b Reagent Optima LC/MS water

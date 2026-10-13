@@ -45,7 +45,7 @@ x Reagent AEBSF
 t Acts-on x
 x Measure w
 y Reagent PBSF
-y Or x
+x Or y
 z Reagent reagents
 aa Location kitchen fridge
 z Meronym aa

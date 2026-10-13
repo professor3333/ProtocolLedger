@@ -84,7 +84,7 @@ L3
 3h Measure 3g
 3i Action Vortex
 3j Action pipette
-3j Or 3i
+3i Or 3j
 3k Action mix
 3l Modifier thoroughly
 3k Mod-Link 3l

@@ -52,7 +52,7 @@ ac Action pipetting
 ad Action inverting
 aa Commands ac
 aa Commands ad
-ad Or ac
+ac Or ad
 ae Location tube
 ad Acts-on ae
 af Modifier thoroughly

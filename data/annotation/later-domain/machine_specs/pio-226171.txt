@@ -77,7 +77,7 @@ at Using au
 av Method storage
 aw Temperature 4°C
 at Setting aw
-av Or au
+au Or av
 ax Method wash
 ay Reagent reagents
 az Action supplied

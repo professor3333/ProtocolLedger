@@ -1,13 +1,9 @@
 L0
 0a Modifier Simplified
 0b Modifier Agrobacterium-mediated
-0c Action transformation
+0c Method transformation
 0d Reagent Botrytis cinerea
 0e Reagent mycelia
-0c Mod-Link 0a
-0c Mod-Link 0b
-0c Acts-on 0d
-0c Using 0e
 L1
 1a Reagent Induction medium
 1b Reagent IM
@@ -114,7 +110,7 @@ L3
 3ab Reagent antibiotics
 3y Acts-on 3aa
 3y Acts-on 3ab
-3ab Or 3aa
+3aa Or 3ab
 3aa Mod-Link 3z
 L4
 4a Action Transfer
@@ -137,7 +133,7 @@ L4
 4j Action incubate
 4k Location plate
 4l Temperature room temperature
-4m Temperature approximately 23 °C
+4m Temperature 23 °C
 4n Time 3-5 days
 4j Acts-on 4k
 4j Setting 4l
@@ -182,7 +178,7 @@ L4
 4af Setting 4ah
 4af Setting 4ai
 4aj Action Resuspend
-4ak Amount approximately 50 mg
+4ak Amount 50 mg
 4al Modifier pelleted
 4am Reagent mycelia
 4an Amount 200 µL
@@ -207,7 +203,7 @@ L5
 5a Acts-on 5b
 5c Meronym 5b
 5d Meronym 5b
-5d Or 5c
+5c Or 5d
 5e Location LB agar
 5f Concentration 50 µg/mL
 5g Reagent kanamycin
@@ -288,7 +284,7 @@ L6
 6m Action Incubate
 6n Reagent mixture
 6o Temperature room temperature
-6p Temperature approximately 23 °C
+6p Temperature 23 °C
 6q Time 30 min
 6m Acts-on 6n
 6m Setting 6o
@@ -314,7 +310,7 @@ L6
 6aa Action Incubate
 6ab Location plates
 6ac Temperature room temperature
-6ad Temperature approximately 23 °C
+6ad Temperature 23 °C
 6ae Time 3 days
 6aa Acts-on 6ab
 6aa Setting 6ac
@@ -343,7 +339,7 @@ L7
 7k Measure 7j
 7l Action Incubate
 7m Temperature room temperature
-7n Temperature approximately 23 °C
+7n Temperature 23 °C
 7l Setting 7m
 7l Setting 7n
 7o Action Repeat
@@ -382,7 +378,7 @@ L8
 8g Modifier sterile
 8h Device cork borer
 8i Action excise
-8j Size approximately 1 cm²
+8j Size 1 cm²
 8k Reagent agar section
 8l Reagent fungal growth
 8i Using 8h
@@ -409,7 +405,7 @@ L8
 8u Measure 8t
 8v Action Incubate
 8w Temperature room temperature
-8x Temperature approximately 23 °C
+8x Temperature 23 °C
 8y Time 5–10 days
 8v Setting 8w
 8v Setting 8x

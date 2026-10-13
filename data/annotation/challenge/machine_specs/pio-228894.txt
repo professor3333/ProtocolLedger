@@ -29,7 +29,7 @@ L1
 1n Acts-on 1o
 1o Coreference-Link 1h
 1p Action Use
-1q Time within 2 weeks
+1q Time 2 weeks
 1p Setting 1q
 L2
 2a Method Hybridization
@@ -40,7 +40,7 @@ L2
 2f Reagent SSC wash
 2g Time 01:00:00
 2h Temperature Room temperature
-2i Time up to 06:00:00
+2i Time 06:00:00
 2j Temperature 4 °C
 2c Acts-on 2d
 2c Site 2f
@@ -49,8 +49,8 @@ L2
 2c Setting 2h
 2c Setting 2i
 2c Setting 2j
-2i Or 2g
-2j Or 2h
+2g Or 2i
+2h Or 2j
 2k Action Ensure
 2l Reagent Buffer R
 2m Temperature Room temperature
@@ -70,9 +70,7 @@ L2
 2u Numerical 3-5 times
 2s Using 2t
 2s Count 2u
-2v Modifier Do not
 2w Action vortex
-2w Mod-Link 2v
 2x Action Preheat
 2y Device thermal cycler
 2z Device lid

@@ -1,7 +1,6 @@
 L0
-0a Action Preparation
+0a Method Preparation
 0b Reagent Encoding Probes
-0a Product 0b
 0c Method PCR
 0d Method In-vitro Transcription
 0e Method Reverse Transcription

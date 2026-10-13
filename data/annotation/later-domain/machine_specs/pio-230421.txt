@@ -182,4 +182,4 @@ L8
 8g Device Confocal microscope
 8h Device Zeiss LSM 700
 8i Device Nikon widefield fluorescence microscope
-8i Or 8g
+8g Or 8i

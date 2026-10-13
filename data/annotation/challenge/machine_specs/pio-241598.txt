@@ -14,9 +14,7 @@ L1
 1e Mention each one
 1d Acts-on 1e
 1e Coreference-Link 1c
-1g Modifier Do not
 1f Action edit
-1f Mod-Link 1g
 1j Method qPCR
 L2
 2a Device Echo Software
@@ -41,7 +39,7 @@ L2
 2l Reagent air bubbles
 2m Reagent droplets
 2n Location plate
-2m Or 2l
+2l Or 2m
 2l Meronym 2n
 2m Meronym 2n
 2o Action Spin-down

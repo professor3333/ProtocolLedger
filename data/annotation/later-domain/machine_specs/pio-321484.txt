@@ -1,8 +1,7 @@
 L0
-0a Action Collection
-0b Action treatment
+0a Method Collection
+0b Method treatment
 0c Reagent conditioned media
-0b Using 0c
 L1
 1a Action follow
 1b Method differentiation protocol
