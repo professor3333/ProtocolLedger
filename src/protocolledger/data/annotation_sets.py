@@ -212,3 +212,88 @@ def machine_document(source: Mapping[str, Any], set_name: str, spec: str) -> dic
         },
         "annotation": {"labeller": MACHINE, "spec_sha256": text_sha256(spec)},
     }
+
+
+def load_machine_labels(set_dir: Path) -> list[dict[str, Any]]:
+    path = set_dir / "machine_labels.jsonl"
+    return [json.loads(line) for line in path.read_text("utf-8").splitlines() if line]
+
+
+def manual_reviews_by_hash(db_path: Path) -> dict[str, dict[str, Any]]:
+    """From-scratch reviews keyed by text hash; the most recent review of a text wins."""
+    docs, _ = export_reviews(db_path)
+    return {
+        d["provenance"]["text_sha256"]: d
+        for d in docs
+        if d["provenance"]["model_version"] == MANUAL
+    }
+
+
+def select_warmup(
+    train_docs: Sequence[Mapping[str, Any]],
+    n: int = 2,
+    steps: tuple[int, int] = (6, 10),
+    words: tuple[int, int] = (150, 350),
+) -> list[Mapping[str, Any]]:
+    """Pick ``n`` train protocols about the size of a new-set protocol, by hash of doc id.
+
+    Train documents may be read freely, so annotating them and comparing with the corpus
+    gold shows where an annotator's habits differ from the corpus before any new gold
+    counts."""
+    fits = [
+        d
+        for d in train_docs
+        if steps[0] <= len(d["steps"]) <= steps[1]
+        and words[0] <= len(d["text"].split()) <= words[1]
+    ]
+    fits.sort(key=lambda d: hashlib.sha256(d["doc_id"].encode("utf-8")).hexdigest())
+    return fits[:n]
+
+
+def warmup_pairs(
+    db_path: Path, warmup_docs: Sequence[Mapping[str, Any]]
+) -> tuple[list[Mapping[str, Any]], list[dict[str, Any]]]:
+    """The corpus gold and the annotator's from-scratch review for each annotated warm-up
+    document, matched by text hash."""
+    reviews = manual_reviews_by_hash(db_path)
+    gold, mine = [], []
+    for doc in warmup_docs:
+        review = reviews.get(text_sha256(doc["text"]))
+        if review is None:
+            continue
+        gold.append(doc)
+        mine.append(
+            {
+                "doc_id": doc["doc_id"],
+                "entities": review["entities"],
+                "relations": review["relations"],
+            }
+        )
+    return gold, mine
+
+
+def agreement_pairs(
+    first: Sequence[Mapping[str, Any]], second: Sequence[Mapping[str, Any]], split: str = "dev"
+) -> tuple[list[Mapping[str, Any]], list[dict[str, Any]], dict[str, int]]:
+    """Two annotations of the same documents, restricted to ``split`` and to documents both
+    sides have. ``first`` is the reference; F1 is symmetric, so the choice only swaps
+    precision and recall."""
+    second_by_id = {d["doc_id"]: d for d in second}
+    reference = [d for d in first if d["split"] == split and d["doc_id"] in second_by_id]
+    for d in reference:
+        if second_by_id[d["doc_id"]]["text"] != d["text"]:
+            raise AnnotationSetError(f"{d['doc_id']}: the two annotations cover different text")
+    other = [
+        {
+            "doc_id": d["doc_id"],
+            "entities": second_by_id[d["doc_id"]]["entities"],
+            "relations": second_by_id[d["doc_id"]]["relations"],
+        }
+        for d in reference
+    ]
+    counts = {
+        "compared": len(reference),
+        "first_only": sum(d["split"] == split for d in first) - len(reference),
+        "second_only": sum(d["split"] == split for d in second) - len(reference),
+    }
+    return reference, other, counts

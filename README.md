@@ -410,8 +410,11 @@ protocols.io user content under CC BY, redistributed here with that attribution;
 repository's MIT license covers the code, not this text.
 
 **Annotating.** The gold labels are being written by one annotator from scratch, without
-model suggestions. Agreement figures on this data will be **repeat-annotation
-consistency**, not inter-annotator agreement.
+model suggestions, following [docs/annotation_guidelines.md](docs/annotation_guidelines.md).
+Where the original schema leaves a choice open, the guideline adopts the convention the
+cleaned training split uses most often, with counts. In from-scratch mode the interface
+preselects no entity type, relation label or direction. Agreement figures on this data
+will be **repeat-annotation consistency**, not inter-annotator agreement.
 
 **Machine labels (provisional).** Until the human gold exists, both sets also have
 machine-generated labels that no person has reviewed (`machine_labels.jsonl`, built by
@@ -454,15 +457,27 @@ Reports and error taxonomies: `reports/annotation_sets/*-vs-machine*.{json,md}`.
 # 1. Collect (needs a protocols.io client access token in ~/.config/protocolledger/protocolsio_token)
 uv run python -I scripts/collect_protocolsio.py
 
-# 2. Serve the interface, tick "Annotate from scratch", paste a file from
-#    data/annotation/<set>/texts/, label it, and save the review
+# 2. Warm up on two train protocols and compare with the corpus gold
+uv run python scripts/annotation_warmup.py prepare   # writes artifacts/warmup/*.txt
+#    (annotate them as in step 3, but with PROTOCOLLEDGER_DB=data/warmup.db)
+uv run python scripts/annotation_warmup.py score --db data/warmup.db
+
+# 3. Serve the interface, tick "Annotate from scratch", load a file from
+#    data/annotation/<set>/texts/ with the upload button, label it, and save the review
 PROTOCOLLEDGER_BUNDLE=artifacts/bundles/crf-logreg-4a9d8cc549 PROTOCOLLEDGER_DB=data/annotation.db \
   uv run uvicorn --factory protocolledger.serve.app:create_app_from_env --port 8000
 
-# 3. Export the saved annotations as gold, then score a model on the dev portion
+# 4. Export the saved annotations as gold, then score a model on the dev portion
 uv run python scripts/export_annotations.py --db data/annotation.db --set later-domain
 uv run --extra neural python scripts/evaluate_annotation_set.py --set later-domain \
   --split dev --bundle artifacts/bundles/scibert-uniform-negatives-s21-7dc7a1893e
+
+# 5. Compare annotations of the dev portion: a blind second pass (repeat-annotation
+#    consistency), or the machine labels against the human gold
+uv run python scripts/annotation_agreement.py --set later-domain \
+  --first data/annotation.db --second data/annotation-repeat.db
+uv run python scripts/annotation_agreement.py --set later-domain \
+  --first data/annotation.db --second machine
 ```
 
 ## Approach

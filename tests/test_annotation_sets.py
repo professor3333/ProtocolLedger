@@ -7,12 +7,15 @@ import pytest
 from protocolledger.data.annotation_sets import (
     MANUAL,
     AnnotationSetError,
+    agreement_pairs,
     assign_split,
     gold_from_reviews,
     load_sources,
     machine_document,
     parse_label_spec,
+    select_warmup,
     text_sha256,
+    warmup_pairs,
 )
 from protocolledger.eval.scorer import evaluate
 from protocolledger.serve.reviews import ReviewStore
@@ -179,3 +182,54 @@ def test_machine_document_is_kept_apart_from_gold() -> None:
     assert doc["annotation"]["spec_sha256"] == text_sha256(WORKED_SPEC)
     assert doc["source"]["license"] == "CC BY 4.0"
     assert len(doc["entities"]) == 6 and len(doc["relations"]) == 4
+
+
+def train_doc(doc_id: str, steps: int, words: int) -> dict[str, Any]:
+    text = "\n".join(" ".join(["mix"] * (words // steps)) for _ in range(steps))
+    return {"doc_id": doc_id, "text": text, "steps": [[0, 1]] * steps}
+
+
+def test_warmup_selection_is_deterministic_and_size_matched() -> None:
+    docs = [train_doc(f"train_data/protocol_{i}", 8, 200) for i in range(20)]
+    docs += [train_doc("train_data/long", 30, 900), train_doc("train_data/short", 2, 20)]
+    picked = select_warmup(docs, 3)
+    assert [d["doc_id"] for d in picked] == [d["doc_id"] for d in select_warmup(docs[::-1], 3)]
+    assert len(picked) == 3 and all(
+        d["doc_id"] not in ("train_data/long", "train_data/short") for d in picked
+    )
+
+
+def test_warmup_pairs_match_reviews_to_train_gold(tmp_path: Path) -> None:
+    db = tmp_path / "warmup.db"
+    gold = {
+        **source("p1"),
+        "doc_id": "train_data/protocol_1",
+        "steps": [[0, 5], [6, len(TEXT) - 1]],
+    }
+    gold.update(entities=[], relations=[])
+    store = ReviewStore(db)
+    store.create(content(), text_sha256(TEXT), TEXT, MANUAL, None)
+    pairs, mine = warmup_pairs(db, [gold])
+    assert [d["doc_id"] for d in pairs] == ["train_data/protocol_1"]
+    assert [e["label"] for e in mine[0]["entities"]] == ["Action", "Reagent"]
+    assert warmup_pairs(db, [{**gold, "text": "other"}]) == ([], [])
+
+
+def test_agreement_pairs_compare_shared_dev_documents_only() -> None:
+    def doc(doc_id: str, split: str, text: str = TEXT) -> dict[str, Any]:
+        return {
+            "doc_id": doc_id,
+            "split": split,
+            "text": text,
+            "steps": [[0, len(text)]],
+            "entities": [],
+            "relations": [],
+        }
+
+    first = [doc("s/a", "dev"), doc("s/b", "dev"), doc("s/t", "test")]
+    second = [doc("s/a", "dev"), doc("s/c", "dev"), doc("s/t", "test")]
+    reference, other, counts = agreement_pairs(first, second)
+    assert [d["doc_id"] for d in reference] == ["s/a"] == [d["doc_id"] for d in other]
+    assert counts == {"compared": 1, "first_only": 1, "second_only": 1}
+    with pytest.raises(AnnotationSetError, match="different text"):
+        agreement_pairs(first, [doc("s/a", "dev", "changed")])
