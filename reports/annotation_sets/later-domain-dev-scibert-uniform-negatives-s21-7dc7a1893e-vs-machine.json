@@ -1,0 +1,291 @@
+{
+ "documents": 22,
+ "bootstrap": {
+  "unit": "document",
+  "resamples": 1000,
+  "seed": 13
+ },
+ "entities": {
+  "micro": {
+   "precision": 0.8078,
+   "recall": 0.8125,
+   "f1": 0.8101,
+   "f1_ci95": [
+    0.7835,
+    0.8411
+   ],
+   "tp": 1521,
+   "fp": 362,
+   "fn": 351
+  },
+  "macro_f1": 0.7399,
+  "macro_f1_labels": 17,
+  "per_label": {
+   "Action": {
+    "precision": 0.9181,
+    "recall": 0.9305,
+    "f1": 0.9243,
+    "support": 446,
+    "predicted": 452
+   },
+   "Amount": {
+    "precision": 0.989,
+    "recall": 0.8333,
+    "f1": 0.9045,
+    "support": 108,
+    "predicted": 91
+   },
+   "Concentration": {
+    "precision": 0.8657,
+    "recall": 0.9206,
+    "f1": 0.8923,
+    "support": 63,
+    "predicted": 67
+   },
+   "Device": {
+    "precision": 0.6094,
+    "recall": 0.78,
+    "f1": 0.6842,
+    "support": 50,
+    "predicted": 64
+   },
+   "Generic-Measure": {
+    "precision": 0.6429,
+    "recall": 0.5,
+    "f1": 0.5625,
+    "support": 18,
+    "predicted": 14
+   },
+   "Location": {
+    "precision": 0.8797,
+    "recall": 0.8417,
+    "f1": 0.8603,
+    "support": 139,
+    "predicted": 133
+   },
+   "Measure-Type": {
+    "precision": 0.4194,
+    "recall": 0.5652,
+    "f1": 0.4815,
+    "support": 23,
+    "predicted": 31
+   },
+   "Mention": {
+    "precision": 0.875,
+    "recall": 0.875,
+    "f1": 0.875,
+    "support": 8,
+    "predicted": 8
+   },
+   "Method": {
+    "precision": 0.5804,
+    "recall": 0.52,
+    "f1": 0.5485,
+    "support": 125,
+    "predicted": 112
+   },
+   "Modifier": {
+    "precision": 0.6981,
+    "recall": 0.6218,
+    "f1": 0.6578,
+    "support": 238,
+    "predicted": 212
+   },
+   "Numerical": {
+    "precision": 0.3529,
+    "recall": 0.6,
+    "f1": 0.4444,
+    "support": 20,
+    "predicted": 34
+   },
+   "Reagent": {
+    "precision": 0.8119,
+    "recall": 0.8471,
+    "f1": 0.8291,
+    "support": 484,
+    "predicted": 505
+   },
+   "Seal": {
+    "precision": 0.6,
+    "recall": 0.5,
+    "f1": 0.5455,
+    "support": 6,
+    "predicted": 5
+   },
+   "Size": {
+    "precision": 0.5,
+    "recall": 0.8,
+    "f1": 0.6154,
+    "support": 5,
+    "predicted": 8
+   },
+   "Speed": {
+    "precision": 0.9545,
+    "recall": 0.875,
+    "f1": 0.913,
+    "support": 24,
+    "predicted": 22
+   },
+   "Temperature": {
+    "precision": 0.8909,
+    "recall": 1.0,
+    "f1": 0.9423,
+    "support": 49,
+    "predicted": 55
+   },
+   "Time": {
+    "precision": 0.8714,
+    "recall": 0.9242,
+    "f1": 0.8971,
+    "support": 66,
+    "predicted": 70
+   },
+   "pH": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 0,
+    "predicted": 0
+   }
+  }
+ },
+ "relations": {
+  "micro": {
+   "precision": 0.7002,
+   "recall": 0.6181,
+   "f1": 0.6566,
+   "f1_ci95": [
+    0.6082,
+    0.7048
+   ],
+   "tp": 780,
+   "fp": 334,
+   "fn": 482
+  },
+  "macro_f1": 0.5099,
+  "macro_f1_labels": 14,
+  "per_label": {
+   "Acts-on": {
+    "precision": 0.7475,
+    "recall": 0.707,
+    "f1": 0.7267,
+    "support": 314,
+    "predicted": 297
+   },
+   "Commands": {
+    "precision": 1.0,
+    "recall": 0.05,
+    "f1": 0.0952,
+    "support": 20,
+    "predicted": 1
+   },
+   "Coreference-Link": {
+    "precision": 0.7143,
+    "recall": 0.1613,
+    "f1": 0.2632,
+    "support": 31,
+    "predicted": 7
+   },
+   "Count": {
+    "precision": 0.625,
+    "recall": 0.5556,
+    "f1": 0.5882,
+    "support": 18,
+    "predicted": 16
+   },
+   "Measure": {
+    "precision": 0.7733,
+    "recall": 0.743,
+    "f1": 0.7578,
+    "support": 179,
+    "predicted": 172
+   },
+   "Measure-Type-Link": {
+    "precision": 0.625,
+    "recall": 0.5556,
+    "f1": 0.5882,
+    "support": 18,
+    "predicted": 16
+   },
+   "Meronym": {
+    "precision": 0.3939,
+    "recall": 0.194,
+    "f1": 0.26,
+    "support": 67,
+    "predicted": 33
+   },
+   "Mod-Link": {
+    "precision": 0.6649,
+    "recall": 0.5644,
+    "f1": 0.6106,
+    "support": 225,
+    "predicted": 191
+   },
+   "Of-Type": {
+    "precision": 1.0,
+    "recall": 0.3333,
+    "f1": 0.5,
+    "support": 6,
+    "predicted": 2
+   },
+   "Or": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 11,
+    "predicted": 10
+   },
+   "Product": {
+    "precision": 0.7333,
+    "recall": 0.6875,
+    "f1": 0.7097,
+    "support": 16,
+    "predicted": 15
+   },
+   "Setting": {
+    "precision": 0.7023,
+    "recall": 0.748,
+    "f1": 0.7244,
+    "support": 123,
+    "predicted": 131
+   },
+   "Site": {
+    "precision": 0.7652,
+    "recall": 0.7769,
+    "f1": 0.771,
+    "support": 130,
+    "predicted": 132
+   },
+   "Using": {
+    "precision": 0.5824,
+    "recall": 0.5096,
+    "f1": 0.5436,
+    "support": 104,
+    "predicted": 91
+   }
+  }
+ },
+ "quantity_attachment": {
+  "accuracy": 0.7781,
+  "ci95": [
+   0.6948,
+   0.8481
+  ],
+  "correct": 249,
+  "total": 320
+ },
+ "complete_steps": {
+  "exact_match": 0.1329,
+  "ci95": [
+   0.08,
+   0.1977
+  ],
+  "exact": 23,
+  "total": 173
+ },
+ "set": "later-domain",
+ "split": "dev",
+ "reference": "machine labels (machine-generated, not human-reviewed)",
+ "model_version": "scibert-uniform-negatives-s21-7dc7a1893e",
+ "locked_test_release": null
+}

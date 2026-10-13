@@ -413,6 +413,24 @@ repository's MIT license covers the code, not this text.
 model suggestions. Agreement figures on this data will be **repeat-annotation
 consistency**, not inter-annotator agreement.
 
+**Machine labels (provisional).** Until the human gold exists, both sets also have
+machine-generated labels that no person has reviewed (`machine_labels.jsonl`, built by
+`scripts/build_machine_labels.py`; see the [dataset card](docs/dataset_card.md)). Scores
+against them show **agreement with those labels, not accuracy**. Only the dev portions
+have been scored:
+
+| Dev portion, vs. machine labels | Entity F1 | Relation F1, end-to-end | Quantity attachment |
+|---|---:|---:|---:|
+| Later-domain (22 docs), CRF + logistic regression | 0.738 [0.705, 0.776] | 0.560 [0.509, 0.612] | 0.662 (320) |
+| Later-domain (22 docs), SciBERT selected (seed 21) | 0.810 [0.783, 0.841] | 0.657 [0.608, 0.705] | 0.778 (320) |
+| Challenge (6 docs, 18 steps), CRF + logistic regression | 0.552 [0.495, 0.622] | 0.376 [0.274, 0.487] | 0.410 (39) |
+| Challenge (6 docs, 18 steps), SciBERT selected (seed 21) | 0.644 [0.566, 0.742] | 0.529 [0.450, 0.628] | 0.564 (39) |
+
+On the challenge dev steps, SciBERT is weakest on repeated materials (entity F1 0.597, 68
+gold entities), ranges (relation F1 0.474, 82 gold relations) and implicit references
+(relation F1 0.486, 71). These slices are a few steps each, so the comparison is weak.
+Reports: `reports/annotation_sets/*-vs-machine.json`.
+
 ```bash
 # 1. Collect (needs a protocols.io client access token in ~/.config/protocolledger/protocolsio_token)
 uv run python -I scripts/collect_protocolsio.py

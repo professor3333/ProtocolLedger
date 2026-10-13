@@ -1,0 +1,413 @@
+{
+ "documents": 6,
+ "bootstrap": {
+  "unit": "document",
+  "resamples": 1000,
+  "seed": 13
+ },
+ "entities": {
+  "micro": {
+   "precision": 0.5137,
+   "recall": 0.5955,
+   "f1": 0.5516,
+   "f1_ci95": [
+    0.4954,
+    0.6216
+   ],
+   "tp": 131,
+   "fp": 124,
+   "fn": 89
+  },
+  "macro_f1": 0.5202,
+  "macro_f1_labels": 16,
+  "per_label": {
+   "Action": {
+    "precision": 0.6393,
+    "recall": 0.7358,
+    "f1": 0.6842,
+    "support": 53,
+    "predicted": 61
+   },
+   "Amount": {
+    "precision": 0.8333,
+    "recall": 0.9091,
+    "f1": 0.8696,
+    "support": 11,
+    "predicted": 12
+   },
+   "Concentration": {
+    "precision": 0.5,
+    "recall": 0.75,
+    "f1": 0.6,
+    "support": 4,
+    "predicted": 6
+   },
+   "Device": {
+    "precision": 0.6667,
+    "recall": 0.5455,
+    "f1": 0.6,
+    "support": 11,
+    "predicted": 9
+   },
+   "Generic-Measure": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1,
+    "predicted": 5
+   },
+   "Location": {
+    "precision": 0.4348,
+    "recall": 0.5263,
+    "f1": 0.4762,
+    "support": 19,
+    "predicted": 23
+   },
+   "Measure-Type": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1": 0.6667,
+    "support": 1,
+    "predicted": 2
+   },
+   "Mention": {
+    "precision": 0.8,
+    "recall": 0.6667,
+    "f1": 0.7273,
+    "support": 6,
+    "predicted": 5
+   },
+   "Method": {
+    "precision": 0.1053,
+    "recall": 0.0952,
+    "f1": 0.1,
+    "support": 21,
+    "predicted": 19
+   },
+   "Modifier": {
+    "precision": 0.45,
+    "recall": 0.45,
+    "f1": 0.45,
+    "support": 20,
+    "predicted": 20
+   },
+   "Numerical": {
+    "precision": 0.1429,
+    "recall": 0.25,
+    "f1": 0.1818,
+    "support": 4,
+    "predicted": 7
+   },
+   "Reagent": {
+    "precision": 0.4857,
+    "recall": 0.68,
+    "f1": 0.5667,
+    "support": 50,
+    "predicted": 70
+   },
+   "Seal": {
+    "precision": 0.25,
+    "recall": 1.0,
+    "f1": 0.4,
+    "support": 1,
+    "predicted": 4
+   },
+   "Size": {
+    "precision": 1.0,
+    "recall": 0.3333,
+    "f1": 0.5,
+    "support": 3,
+    "predicted": 1
+   },
+   "Speed": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 0,
+    "predicted": 0
+   },
+   "Temperature": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 7,
+    "predicted": 7
+   },
+   "Time": {
+    "precision": 0.75,
+    "recall": 0.375,
+    "f1": 0.5,
+    "support": 8,
+    "predicted": 4
+   },
+   "pH": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 0,
+    "predicted": 0
+   }
+  }
+ },
+ "relations": {
+  "micro": {
+   "precision": 0.418,
+   "recall": 0.3423,
+   "f1": 0.3764,
+   "f1_ci95": [
+    0.2735,
+    0.487
+   ],
+   "tp": 51,
+   "fp": 71,
+   "fn": 98
+  },
+  "macro_f1": 0.1964,
+  "macro_f1_labels": 13,
+  "per_label": {
+   "Acts-on": {
+    "precision": 0.5385,
+    "recall": 0.5,
+    "f1": 0.5185,
+    "support": 42,
+    "predicted": 39
+   },
+   "Commands": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1,
+    "predicted": 0
+   },
+   "Coreference-Link": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 8,
+    "predicted": 0
+   },
+   "Count": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 2,
+    "predicted": 1
+   },
+   "Measure": {
+    "precision": 0.3889,
+    "recall": 0.35,
+    "f1": 0.3684,
+    "support": 20,
+    "predicted": 18
+   },
+   "Measure-Type-Link": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1,
+    "predicted": 1
+   },
+   "Meronym": {
+    "precision": 0.3333,
+    "recall": 0.1,
+    "f1": 0.1538,
+    "support": 10,
+    "predicted": 3
+   },
+   "Mod-Link": {
+    "precision": 0.375,
+    "recall": 0.3,
+    "f1": 0.3333,
+    "support": 20,
+    "predicted": 16
+   },
+   "Of-Type": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 0,
+    "predicted": 0
+   },
+   "Or": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 3,
+    "predicted": 1
+   },
+   "Product": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 2,
+    "predicted": 1
+   },
+   "Setting": {
+    "precision": 0.6364,
+    "recall": 0.4667,
+    "f1": 0.5385,
+    "support": 15,
+    "predicted": 11
+   },
+   "Site": {
+    "precision": 0.2941,
+    "recall": 0.3846,
+    "f1": 0.3333,
+    "support": 13,
+    "predicted": 17
+   },
+   "Using": {
+    "precision": 0.2857,
+    "recall": 0.3333,
+    "f1": 0.3077,
+    "support": 12,
+    "predicted": 14
+   }
+  }
+ },
+ "quantity_attachment": {
+  "accuracy": 0.4103,
+  "ci95": [
+   0.2069,
+   0.5909
+  ],
+  "correct": 16,
+  "total": 39
+ },
+ "complete_steps": {
+  "exact_match": 0.0,
+  "ci95": [
+   0.0,
+   0.0
+  ],
+  "exact": 0,
+  "total": 18
+ },
+ "set": "challenge",
+ "split": "dev",
+ "reference": "machine labels (machine-generated, not human-reviewed)",
+ "model_version": "crf-logreg-4a9d8cc549",
+ "locked_test_release": null,
+ "categories": {
+  "conditional_wording": {
+   "documents": 5,
+   "steps": 7,
+   "entities": {
+    "f1": 0.5991,
+    "f1_ci95": [
+     0.4516,
+     0.6545
+    ],
+    "support": 108
+   },
+   "relations": {
+    "f1": 0.4088,
+    "f1_ci95": [
+     0.2745,
+     0.4436
+    ],
+    "support": 80
+   }
+  },
+  "implicit_references": {
+   "documents": 4,
+   "steps": 5,
+   "entities": {
+    "f1": 0.5789,
+    "f1_ci95": [
+     0.3206,
+     0.75
+    ],
+    "support": 88
+   },
+   "relations": {
+    "f1": 0.416,
+    "f1_ci95": [
+     0.1538,
+     0.5088
+    ],
+    "support": 71
+   }
+  },
+  "multiple_actions": {
+   "documents": 6,
+   "steps": 14,
+   "entities": {
+    "f1": 0.5821,
+    "f1_ci95": [
+     0.503,
+     0.6584
+    ],
+    "support": 185
+   },
+   "relations": {
+    "f1": 0.3715,
+    "f1_ci95": [
+     0.2609,
+     0.4706
+    ],
+    "support": 138
+   }
+  },
+  "ranges": {
+   "documents": 5,
+   "steps": 8,
+   "entities": {
+    "f1": 0.5635,
+    "f1_ci95": [
+     0.4976,
+     0.6408
+    ],
+    "support": 114
+   },
+   "relations": {
+    "f1": 0.3378,
+    "f1_ci95": [
+     0.2519,
+     0.4286
+    ],
+    "support": 82
+   }
+  },
+  "repeated_materials": {
+   "documents": 3,
+   "steps": 5,
+   "entities": {
+    "f1": 0.5119,
+    "f1_ci95": [
+     0.321,
+     0.75
+    ],
+    "support": 68
+   },
+   "relations": {
+    "f1": 0.2549,
+    "f1_ci95": [
+     0.0488,
+     0.4348
+    ],
+    "support": 52
+   }
+  },
+  "unusual_symbols": {
+   "documents": 6,
+   "steps": 8,
+   "entities": {
+    "f1": 0.6797,
+    "f1_ci95": [
+     0.6433,
+     0.7838
+    ],
+    "support": 129
+   },
+   "relations": {
+    "f1": 0.4471,
+    "f1_ci95": [
+     0.4052,
+     0.5373
+    ],
+    "support": 101
+   }
+  }
+ }
+}
