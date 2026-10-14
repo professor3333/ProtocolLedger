@@ -130,6 +130,27 @@ def test_health_and_readiness(client: TestClient) -> None:
     assert ready.status_code == 200
     assert ready.json()["model_version"] == "tiny-test"
     assert ready.json()["public_demo"] is False
+    assert ready.json()["annotation_only"] is False
+
+
+def test_annotation_only_server_refuses_extraction(bundle_dir: Path, tmp_path: Path) -> None:
+    with TestClient(create_app(bundle_dir, tmp_path / "r.db", annotation_only=True)) as c:
+        ready = c.get("/readyz").json()
+        assert ready["annotation_only"] is True
+        res = c.post("/v1/extract", json={"text": "Add 5 mL of water to the tube."})
+        assert res.status_code == 403 and "annotation server" in res.json()["detail"]
+        assert (
+            c.post(
+                "/v1/reviews",
+                json={
+                    "text": "Add water.",
+                    "save_text": True,
+                    "model_version": "manual-annotation",
+                    "content": {"entities": [], "relations": []},
+                },
+            ).status_code
+            == 201
+        )
 
 
 def test_not_ready_without_a_bundle(tmp_path: Path) -> None:

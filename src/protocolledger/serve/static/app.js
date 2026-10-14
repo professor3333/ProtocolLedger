@@ -23,6 +23,7 @@ const $ = (id) => document.getElementById(id);
 let doc = null;
 let preview = { sheet: [], review_items: [], normalized_values: {} };
 let refreshTimer = null;
+let annotationOnly = false;
 
 // ------------------------------------------------------------------ helpers
 
@@ -126,6 +127,17 @@ async function loadModelInfo() {
     box.title = `bundle ${body.bundle_sha256}`;
     box.className = "model ready";
     $("demo-notice").hidden = !body.public_demo;
+    if (body.annotation_only) {
+      annotationOnly = true;
+      $("scratch").checked = true;
+      $("scratch").disabled = true;
+      $("extract").textContent = "Start annotating";
+      $("notice-model").textContent = "Annotation-only server.";
+      $("notice-scores").textContent = "Model extraction is switched off, so no suggestion can bias "
+        + "the gold labels. Every text starts empty.";
+      $("notice-advice").hidden = true;
+      return;
+    }
     const names = {
       "span-relation": "SciBERT span-relation model.",
       "crf+logreg": "Baseline model (CRF + logistic regression).",
@@ -152,7 +164,7 @@ async function extract() {
     return;
   }
   if (doc && doc.dirty && !window.confirm("Discard the unsaved changes to the current review?")) return;
-  if ($("scratch").checked) {
+  if ($("scratch").checked || annotationOnly) {
     startScratch(text);
     return;
   }

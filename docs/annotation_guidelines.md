@@ -8,8 +8,9 @@ one. Counts come from `train` after deduplication (314 protocols).
 
 ## Ground rules
 
-1. **Annotate from scratch.** Use the "Annotate from scratch" mode, which never calls a
-   model. Do not open `machine_labels.jsonl`, `machine_specs/`, or any
+1. **Annotate from scratch.** Run the server with `PROTOCOLLEDGER_ANNOTATION_ONLY=1`,
+   which switches model extraction off. Never look at model output for a text you will
+   annotate: once seen, its labels are no longer independent. Do not open `machine_labels.jsonl`, `machine_specs/`, or any
    `reports/annotation_sets/*-errors.md` for a set you are still annotating: they show
    machine labels, and gold copied from them is not gold.
 2. **Label what the text says.** Never add an entity for something that is only implied.
@@ -29,9 +30,8 @@ one. Counts come from `train` after deduplication (314 protocols).
 
 ## Workflow
 
-1. Start the interface (see the README, "New annotation sets").
-2. Tick **Annotate from scratch**, upload `data/annotation/<set>/texts/<id>.txt`, and press
-   **Start annotating**.
+1. Start the interface in annotation-only mode (see the README, "New annotation sets").
+2. Upload `data/annotation/<set>/texts/<id>.txt` and press **Start annotating**.
 3. Go line by line. For each line, add its entities first, then their relations.
 4. Tick **Store the protocol text on the server** and save the review. Saving the same text
    again replaces the earlier annotation in the export (the most recent review wins).

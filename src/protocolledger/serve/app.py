@@ -83,7 +83,11 @@ def _route_template(request: Request) -> str:
 T = TypeVar("T")
 
 
-def create_app(bundle_dir: Path | None, review_db: Path | None = None) -> FastAPI:
+def create_app(
+    bundle_dir: Path | None, review_db: Path | None = None, *, annotation_only: bool = False
+) -> FastAPI:
+    """``annotation_only`` switches model extraction off, so gold annotation cannot be
+    seeded or biased by model output; the interface then only offers from-scratch work."""
     state: dict[str, LoadedBundle | str | None] = {"bundle": None, "error": None}
     stores: dict[str, ReviewStore] = {}
     metrics = Metrics()
@@ -190,14 +194,30 @@ def create_app(bundle_dir: Path | None, review_db: Path | None = None) -> FastAP
     @app.get("/readyz", responses={503: {"model": Problem}})
     def readyz() -> dict[str, object]:
         loaded = bundle()
-        return {"status": "ready", "public_demo": PUBLIC_DEMO, **loaded.version_info()}
+        return {
+            "status": "ready",
+            "public_demo": PUBLIC_DEMO,
+            "annotation_only": annotation_only,
+            **loaded.version_info(),
+        }
 
     @app.post(
         "/v1/extract",
         response_model=ExtractResponse,
-        responses={422: {"model": Problem}, 413: {"model": Problem}, 503: {"model": Problem}},
+        responses={
+            403: {"model": Problem},
+            422: {"model": Problem},
+            413: {"model": Problem},
+            503: {"model": Problem},
+        },
     )
     def extract(request: ExtractRequest) -> ExtractResponse:
+        if annotation_only:
+            raise HTTPException(
+                status_code=403,
+                detail="extraction is switched off on this annotation server, "
+                "so model output cannot bias gold labels",
+            )
         loaded = bundle()
         text = request.text
         try:
@@ -401,5 +421,7 @@ def create_app_from_env() -> FastAPI:
     configured = os.environ.get("PROTOCOLLEDGER_BUNDLE")
     database = os.environ.get("PROTOCOLLEDGER_DB")
     return create_app(
-        Path(configured) if configured else None, Path(database) if database else None
+        Path(configured) if configured else None,
+        Path(database) if database else None,
+        annotation_only=os.environ.get("PROTOCOLLEDGER_ANNOTATION_ONLY", "") == "1",
     )

@@ -462,9 +462,11 @@ uv run python scripts/annotation_warmup.py prepare   # writes artifacts/warmup/*
 #    (annotate them as in step 3, but with PROTOCOLLEDGER_DB=data/warmup.db)
 uv run python scripts/annotation_warmup.py score --db data/warmup.db
 
-# 3. Serve the interface, tick "Annotate from scratch", load a file from
-#    data/annotation/<set>/texts/ with the upload button, label it, and save the review
-PROTOCOLLEDGER_BUNDLE=artifacts/bundles/crf-logreg-4a9d8cc549 PROTOCOLLEDGER_DB=data/annotation.db \
+# 3. Serve the interface in annotation-only mode (model extraction switched off, so no
+#    suggestion can bias the gold), load a file from data/annotation/<set>/texts/ with
+#    the upload button, label it, and save the review
+PROTOCOLLEDGER_ANNOTATION_ONLY=1 PROTOCOLLEDGER_BUNDLE=artifacts/bundles/crf-logreg-4a9d8cc549 \
+  PROTOCOLLEDGER_DB=data/annotation.db \
   uv run uvicorn --factory protocolledger.serve.app:create_app_from_env --port 8000
 
 #    To continue an annotation later, use "Open a saved review" in the interface. If the
