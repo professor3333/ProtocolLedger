@@ -90,6 +90,19 @@ tail pair for the relation.
 
 A pair of entities may carry more than one relation when the text supports both.
 
+### Action → Reagent: which label
+
+The word before the Reagent decides most cases. Counts are Action → Reagent links in
+train, grouped by the last preposition between the two spans.
+
+| Text | Label | Train |
+|---|---|---|
+| no preposition (`Wash the cells`, `Start enrichment cultures`) | Acts-on, even when the Action creates the material | 4,577 of 4,860 |
+| "with" (`Wash twice with Cell Staining Buffer`) | Using | 485 of 631; `wash … with` 104 of 134 |
+| "using" | Using | 97 of 105 |
+| "in" (`Resuspend cells in 1 ml buffer`) | Site | 278 of 471; `resuspend … in` 96 of 129 |
+| "to", "into", "from", "on" | Site | 216 of 314, 47 of 73, 60 of 101, 34 of 63 |
+
 ## Span conventions
 
 | Case | Rule | Train evidence |
@@ -103,7 +116,9 @@ A pair of entities may carry more than one relation when the text supports both.
 | "room temperature", "RT" | Temperature | 350 and 41 |
 | "overnight" | Time | 104 of 119 |
 | Vendor names and catalog numbers | Outside the span: `Proteinase K` in `Proteinase K (NEB, P8107S)` | train is split (51 inside, 57 outside); this guide chooses outside |
-| Multi-word Actions | Label the verb alone; in `pipette up and down`, `up and down` is a Method | 614 of 10,472 Actions are multi-word; `up and down` is the most frequent Method |
+| Multi-word Actions | Label the verb alone; in `pipette up and down`, `up and down` is a Method. Exception: `spin down` is one Action | 614 of 10,472 Actions are multi-word; `up and down` is the most frequent Method; "spin down" is one Action in 14 of 17 |
+| "in the dark" | Location `dark`, linked from the Action with `Site` | 25 of 65 (Modifier `in the dark` 19, unlabelled 12, Method `dark` 7); a plurality only |
+| "amount" and "volume" with no number | `amount` is an Amount and a word before it a Modifier (`appropriate` + `amount`); `volume` alone is a Measure-Type; `equal volume` is one Amount | `amount`: Amount 12 of 18; `volume`: Measure-Type 134 of 148; `equal volume`: one Amount span in 12 of 23 |
 | Titles | Nouns such as `Preparation`, `Isolation`, `Extraction` are Methods with no relations; "-ing" words such as `Isolating` are Actions | "-tion" title words: 102 Method, 1 Action; "-ing": 45 Action, 11 Method |
 | `Or` direction | From the earlier mention to the later one | 341 of 408 |
 | Quantity direction | Always from the material to the quantity, whatever the word order | quantity is the tail in 4,453 of 4,459 `Measure` links; it precedes its material in 3,825 |
@@ -114,4 +129,6 @@ A pair of entities may carry more than one relation when the text supports both.
 
 Add one entry per new decision: the date, the rule, and one example (set, id, text).
 
-- *(none yet)*
+- 2026-10-15: after the second warm-up (train protocol_335 and protocol_212), added the
+  Action → Reagent preposition table and the rows for `spin down`, "in the dark" and
+  "amount"/"volume". Each comes from train counts, not from those two documents.
