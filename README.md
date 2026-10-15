@@ -86,12 +86,11 @@ flowchart LR
   classDef done fill:#d1fae5,stroke:#059669,color:#064e3b
   classDef wip fill:#fef3c7,stroke:#d97706,color:#78350f
   classDef planned fill:#f1f5f9,stroke:#94a3b8,color:#334155
-  class A,B,F,G,H,I,J,K done
-  class C wip
-  class R,D,E planned
+  class A,B,C,D,E,F,G,H,I,J,K,R done
 ```
 
-<sub>🟩 built · 🟨 in progress · ⬜ planned</sub>
+<sub>🟩 built (every component is built; correction batches are rehearsed, not yet fed by
+real users)</sub>
 
 ## The problem
 
@@ -244,13 +243,15 @@ rollback. CI builds the image and smoke-tests it with a tiny fixture bundle. See
 | Serve SciBERT in the Docker image (released through Compose with smoke test) | ✅ Done |
 | Frozen targets; single locked-test evaluation | ✅ Done |
 | Correction-batch lifecycle: export, curate, leakage check, retrain, gate, release, rollback (rehearsed) | ✅ Done |
-| Challenge set and later-domain protocols.io test set | 🟡 Collected and split; annotation in progress |
+| Challenge set and later-domain protocols.io sets | 🟡 Collected, split, machine-labelled and scored once; no human gold |
 | Deterministic quantity normalization | ✅ Done |
 | Saved reviews API, JSON/CSV export, backup and restore | ✅ Done |
 | Review editing in the interface | ✅ Done |
 | Docker / Compose deployment, Prometheus metrics, release + rollback (rehearsed) | ✅ Done |
-| Public hosting, CPU optimization (ONNX / INT8), load test | ⬜ Planned |
-| User pilot, model card, final report | ⬜ Planned |
+| 1,000-request load test (container, 4 CPUs) | ✅ Done |
+| Model card, dataset card, experiment report | ✅ Done |
+| Public hosting | ⬜ Not done (the local Docker path is complete) |
+| User pilot | ⬜ Not run |
 
 ## Quickstart
 
@@ -409,18 +410,21 @@ Each source keeps its URL, DOI, authors, version and publication date. Protocol 
 protocols.io user content under CC BY, redistributed here with that attribution; the
 repository's MIT license covers the code, not this text.
 
-**Annotating.** The gold labels are being written by one annotator from scratch, without
-model suggestions, following [docs/annotation_guidelines.md](docs/annotation_guidelines.md).
+**Annotating.** No human gold has been written yet. The tooling for it is in place: an
+annotation-only server mode, a warm-up check against train gold, and guidelines for one
+annotator labelling from scratch without model suggestions
+([docs/annotation_guidelines.md](docs/annotation_guidelines.md)).
 Where the original schema leaves a choice open, the guideline adopts the convention the
 cleaned training split uses most often, with counts. In from-scratch mode the interface
-preselects no entity type, relation label or direction. Agreement figures on this data
-will be **repeat-annotation consistency**, not inter-annotator agreement.
+preselects no entity type, relation label or direction. Agreement figures on such gold
+would be **repeat-annotation consistency**, not inter-annotator agreement.
 
 **Machine labels (provisional).** Until the human gold exists, both sets also have
 machine-generated labels that no person has reviewed (`machine_labels.jsonl`, built by
 `scripts/build_machine_labels.py`; see the [dataset card](docs/dataset_card.md)). Scores
-against them show **agreement with those labels, not accuracy**. Only the dev portions
-have been scored:
+against them show **agreement with those labels, not accuracy**. The dev portions are
+below; the locked test portions were scored once, in
+[Results](#new-protocolsio-sets-locked-test-portions-scored-once-2026-10-15):
 
 | Dev portion, vs. machine labels | Entity F1 | Relation F1, end-to-end | Quantity attachment |
 |---|---:|---:|---:|
@@ -535,8 +539,8 @@ measured, not assumed. Two tokenizer pitfalls are handled explicitly:
 One scorer (`src/protocolledger/eval/scorer.py`) produces every reported number, for
 every system. It reports per-label scores with support, macro-F1 over supported labels,
 and document-level bootstrap confidence intervals. Duplicate predictions are collapsed.
-The locked test split can only be scored for a declared release. Planned slices: unseen
-reagent names, Unicode perturbations, template siblings, a challenge set and recently
+The locked test split can only be scored for a declared release. Slices: unseen reagent
+names, Unicode perturbations, template siblings, challenge-set categories and recently
 published protocols.
 
 ## Results
@@ -572,6 +576,38 @@ grows on test, from +5.7 to +7.6 points. Its largest advantage is on reagent nam
 seen in training: recall 0.762 against 0.631. The dev-fitted isotonic calibrator transfers
 to test, reducing expected calibration error from 0.172 to 0.021. The two relation-quality
 targets are missed; the misses are reported here and the targets were not changed.
+
+### New protocols.io sets: locked test portions (scored once, 2026-10-15)
+
+The same declared releases were scored once on the locked test portions of the
+later-domain and challenge sets, with `scripts/evaluate_annotation_set.py --split test`.
+No human gold exists for these sets, so the reference is the **machine labels**, which no
+person has reviewed: the numbers are **agreement with those labels, not accuracy**. For
+test portions the script writes error counts but no example sentences, and no errors were
+inspected. Reports: `reports/annotation_sets/*-test-*-vs-machine*.{json,md}`.
+
+| Locked test portion, vs. machine labels | System | Entity F1 | Relation F1, end-to-end | Quantity attachment | Reagent recall, unseen / seen names |
+|---|---|---:|---:|---:|---:|
+| Later-domain (16 protocols, 128 steps) | CRF + logistic regression | 0.710 [0.669, 0.757] | 0.527 [0.471, 0.592] | 0.683 (376) | 0.658 (234) / 0.824 (210) |
+| Later-domain (16 protocols, 128 steps) | **SciBERT** | **0.802** [0.768, 0.831] | **0.636** [0.594, 0.683] | **0.795** (376) | 0.829 (234) / 0.919 (210) |
+| Challenge (5 protocols, 15 steps) | CRF + logistic regression | 0.790 [0.737, 0.824] | 0.604 [0.529, 0.661] | 0.773 (66) | 0.794 (34) / 0.773 (44) |
+| Challenge (5 protocols, 15 steps) | **SciBERT** | **0.818** [0.790, 0.841] | **0.641** [0.520, 0.711] | **0.864** (66) | 0.824 (34) / 0.886 (44) |
+
+| Challenge test category (SciBERT) | Steps | Entity F1 (support) | Relation F1 (support) |
+|---|---:|---:|---:|
+| conditional wording | 4 | 0.841 (64) | 0.726 (49) |
+| implicit references | 7 | 0.833 (101) | 0.711 (77) |
+| multiple actions | 9 | 0.826 (172) | 0.672 (134) |
+| ranges | 2 | 0.788 (17) | 0.741 (13) |
+| repeated materials | 8 | 0.851 (159) | 0.667 (127) |
+| unusual symbols | 7 | 0.778 (109) | 0.614 (85) |
+
+SciBERT keeps its lead over the traditional baseline on newer text: +10.9 points of
+end-to-end relation F1 on the later-domain test portion. The challenge test portion is
+only 15 steps, so its category scores are weak, and the two systems' relation CIs
+overlap. The machine labels were aligned with train conventions, which both models also
+learned, so agreement with them can overstate accuracy; measuring accuracy needs human
+gold.
 
 ### Development set
 
@@ -727,8 +763,8 @@ Re-measure on the deployment host before changing runtimes.</sub>
 
 **Evaluation.**
 - Value normalization has not been checked against an independently labelled set.
-- The challenge and later-domain sets are collected but not yet annotated, so there are
-  no results on them yet.
+- The challenge and later-domain sets have **no human gold**. Their scores are agreement
+  with machine labels that no person has reviewed, not accuracy.
 - **No user pilot has been run**, so there is no evidence yet that the tool saves time.
 - Latency and memory were measured on an Apple M1 with Docker limited to 4 CPUs, not on
   a production x86 host.
@@ -744,12 +780,15 @@ Re-measure on the deployment host before changing runtimes.</sub>
 
 - [x] **Phase 0:** project skeleton, CI, pinned corpus acquisition
 - [x] **Phase 1:** annotation converter, validation, duplicate audit, frozen splits
-- [ ] **Phase 2:** rule-based and CRF / logistic baselines, thin end-to-end app
+- [x] **Phase 2:** rule-based and CRF / logistic baselines, thin end-to-end app
 - [x] **Phase 3:** BERT / SciBERT span-and-relation model with ablations
 - [ ] **Phase 4:** error analysis, calibration, fresh annotations and challenge set
-- [ ] **Phase 5:** API, evidence highlighting, editing, saved reviews, exports
+  (done except human gold for the new sets; they carry machine labels)
+- [x] **Phase 5:** API, evidence highlighting, editing, saved reviews, exports
 - [ ] **Phase 6:** CPU optimization, Docker deployment, monitoring and rollback
+  (done locally; public hosting not done)
 - [ ] **Phase 7:** user pilot, model and data cards, final report
+  (cards and report done; no pilot run)
 
 ## Project structure
 

@@ -61,3 +61,5 @@ def test_analyze_counts_examples_and_slices() -> None:
     assert report["slices"]["reagent_names"]["unseen"] == {"gold": 1, "recall": 1.0}
     assert "[[water]]" in report["examples"]["relation/wrong_attachment"][0]
     assert "Error analysis" in render_markdown(report, "test")
+    withheld = render_markdown({k: v for k, v in report.items() if k != "examples"}, "test")
+    assert "[[" not in withheld and "Examples withheld" in withheld

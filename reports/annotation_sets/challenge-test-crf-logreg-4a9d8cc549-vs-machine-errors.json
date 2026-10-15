@@ -1,0 +1,219 @@
+{
+ "entities": {
+  "gold_total": 242,
+  "categories": {
+   "wrong_boundary_and_type": {
+    "count": 16,
+    "share": 0.0661
+   },
+   "wrong_boundary": {
+    "count": 22,
+    "share": 0.0909
+   },
+   "correct": {
+    "count": 188,
+    "share": 0.7769
+   },
+   "wrong_type": {
+    "count": 9,
+    "share": 0.0372
+   },
+   "missed": {
+    "count": 7,
+    "share": 0.0289
+   }
+  },
+  "by_label": {
+   "Action": {
+    "correct": 42,
+    "wrong_boundary_and_type": 2,
+    "missed": 2
+   },
+   "Amount": {
+    "wrong_boundary": 1,
+    "correct": 19,
+    "wrong_boundary_and_type": 1
+   },
+   "Concentration": {
+    "correct": 24,
+    "wrong_type": 3
+   },
+   "Device": {
+    "correct": 3,
+    "wrong_type": 2,
+    "wrong_boundary": 2
+   },
+   "Location": {
+    "correct": 8,
+    "wrong_boundary": 2
+   },
+   "Measure-Type": {
+    "correct": 4,
+    "wrong_boundary": 1
+   },
+   "Mention": {
+    "correct": 2
+   },
+   "Method": {
+    "wrong_boundary": 4,
+    "correct": 1,
+    "wrong_type": 1
+   },
+   "Modifier": {
+    "wrong_boundary_and_type": 9,
+    "missed": 2,
+    "wrong_boundary": 1,
+    "correct": 8,
+    "wrong_type": 1
+   },
+   "Numerical": {
+    "wrong_boundary_and_type": 1,
+    "correct": 2,
+    "wrong_type": 1
+   },
+   "Reagent": {
+    "wrong_boundary_and_type": 3,
+    "correct": 61,
+    "wrong_boundary": 11,
+    "missed": 2,
+    "wrong_type": 1
+   },
+   "Speed": {
+    "correct": 2
+   },
+   "Temperature": {
+    "correct": 5
+   },
+   "Time": {
+    "correct": 3,
+    "missed": 1
+   },
+   "pH": {
+    "correct": 4
+   }
+  },
+  "spurious_by_label": {
+   "Modifier": 3,
+   "Action": 3,
+   "Reagent": 1
+  }
+ },
+ "relations": {
+  "gold_total": 182,
+  "categories": {
+   "correct": {
+    "count": 100,
+    "share": 0.5495
+   },
+   "endpoint_error": {
+    "count": 57,
+    "share": 0.3132
+   },
+   "wrong_label": {
+    "count": 4,
+    "share": 0.022
+   },
+   "missed": {
+    "count": 14,
+    "share": 0.0769
+   },
+   "wrong_attachment": {
+    "count": 7,
+    "share": 0.0385
+   }
+  },
+  "by_label": {
+   "Acts-on": {
+    "correct": 27,
+    "endpoint_error": 6,
+    "wrong_attachment": 1
+   },
+   "Commands": {
+    "endpoint_error": 1
+   },
+   "Coreference-Link": {
+    "endpoint_error": 4,
+    "missed": 2
+   },
+   "Count": {
+    "correct": 1
+   },
+   "Measure": {
+    "correct": 38,
+    "endpoint_error": 7,
+    "wrong_attachment": 3,
+    "missed": 1
+   },
+   "Measure-Type-Link": {
+    "correct": 3,
+    "missed": 1,
+    "endpoint_error": 1
+   },
+   "Meronym": {
+    "missed": 3,
+    "endpoint_error": 13,
+    "correct": 1
+   },
+   "Mod-Link": {
+    "endpoint_error": 12,
+    "correct": 7,
+    "missed": 1
+   },
+   "Of-Type": {
+    "endpoint_error": 1
+   },
+   "Or": {
+    "endpoint_error": 3,
+    "missed": 1
+   },
+   "Product": {
+    "wrong_label": 1,
+    "endpoint_error": 2,
+    "correct": 1
+   },
+   "Setting": {
+    "correct": 10,
+    "missed": 4,
+    "endpoint_error": 1
+   },
+   "Site": {
+    "correct": 5,
+    "endpoint_error": 4,
+    "wrong_attachment": 2,
+    "missed": 1,
+    "wrong_label": 1
+   },
+   "Using": {
+    "wrong_label": 2,
+    "wrong_attachment": 1,
+    "correct": 7,
+    "endpoint_error": 2
+   }
+  },
+  "spurious": {
+   "between_gold_entities": 14,
+   "spurious_endpoint": 35
+  }
+ },
+ "not_automated": [
+  "normalization_error",
+  "unsupported_inference"
+ ],
+ "slices": {
+  "reagent_names": {
+   "seen": {
+    "gold": 44,
+    "recall": 0.7727
+   },
+   "unseen": {
+    "gold": 34,
+    "recall": 0.7941
+   }
+  }
+ },
+ "source": {
+  "set": "challenge",
+  "split": "test",
+  "reference": "machine labels (machine-generated, not human-reviewed)"
+ }
+}

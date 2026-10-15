@@ -197,16 +197,21 @@ hard phenomena (11 protocols, 33 steps). The collection rules are in the
   Notes, tables and figures are removed; other markup is not. The text keeps the authors'
   typing, including errors such as duplicated values (`~800~800 uL`), plain-text tables
   pasted into a step, and Unicode spaces.
-- **Annotation.** One annotator labels each text from scratch with the corpus schema,
-  without model suggestions. Any consistency figure is repeat-annotation consistency.
-- **Machine labels.** Until that human gold exists, both sets carry machine-generated
+- **Annotation.** No human gold has been written yet. The plan and tooling are for one
+  annotator labelling each text from scratch with the corpus schema, without model
+  suggestions; any consistency figure would be repeat-annotation consistency. The
+  annotator has seen machine labels for six challenge dev protocols (pio-321801,
+  pio-228894, pio-241598, pio-229673, pio-241749, pio-126304), so human labels for those
+  would not be independent of them.
+- **Machine labels.** In place of human gold, both sets carry machine-generated
   labels that no person has reviewed: later-domain has 3,409 entities and 2,354 relations,
   and challenge has 460 entities and 327 relations. They are stored in
   `machine_labels.jsonl` and built from the label specs in `machine_specs/`. They are
   kept apart from `gold.jsonl` and never become gold. Every score computed against them is
   reported as "vs. machine labels" and not as accuracy. They include the locked test portions
-  (16 of 38 later-domain protocols, 5 of 11 challenge protocols), so those scores are
-  locked-test results as well. Labels follow the train convention for each type
+  (16 of 38 later-domain protocols, 5 of 11 challenge protocols). The declared releases
+  were scored on those portions once, on 2026-10-15, with error counts but no example
+  sentences; see the README results. Labels follow the train convention for each type
   pair: `build_machine_labels.py` lists any relation whose (head, tail) types occur fewer
   than 5 times in train. They also follow measured train span conventions: `Or` from the
   earlier mention to the later one (341 of 408 in train), "up to"/"within"/"approximately"

@@ -1,0 +1,413 @@
+{
+ "documents": 5,
+ "bootstrap": {
+  "unit": "document",
+  "resamples": 1000,
+  "seed": 13
+ },
+ "entities": {
+  "micro": {
+   "precision": 0.8034,
+   "recall": 0.7769,
+   "f1": 0.7899,
+   "f1_ci95": [
+    0.7365,
+    0.8235
+   ],
+   "tp": 188,
+   "fp": 46,
+   "fn": 54
+  },
+  "macro_f1": 0.7729,
+  "macro_f1_labels": 15,
+  "per_label": {
+   "Action": {
+    "precision": 0.913,
+    "recall": 0.913,
+    "f1": 0.913,
+    "support": 46,
+    "predicted": 46
+   },
+   "Amount": {
+    "precision": 0.95,
+    "recall": 0.9048,
+    "f1": 0.9268,
+    "support": 21,
+    "predicted": 20
+   },
+   "Concentration": {
+    "precision": 0.96,
+    "recall": 0.8889,
+    "f1": 0.9231,
+    "support": 27,
+    "predicted": 25
+   },
+   "Device": {
+    "precision": 0.6,
+    "recall": 0.4286,
+    "f1": 0.5,
+    "support": 7,
+    "predicted": 5
+   },
+   "Generic-Measure": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 0,
+    "predicted": 3
+   },
+   "Location": {
+    "precision": 0.7273,
+    "recall": 0.8,
+    "f1": 0.7619,
+    "support": 10,
+    "predicted": 11
+   },
+   "Measure-Type": {
+    "precision": 0.5714,
+    "recall": 0.8,
+    "f1": 0.6667,
+    "support": 5,
+    "predicted": 7
+   },
+   "Mention": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 2,
+    "predicted": 2
+   },
+   "Method": {
+    "precision": 0.1429,
+    "recall": 0.1667,
+    "f1": 0.1538,
+    "support": 6,
+    "predicted": 7
+   },
+   "Modifier": {
+    "precision": 0.5,
+    "recall": 0.381,
+    "f1": 0.4324,
+    "support": 21,
+    "predicted": 16
+   },
+   "Numerical": {
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1": 0.6667,
+    "support": 4,
+    "predicted": 2
+   },
+   "Reagent": {
+    "precision": 0.8026,
+    "recall": 0.7821,
+    "f1": 0.7922,
+    "support": 78,
+    "predicted": 76
+   },
+   "Seal": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 0,
+    "predicted": 0
+   },
+   "Size": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 0,
+    "predicted": 0
+   },
+   "Speed": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 2,
+    "predicted": 2
+   },
+   "Temperature": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 5,
+    "predicted": 5
+   },
+   "Time": {
+    "precision": 1.0,
+    "recall": 0.75,
+    "f1": 0.8571,
+    "support": 4,
+    "predicted": 3
+   },
+   "pH": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 4,
+    "predicted": 4
+   }
+  }
+ },
+ "relations": {
+  "micro": {
+   "precision": 0.6711,
+   "recall": 0.5495,
+   "f1": 0.6042,
+   "f1_ci95": [
+    0.5294,
+    0.6613
+   ],
+   "tp": 100,
+   "fp": 49,
+   "fn": 82
+  },
+  "macro_f1": 0.4164,
+  "macro_f1_labels": 14,
+  "per_label": {
+   "Acts-on": {
+    "precision": 0.6585,
+    "recall": 0.7941,
+    "f1": 0.72,
+    "support": 34,
+    "predicted": 41
+   },
+   "Commands": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1,
+    "predicted": 0
+   },
+   "Coreference-Link": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 6,
+    "predicted": 2
+   },
+   "Count": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 1,
+    "predicted": 1
+   },
+   "Measure": {
+    "precision": 0.8085,
+    "recall": 0.7755,
+    "f1": 0.7917,
+    "support": 49,
+    "predicted": 47
+   },
+   "Measure-Type-Link": {
+    "precision": 1.0,
+    "recall": 0.6,
+    "f1": 0.75,
+    "support": 5,
+    "predicted": 3
+   },
+   "Meronym": {
+    "precision": 0.5,
+    "recall": 0.0588,
+    "f1": 0.1053,
+    "support": 17,
+    "predicted": 2
+   },
+   "Mod-Link": {
+    "precision": 0.5,
+    "recall": 0.35,
+    "f1": 0.4118,
+    "support": 20,
+    "predicted": 14
+   },
+   "Of-Type": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1,
+    "predicted": 0
+   },
+   "Or": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 4,
+    "predicted": 1
+   },
+   "Product": {
+    "precision": 0.5,
+    "recall": 0.25,
+    "f1": 0.3333,
+    "support": 4,
+    "predicted": 2
+   },
+   "Setting": {
+    "precision": 0.8333,
+    "recall": 0.6667,
+    "f1": 0.7407,
+    "support": 15,
+    "predicted": 12
+   },
+   "Site": {
+    "precision": 0.4545,
+    "recall": 0.3846,
+    "f1": 0.4167,
+    "support": 13,
+    "predicted": 11
+   },
+   "Using": {
+    "precision": 0.5385,
+    "recall": 0.5833,
+    "f1": 0.56,
+    "support": 12,
+    "predicted": 13
+   }
+  }
+ },
+ "quantity_attachment": {
+  "accuracy": 0.7727,
+  "ci95": [
+   0.7424,
+   0.8333
+  ],
+  "correct": 51,
+  "total": 66
+ },
+ "complete_steps": {
+  "exact_match": 0.0667,
+  "ci95": [
+   0.0,
+   0.2
+  ],
+  "exact": 1,
+  "total": 15
+ },
+ "set": "challenge",
+ "split": "test",
+ "reference": "machine labels (machine-generated, not human-reviewed)",
+ "model_version": "crf-logreg-4a9d8cc549",
+ "locked_test_release": "declared releases of 2026-10-11 (docs/targets.md)",
+ "categories": {
+  "conditional_wording": {
+   "documents": 3,
+   "steps": 4,
+   "entities": {
+    "f1": 0.8788,
+    "f1_ci95": [
+     0.6957,
+     0.9278
+    ],
+    "support": 64
+   },
+   "relations": {
+    "f1": 0.6737,
+    "f1_ci95": [
+     0.3,
+     0.8571
+    ],
+    "support": 49
+   }
+  },
+  "implicit_references": {
+   "documents": 4,
+   "steps": 7,
+   "entities": {
+    "f1": 0.7761,
+    "f1_ci95": [
+     0.7379,
+     0.8219
+    ],
+    "support": 101
+   },
+   "relations": {
+    "f1": 0.6241,
+    "f1_ci95": [
+     0.6079,
+     0.6761
+    ],
+    "support": 77
+   }
+  },
+  "multiple_actions": {
+   "documents": 5,
+   "steps": 9,
+   "entities": {
+    "f1": 0.8035,
+    "f1_ci95": [
+     0.7157,
+     0.8403
+    ],
+    "support": 172
+   },
+   "relations": {
+    "f1": 0.583,
+    "f1_ci95": [
+     0.4035,
+     0.6605
+    ],
+    "support": 134
+   }
+  },
+  "ranges": {
+   "documents": 2,
+   "steps": 2,
+   "entities": {
+    "f1": 0.7742,
+    "f1_ci95": [
+     0.5714,
+     0.9412
+    ],
+    "support": 17
+   },
+   "relations": {
+    "f1": 0.6087,
+    "f1_ci95": [
+     0.2,
+     0.9231
+    ],
+    "support": 13
+   }
+  },
+  "repeated_materials": {
+   "documents": 4,
+   "steps": 8,
+   "entities": {
+    "f1": 0.8428,
+    "f1_ci95": [
+     0.8,
+     0.8636
+    ],
+    "support": 159
+   },
+   "relations": {
+    "f1": 0.6404,
+    "f1_ci95": [
+     0.493,
+     0.6842
+    ],
+    "support": 127
+   }
+  },
+  "unusual_symbols": {
+   "documents": 5,
+   "steps": 7,
+   "entities": {
+    "f1": 0.7593,
+    "f1_ci95": [
+     0.7164,
+     0.8
+    ],
+    "support": 109
+   },
+   "relations": {
+    "f1": 0.5535,
+    "f1_ci95": [
+     0.4818,
+     0.6077
+    ],
+    "support": 85
+   }
+  }
+ }
+}

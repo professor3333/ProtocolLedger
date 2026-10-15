@@ -123,6 +123,21 @@ Frozen targets on test:
 Test is harder than dev for every system. Full report:
 [reports/test/locked-test.md](../reports/test/locked-test.md).
 
+## New protocols.io sets (vs. machine labels)
+
+Recent protocols (2025–2026) that no system was built around. No human gold exists for
+them, so the reference is machine-generated labels that no person has reviewed: these are
+**agreement scores, not accuracy**. The test portions were scored once, on 2026-10-15.
+
+| Metric | Later-domain dev (22) | Later-domain test (16) | Challenge dev (6) | Challenge test (5) |
+|---|---:|---:|---:|---:|
+| Strict entity micro-F1 | 0.812 | 0.802 | 0.663 | 0.818 |
+| End-to-end relation micro-F1 | 0.664 | 0.636 | 0.557 | 0.641 |
+| Quantity attachment accuracy | 0.778 | 0.795 | 0.641 | 0.864 |
+
+The challenge portions have 18 and 15 steps, so their scores vary a lot between portions.
+Details and CIs: the [README](../README.md#new-protocolsio-sets-locked-test-portions-scored-once-2026-10-15).
+
 ## Inference performance
 
 Measured on an Apple M1 (8 GB) with 4 inference threads: 200 sequential requests of dev
@@ -146,6 +161,8 @@ deployment host (likely x86) with `scripts/optimize_bundle.py` before changing r
 - **Open-vocabulary types are weakest.** Modifier, Method, Device and Generic-Measure
   score lowest.
 - **Unseen reagent names** are found less often than seen ones.
+- **Amount-first lists** ("250 µL, of the NTP buffer mix ... 25 µL, of RNasin Plus"):
+  each amount is attached to the previous material (seen on later-domain dev).
 - **Rare relations** are unreliable: Commands (37 dev instances), Of-Type (26) and
   Product.
 - **Implicit references** such as "it", and cross-step coreference, are not resolved.

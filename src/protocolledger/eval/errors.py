@@ -268,9 +268,12 @@ def render_markdown(report: Mapping[str, Any], title: str) -> str:
                     f"{v['relation_recall']:.3f} |"
                 )
             lines.append("")
-    lines += ["## Examples", ""]
-    for key, items in report["examples"].items():
-        lines += [f"### {key}", ""] + [f"- {item}" for item in items] + [""]
+    if "examples" in report:
+        lines += ["## Examples", ""]
+        for key, items in report["examples"].items():
+            lines += [f"### {key}", ""] + [f"- {item}" for item in items] + [""]
+    else:
+        lines += ["Examples withheld: this is a locked test portion.", ""]
     lines += [
         "Not classified automatically: normalization errors and unsupported inferences "
         "(need human-checked labels).",

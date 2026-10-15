@@ -4,7 +4,8 @@
         --split dev --bundle artifacts/bundles/<model_version> [--reference machine]
 
 The test portion is locked: --split test requires --locked-test-release, and is meant to
-be run once per declared release. Writes reports/annotation_sets/<set>-<split>-<model>.json.
+be run once per declared release, and its error taxonomy keeps the counts but no example
+sentences. Writes reports/annotation_sets/<set>-<split>-<model>.json.
 
 --reference machine scores against machine_labels.jsonl instead of the human gold.jsonl.
 Those labels are machine-generated and not human-reviewed, so the report says
@@ -144,6 +145,8 @@ def main(argv: list[str] | None = None) -> int:
     }
     errors = analyze(gold, preds, unseen_names=names - seen)
     errors["source"] = {"set": args.set_name, "split": args.split, "reference": reference_name}
+    if args.split == "test":
+        del errors["examples"]  # aggregate counts only: no error inspection on a locked test
     (out / f"{name}-errors.json").write_text(
         json.dumps(errors, indent=1, ensure_ascii=False) + "\n", "utf-8"
     )

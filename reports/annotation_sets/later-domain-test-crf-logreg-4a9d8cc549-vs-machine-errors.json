@@ -1,0 +1,279 @@
+{
+ "entities": {
+  "gold_total": 1543,
+  "categories": {
+   "wrong_boundary_and_type": {
+    "count": 97,
+    "share": 0.0629
+   },
+   "wrong_boundary": {
+    "count": 175,
+    "share": 0.1134
+   },
+   "correct": {
+    "count": 1083,
+    "share": 0.7019
+   },
+   "wrong_type": {
+    "count": 91,
+    "share": 0.059
+   },
+   "missed": {
+    "count": 97,
+    "share": 0.0629
+   }
+  },
+  "by_label": {
+   "Action": {
+    "correct": 260,
+    "missed": 33,
+    "wrong_boundary": 6,
+    "wrong_type": 4,
+    "wrong_boundary_and_type": 10
+   },
+   "Amount": {
+    "correct": 68,
+    "missed": 2,
+    "wrong_boundary": 1,
+    "wrong_boundary_and_type": 1,
+    "wrong_type": 2
+   },
+   "Concentration": {
+    "correct": 86,
+    "wrong_boundary": 10,
+    "wrong_boundary_and_type": 13,
+    "wrong_type": 7
+   },
+   "Device": {
+    "wrong_boundary_and_type": 3,
+    "correct": 27,
+    "wrong_type": 19,
+    "wrong_boundary": 7,
+    "missed": 1
+   },
+   "Generic-Measure": {
+    "wrong_type": 6,
+    "wrong_boundary_and_type": 1,
+    "missed": 2,
+    "wrong_boundary": 1
+   },
+   "Location": {
+    "correct": 56,
+    "wrong_type": 11,
+    "wrong_boundary": 12,
+    "missed": 5,
+    "wrong_boundary_and_type": 3
+   },
+   "Measure-Type": {
+    "correct": 9,
+    "wrong_boundary_and_type": 5,
+    "wrong_boundary": 2,
+    "wrong_type": 1,
+    "missed": 1
+   },
+   "Mention": {
+    "missed": 2,
+    "correct": 2
+   },
+   "Method": {
+    "wrong_boundary": 24,
+    "wrong_type": 17,
+    "wrong_boundary_and_type": 4,
+    "missed": 9,
+    "correct": 20
+   },
+   "Modifier": {
+    "wrong_boundary_and_type": 39,
+    "correct": 81,
+    "missed": 18,
+    "wrong_boundary": 18,
+    "wrong_type": 4
+   },
+   "Numerical": {
+    "wrong_boundary_and_type": 3,
+    "missed": 2,
+    "wrong_boundary": 5,
+    "correct": 7
+   },
+   "Reagent": {
+    "correct": 327,
+    "wrong_boundary": 81,
+    "missed": 15,
+    "wrong_boundary_and_type": 13,
+    "wrong_type": 8
+   },
+   "Seal": {
+    "wrong_boundary": 1,
+    "correct": 3,
+    "wrong_type": 1
+   },
+   "Size": {
+    "wrong_boundary": 3,
+    "correct": 7,
+    "wrong_type": 5,
+    "missed": 1
+   },
+   "Speed": {
+    "correct": 17,
+    "wrong_type": 2
+   },
+   "Temperature": {
+    "correct": 54,
+    "wrong_type": 1,
+    "wrong_boundary": 1
+   },
+   "Time": {
+    "correct": 54,
+    "missed": 6,
+    "wrong_type": 3,
+    "wrong_boundary": 3,
+    "wrong_boundary_and_type": 2
+   },
+   "pH": {
+    "correct": 5
+   }
+  },
+  "spurious_by_label": {
+   "Reagent": 28,
+   "Modifier": 21,
+   "Action": 19,
+   "Method": 14,
+   "Time": 7,
+   "Measure-Type": 4,
+   "Location": 4,
+   "Numerical": 2,
+   "Device": 2,
+   "Concentration": 1,
+   "Mention": 1
+  }
+ },
+ "relations": {
+  "gold_total": 1100,
+  "categories": {
+   "wrong_attachment": {
+    "count": 42,
+    "share": 0.0382
+   },
+   "endpoint_error": {
+    "count": 447,
+    "share": 0.4064
+   },
+   "correct": {
+    "count": 518,
+    "share": 0.4709
+   },
+   "missed": {
+    "count": 71,
+    "share": 0.0645
+   },
+   "wrong_label": {
+    "count": 22,
+    "share": 0.02
+   }
+  },
+  "by_label": {
+   "Acts-on": {
+    "wrong_attachment": 9,
+    "endpoint_error": 66,
+    "correct": 140,
+    "wrong_label": 1,
+    "missed": 2
+   },
+   "Commands": {
+    "endpoint_error": 4,
+    "missed": 5
+   },
+   "Coreference-Link": {
+    "missed": 8,
+    "endpoint_error": 12
+   },
+   "Count": {
+    "endpoint_error": 7,
+    "missed": 3,
+    "correct": 4
+   },
+   "Measure": {
+    "correct": 122,
+    "endpoint_error": 78,
+    "missed": 6,
+    "wrong_attachment": 8,
+    "wrong_label": 2
+   },
+   "Measure-Type-Link": {
+    "correct": 6,
+    "endpoint_error": 5
+   },
+   "Meronym": {
+    "endpoint_error": 60,
+    "correct": 5,
+    "wrong_attachment": 2,
+    "missed": 11
+   },
+   "Mod-Link": {
+    "endpoint_error": 87,
+    "correct": 50,
+    "wrong_attachment": 6,
+    "missed": 10
+   },
+   "Of-Type": {
+    "endpoint_error": 5
+   },
+   "Or": {
+    "correct": 8,
+    "endpoint_error": 7,
+    "missed": 2
+   },
+   "Product": {
+    "wrong_label": 4,
+    "missed": 1,
+    "endpoint_error": 5,
+    "correct": 1
+   },
+   "Setting": {
+    "correct": 111,
+    "endpoint_error": 22,
+    "wrong_attachment": 4,
+    "missed": 5
+   },
+   "Site": {
+    "endpoint_error": 40,
+    "missed": 10,
+    "correct": 38,
+    "wrong_label": 10,
+    "wrong_attachment": 2
+   },
+   "Using": {
+    "endpoint_error": 49,
+    "correct": 33,
+    "missed": 8,
+    "wrong_attachment": 11,
+    "wrong_label": 5
+   }
+  },
+  "spurious": {
+   "spurious_endpoint": 279,
+   "between_gold_entities": 70
+  }
+ },
+ "not_automated": [
+  "normalization_error",
+  "unsupported_inference"
+ ],
+ "slices": {
+  "reagent_names": {
+   "seen": {
+    "gold": 210,
+    "recall": 0.8238
+   },
+   "unseen": {
+    "gold": 234,
+    "recall": 0.6581
+   }
+  }
+ },
+ "source": {
+  "set": "later-domain",
+  "split": "test",
+  "reference": "machine labels (machine-generated, not human-reviewed)"
+ }
+}
