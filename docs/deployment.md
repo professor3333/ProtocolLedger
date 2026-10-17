@@ -155,8 +155,12 @@ banner. Open it from the README badge or **Code → Codespaces** on GitHub.
 1. `setup.sh` (once, on creation): installs uv 0.12.5, runs `uv sync --locked
    --extra serve-neural` (CPU PyTorch) and `scripts/fetch_demo_bundle.py`, which downloads
    the bundle from the Hub at the pinned revision.
-2. `serve.sh` (on every start): starts uvicorn on port 8000 in the background, logging to
-   `/tmp/protocolledger.log`. The bundle's file hashes are verified when it loads.
+2. `serve.sh` (on every start, and when a browser attaches): starts uvicorn on port 8000
+   in the background, logging to `/tmp/protocolledger.log`, and waits until `/readyz`
+   answers. It does nothing if the service is already up. The bundle's file hashes are
+   verified when it loads. It ignores SIGHUP before forking: Codespaces ends the start
+   command's session as soon as the script exits, which killed the server before it
+   detached.
 
 The Codespace needs 2 cores and 8 GB. It stops when idle, and reviews saved in it are
 kept in `/tmp` only. Check it with `curl -s localhost:8000/readyz` in the Codespace
