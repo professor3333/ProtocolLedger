@@ -1,0 +1,19 @@
+{
+  "description": "Release gates checked by scripts/release_check.py on every version tag (dev only).",
+  "accuracy": {
+    "reference": "bundle.json evaluation (CPU dev, recorded when the bundle was built)",
+    "entity_f1_max_abs_diff": 0.002,
+    "relation_f1_max_abs_diff": 0.002
+  },
+  "calibration": {
+    "report": "reports/calibration/scibert-uniform-s21-joint-dev.json",
+    "precision_at_30pct_coverage_max_abs_diff": 0.01,
+    "ece_after_max_increase": 0.01
+  },
+  "performance": {
+    "max_words": 500,
+    "requests": 200,
+    "latency_p95_max_s": 3.0,
+    "peak_rss_max_mib": 3072
+  }
+}

@@ -38,6 +38,24 @@ If the new release fails `compose up --wait` (unhealthy container) or the smoke 
 `activate` **automatically restores the previous release** and exits non-zero. Every
 event (`activated`, `failed`, `rolled_back`) is appended to `deploy/state/releases.jsonl`.
 
+### Versioned releases (`.github/workflows/release.yml`)
+
+Pushing a tag `v*` runs the release workflow on a GitHub-hosted runner:
+
+1. installs CPU PyTorch, downloads the corpus at the pinned commit (hash-verified) and
+   builds the dev split, and fetches the bundle at its pinned Hub revision;
+2. `scripts/release_check.py` checks the gates in `configs/release_gates.json` on dev
+   only: entity and end-to-end relation F1 within 0.002 of the bundle's recorded CPU
+   evaluation, precision at 30% coverage and post-calibration ECE matching the committed
+   calibration report, p95 latency ≤ 3 s and peak memory ≤ 3 GB on the runner;
+3. builds the SciBERT image and smoke-tests it with the pinned bundle;
+4. pushes `ghcr.io/professor3333/protocolledger:<tag>` and creates a GitHub release
+   with `release-manifest.json` (gates, metrics, bundle hash, image digest).
+
+Any failed step stops the release. Running the workflow manually does steps 1–3 and
+publishes nothing. ONNX / INT8 parity is not gated, because the served runtime is
+PyTorch FP32.
+
 ## Serving SciBERT
 
 The default image serves the CRF + logistic-regression bundle. To serve a span-relation

@@ -1,0 +1,85 @@
+name: release
+
+# A version tag (v*) checks the release gates, builds the SciBERT serving image, smoke-tests
+# it with the pinned bundle, pushes it to ghcr.io and creates a GitHub release whose
+# manifest records the image digest. A manual run does everything except publishing.
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # create the GitHub release
+      packages: write # push the image to ghcr.io
+    env:
+      IMAGE: ghcr.io/professor3333/protocolledger
+      PUBLISH: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+        with:
+          enable-cache: true
+      - name: Install (CPU-only PyTorch)
+        run: uv sync --locked --extra serve-neural
+      - name: Corpus at the pinned commit and the dev split
+        run: |
+          uv run python scripts/acquire.py
+          uv run python scripts/convert.py
+          uv run python scripts/build_splits.py
+      - name: Model bundle at the pinned Hub revision
+        run: echo "BUNDLE=$(uv run python scripts/fetch_demo_bundle.py)" >> "$GITHUB_ENV"
+      - name: Release gates (dev only)
+        run: |
+          uv run python scripts/release_check.py --bundle "$BUNDLE" \
+            --machine "GitHub Actions ubuntu-latest, $(nproc) vCPU"
+      - name: Gate report
+        if: always()
+        run: cat artifacts/release/release-notes.md >> "$GITHUB_STEP_SUMMARY" || true
+      - name: Build image
+        run: |
+          docker build --build-arg EXTRAS=serve-neural \
+            --label "org.opencontainers.image.source=https://github.com/${{ github.repository }}" \
+            --label "org.opencontainers.image.revision=${{ github.sha }}" \
+            -t protocolledger:release .
+      - name: Container smoke test (pinned bundle)
+        run: |
+          version=$(basename "$BUNDLE")
+          docker run -d --name pl-release -p 127.0.0.1:8001:8000 \
+            -v "$PWD/artifacts/bundles:/models:ro" -e PROTOCOLLEDGER_BUNDLE="/models/$version" \
+            protocolledger:release
+          for i in $(seq 1 120); do curl -sf localhost:8001/readyz >/dev/null && break; sleep 1; done
+          uv run python scripts/smoke_test.py --base-url http://127.0.0.1:8001 \
+            --expect-model-version "$version"
+      - name: Container logs on failure
+        if: failure()
+        run: docker logs pl-release || true
+      - name: Push image and create the release
+        if: env.PUBLISH == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          echo "$GH_TOKEN" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+          docker tag protocolledger:release "$IMAGE:$TAG"
+          docker push "$IMAGE:$TAG"
+          digest=$(docker inspect --format '{{index .RepoDigests 0}}' "$IMAGE:$TAG")
+          jq --arg d "$digest" '.image = $d' artifacts/release/release-manifest.json \
+            > artifacts/release/manifest.tmp
+          mv artifacts/release/manifest.tmp artifacts/release/release-manifest.json
+          {
+            echo "Image: \`$digest\`"
+            echo
+            cat artifacts/release/release-notes.md
+            echo
+            echo "The gates use the dev split only. Locked-test results (evaluated once, before"
+            echo "this release) are in the README."
+          } > artifacts/release/notes-with-image.md
+          gh release create "$TAG" --title "ProtocolLedger $TAG" \
+            --notes-file artifacts/release/notes-with-image.md \
+            artifacts/release/release-manifest.json

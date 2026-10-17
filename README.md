@@ -217,8 +217,12 @@ previous release automatically** if the deploy fails. `rollback` restores the pr
 image *and* bundle together.
 
 Both paths were rehearsed with real containers, including a review surviving the
-rollback. CI builds the image and smoke-tests it with a tiny fixture bundle. See the
-[deployment runbook](docs/deployment.md).
+rollback. CI builds the image and smoke-tests it with a tiny fixture bundle. A version
+tag runs `.github/workflows/release.yml`: the release gates in
+`configs/release_gates.json` (dev accuracy and calibration reproduce the bundle's recorded
+numbers; p95 latency ≤ 3 s and memory ≤ 3 GB on the runner), a smoke test of the SciBERT
+image with the pinned bundle, then the image is pushed to `ghcr.io` and a GitHub release
+records its digest. See the [deployment runbook](docs/deployment.md).
 
 ## Design principles
 
