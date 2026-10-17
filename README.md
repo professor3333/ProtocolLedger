@@ -12,7 +12,7 @@
   <img alt="Python 3.12" src="https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white">
   <a href="https://github.com/astral-sh/ruff"><img alt="Ruff" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json"></a>
   <img alt="mypy: strict" src="https://img.shields.io/badge/mypy-strict-2a6db2">
-  <img alt="Status: Phase 4, evaluation" src="https://img.shields.io/badge/status-phase%204%20%C2%B7%20evaluation-f5a524">
+  <img alt="Status: built and evaluated; no user pilot" src="https://img.shields.io/badge/status-built%20%C2%B7%20evaluated%20%C2%B7%20no%20pilot-2e7d32">
 </p>
 
 <p align="center">
@@ -45,9 +45,9 @@ and evaluated in this repository, compared against rule-based and classical
 baselines on a deduplicated split of the WNUT-2020 Wet Lab Protocol corpus.
 
 > [!NOTE]
-> ProtocolLedger is in early development. The banner shows the **intended** output for
-> a worked example, not a prediction from a trained model. See [Status](#status) for
-> what exists today.
+> The banner shows the **intended** output for a worked example, not a model prediction.
+> See [Status](#status) for what exists and what was not done (always-on hosting, a user
+> pilot, human gold labels for the new protocols.io sets).
 
 ## Demo
 
@@ -59,6 +59,13 @@ baselines on a deduplicated split of the WNUT-2020 Wet Lab Protocol corpus.
 reviewer acts), showing a correct extraction, a genuine attachment error, an unresolved
 case, the corrections, then save and export.
 <a href="docs/assets/demo.mp4">MP4 version</a>.</sub>
+
+**Try it live:** [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/professor3333/ProtocolLedger?quickstart=1)
+
+The Codespace installs CPU PyTorch, downloads the published SciBERT bundle at its pinned
+revision and opens the review interface on port 8000. It runs on the free Codespaces
+allowance of whoever opens it; the first start takes a few minutes. The port is private
+to that person unless they share it. Saved reviews last only as long as the Codespace.
 
 ## Architecture
 
@@ -250,7 +257,8 @@ rollback. CI builds the image and smoke-tests it with a tiny fixture bundle. See
 | Docker / Compose deployment, Prometheus metrics, release + rollback (rehearsed) | ✅ Done |
 | 1,000-request load test (container, 4 CPUs) | ✅ Done |
 | Model card, dataset card, experiment report | ✅ Done |
-| Public hosting | ⬜ Not done (the local Docker path is complete) |
+| Live demo in GitHub Codespaces (one click, no host to run) | ✅ Done |
+| Always-on public hosting | ⬜ Not done (the local Docker path is complete) |
 | User pilot | ⬜ Not run |
 
 ## Quickstart
@@ -770,7 +778,8 @@ Re-measure on the deployment host before changing runtimes.</sub>
   a production x86 host.
 
 **Product.**
-- **Not publicly hosted yet.** The local Docker path is complete.
+- **No always-on public host.** The live demo runs on demand in GitHub Codespaces; the
+  local Docker path is complete.
 - Reviews are protected by unguessable ids and one-time tokens, not by user accounts.
 - One process with SQLite is the intended scale. Concurrent multi-user load is untested.
 - **Not for executing protocols, or for judging whether a protocol is complete, correct
@@ -786,7 +795,7 @@ Re-measure on the deployment host before changing runtimes.</sub>
   (done except human gold for the new sets; they carry machine labels)
 - [x] **Phase 5:** API, evidence highlighting, editing, saved reviews, exports
 - [ ] **Phase 6:** CPU optimization, Docker deployment, monitoring and rollback
-  (done locally; public hosting not done)
+  (done locally and as a Codespaces demo; no always-on public host)
 - [ ] **Phase 7:** user pilot, model and data cards, final report
   (cards and report done; no pilot run)
 

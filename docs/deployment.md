@@ -147,12 +147,28 @@ Unlabeled drift indicators trigger investigation only; estimating production acc
 requires newly reviewed labels. Access logs are JSON lines (method, route template,
 status, latency) and never contain submitted text.
 
-## Public demo (Oracle Cloud Always Free)
+## Live demo (GitHub Codespaces)
 
-The public demo runs the SciBERT model on an Oracle Cloud Always Free ARM VM (4 OCPU,
-24 GB). Hugging Face now requires a paid plan for Docker Spaces, so the model is hosted
-on the Hub (`professor3333/protocolledger-scibert`, pinned by revision) while the app
-runs on the VM.
+`.devcontainer/` defines a Codespace that serves the SciBERT model with the public-demo
+banner. Open it from the README badge or **Code → Codespaces** on GitHub.
+
+1. `setup.sh` (once, on creation): installs uv 0.12.5, runs `uv sync --locked
+   --extra serve-neural` (CPU PyTorch) and `scripts/fetch_demo_bundle.py`, which downloads
+   the bundle from the Hub at the pinned revision.
+2. `serve.sh` (on every start): starts uvicorn on port 8000 in the background, logging to
+   `/tmp/protocolledger.log`. The bundle's file hashes are verified when it loads.
+
+The Codespace needs 2 cores and 8 GB. It stops when idle, and reviews saved in it are
+kept in `/tmp` only. Check it with `curl -s localhost:8000/readyz` in the Codespace
+terminal.
+
+## Public demo on a VM (Oracle Cloud Always Free; not run)
+
+`scripts/deploy_oracle.py` is written for an Oracle Cloud Always Free ARM VM (4 OCPU,
+24 GB) but **has not been run**: the account could not be created. Hugging Face requires
+a paid plan for Docker Spaces, so the model is hosted on the Hub
+(`professor3333/protocolledger-scibert`, pinned by revision) and the app would run on the
+VM.
 
 ```bash
 uv run python scripts/deploy_oracle.py --host <public-ip>
