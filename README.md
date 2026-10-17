@@ -64,8 +64,10 @@ case, the corrections, then save and export.
 
 The Codespace installs CPU PyTorch, downloads the published SciBERT bundle at its pinned
 revision and opens the review interface on port 8000. It runs on the free Codespaces
-allowance of whoever opens it; the first start takes a few minutes. The port is private
-to that person unless they share it. Saved reviews last only as long as the Codespace.
+allowance of whoever opens it. The first start took about 15 minutes on a 2-core
+Codespace (measured once, 2026-10-17), mostly installing PyTorch and downloading the
+model; later starts take under a minute. The port is private to that person unless they
+share it. Saved reviews last only as long as the Codespace.
 
 ## Architecture
 
