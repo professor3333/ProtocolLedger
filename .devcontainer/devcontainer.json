@@ -1,0 +1,11 @@
+{
+  "name": "ProtocolLedger live demo",
+  "image": "mcr.microsoft.com/devcontainers/python:3.2.6-3.12-bookworm@sha256:589b65db720b03c96d721706005f176ff467ee879f92c2d137c04a537feffa56",
+  "hostRequirements": { "cpus": 2, "memory": "8gb" },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "postStartCommand": "bash .devcontainer/serve.sh",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": { "label": "ProtocolLedger", "onAutoForward": "openPreview" }
+  }
+}

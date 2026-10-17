@@ -24,10 +24,9 @@ import time
 import urllib.request
 from pathlib import Path
 
+from fetch_demo_bundle import MODEL_VERSION  # scripts/ is on sys.path
+
 ROOT = Path(__file__).resolve().parents[1]
-MODEL_REPO = "professor3333/protocolledger-scibert"
-MODEL_REVISION = "905ca6ebea0d1acfcc5204df99aea827b243fd44"
-MODEL_VERSION = "scibert-uniform-negatives-s21-7dc7a1893e"
 
 
 def git(*args: str) -> str:
@@ -88,12 +87,7 @@ cd ProtocolLedger
 git fetch --quiet origin && git checkout --quiet {commit}
 docker build -q --build-arg EXTRAS=serve-neural -t protocolledger:{short} . >/dev/null
 uv sync --quiet --locked --extra serve-neural
-if [ ! -f artifacts/bundles/{MODEL_VERSION}/bundle.json ]; then
-  DL='import sys; from huggingface_hub import snapshot_download as d
-d(sys.argv[1], revision=sys.argv[2], local_dir=sys.argv[3])'
-  uv run python -c "$DL" {MODEL_REPO} {MODEL_REVISION} artifacts/bundles/{MODEL_VERSION}
-  rm -rf artifacts/bundles/{MODEL_VERSION}/.cache
-fi
+uv run python scripts/fetch_demo_bundle.py >/dev/null
 PROTOCOLLEDGER_THREADS={args.threads} uv run python scripts/release.py activate \\
   --image protocolledger:{short} --bundle artifacts/bundles/{MODEL_VERSION} \\
   --reason "public demo at {short}" --site-address {site} --public-demo
