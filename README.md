@@ -251,6 +251,7 @@ rollback. CI builds the image and smoke-tests it with a tiny fixture bundle. See
 | Verified SciBERT bundle; PyTorch vs ONNX vs INT8 benchmark | ✅ Done |
 | Serve SciBERT in the Docker image (released through Compose with smoke test) | ✅ Done |
 | Frozen targets; single locked-test evaluation | ✅ Done |
+| Clean-clone reproduction of data, splits, baselines and bundle | ✅ Verified 2026-10-17 |
 | Correction-batch lifecycle: export, curate, leakage check, retrain, gate, release, rollback (rehearsed) | ✅ Done |
 | Challenge set and later-domain protocols.io sets | 🟡 Collected, split, machine-labelled and scored once; no human gold |
 | Deterministic quantity normalization | ✅ Done |
@@ -307,10 +308,16 @@ uv run python scripts/train_neural.py configs/neural/scibert-lr5e-5.json --seed 
 uv run python scripts/log_reports_mlflow.py    # all committed reports into MLflow
 MLFLOW_ALLOW_FILE_STORE=true uvx mlflow ui --backend-store-uri mlruns
 
-# Tests (no network needed) and static checks
+# Tests (no network needed) and static checks; mypy needs every extra, as in CI
+uv sync --all-extras
 uv run pytest -m "not slow"
 uv run ruff check && uv run ruff format --check && uv run mypy src/
 ```
+
+These commands were run in order on a fresh clone (commit `61e0d0d`, 2026-10-17, Apple
+M1). Every step succeeded, and the regenerated `reports/baselines/*.json` matched the
+committed reports in every metric; only the recorded code commit differed. Retraining
+SciBERT needs a GPU and was not repeated in that check.
 
 ## Data
 
