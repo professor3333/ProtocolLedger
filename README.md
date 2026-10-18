@@ -224,6 +224,19 @@ numbers; p95 latency ≤ 3 s and memory ≤ 3 GB on the runner), a smoke test of
 image with the pinned bundle, then the image is pushed to `ghcr.io` and a GitHub release
 records its digest. See the [deployment runbook](docs/deployment.md).
 
+**Release [v1.0.0](https://github.com/professor3333/ProtocolLedger/releases/tag/v1.0.0)**
+passed every gate. Its image (linux/amd64) is public; the model bundle is mounted at run
+time, not baked in. On an ARM machine add `--platform linux/amd64` to `docker run`; it
+then runs under emulation, slowly:
+
+```bash
+docker pull ghcr.io/professor3333/protocolledger@sha256:d409389f086996acab756326252eae74287e35d0773f1cb7c6845d2401712cf3
+uv run python scripts/fetch_demo_bundle.py   # the pinned SciBERT bundle
+docker run -p 127.0.0.1:8000:8000 -v "$PWD/artifacts/bundles:/models:ro" \
+  -e PROTOCOLLEDGER_BUNDLE=/models/scibert-uniform-negatives-s21-7dc7a1893e \
+  ghcr.io/professor3333/protocolledger@sha256:d409389f086996acab756326252eae74287e35d0773f1cb7c6845d2401712cf3
+```
+
 ## Design principles
 
 - **Evidence first.** Every entity, relation and table cell carries character offsets
@@ -256,6 +269,7 @@ records its digest. See the [deployment runbook](docs/deployment.md).
 | Serve SciBERT in the Docker image (released through Compose with smoke test) | ✅ Done |
 | Frozen targets; single locked-test evaluation | ✅ Done |
 | Clean-clone reproduction of data, splits, baselines and bundle | ✅ Verified 2026-10-17 |
+| Release workflow with gates; v1.0.0 released with a public image | ✅ Done |
 | Correction-batch lifecycle: export, curate, leakage check, retrain, gate, release, rollback (rehearsed) | ✅ Done |
 | Challenge set and later-domain protocols.io sets | 🟡 Collected, split, machine-labelled and scored once; no human gold |
 | Deterministic quantity normalization | ✅ Done |
@@ -787,8 +801,10 @@ Re-measure on the deployment host before changing runtimes.</sub>
 - The challenge and later-domain sets have **no human gold**. Their scores are agreement
   with machine labels that no person has reviewed, not accuracy.
 - **No user pilot has been run**, so there is no evidence yet that the tool saves time.
-- Latency and memory were measured on an Apple M1 with Docker limited to 4 CPUs, not on
-  a production x86 host.
+- Latency and memory were measured on an Apple M1 with Docker limited to 4 CPUs, and
+  in-process by the release gates on a shared 4-vCPU GitHub Actions x86 runner (p95 2.21 s
+  and 2.89 s on two runs of the same commit), not on a dedicated production host. The
+  shared runner varies, so the 3 s gate has little margin there.
 
 **Product.**
 - **No always-on public host.** The live demo runs on demand in GitHub Codespaces; the
