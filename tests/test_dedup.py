@@ -29,6 +29,28 @@ def test_shingles_of_short_text() -> None:
     assert dedup.shingles("Mix well") == frozenset({("mix", "well")})
 
 
+def test_containment_stays_high_for_an_excerpt_where_jaccard_does_not() -> None:
+    long = dedup.shingles(BASE + " " + " ".join(f"Wash step {i} in buffer." for i in range(40)))
+    excerpt = dedup.shingles(BASE)
+    assert dedup.containment(excerpt, long) == 1.0
+    assert dedup.jaccard(excerpt, long) < 0.3
+    assert dedup.containment(long, excerpt) < 0.3
+    assert dedup.containment(frozenset(), long) == 1.0
+
+
+def test_reference_overlap_finds_nearest_and_union() -> None:
+    first = "Lyse cells in RIPA buffer on ice for 30 min and spin at 4 C."
+    second = "Stain the finished gel with Coomassie overnight and destain in methanol."
+    reference = {"train/b": first, "train/a": first, "train/c": second}
+    out = dedup.reference_overlap({"dev/x": first + " " + second, "dev/y": BASE}, reference)
+    x = out["dev/x"]
+    assert x.nearest == "train/a"  # tie on containment goes to the lowest id
+    assert 0.3 < x.containment < 0.7
+    assert x.union_containment > x.containment
+    assert out["dev/y"].union_containment == 0.0
+    assert set(x.to_json()) == {"nearest", "containment", "jaccard", "union_containment"}
+
+
 def test_similar_pairs_classifies_exact_near_title_and_sibling() -> None:
     texts = {
         "train/protocol_1": BASE,

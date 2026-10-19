@@ -122,6 +122,44 @@ equal titles in that range were revisions.
 
 Template siblings across splits remain for 13 dev and 3 test documents.
 
+### Residual overlap (containment audit)
+
+Jaccard stays low when a short document sits inside a much longer one. A later audit
+(`scripts/leakage_audit.py`, [report](../reports/leakage/train-overlap.md)) therefore also
+measures **containment**: the share of a document's 5-word shingles that occur in its
+nearest training document. The splits were frozen before this audit and are not changed
+by it.
+
+| Documents | n | Containment ≥ 0.5 | Gold relations in those documents |
+|---|---:|---:|---:|
+| Dev | 112 | 20 | 1,586 of 10,065 (15.8%) |
+| Test | 111 | 3 | 195 of 16,378 (1.2%) |
+| Later-domain set (vs. the whole corpus) | 38 | 0 | — |
+| Challenge set (vs. the whole corpus) | 11 | 0 | — |
+
+Eight of these documents were not recorded as template siblings, because their Jaccard is
+below 0.5:
+- seven dev documents that are kit or strain variants of a longer training protocol, for
+  example Q5 site-directed mutagenesis E0552 and E0554 vs. the kit quick protocol, Th9 vs.
+  Th17 polarization, and CviRI vs. CviJI purification
+- one test document, "Calculating burst size" (70 words), of which 84.5% occurs inside
+  the training protocol "One-Step Growth Curves for Cyanophages" (774 words)
+
+On dev, every system scores higher on documents that overlap with training (end-to-end
+relation F1, document-level bootstrap 95% CIs):
+
+| Containment | Documents | CRF + LR | SciBERT |
+|---|---:|---:|---:|
+| < 0.1 | 72 | 0.546 [0.514, 0.578] | 0.617 [0.588, 0.649] |
+| 0.1 to 0.5 | 20 | 0.612 [0.548, 0.679] | 0.662 [0.619, 0.716] |
+| ≥ 0.5 | 20 | 0.709 [0.673, 0.745] | 0.714 [0.682, 0.745] |
+
+So dev scores, and the model selection and calibration fitted on them, are somewhat
+optimistic for unseen protocols. SciBERT's lead over CRF + LR is 7.1 points on
+low-overlap documents and 0.5 points on high-overlap ones. The test split has almost no
+such overlap, which is consistent with the lower test scores. The audit reads no test
+predictions.
+
 ### Duplicate-copy agreement
 
 Sixteen pairs of byte-identical texts were annotated separately in the release.
@@ -152,6 +190,9 @@ with duplicates.
 - **Revisions.** Revisions with heavily rewritten text and different titles can fall
   below both thresholds. Template siblings share large amounts of text with training
   data, so scores on those documents may be optimistic.
+- **Residual overlap.** 20 dev documents (15.8% of dev gold relations) have at least
+  half their text in one training document, and score higher for every system. On test
+  this affects 3 documents (1.2% of gold relations). See the containment audit above.
 - **Domain.** All protocols come from one source (protocols.io) and a limited range of
   wet-lab subdomains. They were annotated in or before 2020.
 - **Annotation consistency.** Duplicate-copy agreement shows meaningful inconsistency,

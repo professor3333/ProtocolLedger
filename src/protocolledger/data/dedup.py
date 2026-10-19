@@ -60,6 +60,48 @@ def jaccard(a: frozenset[tuple[str, ...]], b: frozenset[tuple[str, ...]]) -> flo
     return len(a & b) / union if union else 1.0
 
 
+def containment(a: frozenset[tuple[str, ...]], b: frozenset[tuple[str, ...]]) -> float:
+    """Share of ``a``'s shingles that also occur in ``b``. Unlike Jaccard it stays high when
+    a short document is an excerpt of, or a variant inside, a much longer one."""
+    return len(a & b) / len(a) if a else 1.0
+
+
+@dataclass(frozen=True)
+class Overlap:
+    """How much of one document's text already occurs in a reference collection."""
+
+    nearest: str  # reference document with the highest containment
+    containment: float  # share of this document's shingles found in ``nearest``
+    jaccard: float  # Jaccard with ``nearest``
+    union_containment: float  # share found anywhere in the reference collection
+
+    def to_json(self) -> dict[str, Any]:
+        return {
+            "nearest": self.nearest,
+            "containment": round(self.containment, 4),
+            "jaccard": round(self.jaccard, 4),
+            "union_containment": round(self.union_containment, 4),
+        }
+
+
+def reference_overlap(texts: Mapping[str, str], reference: Mapping[str, str]) -> dict[str, Overlap]:
+    """For each document in ``texts``, its overlap with the ``reference`` documents. Ties
+    on containment go to the lowest reference id, so the result is deterministic."""
+    ref = {i: shingles(reference[i]) for i in sorted(reference)}
+    everything = frozenset().union(*ref.values())
+    out = {}
+    for doc_id in sorted(texts):
+        sh = shingles(texts[doc_id])
+        nearest = max(ref, key=lambda r: containment(sh, ref[r]))  # first maximum wins
+        out[doc_id] = Overlap(
+            nearest,
+            containment(sh, ref[nearest]),
+            jaccard(sh, ref[nearest]),
+            containment(sh, everything),
+        )
+    return out
+
+
 @dataclass(frozen=True)
 class Pair:
     a: str

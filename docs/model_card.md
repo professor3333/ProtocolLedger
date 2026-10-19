@@ -170,7 +170,10 @@ deployment host (likely x86) with `scripts/optimize_bundle.py` before changing r
 - **Text glued together by table flattening** (for example `100 µlof`) cannot be
   segmented.
 - **Template overlap.** Protocols that share a vendor template with training data score
-  higher than the rest.
+  higher than the rest. On dev, end-to-end relation F1 is 0.617 for documents with almost
+  no text in training and 0.714 for those with at least half. Dev holds far more such
+  documents than test, so dev-selected thresholds are somewhat optimistic
+  ([containment audit](../reports/leakage/train-overlap.md)).
 
 ## Release process
 

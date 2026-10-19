@@ -400,6 +400,13 @@ one vendor kit adapted per tissue, are distinct documents. They are kept and rec
 evaluation can report them as a slice. The rules, threshold evidence and every decision
 are in the [dataset card](docs/dataset_card.md) and `data/manifests/dedup_report.json`.
 
+A later containment audit (`scripts/leakage_audit.py`,
+[report](reports/leakage/train-overlap.md)) measures how much of each document already
+occurs in one training document, which Jaccard misses for short excerpts and kit variants.
+It found 20 dev documents (15.8% of dev gold relations) and 3 test documents (1.2%) with
+at least half their text in training. The new annotation sets have none. The frozen
+splits were not changed.
+
 `data/manifests/acquisition.json` records the SHA-256 of every selected file. These
 per-file hashes are authoritative. GitHub generates archives on demand, so the archive
 hash is recorded, but only a file-level mismatch fails acquisition. Downloaded data is
@@ -608,8 +615,11 @@ protocols) by `scripts/locked_test.py`, at commit `fe0297c`
 Test is harder than dev for every system: CRF + logistic regression falls from 0.582 to
 0.504, and SciBERT from 0.639 to 0.580. SciBERT's margin over the traditional baseline
 grows on test, from +5.7 to +7.6 points. Its largest advantage is on reagent names never
-seen in training: recall 0.762 against 0.631. The dev-fitted isotonic calibrator transfers
-to test, reducing expected calibration error from 0.172 to 0.021. The two relation-quality
+seen in training: recall 0.762 against 0.631. Part of the dev-to-test drop is consistent
+with residual training overlap, which is far more common in dev (see Deduplication). On dev
+documents with almost no overlap (containment < 0.1), SciBERT scores 0.617 and
+CRF + logistic regression 0.546, closer to their test scores. The dev-fitted isotonic
+calibrator transfers to test, reducing expected calibration error from 0.172 to 0.021. The two relation-quality
 targets are missed; the misses are reported here and the targets were not changed.
 
 ### New protocols.io sets: locked test portions (scored once, 2026-10-15)
@@ -779,7 +789,10 @@ Re-measure on the deployment host before changing runtimes.</sub>
   newer protocols until the later-domain test set is annotated and scored.
 - Exact and near-duplicate copies were removed, but protocols built from shared vendor
   templates remain. Documents with a template sibling in training score higher, which is
-  why they are reported as a separate slice.
+  why they are reported as a separate slice. A containment audit found that 15.8% of dev
+  gold relations, but only 1.2% of test gold relations, lie in documents with at least half
+  their text in training. Dev-based selection and calibration are therefore somewhat
+  optimistic ([report](reports/leakage/train-overlap.md)).
 - The annotations are themselves inconsistent: duplicate copies of the same protocol
   agree at relation F1 0.711. That bounds what any model can score against a single gold
   copy.
@@ -850,10 +863,12 @@ ProtocolLedger/
 ├── reports/errors/        # error taxonomy and slices per system (dev)
 ├── reports/calibration/   # precision–coverage and calibration per system (dev)
 ├── reports/performance/   # load-test results with the hardware named
+├── reports/leakage/       # residual training-overlap (containment) audit
 ├── scripts/
 │   ├── acquire.py         # fetch and verify the pinned corpus
 │   ├── convert.py         # BRAT → canonical JSONL graphs + conversion report
 │   ├── build_splits.py    # correction ledger, deduplication, frozen splits
+│   ├── leakage_audit.py   # residual train overlap by shingle containment
 │   ├── evaluate.py        # score predictions with the shared scorer
 │   ├── run_rules.py       # fit / select / report the rule-based baseline
 │   ├── run_traditional.py # fit / select / report CRF + logistic regression
