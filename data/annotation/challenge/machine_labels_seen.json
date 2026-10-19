@@ -1,0 +1,11 @@
+{
+ "description": "Challenge sources whose machine labels the annotator had already seen, during development, before annotating them. Their gold is flagged and reported separately; annotate them last.",
+ "source_ids": [
+  "pio-126304",
+  "pio-228894",
+  "pio-229673",
+  "pio-241598",
+  "pio-241749",
+  "pio-321801"
+ ]
+}

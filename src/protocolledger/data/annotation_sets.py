@@ -28,6 +28,9 @@ from protocolledger.data.review_batch import export_reviews
 from protocolledger.data.schema import ENTITY_LABELS, RELATION_LABELS
 
 MANUAL = "manual-annotation"
+# Before this commit (21446d6) "Annotate from scratch" preselected a type, label and
+# direction, so nearly every relation saved earlier is a default, not a judgement.
+MANUAL_VALID_FROM = "2026-10-13T05:08:52+00:00"
 
 
 class AnnotationSetError(RuntimeError):
@@ -57,19 +60,34 @@ def load_sources(set_dir: Path) -> list[dict[str, Any]]:
     return rows
 
 
+def load_seen_machine_labels(set_dir: Path) -> set[str]:
+    """Source ids whose machine labels the annotator saw before annotating them."""
+    path = set_dir / "machine_labels_seen.json"
+    if not path.exists():
+        return set()
+    return set(json.loads(path.read_text("utf-8"))["source_ids"])
+
+
 def gold_from_reviews(
-    db_path: Path, sources: Sequence[Mapping[str, Any]], set_name: str
+    db_path: Path,
+    sources: Sequence[Mapping[str, Any]],
+    set_name: str,
+    seen_machine_labels: set[str] | frozenset[str] = frozenset(),
 ) -> tuple[list[dict[str, Any]], dict[str, int]]:
     """Manual (from-scratch) annotations joined to their sources by text hash. If one
-    source was annotated more than once, the most recent review wins."""
+    source was annotated more than once, the most recent valid review wins. Reviews
+    started before ``MANUAL_VALID_FROM`` are never gold, even if continued later."""
     by_hash = {s["text_sha256"]: s for s in sources}
     docs, _ = export_reviews(db_path)
     gold: dict[str, dict[str, Any]] = {}
-    ignored = 0
+    ignored = invalid = 0
     for doc in docs:
         source = by_hash.get(doc["provenance"]["text_sha256"])
         if source is None or doc["provenance"]["model_version"] != MANUAL:
             ignored += 1
+            continue
+        if doc["provenance"]["created_at"] < MANUAL_VALID_FROM:
+            invalid += 1
             continue
         gold[source["source_id"]] = {
             "doc_id": f"{set_name}/{source['source_id']}",
@@ -85,6 +103,7 @@ def gold_from_reviews(
             "annotation": {
                 "review_id": doc["provenance"]["review_id"],
                 "revision": doc["provenance"]["revision"],
+                "machine_labels_seen": source["source_id"] in seen_machine_labels,
             },
         }
     ordered = [gold[s["source_id"]] for s in sources if s["source_id"] in gold]
@@ -92,8 +111,12 @@ def gold_from_reviews(
         "sources": len(sources),
         "annotated": len(ordered),
         "ignored_reviews": ignored,
+        "invalid_reviews": invalid,
         "dev": sum(d["split"] == "dev" for d in ordered),
         "test": sum(d["split"] == "test" for d in ordered),
+        "dev_sources": sum(s["split"] == "dev" for s in sources),
+        "test_sources": sum(s["split"] == "test" for s in sources),
+        "machine_labels_seen": sum(d["annotation"]["machine_labels_seen"] for d in ordered),
     }
     return ordered, counts
 

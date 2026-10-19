@@ -24,6 +24,7 @@ from protocolledger.data.annotation_sets import (
     agreement_pairs,
     gold_from_reviews,
     load_machine_labels,
+    load_seen_machine_labels,
     load_sources,
 )
 from protocolledger.eval.scorer import evaluate, render_markdown
@@ -39,12 +40,13 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     set_dir = ROOT / "data" / "annotation" / args.set_name
     sources = load_sources(set_dir)
-    first, _ = gold_from_reviews(args.first, sources, args.set_name)
+    seen = load_seen_machine_labels(set_dir)
+    first, _ = gold_from_reviews(args.first, sources, args.set_name, seen)
     if args.second == "machine":
         second = load_machine_labels(set_dir)
         kind, label = "human-vs-machine", "human gold vs. machine labels (agreement)"
     else:
-        second, _ = gold_from_reviews(Path(args.second), sources, args.set_name)
+        second, _ = gold_from_reviews(Path(args.second), sources, args.set_name, seen)
         kind, label = "repeat-consistency", "repeat-annotation consistency (one annotator)"
     reference, other, counts = agreement_pairs(first, second, "dev")
     if not reference:

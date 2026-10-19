@@ -10,6 +10,7 @@ from protocolledger.data.annotation_sets import (
     agreement_pairs,
     assign_split,
     gold_from_reviews,
+    load_seen_machine_labels,
     load_sources,
     machine_document,
     parse_label_spec,
@@ -233,3 +234,83 @@ def test_agreement_pairs_compare_shared_dev_documents_only() -> None:
     assert counts == {"compared": 1, "first_only": 1, "second_only": 1}
     with pytest.raises(AnnotationSetError, match="different text"):
         agreement_pairs(first, [doc("s/a", "dev", "changed")])
+
+
+def test_reviews_started_before_the_defaults_fix_are_never_gold(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    from protocolledger.serve import reviews
+
+    db = tmp_path / "reviews.db"
+    store = ReviewStore(db)
+    monkeypatch.setattr(reviews, "_now", lambda: "2026-10-12T17:02:50+00:00")
+    early = store.create(content(), text_sha256(TEXT), TEXT, MANUAL, None)
+    monkeypatch.setattr(reviews, "_now", lambda: "2026-10-20T09:00:00+00:00")
+    store.add_revision(early.review_id, early.token, content())  # continuing does not help
+    gold, counts = gold_from_reviews(db, [source("p1")], "later-domain")
+    assert gold == [] and counts["invalid_reviews"] == 1 and counts["annotated"] == 0
+
+    store.create(content(), text_sha256(TEXT), TEXT, MANUAL, None)  # a fresh annotation
+    gold, counts = gold_from_reviews(db, [source("p1")], "later-domain", {"p1"})
+    assert counts["annotated"] == 1 and counts["invalid_reviews"] == 1
+    assert gold[0]["annotation"]["machine_labels_seen"] is True
+    assert counts["machine_labels_seen"] == 1
+
+
+def test_seen_machine_labels_file_is_optional_and_lists_challenge_dev_sources(
+    tmp_path: Path,
+) -> None:
+    assert load_seen_machine_labels(tmp_path) == set()
+    challenge = Path(__file__).resolve().parents[1] / "data" / "annotation" / "challenge"
+    seen = load_seen_machine_labels(challenge)
+    splits = {s["source_id"]: s["split"] for s in load_sources(challenge)}
+    assert len(seen) == 6 and all(splits[s] == "dev" for s in seen)
+
+
+def _evaluate_cli(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Any:
+    import importlib.util
+    import types
+
+    path = Path(__file__).resolve().parents[1] / "scripts" / "evaluate_annotation_set.py"
+    spec = importlib.util.spec_from_file_location("evaluate_annotation_set", path)
+    assert spec and spec.loader
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    monkeypatch.setattr(module, "ROOT", tmp_path)
+
+    def no_extraction(text: str) -> Any:
+        raise AssertionError("a refused run must not extract")
+
+    bundle = types.SimpleNamespace(
+        model_version="m1", extractor=types.SimpleNamespace(extract=no_extraction)
+    )
+    monkeypatch.setattr(module, "load_bundle", lambda _: bundle)
+    return module
+
+
+def _test_ids(n: int) -> list[str]:
+    return [i for i in (f"p{k}" for k in range(100)) if assign_split(i) == "test"][:n]
+
+
+def test_locked_gold_portion_is_refused_until_complete_then_scored_once(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    module = _evaluate_cli(tmp_path, monkeypatch)
+    set_dir = tmp_path / "data" / "annotation" / "later-domain"
+    set_dir.mkdir(parents=True)
+    ids = _test_ids(2)
+    (set_dir / "sources.jsonl").write_text("".join(json.dumps(source(i)) + "\n" for i in ids))
+    gold = {"doc_id": f"later-domain/{ids[0]}", "split": "test", "text": TEXT}
+    (set_dir / "gold.jsonl").write_text(json.dumps(gold) + "\n")
+    argv = ["--set", "later-domain", "--split", "test", "--bundle", "b"]
+    argv += ["--locked-test-release", "r1"]
+    with pytest.raises(SystemExit, match="1 test sources have no gold yet"):
+        module.main(argv)
+
+    second = {**gold, "doc_id": f"later-domain/{ids[1]}"}
+    (set_dir / "gold.jsonl").write_text(json.dumps(gold) + "\n" + json.dumps(second) + "\n")
+    out = tmp_path / "reports" / "annotation_sets"
+    out.mkdir(parents=True)
+    (out / "later-domain-test-m1.json").write_text("{}")
+    with pytest.raises(SystemExit, match="already been scored"):
+        module.main(argv)

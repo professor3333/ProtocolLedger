@@ -5,7 +5,10 @@
 
 The test portion is locked: --split test requires --locked-test-release, and is meant to
 be run once per declared release, and its error taxonomy keeps the counts but no example
-sentences. Writes reports/annotation_sets/<set>-<split>-<model>.json.
+sentences. Against the human gold it is refused until every test source is annotated, and
+refused again once a report for that model exists. Gold of documents whose machine labels
+the annotator had seen is also reported without them.
+Writes reports/annotation_sets/<set>-<split>-<model>.json.
 
 --reference machine scores against machine_labels.jsonl instead of the human gold.jsonl.
 Those labels are machine-generated and not human-reviewed, so the report says
@@ -105,14 +108,41 @@ def main(argv: list[str] | None = None) -> int:
     ]
     if not gold:
         raise SystemExit(f"error: no annotated {args.split} documents in {path}")
+    sources = {s["source_id"]: s for s in load_sources(set_dir)}
     loaded = load_bundle(args.bundle)
+    suffix = "" if args.reference == "gold" else f"-vs-{args.reference}"
+    name = f"{args.set_name}-{args.split}-{loaded.model_version}{suffix}"
+    out = ROOT / "reports" / "annotation_sets"
+    if args.split == "test" and args.reference == "gold":
+        # A locked portion is scored once, and only in full: a partial score would invite
+        # scoring again as annotation proceeds.
+        missing = sorted(
+            {k for k, s in sources.items() if s["split"] == "test"}
+            - {d["doc_id"].split("/", 1)[1] for d in gold}
+        )
+        if missing:
+            raise SystemExit(
+                f"error: {len(missing)} test sources have no gold yet; annotate all of them first"
+            )
+        if (out / f"{name}.json").exists():
+            raise SystemExit(f"error: {name} has already been scored against the human gold")
     preds = []
     for doc in gold:
         entities, relations = loaded.extractor.extract(doc["text"])
         preds.append({"doc_id": doc["doc_id"], "entities": entities, "relations": relations})
     report = evaluate(gold, preds)
-    sources = {s["source_id"]: s for s in load_sources(set_dir)}
     slices = category_slices(gold, preds, sources)
+    independent = [d for d in gold if not d.get("annotation", {}).get("machine_labels_seen")]
+    if len(independent) < len(gold):
+        # Gold made after seeing machine labels may lean towards them; report without it too.
+        ids = {d["doc_id"] for d in independent}
+        sub = evaluate(independent, [p for p in preds if p["doc_id"] in ids]) if ids else None
+        report["without_machine_labels_seen"] = {
+            "documents": len(independent),
+            "excluded": len(gold) - len(independent),
+            "entities": _micro(sub, "entities") if sub else None,
+            "relations": _micro(sub, "relations") if sub else None,
+        }
     report.update(
         {
             "set": args.set_name,
@@ -124,10 +154,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     if slices:
         report["categories"] = slices
-    out = ROOT / "reports" / "annotation_sets"
     out.mkdir(parents=True, exist_ok=True)
-    suffix = "" if args.reference == "gold" else f"-vs-{args.reference}"
-    name = f"{args.set_name}-{args.split}-{loaded.model_version}{suffix}"
     (out / f"{name}.json").write_text(json.dumps(report, indent=1) + "\n", "utf-8")
     vs = "" if args.reference == "gold" else ", vs. machine labels"
     title = f"{loaded.model_version} on {args.set_name} ({args.split}{vs})"
@@ -152,6 +179,14 @@ def main(argv: list[str] | None = None) -> int:
     )
     (out / f"{name}-errors.md").write_text(render_errors(errors, title), "utf-8")
     print(render_markdown(report, title))
+    if "without_machine_labels_seen" in report:
+        w = report["without_machine_labels_seen"]
+        if w["relations"]:
+            print(
+                f"Without the {w['excluded']} documents whose machine labels were seen: "
+                f"entity F1 {w['entities']['f1']:.3f}, relation F1 {w['relations']['f1']:.3f} "
+                f"({w['documents']} documents)\n"
+            )
     if slices:
         print("| Category | Steps | Entity F1 (support) | Relation F1 (support) |")
         print("|---|---:|---:|---:|")

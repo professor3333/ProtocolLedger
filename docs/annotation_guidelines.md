@@ -40,6 +40,9 @@ one. Counts come from `train` after deduplication (314 protocols).
    browser has forgotten a review (cleared storage, another machine), issue a new token
    from the database and paste the printed ID and token:
    `uv run python scripts/reopen_review.py --db data/annotation.db --text-file <the .txt>`
+   Reviews started before 2026-10-13, when the interface still preselected a type, label
+   and direction, are never exported as gold and cannot be reopened. Annotate those texts
+   (later-domain pio-317105, pio-317813, pio-223996) again from scratch.
 6. Back up the database after each session:
    `uv run python scripts/backup_reviews.py backup data/annotation.db backups/annotation-<date>.db`
 

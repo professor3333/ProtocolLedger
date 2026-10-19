@@ -32,7 +32,8 @@ def export_reviews(db_path: Path) -> tuple[list[dict[str, Any]], dict[str, int]]
     with sqlite3.connect(uri, uri=True) as db:
         db.row_factory = sqlite3.Row
         reviews = db.execute(
-            "SELECT id, text, text_sha256, model_version FROM reviews ORDER BY created_at, id"
+            "SELECT id, created_at, text, text_sha256, model_version FROM reviews "
+            "ORDER BY created_at, id"
         ).fetchall()
         docs: list[dict[str, Any]] = []
         skipped = 0
@@ -81,6 +82,7 @@ def to_document(
         "relations": relations,
         "provenance": {
             "review_id": review["id"],
+            "created_at": review["created_at"],
             "revision": revision,
             "model_version": review["model_version"],
             "text_sha256": review["text_sha256"],

@@ -520,7 +520,9 @@ PROTOCOLLEDGER_ANNOTATION_ONLY=1 PROTOCOLLEDGER_BUNDLE=artifacts/bundles/crf-log
 uv run python scripts/reopen_review.py --db data/annotation.db \
   --text-file data/annotation/later-domain/texts/<id>.txt
 
-# 4. Export the saved annotations as gold, then score a model on the dev portion
+# 4. Export the saved annotations as gold, then score a model on the dev portion.
+#    The export prints how much of each portion is annotated. The test portion can be
+#    scored against gold only when it is complete, and only once per model.
 uv run python scripts/export_annotations.py --db data/annotation.db --set later-domain
 uv run --extra neural python scripts/evaluate_annotation_set.py --set later-domain \
   --split dev --bundle artifacts/bundles/scibert-uniform-negatives-s21-7dc7a1893e

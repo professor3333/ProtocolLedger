@@ -243,7 +243,11 @@ hard phenomena (11 protocols, 33 steps). The collection rules are in the
   suggestions; any consistency figure would be repeat-annotation consistency. The
   annotator has seen machine labels for six challenge dev protocols (pio-321801,
   pio-228894, pio-241598, pio-229673, pio-241749, pio-126304), so human labels for those
-  would not be independent of them.
+  would not be independent of them. These are all six challenge dev protocols. They are
+  listed in `challenge/machine_labels_seen.json`, flagged in their gold records, and every
+  gold report also gives scores without them. Three from-scratch annotations saved
+  before the interface stopped preselecting a type, label and direction (2026-10-13) are
+  never exported as gold, and the export counts them as invalid.
 - **Machine labels.** In place of human gold, both sets carry machine-generated
   labels that no person has reviewed: later-domain has 3,409 entities and 2,354 relations,
   and challenge has 460 entities and 327 relations. They are stored in
