@@ -72,7 +72,7 @@ Cleaned sizes: train 314, dev 112, test 111 protocols.
 | Relation F1 given gold entities | 0.826 | 0.830 | 0.812 |
 | Quantity attachment accuracy | 0.758 | 0.757 | 0.708 |
 
-**Proposed targets** (not yet frozen):
+**Frozen targets** ([targets.md](targets.md)), dev status:
 - Entity F1 ≥ 0.75: met.
 - At least 5 points above the traditional baseline: met (+5.8).
 - **End-to-end relation F1 ≥ 0.65: not met** (0.640).

@@ -695,10 +695,10 @@ committed before the locked test split was touched.
 mean. The served model is its **median** seed (21), not the best, to avoid an optimistic
 pick.
 
-Against the proposed targets, the selected configuration clears **entity F1 ≥ 0.75** and
+Against the targets, the selected configuration clears **entity F1 ≥ 0.75** on dev and
 is **≥ 5 points above the traditional baseline** (+5.8 on the 3-seed mean). It does
-**not** reach end-to-end relation F1 ≥ 0.65 on dev (0.640 ± 0.004). The targets are not frozen yet, and this result
-will be reported as it stands rather than adjusted.
+**not** reach end-to-end relation F1 ≥ 0.65 on dev (0.640 ± 0.004). The targets were frozen
+unchanged despite this, and the miss is reported as it stands.
 
 - **Supervision pays off.** The CRF + logistic-regression baseline raises end-to-end
   relation F1 from 0.355 to 0.582. Most of the gain is in attachment: given the same gold
