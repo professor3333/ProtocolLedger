@@ -46,8 +46,8 @@ baselines on a deduplicated split of the WNUT-2020 Wet Lab Protocol corpus.
 
 > [!NOTE]
 > The banner shows the **intended** output for a worked example, not a model prediction.
-> See [Status](#status) for what exists and what was not done (always-on hosting, a user
-> pilot, human gold labels for the new protocols.io sets).
+> See [Status](#status) for what exists and what was not done (a user pilot, human gold
+> labels for the new protocols.io sets).
 
 ## Demo
 
@@ -60,7 +60,9 @@ reviewer acts), showing a correct extraction, a genuine attachment error, an unr
 case, the corrections, then save and export.
 <a href="docs/assets/demo.mp4">MP4 version</a>.</sub>
 
-**Try it live:** [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/professor3333/ProtocolLedger?quickstart=1)
+**Try it live:** **https://44.222.11.189.sslip.io** (always on until 2027-03-22, on a
+small AWS VM; see [deployment](docs/deployment.md#always-on-public-demo-aws-ec2)), or run
+your own copy: [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/professor3333/ProtocolLedger?quickstart=1)
 
 The Codespace installs CPU PyTorch, downloads the published SciBERT bundle at its pinned
 revision and opens the review interface on port 8000. It runs on the free Codespaces
@@ -279,7 +281,7 @@ docker run -p 127.0.0.1:8000:8000 -v "$PWD/artifacts/bundles:/models:ro" \
 | 1,000-request load test (container, 4 CPUs) | ✅ Done |
 | Model card, dataset card, experiment report | ✅ Done |
 | Live demo in GitHub Codespaces (one click, no host to run) | ✅ Done |
-| Always-on public hosting | ⬜ Not done (the local Docker path is complete) |
+| Always-on public demo (AWS EC2 `t4g.small`, until 2027-03-22) | ✅ Done |
 | User pilot | ⬜ Not run: no participants were available |
 
 ## Quickstart
@@ -823,8 +825,9 @@ Re-measure on the deployment host before changing runtimes.</sub>
   shared runner varies, so the 3 s gate has little margin there.
 
 **Product.**
-- **No always-on public host.** The live demo runs on demand in GitHub Codespaces; the
-  local Docker path is complete.
+- **The public demo is small and temporary.** It runs on a 2-vCPU burstable VM paid from
+  free credit and stops by 2027-03-22. It slows down when its CPU credits run out, and
+  its saved reviews are not backed up.
 - Reviews are protected by unguessable ids and one-time tokens, not by user accounts.
 - One process with SQLite is the intended scale. Concurrent multi-user load is untested.
 - **Not for executing protocols, or for judging whether a protocol is complete, correct
@@ -839,8 +842,7 @@ Re-measure on the deployment host before changing runtimes.</sub>
 - [ ] **Phase 4:** error analysis, calibration, fresh annotations and challenge set
   (done except human gold for the new sets; they carry machine labels)
 - [x] **Phase 5:** API, evidence highlighting, editing, saved reviews, exports
-- [ ] **Phase 6:** CPU optimization, Docker deployment, monitoring and rollback
-  (done locally and as a Codespaces demo; no always-on public host)
+- [x] **Phase 6:** CPU optimization, Docker deployment, monitoring and rollback
 - [ ] **Phase 7:** user pilot, model and data cards, final report
   (cards and report done; pilot not run: no participants were available)
 

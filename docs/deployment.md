@@ -184,23 +184,30 @@ The Codespace needs 2 cores and 8 GB. It stops when idle, and reviews saved in i
 kept in `/tmp` only. Check it with `curl -s localhost:8000/readyz` in the Codespace
 terminal.
 
-## Public demo on a VM (Oracle Cloud Always Free; not run)
+## Always-on public demo (AWS EC2)
 
-`scripts/deploy_oracle.py` is written for an Oracle Cloud Always Free ARM VM (4 OCPU,
-24 GB) but **has not been run**: the account could not be created. Hugging Face requires
-a paid plan for Docker Spaces, so the model is hosted on the Hub
-(`professor3333/protocolledger-scibert`, pinned by revision) and the app would run on the
-VM.
+The public demo runs at **https://44.222.11.189.sslip.io** on one AWS EC2 `t4g.small`
+in `us-east-1`: 2 Graviton (ARM) vCPUs, 2 GB RAM plus 4 GB swap, 30 GB encrypted gp3
+disk, an Elastic IP, Ubuntu 24.04. It is paid from the account's Free-plan credit
+(about USD 17.50 a month at on-demand prices: instance, public IPv4 and disk), and a
+monthly budget on gross usage alerts at 80% of USD 25. AWS closes Free-plan accounts when
+the plan ends unless they are upgraded, so the demo runs until **2027-03-22** at most.
+
+The security group allows 80/443 from anywhere and SSH only from the owner's address.
+Hugging Face requires a paid plan for Docker Spaces, so the model is hosted on the Hub
+(`professor3333/protocolledger-scibert`, pinned by revision) and the app runs on the VM.
+
+Deploy or update (any Ubuntu 24.04 VM, ARM or x86, reachable over SSH):
 
 ```bash
-uv run python scripts/deploy_oracle.py --host <public-ip>
+uv run python scripts/deploy_vm.py --host <public-ip> --threads <vCPUs>
 ```
 
 The script:
 1. Refuses an unpushed commit.
-2. Runs `deploy/oracle/bootstrap.sh` (idempotent). This installs Docker and uv, and opens
-   ports 80/443 in the VM's own iptables, which Oracle's Ubuntu images block even when
-   the cloud security list allows them.
+2. Runs `deploy/vm/bootstrap.sh` (idempotent). This installs Docker and uv, adds 4 GB of
+   swap when the VM has under 3.5 GB of RAM, and opens ports 80/443 in the host firewall
+   when the image rejects them by default (Oracle's Ubuntu images do).
 3. Builds the SciBERT image at `HEAD` on the VM.
 4. Downloads the bundle at the pinned revision.
 5. Activates it with `release.py --public-demo`, which smoke-tests the release and rolls
@@ -208,14 +215,25 @@ The script:
 6. Checks `https://<ip>.sslip.io/readyz`. Caddy obtains a certificate automatically for
    the free `sslip.io` hostname.
 
-The public-demo banner warns that saved reviews are temporary and that confidential
-protocols must not be pasted.
+The first deploy took 803 s (2026-10-20, measured once). The public-demo banner warns that
+saved reviews are temporary and that confidential protocols must not be pasted.
+`/metrics` answers 404 through Caddy; Prometheus is reachable only through an SSH tunnel.
 
-Oracle may reclaim Always Free VMs that stay almost idle for a week. If that happens,
-create a new VM and re-run the script.
+**CPU credits.** A `t4g.small` sustains 20% of its two vCPUs and bursts above that on
+earned CPU credits. The instance uses *standard* credits, so it slows to the baseline
+instead of billing extra when the credits run out. Building the image uses up the launch
+credits: for about an hour after a deploy the demo is several times slower.
+With credits available, 100 requests of dev protocols cut to at most 500 words, sent at
+concurrency 1 on the VM itself after 10 warm-up requests, took p50 2.41 s, p95 7.01 s and
+at most 9.76 s, with the app at 945 MiB (2026-10-20, measured once). This is slower than
+the 3 s gate, which is defined for a 4-vCPU host; the demo VM is not that host.
+
+**Stopping it.** Terminate the instance tagged `Name=protocolledger-demo` and release
+its Elastic IP (an unattached Elastic IP is still billed), then delete the security
+group and key pair of the same name.
 
 ## Hosting
 
-Any small CPU VM with Docker works (the plan suggests e.g. a Hetzner CX-class instance;
-set a budget before provisioning). Point a DNS record at it, set `--site-address` to the
-domain, and Caddy obtains certificates automatically.
+Any small CPU VM with Docker works (set a budget before provisioning). Point a DNS record
+at it, pass the domain to `release.py activate --site-address`, and Caddy obtains
+certificates automatically.
