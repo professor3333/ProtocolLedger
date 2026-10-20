@@ -226,17 +226,18 @@ numbers; p95 latency ≤ 3 s and memory ≤ 3 GB on the runner), a smoke test of
 image with the pinned bundle, then the image is pushed to `ghcr.io` and a GitHub release
 records its digest. See the [deployment runbook](docs/deployment.md).
 
-**Release [v1.0.0](https://github.com/professor3333/ProtocolLedger/releases/tag/v1.0.0)**
+**Release [v1.1.0](https://github.com/professor3333/ProtocolLedger/releases/tag/v1.1.0)**
+(same model as [v1.0.0](https://github.com/professor3333/ProtocolLedger/releases/tag/v1.0.0))
 passed every gate. Its image (linux/amd64) is public; the model bundle is mounted at run
 time, not baked in. On an ARM machine add `--platform linux/amd64` to `docker run`; it
 then runs under emulation, slowly:
 
 ```bash
-docker pull ghcr.io/professor3333/protocolledger@sha256:d409389f086996acab756326252eae74287e35d0773f1cb7c6845d2401712cf3
+docker pull ghcr.io/professor3333/protocolledger@sha256:f9d4e7d852e8f6d3010c754b182937b502e42f31bea367a6509ff36b6cdcedee
 uv run python scripts/fetch_demo_bundle.py   # the pinned SciBERT bundle
 docker run -p 127.0.0.1:8000:8000 -v "$PWD/artifacts/bundles:/models:ro" \
   -e PROTOCOLLEDGER_BUNDLE=/models/scibert-uniform-negatives-s21-7dc7a1893e \
-  ghcr.io/professor3333/protocolledger@sha256:d409389f086996acab756326252eae74287e35d0773f1cb7c6845d2401712cf3
+  ghcr.io/professor3333/protocolledger@sha256:f9d4e7d852e8f6d3010c754b182937b502e42f31bea367a6509ff36b6cdcedee
 ```
 
 ## Design principles
@@ -271,7 +272,7 @@ docker run -p 127.0.0.1:8000:8000 -v "$PWD/artifacts/bundles:/models:ro" \
 | Serve SciBERT in the Docker image (released through Compose with smoke test) | ✅ Done |
 | Frozen targets; single locked-test evaluation | ✅ Done |
 | Clean-clone reproduction of data, splits, baselines and bundle | ✅ Verified 2026-10-17 |
-| Release workflow with gates; v1.0.0 released with a public image | ✅ Done |
+| Release workflow with gates; v1.0.0 and v1.1.0 released with a public image | ✅ Done |
 | Correction-batch lifecycle: export, curate, leakage check, retrain, gate, release, rollback (rehearsed) | ✅ Done |
 | Challenge set and later-domain protocols.io sets | 🟡 Collected, split, machine-labelled and scored once; no human gold |
 | Deterministic quantity normalization | ✅ Done |
