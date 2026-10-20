@@ -280,7 +280,7 @@ docker run -p 127.0.0.1:8000:8000 -v "$PWD/artifacts/bundles:/models:ro" \
 | Model card, dataset card, experiment report | ✅ Done |
 | Live demo in GitHub Codespaces (one click, no host to run) | ✅ Done |
 | Always-on public hosting | ⬜ Not done (the local Docker path is complete) |
-| User pilot | ⬜ Not run |
+| User pilot | ⬜ Not run: no participants were available |
 
 ## Quickstart
 
@@ -612,7 +612,7 @@ protocols) by `scripts/locked_test.py`, at commit `fe0297c`
 | Optimized artifact ≤ 1-point F1 loss (dev) | ONNX INT8 −0.28 | yes |
 | p95 ≤ 3 s, ≥ 99% success, ≤ 3 GB (container, 4 CPUs) | 2.40 s, 100%, 1.06 GB | yes |
 | Normalization ≥ 98% exact match, independently checked set | no independent set | not evaluated |
-| ≥ 25% faster sheet completion (user pilot) | no pilot run | not evaluated |
+| ≥ 25% faster sheet completion (user pilot) | pilot not run (no participants) | not evaluated |
 
 Test is harder than dev for every system: CRF + logistic regression falls from 0.582 to
 0.504, and SciBERT from 0.639 to 0.580. SciBERT's margin over the traditional baseline
@@ -815,7 +815,8 @@ Re-measure on the deployment host before changing runtimes.</sub>
 - Value normalization has not been checked against an independently labelled set.
 - The challenge and later-domain sets have **no human gold**. Their scores are agreement
   with machine labels that no person has reviewed, not accuracy.
-- **No user pilot has been run**, so there is no evidence yet that the tool saves time.
+- **No user pilot was run**, because no participants were available, so there is no
+  evidence that the tool saves time. The usefulness target stays *not evaluated*.
 - Latency and memory were measured on an Apple M1 with Docker limited to 4 CPUs, and
   in-process by the release gates on a shared 4-vCPU GitHub Actions x86 runner (p95 2.21 s
   and 2.89 s on two runs of the same commit), not on a dedicated production host. The
@@ -841,7 +842,7 @@ Re-measure on the deployment host before changing runtimes.</sub>
 - [ ] **Phase 6:** CPU optimization, Docker deployment, monitoring and rollback
   (done locally and as a Codespaces demo; no always-on public host)
 - [ ] **Phase 7:** user pilot, model and data cards, final report
-  (cards and report done; no pilot run)
+  (cards and report done; pilot not run: no participants were available)
 
 ## Project structure
 
