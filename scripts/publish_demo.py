@@ -6,8 +6,8 @@
 1. Uploads the bundle (hash-verified locally first) and a model card to the model repo.
 2. With --space, writes a Docker Space's Dockerfile and README from deploy/huggingface/,
    pinning the GitHub commit and the model revision. Hugging Face now requires a PRO
-   subscription for Docker Spaces, so the free public demo runs on Oracle Cloud instead
-   (scripts/deploy_oracle.py).
+   subscription for Docker Spaces, so the public demo runs on a small VM instead
+   (scripts/deploy_vm.py).
 Uses the Hugging Face login on this machine; no token is read or printed by this script.
 """
 

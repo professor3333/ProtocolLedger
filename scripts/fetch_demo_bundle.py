@@ -5,7 +5,7 @@
 Writes artifacts/bundles/<model version>/ and prints its path. Does nothing if the bundle
 is already there. The server verifies every file's hash when it loads the bundle, so a
 corrupted download is refused at start-up. Used by the Codespaces demo
-(.devcontainer/) and by scripts/deploy_oracle.py; no token is needed (public repo).
+(.devcontainer/) and by scripts/deploy_vm.py; no token is needed (public repo).
 """
 
 from __future__ import annotations

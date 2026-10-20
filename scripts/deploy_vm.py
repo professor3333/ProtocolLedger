@@ -1,16 +1,16 @@
-"""Deploy the public SciBERT demo to an Oracle Cloud Always Free VM over SSH.
+"""Deploy the public SciBERT demo to an Ubuntu 24.04 VM over SSH.
 
-    uv run python scripts/deploy_oracle.py --host <public-ip>
+    uv run python scripts/deploy_vm.py --host <public-ip> --threads <vCPUs>
 
 Steps (each stops on failure):
 1. refuse unless the working tree is clean and HEAD is on GitHub (the VM builds HEAD);
-2. upload and run deploy/oracle/bootstrap.sh (Docker, host firewall, uv; idempotent);
+2. upload and run deploy/vm/bootstrap.sh (Docker, swap, host firewall, uv; idempotent);
 3. on the VM: check out HEAD, build the SciBERT image, download the model bundle from
    Hugging Face at a pinned revision, and activate it with scripts/release.py, which
    smoke-tests and restores the previous release on failure;
 4. from here: check https://<ip>.sslip.io/readyz serves the expected model.
 
-Uses the dedicated key ~/.ssh/protocolledger_oci; first contact records the VM's host key
+Uses the dedicated key ~/.ssh/protocolledger_vm; first contact records the VM's host key
 (accept-new), and a changed host key is refused.
 """
 
@@ -39,7 +39,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--host", required=True, help="the VM's public IPv4 address")
     parser.add_argument("--user", default="ubuntu")
-    parser.add_argument("--key", type=Path, default=Path.home() / ".ssh" / "protocolledger_oci")
+    parser.add_argument("--key", type=Path, default=Path.home() / ".ssh" / "protocolledger_vm")
     parser.add_argument("--threads", type=int, default=4)
     args = parser.parse_args(argv)
 
@@ -73,7 +73,7 @@ def main(argv: list[str] | None = None) -> int:
             str(args.key),
             "-o",
             "StrictHostKeyChecking=accept-new",
-            str(ROOT / "deploy/oracle/bootstrap.sh"),
+            str(ROOT / "deploy/vm/bootstrap.sh"),
             f"{target}:bootstrap.sh",
         ],
         check=True,
