@@ -834,6 +834,35 @@ Re-measure on the deployment host before changing runtimes.</sub>
 - **Not for executing protocols, or for judging whether a protocol is complete, correct
   or safe.** Every row is a suggestion for a person to review.
 
+## What I'd do differently
+
+- **Measure training overlap before freezing the splits, not after.** The containment
+  audit ran after the locked test evaluation. It found that 15.8% of dev gold relations,
+  but only 1.2% of test gold relations, lie in documents mostly copied in training. Dev
+  was therefore optimistic: end-to-end relation F1 fell from 0.639 on dev to 0.580 on
+  test, while low-overlap dev documents score 0.617. Run that audit first, and the
+  dev-only feasibility check behind the frozen targets would have been more realistic.
+- **Follow the baseline's error profile.** I framed attachment as the hard part, but the
+  CRF baseline already showed the larger loss: relation F1 0.812 with gold entities vs.
+  0.582 end to end. For SciBERT, 27.7% of gold relations fail on an endpoint entity and
+  only 2.9% are genuine attachment errors. Hard-negative sampling, aimed at attachment,
+  changed nothing (0.636 vs. 0.640). That effort would have been better spent on entity
+  boundaries, where training data is itself split (a Modifier outside the name 1,418
+  times, inside it 526 times).
+- **Build the blind annotation mode before the first annotation.** Three early gold
+  annotations were made while the interface still preselected labels and had to be
+  discarded. Six challenge protocols are flagged because their machine labels were seen
+  first. An annotation-only mode with no defaults should exist from day one.
+- **Start human-dependent work in week one.** The user pilot and the human gold for the
+  new sets both needed other people's time or many hours of mine, and both were planned
+  late. Neither happened. Recruiting participants and annotating a small slice early would
+  have shown sooner whether they were feasible.
+- **Gate latency on a fixed machine, or on relative change.** The same commit measured
+  p95 2.21 s and 2.89 s on GitHub's shared runners, and v1.1.0 measured 2.63 s, all against
+  a 3 s gate. A release can fail on runner noise alone. A dedicated benchmark host, or a
+  gate on regression against the previous release, would test the code rather than the
+  runner.
+
 ## Roadmap
 
 - [x] **Phase 0:** project skeleton, CI, pinned corpus acquisition
