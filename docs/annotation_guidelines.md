@@ -30,7 +30,7 @@ one. Counts come from `train` after deduplication (314 protocols).
 
 ## Workflow
 
-1. Start the interface in annotation-only mode (see the README, "New annotation sets").
+1. Start the interface in annotation-only mode (see [New annotation sets](annotation_sets.md), step 3).
 2. Upload `data/annotation/<set>/texts/<id>.txt` and press **Start annotating**.
 3. Go line by line. For each line, add its entities first, then their relations.
 4. Tick **Store the protocol text on the server** and save the review. Saving the same text

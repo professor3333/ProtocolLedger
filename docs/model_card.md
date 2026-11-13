@@ -136,7 +136,7 @@ them, so the reference is machine-generated labels that no person has reviewed: 
 | Quantity attachment accuracy | 0.778 | 0.795 | 0.641 | 0.864 |
 
 The challenge portions have 18 and 15 steps, so their scores vary a lot between portions.
-Details and CIs: the [README](../README.md#new-protocolsio-sets-locked-test-portions-scored-once-2026-10-15).
+Details and CIs: the [results](results.md#new-protocolsio-sets-locked-test-portions-scored-once-2026-10-15).
 
 ## Inference performance
 

@@ -219,7 +219,7 @@ committed manifest is byte-reproducible.
 Two small sets test the model on text it was not built around: a **later-domain** set of
 recent protocols (38 protocols, 301 steps) and a **challenge** set of steps chosen for
 hard phenomena (11 protocols, 33 steps). The collection rules are in the
-[README](../README.md#new-annotation-sets-protocolsio) and
+[annotation sets](annotation_sets.md#new-annotation-sets-protocolsio) and
 `src/protocolledger/data/protocolsio.py`. Every decision is recorded in
 `data/manifests/protocolsio_collection.json`.
 
@@ -256,7 +256,7 @@ hard phenomena (11 protocols, 33 steps). The collection rules are in the
   reported as "vs. machine labels" and not as accuracy. They include the locked test portions
   (16 of 38 later-domain protocols, 5 of 11 challenge protocols). The declared releases
   were scored on those portions once, on 2026-10-15, with error counts but no example
-  sentences; see the README results. Labels follow the train convention for each type
+  sentences; see [results](results.md#new-protocolsio-sets-locked-test-portions-scored-once-2026-10-15). Labels follow the train convention for each type
   pair: `build_machine_labels.py` lists any relation whose (head, tail) types occur fewer
   than 5 times in train. They also follow measured train span conventions: `Or` from the
   earlier mention to the later one (341 of 408 in train), "up to"/"within"/"approximately"
